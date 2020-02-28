@@ -18,3 +18,8 @@ class Name(ConstrainedStr):
 def convert_to_codename(value: str) -> str:
     return '_'.join(unidecode(value).lower()
                     .replace('-', '').replace('.', '').replace("'", '').split())
+
+
+def convert_to_id_friendly(value: str) -> str:
+    return '_'.join(value.lower()
+                    .replace('-', '').replace('.', '').replace("'", '').split())

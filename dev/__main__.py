@@ -76,10 +76,10 @@ def main(input_filename: str, output_format: ExportingFormat, output: str, verbo
         provinces = convert_to_nested(originals, phone_codes)
         out = gen_python_code(provinces.values())
         logger.info('Built AST')
-        logger.info('Prettify code with Black')
-        pretty = black.format_str(out, mode=black.FileMode(line_length=120))
+        # logger.info('Prettify code with Black')
+        # pretty = black.format_str(out, mode=black.FileMode(line_length=120))
         with open(output, 'w') as f:
-            f.write(pretty)
+            f.write(out)
     click.secho(f'Wrote to {output}', file=sys.stderr, fg='green')
 
 

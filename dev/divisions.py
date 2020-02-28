@@ -1,6 +1,6 @@
 import ast
-from enum import Enum
 from pathlib import Path
+from collections import deque
 from typing import NamedTuple, Optional, List, Tuple, Dict, Sequence
 
 import astor
@@ -8,7 +8,7 @@ from logbook import Logger
 from pydantic import BaseModel, validator
 
 from vietnam_provinces.base import VietNamDivisionType
-from .types import Name, convert_to_codename
+from .types import Name, convert_to_codename, convert_to_id_friendly
 from .phones import PhoneCodeCSVRecord
 
 
@@ -30,10 +30,20 @@ def truncate_leading(line: str, prefixes: Sequence[str]) -> str:
 
 def abbreviate_codename(name: str) -> str:
     '''
-    ha_noi -> hn
+    ha_noi -> hano
     '''
     words = name.split('_')
     return ''.join((w[0] for w in words))
+
+
+def abbreviate_doub_codename(name: str) -> str:
+    '''
+    tan_thanh -> tath
+    thu_thua -> thth
+    quan_11 -> qu11
+    '''
+    words = name.split('_')
+    return ''.join((w[:2] for w in words))
 
 
 class WardCSVInputRow(NamedTuple):
@@ -87,6 +97,7 @@ class BaseRegion(BaseModel):
 class Ward(BaseRegion):
     # Redefine here, or the validator won't run
     division_type: VietNamDivisionType = None
+    short_codename: str = None
 
     @validator('division_type', pre=True, always=True)
     def parse_division_type(cls, v, values):
@@ -96,14 +107,11 @@ class Ward(BaseRegion):
         possibles = (VietNamDivisionType.THI_TRAN, VietNamDivisionType.XA, VietNamDivisionType.PHUONG)
         return next((t for t in possibles if name.startswith(f'{t.value} ')), None)
 
-    @property
-    def short_codename(self):
-        return truncate_leading(self.codename, ('xa_', 'phuong_', 'thi_tran_'))
-
 
 class District(BaseRegion):
     # Redefine here, or the validator won't run
     division_type: VietNamDivisionType = None
+    short_codename: str = None
     wards: Tuple[Ward, ...] = ()
     # Actual wards are saved here for fast searching
     indexed_wards: Dict[int, Ward] = None
@@ -122,18 +130,8 @@ class District(BaseRegion):
         return next((t for t in possibles if name.startswith(f'{t.value} ')), None)
 
     @property
-    def short_codename(self):
-        # This short codename is to build unique ID for all districts.
-        # There is exception with huyen_ky_anh and thi_xa_ky_anh, which exist in the same province (Hà Tĩnh),
-        # that if we truncate the prefix, the remaining "ky_anh" will be duplicate
-        skips = ('huyen_ky_anh', 'huyen_cai_lay', 'huyen_duyen_hai')
-        if self.codename in skips:
-            return self.codename
-        return truncate_leading(self.codename, ('huyen_', 'thi_xa_', 'thanh_pho_'))
-
-    @property
     def abbrev(self):
-        return abbreviate_codename(self.short_codename)
+        return abbreviate_doub_codename(self.short_codename)
 
     def dict(self, exclude={}, **kwargs):
         self.wards = tuple(self.indexed_wards.values())
@@ -177,6 +175,83 @@ class Province(BaseRegion):
         return out
 
 
+def generate_district_short_codenames(province: Province):
+    '''
+    In list of districts of a province, there can be duplicate if stripping prefix, like
+    "huyen_ky_anh" and "thi_xa_ky_anh". It is because "Huyện Kỳ Anh" was promoted to "Thị xã" but its old record
+    still remains. In that case, we will strip prefix of "thi_xa_ky_anh" but keep original name of "huyen_ky_anh".
+    '''
+    prefixes = ('huyen_', 'thi_xa_', 'quan_', 'thanh_pho_')
+    # First, just generate short_codename as normal
+    for d in province.indexed_districts.values():
+        d.short_codename = truncate_leading(d.codename, prefixes)
+    # Second, find ones whose short_codename is the same as other
+    # Nummeric codes of districts whose shortname is duplicate
+    duplicates = deque()
+    trial_short_names = tuple(d.short_codename for d in province.indexed_districts.values())
+    for i, d in province.indexed_districts.items():
+        name = d.short_codename
+        if trial_short_names.count(name) > 1:
+            duplicates.append(i)
+    if duplicates:
+        logger.debug('Districts with duplicate short codename: {}', duplicates)
+    # OK, now fix short codename for those duplicated districts
+    for i in duplicates:
+        d = province.indexed_districts[i]
+        d.short_codename = truncate_leading(d.codename, ('thi_xa_', 'quan_', 'thanh_pho_'))
+
+
+def generate_ward_short_codenames(district: District):
+    '''
+    In list of wards of a district, there can be duplicate if stripping prefix, like
+    "xa_yen_vien" and "thi_tran_yen_vien". It is because "Xã Yên Viên" was promoted to "Thị trấn" but its old record
+    still remains. In that case, we will strip prefix of "thi_tran_yen_vien" but keep original name of "xa_yen_vien".
+    '''
+    prefixes = ('xã_', 'phường_', 'thị_trấn_')
+    # First, just generate short_codename as normal
+    for w in district.indexed_wards.values():
+        idf_name = convert_to_id_friendly(w.name)
+        logger.debug('{} -> {}', w.name, idf_name)
+        w.short_codename = truncate_leading(idf_name, prefixes)
+    # Second, find ones whose short_codename is the same as other
+    # Nummeric codes of wards whose shortname is duplicate
+    duplicates = deque()
+    trial_short_names = tuple(w.short_codename for w in district.indexed_wards.values())
+    for i, w in district.indexed_wards.items():
+        name = w.short_codename
+        if trial_short_names.count(name) > 1:
+            duplicates.append(i)
+    if duplicates:
+        logger.debug('Wards with duplicate short codename: {}', duplicates)
+    # OK, now fix short codename for those duplicated wards
+    for i in duplicates:
+        w = district.indexed_wards[i]
+        idf_name = convert_to_id_friendly(w.name)
+        w.short_codename = truncate_leading(idf_name, ('phường_', 'thị_trấn_'))
+    # There are still duplicate:
+    # - "Phường Sa Pa" and "Phường Sa Pả", both belong to "Thị xã Sa Pa" (Lào Cai)
+    # "Xã Đông Thạnh" and "Xã Đông Thành", both belong to "Huyện Bình Minh" (Vĩnh Long)
+    short_names = tuple(w.short_codename for w in district.indexed_wards.values())
+    seen = {}
+    for n in short_names:
+        try:
+            seen[n] += 1
+        except KeyError:
+            seen[n] = 1
+    duplicates = tuple(n for n, c in seen.items() if c > 1)
+    if duplicates:
+        logger.debug('Still duplicate: {}', duplicates)
+
+
+def generate_unique_ward_ids(district: District, province: Province):
+    prefixes = ('xã_', 'phường_', 'thị_trấn_')
+    # First, just generate short_codename as normal
+    for w in district.indexed_wards.values():
+        idf_name = convert_to_id_friendly(w.name)
+        w.short_codename = truncate_leading(idf_name, prefixes)
+    pass
+
+
 def add_to_existing_province(w: WardCSVRecord, province: Province) -> Ward:
     ward = Ward(name=w.ward_name, code=w.ward_code, codename=w.ward_codename)
     try:
@@ -212,6 +287,10 @@ def convert_to_nested(records: Sequence[WardCSVRecord],
             ward = Ward(name=w.ward_name, code=w.ward_code, codename=w.ward_codename)
             district.indexed_wards[w.ward_code] = ward
             table[province_code] = province
+    for p in table.values():
+        generate_district_short_codenames(p)
+        for d in p.indexed_districts.values():
+            generate_ward_short_codenames(d)
     return table
 
 
@@ -262,9 +341,13 @@ def ward_enum_member(ward: Ward, district: District, province: Province):
     Generate AST tree for line of code equivalent to:
     TAN_BINH_DH = District('Xã Tân Bình', 6904, VietNamDivisionType.XA, 'xa_tan_binh', 200)
     '''
-    district_abbr = district.abbrev
-    # For example, Xã Tân Bình of Huyện Đầm Hà (Tỉnh Quảng Ninh) will have ID "TAN_BINH_DH"
-    ward_id = f'{ward.short_codename}_{district_abbr}'.upper()
+    # For example, Xã Tân Bình of Huyện Đầm Hà (Tỉnh Quảng Ninh) will have ID "TAN_BINH_DH_QN"
+    # The reason we have to include province abbreviation name because, includung district only is not enough
+    # to create unique ID for ward. For example, I found:
+    # "Xã Thanh Bình" of "Huyện Chương Mỹ" -> thanh_binh_cm
+    # "Xã Thanh Bình" of "Huyện Chợ Mới" -> thanh_binh_cm
+    # are duplicate.
+    ward_id = f'{ward.short_codename}_{district.abbrev}_{province.abbrev}'.upper()
     enum_def_args = [
         ast.Str(s=ward.name),
         ast.Num(n=ward.code),
