@@ -60,4 +60,13 @@ This data is not static. In the future, when the authority reorganize administra
 
         python3 -m vietnam_provinces.tools -i ../Data/Xa_2020-02-25.csv -f nested-json -o ../Data/nested.json
 
+
+Data source
+~~~~~~~~~~~
+
+- Name and code of provinces, districts and wards:  `General Statistics Office of Viet Nam <gso_vn_>`_
+- Phone area code: `Thái Bình province's department of Information and Communication <tb_ic_>`_
+
+
 .. _gso_vn: https://www.gso.gov.vn/
+.. _tb_ic: https://sotttt.thaibinh.gov.vn/tin-tuc/buu-chinh-vien-thong/tra-cuu-ma-vung-dien-thoai-co-dinh-mat-dat-ma-mang-dien-thoa2.html
