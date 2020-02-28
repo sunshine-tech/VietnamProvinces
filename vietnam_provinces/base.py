@@ -17,20 +17,25 @@ class VietNamDivisionType(str, Enum):
     PHUONG = 'phường'
 
 
-class BaseRegion(NamedTuple):
+class Ward(NamedTuple):
     name: str
     code: int
     division_type: VietNamDivisionType
     codename: str
-
-
-class Ward(BaseRegion):
     district_code: int
 
 
-class District(BaseRegion):
+class District(NamedTuple):
+    name: str
+    code: int
+    division_type: VietNamDivisionType
+    codename: str
     province_code: int
 
 
-class Province(BaseRegion):
+class Province(NamedTuple):
+    name: str
+    code: int
+    division_type: VietNamDivisionType
+    codename: str
     phone_code: int

@@ -1,3 +1,4 @@
+import sys
 import csv
 from enum import Enum
 
@@ -74,9 +75,12 @@ def main(input_filename: str, output_format: ExportingFormat, output: str, verbo
     elif output_format == ExportingFormat.PYTHON:
         provinces = convert_to_nested(originals, phone_codes)
         out = gen_python_code(provinces.values())
-        pretty = black.format_file_contents(out, fast=True, mode=black.FileMode(line_length=120))
+        logger.info('Built AST')
+        logger.info('Prettify code with Black')
+        pretty = black.format_str(out, mode=black.FileMode(line_length=120))
         with open(output, 'w') as f:
             f.write(pretty)
+    click.secho(f'Wrote to {output}', file=sys.stderr, fg='green')
 
 
 if __name__ == '__main__':

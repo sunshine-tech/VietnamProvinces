@@ -43,12 +43,12 @@ Example:
 Development
 -----------
 
-Currently, this project is making tool to crawl `GSO <gso_vn_>`_ data. It doesnot provide library as planned yet.
+Currently, this project is making tool to crawl `GSO <gso_vn_>`_ data.
 
 Update data
 ~~~~~~~~~~~
 
-This data is not static. In the future, when the authority reorganize administrative divisions, we need to crawl this data again from GSOVN website. Do:
+This data is not static (though rarely changes). In the future, when the authority reorganize administrative divisions, we need to crawl this data again from GSOVN website. Do:
 
 - Go to: https://www.gso.gov.vn/dmhc2015/ (this URL may change when `GSOVN <gso_vn_>`_ replaces their software).
 - Find the button "Xuất Excel".
@@ -57,9 +57,17 @@ This data is not static. In the future, when the authority reorganize administra
 - Use LibreOffice to convert Excel file to CSV file. For example, we name it *Xa_2020-02-25.csv*.
 - Run this tool to compute data to JSON format:
 
-    .. code-block:: sh
+.. code-block:: sh
 
-        python3 -m vietnam_provinces.tools -i ../Data/Xa_2020-02-25.csv -f nested-json -o ../Data/nested.json
+    python3 -m dev -vvi dev/seed-data/Xa_2020-02-25.csv -o data/nested-divisions.json
+
+
+Generate code
+~~~~~~~~~~~~~
+
+.. code-block:: sh
+
+    python3 -m dev -vvi dev/seed-data/Xa_2020-02-25.csv -f python -o vietnam_provinces/enums.py
 
 
 Data source

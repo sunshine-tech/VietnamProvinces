@@ -38,7 +38,7 @@ class PhoneCodeCSVRecord(BaseModel):
 
 
 def load_phone_area_table():
-    data_source = Path(__file__).parent.parent / 'seed-data' / DATA_SOURCE_NAME
+    data_source = Path(__file__).parent / 'seed-data' / DATA_SOURCE_NAME
     with open(data_source, newline='') as f:
         reader = csv.reader(f)
         # Skip header

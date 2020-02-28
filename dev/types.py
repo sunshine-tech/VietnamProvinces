@@ -16,4 +16,5 @@ class Name(ConstrainedStr):
 
 
 def convert_to_codename(value: str) -> str:
-    return '_'.join(unidecode(value).lower().replace('-', '').replace('.', '').split())
+    return '_'.join(unidecode(value).lower()
+                    .replace('-', '').replace('.', '').replace("'", '').split())

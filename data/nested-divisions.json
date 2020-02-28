@@ -42551,7 +42551,7 @@
           {
             "name": "Xã Ch'ơm",
             "code": 20437,
-            "codename": "xa_ch'om",
+            "codename": "xa_chom",
             "division_type": "xã"
           },
           {
@@ -42569,7 +42569,7 @@
           {
             "name": "Xã Tr'Hy",
             "code": 20446,
-            "codename": "xa_tr'hy",
+            "codename": "xa_trhy",
             "division_type": "xã"
           },
           {
@@ -49882,7 +49882,7 @@
       {
         "name": "Huyện Ia H' Drai",
         "code": 618,
-        "codename": "huyen_ia_h'_drai",
+        "codename": "huyen_ia_h_drai",
         "division_type": "huyện",
         "wards": [
           {
@@ -50339,13 +50339,13 @@
           {
             "name": "Xã K' Dang",
             "code": 23698,
-            "codename": "xa_k'_dang",
+            "codename": "xa_k_dang",
             "division_type": "xã"
           },
           {
             "name": "Xã H' Neng",
             "code": 23701,
-            "codename": "xa_h'_neng",
+            "codename": "xa_h_neng",
             "division_type": "xã"
           },
           {
@@ -51608,7 +51608,7 @@
       {
         "name": "Huyện Ea H'leo",
         "code": 645,
-        "codename": "huyen_ea_h'leo",
+        "codename": "huyen_ea_hleo",
         "division_type": "huyện",
         "wards": [
           {
@@ -51620,7 +51620,7 @@
           {
             "name": "Xã Ea H'leo",
             "code": 24184,
-            "codename": "xa_ea_h'leo",
+            "codename": "xa_ea_hleo",
             "division_type": "xã"
           },
           {
@@ -51748,7 +51748,7 @@
           {
             "name": "Xã Cư M'Lan",
             "code": 24232,
-            "codename": "xa_cu_m'lan",
+            "codename": "xa_cu_mlan",
             "division_type": "xã"
           }
         ]
@@ -51806,7 +51806,7 @@
       {
         "name": "Huyện Cư M'gar",
         "code": 648,
-        "codename": "huyen_cu_m'gar",
+        "codename": "huyen_cu_mgar",
         "division_type": "huyện",
         "wards": [
           {
@@ -51848,13 +51848,13 @@
           {
             "name": "Xã Cư Dliê M'nông",
             "code": 24271,
-            "codename": "xa_cu_dlie_m'nong",
+            "codename": "xa_cu_dlie_mnong",
             "division_type": "xã"
           },
           {
             "name": "Xã Ea H'đinh",
             "code": 24274,
-            "codename": "xa_ea_h'dinh",
+            "codename": "xa_ea_hdinh",
             "division_type": "xã"
           },
           {
@@ -51872,7 +51872,7 @@
           {
             "name": "Xã Ea M'DRóh",
             "code": 24283,
-            "codename": "xa_ea_m'droh",
+            "codename": "xa_ea_mdroh",
             "division_type": "xã"
           },
           {
@@ -51884,19 +51884,19 @@
           {
             "name": "Xã Cư M'gar",
             "code": 24289,
-            "codename": "xa_cu_m'gar",
+            "codename": "xa_cu_mgar",
             "division_type": "xã"
           },
           {
             "name": "Xã Ea D'Rơng",
             "code": 24292,
-            "codename": "xa_ea_d'rong",
+            "codename": "xa_ea_drong",
             "division_type": "xã"
           },
           {
             "name": "Xã Ea M'nang",
             "code": 24295,
-            "codename": "xa_ea_m'nang",
+            "codename": "xa_ea_mnang",
             "division_type": "xã"
           },
           {
@@ -52150,13 +52150,13 @@
       {
         "name": "Huyện M'Đrắk",
         "code": 652,
-        "codename": "huyen_m'drak",
+        "codename": "huyen_mdrak",
         "division_type": "huyện",
         "wards": [
           {
             "name": "Thị trấn M'Đrắk",
             "code": 24412,
-            "codename": "thi_tran_m'drak",
+            "codename": "thi_tran_mdrak",
             "division_type": "thị trấn"
           },
           {
@@ -52180,7 +52180,7 @@
           {
             "name": "Xã Ea H'MLay",
             "code": 24424,
-            "codename": "xa_ea_h'mlay",
+            "codename": "xa_ea_hmlay",
             "division_type": "xã"
           },
           {
@@ -52192,7 +52192,7 @@
           {
             "name": "Xã Ea M' Doal",
             "code": 24430,
-            "codename": "xa_ea_m'_doal",
+            "codename": "xa_ea_m_doal",
             "division_type": "xã"
           },
           {
@@ -52204,7 +52204,7 @@
           {
             "name": "Xã Cư M'ta",
             "code": 24436,
-            "codename": "xa_cu_m'ta",
+            "codename": "xa_cu_mta",
             "division_type": "xã"
           },
           {
@@ -52554,7 +52554,7 @@
           {
             "name": "Xã Ea R'Bin",
             "code": 24610,
-            "codename": "xa_ea_r'bin",
+            "codename": "xa_ea_rbin",
             "division_type": "xã"
           }
         ]
@@ -52663,7 +52663,7 @@
           {
             "name": "Xã Đăk R'Moan",
             "code": 24618,
-            "codename": "xa_dak_r'moan",
+            "codename": "xa_dak_rmoan",
             "division_type": "xã"
           },
           {
@@ -52707,7 +52707,7 @@
           {
             "name": "Xã Đắk R'Măng",
             "code": 24625,
-            "codename": "xa_dak_r'mang",
+            "codename": "xa_dak_rmang",
             "division_type": "xã"
           },
           {
@@ -52739,7 +52739,7 @@
           {
             "name": "Thị trấn Ea T'Ling",
             "code": 24640,
-            "codename": "thi_tran_ea_t'ling",
+            "codename": "thi_tran_ea_tling",
             "division_type": "thị trấn"
           },
           {
@@ -52807,7 +52807,7 @@
           {
             "name": "Xã Đắk R'La",
             "code": 24670,
-            "codename": "xa_dak_r'la",
+            "codename": "xa_dak_rla",
             "division_type": "xã"
           },
           {
@@ -52825,7 +52825,7 @@
           {
             "name": "Xã Đắk N'Drót",
             "code": 24677,
-            "codename": "xa_dak_n'drot",
+            "codename": "xa_dak_ndrot",
             "division_type": "xã"
           },
           {
@@ -52929,7 +52929,7 @@
           {
             "name": "Xã Nâm N'Đir",
             "code": 24715,
-            "codename": "xa_nam_n'dir",
+            "codename": "xa_nam_ndir",
             "division_type": "xã"
           }
         ]
@@ -52979,13 +52979,13 @@
           {
             "name": "Xã Đắk N'Dung",
             "code": 24727,
-            "codename": "xa_dak_n'dung",
+            "codename": "xa_dak_ndung",
             "division_type": "xã"
           },
           {
             "name": "Xã Nâm N'Jang",
             "code": 24728,
-            "codename": "xa_nam_n'jang",
+            "codename": "xa_nam_njang",
             "division_type": "xã"
           },
           {
@@ -52999,7 +52999,7 @@
       {
         "name": "Huyện Đắk R'Lấp",
         "code": 666,
-        "codename": "huyen_dak_r'lap",
+        "codename": "huyen_dak_rlap",
         "division_type": "huyện",
         "wards": [
           {
@@ -53097,7 +53097,7 @@
           {
             "name": "Xã Đắk R'Tíh",
             "code": 24742,
-            "codename": "xa_dak_r'tih",
+            "codename": "xa_dak_rtih",
             "division_type": "xã"
           },
           {
@@ -53260,7 +53260,7 @@
           {
             "name": "Phường B'lao",
             "code": 24826,
-            "codename": "phuong_b'lao",
+            "codename": "phuong_blao",
             "division_type": "phường"
           },
           {
@@ -53322,7 +53322,7 @@
           {
             "name": "Xã Đạ M' Rong",
             "code": 24859,
-            "codename": "xa_da_m'_rong",
+            "codename": "xa_da_m_rong",
             "division_type": "xã"
           },
           {
@@ -53352,7 +53352,7 @@
           {
             "name": "Xã Đạ K' Nàng",
             "code": 24889,
-            "codename": "xa_da_k'_nang",
+            "codename": "xa_da_k_nang",
             "division_type": "xã"
           }
         ]
@@ -53514,7 +53514,7 @@
           {
             "name": "Thị trấn D'Ran",
             "code": 24928,
-            "codename": "thi_tran_d'ran",
+            "codename": "thi_tran_dran",
             "division_type": "thị trấn"
           },
           {
@@ -53612,7 +53612,7 @@
           {
             "name": "Xã N'Thol Hạ",
             "code": 24973,
-            "codename": "xa_n'thol_ha",
+            "codename": "xa_nthol_ha",
             "division_type": "xã"
           },
           {
@@ -53832,7 +53832,7 @@
           {
             "name": "Xã B' Lá",
             "code": 25069,
-            "codename": "xa_b'_la",
+            "codename": "xa_b_la",
             "division_type": "xã"
           },
           {
@@ -53894,7 +53894,7 @@
           {
             "name": "Thị trấn Đạ M'ri",
             "code": 25096,
-            "codename": "thi_tran_da_m'ri",
+            "codename": "thi_tran_da_mri",
             "division_type": "thị trấn"
           },
           {
