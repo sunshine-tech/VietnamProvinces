@@ -3,12 +3,13 @@ from enum import Enum
 
 import click
 import rapidjson
+import black
 import logbook
 from logbook import Logger
 from logbook.more import ColorizedStderrHandler
 
 from .phones import load_phone_area_table
-from .divisions import WardCSVRecord, convert_to_nested
+from .divisions import WardCSVRecord, convert_to_nested, gen_python_code
 
 logger = Logger(__name__)
 
@@ -16,6 +17,7 @@ logger = Logger(__name__)
 class ExportingFormat(str, Enum):
     FLAT_JSON = 'flat-json'
     NESTED_JSON = 'nested-json'
+    PYTHON = 'python'
 
 
 class EnumChoice(click.Choice):
@@ -66,8 +68,15 @@ def main(input_filename: str, output_format: ExportingFormat, output: str, verbo
             f.write(rapidjson.dumps(tuple(a.dict() for a in originals), indent=2, ensure_ascii=False))
     elif output_format == ExportingFormat.NESTED_JSON:
         provinces = convert_to_nested(originals, phone_codes)
+        provinces_dicts = tuple(p.dict() for p in provinces.values())
         with open(output, 'w') as f:
-            f.write(rapidjson.dumps(provinces, indent=2, ensure_ascii=False))
+            f.write(rapidjson.dumps(provinces_dicts, indent=2, ensure_ascii=False))
+    elif output_format == ExportingFormat.PYTHON:
+        provinces = convert_to_nested(originals, phone_codes)
+        out = gen_python_code(provinces.values())
+        pretty = black.format_file_contents(out, fast=True, mode=black.FileMode(line_length=120))
+        with open(output, 'w') as f:
+            f.write(pretty)
 
 
 if __name__ == '__main__':

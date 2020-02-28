@@ -1,6 +1,9 @@
+import ast
 from enum import Enum
+from pathlib import Path
 from typing import NamedTuple, Optional, List, Tuple, Dict, Sequence
 
+import astor
 from logbook import Logger
 from pydantic import BaseModel, validator
 
@@ -154,12 +157,12 @@ def add_to_existing_province(w: WardCSVRecord, province: Province) -> Ward:
 
 
 def convert_to_nested(records: Sequence[WardCSVRecord],
-                      phone_codes: Sequence[PhoneCodeCSVRecord]) -> Tuple[Province, ...]:
-    out = {}    # type: Dict[int, Province]
+                      phone_codes: Sequence[PhoneCodeCSVRecord]) -> Dict[int, Province]:
+    table = {}    # type: Dict[int, Province]
     for w in records:
         province_code = w.province_code
         try:
-            province = out[province_code]
+            province = table[province_code]
             add_to_existing_province(w, province)
         except KeyError:
             province = Province(name=w.province_name, code=province_code, codename=w.province_codename)
@@ -175,5 +178,37 @@ def convert_to_nested(records: Sequence[WardCSVRecord],
             province.indexed_districts[w.district_code] = district
             ward = Ward(name=w.ward_name, code=w.ward_code, codename=w.ward_codename)
             district.indexed_wards[w.ward_code] = ward
-            out[province_code] = province
-    return tuple(p.dict() for p in out.values())
+            table[province_code] = province
+    return table
+
+
+def province_enum_member(province: Province):
+    '''
+    Generate AST tree for line of code equivalent to:
+    HA_NOI = Province('Thành phố Hà Nội', 1, VietNamDivisionType.THANH_PHO_TRUNG_UONG, 'thanh_pho_ha_noi', 24)
+    '''
+    province_id = province.codename.upper()
+    enum_def_args = [
+        ast.Str(s=province.name),
+        ast.Num(n=province.code),
+        ast.Attribute(value=ast.Name(id='VietNamDivisionType'), attr=province.division_type.name),
+        ast.Str(s=province.codename),
+        ast.Num(province.phone_code)
+    ]
+    node = ast.Assign(targets=[ast.Name(id=province_id)],
+                      value=ast.Call(func=ast.Name(id='Province'),
+                                     args=enum_def_args,
+                                     keywords=[]))
+    return node
+
+
+def gen_python_code(provinces: Sequence[Province]):
+    template_file = Path(__file__).parent.parent / '_enum_tpl.py'
+    module = astor.parse_file(template_file)
+    class_defs = tuple(n for n in module.body if isinstance(n, ast.ClassDef))
+    province_enum_def = next(n for n in class_defs if n.name == 'ProvinceEnum')
+    province_enum_def.body = []
+    for p in provinces:
+        node = province_enum_member(p)
+        province_enum_def.body.append(node)
+    return astor.to_source(module)
