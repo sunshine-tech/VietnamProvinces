@@ -14,6 +14,7 @@ Example:
         "code": 96,
         "codename": "tinh_ca_mau",
         "division_type": "tỉnh",
+        "phone_code": 290,
         "districts": [
             {
                 "name": "Huyện Đầm Dơi",
