@@ -323,6 +323,19 @@ def district_enum_member(district: District, province: Province):
     return node
 
 
+def gen_ast_ward_tuple(ward: Ward, district: District, province: Province):
+    def_args = [
+        ast.Str(s=ward.name),
+        ast.Num(n=ward.code),
+        ast.Attribute(value=ast.Name(id='VietNamDivisionType'), attr=ward.division_type.name),
+        ast.Str(s=ward.codename),
+        ast.Num(district.code)
+    ]
+    return ast.Call(func=ast.Name(id='Ward'),
+                    args=def_args,
+                    keywords=[])
+
+
 def ward_enum_member(ward: Ward, district: District, province: Province):
     '''
     Generate AST tree for line of code equivalent to:
@@ -335,17 +348,8 @@ def ward_enum_member(ward: Ward, district: District, province: Province):
     # "Xã Thanh Bình" of "Huyện Chợ Mới" -> thanh_binh_cm
     # are duplicate.
     ward_id = f'{province.abbrev}_{ward.short_codename}_{ward.code}'.upper()
-    enum_def_args = [
-        ast.Str(s=ward.name),
-        ast.Num(n=ward.code),
-        ast.Attribute(value=ast.Name(id='VietNamDivisionType'), attr=ward.division_type.name),
-        ast.Str(s=ward.codename),
-        ast.Num(district.code)
-    ]
     node = ast.Assign(targets=[ast.Name(id=ward_id)],
-                      value=ast.Call(func=ast.Name(id='Ward'),
-                                     args=enum_def_args,
-                                     keywords=[]))
+                      value=gen_ast_ward_tuple(ward, district, province))
     return node
 
 
@@ -375,7 +379,7 @@ def gen_python_code(provinces: Sequence[Province]):
 
 
 def gen_python_district_enums(provinces: Sequence[Province]) -> str:
-    template_file = Path(__file__).parent / '_enums_district_template.py'
+    template_file = Path(__file__).parent / '_enum_district_template.py'
     module = astor.parse_file(template_file)
     class_defs = tuple(n for n in module.body if isinstance(n, ast.ClassDef))
     # Will generate definition for ProvinceEnum
@@ -393,8 +397,8 @@ def gen_python_district_enums(provinces: Sequence[Province]) -> str:
     return astor.to_source(module)
 
 
-def gen_python_ward_enums(provinces: Sequence[Province]):
-    template_file = Path(__file__).parent / '_enums_ward_template.py'
+def gen_python_ward_enums(provinces: Sequence[Province]) -> str:
+    template_file = Path(__file__).parent / '_enum_ward_template.py'
     module = astor.parse_file(template_file)
     class_defs = tuple(n for n in module.body if isinstance(n, ast.ClassDef))
     # Will generate members for WardEnum
@@ -405,4 +409,20 @@ def gen_python_ward_enums(provinces: Sequence[Province]):
             for w in d.indexed_wards.values():
                 node_w = ward_enum_member(w, d, p)
                 ward_enum_def.body.append(node_w)
+    return astor.to_source(module)
+
+
+def gen_python_ward_dict(provinces: Sequence[Province]) -> str:
+    template_file = Path(__file__).parent / '_dict_ward_template.py'
+    module = astor.parse_file(template_file)
+    dict_def = module.body[1].value
+    dict_keys = deque()
+    dict_values = deque()
+    for p in provinces:
+        for d in p.indexed_districts.values():
+            for w in d.indexed_wards.values():
+                dict_keys.append(ast.Num(n=w.code))
+                dict_values.append(gen_ast_ward_tuple(w, d, p))
+    dict_def.keys = dict_keys
+    dict_def.values = dict_values
     return astor.to_source(module)
