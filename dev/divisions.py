@@ -207,12 +207,10 @@ def generate_ward_short_codenames(district: District):
     "xa_yen_vien" and "thi_tran_yen_vien". It is because "Xã Yên Viên" was promoted to "Thị trấn" but its old record
     still remains. In that case, we will strip prefix of "thi_tran_yen_vien" but keep original name of "xa_yen_vien".
     '''
-    prefixes = ('xã_', 'phường_', 'thị_trấn_')
+    prefixes = ('xa_', 'phuong_', 'thi_tran_')
     # First, just generate short_codename as normal
     for w in district.indexed_wards.values():
-        idf_name = convert_to_id_friendly(w.name)
-        logger.debug('{} -> {}', w.name, idf_name)
-        w.short_codename = truncate_leading(idf_name, prefixes)
+        w.short_codename = truncate_leading(w.codename, prefixes)
     # Second, find ones whose short_codename is the same as other
     # Nummeric codes of wards whose shortname is duplicate
     duplicates = deque()
@@ -226,21 +224,10 @@ def generate_ward_short_codenames(district: District):
     # OK, now fix short codename for those duplicated wards
     for i in duplicates:
         w = district.indexed_wards[i]
-        idf_name = convert_to_id_friendly(w.name)
-        w.short_codename = truncate_leading(idf_name, ('phường_', 'thị_trấn_'))
+        w.short_codename = truncate_leading(w.codename, ('phuong_', 'thi_tran_'))
     # There are still duplicate:
     # - "Phường Sa Pa" and "Phường Sa Pả", both belong to "Thị xã Sa Pa" (Lào Cai)
     # "Xã Đông Thạnh" and "Xã Đông Thành", both belong to "Huyện Bình Minh" (Vĩnh Long)
-    short_names = tuple(w.short_codename for w in district.indexed_wards.values())
-    seen = {}
-    for n in short_names:
-        try:
-            seen[n] += 1
-        except KeyError:
-            seen[n] = 1
-    duplicates = tuple(n for n, c in seen.items() if c > 1)
-    if duplicates:
-        logger.debug('Still duplicate: {}', duplicates)
 
 
 def generate_unique_ward_ids(district: District, province: Province):
@@ -347,7 +334,7 @@ def ward_enum_member(ward: Ward, district: District, province: Province):
     # "Xã Thanh Bình" of "Huyện Chương Mỹ" -> thanh_binh_cm
     # "Xã Thanh Bình" of "Huyện Chợ Mới" -> thanh_binh_cm
     # are duplicate.
-    ward_id = f'{ward.short_codename}_{district.abbrev}_{province.abbrev}'.upper()
+    ward_id = f'{province.abbrev}_{ward.short_codename}_{ward.code}'.upper()
     enum_def_args = [
         ast.Str(s=ward.name),
         ast.Num(n=ward.code),
