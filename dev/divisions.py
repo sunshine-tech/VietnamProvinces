@@ -372,3 +372,37 @@ def gen_python_code(provinces: Sequence[Province]):
                 node_w = ward_enum_member(w, d, p)
                 ward_enum_def.body.append(node_w)
     return astor.to_source(module)
+
+
+def gen_python_district_enums(provinces: Sequence[Province]) -> str:
+    template_file = Path(__file__).parent / '_enums_district_template.py'
+    module = astor.parse_file(template_file)
+    class_defs = tuple(n for n in module.body if isinstance(n, ast.ClassDef))
+    # Will generate definition for ProvinceEnum
+    province_enum_def = next(n for n in class_defs if n.name == 'ProvinceEnum')
+    province_enum_def.body = []
+    # Will generate members for DistrictEnum
+    district_enum_def = next(n for n in class_defs if n.name == 'DistrictEnum')
+    district_enum_def.body = []
+    for p in provinces:
+        node = province_enum_member(p)
+        province_enum_def.body.append(node)
+        for d in p.indexed_districts.values():
+            node_d = district_enum_member(d, p)
+            district_enum_def.body.append(node_d)
+    return astor.to_source(module)
+
+
+def gen_python_ward_enums(provinces: Sequence[Province]):
+    template_file = Path(__file__).parent / '_enums_ward_template.py'
+    module = astor.parse_file(template_file)
+    class_defs = tuple(n for n in module.body if isinstance(n, ast.ClassDef))
+    # Will generate members for WardEnum
+    ward_enum_def = next(n for n in class_defs if n.name == 'WardEnum')
+    ward_enum_def.body = []
+    for p in provinces:
+        for d in p.indexed_districts.values():
+            for w in d.indexed_wards.values():
+                node_w = ward_enum_member(w, d, p)
+                ward_enum_def.body.append(node_w)
+    return astor.to_source(module)

@@ -1,6 +1,6 @@
 from enum import Enum
 
-from .base import Ward, District, Province, VietNamDivisionType
+from ..base import District, Province, VietNamDivisionType
 
 
 class ProvinceEnum(Province, Enum):
@@ -9,7 +9,3 @@ class ProvinceEnum(Province, Enum):
 
 class DistrictEnum(District, Enum):
     LAK_DL = District("Huyện Lắk", 656, VietNamDivisionType.HUYEN, "huyen_lak", 66)
-
-
-class WardEnum(Ward, Enum):
-    UY_NO_DA = Ward("Xã Uy Nỗ", 478, VietNamDivisionType.XA, "xa_uy_no", 17)

@@ -67,7 +67,7 @@ Generate code
 
 .. code-block:: sh
 
-    python3 -m dev -vvi dev/seed-data/Xa_2020-02-25.csv -f python -o vietnam_provinces/enums.py
+    python3 -m dev -vvi dev/seed-data/Xa_2020-02-25.csv -f python -o vietnam_provinces/enums/
 
 
 Data source

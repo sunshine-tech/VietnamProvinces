@@ -1,6 +1,7 @@
 import sys
 import csv
 from enum import Enum
+from pathlib import Path
 
 import click
 import rapidjson
@@ -10,7 +11,7 @@ from logbook import Logger
 from logbook.more import ColorizedStderrHandler
 
 from .phones import load_phone_area_table
-from .divisions import WardCSVRecord, convert_to_nested, gen_python_code
+from .divisions import WardCSVRecord, convert_to_nested, gen_python_district_enums, gen_python_ward_enums
 
 logger = Logger(__name__)
 
@@ -51,7 +52,8 @@ def configure_logging(verbose):
 @click.command()
 @click.option('-i', '--input', 'input_filename', required=True, type=click.Path(exists=True))
 @click.option('-f', '--output-format', default=ExportingFormat.NESTED_JSON, type=EnumChoice(ExportingFormat))
-@click.option('-o', '--output', required=True, type=click.Path(exists=False, writable=True))
+@click.option('-o', '--output', required=True, type=click.Path(exists=False, writable=True),
+              help='Output file if exporting JSON, output folder if exporting Python code')
 @click.option('-v', '--verbose', count=True, default=False, help='Show more log to debug (verbose mode).')
 def main(input_filename: str, output_format: ExportingFormat, output: str, verbose: int):
     configure_logging(verbose)
@@ -67,20 +69,37 @@ def main(input_filename: str, output_format: ExportingFormat, output: str, verbo
     if output_format == ExportingFormat.FLAT_JSON:
         with open(output, 'w') as f:
             f.write(rapidjson.dumps(tuple(a.dict() for a in originals), indent=2, ensure_ascii=False))
+        click.secho(f'Wrote to {output}', file=sys.stderr, fg='green')
     elif output_format == ExportingFormat.NESTED_JSON:
         provinces = convert_to_nested(originals, phone_codes)
         provinces_dicts = tuple(p.dict() for p in provinces.values())
         with open(output, 'w') as f:
             f.write(rapidjson.dumps(provinces_dicts, indent=2, ensure_ascii=False))
+        click.secho(f'Wrote to {output}', file=sys.stderr, fg='green')
     elif output_format == ExportingFormat.PYTHON:
+        folder = Path(output)
+        if folder.exists() and folder.is_file():
+            click.secho(f'{output} is not a folder.', file=sys.stderr, fg='red')
+            sys.exit(1)
+        if not folder.exists():
+            folder.mkdir()
         provinces = convert_to_nested(originals, phone_codes)
-        out = gen_python_code(provinces.values())
+        out_districts = gen_python_district_enums(provinces.values())
+        out_wards = gen_python_ward_enums(provinces.values())
         logger.info('Built AST')
-        # logger.info('Prettify code with Black')
-        # pretty = black.format_str(out, mode=black.FileMode(line_length=120))
-        with open(output, 'w') as f:
-            f.write(out)
-    click.secho(f'Wrote to {output}', file=sys.stderr, fg='green')
+        logger.info('Prettify code with Black')
+        out_districts = black.format_str(out_districts, mode=black.FileMode(line_length=120))
+        out_wards = black.format_str(out_wards, mode=black.FileMode(line_length=120))
+        file_districts = folder / 'districts.py'    # type: Path
+        file_districts.write_text(out_districts)
+        click.secho(f'Wrote to {file_districts}', file=sys.stderr, fg='green')
+        file_wards = folder / 'wards.py'    # type: Path
+        file_wards.write_text(out_wards)
+        click.secho(f'Wrote to {file_wards}', file=sys.stderr, fg='green')
+        # Create __init__ file
+        init_file = folder / '__init__.py'   # type: Path
+        if not init_file.exists():
+            init_file.touch()
 
 
 if __name__ == '__main__':
