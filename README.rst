@@ -22,18 +22,18 @@ Example:
                 "codename": "huyen_dam_doi",
                 "division_type": "huyện",
                 "wards": [
-                {
-                    "name": "Thị trấn Đầm Dơi",
-                    "code": 32152,
-                    "codename": "thi_tran_dam_doi",
-                    "division_type": "thị trấn"
-                },
-                {
-                    "name": "Xã Tạ An Khương",
-                    "code": 32155,
-                    "codename": "xa_ta_an_khuong",
-                    "division_type": "xã"
-                },
+                    {
+                        "name": "Thị trấn Đầm Dơi",
+                        "code": 32152,
+                        "codename": "thi_tran_dam_doi",
+                        "division_type": "thị trấn"
+                    },
+                    {
+                        "name": "Xã Tạ An Khương",
+                        "code": 32155,
+                        "codename": "xa_ta_an_khuong",
+                        "division_type": "xã"
+                    },
                 ]
             }
         ]
