@@ -339,43 +339,23 @@ def gen_ast_ward_tuple(ward: Ward, district: District, province: Province):
 def ward_enum_member(ward: Ward, district: District, province: Province):
     '''
     Generate AST tree for line of code equivalent to:
-    TAN_BINH_DH = District('Xã Tân Bình', 6904, VietNamDivisionType.XA, 'xa_tan_binh', 200)
+    QN_TAN_BINH_6904 = Ward('Xã Tân Bình', 6904, VietNamDivisionType.XA, 'xa_tan_binh', 200)
+    where:
+    - QN means "Tỉnh Quảng Ninh"
+    - 6904 is the numeric code of "Xã Tân Bình"
+    - 200 is the numberic code of "Huyện Đầm Hà"
+
+    I choose that naming scheme for Ward ID,
+    because there are a lot of wards with the same pure-Latin name (after stripping Vietnamese marks),
+    stopping us from building unique ID based on Latin letters only.
+    For example, we have "Xã Sa Pa" and "Xã Sa Pả", in the same district and province, "Xã Đông Thành"
+    and "Xã Đông Thạnh". If only rely on Latin letters, they produce "XA_SA_PA", "XA_SA_PA",
+    "XA_DONG_THANNH", "XA_DONG_THANH", indistinguishable.
     '''
-    # For example, Xã Tân Bình of Huyện Đầm Hà (Tỉnh Quảng Ninh) will have ID "TAN_BINH_DH_QN"
-    # The reason we have to include province abbreviation name because, includung district only is not enough
-    # to create unique ID for ward. For example, I found:
-    # "Xã Thanh Bình" of "Huyện Chương Mỹ" -> thanh_binh_cm
-    # "Xã Thanh Bình" of "Huyện Chợ Mới" -> thanh_binh_cm
-    # are duplicate.
     ward_id = f'{province.abbrev}_{ward.short_codename}_{ward.code}'.upper()
     node = ast.Assign(targets=[ast.Name(id=ward_id)],
                       value=gen_ast_ward_tuple(ward, district, province))
     return node
-
-
-def gen_python_code(provinces: Sequence[Province]):
-    template_file = Path(__file__).parent / '_enums_template.py'
-    module = astor.parse_file(template_file)
-    class_defs = tuple(n for n in module.body if isinstance(n, ast.ClassDef))
-    # Will generate definition for ProvinceEnum
-    province_enum_def = next(n for n in class_defs if n.name == 'ProvinceEnum')
-    province_enum_def.body = []
-    # Will generate members for DistrictEnum
-    district_enum_def = next(n for n in class_defs if n.name == 'DistrictEnum')
-    district_enum_def.body = []
-    # Will generate members for WardEnum
-    ward_enum_def = next(n for n in class_defs if n.name == 'WardEnum')
-    ward_enum_def.body = []
-    for p in provinces:
-        node = province_enum_member(p)
-        province_enum_def.body.append(node)
-        for d in p.indexed_districts.values():
-            node_d = district_enum_member(d, p)
-            district_enum_def.body.append(node_d)
-            for w in d.indexed_wards.values():
-                node_w = ward_enum_member(w, d, p)
-                ward_enum_def.body.append(node_w)
-    return astor.to_source(module)
 
 
 def gen_python_district_enums(provinces: Sequence[Province]) -> str:
@@ -415,14 +395,19 @@ def gen_python_ward_enums(provinces: Sequence[Province]) -> str:
 def gen_python_ward_dict(provinces: Sequence[Province]) -> str:
     template_file = Path(__file__).parent / '_dict_ward_template.py'
     module = astor.parse_file(template_file)
-    dict_def = module.body[1].value
     dict_keys = deque()
     dict_values = deque()
     for p in provinces:
         for d in p.indexed_districts.values():
             for w in d.indexed_wards.values():
+                logger.debug('Generate dict member for {}', w.name)
                 dict_keys.append(ast.Num(n=w.code))
                 dict_values.append(gen_ast_ward_tuple(w, d, p))
-    dict_def.keys = dict_keys
-    dict_def.values = dict_values
+    logger.debug('Build dict...')
+    dict_def = ast.Dict(
+        keys=dict_keys,
+        values=dict_values
+    )
+    module.body[1].value = dict_def
+    logger.debug('Generate source...')
     return astor.to_source(module)

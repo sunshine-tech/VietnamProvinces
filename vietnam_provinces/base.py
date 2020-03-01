@@ -1,5 +1,6 @@
 from enum import Enum
 from typing import NamedTuple
+from dataclasses import dataclass
 
 
 class VietNamDivisionType(str, Enum):
@@ -17,7 +18,12 @@ class VietNamDivisionType(str, Enum):
     PHUONG = 'phường'
 
 
-class Ward(NamedTuple):
+# I make Ward as a type from dataclass, to:
+# - Work-around problem with fast-enum
+# - Using fast-enum to work-around problem of slow loading standard Enum type in Python.
+# In the future, when Python fix the issue with slow Enum
+@dataclass(frozen=True)
+class Ward:
     name: str
     code: int
     division_type: VietNamDivisionType

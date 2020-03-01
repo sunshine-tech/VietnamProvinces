@@ -11,7 +11,7 @@ from logbook import Logger
 from logbook.more import ColorizedStderrHandler
 
 from .phones import load_phone_area_table
-from .divisions import WardCSVRecord, convert_to_nested, gen_python_district_enums, gen_python_ward_enums, gen_python_ward_dict
+from .divisions import WardCSVRecord, convert_to_nested, gen_python_district_enums, gen_python_ward_enums
 
 logger = Logger(__name__)
 
@@ -85,22 +85,17 @@ def main(input_filename: str, output_format: ExportingFormat, output: str, verbo
             folder.mkdir()
         provinces = convert_to_nested(originals, phone_codes)
         out_districts = gen_python_district_enums(provinces.values())
-        # out_wards = gen_python_ward_enums(provinces.values())
-        out_wards_dict = gen_python_ward_dict(provinces.values())
+        out_wards = gen_python_ward_enums(provinces.values())
         logger.info('Built AST')
         logger.info('Prettify code with Black')
         out_districts = black.format_str(out_districts, mode=black.FileMode(line_length=120))
-        # out_wards = black.format_str(out_wards, mode=black.FileMode(line_length=120))
-        # out_wards_dict = black.format_str(out_wards_dict, mode=black.FileMode(line_length=120))
+        out_wards = black.format_str(out_wards, mode=black.FileMode(line_length=120))
         file_districts = folder / 'districts.py'    # type: Path
         file_districts.write_text(out_districts)
         click.secho(f'Wrote to {file_districts}', file=sys.stderr, fg='green')
-        # file_wards = folder / 'wards.py'    # type: Path
-        # file_wards.write_text(out_wards)
-        # click.secho(f'Wrote to {file_wards}', file=sys.stderr, fg='green')
-        file_lookup = folder / 'lookup.py'  # type: Path
-        file_lookup.write_text(out_wards_dict)
-        click.secho(f'Wrote to {file_lookup}', file=sys.stderr, fg='green')
+        file_wards = folder / 'wards.py'    # type: Path
+        file_wards.write_text(out_wards)
+        click.secho(f'Wrote to {file_wards}', file=sys.stderr, fg='green')
         # Create __init__ file
         init_file = folder / '__init__.py'   # type: Path
         if not init_file.exists():
