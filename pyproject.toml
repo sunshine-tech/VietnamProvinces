@@ -1,9 +1,12 @@
 [tool.poetry]
 name = "vietnam-provinces"
-version = "0.1.0"
+version = "0.2"
 description = "Library to provide list of Vietnam administrative divisions (tỉnh thành, quận huyện, phường xã)."
 authors = ["Nguyễn Hồng Quân <ng.hong.quan@gmail.com>"]
+repository = "https://github.com/sunshine-tech/VietnamProvinces.git"
 readme = "README.rst"
+license = "GPL-3.0-or-later"
+keywords = ["Vietnam", "administrative", "division", "locality"]
 classifiers = [
     'Natural Language :: Vietnamese',
     'Intended Audience :: Information Technology',

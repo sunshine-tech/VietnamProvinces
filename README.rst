@@ -2,6 +2,8 @@
 VietnamProvinces
 ================
 
+.. image:: https://madewithlove.now.sh/vn?heart=true&colorA=%23ffcd00&colorB=%23da251d
+.. image:: https://badgen.net/pypi/v/vietnam_provinces
 
 Library to provide list of Vietnam administrative divisions (tỉnh thành, quận huyện, phường xã) with the name and code as defined by `General Statistics Office of Viet Nam <gso_vn_>`_ (Tổng cục Thống kê).
 
@@ -110,6 +112,11 @@ This is because of a difficult situation, where standard ``Enum`` is too slow to
 
 Install
 -------
+
+.. code-block:: sh
+
+    pip3 install vietnam_provinces
+
 
 This library is compatible with Python 3.7+ (due to the use of dataclass).
 
