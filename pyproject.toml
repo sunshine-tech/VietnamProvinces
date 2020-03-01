@@ -4,26 +4,37 @@ version = "0.1.0"
 description = "Library to provide list of Vietnam administrative divisions (tỉnh thành, quận huyện, phường xã)."
 authors = ["Nguyễn Hồng Quân <ng.hong.quan@gmail.com>"]
 readme = "README.rst"
+classifiers = [
+    'Natural Language :: Vietnamese',
+    'Intended Audience :: Information Technology',
+    'Intended Audience :: Financial and Insurance Industry',
+    'Intended Audience :: Telecommunications Industry',
+    'Operating System :: OS Independent',
+    'Topic :: Software Development :: Localization',
+    'Programming Language :: Python :: 3 :: Only',
+    'Topic :: Software Development :: Libraries :: Python Modules',
+    'Development Status :: 4 - Beta',
+    'Intended Audience :: Developers',
+]
 
 [tool.poetry.dependencies]
 python = "^3.7"
 single-version = "^1.1"
-click = "^7.0"
-requests = "^2.23.0"
 logbook = "^1.5.3"
-pydantic = "^1.4"
 unidecode = "^1.1.1"
-python-rapidjson = "^0.9.1"
 fast-enum = "^1.3.0"
+
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
 devtools = "^0.5.1"
 pytest-flake8 = "^1.0.4"
-jinja2 = "^2.11.1"
-typed-ast = "^1.4.1"
 astor = "^0.8.1"
 black = "^19.10b0"
+python-rapidjson = "^0.9.1"
+requests = "^2.23.0"
+click = "^7.0"
+pydantic = "^1.4"
 
 [build-system]
 requires = ["poetry>=0.12"]

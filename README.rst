@@ -43,11 +43,23 @@ This library provides data in these forms:
 
 1. JSON
 
-This data is suitable for applications which don't need to access the data often. They are fine with loading JSON and extract information from it. The JSON files are saved in *vietnam_provinces/data* folder.
+This data is suitable for applications which don't need to access the data often. They are fine with loading JSON and extract information from it. The JSON files are saved in *data* folder. You can get the file path via ``vietnam_provinces.NESTED_DIVISIONS_JSON_PATH`` variable.
+
+Note that this variable only returns the path of the file, not the content. It is up to application developer to use any method to parse the JSON. For example:
+
+.. code-block:: python
+
+    from vietnam_provinces import NESTED_DIVISIONS_JSON_PATH
+    import rapidjson
+
+    rapidjson.load(NESTED_DIVISIONS_JSON_PATH.open())
+
+Due to the big amount of data (10767 wards all over Viet Nam), this loading will be slow.
+
 
 2. Python data type
 
-This data is useful for some applications which need to access the data very often. They are built as ``Enum``, where you can import in Python code:
+This data is useful for some applications which need to access the data more often. They are built as ``Enum``, where you can import in Python code:
 
 .. code-block:: python
 
@@ -65,18 +77,33 @@ This data is useful for some applications which need to access the data very oft
     <WardEnum.BG_DONG_HUNG_7450: Ward(name='Xã Đông Hưng', code=7450, division_type=<VietNamDivisionType.XA: 'xã'>, codename='xa_dong_hung', district_code=218)>
 
 
+Loading wards this way is far more faster than the JSON option.
+
 They are made as ``Enum``, so that library user can take advantage of auto-complete feature in IDE, code editor in development. The ``WardEnum`` has many records (10767 at the time of wring, February 2020) and may not be needed in some applications, so I move it to separate module, to avoid loading automatically to application.
+
+
+Member of these enums, the ``Province``, ``District``, ``Ward`` data types all are immutable.
+
+While ``Province`` and ``District`` types are `namedtuple`_, ``Ward`` are a frozen `dataclass`_.
+This is because of a difficult situation, where standard ``Enum`` is too slow to load when it has very many members, and the faster alternative, `fast-enum`_, has compatible issue with namedtuple.
+
+Install
+-------
+
+This library is compatible with Python 3.7+ (due to the use of dataclass).
 
 
 Development
 -----------
 
-Currently, this project is making tool to crawl `GSO <gso_vn_>`_ data.
+In development, this project has a tool to convert data from government sources.
+
+The tool doesn't directly crawl data from government websites because the data rarely change (it doesn't worth developing the feature which you only need to use each ten years), and because those websites provide data in unfriendly Microsoft Office formats.
 
 Update data
 ~~~~~~~~~~~
 
-This data is not static (though rarely changes). In the future, when the authority reorganize administrative divisions, we need to collect this data again from GSOVN website. Do:
+In the future, when the authority reorganize administrative divisions, we need to collect this data again from GSOVN website. Do:
 
 - Go to: https://www.gso.gov.vn/dmhc2015/ (this URL may change when `GSOVN <gso_vn_>`_ replaces their software).
 - Find the button "Xuất Excel".
@@ -117,3 +144,6 @@ Data source
 
 .. _gso_vn: https://www.gso.gov.vn/
 .. _tb_ic: https://sotttt.thaibinh.gov.vn/tin-tuc/buu-chinh-vien-thong/tra-cuu-ma-vung-dien-thoai-co-dinh-mat-dat-ma-mang-dien-thoa2.html
+.. _namedtuple: https://docs.python.org/3/library/collections.html#collections.namedtuple
+.. _dataclass: https://docs.python.org/3/library/dataclasses.html
+.. _fast-enum: https://pypi.org/project/fast-enum/

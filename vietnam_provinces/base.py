@@ -21,7 +21,8 @@ class VietNamDivisionType(str, Enum):
 # I make Ward as a type from dataclass, to:
 # - Work-around problem with fast-enum
 # - Using fast-enum to work-around problem of slow loading standard Enum type in Python.
-# In the future, when Python fix the issue with slow Enum
+# In the future, when Python fix the issue with slow Enum, I will base Ward on NamedTuple,
+# as other types in this module.
 @dataclass(frozen=True)
 class Ward:
     name: str

@@ -1,4 +1,4 @@
-from vietnam_provinces.base import Province
+from vietnam_provinces.base import Province, Ward
 
 
 def test_province_enum():
@@ -12,4 +12,5 @@ def test_province_enum():
 
 def test_importable_ward_enum():
     from vietnam_provinces.enums.wards import WardEnum
+    assert isinstance(WardEnum.AG_LAC_QUOI_30550.value, Ward)
     assert WardEnum.GL_CHROH_PONAN_24060.value.name == 'Xã Chrôh Pơnan'
