@@ -352,9 +352,27 @@ def ward_enum_member(ward: Ward, district: District, province: Province):
     and "Xã Đông Thạnh". If only rely on Latin letters, they produce "XA_SA_PA", "XA_SA_PA",
     "XA_DONG_THANNH", "XA_DONG_THANH", indistinguishable.
     '''
-    ward_id = f'{province.abbrev}_{ward.short_codename}_{ward.code}'.upper()
+    ward_id = f'W_{ward.code}'.upper()
     node = ast.Assign(targets=[ast.Name(id=ward_id)],
                       value=gen_ast_ward_tuple(ward, district, province))
+    return node
+
+
+def ward_descriptive_enum_member(ward: Ward, district: District, province: Province):
+    '''
+    Generate AST tree for line of code equivalent to:
+    QN_TAN_BINH_6904 = WardEnum.W_6904.value
+    where:
+    - QN means "Tỉnh Quảng Ninh"
+    - 6904 is the numeric code of "Xã Tân Bình"
+    '''
+    ward_id = f'{province.abbrev}_{ward.short_codename}_{ward.code}'.upper()
+    right_hand = ast.Attribute(
+        value=ast.Attribute(value=ast.Name(id='WardEnum'), attr=f'W_{ward.code}'),
+        attr='value'
+    )
+    node = ast.Assign(targets=[ast.Name(id=ward_id)],
+                      value=right_hand)
     return node
 
 
@@ -381,12 +399,19 @@ def gen_python_ward_enums(provinces: Sequence[Province]) -> str:
     template_file = Path(__file__).parent / '_enum_ward_template.py'
     module = astor.parse_file(template_file)
     class_defs = tuple(n for n in module.body if isinstance(n, ast.ClassDef))
-    # Will generate members for WardEnum
+    # Will generate members for WardEnum and WardDEnum
     ward_enum_def = next(n for n in class_defs if n.name == 'WardEnum')
-    ward_enum_def.body = []
+    ward_desc_enum_def = next(n for n in class_defs if n.name == 'WardDEnum')
+    # Remove example members, except for the docstring.
+    old_body = ward_enum_def.body
+    ward_enum_def.body = deque(m for m in old_body if isinstance(m, ast.Expr))
+    old_body = ward_desc_enum_def.body
+    ward_desc_enum_def.body = deque(m for m in old_body if isinstance(m, ast.Expr))
     for p in provinces:
         for d in p.indexed_districts.values():
             for w in d.indexed_wards.values():
                 node_w = ward_enum_member(w, d, p)
                 ward_enum_def.body.append(node_w)
+                node_dw = ward_descriptive_enum_member(w, d, p)
+                ward_desc_enum_def.body.append(node_dw)
     return astor.to_source(module)

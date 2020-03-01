@@ -71,18 +71,25 @@ This data is useful for some applications which need to access the data more oft
     >>> DistrictEnum.AYUN_PA_GL
     <DistrictEnum.AYUN_PA_GL: District(name='Thị xã Ayun Pa', code=624, division_type=<VietNamDivisionType.THI_XA: 'thị xã'>, codename='thi_xa_ayun_pa', province_code=64)>
 
-    >>> from vietnam_provinces.enums.wards import WardEnum
+    >>> from vietnam_provinces.enums.wards import WardEnum, WardDEnum
 
-    >>> WardEnum.BG_DONG_HUNG_7450
-    <WardEnum.BG_DONG_HUNG_7450: Ward(name='Xã Đông Hưng', code=7450, division_type=<VietNamDivisionType.XA: 'xã'>, codename='xa_dong_hung', district_code=218)>
+    >>> WardEnum.W_7450
+    <WardEnum.W_7450: Ward(name='Xã Đông Hưng', code=7450, division_type=<VietNamDivisionType.XA: 'xã'>, codename='xa_dong_hung', district_code=218)>
+
+    >>> WardDEnum.BG_DONG_HUNG_7450
+    <WardDEnum.BG_DONG_HUNG_7450: Ward(name='Xã Đông Hưng', code=7450, division_type=<VietNamDivisionType.XA: 'xã'>, codename='xa_dong_hung', district_code=218)>
 
 
 Loading wards this way is far more faster than the JSON option.
 
-They are made as ``Enum``, so that library user can take advantage of auto-complete feature in IDE, code editor in development. The ``WardEnum`` has many records (10767 at the time of wring, February 2020) and may not be needed in some applications, so I move it to separate module, to avoid loading automatically to application.
+They are made as ``Enum``, so that library user can take advantage of auto-complete feature of IDE/code editors in development. It prevents mistake due to typing wrong variable.
+
+The Ward Enum has two variants, ``WardEnum`` and ``WardDEnum``. The first variant has member name in form of numeric ward code (``W_28912``). It helps look up a ward by its code (which is a most-seen use case). The second variant (with ``D`` meaning "descriptive") has more readable member name, to help the application code easier to reason about.
+
+The ``WardEnum`` has many records (10767 at the time of wring, February 2020) and may not be needed in some applications, so I move it to separate module, to avoid loading automatically to application.
 
 
-Member of these enums, the ``Province``, ``District``, ``Ward`` data types all are immutable.
+Member of these enums, the ``Province``, ``District`` and ``Ward`` data types all are immutable.
 
 While ``Province`` and ``District`` types are `namedtuple`_, ``Ward`` are a frozen `dataclass`_.
 This is because of a difficult situation, where standard ``Enum`` is too slow to load when it has very many members, and the faster alternative, `fast-enum`_, has compatible issue with namedtuple.
