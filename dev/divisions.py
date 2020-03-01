@@ -390,24 +390,3 @@ def gen_python_ward_enums(provinces: Sequence[Province]) -> str:
                 node_w = ward_enum_member(w, d, p)
                 ward_enum_def.body.append(node_w)
     return astor.to_source(module)
-
-
-def gen_python_ward_dict(provinces: Sequence[Province]) -> str:
-    template_file = Path(__file__).parent / '_dict_ward_template.py'
-    module = astor.parse_file(template_file)
-    dict_keys = deque()
-    dict_values = deque()
-    for p in provinces:
-        for d in p.indexed_districts.values():
-            for w in d.indexed_wards.values():
-                logger.debug('Generate dict member for {}', w.name)
-                dict_keys.append(ast.Num(n=w.code))
-                dict_values.append(gen_ast_ward_tuple(w, d, p))
-    logger.debug('Build dict...')
-    dict_def = ast.Dict(
-        keys=dict_keys,
-        values=dict_values
-    )
-    module.body[1].value = dict_def
-    logger.debug('Generate source...')
-    return astor.to_source(module)
