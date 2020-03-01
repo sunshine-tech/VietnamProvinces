@@ -52,7 +52,7 @@ def configure_logging(verbose):
 @click.command()
 @click.option('-i', '--input', 'input_filename', required=True, type=click.Path(exists=True))
 @click.option('-f', '--output-format', default=ExportingFormat.NESTED_JSON, type=EnumChoice(ExportingFormat))
-@click.option('-o', '--output', required=True, type=click.Path(exists=False, writable=True),
+@click.option('-o', '--output', type=click.Path(exists=False, writable=True),
               help='Output file if exporting JSON, output folder if exporting Python code')
 @click.option('-v', '--verbose', count=True, default=False, help='Show more log to debug (verbose mode).')
 def main(input_filename: str, output_format: ExportingFormat, output: str, verbose: int):
@@ -77,7 +77,7 @@ def main(input_filename: str, output_format: ExportingFormat, output: str, verbo
             f.write(rapidjson.dumps(provinces_dicts, indent=2, ensure_ascii=False))
         click.secho(f'Wrote to {output}', file=sys.stderr, fg='green')
     elif output_format == ExportingFormat.PYTHON:
-        folder = Path(output)
+        folder = Path(__file__).parent.parent / 'vietnam_provinces' / 'enums'  # type: Path
         if folder.exists() and folder.is_file():
             click.secho(f'{output} is not a folder.', file=sys.stderr, fg='red')
             sys.exit(1)
