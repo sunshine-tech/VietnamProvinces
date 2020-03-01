@@ -98,7 +98,7 @@ The Ward Enum has two variants:
 
 Similarly, other levels (District, Province) also have two variants of Enum.
 
-Not like ``ProvinceDEnum``, ``DistrictDEnum``, the ``WardDEnum`` has ward code in member name. It is because there are too many Vietnamese wards with the same name. There is no way to build unique ID for wards, with pure Latin letters (Vietnamese punctuations stripped), even if we add district and province info to the ID. Let's take "Xã Đông Thành" and "Xã Đông Thạnh" as example. Both belong to "Huyện Bình Minh" of "Vĩnh Long", both produces ID name "DONG_THANH". Although Python allows Unicode as ID name, like "ĐÔNG_THẠNH", but it is not practical yet because the code formatter tool (`Black`_) will still normalizes it to Latin form.
+Unlike ``ProvinceDEnum``, ``DistrictDEnum``, the ``WardDEnum`` has ward code in member name. It is because there are too many Vietnamese wards with the same name. There is no way to build unique ID for wards, with pure Latin letters (Vietnamese punctuations stripped), even if we add district and province info to the ID. Let's take "Xã Đông Thành" and "Xã Đông Thạnh" as example. Both belong to "Huyện Bình Minh" of "Vĩnh Long", both produces ID name "DONG_THANH". Although Python allows Unicode as ID name, like "ĐÔNG_THẠNH", but it is not practical yet because the code formatter tool (`Black`_) will still normalizes it to Latin form.
 
 Because the ``WardEnum`` has many records (10767 at the time of wring, February 2020) and may not be needed in some applications, I move it to separate module, to avoid loading automatically to application.
 
@@ -163,9 +163,16 @@ Data source
 - Phone area code: `Thái Bình province's department of Information and Communication <tb_ic_>`_
 
 
+Credit
+------
+
+Given to you by `Nguyễn Hồng Quân <quan_>`_, after nights and weekends.
+
+
 .. _gso_vn: https://www.gso.gov.vn/
 .. _tb_ic: https://sotttt.thaibinh.gov.vn/tin-tuc/buu-chinh-vien-thong/tra-cuu-ma-vung-dien-thoai-co-dinh-mat-dat-ma-mang-dien-thoa2.html
 .. _namedtuple: https://docs.python.org/3/library/collections.html#collections.namedtuple
 .. _dataclass: https://docs.python.org/3/library/dataclasses.html
 .. _fast-enum: https://pypi.org/project/fast-enum/
 .. _Black: https://github.com/psf/black
+.. _quan: https://quan.hoabinh.vn
