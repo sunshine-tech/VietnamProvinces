@@ -63,13 +63,19 @@ This data is useful for some applications which need to access the data more oft
 
 .. code-block:: python
 
-    >>> from vietnam_provinces.enums.districts import ProvinceEnum, DistrictEnum
+    >>> from vietnam_provinces.enums.districts import ProvinceEnum, ProvinceDEnum, DistrictEnum, DistrictDEnum
 
-    >>> ProvinceEnum.BA_RIA_VUNG_TAU
-    <ProvinceEnum.BA_RIA_VUNG_TAU: Province(name='Tỉnh Bà Rịa - Vũng Tàu', code=77, division_type=<VietNamDivisionType.TINH: 'tỉnh'>, codename='tinh_ba_ria_vung_tau', phone_code=254)>
+    >>> ProvinceEnum.P_77
+    <ProvinceEnum.P_77: Province(name='Tỉnh Bà Rịa - Vũng Tàu', code=77, division_type=<VietNamDivisionType.TINH: 'tỉnh'>, codename='tinh_ba_ria_vung_tau', phone_code=254)>
 
-    >>> DistrictEnum.AYUN_PA_GL
-    <DistrictEnum.AYUN_PA_GL: District(name='Thị xã Ayun Pa', code=624, division_type=<VietNamDivisionType.THI_XA: 'thị xã'>, codename='thi_xa_ayun_pa', province_code=64)>
+    >>> ProvinceDEnum.BA_RIA_VUNG_TAU
+    <ProvinceDEnum.BA_RIA_VUNG_TAU: Province(name='Tỉnh Bà Rịa - Vũng Tàu', code=77, division_type=<VietNamDivisionType.TINH: 'tỉnh'>, codename='tinh_ba_ria_vung_tau', phone_code=254)>
+
+    >>> DistrictEnum.D_624
+    >>> <DistrictEnum.D_624: District(name='Thị xã Ayun Pa', code=624, division_type=<VietNamDivisionType.THI_XA: 'thị xã'>, codename='thi_xa_ayun_pa', province_code=64)>
+
+    >>> DistrictDEnum.AYUN_PA_GL
+    <DistrictDEnum.AYUN_PA_GL: District(name='Thị xã Ayun Pa', code=624, division_type=<VietNamDivisionType.THI_XA: 'thị xã'>, codename='thi_xa_ayun_pa', province_code=64)>
 
     >>> from vietnam_provinces.enums.wards import WardEnum, WardDEnum
 
@@ -89,6 +95,10 @@ The Ward Enum has two variants:
 - ``WardEnum``: Has member name in form of numeric ward code (``W_28912``). It helps look up a ward by its code (which is a most-seen use case).
 
 - ``WardDEnum``: Has more readable member name (``D`` means "descriptive"), to help the application code easier to reason about. For example, looking at ``WardDEnum.BT_PHAN_RI_CUA_22972``, the programmer can guess that this ward is "Phan Rí Cửa", of "Bình Thuận" province.
+
+Similarly, other levels (District, Province) also have two variants of Enum.
+
+Not like ``ProvinceDEnum``, ``DistrictDEnum``, the ``WardDEnum`` has ward code in member name. It is because there are too many Vietnamese wards with the same name. There is no way to build unique ID for wards, with pure Latin letters (Vietnamese punctuations stripped), even if we add district and province info to the ID. Let's take "Xã Đông Thành" and "Xã Đông Thạnh" as example. Both belong to "Huyện Bình Minh" of "Vĩnh Long", both produces ID name "DONG_THANH". Although Python allows Unicode as ID name, like "ĐÔNG_THẠNH", but it is not practical yet because the code formatter tool (`Black`_) will still normalizes it to Latin form.
 
 Because the ``WardEnum`` has many records (10767 at the time of wring, February 2020) and may not be needed in some applications, I move it to separate module, to avoid loading automatically to application.
 
@@ -158,3 +168,4 @@ Data source
 .. _namedtuple: https://docs.python.org/3/library/collections.html#collections.namedtuple
 .. _dataclass: https://docs.python.org/3/library/dataclasses.html
 .. _fast-enum: https://pypi.org/project/fast-enum/
+.. _Black: https://github.com/psf/black

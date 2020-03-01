@@ -284,9 +284,9 @@ def convert_to_nested(records: Sequence[WardCSVRecord],
 def province_enum_member(province: Province):
     '''
     Generate AST tree for line of code equivalent to:
-    HA_NOI = Province('Thành phố Hà Nội', 1, VietNamDivisionType.THANH_PHO_TRUNG_UONG, 'thanh_pho_ha_noi', 24)
+    P_1 = Province('Thành phố Hà Nội', 1, VietNamDivisionType.THANH_PHO_TRUNG_UONG, 'thanh_pho_ha_noi', 24)
     '''
-    province_id = province.short_codename.upper()
+    province_id = f'P_{province.code}'
     enum_def_args = [
         ast.Str(s=province.name),
         ast.Num(n=province.code),
@@ -301,14 +301,27 @@ def province_enum_member(province: Province):
     return node
 
 
+def province_descriptive_enum_member(province: Province):
+    '''
+    Generate AST tree for line of code equivalent to:
+    HA_NOI = ProvinceEnum.P_1.value
+    '''
+    province_id = province.short_codename.upper()
+    right_hand_side = ast.Attribute(
+        value=ast.Attribute(value=ast.Name(id='ProvinceEnum'), attr=f'P_{province.code}'),
+        attr='value'
+    )
+    node = ast.Assign(targets=[ast.Name(id=province_id)],
+                      value=right_hand_side)
+    return node
+
+
 def district_enum_member(district: District, province: Province):
     '''
     Generate AST tree for line of code equivalent to:
-    VINH_LOI_BL = District('Huyện Vĩnh Lợi', 958, VietNamDivisionType.HUYEN, 'huyen_vinh_loi', 95)
+    D_958 = District('Huyện Vĩnh Lợi', 958, VietNamDivisionType.HUYEN, 'huyen_vinh_loi', 95)
     '''
-    province_abbr = province.abbrev
     # For example, Huyện Châu Thành of Tỉnh Tiền Giang will have ID "CHAU_THANH_TG"
-    district_id = f'{district.short_codename}_{province_abbr}'.upper()
     enum_def_args = [
         ast.Str(s=district.name),
         ast.Num(n=district.code),
@@ -316,10 +329,27 @@ def district_enum_member(district: District, province: Province):
         ast.Str(s=district.codename),
         ast.Num(province.code)
     ]
-    node = ast.Assign(targets=[ast.Name(id=district_id)],
+    node = ast.Assign(targets=[ast.Name(id=f'D_{district.code}')],
                       value=ast.Call(func=ast.Name(id='District'),
                                      args=enum_def_args,
                                      keywords=[]))
+    return node
+
+
+def district_descriptive_enum_member(district: District, province: Province):
+    '''
+    Generate AST tree for line of code equivalent to:
+    VINH_LOI_BL = DistrictDEnum.D_958.value
+    '''
+    province_abbr = province.abbrev
+    # For example, Huyện Châu Thành of Tỉnh Tiền Giang will have ID "CHAU_THANH_TG"
+    district_id = f'{district.short_codename}_{province_abbr}'.upper()
+    right_hand_side = ast.Attribute(
+        value=ast.Attribute(value=ast.Name(id='DistrictEnum'), attr=f'D_{district.code}'),
+        attr='value'
+    )
+    node = ast.Assign(targets=[ast.Name(id=district_id)],
+                      value=right_hand_side)
     return node
 
 
@@ -367,12 +397,12 @@ def ward_descriptive_enum_member(ward: Ward, district: District, province: Provi
     - 6904 is the numeric code of "Xã Tân Bình"
     '''
     ward_id = f'{province.abbrev}_{ward.short_codename}_{ward.code}'.upper()
-    right_hand = ast.Attribute(
+    right_hand_side = ast.Attribute(
         value=ast.Attribute(value=ast.Name(id='WardEnum'), attr=f'W_{ward.code}'),
         attr='value'
     )
     node = ast.Assign(targets=[ast.Name(id=ward_id)],
-                      value=right_hand)
+                      value=right_hand_side)
     return node
 
 
@@ -380,18 +410,32 @@ def gen_python_district_enums(provinces: Sequence[Province]) -> str:
     template_file = Path(__file__).parent / '_enum_district_template.py'
     module = astor.parse_file(template_file)
     class_defs = tuple(n for n in module.body if isinstance(n, ast.ClassDef))
-    # Will generate definition for ProvinceEnum
+    # Will generate definition for ProvinceEnum, ProvinceDEnum
     province_enum_def = next(n for n in class_defs if n.name == 'ProvinceEnum')
-    province_enum_def.body = []
-    # Will generate members for DistrictEnum
+    province_enum_desc_def = next(n for n in class_defs if n.name == 'ProvinceDEnum')
+    # Remove example members, except for the docstring.
+    old_body = province_enum_def.body
+    province_enum_def.body = deque(m for m in old_body if isinstance(m, ast.Expr))
+    old_body = province_enum_desc_def.body
+    province_enum_desc_def.body = deque(m for m in old_body if isinstance(m, ast.Expr))
+    # Will generate members for DistrictEnum, DistrictDEnum
     district_enum_def = next(n for n in class_defs if n.name == 'DistrictEnum')
-    district_enum_def.body = []
+    district_enum_desc_def = next(n for n in class_defs if n.name == 'DistrictDEnum')
+    # Remove example members, except for the docstring.
+    old_body = district_enum_def.body
+    district_enum_def.body = deque(m for m in old_body if isinstance(m, ast.Expr))
+    old_body = district_enum_desc_def.body
+    district_enum_desc_def.body = deque(m for m in old_body if isinstance(m, ast.Expr))
     for p in provinces:
         node = province_enum_member(p)
         province_enum_def.body.append(node)
+        desc_node = province_descriptive_enum_member(p)
+        province_enum_desc_def.body.append(desc_node)
         for d in p.indexed_districts.values():
             node_d = district_enum_member(d, p)
             district_enum_def.body.append(node_d)
+            desc_node_d = district_descriptive_enum_member(d, p)
+            district_enum_desc_def.body.append(desc_node_d)
     return astor.to_source(module)
 
 

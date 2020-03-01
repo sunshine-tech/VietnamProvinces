@@ -10009,9 +10009,9 @@
           {
             "name": "Thị trấn N.T Phong Hải",
             "code": 2902,
-            "codename": "thi_tran_nt_phong_hai",
+            "codename": "thi_tran_n_t_phong_hai",
             "division_type": "thị trấn",
-            "short_codename": "nt_phong_hai"
+            "short_codename": "n_t_phong_hai"
           },
           {
             "name": "Thị trấn Phố Lu",
@@ -55718,9 +55718,9 @@
       {
         "name": "Thành phố Phan Rang-Tháp Chàm",
         "code": 582,
-        "codename": "thanh_pho_phan_rangthap_cham",
+        "codename": "thanh_pho_phan_rang_thap_cham",
         "division_type": "thành phố",
-        "short_codename": "phan_rangthap_cham",
+        "short_codename": "phan_rang_thap_cham",
         "wards": [
           {
             "name": "Phường Đô Vinh",
