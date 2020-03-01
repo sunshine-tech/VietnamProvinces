@@ -84,9 +84,13 @@ Loading wards this way is far more faster than the JSON option.
 
 They are made as ``Enum``, so that library user can take advantage of auto-complete feature of IDE/code editors in development. It prevents mistake due to typing wrong variable.
 
-The Ward Enum has two variants, ``WardEnum`` and ``WardDEnum``. The first variant has member name in form of numeric ward code (``W_28912``). It helps look up a ward by its code (which is a most-seen use case). The second variant (with ``D`` meaning "descriptive") has more readable member name, to help the application code easier to reason about.
+The Ward Enum has two variants:
 
-The ``WardEnum`` has many records (10767 at the time of wring, February 2020) and may not be needed in some applications, so I move it to separate module, to avoid loading automatically to application.
+- ``WardEnum``: Has member name in form of numeric ward code (``W_28912``). It helps look up a ward by its code (which is a most-seen use case).
+
+- ``WardDEnum``: Has more readable member name (``D`` means "descriptive"), to help the application code easier to reason about. For example, looking at ``WardDEnum.BT_PHAN_RI_CUA_22972``, the programmer can guess that this ward is "Phan Rí Cửa", of "Bình Thuận" province.
+
+Because the ``WardEnum`` has many records (10767 at the time of wring, February 2020) and may not be needed in some applications, I move it to separate module, to avoid loading automatically to application.
 
 
 Member of these enums, the ``Province``, ``District`` and ``Ward`` data types all are immutable.
