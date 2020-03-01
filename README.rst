@@ -39,6 +39,34 @@ Example:
         ]
     }
 
+This library provides data in these forms:
+
+1. JSON
+
+This data is suitable for applications which don't need to access the data often. They are fine with loading JSON and extract information from it. The JSON files are saved in *vietnam_provinces/data* folder.
+
+2. Python data type
+
+This data is useful for some applications which need to access the data very often. They are built as ``Enum``, where you can import in Python code:
+
+.. code-block:: python
+
+    >>> from vietnam_provinces.enums.districts import ProvinceEnum, DistrictEnum
+
+    >>> ProvinceEnum.BA_RIA_VUNG_TAU
+    <ProvinceEnum.BA_RIA_VUNG_TAU: Province(name='Tỉnh Bà Rịa - Vũng Tàu', code=77, division_type=<VietNamDivisionType.TINH: 'tỉnh'>, codename='tinh_ba_ria_vung_tau', phone_code=254)>
+
+    >>> DistrictEnum.AYUN_PA_GL
+    <DistrictEnum.AYUN_PA_GL: District(name='Thị xã Ayun Pa', code=624, division_type=<VietNamDivisionType.THI_XA: 'thị xã'>, codename='thi_xa_ayun_pa', province_code=64)>
+
+    >>> from vietnam_provinces.enums.wards import WardEnum
+
+    >>> WardEnum.BG_DONG_HUNG_7450
+    <WardEnum.BG_DONG_HUNG_7450: Ward(name='Xã Đông Hưng', code=7450, division_type=<VietNamDivisionType.XA: 'xã'>, codename='xa_dong_hung', district_code=218)>
+
+
+They are made as ``Enum``, so that library user can take advantage of auto-complete feature in IDE, code editor in development. The ``WardEnum`` has many records (10767 at the time of wring, February 2020) and may not be needed in some applications, so I move it to separate module, to avoid loading automatically to application.
+
 
 Development
 -----------
@@ -48,7 +76,7 @@ Currently, this project is making tool to crawl `GSO <gso_vn_>`_ data.
 Update data
 ~~~~~~~~~~~
 
-This data is not static (though rarely changes). In the future, when the authority reorganize administrative divisions, we need to crawl this data again from GSOVN website. Do:
+This data is not static (though rarely changes). In the future, when the authority reorganize administrative divisions, we need to collect this data again from GSOVN website. Do:
 
 - Go to: https://www.gso.gov.vn/dmhc2015/ (this URL may change when `GSOVN <gso_vn_>`_ replaces their software).
 - Find the button "Xuất Excel".
@@ -59,15 +87,25 @@ This data is not static (though rarely changes). In the future, when the authori
 
 .. code-block:: sh
 
-    python3 -m dev -vvi dev/seed-data/Xa_2020-02-25.csv -o data/nested-divisions.json
+    python3 -m dev -i dev/seed-data/Xa_2020-02-25.csv -o data/nested-divisions.json
 
-
-Generate code
-~~~~~~~~~~~~~
+You can run
 
 .. code-block:: sh
 
-    python3 -m dev -vvi dev/seed-data/Xa_2020-02-25.csv -f python -o vietnam_provinces/enums/
+    python3 -m dev --help
+
+to see more options of that tool.
+
+Note that this tool is only available in the source folder (cloned from Git). It is not included in the distributable Python package.
+
+
+Generate Python code
+~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: sh
+
+    python3 -m dev -i dev/seed-data/Xa_2020-02-25.csv -f python
 
 
 Data source
