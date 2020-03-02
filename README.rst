@@ -3,7 +3,8 @@ VietnamProvinces
 ================
 
 .. image:: https://madewithlove.now.sh/vn?heart=true&colorA=%23ffcd00&colorB=%23da251d
-.. image:: https://badgen.net/pypi/v/vietnam_provinces
+.. image:: https://badgen.net/pypi/v/vietnam-provinces
+   :target: https://pypi.org/project/vietnam-provinces/
 
 Library to provide list of Vietnam administrative divisions (tỉnh thành, quận huyện, phường xã) with the name and code as defined by `General Statistics Office of Viet Nam <gso_vn_>`_ (Tổng cục Thống kê).
 
@@ -51,10 +52,15 @@ Note that this variable only returns the path of the file, not the content. It i
 
 .. code-block:: python
 
-    from vietnam_provinces import NESTED_DIVISIONS_JSON_PATH
+    import orjson
     import rapidjson
+    from vietnam_provinces import NESTED_DIVISIONS_JSON_PATH
 
-    rapidjson.load(NESTED_DIVISIONS_JSON_PATH.open())
+    NESTED_DIVISIONS_JSON_PATH.open() as f:
+        rapidjson.load(f)
+
+    # Or
+    orjson.loads(NESTED_DIVISIONS_JSON_PATH.read_bytes())
 
 Due to the big amount of data (10767 wards all over Viet Nam), this loading will be slow.
 
@@ -65,7 +71,7 @@ This data is useful for some applications which need to access the data more oft
 
 .. code-block:: python
 
-    >>> from vietnam_provinces.enums.districts import ProvinceEnum, ProvinceDEnum, DistrictEnum, DistrictDEnum
+    >>> from vietnam_provinces.enums import ProvinceEnum, ProvinceDEnum, DistrictEnum, DistrictDEnum
 
     >>> ProvinceEnum.P_77
     <ProvinceEnum.P_77: Province(name='Tỉnh Bà Rịa - Vũng Tàu', code=77, division_type=<VietNamDivisionType.TINH: 'tỉnh'>, codename='tinh_ba_ria_vung_tau', phone_code=254)>
@@ -100,12 +106,23 @@ The Ward Enum has two variants:
 
 Similarly, other levels (District, Province) also have two variants of Enum.
 
+Example of looking up ``Ward``, ``District``, ``Province`` with theirs numeric code:
+
+.. code-block:: python
+
+    # Assume that you are loading user info from your database
+    user_info = load_user_info()
+
+    province_code = user_info['province_code']
+    province = ProvinceEnum[f'P_{province_code}'].value
+
 Unlike ``ProvinceDEnum``, ``DistrictDEnum``, the ``WardDEnum`` has ward code in member name. It is because there are too many Vietnamese wards with the same name. There is no way to build unique ID for wards, with pure Latin letters (Vietnamese punctuations stripped), even if we add district and province info to the ID. Let's take "Xã Đông Thành" and "Xã Đông Thạnh" as example. Both belong to "Huyện Bình Minh" of "Vĩnh Long", both produces ID name "DONG_THANH". Although Python allows Unicode as ID name, like "ĐÔNG_THẠNH", but it is not practical yet because the code formatter tool (`Black`_) will still normalizes it to Latin form.
 
 Because the ``WardEnum`` has many records (10767 at the time of wring, February 2020) and may not be needed in some applications, I move it to separate module, to avoid loading automatically to application.
 
 
-Member of these enums, the ``Province``, ``District`` and ``Ward`` data types all are immutable.
+Member of these enums, the ``Province``, ``District`` and ``Ward`` data types, all are immutable.
+They can be imported from top-level of ``vietnam_provinces``.
 
 While ``Province`` and ``District`` types are `namedtuple`_, ``Ward`` are a frozen `dataclass`_.
 This is because of a difficult situation, where standard ``Enum`` is too slow to load when it has very many members, and the faster alternative, `fast-enum`_, has compatible issue with namedtuple.
@@ -115,7 +132,7 @@ Install
 
 .. code-block:: sh
 
-    pip3 install vietnam_provinces
+    pip3 install vietnam-provinces
 
 
 This library is compatible with Python 3.7+ (due to the use of dataclass).
