@@ -3,7 +3,7 @@ from vietnam_provinces.base import Province, District, Ward
 
 def test_province_enum():
     from vietnam_provinces.enums.districts import ProvinceEnum, ProvinceDEnum
-    assert isinstance(ProvinceEnum.P_11, Province)
+    assert isinstance(ProvinceEnum.P_11.value, Province)
     assert isinstance(ProvinceDEnum.KON_TUM.value, Province)
     assert ProvinceEnum.P_83.value.name == 'Tỉnh Bến Tre'
     assert ProvinceDEnum.HO_CHI_MINH.value.name == 'Thành phố Hồ Chí Minh'
@@ -14,8 +14,8 @@ def test_province_enum():
 
 def test_district_enum():
     from vietnam_provinces.enums.districts import DistrictEnum, DistrictDEnum
-    assert isinstance(DistrictEnum.D_672, District)
-    assert isinstance(DistrictDEnum.PHAN_RANG_THAP_CHAM_NT, District)
+    assert isinstance(DistrictEnum.D_672.value, District)
+    assert isinstance(DistrictDEnum.PHAN_RANG_THAP_CHAM_NT.value, District)
     assert DistrictEnum.D_234.value.name == 'Huyện Yên Lập'
     assert DistrictEnum.D_234.value.province_code == 25
     assert DistrictDEnum.LAK_DL.value.name == 'Huyện Lắk'
