@@ -287,17 +287,19 @@ def province_enum_member(province: Province):
     P_1 = Province('Thành phố Hà Nội', 1, VietNamDivisionType.THANH_PHO_TRUNG_UONG, 'thanh_pho_ha_noi', 24)
     '''
     province_id = f'P_{province.code}'
-    enum_def_args = [
-        ast.Str(s=province.name),
-        ast.Num(n=province.code),
-        ast.Attribute(value=ast.Name(id='VietNamDivisionType'), attr=province.division_type.name),
-        ast.Str(s=province.codename),
-        ast.Num(province.phone_code)
+    enum_def_kwargs = [
+        ast.keyword(arg='name', value=ast.Str(s=province.name)),
+        ast.keyword(arg='code', value=ast.Num(n=province.code)),
+        ast.keyword(arg='division_type',
+                    value=ast.Attribute(value=ast.Name(id='VietNamDivisionType'),
+                                        attr=province.division_type.name)),
+        ast.keyword(arg='codename', value=ast.Str(s=province.codename)),
+        ast.keyword(arg='phone_code', value=ast.Num(province.phone_code))
     ]
     node = ast.Assign(targets=[ast.Name(id=province_id)],
                       value=ast.Call(func=ast.Name(id='Province'),
-                                     args=enum_def_args,
-                                     keywords=[]))
+                                     args=[],
+                                     keywords=enum_def_kwargs))
     return node
 
 
@@ -322,17 +324,19 @@ def district_enum_member(district: District, province: Province):
     D_958 = District('Huyện Vĩnh Lợi', 958, VietNamDivisionType.HUYEN, 'huyen_vinh_loi', 95)
     '''
     # For example, Huyện Châu Thành of Tỉnh Tiền Giang will have ID "CHAU_THANH_TG"
-    enum_def_args = [
-        ast.Str(s=district.name),
-        ast.Num(n=district.code),
-        ast.Attribute(value=ast.Name(id='VietNamDivisionType'), attr=district.division_type.name),
-        ast.Str(s=district.codename),
-        ast.Num(province.code)
+    enum_def_kwargs = [
+        ast.keyword(arg='name', value=ast.Str(s=district.name)),
+        ast.keyword(arg='code', value=ast.Num(n=district.code)),
+        ast.keyword(arg='division_type',
+                    value=ast.Attribute(value=ast.Name(id='VietNamDivisionType'),
+                                        attr=district.division_type.name)),
+        ast.keyword(arg='codename', value=ast.Str(s=district.codename)),
+        ast.keyword(arg='province_code', value=ast.Num(n=province.code)),
     ]
     node = ast.Assign(targets=[ast.Name(id=f'D_{district.code}')],
                       value=ast.Call(func=ast.Name(id='District'),
-                                     args=enum_def_args,
-                                     keywords=[]))
+                                     args=[],
+                                     keywords=enum_def_kwargs))
     return node
 
 
@@ -354,16 +358,18 @@ def district_descriptive_enum_member(district: District, province: Province):
 
 
 def gen_ast_ward_tuple(ward: Ward, district: District, province: Province):
-    def_args = [
-        ast.Str(s=ward.name),
-        ast.Num(n=ward.code),
-        ast.Attribute(value=ast.Name(id='VietNamDivisionType'), attr=ward.division_type.name),
-        ast.Str(s=ward.codename),
-        ast.Num(district.code)
+    enum_def_kwargs = [
+        ast.keyword(arg='name', value=ast.Str(s=ward.name)),
+        ast.keyword(arg='code', value=ast.Num(n=ward.code)),
+        ast.keyword(arg='division_type',
+                    value=ast.Attribute(value=ast.Name(id='VietNamDivisionType'),
+                                        attr=ward.division_type.name)),
+        ast.keyword(arg='codename', value=ast.Str(s=ward.codename)),
+        ast.keyword(arg='district_code', value=ast.Num(n=district.code)),
     ]
     return ast.Call(func=ast.Name(id='Ward'),
-                    args=def_args,
-                    keywords=[])
+                    args=[],
+                    keywords=enum_def_kwargs)
 
 
 def ward_enum_member(ward: Ward, district: District, province: Province):

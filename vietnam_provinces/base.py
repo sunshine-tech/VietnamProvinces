@@ -1,5 +1,4 @@
 from enum import Enum
-from typing import NamedTuple
 from dataclasses import dataclass
 
 
@@ -31,18 +30,35 @@ class Ward:
     codename: str
     district_code: int
 
+    def __eq__(self, other: 'Ward'):
+        if not isinstance(other, self.__class__):
+            raise TypeError(f'Object to compare is not of {self.__class__} type!')
+        return self.code == other.code
 
-class District(NamedTuple):
+
+@dataclass(frozen=True)
+class District:
     name: str
     code: int
     division_type: VietNamDivisionType
     codename: str
     province_code: int
 
+    def __eq__(self, other: 'District'):
+        if not isinstance(other, self.__class__):
+            raise TypeError(f'Object to compare is not of {self.__class__} type!')
+        return self.code == other.code
 
-class Province(NamedTuple):
+
+@dataclass(frozen=True)
+class Province:
     name: str
     code: int
     division_type: VietNamDivisionType
     codename: str
     phone_code: int
+
+    def __eq__(self, other: 'Province'):
+        if not isinstance(other, self.__class__):
+            raise TypeError(f'Object to compare is not of {self.__class__} type!')
+        return self.code == other.code

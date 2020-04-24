@@ -2,77 +2,335 @@ from enum import Enum
 from ..base import District, Province, VietNamDivisionType
 
 
-class ProvinceEnum(Province, Enum):
+class ProvinceEnum(Enum):
     """
     Province Enum type, which is convenient for fast looking up Province by its numeric code.
     """
 
-    P_1 = Province("Thành phố Hà Nội", 1, VietNamDivisionType.THANH_PHO_TRUNG_UONG, "thanh_pho_ha_noi", 24)
-    P_2 = Province("Tỉnh Hà Giang", 2, VietNamDivisionType.TINH, "tinh_ha_giang", 219)
-    P_4 = Province("Tỉnh Cao Bằng", 4, VietNamDivisionType.TINH, "tinh_cao_bang", 206)
-    P_6 = Province("Tỉnh Bắc Kạn", 6, VietNamDivisionType.TINH, "tinh_bac_kan", 209)
-    P_8 = Province("Tỉnh Tuyên Quang", 8, VietNamDivisionType.TINH, "tinh_tuyen_quang", 207)
-    P_10 = Province("Tỉnh Lào Cai", 10, VietNamDivisionType.TINH, "tinh_lao_cai", 214)
-    P_11 = Province("Tỉnh Điện Biên", 11, VietNamDivisionType.TINH, "tinh_dien_bien", 215)
-    P_12 = Province("Tỉnh Lai Châu", 12, VietNamDivisionType.TINH, "tinh_lai_chau", 213)
-    P_14 = Province("Tỉnh Sơn La", 14, VietNamDivisionType.TINH, "tinh_son_la", 212)
-    P_15 = Province("Tỉnh Yên Bái", 15, VietNamDivisionType.TINH, "tinh_yen_bai", 216)
-    P_17 = Province("Tỉnh Hoà Bình", 17, VietNamDivisionType.TINH, "tinh_hoa_binh", 218)
-    P_19 = Province("Tỉnh Thái Nguyên", 19, VietNamDivisionType.TINH, "tinh_thai_nguyen", 208)
-    P_20 = Province("Tỉnh Lạng Sơn", 20, VietNamDivisionType.TINH, "tinh_lang_son", 205)
-    P_22 = Province("Tỉnh Quảng Ninh", 22, VietNamDivisionType.TINH, "tinh_quang_ninh", 203)
-    P_24 = Province("Tỉnh Bắc Giang", 24, VietNamDivisionType.TINH, "tinh_bac_giang", 204)
-    P_25 = Province("Tỉnh Phú Thọ", 25, VietNamDivisionType.TINH, "tinh_phu_tho", 210)
-    P_26 = Province("Tỉnh Vĩnh Phúc", 26, VietNamDivisionType.TINH, "tinh_vinh_phuc", 211)
-    P_27 = Province("Tỉnh Bắc Ninh", 27, VietNamDivisionType.TINH, "tinh_bac_ninh", 222)
-    P_30 = Province("Tỉnh Hải Dương", 30, VietNamDivisionType.TINH, "tinh_hai_duong", 220)
-    P_31 = Province("Thành phố Hải Phòng", 31, VietNamDivisionType.THANH_PHO_TRUNG_UONG, "thanh_pho_hai_phong", 225)
-    P_33 = Province("Tỉnh Hưng Yên", 33, VietNamDivisionType.TINH, "tinh_hung_yen", 221)
-    P_34 = Province("Tỉnh Thái Bình", 34, VietNamDivisionType.TINH, "tinh_thai_binh", 227)
-    P_35 = Province("Tỉnh Hà Nam", 35, VietNamDivisionType.TINH, "tinh_ha_nam", 226)
-    P_36 = Province("Tỉnh Nam Định", 36, VietNamDivisionType.TINH, "tinh_nam_dinh", 228)
-    P_37 = Province("Tỉnh Ninh Bình", 37, VietNamDivisionType.TINH, "tinh_ninh_binh", 229)
-    P_38 = Province("Tỉnh Thanh Hóa", 38, VietNamDivisionType.TINH, "tinh_thanh_hoa", 237)
-    P_40 = Province("Tỉnh Nghệ An", 40, VietNamDivisionType.TINH, "tinh_nghe_an", 238)
-    P_42 = Province("Tỉnh Hà Tĩnh", 42, VietNamDivisionType.TINH, "tinh_ha_tinh", 239)
-    P_44 = Province("Tỉnh Quảng Bình", 44, VietNamDivisionType.TINH, "tinh_quang_binh", 232)
-    P_45 = Province("Tỉnh Quảng Trị", 45, VietNamDivisionType.TINH, "tinh_quang_tri", 233)
-    P_46 = Province("Tỉnh Thừa Thiên Huế", 46, VietNamDivisionType.TINH, "tinh_thua_thien_hue", 234)
-    P_48 = Province("Thành phố Đà Nẵng", 48, VietNamDivisionType.THANH_PHO_TRUNG_UONG, "thanh_pho_da_nang", 236)
-    P_49 = Province("Tỉnh Quảng Nam", 49, VietNamDivisionType.TINH, "tinh_quang_nam", 235)
-    P_51 = Province("Tỉnh Quảng Ngãi", 51, VietNamDivisionType.TINH, "tinh_quang_ngai", 255)
-    P_52 = Province("Tỉnh Bình Định", 52, VietNamDivisionType.TINH, "tinh_binh_dinh", 256)
-    P_54 = Province("Tỉnh Phú Yên", 54, VietNamDivisionType.TINH, "tinh_phu_yen", 257)
-    P_56 = Province("Tỉnh Khánh Hòa", 56, VietNamDivisionType.TINH, "tinh_khanh_hoa", 258)
-    P_58 = Province("Tỉnh Ninh Thuận", 58, VietNamDivisionType.TINH, "tinh_ninh_thuan", 259)
-    P_60 = Province("Tỉnh Bình Thuận", 60, VietNamDivisionType.TINH, "tinh_binh_thuan", 252)
-    P_62 = Province("Tỉnh Kon Tum", 62, VietNamDivisionType.TINH, "tinh_kon_tum", 260)
-    P_64 = Province("Tỉnh Gia Lai", 64, VietNamDivisionType.TINH, "tinh_gia_lai", 269)
-    P_66 = Province("Tỉnh Đắk Lắk", 66, VietNamDivisionType.TINH, "tinh_dak_lak", 262)
-    P_67 = Province("Tỉnh Đắk Nông", 67, VietNamDivisionType.TINH, "tinh_dak_nong", 261)
-    P_68 = Province("Tỉnh Lâm Đồng", 68, VietNamDivisionType.TINH, "tinh_lam_dong", 263)
-    P_70 = Province("Tỉnh Bình Phước", 70, VietNamDivisionType.TINH, "tinh_binh_phuoc", 271)
-    P_72 = Province("Tỉnh Tây Ninh", 72, VietNamDivisionType.TINH, "tinh_tay_ninh", 276)
-    P_74 = Province("Tỉnh Bình Dương", 74, VietNamDivisionType.TINH, "tinh_binh_duong", 274)
-    P_75 = Province("Tỉnh Đồng Nai", 75, VietNamDivisionType.TINH, "tinh_dong_nai", 251)
-    P_77 = Province("Tỉnh Bà Rịa - Vũng Tàu", 77, VietNamDivisionType.TINH, "tinh_ba_ria_vung_tau", 254)
-    P_79 = Province("Thành phố Hồ Chí Minh", 79, VietNamDivisionType.THANH_PHO_TRUNG_UONG, "thanh_pho_ho_chi_minh", 28)
-    P_80 = Province("Tỉnh Long An", 80, VietNamDivisionType.TINH, "tinh_long_an", 272)
-    P_82 = Province("Tỉnh Tiền Giang", 82, VietNamDivisionType.TINH, "tinh_tien_giang", 273)
-    P_83 = Province("Tỉnh Bến Tre", 83, VietNamDivisionType.TINH, "tinh_ben_tre", 275)
-    P_84 = Province("Tỉnh Trà Vinh", 84, VietNamDivisionType.TINH, "tinh_tra_vinh", 294)
-    P_86 = Province("Tỉnh Vĩnh Long", 86, VietNamDivisionType.TINH, "tinh_vinh_long", 270)
-    P_87 = Province("Tỉnh Đồng Tháp", 87, VietNamDivisionType.TINH, "tinh_dong_thap", 277)
-    P_89 = Province("Tỉnh An Giang", 89, VietNamDivisionType.TINH, "tinh_an_giang", 296)
-    P_91 = Province("Tỉnh Kiên Giang", 91, VietNamDivisionType.TINH, "tinh_kien_giang", 297)
-    P_92 = Province("Thành phố Cần Thơ", 92, VietNamDivisionType.THANH_PHO_TRUNG_UONG, "thanh_pho_can_tho", 292)
-    P_93 = Province("Tỉnh Hậu Giang", 93, VietNamDivisionType.TINH, "tinh_hau_giang", 293)
-    P_94 = Province("Tỉnh Sóc Trăng", 94, VietNamDivisionType.TINH, "tinh_soc_trang", 299)
-    P_95 = Province("Tỉnh Bạc Liêu", 95, VietNamDivisionType.TINH, "tinh_bac_lieu", 291)
-    P_96 = Province("Tỉnh Cà Mau", 96, VietNamDivisionType.TINH, "tinh_ca_mau", 290)
+    P_1 = Province(
+        name="Thành phố Hà Nội",
+        code=1,
+        division_type=VietNamDivisionType.THANH_PHO_TRUNG_UONG,
+        codename="thanh_pho_ha_noi",
+        phone_code=24,
+    )
+    P_2 = Province(
+        name="Tỉnh Hà Giang", code=2, division_type=VietNamDivisionType.TINH, codename="tinh_ha_giang", phone_code=219
+    )
+    P_4 = Province(
+        name="Tỉnh Cao Bằng", code=4, division_type=VietNamDivisionType.TINH, codename="tinh_cao_bang", phone_code=206
+    )
+    P_6 = Province(
+        name="Tỉnh Bắc Kạn", code=6, division_type=VietNamDivisionType.TINH, codename="tinh_bac_kan", phone_code=209
+    )
+    P_8 = Province(
+        name="Tỉnh Tuyên Quang",
+        code=8,
+        division_type=VietNamDivisionType.TINH,
+        codename="tinh_tuyen_quang",
+        phone_code=207,
+    )
+    P_10 = Province(
+        name="Tỉnh Lào Cai", code=10, division_type=VietNamDivisionType.TINH, codename="tinh_lao_cai", phone_code=214
+    )
+    P_11 = Province(
+        name="Tỉnh Điện Biên",
+        code=11,
+        division_type=VietNamDivisionType.TINH,
+        codename="tinh_dien_bien",
+        phone_code=215,
+    )
+    P_12 = Province(
+        name="Tỉnh Lai Châu", code=12, division_type=VietNamDivisionType.TINH, codename="tinh_lai_chau", phone_code=213
+    )
+    P_14 = Province(
+        name="Tỉnh Sơn La", code=14, division_type=VietNamDivisionType.TINH, codename="tinh_son_la", phone_code=212
+    )
+    P_15 = Province(
+        name="Tỉnh Yên Bái", code=15, division_type=VietNamDivisionType.TINH, codename="tinh_yen_bai", phone_code=216
+    )
+    P_17 = Province(
+        name="Tỉnh Hoà Bình", code=17, division_type=VietNamDivisionType.TINH, codename="tinh_hoa_binh", phone_code=218
+    )
+    P_19 = Province(
+        name="Tỉnh Thái Nguyên",
+        code=19,
+        division_type=VietNamDivisionType.TINH,
+        codename="tinh_thai_nguyen",
+        phone_code=208,
+    )
+    P_20 = Province(
+        name="Tỉnh Lạng Sơn", code=20, division_type=VietNamDivisionType.TINH, codename="tinh_lang_son", phone_code=205
+    )
+    P_22 = Province(
+        name="Tỉnh Quảng Ninh",
+        code=22,
+        division_type=VietNamDivisionType.TINH,
+        codename="tinh_quang_ninh",
+        phone_code=203,
+    )
+    P_24 = Province(
+        name="Tỉnh Bắc Giang",
+        code=24,
+        division_type=VietNamDivisionType.TINH,
+        codename="tinh_bac_giang",
+        phone_code=204,
+    )
+    P_25 = Province(
+        name="Tỉnh Phú Thọ", code=25, division_type=VietNamDivisionType.TINH, codename="tinh_phu_tho", phone_code=210
+    )
+    P_26 = Province(
+        name="Tỉnh Vĩnh Phúc",
+        code=26,
+        division_type=VietNamDivisionType.TINH,
+        codename="tinh_vinh_phuc",
+        phone_code=211,
+    )
+    P_27 = Province(
+        name="Tỉnh Bắc Ninh", code=27, division_type=VietNamDivisionType.TINH, codename="tinh_bac_ninh", phone_code=222
+    )
+    P_30 = Province(
+        name="Tỉnh Hải Dương",
+        code=30,
+        division_type=VietNamDivisionType.TINH,
+        codename="tinh_hai_duong",
+        phone_code=220,
+    )
+    P_31 = Province(
+        name="Thành phố Hải Phòng",
+        code=31,
+        division_type=VietNamDivisionType.THANH_PHO_TRUNG_UONG,
+        codename="thanh_pho_hai_phong",
+        phone_code=225,
+    )
+    P_33 = Province(
+        name="Tỉnh Hưng Yên", code=33, division_type=VietNamDivisionType.TINH, codename="tinh_hung_yen", phone_code=221
+    )
+    P_34 = Province(
+        name="Tỉnh Thái Bình",
+        code=34,
+        division_type=VietNamDivisionType.TINH,
+        codename="tinh_thai_binh",
+        phone_code=227,
+    )
+    P_35 = Province(
+        name="Tỉnh Hà Nam", code=35, division_type=VietNamDivisionType.TINH, codename="tinh_ha_nam", phone_code=226
+    )
+    P_36 = Province(
+        name="Tỉnh Nam Định", code=36, division_type=VietNamDivisionType.TINH, codename="tinh_nam_dinh", phone_code=228
+    )
+    P_37 = Province(
+        name="Tỉnh Ninh Bình",
+        code=37,
+        division_type=VietNamDivisionType.TINH,
+        codename="tinh_ninh_binh",
+        phone_code=229,
+    )
+    P_38 = Province(
+        name="Tỉnh Thanh Hóa",
+        code=38,
+        division_type=VietNamDivisionType.TINH,
+        codename="tinh_thanh_hoa",
+        phone_code=237,
+    )
+    P_40 = Province(
+        name="Tỉnh Nghệ An", code=40, division_type=VietNamDivisionType.TINH, codename="tinh_nghe_an", phone_code=238
+    )
+    P_42 = Province(
+        name="Tỉnh Hà Tĩnh", code=42, division_type=VietNamDivisionType.TINH, codename="tinh_ha_tinh", phone_code=239
+    )
+    P_44 = Province(
+        name="Tỉnh Quảng Bình",
+        code=44,
+        division_type=VietNamDivisionType.TINH,
+        codename="tinh_quang_binh",
+        phone_code=232,
+    )
+    P_45 = Province(
+        name="Tỉnh Quảng Trị",
+        code=45,
+        division_type=VietNamDivisionType.TINH,
+        codename="tinh_quang_tri",
+        phone_code=233,
+    )
+    P_46 = Province(
+        name="Tỉnh Thừa Thiên Huế",
+        code=46,
+        division_type=VietNamDivisionType.TINH,
+        codename="tinh_thua_thien_hue",
+        phone_code=234,
+    )
+    P_48 = Province(
+        name="Thành phố Đà Nẵng",
+        code=48,
+        division_type=VietNamDivisionType.THANH_PHO_TRUNG_UONG,
+        codename="thanh_pho_da_nang",
+        phone_code=236,
+    )
+    P_49 = Province(
+        name="Tỉnh Quảng Nam",
+        code=49,
+        division_type=VietNamDivisionType.TINH,
+        codename="tinh_quang_nam",
+        phone_code=235,
+    )
+    P_51 = Province(
+        name="Tỉnh Quảng Ngãi",
+        code=51,
+        division_type=VietNamDivisionType.TINH,
+        codename="tinh_quang_ngai",
+        phone_code=255,
+    )
+    P_52 = Province(
+        name="Tỉnh Bình Định",
+        code=52,
+        division_type=VietNamDivisionType.TINH,
+        codename="tinh_binh_dinh",
+        phone_code=256,
+    )
+    P_54 = Province(
+        name="Tỉnh Phú Yên", code=54, division_type=VietNamDivisionType.TINH, codename="tinh_phu_yen", phone_code=257
+    )
+    P_56 = Province(
+        name="Tỉnh Khánh Hòa",
+        code=56,
+        division_type=VietNamDivisionType.TINH,
+        codename="tinh_khanh_hoa",
+        phone_code=258,
+    )
+    P_58 = Province(
+        name="Tỉnh Ninh Thuận",
+        code=58,
+        division_type=VietNamDivisionType.TINH,
+        codename="tinh_ninh_thuan",
+        phone_code=259,
+    )
+    P_60 = Province(
+        name="Tỉnh Bình Thuận",
+        code=60,
+        division_type=VietNamDivisionType.TINH,
+        codename="tinh_binh_thuan",
+        phone_code=252,
+    )
+    P_62 = Province(
+        name="Tỉnh Kon Tum", code=62, division_type=VietNamDivisionType.TINH, codename="tinh_kon_tum", phone_code=260
+    )
+    P_64 = Province(
+        name="Tỉnh Gia Lai", code=64, division_type=VietNamDivisionType.TINH, codename="tinh_gia_lai", phone_code=269
+    )
+    P_66 = Province(
+        name="Tỉnh Đắk Lắk", code=66, division_type=VietNamDivisionType.TINH, codename="tinh_dak_lak", phone_code=262
+    )
+    P_67 = Province(
+        name="Tỉnh Đắk Nông", code=67, division_type=VietNamDivisionType.TINH, codename="tinh_dak_nong", phone_code=261
+    )
+    P_68 = Province(
+        name="Tỉnh Lâm Đồng", code=68, division_type=VietNamDivisionType.TINH, codename="tinh_lam_dong", phone_code=263
+    )
+    P_70 = Province(
+        name="Tỉnh Bình Phước",
+        code=70,
+        division_type=VietNamDivisionType.TINH,
+        codename="tinh_binh_phuoc",
+        phone_code=271,
+    )
+    P_72 = Province(
+        name="Tỉnh Tây Ninh", code=72, division_type=VietNamDivisionType.TINH, codename="tinh_tay_ninh", phone_code=276
+    )
+    P_74 = Province(
+        name="Tỉnh Bình Dương",
+        code=74,
+        division_type=VietNamDivisionType.TINH,
+        codename="tinh_binh_duong",
+        phone_code=274,
+    )
+    P_75 = Province(
+        name="Tỉnh Đồng Nai", code=75, division_type=VietNamDivisionType.TINH, codename="tinh_dong_nai", phone_code=251
+    )
+    P_77 = Province(
+        name="Tỉnh Bà Rịa - Vũng Tàu",
+        code=77,
+        division_type=VietNamDivisionType.TINH,
+        codename="tinh_ba_ria_vung_tau",
+        phone_code=254,
+    )
+    P_79 = Province(
+        name="Thành phố Hồ Chí Minh",
+        code=79,
+        division_type=VietNamDivisionType.THANH_PHO_TRUNG_UONG,
+        codename="thanh_pho_ho_chi_minh",
+        phone_code=28,
+    )
+    P_80 = Province(
+        name="Tỉnh Long An", code=80, division_type=VietNamDivisionType.TINH, codename="tinh_long_an", phone_code=272
+    )
+    P_82 = Province(
+        name="Tỉnh Tiền Giang",
+        code=82,
+        division_type=VietNamDivisionType.TINH,
+        codename="tinh_tien_giang",
+        phone_code=273,
+    )
+    P_83 = Province(
+        name="Tỉnh Bến Tre", code=83, division_type=VietNamDivisionType.TINH, codename="tinh_ben_tre", phone_code=275
+    )
+    P_84 = Province(
+        name="Tỉnh Trà Vinh", code=84, division_type=VietNamDivisionType.TINH, codename="tinh_tra_vinh", phone_code=294
+    )
+    P_86 = Province(
+        name="Tỉnh Vĩnh Long",
+        code=86,
+        division_type=VietNamDivisionType.TINH,
+        codename="tinh_vinh_long",
+        phone_code=270,
+    )
+    P_87 = Province(
+        name="Tỉnh Đồng Tháp",
+        code=87,
+        division_type=VietNamDivisionType.TINH,
+        codename="tinh_dong_thap",
+        phone_code=277,
+    )
+    P_89 = Province(
+        name="Tỉnh An Giang", code=89, division_type=VietNamDivisionType.TINH, codename="tinh_an_giang", phone_code=296
+    )
+    P_91 = Province(
+        name="Tỉnh Kiên Giang",
+        code=91,
+        division_type=VietNamDivisionType.TINH,
+        codename="tinh_kien_giang",
+        phone_code=297,
+    )
+    P_92 = Province(
+        name="Thành phố Cần Thơ",
+        code=92,
+        division_type=VietNamDivisionType.THANH_PHO_TRUNG_UONG,
+        codename="thanh_pho_can_tho",
+        phone_code=292,
+    )
+    P_93 = Province(
+        name="Tỉnh Hậu Giang",
+        code=93,
+        division_type=VietNamDivisionType.TINH,
+        codename="tinh_hau_giang",
+        phone_code=293,
+    )
+    P_94 = Province(
+        name="Tỉnh Sóc Trăng",
+        code=94,
+        division_type=VietNamDivisionType.TINH,
+        codename="tinh_soc_trang",
+        phone_code=299,
+    )
+    P_95 = Province(
+        name="Tỉnh Bạc Liêu", code=95, division_type=VietNamDivisionType.TINH, codename="tinh_bac_lieu", phone_code=291
+    )
+    P_96 = Province(
+        name="Tỉnh Cà Mau", code=96, division_type=VietNamDivisionType.TINH, codename="tinh_ca_mau", phone_code=290
+    )
 
 
-class ProvinceDEnum(Province, Enum):
+class ProvinceDEnum(Enum):
     """
     Province Enum type, whose member name is more descriptive, with province name.
 
@@ -144,723 +402,4787 @@ class ProvinceDEnum(Province, Enum):
     CA_MAU = ProvinceEnum.P_96.value
 
 
-class DistrictEnum(District, Enum):
+class DistrictEnum(Enum):
     """
     District Enum type, which is convenient for fast looking up District by its numeric code.
     """
 
-    D_1 = District("Quận Ba Đình", 1, VietNamDivisionType.QUAN, "quan_ba_dinh", 1)
-    D_2 = District("Quận Hoàn Kiếm", 2, VietNamDivisionType.QUAN, "quan_hoan_kiem", 1)
-    D_3 = District("Quận Tây Hồ", 3, VietNamDivisionType.QUAN, "quan_tay_ho", 1)
-    D_4 = District("Quận Long Biên", 4, VietNamDivisionType.QUAN, "quan_long_bien", 1)
-    D_5 = District("Quận Cầu Giấy", 5, VietNamDivisionType.QUAN, "quan_cau_giay", 1)
-    D_6 = District("Quận Đống Đa", 6, VietNamDivisionType.QUAN, "quan_dong_da", 1)
-    D_7 = District("Quận Hai Bà Trưng", 7, VietNamDivisionType.QUAN, "quan_hai_ba_trung", 1)
-    D_8 = District("Quận Hoàng Mai", 8, VietNamDivisionType.QUAN, "quan_hoang_mai", 1)
-    D_9 = District("Quận Thanh Xuân", 9, VietNamDivisionType.QUAN, "quan_thanh_xuan", 1)
-    D_16 = District("Huyện Sóc Sơn", 16, VietNamDivisionType.HUYEN, "huyen_soc_son", 1)
-    D_17 = District("Huyện Đông Anh", 17, VietNamDivisionType.HUYEN, "huyen_dong_anh", 1)
-    D_18 = District("Huyện Gia Lâm", 18, VietNamDivisionType.HUYEN, "huyen_gia_lam", 1)
-    D_19 = District("Quận Nam Từ Liêm", 19, VietNamDivisionType.QUAN, "quan_nam_tu_liem", 1)
-    D_20 = District("Huyện Thanh Trì", 20, VietNamDivisionType.HUYEN, "huyen_thanh_tri", 1)
-    D_21 = District("Quận Bắc Từ Liêm", 21, VietNamDivisionType.QUAN, "quan_bac_tu_liem", 1)
-    D_250 = District("Huyện Mê Linh", 250, VietNamDivisionType.HUYEN, "huyen_me_linh", 1)
-    D_268 = District("Quận Hà Đông", 268, VietNamDivisionType.QUAN, "quan_ha_dong", 1)
-    D_269 = District("Thị xã Sơn Tây", 269, VietNamDivisionType.THI_XA, "thi_xa_son_tay", 1)
-    D_271 = District("Huyện Ba Vì", 271, VietNamDivisionType.HUYEN, "huyen_ba_vi", 1)
-    D_272 = District("Huyện Phúc Thọ", 272, VietNamDivisionType.HUYEN, "huyen_phuc_tho", 1)
-    D_273 = District("Huyện Đan Phượng", 273, VietNamDivisionType.HUYEN, "huyen_dan_phuong", 1)
-    D_274 = District("Huyện Hoài Đức", 274, VietNamDivisionType.HUYEN, "huyen_hoai_duc", 1)
-    D_275 = District("Huyện Quốc Oai", 275, VietNamDivisionType.HUYEN, "huyen_quoc_oai", 1)
-    D_276 = District("Huyện Thạch Thất", 276, VietNamDivisionType.HUYEN, "huyen_thach_that", 1)
-    D_277 = District("Huyện Chương Mỹ", 277, VietNamDivisionType.HUYEN, "huyen_chuong_my", 1)
-    D_278 = District("Huyện Thanh Oai", 278, VietNamDivisionType.HUYEN, "huyen_thanh_oai", 1)
-    D_279 = District("Huyện Thường Tín", 279, VietNamDivisionType.HUYEN, "huyen_thuong_tin", 1)
-    D_280 = District("Huyện Phú Xuyên", 280, VietNamDivisionType.HUYEN, "huyen_phu_xuyen", 1)
-    D_281 = District("Huyện Ứng Hòa", 281, VietNamDivisionType.HUYEN, "huyen_ung_hoa", 1)
-    D_282 = District("Huyện Mỹ Đức", 282, VietNamDivisionType.HUYEN, "huyen_my_duc", 1)
-    D_24 = District("Thành phố Hà Giang", 24, VietNamDivisionType.THANH_PHO, "thanh_pho_ha_giang", 2)
-    D_26 = District("Huyện Đồng Văn", 26, VietNamDivisionType.HUYEN, "huyen_dong_van", 2)
-    D_27 = District("Huyện Mèo Vạc", 27, VietNamDivisionType.HUYEN, "huyen_meo_vac", 2)
-    D_28 = District("Huyện Yên Minh", 28, VietNamDivisionType.HUYEN, "huyen_yen_minh", 2)
-    D_29 = District("Huyện Quản Bạ", 29, VietNamDivisionType.HUYEN, "huyen_quan_ba", 2)
-    D_30 = District("Huyện Vị Xuyên", 30, VietNamDivisionType.HUYEN, "huyen_vi_xuyen", 2)
-    D_31 = District("Huyện Bắc Mê", 31, VietNamDivisionType.HUYEN, "huyen_bac_me", 2)
-    D_32 = District("Huyện Hoàng Su Phì", 32, VietNamDivisionType.HUYEN, "huyen_hoang_su_phi", 2)
-    D_33 = District("Huyện Xín Mần", 33, VietNamDivisionType.HUYEN, "huyen_xin_man", 2)
-    D_34 = District("Huyện Bắc Quang", 34, VietNamDivisionType.HUYEN, "huyen_bac_quang", 2)
-    D_35 = District("Huyện Quang Bình", 35, VietNamDivisionType.HUYEN, "huyen_quang_binh", 2)
-    D_40 = District("Thành phố Cao Bằng", 40, VietNamDivisionType.THANH_PHO, "thanh_pho_cao_bang", 4)
-    D_42 = District("Huyện Bảo Lâm", 42, VietNamDivisionType.HUYEN, "huyen_bao_lam", 4)
-    D_43 = District("Huyện Bảo Lạc", 43, VietNamDivisionType.HUYEN, "huyen_bao_lac", 4)
-    D_44 = District("Huyện Thông Nông", 44, VietNamDivisionType.HUYEN, "huyen_thong_nong", 4)
-    D_45 = District("Huyện Hà Quảng", 45, VietNamDivisionType.HUYEN, "huyen_ha_quang", 4)
-    D_46 = District("Huyện Trà Lĩnh", 46, VietNamDivisionType.HUYEN, "huyen_tra_linh", 4)
-    D_47 = District("Huyện Trùng Khánh", 47, VietNamDivisionType.HUYEN, "huyen_trung_khanh", 4)
-    D_48 = District("Huyện Hạ Lang", 48, VietNamDivisionType.HUYEN, "huyen_ha_lang", 4)
-    D_49 = District("Huyện Quảng Uyên", 49, VietNamDivisionType.HUYEN, "huyen_quang_uyen", 4)
-    D_50 = District("Huyện Phục Hoà", 50, VietNamDivisionType.HUYEN, "huyen_phuc_hoa", 4)
-    D_51 = District("Huyện Hoà An", 51, VietNamDivisionType.HUYEN, "huyen_hoa_an", 4)
-    D_52 = District("Huyện Nguyên Bình", 52, VietNamDivisionType.HUYEN, "huyen_nguyen_binh", 4)
-    D_53 = District("Huyện Thạch An", 53, VietNamDivisionType.HUYEN, "huyen_thach_an", 4)
-    D_58 = District("Thành Phố Bắc Kạn", 58, VietNamDivisionType.THANH_PHO, "thanh_pho_bac_kan", 6)
-    D_60 = District("Huyện Pác Nặm", 60, VietNamDivisionType.HUYEN, "huyen_pac_nam", 6)
-    D_61 = District("Huyện Ba Bể", 61, VietNamDivisionType.HUYEN, "huyen_ba_be", 6)
-    D_62 = District("Huyện Ngân Sơn", 62, VietNamDivisionType.HUYEN, "huyen_ngan_son", 6)
-    D_63 = District("Huyện Bạch Thông", 63, VietNamDivisionType.HUYEN, "huyen_bach_thong", 6)
-    D_64 = District("Huyện Chợ Đồn", 64, VietNamDivisionType.HUYEN, "huyen_cho_don", 6)
-    D_65 = District("Huyện Chợ Mới", 65, VietNamDivisionType.HUYEN, "huyen_cho_moi", 6)
-    D_66 = District("Huyện Na Rì", 66, VietNamDivisionType.HUYEN, "huyen_na_ri", 6)
-    D_70 = District("Thành phố Tuyên Quang", 70, VietNamDivisionType.THANH_PHO, "thanh_pho_tuyen_quang", 8)
-    D_71 = District("Huyện Lâm Bình", 71, VietNamDivisionType.HUYEN, "huyen_lam_binh", 8)
-    D_72 = District("Huyện Na Hang", 72, VietNamDivisionType.HUYEN, "huyen_na_hang", 8)
-    D_73 = District("Huyện Chiêm Hóa", 73, VietNamDivisionType.HUYEN, "huyen_chiem_hoa", 8)
-    D_74 = District("Huyện Hàm Yên", 74, VietNamDivisionType.HUYEN, "huyen_ham_yen", 8)
-    D_75 = District("Huyện Yên Sơn", 75, VietNamDivisionType.HUYEN, "huyen_yen_son", 8)
-    D_76 = District("Huyện Sơn Dương", 76, VietNamDivisionType.HUYEN, "huyen_son_duong", 8)
-    D_80 = District("Thành phố Lào Cai", 80, VietNamDivisionType.THANH_PHO, "thanh_pho_lao_cai", 10)
-    D_82 = District("Huyện Bát Xát", 82, VietNamDivisionType.HUYEN, "huyen_bat_xat", 10)
-    D_83 = District("Huyện Mường Khương", 83, VietNamDivisionType.HUYEN, "huyen_muong_khuong", 10)
-    D_84 = District("Huyện Si Ma Cai", 84, VietNamDivisionType.HUYEN, "huyen_si_ma_cai", 10)
-    D_85 = District("Huyện Bắc Hà", 85, VietNamDivisionType.HUYEN, "huyen_bac_ha", 10)
-    D_86 = District("Huyện Bảo Thắng", 86, VietNamDivisionType.HUYEN, "huyen_bao_thang", 10)
-    D_87 = District("Huyện Bảo Yên", 87, VietNamDivisionType.HUYEN, "huyen_bao_yen", 10)
-    D_88 = District("Thị xã Sa Pa", 88, VietNamDivisionType.THI_XA, "thi_xa_sa_pa", 10)
-    D_89 = District("Huyện Văn Bàn", 89, VietNamDivisionType.HUYEN, "huyen_van_ban", 10)
-    D_94 = District("Thành phố Điện Biên Phủ", 94, VietNamDivisionType.THANH_PHO, "thanh_pho_dien_bien_phu", 11)
-    D_95 = District("Thị Xã Mường Lay", 95, VietNamDivisionType.THI_XA, "thi_xa_muong_lay", 11)
-    D_96 = District("Huyện Mường Nhé", 96, VietNamDivisionType.HUYEN, "huyen_muong_nhe", 11)
-    D_97 = District("Huyện Mường Chà", 97, VietNamDivisionType.HUYEN, "huyen_muong_cha", 11)
-    D_98 = District("Huyện Tủa Chùa", 98, VietNamDivisionType.HUYEN, "huyen_tua_chua", 11)
-    D_99 = District("Huyện Tuần Giáo", 99, VietNamDivisionType.HUYEN, "huyen_tuan_giao", 11)
-    D_100 = District("Huyện Điện Biên", 100, VietNamDivisionType.HUYEN, "huyen_dien_bien", 11)
-    D_101 = District("Huyện Điện Biên Đông", 101, VietNamDivisionType.HUYEN, "huyen_dien_bien_dong", 11)
-    D_102 = District("Huyện Mường Ảng", 102, VietNamDivisionType.HUYEN, "huyen_muong_ang", 11)
-    D_103 = District("Huyện Nậm Pồ", 103, VietNamDivisionType.HUYEN, "huyen_nam_po", 11)
-    D_105 = District("Thành phố Lai Châu", 105, VietNamDivisionType.THANH_PHO, "thanh_pho_lai_chau", 12)
-    D_106 = District("Huyện Tam Đường", 106, VietNamDivisionType.HUYEN, "huyen_tam_duong", 12)
-    D_107 = District("Huyện Mường Tè", 107, VietNamDivisionType.HUYEN, "huyen_muong_te", 12)
-    D_108 = District("Huyện Sìn Hồ", 108, VietNamDivisionType.HUYEN, "huyen_sin_ho", 12)
-    D_109 = District("Huyện Phong Thổ", 109, VietNamDivisionType.HUYEN, "huyen_phong_tho", 12)
-    D_110 = District("Huyện Than Uyên", 110, VietNamDivisionType.HUYEN, "huyen_than_uyen", 12)
-    D_111 = District("Huyện Tân Uyên", 111, VietNamDivisionType.HUYEN, "huyen_tan_uyen", 12)
-    D_112 = District("Huyện Nậm Nhùn", 112, VietNamDivisionType.HUYEN, "huyen_nam_nhun", 12)
-    D_116 = District("Thành phố Sơn La", 116, VietNamDivisionType.THANH_PHO, "thanh_pho_son_la", 14)
-    D_118 = District("Huyện Quỳnh Nhai", 118, VietNamDivisionType.HUYEN, "huyen_quynh_nhai", 14)
-    D_119 = District("Huyện Thuận Châu", 119, VietNamDivisionType.HUYEN, "huyen_thuan_chau", 14)
-    D_120 = District("Huyện Mường La", 120, VietNamDivisionType.HUYEN, "huyen_muong_la", 14)
-    D_121 = District("Huyện Bắc Yên", 121, VietNamDivisionType.HUYEN, "huyen_bac_yen", 14)
-    D_122 = District("Huyện Phù Yên", 122, VietNamDivisionType.HUYEN, "huyen_phu_yen", 14)
-    D_123 = District("Huyện Mộc Châu", 123, VietNamDivisionType.HUYEN, "huyen_moc_chau", 14)
-    D_124 = District("Huyện Yên Châu", 124, VietNamDivisionType.HUYEN, "huyen_yen_chau", 14)
-    D_125 = District("Huyện Mai Sơn", 125, VietNamDivisionType.HUYEN, "huyen_mai_son", 14)
-    D_126 = District("Huyện Sông Mã", 126, VietNamDivisionType.HUYEN, "huyen_song_ma", 14)
-    D_127 = District("Huyện Sốp Cộp", 127, VietNamDivisionType.HUYEN, "huyen_sop_cop", 14)
-    D_128 = District("Huyện Vân Hồ", 128, VietNamDivisionType.HUYEN, "huyen_van_ho", 14)
-    D_132 = District("Thành phố Yên Bái", 132, VietNamDivisionType.THANH_PHO, "thanh_pho_yen_bai", 15)
-    D_133 = District("Thị xã Nghĩa Lộ", 133, VietNamDivisionType.THI_XA, "thi_xa_nghia_lo", 15)
-    D_135 = District("Huyện Lục Yên", 135, VietNamDivisionType.HUYEN, "huyen_luc_yen", 15)
-    D_136 = District("Huyện Văn Yên", 136, VietNamDivisionType.HUYEN, "huyen_van_yen", 15)
-    D_137 = District("Huyện Mù Căng Chải", 137, VietNamDivisionType.HUYEN, "huyen_mu_cang_chai", 15)
-    D_138 = District("Huyện Trấn Yên", 138, VietNamDivisionType.HUYEN, "huyen_tran_yen", 15)
-    D_139 = District("Huyện Trạm Tấu", 139, VietNamDivisionType.HUYEN, "huyen_tram_tau", 15)
-    D_140 = District("Huyện Văn Chấn", 140, VietNamDivisionType.HUYEN, "huyen_van_chan", 15)
-    D_141 = District("Huyện Yên Bình", 141, VietNamDivisionType.HUYEN, "huyen_yen_binh", 15)
-    D_148 = District("Thành phố Hòa Bình", 148, VietNamDivisionType.THANH_PHO, "thanh_pho_hoa_binh", 17)
-    D_150 = District("Huyện Đà Bắc", 150, VietNamDivisionType.HUYEN, "huyen_da_bac", 17)
-    D_152 = District("Huyện Lương Sơn", 152, VietNamDivisionType.HUYEN, "huyen_luong_son", 17)
-    D_153 = District("Huyện Kim Bôi", 153, VietNamDivisionType.HUYEN, "huyen_kim_boi", 17)
-    D_154 = District("Huyện Cao Phong", 154, VietNamDivisionType.HUYEN, "huyen_cao_phong", 17)
-    D_155 = District("Huyện Tân Lạc", 155, VietNamDivisionType.HUYEN, "huyen_tan_lac", 17)
-    D_156 = District("Huyện Mai Châu", 156, VietNamDivisionType.HUYEN, "huyen_mai_chau", 17)
-    D_157 = District("Huyện Lạc Sơn", 157, VietNamDivisionType.HUYEN, "huyen_lac_son", 17)
-    D_158 = District("Huyện Yên Thủy", 158, VietNamDivisionType.HUYEN, "huyen_yen_thuy", 17)
-    D_159 = District("Huyện Lạc Thủy", 159, VietNamDivisionType.HUYEN, "huyen_lac_thuy", 17)
-    D_164 = District("Thành phố Thái Nguyên", 164, VietNamDivisionType.THANH_PHO, "thanh_pho_thai_nguyen", 19)
-    D_165 = District("Thành phố Sông Công", 165, VietNamDivisionType.THANH_PHO, "thanh_pho_song_cong", 19)
-    D_167 = District("Huyện Định Hóa", 167, VietNamDivisionType.HUYEN, "huyen_dinh_hoa", 19)
-    D_168 = District("Huyện Phú Lương", 168, VietNamDivisionType.HUYEN, "huyen_phu_luong", 19)
-    D_169 = District("Huyện Đồng Hỷ", 169, VietNamDivisionType.HUYEN, "huyen_dong_hy", 19)
-    D_170 = District("Huyện Võ Nhai", 170, VietNamDivisionType.HUYEN, "huyen_vo_nhai", 19)
-    D_171 = District("Huyện Đại Từ", 171, VietNamDivisionType.HUYEN, "huyen_dai_tu", 19)
-    D_172 = District("Thị xã Phổ Yên", 172, VietNamDivisionType.THI_XA, "thi_xa_pho_yen", 19)
-    D_173 = District("Huyện Phú Bình", 173, VietNamDivisionType.HUYEN, "huyen_phu_binh", 19)
-    D_178 = District("Thành phố Lạng Sơn", 178, VietNamDivisionType.THANH_PHO, "thanh_pho_lang_son", 20)
-    D_180 = District("Huyện Tràng Định", 180, VietNamDivisionType.HUYEN, "huyen_trang_dinh", 20)
-    D_181 = District("Huyện Bình Gia", 181, VietNamDivisionType.HUYEN, "huyen_binh_gia", 20)
-    D_182 = District("Huyện Văn Lãng", 182, VietNamDivisionType.HUYEN, "huyen_van_lang", 20)
-    D_183 = District("Huyện Cao Lộc", 183, VietNamDivisionType.HUYEN, "huyen_cao_loc", 20)
-    D_184 = District("Huyện Văn Quan", 184, VietNamDivisionType.HUYEN, "huyen_van_quan", 20)
-    D_185 = District("Huyện Bắc Sơn", 185, VietNamDivisionType.HUYEN, "huyen_bac_son", 20)
-    D_186 = District("Huyện Hữu Lũng", 186, VietNamDivisionType.HUYEN, "huyen_huu_lung", 20)
-    D_187 = District("Huyện Chi Lăng", 187, VietNamDivisionType.HUYEN, "huyen_chi_lang", 20)
-    D_188 = District("Huyện Lộc Bình", 188, VietNamDivisionType.HUYEN, "huyen_loc_binh", 20)
-    D_189 = District("Huyện Đình Lập", 189, VietNamDivisionType.HUYEN, "huyen_dinh_lap", 20)
-    D_193 = District("Thành phố Hạ Long", 193, VietNamDivisionType.THANH_PHO, "thanh_pho_ha_long", 22)
-    D_194 = District("Thành phố Móng Cái", 194, VietNamDivisionType.THANH_PHO, "thanh_pho_mong_cai", 22)
-    D_195 = District("Thành phố Cẩm Phả", 195, VietNamDivisionType.THANH_PHO, "thanh_pho_cam_pha", 22)
-    D_196 = District("Thành phố Uông Bí", 196, VietNamDivisionType.THANH_PHO, "thanh_pho_uong_bi", 22)
-    D_198 = District("Huyện Bình Liêu", 198, VietNamDivisionType.HUYEN, "huyen_binh_lieu", 22)
-    D_199 = District("Huyện Tiên Yên", 199, VietNamDivisionType.HUYEN, "huyen_tien_yen", 22)
-    D_200 = District("Huyện Đầm Hà", 200, VietNamDivisionType.HUYEN, "huyen_dam_ha", 22)
-    D_201 = District("Huyện Hải Hà", 201, VietNamDivisionType.HUYEN, "huyen_hai_ha", 22)
-    D_202 = District("Huyện Ba Chẽ", 202, VietNamDivisionType.HUYEN, "huyen_ba_che", 22)
-    D_203 = District("Huyện Vân Đồn", 203, VietNamDivisionType.HUYEN, "huyen_van_don", 22)
-    D_205 = District("Thị xã Đông Triều", 205, VietNamDivisionType.THI_XA, "thi_xa_dong_trieu", 22)
-    D_206 = District("Thị xã Quảng Yên", 206, VietNamDivisionType.THI_XA, "thi_xa_quang_yen", 22)
-    D_207 = District("Huyện Cô Tô", 207, VietNamDivisionType.HUYEN, "huyen_co_to", 22)
-    D_213 = District("Thành phố Bắc Giang", 213, VietNamDivisionType.THANH_PHO, "thanh_pho_bac_giang", 24)
-    D_215 = District("Huyện Yên Thế", 215, VietNamDivisionType.HUYEN, "huyen_yen_the", 24)
-    D_216 = District("Huyện Tân Yên", 216, VietNamDivisionType.HUYEN, "huyen_tan_yen", 24)
-    D_217 = District("Huyện Lạng Giang", 217, VietNamDivisionType.HUYEN, "huyen_lang_giang", 24)
-    D_218 = District("Huyện Lục Nam", 218, VietNamDivisionType.HUYEN, "huyen_luc_nam", 24)
-    D_219 = District("Huyện Lục Ngạn", 219, VietNamDivisionType.HUYEN, "huyen_luc_ngan", 24)
-    D_220 = District("Huyện Sơn Động", 220, VietNamDivisionType.HUYEN, "huyen_son_dong", 24)
-    D_221 = District("Huyện Yên Dũng", 221, VietNamDivisionType.HUYEN, "huyen_yen_dung", 24)
-    D_222 = District("Huyện Việt Yên", 222, VietNamDivisionType.HUYEN, "huyen_viet_yen", 24)
-    D_223 = District("Huyện Hiệp Hòa", 223, VietNamDivisionType.HUYEN, "huyen_hiep_hoa", 24)
-    D_227 = District("Thành phố Việt Trì", 227, VietNamDivisionType.THANH_PHO, "thanh_pho_viet_tri", 25)
-    D_228 = District("Thị xã Phú Thọ", 228, VietNamDivisionType.THI_XA, "thi_xa_phu_tho", 25)
-    D_230 = District("Huyện Đoan Hùng", 230, VietNamDivisionType.HUYEN, "huyen_doan_hung", 25)
-    D_231 = District("Huyện Hạ Hoà", 231, VietNamDivisionType.HUYEN, "huyen_ha_hoa", 25)
-    D_232 = District("Huyện Thanh Ba", 232, VietNamDivisionType.HUYEN, "huyen_thanh_ba", 25)
-    D_233 = District("Huyện Phù Ninh", 233, VietNamDivisionType.HUYEN, "huyen_phu_ninh", 25)
-    D_234 = District("Huyện Yên Lập", 234, VietNamDivisionType.HUYEN, "huyen_yen_lap", 25)
-    D_235 = District("Huyện Cẩm Khê", 235, VietNamDivisionType.HUYEN, "huyen_cam_khe", 25)
-    D_236 = District("Huyện Tam Nông", 236, VietNamDivisionType.HUYEN, "huyen_tam_nong", 25)
-    D_237 = District("Huyện Lâm Thao", 237, VietNamDivisionType.HUYEN, "huyen_lam_thao", 25)
-    D_238 = District("Huyện Thanh Sơn", 238, VietNamDivisionType.HUYEN, "huyen_thanh_son", 25)
-    D_239 = District("Huyện Thanh Thuỷ", 239, VietNamDivisionType.HUYEN, "huyen_thanh_thuy", 25)
-    D_240 = District("Huyện Tân Sơn", 240, VietNamDivisionType.HUYEN, "huyen_tan_son", 25)
-    D_243 = District("Thành phố Vĩnh Yên", 243, VietNamDivisionType.THANH_PHO, "thanh_pho_vinh_yen", 26)
-    D_244 = District("Thành phố Phúc Yên", 244, VietNamDivisionType.THANH_PHO, "thanh_pho_phuc_yen", 26)
-    D_246 = District("Huyện Lập Thạch", 246, VietNamDivisionType.HUYEN, "huyen_lap_thach", 26)
-    D_247 = District("Huyện Tam Dương", 247, VietNamDivisionType.HUYEN, "huyen_tam_duong", 26)
-    D_248 = District("Huyện Tam Đảo", 248, VietNamDivisionType.HUYEN, "huyen_tam_dao", 26)
-    D_249 = District("Huyện Bình Xuyên", 249, VietNamDivisionType.HUYEN, "huyen_binh_xuyen", 26)
-    D_251 = District("Huyện Yên Lạc", 251, VietNamDivisionType.HUYEN, "huyen_yen_lac", 26)
-    D_252 = District("Huyện Vĩnh Tường", 252, VietNamDivisionType.HUYEN, "huyen_vinh_tuong", 26)
-    D_253 = District("Huyện Sông Lô", 253, VietNamDivisionType.HUYEN, "huyen_song_lo", 26)
-    D_256 = District("Thành phố Bắc Ninh", 256, VietNamDivisionType.THANH_PHO, "thanh_pho_bac_ninh", 27)
-    D_258 = District("Huyện Yên Phong", 258, VietNamDivisionType.HUYEN, "huyen_yen_phong", 27)
-    D_259 = District("Huyện Quế Võ", 259, VietNamDivisionType.HUYEN, "huyen_que_vo", 27)
-    D_260 = District("Huyện Tiên Du", 260, VietNamDivisionType.HUYEN, "huyen_tien_du", 27)
-    D_261 = District("Thị xã Từ Sơn", 261, VietNamDivisionType.THI_XA, "thi_xa_tu_son", 27)
-    D_262 = District("Huyện Thuận Thành", 262, VietNamDivisionType.HUYEN, "huyen_thuan_thanh", 27)
-    D_263 = District("Huyện Gia Bình", 263, VietNamDivisionType.HUYEN, "huyen_gia_binh", 27)
-    D_264 = District("Huyện Lương Tài", 264, VietNamDivisionType.HUYEN, "huyen_luong_tai", 27)
-    D_288 = District("Thành phố Hải Dương", 288, VietNamDivisionType.THANH_PHO, "thanh_pho_hai_duong", 30)
-    D_290 = District("Thành phố Chí Linh", 290, VietNamDivisionType.THANH_PHO, "thanh_pho_chi_linh", 30)
-    D_291 = District("Huyện Nam Sách", 291, VietNamDivisionType.HUYEN, "huyen_nam_sach", 30)
-    D_292 = District("Thị xã Kinh Môn", 292, VietNamDivisionType.THI_XA, "thi_xa_kinh_mon", 30)
-    D_293 = District("Huyện Kim Thành", 293, VietNamDivisionType.HUYEN, "huyen_kim_thanh", 30)
-    D_294 = District("Huyện Thanh Hà", 294, VietNamDivisionType.HUYEN, "huyen_thanh_ha", 30)
-    D_295 = District("Huyện Cẩm Giàng", 295, VietNamDivisionType.HUYEN, "huyen_cam_giang", 30)
-    D_296 = District("Huyện Bình Giang", 296, VietNamDivisionType.HUYEN, "huyen_binh_giang", 30)
-    D_297 = District("Huyện Gia Lộc", 297, VietNamDivisionType.HUYEN, "huyen_gia_loc", 30)
-    D_298 = District("Huyện Tứ Kỳ", 298, VietNamDivisionType.HUYEN, "huyen_tu_ky", 30)
-    D_299 = District("Huyện Ninh Giang", 299, VietNamDivisionType.HUYEN, "huyen_ninh_giang", 30)
-    D_300 = District("Huyện Thanh Miện", 300, VietNamDivisionType.HUYEN, "huyen_thanh_mien", 30)
-    D_303 = District("Quận Hồng Bàng", 303, VietNamDivisionType.QUAN, "quan_hong_bang", 31)
-    D_304 = District("Quận Ngô Quyền", 304, VietNamDivisionType.QUAN, "quan_ngo_quyen", 31)
-    D_305 = District("Quận Lê Chân", 305, VietNamDivisionType.QUAN, "quan_le_chan", 31)
-    D_306 = District("Quận Hải An", 306, VietNamDivisionType.QUAN, "quan_hai_an", 31)
-    D_307 = District("Quận Kiến An", 307, VietNamDivisionType.QUAN, "quan_kien_an", 31)
-    D_308 = District("Quận Đồ Sơn", 308, VietNamDivisionType.QUAN, "quan_do_son", 31)
-    D_309 = District("Quận Dương Kinh", 309, VietNamDivisionType.QUAN, "quan_duong_kinh", 31)
-    D_311 = District("Huyện Thuỷ Nguyên", 311, VietNamDivisionType.HUYEN, "huyen_thuy_nguyen", 31)
-    D_312 = District("Huyện An Dương", 312, VietNamDivisionType.HUYEN, "huyen_an_duong", 31)
-    D_313 = District("Huyện An Lão", 313, VietNamDivisionType.HUYEN, "huyen_an_lao", 31)
-    D_314 = District("Huyện Kiến Thuỵ", 314, VietNamDivisionType.HUYEN, "huyen_kien_thuy", 31)
-    D_315 = District("Huyện Tiên Lãng", 315, VietNamDivisionType.HUYEN, "huyen_tien_lang", 31)
-    D_316 = District("Huyện Vĩnh Bảo", 316, VietNamDivisionType.HUYEN, "huyen_vinh_bao", 31)
-    D_317 = District("Huyện Cát Hải", 317, VietNamDivisionType.HUYEN, "huyen_cat_hai", 31)
-    D_323 = District("Thành phố Hưng Yên", 323, VietNamDivisionType.THANH_PHO, "thanh_pho_hung_yen", 33)
-    D_325 = District("Huyện Văn Lâm", 325, VietNamDivisionType.HUYEN, "huyen_van_lam", 33)
-    D_326 = District("Huyện Văn Giang", 326, VietNamDivisionType.HUYEN, "huyen_van_giang", 33)
-    D_327 = District("Huyện Yên Mỹ", 327, VietNamDivisionType.HUYEN, "huyen_yen_my", 33)
-    D_328 = District("Thị xã Mỹ Hào", 328, VietNamDivisionType.THI_XA, "thi_xa_my_hao", 33)
-    D_329 = District("Huyện Ân Thi", 329, VietNamDivisionType.HUYEN, "huyen_an_thi", 33)
-    D_330 = District("Huyện Khoái Châu", 330, VietNamDivisionType.HUYEN, "huyen_khoai_chau", 33)
-    D_331 = District("Huyện Kim Động", 331, VietNamDivisionType.HUYEN, "huyen_kim_dong", 33)
-    D_332 = District("Huyện Tiên Lữ", 332, VietNamDivisionType.HUYEN, "huyen_tien_lu", 33)
-    D_333 = District("Huyện Phù Cừ", 333, VietNamDivisionType.HUYEN, "huyen_phu_cu", 33)
-    D_336 = District("Thành phố Thái Bình", 336, VietNamDivisionType.THANH_PHO, "thanh_pho_thai_binh", 34)
-    D_338 = District("Huyện Quỳnh Phụ", 338, VietNamDivisionType.HUYEN, "huyen_quynh_phu", 34)
-    D_339 = District("Huyện Hưng Hà", 339, VietNamDivisionType.HUYEN, "huyen_hung_ha", 34)
-    D_340 = District("Huyện Đông Hưng", 340, VietNamDivisionType.HUYEN, "huyen_dong_hung", 34)
-    D_341 = District("Huyện Thái Thụy", 341, VietNamDivisionType.HUYEN, "huyen_thai_thuy", 34)
-    D_342 = District("Huyện Tiền Hải", 342, VietNamDivisionType.HUYEN, "huyen_tien_hai", 34)
-    D_343 = District("Huyện Kiến Xương", 343, VietNamDivisionType.HUYEN, "huyen_kien_xuong", 34)
-    D_344 = District("Huyện Vũ Thư", 344, VietNamDivisionType.HUYEN, "huyen_vu_thu", 34)
-    D_347 = District("Thành phố Phủ Lý", 347, VietNamDivisionType.THANH_PHO, "thanh_pho_phu_ly", 35)
-    D_349 = District("Thị xã Duy Tiên", 349, VietNamDivisionType.THI_XA, "thi_xa_duy_tien", 35)
-    D_350 = District("Huyện Kim Bảng", 350, VietNamDivisionType.HUYEN, "huyen_kim_bang", 35)
-    D_351 = District("Huyện Thanh Liêm", 351, VietNamDivisionType.HUYEN, "huyen_thanh_liem", 35)
-    D_352 = District("Huyện Bình Lục", 352, VietNamDivisionType.HUYEN, "huyen_binh_luc", 35)
-    D_353 = District("Huyện Lý Nhân", 353, VietNamDivisionType.HUYEN, "huyen_ly_nhan", 35)
-    D_356 = District("Thành phố Nam Định", 356, VietNamDivisionType.THANH_PHO, "thanh_pho_nam_dinh", 36)
-    D_358 = District("Huyện Mỹ Lộc", 358, VietNamDivisionType.HUYEN, "huyen_my_loc", 36)
-    D_359 = District("Huyện Vụ Bản", 359, VietNamDivisionType.HUYEN, "huyen_vu_ban", 36)
-    D_360 = District("Huyện Ý Yên", 360, VietNamDivisionType.HUYEN, "huyen_y_yen", 36)
-    D_361 = District("Huyện Nghĩa Hưng", 361, VietNamDivisionType.HUYEN, "huyen_nghia_hung", 36)
-    D_362 = District("Huyện Nam Trực", 362, VietNamDivisionType.HUYEN, "huyen_nam_truc", 36)
-    D_363 = District("Huyện Trực Ninh", 363, VietNamDivisionType.HUYEN, "huyen_truc_ninh", 36)
-    D_364 = District("Huyện Xuân Trường", 364, VietNamDivisionType.HUYEN, "huyen_xuan_truong", 36)
-    D_365 = District("Huyện Giao Thủy", 365, VietNamDivisionType.HUYEN, "huyen_giao_thuy", 36)
-    D_366 = District("Huyện Hải Hậu", 366, VietNamDivisionType.HUYEN, "huyen_hai_hau", 36)
-    D_369 = District("Thành phố Ninh Bình", 369, VietNamDivisionType.THANH_PHO, "thanh_pho_ninh_binh", 37)
-    D_370 = District("Thành phố Tam Điệp", 370, VietNamDivisionType.THANH_PHO, "thanh_pho_tam_diep", 37)
-    D_372 = District("Huyện Nho Quan", 372, VietNamDivisionType.HUYEN, "huyen_nho_quan", 37)
-    D_373 = District("Huyện Gia Viễn", 373, VietNamDivisionType.HUYEN, "huyen_gia_vien", 37)
-    D_374 = District("Huyện Hoa Lư", 374, VietNamDivisionType.HUYEN, "huyen_hoa_lu", 37)
-    D_375 = District("Huyện Yên Khánh", 375, VietNamDivisionType.HUYEN, "huyen_yen_khanh", 37)
-    D_376 = District("Huyện Kim Sơn", 376, VietNamDivisionType.HUYEN, "huyen_kim_son", 37)
-    D_377 = District("Huyện Yên Mô", 377, VietNamDivisionType.HUYEN, "huyen_yen_mo", 37)
-    D_380 = District("Thành phố Thanh Hóa", 380, VietNamDivisionType.THANH_PHO, "thanh_pho_thanh_hoa", 38)
-    D_381 = District("Thị xã Bỉm Sơn", 381, VietNamDivisionType.THI_XA, "thi_xa_bim_son", 38)
-    D_382 = District("Thành phố Sầm Sơn", 382, VietNamDivisionType.THANH_PHO, "thanh_pho_sam_son", 38)
-    D_384 = District("Huyện Mường Lát", 384, VietNamDivisionType.HUYEN, "huyen_muong_lat", 38)
-    D_385 = District("Huyện Quan Hóa", 385, VietNamDivisionType.HUYEN, "huyen_quan_hoa", 38)
-    D_386 = District("Huyện Bá Thước", 386, VietNamDivisionType.HUYEN, "huyen_ba_thuoc", 38)
-    D_387 = District("Huyện Quan Sơn", 387, VietNamDivisionType.HUYEN, "huyen_quan_son", 38)
-    D_388 = District("Huyện Lang Chánh", 388, VietNamDivisionType.HUYEN, "huyen_lang_chanh", 38)
-    D_389 = District("Huyện Ngọc Lặc", 389, VietNamDivisionType.HUYEN, "huyen_ngoc_lac", 38)
-    D_390 = District("Huyện Cẩm Thủy", 390, VietNamDivisionType.HUYEN, "huyen_cam_thuy", 38)
-    D_391 = District("Huyện Thạch Thành", 391, VietNamDivisionType.HUYEN, "huyen_thach_thanh", 38)
-    D_392 = District("Huyện Hà Trung", 392, VietNamDivisionType.HUYEN, "huyen_ha_trung", 38)
-    D_393 = District("Huyện Vĩnh Lộc", 393, VietNamDivisionType.HUYEN, "huyen_vinh_loc", 38)
-    D_394 = District("Huyện Yên Định", 394, VietNamDivisionType.HUYEN, "huyen_yen_dinh", 38)
-    D_395 = District("Huyện Thọ Xuân", 395, VietNamDivisionType.HUYEN, "huyen_tho_xuan", 38)
-    D_396 = District("Huyện Thường Xuân", 396, VietNamDivisionType.HUYEN, "huyen_thuong_xuan", 38)
-    D_397 = District("Huyện Triệu Sơn", 397, VietNamDivisionType.HUYEN, "huyen_trieu_son", 38)
-    D_398 = District("Huyện Thiệu Hóa", 398, VietNamDivisionType.HUYEN, "huyen_thieu_hoa", 38)
-    D_399 = District("Huyện Hoằng Hóa", 399, VietNamDivisionType.HUYEN, "huyen_hoang_hoa", 38)
-    D_400 = District("Huyện Hậu Lộc", 400, VietNamDivisionType.HUYEN, "huyen_hau_loc", 38)
-    D_401 = District("Huyện Nga Sơn", 401, VietNamDivisionType.HUYEN, "huyen_nga_son", 38)
-    D_402 = District("Huyện Như Xuân", 402, VietNamDivisionType.HUYEN, "huyen_nhu_xuan", 38)
-    D_403 = District("Huyện Như Thanh", 403, VietNamDivisionType.HUYEN, "huyen_nhu_thanh", 38)
-    D_404 = District("Huyện Nông Cống", 404, VietNamDivisionType.HUYEN, "huyen_nong_cong", 38)
-    D_405 = District("Huyện Đông Sơn", 405, VietNamDivisionType.HUYEN, "huyen_dong_son", 38)
-    D_406 = District("Huyện Quảng Xương", 406, VietNamDivisionType.HUYEN, "huyen_quang_xuong", 38)
-    D_407 = District("Huyện Tĩnh Gia", 407, VietNamDivisionType.HUYEN, "huyen_tinh_gia", 38)
-    D_412 = District("Thành phố Vinh", 412, VietNamDivisionType.THANH_PHO, "thanh_pho_vinh", 40)
-    D_413 = District("Thị xã Cửa Lò", 413, VietNamDivisionType.THI_XA, "thi_xa_cua_lo", 40)
-    D_414 = District("Thị xã Thái Hoà", 414, VietNamDivisionType.THI_XA, "thi_xa_thai_hoa", 40)
-    D_415 = District("Huyện Quế Phong", 415, VietNamDivisionType.HUYEN, "huyen_que_phong", 40)
-    D_416 = District("Huyện Quỳ Châu", 416, VietNamDivisionType.HUYEN, "huyen_quy_chau", 40)
-    D_417 = District("Huyện Kỳ Sơn", 417, VietNamDivisionType.HUYEN, "huyen_ky_son", 40)
-    D_418 = District("Huyện Tương Dương", 418, VietNamDivisionType.HUYEN, "huyen_tuong_duong", 40)
-    D_419 = District("Huyện Nghĩa Đàn", 419, VietNamDivisionType.HUYEN, "huyen_nghia_dan", 40)
-    D_420 = District("Huyện Quỳ Hợp", 420, VietNamDivisionType.HUYEN, "huyen_quy_hop", 40)
-    D_421 = District("Huyện Quỳnh Lưu", 421, VietNamDivisionType.HUYEN, "huyen_quynh_luu", 40)
-    D_422 = District("Huyện Con Cuông", 422, VietNamDivisionType.HUYEN, "huyen_con_cuong", 40)
-    D_423 = District("Huyện Tân Kỳ", 423, VietNamDivisionType.HUYEN, "huyen_tan_ky", 40)
-    D_424 = District("Huyện Anh Sơn", 424, VietNamDivisionType.HUYEN, "huyen_anh_son", 40)
-    D_425 = District("Huyện Diễn Châu", 425, VietNamDivisionType.HUYEN, "huyen_dien_chau", 40)
-    D_426 = District("Huyện Yên Thành", 426, VietNamDivisionType.HUYEN, "huyen_yen_thanh", 40)
-    D_427 = District("Huyện Đô Lương", 427, VietNamDivisionType.HUYEN, "huyen_do_luong", 40)
-    D_428 = District("Huyện Thanh Chương", 428, VietNamDivisionType.HUYEN, "huyen_thanh_chuong", 40)
-    D_429 = District("Huyện Nghi Lộc", 429, VietNamDivisionType.HUYEN, "huyen_nghi_loc", 40)
-    D_430 = District("Huyện Nam Đàn", 430, VietNamDivisionType.HUYEN, "huyen_nam_dan", 40)
-    D_431 = District("Huyện Hưng Nguyên", 431, VietNamDivisionType.HUYEN, "huyen_hung_nguyen", 40)
-    D_432 = District("Thị xã Hoàng Mai", 432, VietNamDivisionType.THI_XA, "thi_xa_hoang_mai", 40)
-    D_436 = District("Thành phố Hà Tĩnh", 436, VietNamDivisionType.THANH_PHO, "thanh_pho_ha_tinh", 42)
-    D_437 = District("Thị xã Hồng Lĩnh", 437, VietNamDivisionType.THI_XA, "thi_xa_hong_linh", 42)
-    D_439 = District("Huyện Hương Sơn", 439, VietNamDivisionType.HUYEN, "huyen_huong_son", 42)
-    D_440 = District("Huyện Đức Thọ", 440, VietNamDivisionType.HUYEN, "huyen_duc_tho", 42)
-    D_441 = District("Huyện Vũ Quang", 441, VietNamDivisionType.HUYEN, "huyen_vu_quang", 42)
-    D_442 = District("Huyện Nghi Xuân", 442, VietNamDivisionType.HUYEN, "huyen_nghi_xuan", 42)
-    D_443 = District("Huyện Can Lộc", 443, VietNamDivisionType.HUYEN, "huyen_can_loc", 42)
-    D_444 = District("Huyện Hương Khê", 444, VietNamDivisionType.HUYEN, "huyen_huong_khe", 42)
-    D_445 = District("Huyện Thạch Hà", 445, VietNamDivisionType.HUYEN, "huyen_thach_ha", 42)
-    D_446 = District("Huyện Cẩm Xuyên", 446, VietNamDivisionType.HUYEN, "huyen_cam_xuyen", 42)
-    D_447 = District("Huyện Kỳ Anh", 447, VietNamDivisionType.HUYEN, "huyen_ky_anh", 42)
-    D_448 = District("Huyện Lộc Hà", 448, VietNamDivisionType.HUYEN, "huyen_loc_ha", 42)
-    D_449 = District("Thị xã Kỳ Anh", 449, VietNamDivisionType.THI_XA, "thi_xa_ky_anh", 42)
-    D_450 = District("Thành Phố Đồng Hới", 450, VietNamDivisionType.THANH_PHO, "thanh_pho_dong_hoi", 44)
-    D_452 = District("Huyện Minh Hóa", 452, VietNamDivisionType.HUYEN, "huyen_minh_hoa", 44)
-    D_453 = District("Huyện Tuyên Hóa", 453, VietNamDivisionType.HUYEN, "huyen_tuyen_hoa", 44)
-    D_454 = District("Huyện Quảng Trạch", 454, VietNamDivisionType.HUYEN, "huyen_quang_trach", 44)
-    D_455 = District("Huyện Bố Trạch", 455, VietNamDivisionType.HUYEN, "huyen_bo_trach", 44)
-    D_456 = District("Huyện Quảng Ninh", 456, VietNamDivisionType.HUYEN, "huyen_quang_ninh", 44)
-    D_457 = District("Huyện Lệ Thủy", 457, VietNamDivisionType.HUYEN, "huyen_le_thuy", 44)
-    D_458 = District("Thị xã Ba Đồn", 458, VietNamDivisionType.THI_XA, "thi_xa_ba_don", 44)
-    D_461 = District("Thành phố Đông Hà", 461, VietNamDivisionType.THANH_PHO, "thanh_pho_dong_ha", 45)
-    D_462 = District("Thị xã Quảng Trị", 462, VietNamDivisionType.THI_XA, "thi_xa_quang_tri", 45)
-    D_464 = District("Huyện Vĩnh Linh", 464, VietNamDivisionType.HUYEN, "huyen_vinh_linh", 45)
-    D_465 = District("Huyện Hướng Hóa", 465, VietNamDivisionType.HUYEN, "huyen_huong_hoa", 45)
-    D_466 = District("Huyện Gio Linh", 466, VietNamDivisionType.HUYEN, "huyen_gio_linh", 45)
-    D_467 = District("Huyện Đa Krông", 467, VietNamDivisionType.HUYEN, "huyen_da_krong", 45)
-    D_468 = District("Huyện Cam Lộ", 468, VietNamDivisionType.HUYEN, "huyen_cam_lo", 45)
-    D_469 = District("Huyện Triệu Phong", 469, VietNamDivisionType.HUYEN, "huyen_trieu_phong", 45)
-    D_470 = District("Huyện Hải Lăng", 470, VietNamDivisionType.HUYEN, "huyen_hai_lang", 45)
-    D_474 = District("Thành phố Huế", 474, VietNamDivisionType.THANH_PHO, "thanh_pho_hue", 46)
-    D_476 = District("Huyện Phong Điền", 476, VietNamDivisionType.HUYEN, "huyen_phong_dien", 46)
-    D_477 = District("Huyện Quảng Điền", 477, VietNamDivisionType.HUYEN, "huyen_quang_dien", 46)
-    D_478 = District("Huyện Phú Vang", 478, VietNamDivisionType.HUYEN, "huyen_phu_vang", 46)
-    D_479 = District("Thị xã Hương Thủy", 479, VietNamDivisionType.THI_XA, "thi_xa_huong_thuy", 46)
-    D_480 = District("Thị xã Hương Trà", 480, VietNamDivisionType.THI_XA, "thi_xa_huong_tra", 46)
-    D_481 = District("Huyện A Lưới", 481, VietNamDivisionType.HUYEN, "huyen_a_luoi", 46)
-    D_482 = District("Huyện Phú Lộc", 482, VietNamDivisionType.HUYEN, "huyen_phu_loc", 46)
-    D_483 = District("Huyện Nam Đông", 483, VietNamDivisionType.HUYEN, "huyen_nam_dong", 46)
-    D_490 = District("Quận Liên Chiểu", 490, VietNamDivisionType.QUAN, "quan_lien_chieu", 48)
-    D_491 = District("Quận Thanh Khê", 491, VietNamDivisionType.QUAN, "quan_thanh_khe", 48)
-    D_492 = District("Quận Hải Châu", 492, VietNamDivisionType.QUAN, "quan_hai_chau", 48)
-    D_493 = District("Quận Sơn Trà", 493, VietNamDivisionType.QUAN, "quan_son_tra", 48)
-    D_494 = District("Quận Ngũ Hành Sơn", 494, VietNamDivisionType.QUAN, "quan_ngu_hanh_son", 48)
-    D_495 = District("Quận Cẩm Lệ", 495, VietNamDivisionType.QUAN, "quan_cam_le", 48)
-    D_497 = District("Huyện Hòa Vang", 497, VietNamDivisionType.HUYEN, "huyen_hoa_vang", 48)
-    D_502 = District("Thành phố Tam Kỳ", 502, VietNamDivisionType.THANH_PHO, "thanh_pho_tam_ky", 49)
-    D_503 = District("Thành phố Hội An", 503, VietNamDivisionType.THANH_PHO, "thanh_pho_hoi_an", 49)
-    D_504 = District("Huyện Tây Giang", 504, VietNamDivisionType.HUYEN, "huyen_tay_giang", 49)
-    D_505 = District("Huyện Đông Giang", 505, VietNamDivisionType.HUYEN, "huyen_dong_giang", 49)
-    D_506 = District("Huyện Đại Lộc", 506, VietNamDivisionType.HUYEN, "huyen_dai_loc", 49)
-    D_507 = District("Thị xã Điện Bàn", 507, VietNamDivisionType.THI_XA, "thi_xa_dien_ban", 49)
-    D_508 = District("Huyện Duy Xuyên", 508, VietNamDivisionType.HUYEN, "huyen_duy_xuyen", 49)
-    D_509 = District("Huyện Quế Sơn", 509, VietNamDivisionType.HUYEN, "huyen_que_son", 49)
-    D_510 = District("Huyện Nam Giang", 510, VietNamDivisionType.HUYEN, "huyen_nam_giang", 49)
-    D_511 = District("Huyện Phước Sơn", 511, VietNamDivisionType.HUYEN, "huyen_phuoc_son", 49)
-    D_512 = District("Huyện Hiệp Đức", 512, VietNamDivisionType.HUYEN, "huyen_hiep_duc", 49)
-    D_513 = District("Huyện Thăng Bình", 513, VietNamDivisionType.HUYEN, "huyen_thang_binh", 49)
-    D_514 = District("Huyện Tiên Phước", 514, VietNamDivisionType.HUYEN, "huyen_tien_phuoc", 49)
-    D_515 = District("Huyện Bắc Trà My", 515, VietNamDivisionType.HUYEN, "huyen_bac_tra_my", 49)
-    D_516 = District("Huyện Nam Trà My", 516, VietNamDivisionType.HUYEN, "huyen_nam_tra_my", 49)
-    D_517 = District("Huyện Núi Thành", 517, VietNamDivisionType.HUYEN, "huyen_nui_thanh", 49)
-    D_518 = District("Huyện Phú Ninh", 518, VietNamDivisionType.HUYEN, "huyen_phu_ninh", 49)
-    D_519 = District("Huyện Nông Sơn", 519, VietNamDivisionType.HUYEN, "huyen_nong_son", 49)
-    D_522 = District("Thành phố Quảng Ngãi", 522, VietNamDivisionType.THANH_PHO, "thanh_pho_quang_ngai", 51)
-    D_524 = District("Huyện Bình Sơn", 524, VietNamDivisionType.HUYEN, "huyen_binh_son", 51)
-    D_525 = District("Huyện Trà Bồng", 525, VietNamDivisionType.HUYEN, "huyen_tra_bong", 51)
-    D_526 = District("Huyện Tây Trà", 526, VietNamDivisionType.HUYEN, "huyen_tay_tra", 51)
-    D_527 = District("Huyện Sơn Tịnh", 527, VietNamDivisionType.HUYEN, "huyen_son_tinh", 51)
-    D_528 = District("Huyện Tư Nghĩa", 528, VietNamDivisionType.HUYEN, "huyen_tu_nghia", 51)
-    D_529 = District("Huyện Sơn Hà", 529, VietNamDivisionType.HUYEN, "huyen_son_ha", 51)
-    D_530 = District("Huyện Sơn Tây", 530, VietNamDivisionType.HUYEN, "huyen_son_tay", 51)
-    D_531 = District("Huyện Minh Long", 531, VietNamDivisionType.HUYEN, "huyen_minh_long", 51)
-    D_532 = District("Huyện Nghĩa Hành", 532, VietNamDivisionType.HUYEN, "huyen_nghia_hanh", 51)
-    D_533 = District("Huyện Mộ Đức", 533, VietNamDivisionType.HUYEN, "huyen_mo_duc", 51)
-    D_534 = District("Huyện Đức Phổ", 534, VietNamDivisionType.HUYEN, "huyen_duc_pho", 51)
-    D_535 = District("Huyện Ba Tơ", 535, VietNamDivisionType.HUYEN, "huyen_ba_to", 51)
-    D_536 = District("Huyện Lý Sơn", 536, VietNamDivisionType.HUYEN, "huyen_ly_son", 51)
-    D_540 = District("Thành phố Qui Nhơn", 540, VietNamDivisionType.THANH_PHO, "thanh_pho_qui_nhon", 52)
-    D_542 = District("Huyện An Lão", 542, VietNamDivisionType.HUYEN, "huyen_an_lao", 52)
-    D_543 = District("Huyện Hoài Nhơn", 543, VietNamDivisionType.HUYEN, "huyen_hoai_nhon", 52)
-    D_544 = District("Huyện Hoài Ân", 544, VietNamDivisionType.HUYEN, "huyen_hoai_an", 52)
-    D_545 = District("Huyện Phù Mỹ", 545, VietNamDivisionType.HUYEN, "huyen_phu_my", 52)
-    D_546 = District("Huyện Vĩnh Thạnh", 546, VietNamDivisionType.HUYEN, "huyen_vinh_thanh", 52)
-    D_547 = District("Huyện Tây Sơn", 547, VietNamDivisionType.HUYEN, "huyen_tay_son", 52)
-    D_548 = District("Huyện Phù Cát", 548, VietNamDivisionType.HUYEN, "huyen_phu_cat", 52)
-    D_549 = District("Thị xã An Nhơn", 549, VietNamDivisionType.THI_XA, "thi_xa_an_nhon", 52)
-    D_550 = District("Huyện Tuy Phước", 550, VietNamDivisionType.HUYEN, "huyen_tuy_phuoc", 52)
-    D_551 = District("Huyện Vân Canh", 551, VietNamDivisionType.HUYEN, "huyen_van_canh", 52)
-    D_555 = District("Thành phố Tuy Hoà", 555, VietNamDivisionType.THANH_PHO, "thanh_pho_tuy_hoa", 54)
-    D_557 = District("Thị xã Sông Cầu", 557, VietNamDivisionType.THI_XA, "thi_xa_song_cau", 54)
-    D_558 = District("Huyện Đồng Xuân", 558, VietNamDivisionType.HUYEN, "huyen_dong_xuan", 54)
-    D_559 = District("Huyện Tuy An", 559, VietNamDivisionType.HUYEN, "huyen_tuy_an", 54)
-    D_560 = District("Huyện Sơn Hòa", 560, VietNamDivisionType.HUYEN, "huyen_son_hoa", 54)
-    D_561 = District("Huyện Sông Hinh", 561, VietNamDivisionType.HUYEN, "huyen_song_hinh", 54)
-    D_562 = District("Huyện Tây Hoà", 562, VietNamDivisionType.HUYEN, "huyen_tay_hoa", 54)
-    D_563 = District("Huyện Phú Hoà", 563, VietNamDivisionType.HUYEN, "huyen_phu_hoa", 54)
-    D_564 = District("Huyện Đông Hòa", 564, VietNamDivisionType.HUYEN, "huyen_dong_hoa", 54)
-    D_568 = District("Thành phố Nha Trang", 568, VietNamDivisionType.THANH_PHO, "thanh_pho_nha_trang", 56)
-    D_569 = District("Thành phố Cam Ranh", 569, VietNamDivisionType.THANH_PHO, "thanh_pho_cam_ranh", 56)
-    D_570 = District("Huyện Cam Lâm", 570, VietNamDivisionType.HUYEN, "huyen_cam_lam", 56)
-    D_571 = District("Huyện Vạn Ninh", 571, VietNamDivisionType.HUYEN, "huyen_van_ninh", 56)
-    D_572 = District("Thị xã Ninh Hòa", 572, VietNamDivisionType.THI_XA, "thi_xa_ninh_hoa", 56)
-    D_573 = District("Huyện Khánh Vĩnh", 573, VietNamDivisionType.HUYEN, "huyen_khanh_vinh", 56)
-    D_574 = District("Huyện Diên Khánh", 574, VietNamDivisionType.HUYEN, "huyen_dien_khanh", 56)
-    D_575 = District("Huyện Khánh Sơn", 575, VietNamDivisionType.HUYEN, "huyen_khanh_son", 56)
-    D_576 = District("Huyện Trường Sa", 576, VietNamDivisionType.HUYEN, "huyen_truong_sa", 56)
-    D_582 = District(
-        "Thành phố Phan Rang-Tháp Chàm", 582, VietNamDivisionType.THANH_PHO, "thanh_pho_phan_rang_thap_cham", 58
+    D_1 = District(
+        name="Quận Ba Đình", code=1, division_type=VietNamDivisionType.QUAN, codename="quan_ba_dinh", province_code=1
     )
-    D_584 = District("Huyện Bác Ái", 584, VietNamDivisionType.HUYEN, "huyen_bac_ai", 58)
-    D_585 = District("Huyện Ninh Sơn", 585, VietNamDivisionType.HUYEN, "huyen_ninh_son", 58)
-    D_586 = District("Huyện Ninh Hải", 586, VietNamDivisionType.HUYEN, "huyen_ninh_hai", 58)
-    D_587 = District("Huyện Ninh Phước", 587, VietNamDivisionType.HUYEN, "huyen_ninh_phuoc", 58)
-    D_588 = District("Huyện Thuận Bắc", 588, VietNamDivisionType.HUYEN, "huyen_thuan_bac", 58)
-    D_589 = District("Huyện Thuận Nam", 589, VietNamDivisionType.HUYEN, "huyen_thuan_nam", 58)
-    D_593 = District("Thành phố Phan Thiết", 593, VietNamDivisionType.THANH_PHO, "thanh_pho_phan_thiet", 60)
-    D_594 = District("Thị xã La Gi", 594, VietNamDivisionType.THI_XA, "thi_xa_la_gi", 60)
-    D_595 = District("Huyện Tuy Phong", 595, VietNamDivisionType.HUYEN, "huyen_tuy_phong", 60)
-    D_596 = District("Huyện Bắc Bình", 596, VietNamDivisionType.HUYEN, "huyen_bac_binh", 60)
-    D_597 = District("Huyện Hàm Thuận Bắc", 597, VietNamDivisionType.HUYEN, "huyen_ham_thuan_bac", 60)
-    D_598 = District("Huyện Hàm Thuận Nam", 598, VietNamDivisionType.HUYEN, "huyen_ham_thuan_nam", 60)
-    D_599 = District("Huyện Tánh Linh", 599, VietNamDivisionType.HUYEN, "huyen_tanh_linh", 60)
-    D_600 = District("Huyện Đức Linh", 600, VietNamDivisionType.HUYEN, "huyen_duc_linh", 60)
-    D_601 = District("Huyện Hàm Tân", 601, VietNamDivisionType.HUYEN, "huyen_ham_tan", 60)
-    D_602 = District("Huyện Phú Quí", 602, VietNamDivisionType.HUYEN, "huyen_phu_qui", 60)
-    D_608 = District("Thành phố Kon Tum", 608, VietNamDivisionType.THANH_PHO, "thanh_pho_kon_tum", 62)
-    D_610 = District("Huyện Đắk Glei", 610, VietNamDivisionType.HUYEN, "huyen_dak_glei", 62)
-    D_611 = District("Huyện Ngọc Hồi", 611, VietNamDivisionType.HUYEN, "huyen_ngoc_hoi", 62)
-    D_612 = District("Huyện Đắk Tô", 612, VietNamDivisionType.HUYEN, "huyen_dak_to", 62)
-    D_613 = District("Huyện Kon Plông", 613, VietNamDivisionType.HUYEN, "huyen_kon_plong", 62)
-    D_614 = District("Huyện Kon Rẫy", 614, VietNamDivisionType.HUYEN, "huyen_kon_ray", 62)
-    D_615 = District("Huyện Đắk Hà", 615, VietNamDivisionType.HUYEN, "huyen_dak_ha", 62)
-    D_616 = District("Huyện Sa Thầy", 616, VietNamDivisionType.HUYEN, "huyen_sa_thay", 62)
-    D_617 = District("Huyện Tu Mơ Rông", 617, VietNamDivisionType.HUYEN, "huyen_tu_mo_rong", 62)
-    D_618 = District("Huyện Ia H' Drai", 618, VietNamDivisionType.HUYEN, "huyen_ia_h_drai", 62)
-    D_622 = District("Thành phố Pleiku", 622, VietNamDivisionType.THANH_PHO, "thanh_pho_pleiku", 64)
-    D_623 = District("Thị xã An Khê", 623, VietNamDivisionType.THI_XA, "thi_xa_an_khe", 64)
-    D_624 = District("Thị xã Ayun Pa", 624, VietNamDivisionType.THI_XA, "thi_xa_ayun_pa", 64)
-    D_625 = District("Huyện KBang", 625, VietNamDivisionType.HUYEN, "huyen_kbang", 64)
-    D_626 = District("Huyện Đăk Đoa", 626, VietNamDivisionType.HUYEN, "huyen_dak_doa", 64)
-    D_627 = District("Huyện Chư Păh", 627, VietNamDivisionType.HUYEN, "huyen_chu_pah", 64)
-    D_628 = District("Huyện Ia Grai", 628, VietNamDivisionType.HUYEN, "huyen_ia_grai", 64)
-    D_629 = District("Huyện Mang Yang", 629, VietNamDivisionType.HUYEN, "huyen_mang_yang", 64)
-    D_630 = District("Huyện Kông Chro", 630, VietNamDivisionType.HUYEN, "huyen_kong_chro", 64)
-    D_631 = District("Huyện Đức Cơ", 631, VietNamDivisionType.HUYEN, "huyen_duc_co", 64)
-    D_632 = District("Huyện Chư Prông", 632, VietNamDivisionType.HUYEN, "huyen_chu_prong", 64)
-    D_633 = District("Huyện Chư Sê", 633, VietNamDivisionType.HUYEN, "huyen_chu_se", 64)
-    D_634 = District("Huyện Đăk Pơ", 634, VietNamDivisionType.HUYEN, "huyen_dak_po", 64)
-    D_635 = District("Huyện Ia Pa", 635, VietNamDivisionType.HUYEN, "huyen_ia_pa", 64)
-    D_637 = District("Huyện Krông Pa", 637, VietNamDivisionType.HUYEN, "huyen_krong_pa", 64)
-    D_638 = District("Huyện Phú Thiện", 638, VietNamDivisionType.HUYEN, "huyen_phu_thien", 64)
-    D_639 = District("Huyện Chư Pưh", 639, VietNamDivisionType.HUYEN, "huyen_chu_puh", 64)
-    D_643 = District("Thành phố Buôn Ma Thuột", 643, VietNamDivisionType.THANH_PHO, "thanh_pho_buon_ma_thuot", 66)
-    D_644 = District("Thị Xã Buôn Hồ", 644, VietNamDivisionType.THI_XA, "thi_xa_buon_ho", 66)
-    D_645 = District("Huyện Ea H'leo", 645, VietNamDivisionType.HUYEN, "huyen_ea_hleo", 66)
-    D_646 = District("Huyện Ea Súp", 646, VietNamDivisionType.HUYEN, "huyen_ea_sup", 66)
-    D_647 = District("Huyện Buôn Đôn", 647, VietNamDivisionType.HUYEN, "huyen_buon_don", 66)
-    D_648 = District("Huyện Cư M'gar", 648, VietNamDivisionType.HUYEN, "huyen_cu_mgar", 66)
-    D_649 = District("Huyện Krông Búk", 649, VietNamDivisionType.HUYEN, "huyen_krong_buk", 66)
-    D_650 = District("Huyện Krông Năng", 650, VietNamDivisionType.HUYEN, "huyen_krong_nang", 66)
-    D_651 = District("Huyện Ea Kar", 651, VietNamDivisionType.HUYEN, "huyen_ea_kar", 66)
-    D_652 = District("Huyện M'Đrắk", 652, VietNamDivisionType.HUYEN, "huyen_mdrak", 66)
-    D_653 = District("Huyện Krông Bông", 653, VietNamDivisionType.HUYEN, "huyen_krong_bong", 66)
-    D_654 = District("Huyện Krông Pắc", 654, VietNamDivisionType.HUYEN, "huyen_krong_pac", 66)
-    D_655 = District("Huyện Krông A Na", 655, VietNamDivisionType.HUYEN, "huyen_krong_a_na", 66)
-    D_656 = District("Huyện Lắk", 656, VietNamDivisionType.HUYEN, "huyen_lak", 66)
-    D_657 = District("Huyện Cư Kuin", 657, VietNamDivisionType.HUYEN, "huyen_cu_kuin", 66)
-    D_660 = District("Thành phố Gia Nghĩa", 660, VietNamDivisionType.THANH_PHO, "thanh_pho_gia_nghia", 67)
-    D_661 = District("Huyện Đăk Glong", 661, VietNamDivisionType.HUYEN, "huyen_dak_glong", 67)
-    D_662 = District("Huyện Cư Jút", 662, VietNamDivisionType.HUYEN, "huyen_cu_jut", 67)
-    D_663 = District("Huyện Đắk Mil", 663, VietNamDivisionType.HUYEN, "huyen_dak_mil", 67)
-    D_664 = District("Huyện Krông Nô", 664, VietNamDivisionType.HUYEN, "huyen_krong_no", 67)
-    D_665 = District("Huyện Đắk Song", 665, VietNamDivisionType.HUYEN, "huyen_dak_song", 67)
-    D_666 = District("Huyện Đắk R'Lấp", 666, VietNamDivisionType.HUYEN, "huyen_dak_rlap", 67)
-    D_667 = District("Huyện Tuy Đức", 667, VietNamDivisionType.HUYEN, "huyen_tuy_duc", 67)
-    D_672 = District("Thành phố Đà Lạt", 672, VietNamDivisionType.THANH_PHO, "thanh_pho_da_lat", 68)
-    D_673 = District("Thành phố Bảo Lộc", 673, VietNamDivisionType.THANH_PHO, "thanh_pho_bao_loc", 68)
-    D_674 = District("Huyện Đam Rông", 674, VietNamDivisionType.HUYEN, "huyen_dam_rong", 68)
-    D_675 = District("Huyện Lạc Dương", 675, VietNamDivisionType.HUYEN, "huyen_lac_duong", 68)
-    D_676 = District("Huyện Lâm Hà", 676, VietNamDivisionType.HUYEN, "huyen_lam_ha", 68)
-    D_677 = District("Huyện Đơn Dương", 677, VietNamDivisionType.HUYEN, "huyen_don_duong", 68)
-    D_678 = District("Huyện Đức Trọng", 678, VietNamDivisionType.HUYEN, "huyen_duc_trong", 68)
-    D_679 = District("Huyện Di Linh", 679, VietNamDivisionType.HUYEN, "huyen_di_linh", 68)
-    D_680 = District("Huyện Bảo Lâm", 680, VietNamDivisionType.HUYEN, "huyen_bao_lam", 68)
-    D_681 = District("Huyện Đạ Huoai", 681, VietNamDivisionType.HUYEN, "huyen_da_huoai", 68)
-    D_682 = District("Huyện Đạ Tẻh", 682, VietNamDivisionType.HUYEN, "huyen_da_teh", 68)
-    D_683 = District("Huyện Cát Tiên", 683, VietNamDivisionType.HUYEN, "huyen_cat_tien", 68)
-    D_688 = District("Thị xã Phước Long", 688, VietNamDivisionType.THI_XA, "thi_xa_phuoc_long", 70)
-    D_689 = District("Thành phố Đồng Xoài", 689, VietNamDivisionType.THANH_PHO, "thanh_pho_dong_xoai", 70)
-    D_690 = District("Thị xã Bình Long", 690, VietNamDivisionType.THI_XA, "thi_xa_binh_long", 70)
-    D_691 = District("Huyện Bù Gia Mập", 691, VietNamDivisionType.HUYEN, "huyen_bu_gia_map", 70)
-    D_692 = District("Huyện Lộc Ninh", 692, VietNamDivisionType.HUYEN, "huyen_loc_ninh", 70)
-    D_693 = District("Huyện Bù Đốp", 693, VietNamDivisionType.HUYEN, "huyen_bu_dop", 70)
-    D_694 = District("Huyện Hớn Quản", 694, VietNamDivisionType.HUYEN, "huyen_hon_quan", 70)
-    D_695 = District("Huyện Đồng Phú", 695, VietNamDivisionType.HUYEN, "huyen_dong_phu", 70)
-    D_696 = District("Huyện Bù Đăng", 696, VietNamDivisionType.HUYEN, "huyen_bu_dang", 70)
-    D_697 = District("Huyện Chơn Thành", 697, VietNamDivisionType.HUYEN, "huyen_chon_thanh", 70)
-    D_698 = District("Huyện Phú Riềng", 698, VietNamDivisionType.HUYEN, "huyen_phu_rieng", 70)
-    D_703 = District("Thành phố Tây Ninh", 703, VietNamDivisionType.THANH_PHO, "thanh_pho_tay_ninh", 72)
-    D_705 = District("Huyện Tân Biên", 705, VietNamDivisionType.HUYEN, "huyen_tan_bien", 72)
-    D_706 = District("Huyện Tân Châu", 706, VietNamDivisionType.HUYEN, "huyen_tan_chau", 72)
-    D_707 = District("Huyện Dương Minh Châu", 707, VietNamDivisionType.HUYEN, "huyen_duong_minh_chau", 72)
-    D_708 = District("Huyện Châu Thành", 708, VietNamDivisionType.HUYEN, "huyen_chau_thanh", 72)
-    D_709 = District("Huyện Hòa Thành", 709, VietNamDivisionType.HUYEN, "huyen_hoa_thanh", 72)
-    D_710 = District("Huyện Gò Dầu", 710, VietNamDivisionType.HUYEN, "huyen_go_dau", 72)
-    D_711 = District("Huyện Bến Cầu", 711, VietNamDivisionType.HUYEN, "huyen_ben_cau", 72)
-    D_712 = District("Huyện Trảng Bàng", 712, VietNamDivisionType.HUYEN, "huyen_trang_bang", 72)
-    D_718 = District("Thành phố Thủ Dầu Một", 718, VietNamDivisionType.THANH_PHO, "thanh_pho_thu_dau_mot", 74)
-    D_719 = District("Huyện Bàu Bàng", 719, VietNamDivisionType.HUYEN, "huyen_bau_bang", 74)
-    D_720 = District("Huyện Dầu Tiếng", 720, VietNamDivisionType.HUYEN, "huyen_dau_tieng", 74)
-    D_721 = District("Thị xã Bến Cát", 721, VietNamDivisionType.THI_XA, "thi_xa_ben_cat", 74)
-    D_722 = District("Huyện Phú Giáo", 722, VietNamDivisionType.HUYEN, "huyen_phu_giao", 74)
-    D_723 = District("Thị xã Tân Uyên", 723, VietNamDivisionType.THI_XA, "thi_xa_tan_uyen", 74)
-    D_724 = District("Thị xã Dĩ An", 724, VietNamDivisionType.THI_XA, "thi_xa_di_an", 74)
-    D_725 = District("Thị xã Thuận An", 725, VietNamDivisionType.THI_XA, "thi_xa_thuan_an", 74)
-    D_726 = District("Huyện Bắc Tân Uyên", 726, VietNamDivisionType.HUYEN, "huyen_bac_tan_uyen", 74)
-    D_731 = District("Thành phố Biên Hòa", 731, VietNamDivisionType.THANH_PHO, "thanh_pho_bien_hoa", 75)
-    D_732 = District("Thành phố Long Khánh", 732, VietNamDivisionType.THANH_PHO, "thanh_pho_long_khanh", 75)
-    D_734 = District("Huyện Tân Phú", 734, VietNamDivisionType.HUYEN, "huyen_tan_phu", 75)
-    D_735 = District("Huyện Vĩnh Cửu", 735, VietNamDivisionType.HUYEN, "huyen_vinh_cuu", 75)
-    D_736 = District("Huyện Định Quán", 736, VietNamDivisionType.HUYEN, "huyen_dinh_quan", 75)
-    D_737 = District("Huyện Trảng Bom", 737, VietNamDivisionType.HUYEN, "huyen_trang_bom", 75)
-    D_738 = District("Huyện Thống Nhất", 738, VietNamDivisionType.HUYEN, "huyen_thong_nhat", 75)
-    D_739 = District("Huyện Cẩm Mỹ", 739, VietNamDivisionType.HUYEN, "huyen_cam_my", 75)
-    D_740 = District("Huyện Long Thành", 740, VietNamDivisionType.HUYEN, "huyen_long_thanh", 75)
-    D_741 = District("Huyện Xuân Lộc", 741, VietNamDivisionType.HUYEN, "huyen_xuan_loc", 75)
-    D_742 = District("Huyện Nhơn Trạch", 742, VietNamDivisionType.HUYEN, "huyen_nhon_trach", 75)
-    D_747 = District("Thành phố Vũng Tàu", 747, VietNamDivisionType.THANH_PHO, "thanh_pho_vung_tau", 77)
-    D_748 = District("Thành phố Bà Rịa", 748, VietNamDivisionType.THANH_PHO, "thanh_pho_ba_ria", 77)
-    D_750 = District("Huyện Châu Đức", 750, VietNamDivisionType.HUYEN, "huyen_chau_duc", 77)
-    D_751 = District("Huyện Xuyên Mộc", 751, VietNamDivisionType.HUYEN, "huyen_xuyen_moc", 77)
-    D_752 = District("Huyện Long Điền", 752, VietNamDivisionType.HUYEN, "huyen_long_dien", 77)
-    D_753 = District("Huyện Đất Đỏ", 753, VietNamDivisionType.HUYEN, "huyen_dat_do", 77)
-    D_754 = District("Thị xã Phú Mỹ", 754, VietNamDivisionType.THI_XA, "thi_xa_phu_my", 77)
-    D_760 = District("Quận 1", 760, VietNamDivisionType.QUAN, "quan_1", 79)
-    D_761 = District("Quận 12", 761, VietNamDivisionType.QUAN, "quan_12", 79)
-    D_762 = District("Quận Thủ Đức", 762, VietNamDivisionType.QUAN, "quan_thu_duc", 79)
-    D_763 = District("Quận 9", 763, VietNamDivisionType.QUAN, "quan_9", 79)
-    D_764 = District("Quận Gò Vấp", 764, VietNamDivisionType.QUAN, "quan_go_vap", 79)
-    D_765 = District("Quận Bình Thạnh", 765, VietNamDivisionType.QUAN, "quan_binh_thanh", 79)
-    D_766 = District("Quận Tân Bình", 766, VietNamDivisionType.QUAN, "quan_tan_binh", 79)
-    D_767 = District("Quận Tân Phú", 767, VietNamDivisionType.QUAN, "quan_tan_phu", 79)
-    D_768 = District("Quận Phú Nhuận", 768, VietNamDivisionType.QUAN, "quan_phu_nhuan", 79)
-    D_769 = District("Quận 2", 769, VietNamDivisionType.QUAN, "quan_2", 79)
-    D_770 = District("Quận 3", 770, VietNamDivisionType.QUAN, "quan_3", 79)
-    D_771 = District("Quận 10", 771, VietNamDivisionType.QUAN, "quan_10", 79)
-    D_772 = District("Quận 11", 772, VietNamDivisionType.QUAN, "quan_11", 79)
-    D_773 = District("Quận 4", 773, VietNamDivisionType.QUAN, "quan_4", 79)
-    D_774 = District("Quận 5", 774, VietNamDivisionType.QUAN, "quan_5", 79)
-    D_775 = District("Quận 6", 775, VietNamDivisionType.QUAN, "quan_6", 79)
-    D_776 = District("Quận 8", 776, VietNamDivisionType.QUAN, "quan_8", 79)
-    D_777 = District("Quận Bình Tân", 777, VietNamDivisionType.QUAN, "quan_binh_tan", 79)
-    D_778 = District("Quận 7", 778, VietNamDivisionType.QUAN, "quan_7", 79)
-    D_783 = District("Huyện Củ Chi", 783, VietNamDivisionType.HUYEN, "huyen_cu_chi", 79)
-    D_784 = District("Huyện Hóc Môn", 784, VietNamDivisionType.HUYEN, "huyen_hoc_mon", 79)
-    D_785 = District("Huyện Bình Chánh", 785, VietNamDivisionType.HUYEN, "huyen_binh_chanh", 79)
-    D_786 = District("Huyện Nhà Bè", 786, VietNamDivisionType.HUYEN, "huyen_nha_be", 79)
-    D_787 = District("Huyện Cần Giờ", 787, VietNamDivisionType.HUYEN, "huyen_can_gio", 79)
-    D_794 = District("Thành phố Tân An", 794, VietNamDivisionType.THANH_PHO, "thanh_pho_tan_an", 80)
-    D_795 = District("Thị xã Kiến Tường", 795, VietNamDivisionType.THI_XA, "thi_xa_kien_tuong", 80)
-    D_796 = District("Huyện Tân Hưng", 796, VietNamDivisionType.HUYEN, "huyen_tan_hung", 80)
-    D_797 = District("Huyện Vĩnh Hưng", 797, VietNamDivisionType.HUYEN, "huyen_vinh_hung", 80)
-    D_798 = District("Huyện Mộc Hóa", 798, VietNamDivisionType.HUYEN, "huyen_moc_hoa", 80)
-    D_799 = District("Huyện Tân Thạnh", 799, VietNamDivisionType.HUYEN, "huyen_tan_thanh", 80)
-    D_800 = District("Huyện Thạnh Hóa", 800, VietNamDivisionType.HUYEN, "huyen_thanh_hoa", 80)
-    D_801 = District("Huyện Đức Huệ", 801, VietNamDivisionType.HUYEN, "huyen_duc_hue", 80)
-    D_802 = District("Huyện Đức Hòa", 802, VietNamDivisionType.HUYEN, "huyen_duc_hoa", 80)
-    D_803 = District("Huyện Bến Lức", 803, VietNamDivisionType.HUYEN, "huyen_ben_luc", 80)
-    D_804 = District("Huyện Thủ Thừa", 804, VietNamDivisionType.HUYEN, "huyen_thu_thua", 80)
-    D_805 = District("Huyện Tân Trụ", 805, VietNamDivisionType.HUYEN, "huyen_tan_tru", 80)
-    D_806 = District("Huyện Cần Đước", 806, VietNamDivisionType.HUYEN, "huyen_can_duoc", 80)
-    D_807 = District("Huyện Cần Giuộc", 807, VietNamDivisionType.HUYEN, "huyen_can_giuoc", 80)
-    D_808 = District("Huyện Châu Thành", 808, VietNamDivisionType.HUYEN, "huyen_chau_thanh", 80)
-    D_815 = District("Thành phố Mỹ Tho", 815, VietNamDivisionType.THANH_PHO, "thanh_pho_my_tho", 82)
-    D_816 = District("Thị xã Gò Công", 816, VietNamDivisionType.THI_XA, "thi_xa_go_cong", 82)
-    D_817 = District("Thị xã Cai Lậy", 817, VietNamDivisionType.THI_XA, "thi_xa_cai_lay", 82)
-    D_818 = District("Huyện Tân Phước", 818, VietNamDivisionType.HUYEN, "huyen_tan_phuoc", 82)
-    D_819 = District("Huyện Cái Bè", 819, VietNamDivisionType.HUYEN, "huyen_cai_be", 82)
-    D_820 = District("Huyện Cai Lậy", 820, VietNamDivisionType.HUYEN, "huyen_cai_lay", 82)
-    D_821 = District("Huyện Châu Thành", 821, VietNamDivisionType.HUYEN, "huyen_chau_thanh", 82)
-    D_822 = District("Huyện Chợ Gạo", 822, VietNamDivisionType.HUYEN, "huyen_cho_gao", 82)
-    D_823 = District("Huyện Gò Công Tây", 823, VietNamDivisionType.HUYEN, "huyen_go_cong_tay", 82)
-    D_824 = District("Huyện Gò Công Đông", 824, VietNamDivisionType.HUYEN, "huyen_go_cong_dong", 82)
-    D_825 = District("Huyện Tân Phú Đông", 825, VietNamDivisionType.HUYEN, "huyen_tan_phu_dong", 82)
-    D_829 = District("Thành phố Bến Tre", 829, VietNamDivisionType.THANH_PHO, "thanh_pho_ben_tre", 83)
-    D_831 = District("Huyện Châu Thành", 831, VietNamDivisionType.HUYEN, "huyen_chau_thanh", 83)
-    D_832 = District("Huyện Chợ Lách", 832, VietNamDivisionType.HUYEN, "huyen_cho_lach", 83)
-    D_833 = District("Huyện Mỏ Cày Nam", 833, VietNamDivisionType.HUYEN, "huyen_mo_cay_nam", 83)
-    D_834 = District("Huyện Giồng Trôm", 834, VietNamDivisionType.HUYEN, "huyen_giong_trom", 83)
-    D_835 = District("Huyện Bình Đại", 835, VietNamDivisionType.HUYEN, "huyen_binh_dai", 83)
-    D_836 = District("Huyện Ba Tri", 836, VietNamDivisionType.HUYEN, "huyen_ba_tri", 83)
-    D_837 = District("Huyện Thạnh Phú", 837, VietNamDivisionType.HUYEN, "huyen_thanh_phu", 83)
-    D_838 = District("Huyện Mỏ Cày Bắc", 838, VietNamDivisionType.HUYEN, "huyen_mo_cay_bac", 83)
-    D_842 = District("Thành phố Trà Vinh", 842, VietNamDivisionType.THANH_PHO, "thanh_pho_tra_vinh", 84)
-    D_844 = District("Huyện Càng Long", 844, VietNamDivisionType.HUYEN, "huyen_cang_long", 84)
-    D_845 = District("Huyện Cầu Kè", 845, VietNamDivisionType.HUYEN, "huyen_cau_ke", 84)
-    D_846 = District("Huyện Tiểu Cần", 846, VietNamDivisionType.HUYEN, "huyen_tieu_can", 84)
-    D_847 = District("Huyện Châu Thành", 847, VietNamDivisionType.HUYEN, "huyen_chau_thanh", 84)
-    D_848 = District("Huyện Cầu Ngang", 848, VietNamDivisionType.HUYEN, "huyen_cau_ngang", 84)
-    D_849 = District("Huyện Trà Cú", 849, VietNamDivisionType.HUYEN, "huyen_tra_cu", 84)
-    D_850 = District("Huyện Duyên Hải", 850, VietNamDivisionType.HUYEN, "huyen_duyen_hai", 84)
-    D_851 = District("Thị xã Duyên Hải", 851, VietNamDivisionType.THI_XA, "thi_xa_duyen_hai", 84)
-    D_855 = District("Thành phố Vĩnh Long", 855, VietNamDivisionType.THANH_PHO, "thanh_pho_vinh_long", 86)
-    D_857 = District("Huyện Long Hồ", 857, VietNamDivisionType.HUYEN, "huyen_long_ho", 86)
-    D_858 = District("Huyện Mang Thít", 858, VietNamDivisionType.HUYEN, "huyen_mang_thit", 86)
-    D_859 = District("Huyện Vũng Liêm", 859, VietNamDivisionType.HUYEN, "huyen_vung_liem", 86)
-    D_860 = District("Huyện Tam Bình", 860, VietNamDivisionType.HUYEN, "huyen_tam_binh", 86)
-    D_861 = District("Thị xã Bình Minh", 861, VietNamDivisionType.THI_XA, "thi_xa_binh_minh", 86)
-    D_862 = District("Huyện Trà Ôn", 862, VietNamDivisionType.HUYEN, "huyen_tra_on", 86)
-    D_863 = District("Huyện Bình Tân", 863, VietNamDivisionType.HUYEN, "huyen_binh_tan", 86)
-    D_866 = District("Thành phố Cao Lãnh", 866, VietNamDivisionType.THANH_PHO, "thanh_pho_cao_lanh", 87)
-    D_867 = District("Thành phố Sa Đéc", 867, VietNamDivisionType.THANH_PHO, "thanh_pho_sa_dec", 87)
-    D_868 = District("Thị xã Hồng Ngự", 868, VietNamDivisionType.THI_XA, "thi_xa_hong_ngu", 87)
-    D_869 = District("Huyện Tân Hồng", 869, VietNamDivisionType.HUYEN, "huyen_tan_hong", 87)
-    D_870 = District("Huyện Hồng Ngự", 870, VietNamDivisionType.HUYEN, "huyen_hong_ngu", 87)
-    D_871 = District("Huyện Tam Nông", 871, VietNamDivisionType.HUYEN, "huyen_tam_nong", 87)
-    D_872 = District("Huyện Tháp Mười", 872, VietNamDivisionType.HUYEN, "huyen_thap_muoi", 87)
-    D_873 = District("Huyện Cao Lãnh", 873, VietNamDivisionType.HUYEN, "huyen_cao_lanh", 87)
-    D_874 = District("Huyện Thanh Bình", 874, VietNamDivisionType.HUYEN, "huyen_thanh_binh", 87)
-    D_875 = District("Huyện Lấp Vò", 875, VietNamDivisionType.HUYEN, "huyen_lap_vo", 87)
-    D_876 = District("Huyện Lai Vung", 876, VietNamDivisionType.HUYEN, "huyen_lai_vung", 87)
-    D_877 = District("Huyện Châu Thành", 877, VietNamDivisionType.HUYEN, "huyen_chau_thanh", 87)
-    D_883 = District("Thành phố Long Xuyên", 883, VietNamDivisionType.THANH_PHO, "thanh_pho_long_xuyen", 89)
-    D_884 = District("Thành phố Châu Đốc", 884, VietNamDivisionType.THANH_PHO, "thanh_pho_chau_doc", 89)
-    D_886 = District("Huyện An Phú", 886, VietNamDivisionType.HUYEN, "huyen_an_phu", 89)
-    D_887 = District("Thị xã Tân Châu", 887, VietNamDivisionType.THI_XA, "thi_xa_tan_chau", 89)
-    D_888 = District("Huyện Phú Tân", 888, VietNamDivisionType.HUYEN, "huyen_phu_tan", 89)
-    D_889 = District("Huyện Châu Phú", 889, VietNamDivisionType.HUYEN, "huyen_chau_phu", 89)
-    D_890 = District("Huyện Tịnh Biên", 890, VietNamDivisionType.HUYEN, "huyen_tinh_bien", 89)
-    D_891 = District("Huyện Tri Tôn", 891, VietNamDivisionType.HUYEN, "huyen_tri_ton", 89)
-    D_892 = District("Huyện Châu Thành", 892, VietNamDivisionType.HUYEN, "huyen_chau_thanh", 89)
-    D_893 = District("Huyện Chợ Mới", 893, VietNamDivisionType.HUYEN, "huyen_cho_moi", 89)
-    D_894 = District("Huyện Thoại Sơn", 894, VietNamDivisionType.HUYEN, "huyen_thoai_son", 89)
-    D_899 = District("Thành phố Rạch Giá", 899, VietNamDivisionType.THANH_PHO, "thanh_pho_rach_gia", 91)
-    D_900 = District("Thành phố Hà Tiên", 900, VietNamDivisionType.THANH_PHO, "thanh_pho_ha_tien", 91)
-    D_902 = District("Huyện Kiên Lương", 902, VietNamDivisionType.HUYEN, "huyen_kien_luong", 91)
-    D_903 = District("Huyện Hòn Đất", 903, VietNamDivisionType.HUYEN, "huyen_hon_dat", 91)
-    D_904 = District("Huyện Tân Hiệp", 904, VietNamDivisionType.HUYEN, "huyen_tan_hiep", 91)
-    D_905 = District("Huyện Châu Thành", 905, VietNamDivisionType.HUYEN, "huyen_chau_thanh", 91)
-    D_906 = District("Huyện Giồng Riềng", 906, VietNamDivisionType.HUYEN, "huyen_giong_rieng", 91)
-    D_907 = District("Huyện Gò Quao", 907, VietNamDivisionType.HUYEN, "huyen_go_quao", 91)
-    D_908 = District("Huyện An Biên", 908, VietNamDivisionType.HUYEN, "huyen_an_bien", 91)
-    D_909 = District("Huyện An Minh", 909, VietNamDivisionType.HUYEN, "huyen_an_minh", 91)
-    D_910 = District("Huyện Vĩnh Thuận", 910, VietNamDivisionType.HUYEN, "huyen_vinh_thuan", 91)
-    D_911 = District("Huyện Phú Quốc", 911, VietNamDivisionType.HUYEN, "huyen_phu_quoc", 91)
-    D_912 = District("Huyện Kiên Hải", 912, VietNamDivisionType.HUYEN, "huyen_kien_hai", 91)
-    D_913 = District("Huyện U Minh Thượng", 913, VietNamDivisionType.HUYEN, "huyen_u_minh_thuong", 91)
-    D_914 = District("Huyện Giang Thành", 914, VietNamDivisionType.HUYEN, "huyen_giang_thanh", 91)
-    D_916 = District("Quận Ninh Kiều", 916, VietNamDivisionType.QUAN, "quan_ninh_kieu", 92)
-    D_917 = District("Quận Ô Môn", 917, VietNamDivisionType.QUAN, "quan_o_mon", 92)
-    D_918 = District("Quận Bình Thuỷ", 918, VietNamDivisionType.QUAN, "quan_binh_thuy", 92)
-    D_919 = District("Quận Cái Răng", 919, VietNamDivisionType.QUAN, "quan_cai_rang", 92)
-    D_923 = District("Quận Thốt Nốt", 923, VietNamDivisionType.QUAN, "quan_thot_not", 92)
-    D_924 = District("Huyện Vĩnh Thạnh", 924, VietNamDivisionType.HUYEN, "huyen_vinh_thanh", 92)
-    D_925 = District("Huyện Cờ Đỏ", 925, VietNamDivisionType.HUYEN, "huyen_co_do", 92)
-    D_926 = District("Huyện Phong Điền", 926, VietNamDivisionType.HUYEN, "huyen_phong_dien", 92)
-    D_927 = District("Huyện Thới Lai", 927, VietNamDivisionType.HUYEN, "huyen_thoi_lai", 92)
-    D_930 = District("Thành phố Vị Thanh", 930, VietNamDivisionType.THANH_PHO, "thanh_pho_vi_thanh", 93)
-    D_931 = District("Thị xã Ngã Bảy", 931, VietNamDivisionType.THI_XA, "thi_xa_nga_bay", 93)
-    D_932 = District("Huyện Châu Thành A", 932, VietNamDivisionType.HUYEN, "huyen_chau_thanh_a", 93)
-    D_933 = District("Huyện Châu Thành", 933, VietNamDivisionType.HUYEN, "huyen_chau_thanh", 93)
-    D_934 = District("Huyện Phụng Hiệp", 934, VietNamDivisionType.HUYEN, "huyen_phung_hiep", 93)
-    D_935 = District("Huyện Vị Thuỷ", 935, VietNamDivisionType.HUYEN, "huyen_vi_thuy", 93)
-    D_936 = District("Huyện Long Mỹ", 936, VietNamDivisionType.HUYEN, "huyen_long_my", 93)
-    D_937 = District("Thị xã Long Mỹ", 937, VietNamDivisionType.THI_XA, "thi_xa_long_my", 93)
-    D_941 = District("Thành phố Sóc Trăng", 941, VietNamDivisionType.THANH_PHO, "thanh_pho_soc_trang", 94)
-    D_942 = District("Huyện Châu Thành", 942, VietNamDivisionType.HUYEN, "huyen_chau_thanh", 94)
-    D_943 = District("Huyện Kế Sách", 943, VietNamDivisionType.HUYEN, "huyen_ke_sach", 94)
-    D_944 = District("Huyện Mỹ Tú", 944, VietNamDivisionType.HUYEN, "huyen_my_tu", 94)
-    D_945 = District("Huyện Cù Lao Dung", 945, VietNamDivisionType.HUYEN, "huyen_cu_lao_dung", 94)
-    D_946 = District("Huyện Long Phú", 946, VietNamDivisionType.HUYEN, "huyen_long_phu", 94)
-    D_947 = District("Huyện Mỹ Xuyên", 947, VietNamDivisionType.HUYEN, "huyen_my_xuyen", 94)
-    D_948 = District("Thị xã Ngã Năm", 948, VietNamDivisionType.THI_XA, "thi_xa_nga_nam", 94)
-    D_949 = District("Huyện Thạnh Trị", 949, VietNamDivisionType.HUYEN, "huyen_thanh_tri", 94)
-    D_950 = District("Thị xã Vĩnh Châu", 950, VietNamDivisionType.THI_XA, "thi_xa_vinh_chau", 94)
-    D_951 = District("Huyện Trần Đề", 951, VietNamDivisionType.HUYEN, "huyen_tran_de", 94)
-    D_954 = District("Thành phố Bạc Liêu", 954, VietNamDivisionType.THANH_PHO, "thanh_pho_bac_lieu", 95)
-    D_956 = District("Huyện Hồng Dân", 956, VietNamDivisionType.HUYEN, "huyen_hong_dan", 95)
-    D_957 = District("Huyện Phước Long", 957, VietNamDivisionType.HUYEN, "huyen_phuoc_long", 95)
-    D_958 = District("Huyện Vĩnh Lợi", 958, VietNamDivisionType.HUYEN, "huyen_vinh_loi", 95)
-    D_959 = District("Thị xã Giá Rai", 959, VietNamDivisionType.THI_XA, "thi_xa_gia_rai", 95)
-    D_960 = District("Huyện Đông Hải", 960, VietNamDivisionType.HUYEN, "huyen_dong_hai", 95)
-    D_961 = District("Huyện Hoà Bình", 961, VietNamDivisionType.HUYEN, "huyen_hoa_binh", 95)
-    D_964 = District("Thành phố Cà Mau", 964, VietNamDivisionType.THANH_PHO, "thanh_pho_ca_mau", 96)
-    D_966 = District("Huyện U Minh", 966, VietNamDivisionType.HUYEN, "huyen_u_minh", 96)
-    D_967 = District("Huyện Thới Bình", 967, VietNamDivisionType.HUYEN, "huyen_thoi_binh", 96)
-    D_968 = District("Huyện Trần Văn Thời", 968, VietNamDivisionType.HUYEN, "huyen_tran_van_thoi", 96)
-    D_969 = District("Huyện Cái Nước", 969, VietNamDivisionType.HUYEN, "huyen_cai_nuoc", 96)
-    D_970 = District("Huyện Đầm Dơi", 970, VietNamDivisionType.HUYEN, "huyen_dam_doi", 96)
-    D_971 = District("Huyện Năm Căn", 971, VietNamDivisionType.HUYEN, "huyen_nam_can", 96)
-    D_972 = District("Huyện Phú Tân", 972, VietNamDivisionType.HUYEN, "huyen_phu_tan", 96)
-    D_973 = District("Huyện Ngọc Hiển", 973, VietNamDivisionType.HUYEN, "huyen_ngoc_hien", 96)
+    D_2 = District(
+        name="Quận Hoàn Kiếm",
+        code=2,
+        division_type=VietNamDivisionType.QUAN,
+        codename="quan_hoan_kiem",
+        province_code=1,
+    )
+    D_3 = District(
+        name="Quận Tây Hồ", code=3, division_type=VietNamDivisionType.QUAN, codename="quan_tay_ho", province_code=1
+    )
+    D_4 = District(
+        name="Quận Long Biên",
+        code=4,
+        division_type=VietNamDivisionType.QUAN,
+        codename="quan_long_bien",
+        province_code=1,
+    )
+    D_5 = District(
+        name="Quận Cầu Giấy", code=5, division_type=VietNamDivisionType.QUAN, codename="quan_cau_giay", province_code=1
+    )
+    D_6 = District(
+        name="Quận Đống Đa", code=6, division_type=VietNamDivisionType.QUAN, codename="quan_dong_da", province_code=1
+    )
+    D_7 = District(
+        name="Quận Hai Bà Trưng",
+        code=7,
+        division_type=VietNamDivisionType.QUAN,
+        codename="quan_hai_ba_trung",
+        province_code=1,
+    )
+    D_8 = District(
+        name="Quận Hoàng Mai",
+        code=8,
+        division_type=VietNamDivisionType.QUAN,
+        codename="quan_hoang_mai",
+        province_code=1,
+    )
+    D_9 = District(
+        name="Quận Thanh Xuân",
+        code=9,
+        division_type=VietNamDivisionType.QUAN,
+        codename="quan_thanh_xuan",
+        province_code=1,
+    )
+    D_16 = District(
+        name="Huyện Sóc Sơn",
+        code=16,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_soc_son",
+        province_code=1,
+    )
+    D_17 = District(
+        name="Huyện Đông Anh",
+        code=17,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_dong_anh",
+        province_code=1,
+    )
+    D_18 = District(
+        name="Huyện Gia Lâm",
+        code=18,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_gia_lam",
+        province_code=1,
+    )
+    D_19 = District(
+        name="Quận Nam Từ Liêm",
+        code=19,
+        division_type=VietNamDivisionType.QUAN,
+        codename="quan_nam_tu_liem",
+        province_code=1,
+    )
+    D_20 = District(
+        name="Huyện Thanh Trì",
+        code=20,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_thanh_tri",
+        province_code=1,
+    )
+    D_21 = District(
+        name="Quận Bắc Từ Liêm",
+        code=21,
+        division_type=VietNamDivisionType.QUAN,
+        codename="quan_bac_tu_liem",
+        province_code=1,
+    )
+    D_250 = District(
+        name="Huyện Mê Linh",
+        code=250,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_me_linh",
+        province_code=1,
+    )
+    D_268 = District(
+        name="Quận Hà Đông", code=268, division_type=VietNamDivisionType.QUAN, codename="quan_ha_dong", province_code=1
+    )
+    D_269 = District(
+        name="Thị xã Sơn Tây",
+        code=269,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_son_tay",
+        province_code=1,
+    )
+    D_271 = District(
+        name="Huyện Ba Vì", code=271, division_type=VietNamDivisionType.HUYEN, codename="huyen_ba_vi", province_code=1
+    )
+    D_272 = District(
+        name="Huyện Phúc Thọ",
+        code=272,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_phuc_tho",
+        province_code=1,
+    )
+    D_273 = District(
+        name="Huyện Đan Phượng",
+        code=273,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_dan_phuong",
+        province_code=1,
+    )
+    D_274 = District(
+        name="Huyện Hoài Đức",
+        code=274,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_hoai_duc",
+        province_code=1,
+    )
+    D_275 = District(
+        name="Huyện Quốc Oai",
+        code=275,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_quoc_oai",
+        province_code=1,
+    )
+    D_276 = District(
+        name="Huyện Thạch Thất",
+        code=276,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_thach_that",
+        province_code=1,
+    )
+    D_277 = District(
+        name="Huyện Chương Mỹ",
+        code=277,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_chuong_my",
+        province_code=1,
+    )
+    D_278 = District(
+        name="Huyện Thanh Oai",
+        code=278,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_thanh_oai",
+        province_code=1,
+    )
+    D_279 = District(
+        name="Huyện Thường Tín",
+        code=279,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_thuong_tin",
+        province_code=1,
+    )
+    D_280 = District(
+        name="Huyện Phú Xuyên",
+        code=280,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_phu_xuyen",
+        province_code=1,
+    )
+    D_281 = District(
+        name="Huyện Ứng Hòa",
+        code=281,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_ung_hoa",
+        province_code=1,
+    )
+    D_282 = District(
+        name="Huyện Mỹ Đức", code=282, division_type=VietNamDivisionType.HUYEN, codename="huyen_my_duc", province_code=1
+    )
+    D_24 = District(
+        name="Thành phố Hà Giang",
+        code=24,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_ha_giang",
+        province_code=2,
+    )
+    D_26 = District(
+        name="Huyện Đồng Văn",
+        code=26,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_dong_van",
+        province_code=2,
+    )
+    D_27 = District(
+        name="Huyện Mèo Vạc",
+        code=27,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_meo_vac",
+        province_code=2,
+    )
+    D_28 = District(
+        name="Huyện Yên Minh",
+        code=28,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_yen_minh",
+        province_code=2,
+    )
+    D_29 = District(
+        name="Huyện Quản Bạ",
+        code=29,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_quan_ba",
+        province_code=2,
+    )
+    D_30 = District(
+        name="Huyện Vị Xuyên",
+        code=30,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_vi_xuyen",
+        province_code=2,
+    )
+    D_31 = District(
+        name="Huyện Bắc Mê", code=31, division_type=VietNamDivisionType.HUYEN, codename="huyen_bac_me", province_code=2
+    )
+    D_32 = District(
+        name="Huyện Hoàng Su Phì",
+        code=32,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_hoang_su_phi",
+        province_code=2,
+    )
+    D_33 = District(
+        name="Huyện Xín Mần",
+        code=33,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_xin_man",
+        province_code=2,
+    )
+    D_34 = District(
+        name="Huyện Bắc Quang",
+        code=34,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_bac_quang",
+        province_code=2,
+    )
+    D_35 = District(
+        name="Huyện Quang Bình",
+        code=35,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_quang_binh",
+        province_code=2,
+    )
+    D_40 = District(
+        name="Thành phố Cao Bằng",
+        code=40,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_cao_bang",
+        province_code=4,
+    )
+    D_42 = District(
+        name="Huyện Bảo Lâm",
+        code=42,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_bao_lam",
+        province_code=4,
+    )
+    D_43 = District(
+        name="Huyện Bảo Lạc",
+        code=43,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_bao_lac",
+        province_code=4,
+    )
+    D_44 = District(
+        name="Huyện Thông Nông",
+        code=44,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_thong_nong",
+        province_code=4,
+    )
+    D_45 = District(
+        name="Huyện Hà Quảng",
+        code=45,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_ha_quang",
+        province_code=4,
+    )
+    D_46 = District(
+        name="Huyện Trà Lĩnh",
+        code=46,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tra_linh",
+        province_code=4,
+    )
+    D_47 = District(
+        name="Huyện Trùng Khánh",
+        code=47,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_trung_khanh",
+        province_code=4,
+    )
+    D_48 = District(
+        name="Huyện Hạ Lang",
+        code=48,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_ha_lang",
+        province_code=4,
+    )
+    D_49 = District(
+        name="Huyện Quảng Uyên",
+        code=49,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_quang_uyen",
+        province_code=4,
+    )
+    D_50 = District(
+        name="Huyện Phục Hoà",
+        code=50,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_phuc_hoa",
+        province_code=4,
+    )
+    D_51 = District(
+        name="Huyện Hoà An", code=51, division_type=VietNamDivisionType.HUYEN, codename="huyen_hoa_an", province_code=4
+    )
+    D_52 = District(
+        name="Huyện Nguyên Bình",
+        code=52,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_nguyen_binh",
+        province_code=4,
+    )
+    D_53 = District(
+        name="Huyện Thạch An",
+        code=53,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_thach_an",
+        province_code=4,
+    )
+    D_58 = District(
+        name="Thành Phố Bắc Kạn",
+        code=58,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_bac_kan",
+        province_code=6,
+    )
+    D_60 = District(
+        name="Huyện Pác Nặm",
+        code=60,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_pac_nam",
+        province_code=6,
+    )
+    D_61 = District(
+        name="Huyện Ba Bể", code=61, division_type=VietNamDivisionType.HUYEN, codename="huyen_ba_be", province_code=6
+    )
+    D_62 = District(
+        name="Huyện Ngân Sơn",
+        code=62,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_ngan_son",
+        province_code=6,
+    )
+    D_63 = District(
+        name="Huyện Bạch Thông",
+        code=63,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_bach_thong",
+        province_code=6,
+    )
+    D_64 = District(
+        name="Huyện Chợ Đồn",
+        code=64,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_cho_don",
+        province_code=6,
+    )
+    D_65 = District(
+        name="Huyện Chợ Mới",
+        code=65,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_cho_moi",
+        province_code=6,
+    )
+    D_66 = District(
+        name="Huyện Na Rì", code=66, division_type=VietNamDivisionType.HUYEN, codename="huyen_na_ri", province_code=6
+    )
+    D_70 = District(
+        name="Thành phố Tuyên Quang",
+        code=70,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_tuyen_quang",
+        province_code=8,
+    )
+    D_71 = District(
+        name="Huyện Lâm Bình",
+        code=71,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_lam_binh",
+        province_code=8,
+    )
+    D_72 = District(
+        name="Huyện Na Hang",
+        code=72,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_na_hang",
+        province_code=8,
+    )
+    D_73 = District(
+        name="Huyện Chiêm Hóa",
+        code=73,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_chiem_hoa",
+        province_code=8,
+    )
+    D_74 = District(
+        name="Huyện Hàm Yên",
+        code=74,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_ham_yen",
+        province_code=8,
+    )
+    D_75 = District(
+        name="Huyện Yên Sơn",
+        code=75,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_yen_son",
+        province_code=8,
+    )
+    D_76 = District(
+        name="Huyện Sơn Dương",
+        code=76,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_son_duong",
+        province_code=8,
+    )
+    D_80 = District(
+        name="Thành phố Lào Cai",
+        code=80,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_lao_cai",
+        province_code=10,
+    )
+    D_82 = District(
+        name="Huyện Bát Xát",
+        code=82,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_bat_xat",
+        province_code=10,
+    )
+    D_83 = District(
+        name="Huyện Mường Khương",
+        code=83,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_muong_khuong",
+        province_code=10,
+    )
+    D_84 = District(
+        name="Huyện Si Ma Cai",
+        code=84,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_si_ma_cai",
+        province_code=10,
+    )
+    D_85 = District(
+        name="Huyện Bắc Hà", code=85, division_type=VietNamDivisionType.HUYEN, codename="huyen_bac_ha", province_code=10
+    )
+    D_86 = District(
+        name="Huyện Bảo Thắng",
+        code=86,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_bao_thang",
+        province_code=10,
+    )
+    D_87 = District(
+        name="Huyện Bảo Yên",
+        code=87,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_bao_yen",
+        province_code=10,
+    )
+    D_88 = District(
+        name="Thị xã Sa Pa",
+        code=88,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_sa_pa",
+        province_code=10,
+    )
+    D_89 = District(
+        name="Huyện Văn Bàn",
+        code=89,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_van_ban",
+        province_code=10,
+    )
+    D_94 = District(
+        name="Thành phố Điện Biên Phủ",
+        code=94,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_dien_bien_phu",
+        province_code=11,
+    )
+    D_95 = District(
+        name="Thị Xã Mường Lay",
+        code=95,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_muong_lay",
+        province_code=11,
+    )
+    D_96 = District(
+        name="Huyện Mường Nhé",
+        code=96,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_muong_nhe",
+        province_code=11,
+    )
+    D_97 = District(
+        name="Huyện Mường Chà",
+        code=97,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_muong_cha",
+        province_code=11,
+    )
+    D_98 = District(
+        name="Huyện Tủa Chùa",
+        code=98,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tua_chua",
+        province_code=11,
+    )
+    D_99 = District(
+        name="Huyện Tuần Giáo",
+        code=99,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tuan_giao",
+        province_code=11,
+    )
+    D_100 = District(
+        name="Huyện Điện Biên",
+        code=100,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_dien_bien",
+        province_code=11,
+    )
+    D_101 = District(
+        name="Huyện Điện Biên Đông",
+        code=101,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_dien_bien_dong",
+        province_code=11,
+    )
+    D_102 = District(
+        name="Huyện Mường Ảng",
+        code=102,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_muong_ang",
+        province_code=11,
+    )
+    D_103 = District(
+        name="Huyện Nậm Pồ",
+        code=103,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_nam_po",
+        province_code=11,
+    )
+    D_105 = District(
+        name="Thành phố Lai Châu",
+        code=105,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_lai_chau",
+        province_code=12,
+    )
+    D_106 = District(
+        name="Huyện Tam Đường",
+        code=106,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tam_duong",
+        province_code=12,
+    )
+    D_107 = District(
+        name="Huyện Mường Tè",
+        code=107,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_muong_te",
+        province_code=12,
+    )
+    D_108 = District(
+        name="Huyện Sìn Hồ",
+        code=108,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_sin_ho",
+        province_code=12,
+    )
+    D_109 = District(
+        name="Huyện Phong Thổ",
+        code=109,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_phong_tho",
+        province_code=12,
+    )
+    D_110 = District(
+        name="Huyện Than Uyên",
+        code=110,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_than_uyen",
+        province_code=12,
+    )
+    D_111 = District(
+        name="Huyện Tân Uyên",
+        code=111,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tan_uyen",
+        province_code=12,
+    )
+    D_112 = District(
+        name="Huyện Nậm Nhùn",
+        code=112,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_nam_nhun",
+        province_code=12,
+    )
+    D_116 = District(
+        name="Thành phố Sơn La",
+        code=116,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_son_la",
+        province_code=14,
+    )
+    D_118 = District(
+        name="Huyện Quỳnh Nhai",
+        code=118,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_quynh_nhai",
+        province_code=14,
+    )
+    D_119 = District(
+        name="Huyện Thuận Châu",
+        code=119,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_thuan_chau",
+        province_code=14,
+    )
+    D_120 = District(
+        name="Huyện Mường La",
+        code=120,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_muong_la",
+        province_code=14,
+    )
+    D_121 = District(
+        name="Huyện Bắc Yên",
+        code=121,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_bac_yen",
+        province_code=14,
+    )
+    D_122 = District(
+        name="Huyện Phù Yên",
+        code=122,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_phu_yen",
+        province_code=14,
+    )
+    D_123 = District(
+        name="Huyện Mộc Châu",
+        code=123,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_moc_chau",
+        province_code=14,
+    )
+    D_124 = District(
+        name="Huyện Yên Châu",
+        code=124,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_yen_chau",
+        province_code=14,
+    )
+    D_125 = District(
+        name="Huyện Mai Sơn",
+        code=125,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_mai_son",
+        province_code=14,
+    )
+    D_126 = District(
+        name="Huyện Sông Mã",
+        code=126,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_song_ma",
+        province_code=14,
+    )
+    D_127 = District(
+        name="Huyện Sốp Cộp",
+        code=127,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_sop_cop",
+        province_code=14,
+    )
+    D_128 = District(
+        name="Huyện Vân Hồ",
+        code=128,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_van_ho",
+        province_code=14,
+    )
+    D_132 = District(
+        name="Thành phố Yên Bái",
+        code=132,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_yen_bai",
+        province_code=15,
+    )
+    D_133 = District(
+        name="Thị xã Nghĩa Lộ",
+        code=133,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_nghia_lo",
+        province_code=15,
+    )
+    D_135 = District(
+        name="Huyện Lục Yên",
+        code=135,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_luc_yen",
+        province_code=15,
+    )
+    D_136 = District(
+        name="Huyện Văn Yên",
+        code=136,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_van_yen",
+        province_code=15,
+    )
+    D_137 = District(
+        name="Huyện Mù Căng Chải",
+        code=137,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_mu_cang_chai",
+        province_code=15,
+    )
+    D_138 = District(
+        name="Huyện Trấn Yên",
+        code=138,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tran_yen",
+        province_code=15,
+    )
+    D_139 = District(
+        name="Huyện Trạm Tấu",
+        code=139,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tram_tau",
+        province_code=15,
+    )
+    D_140 = District(
+        name="Huyện Văn Chấn",
+        code=140,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_van_chan",
+        province_code=15,
+    )
+    D_141 = District(
+        name="Huyện Yên Bình",
+        code=141,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_yen_binh",
+        province_code=15,
+    )
+    D_148 = District(
+        name="Thành phố Hòa Bình",
+        code=148,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_hoa_binh",
+        province_code=17,
+    )
+    D_150 = District(
+        name="Huyện Đà Bắc",
+        code=150,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_da_bac",
+        province_code=17,
+    )
+    D_152 = District(
+        name="Huyện Lương Sơn",
+        code=152,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_luong_son",
+        province_code=17,
+    )
+    D_153 = District(
+        name="Huyện Kim Bôi",
+        code=153,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_kim_boi",
+        province_code=17,
+    )
+    D_154 = District(
+        name="Huyện Cao Phong",
+        code=154,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_cao_phong",
+        province_code=17,
+    )
+    D_155 = District(
+        name="Huyện Tân Lạc",
+        code=155,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tan_lac",
+        province_code=17,
+    )
+    D_156 = District(
+        name="Huyện Mai Châu",
+        code=156,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_mai_chau",
+        province_code=17,
+    )
+    D_157 = District(
+        name="Huyện Lạc Sơn",
+        code=157,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_lac_son",
+        province_code=17,
+    )
+    D_158 = District(
+        name="Huyện Yên Thủy",
+        code=158,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_yen_thuy",
+        province_code=17,
+    )
+    D_159 = District(
+        name="Huyện Lạc Thủy",
+        code=159,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_lac_thuy",
+        province_code=17,
+    )
+    D_164 = District(
+        name="Thành phố Thái Nguyên",
+        code=164,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_thai_nguyen",
+        province_code=19,
+    )
+    D_165 = District(
+        name="Thành phố Sông Công",
+        code=165,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_song_cong",
+        province_code=19,
+    )
+    D_167 = District(
+        name="Huyện Định Hóa",
+        code=167,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_dinh_hoa",
+        province_code=19,
+    )
+    D_168 = District(
+        name="Huyện Phú Lương",
+        code=168,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_phu_luong",
+        province_code=19,
+    )
+    D_169 = District(
+        name="Huyện Đồng Hỷ",
+        code=169,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_dong_hy",
+        province_code=19,
+    )
+    D_170 = District(
+        name="Huyện Võ Nhai",
+        code=170,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_vo_nhai",
+        province_code=19,
+    )
+    D_171 = District(
+        name="Huyện Đại Từ",
+        code=171,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_dai_tu",
+        province_code=19,
+    )
+    D_172 = District(
+        name="Thị xã Phổ Yên",
+        code=172,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_pho_yen",
+        province_code=19,
+    )
+    D_173 = District(
+        name="Huyện Phú Bình",
+        code=173,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_phu_binh",
+        province_code=19,
+    )
+    D_178 = District(
+        name="Thành phố Lạng Sơn",
+        code=178,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_lang_son",
+        province_code=20,
+    )
+    D_180 = District(
+        name="Huyện Tràng Định",
+        code=180,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_trang_dinh",
+        province_code=20,
+    )
+    D_181 = District(
+        name="Huyện Bình Gia",
+        code=181,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_binh_gia",
+        province_code=20,
+    )
+    D_182 = District(
+        name="Huyện Văn Lãng",
+        code=182,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_van_lang",
+        province_code=20,
+    )
+    D_183 = District(
+        name="Huyện Cao Lộc",
+        code=183,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_cao_loc",
+        province_code=20,
+    )
+    D_184 = District(
+        name="Huyện Văn Quan",
+        code=184,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_van_quan",
+        province_code=20,
+    )
+    D_185 = District(
+        name="Huyện Bắc Sơn",
+        code=185,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_bac_son",
+        province_code=20,
+    )
+    D_186 = District(
+        name="Huyện Hữu Lũng",
+        code=186,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_huu_lung",
+        province_code=20,
+    )
+    D_187 = District(
+        name="Huyện Chi Lăng",
+        code=187,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_chi_lang",
+        province_code=20,
+    )
+    D_188 = District(
+        name="Huyện Lộc Bình",
+        code=188,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_loc_binh",
+        province_code=20,
+    )
+    D_189 = District(
+        name="Huyện Đình Lập",
+        code=189,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_dinh_lap",
+        province_code=20,
+    )
+    D_193 = District(
+        name="Thành phố Hạ Long",
+        code=193,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_ha_long",
+        province_code=22,
+    )
+    D_194 = District(
+        name="Thành phố Móng Cái",
+        code=194,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_mong_cai",
+        province_code=22,
+    )
+    D_195 = District(
+        name="Thành phố Cẩm Phả",
+        code=195,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_cam_pha",
+        province_code=22,
+    )
+    D_196 = District(
+        name="Thành phố Uông Bí",
+        code=196,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_uong_bi",
+        province_code=22,
+    )
+    D_198 = District(
+        name="Huyện Bình Liêu",
+        code=198,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_binh_lieu",
+        province_code=22,
+    )
+    D_199 = District(
+        name="Huyện Tiên Yên",
+        code=199,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tien_yen",
+        province_code=22,
+    )
+    D_200 = District(
+        name="Huyện Đầm Hà",
+        code=200,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_dam_ha",
+        province_code=22,
+    )
+    D_201 = District(
+        name="Huyện Hải Hà",
+        code=201,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_hai_ha",
+        province_code=22,
+    )
+    D_202 = District(
+        name="Huyện Ba Chẽ",
+        code=202,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_ba_che",
+        province_code=22,
+    )
+    D_203 = District(
+        name="Huyện Vân Đồn",
+        code=203,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_van_don",
+        province_code=22,
+    )
+    D_205 = District(
+        name="Thị xã Đông Triều",
+        code=205,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_dong_trieu",
+        province_code=22,
+    )
+    D_206 = District(
+        name="Thị xã Quảng Yên",
+        code=206,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_quang_yen",
+        province_code=22,
+    )
+    D_207 = District(
+        name="Huyện Cô Tô", code=207, division_type=VietNamDivisionType.HUYEN, codename="huyen_co_to", province_code=22
+    )
+    D_213 = District(
+        name="Thành phố Bắc Giang",
+        code=213,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_bac_giang",
+        province_code=24,
+    )
+    D_215 = District(
+        name="Huyện Yên Thế",
+        code=215,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_yen_the",
+        province_code=24,
+    )
+    D_216 = District(
+        name="Huyện Tân Yên",
+        code=216,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tan_yen",
+        province_code=24,
+    )
+    D_217 = District(
+        name="Huyện Lạng Giang",
+        code=217,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_lang_giang",
+        province_code=24,
+    )
+    D_218 = District(
+        name="Huyện Lục Nam",
+        code=218,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_luc_nam",
+        province_code=24,
+    )
+    D_219 = District(
+        name="Huyện Lục Ngạn",
+        code=219,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_luc_ngan",
+        province_code=24,
+    )
+    D_220 = District(
+        name="Huyện Sơn Động",
+        code=220,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_son_dong",
+        province_code=24,
+    )
+    D_221 = District(
+        name="Huyện Yên Dũng",
+        code=221,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_yen_dung",
+        province_code=24,
+    )
+    D_222 = District(
+        name="Huyện Việt Yên",
+        code=222,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_viet_yen",
+        province_code=24,
+    )
+    D_223 = District(
+        name="Huyện Hiệp Hòa",
+        code=223,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_hiep_hoa",
+        province_code=24,
+    )
+    D_227 = District(
+        name="Thành phố Việt Trì",
+        code=227,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_viet_tri",
+        province_code=25,
+    )
+    D_228 = District(
+        name="Thị xã Phú Thọ",
+        code=228,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_phu_tho",
+        province_code=25,
+    )
+    D_230 = District(
+        name="Huyện Đoan Hùng",
+        code=230,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_doan_hung",
+        province_code=25,
+    )
+    D_231 = District(
+        name="Huyện Hạ Hoà",
+        code=231,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_ha_hoa",
+        province_code=25,
+    )
+    D_232 = District(
+        name="Huyện Thanh Ba",
+        code=232,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_thanh_ba",
+        province_code=25,
+    )
+    D_233 = District(
+        name="Huyện Phù Ninh",
+        code=233,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_phu_ninh",
+        province_code=25,
+    )
+    D_234 = District(
+        name="Huyện Yên Lập",
+        code=234,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_yen_lap",
+        province_code=25,
+    )
+    D_235 = District(
+        name="Huyện Cẩm Khê",
+        code=235,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_cam_khe",
+        province_code=25,
+    )
+    D_236 = District(
+        name="Huyện Tam Nông",
+        code=236,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tam_nong",
+        province_code=25,
+    )
+    D_237 = District(
+        name="Huyện Lâm Thao",
+        code=237,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_lam_thao",
+        province_code=25,
+    )
+    D_238 = District(
+        name="Huyện Thanh Sơn",
+        code=238,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_thanh_son",
+        province_code=25,
+    )
+    D_239 = District(
+        name="Huyện Thanh Thuỷ",
+        code=239,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_thanh_thuy",
+        province_code=25,
+    )
+    D_240 = District(
+        name="Huyện Tân Sơn",
+        code=240,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tan_son",
+        province_code=25,
+    )
+    D_243 = District(
+        name="Thành phố Vĩnh Yên",
+        code=243,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_vinh_yen",
+        province_code=26,
+    )
+    D_244 = District(
+        name="Thành phố Phúc Yên",
+        code=244,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_phuc_yen",
+        province_code=26,
+    )
+    D_246 = District(
+        name="Huyện Lập Thạch",
+        code=246,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_lap_thach",
+        province_code=26,
+    )
+    D_247 = District(
+        name="Huyện Tam Dương",
+        code=247,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tam_duong",
+        province_code=26,
+    )
+    D_248 = District(
+        name="Huyện Tam Đảo",
+        code=248,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tam_dao",
+        province_code=26,
+    )
+    D_249 = District(
+        name="Huyện Bình Xuyên",
+        code=249,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_binh_xuyen",
+        province_code=26,
+    )
+    D_251 = District(
+        name="Huyện Yên Lạc",
+        code=251,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_yen_lac",
+        province_code=26,
+    )
+    D_252 = District(
+        name="Huyện Vĩnh Tường",
+        code=252,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_vinh_tuong",
+        province_code=26,
+    )
+    D_253 = District(
+        name="Huyện Sông Lô",
+        code=253,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_song_lo",
+        province_code=26,
+    )
+    D_256 = District(
+        name="Thành phố Bắc Ninh",
+        code=256,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_bac_ninh",
+        province_code=27,
+    )
+    D_258 = District(
+        name="Huyện Yên Phong",
+        code=258,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_yen_phong",
+        province_code=27,
+    )
+    D_259 = District(
+        name="Huyện Quế Võ",
+        code=259,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_que_vo",
+        province_code=27,
+    )
+    D_260 = District(
+        name="Huyện Tiên Du",
+        code=260,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tien_du",
+        province_code=27,
+    )
+    D_261 = District(
+        name="Thị xã Từ Sơn",
+        code=261,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_tu_son",
+        province_code=27,
+    )
+    D_262 = District(
+        name="Huyện Thuận Thành",
+        code=262,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_thuan_thanh",
+        province_code=27,
+    )
+    D_263 = District(
+        name="Huyện Gia Bình",
+        code=263,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_gia_binh",
+        province_code=27,
+    )
+    D_264 = District(
+        name="Huyện Lương Tài",
+        code=264,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_luong_tai",
+        province_code=27,
+    )
+    D_288 = District(
+        name="Thành phố Hải Dương",
+        code=288,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_hai_duong",
+        province_code=30,
+    )
+    D_290 = District(
+        name="Thành phố Chí Linh",
+        code=290,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_chi_linh",
+        province_code=30,
+    )
+    D_291 = District(
+        name="Huyện Nam Sách",
+        code=291,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_nam_sach",
+        province_code=30,
+    )
+    D_292 = District(
+        name="Thị xã Kinh Môn",
+        code=292,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_kinh_mon",
+        province_code=30,
+    )
+    D_293 = District(
+        name="Huyện Kim Thành",
+        code=293,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_kim_thanh",
+        province_code=30,
+    )
+    D_294 = District(
+        name="Huyện Thanh Hà",
+        code=294,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_thanh_ha",
+        province_code=30,
+    )
+    D_295 = District(
+        name="Huyện Cẩm Giàng",
+        code=295,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_cam_giang",
+        province_code=30,
+    )
+    D_296 = District(
+        name="Huyện Bình Giang",
+        code=296,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_binh_giang",
+        province_code=30,
+    )
+    D_297 = District(
+        name="Huyện Gia Lộc",
+        code=297,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_gia_loc",
+        province_code=30,
+    )
+    D_298 = District(
+        name="Huyện Tứ Kỳ", code=298, division_type=VietNamDivisionType.HUYEN, codename="huyen_tu_ky", province_code=30
+    )
+    D_299 = District(
+        name="Huyện Ninh Giang",
+        code=299,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_ninh_giang",
+        province_code=30,
+    )
+    D_300 = District(
+        name="Huyện Thanh Miện",
+        code=300,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_thanh_mien",
+        province_code=30,
+    )
+    D_303 = District(
+        name="Quận Hồng Bàng",
+        code=303,
+        division_type=VietNamDivisionType.QUAN,
+        codename="quan_hong_bang",
+        province_code=31,
+    )
+    D_304 = District(
+        name="Quận Ngô Quyền",
+        code=304,
+        division_type=VietNamDivisionType.QUAN,
+        codename="quan_ngo_quyen",
+        province_code=31,
+    )
+    D_305 = District(
+        name="Quận Lê Chân", code=305, division_type=VietNamDivisionType.QUAN, codename="quan_le_chan", province_code=31
+    )
+    D_306 = District(
+        name="Quận Hải An", code=306, division_type=VietNamDivisionType.QUAN, codename="quan_hai_an", province_code=31
+    )
+    D_307 = District(
+        name="Quận Kiến An", code=307, division_type=VietNamDivisionType.QUAN, codename="quan_kien_an", province_code=31
+    )
+    D_308 = District(
+        name="Quận Đồ Sơn", code=308, division_type=VietNamDivisionType.QUAN, codename="quan_do_son", province_code=31
+    )
+    D_309 = District(
+        name="Quận Dương Kinh",
+        code=309,
+        division_type=VietNamDivisionType.QUAN,
+        codename="quan_duong_kinh",
+        province_code=31,
+    )
+    D_311 = District(
+        name="Huyện Thuỷ Nguyên",
+        code=311,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_thuy_nguyen",
+        province_code=31,
+    )
+    D_312 = District(
+        name="Huyện An Dương",
+        code=312,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_an_duong",
+        province_code=31,
+    )
+    D_313 = District(
+        name="Huyện An Lão",
+        code=313,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_an_lao",
+        province_code=31,
+    )
+    D_314 = District(
+        name="Huyện Kiến Thuỵ",
+        code=314,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_kien_thuy",
+        province_code=31,
+    )
+    D_315 = District(
+        name="Huyện Tiên Lãng",
+        code=315,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tien_lang",
+        province_code=31,
+    )
+    D_316 = District(
+        name="Huyện Vĩnh Bảo",
+        code=316,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_vinh_bao",
+        province_code=31,
+    )
+    D_317 = District(
+        name="Huyện Cát Hải",
+        code=317,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_cat_hai",
+        province_code=31,
+    )
+    D_323 = District(
+        name="Thành phố Hưng Yên",
+        code=323,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_hung_yen",
+        province_code=33,
+    )
+    D_325 = District(
+        name="Huyện Văn Lâm",
+        code=325,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_van_lam",
+        province_code=33,
+    )
+    D_326 = District(
+        name="Huyện Văn Giang",
+        code=326,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_van_giang",
+        province_code=33,
+    )
+    D_327 = District(
+        name="Huyện Yên Mỹ",
+        code=327,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_yen_my",
+        province_code=33,
+    )
+    D_328 = District(
+        name="Thị xã Mỹ Hào",
+        code=328,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_my_hao",
+        province_code=33,
+    )
+    D_329 = District(
+        name="Huyện Ân Thi",
+        code=329,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_an_thi",
+        province_code=33,
+    )
+    D_330 = District(
+        name="Huyện Khoái Châu",
+        code=330,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_khoai_chau",
+        province_code=33,
+    )
+    D_331 = District(
+        name="Huyện Kim Động",
+        code=331,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_kim_dong",
+        province_code=33,
+    )
+    D_332 = District(
+        name="Huyện Tiên Lữ",
+        code=332,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tien_lu",
+        province_code=33,
+    )
+    D_333 = District(
+        name="Huyện Phù Cừ",
+        code=333,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_phu_cu",
+        province_code=33,
+    )
+    D_336 = District(
+        name="Thành phố Thái Bình",
+        code=336,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_thai_binh",
+        province_code=34,
+    )
+    D_338 = District(
+        name="Huyện Quỳnh Phụ",
+        code=338,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_quynh_phu",
+        province_code=34,
+    )
+    D_339 = District(
+        name="Huyện Hưng Hà",
+        code=339,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_hung_ha",
+        province_code=34,
+    )
+    D_340 = District(
+        name="Huyện Đông Hưng",
+        code=340,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_dong_hung",
+        province_code=34,
+    )
+    D_341 = District(
+        name="Huyện Thái Thụy",
+        code=341,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_thai_thuy",
+        province_code=34,
+    )
+    D_342 = District(
+        name="Huyện Tiền Hải",
+        code=342,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tien_hai",
+        province_code=34,
+    )
+    D_343 = District(
+        name="Huyện Kiến Xương",
+        code=343,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_kien_xuong",
+        province_code=34,
+    )
+    D_344 = District(
+        name="Huyện Vũ Thư",
+        code=344,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_vu_thu",
+        province_code=34,
+    )
+    D_347 = District(
+        name="Thành phố Phủ Lý",
+        code=347,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_phu_ly",
+        province_code=35,
+    )
+    D_349 = District(
+        name="Thị xã Duy Tiên",
+        code=349,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_duy_tien",
+        province_code=35,
+    )
+    D_350 = District(
+        name="Huyện Kim Bảng",
+        code=350,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_kim_bang",
+        province_code=35,
+    )
+    D_351 = District(
+        name="Huyện Thanh Liêm",
+        code=351,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_thanh_liem",
+        province_code=35,
+    )
+    D_352 = District(
+        name="Huyện Bình Lục",
+        code=352,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_binh_luc",
+        province_code=35,
+    )
+    D_353 = District(
+        name="Huyện Lý Nhân",
+        code=353,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_ly_nhan",
+        province_code=35,
+    )
+    D_356 = District(
+        name="Thành phố Nam Định",
+        code=356,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_nam_dinh",
+        province_code=36,
+    )
+    D_358 = District(
+        name="Huyện Mỹ Lộc",
+        code=358,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_my_loc",
+        province_code=36,
+    )
+    D_359 = District(
+        name="Huyện Vụ Bản",
+        code=359,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_vu_ban",
+        province_code=36,
+    )
+    D_360 = District(
+        name="Huyện Ý Yên", code=360, division_type=VietNamDivisionType.HUYEN, codename="huyen_y_yen", province_code=36
+    )
+    D_361 = District(
+        name="Huyện Nghĩa Hưng",
+        code=361,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_nghia_hung",
+        province_code=36,
+    )
+    D_362 = District(
+        name="Huyện Nam Trực",
+        code=362,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_nam_truc",
+        province_code=36,
+    )
+    D_363 = District(
+        name="Huyện Trực Ninh",
+        code=363,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_truc_ninh",
+        province_code=36,
+    )
+    D_364 = District(
+        name="Huyện Xuân Trường",
+        code=364,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_xuan_truong",
+        province_code=36,
+    )
+    D_365 = District(
+        name="Huyện Giao Thủy",
+        code=365,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_giao_thuy",
+        province_code=36,
+    )
+    D_366 = District(
+        name="Huyện Hải Hậu",
+        code=366,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_hai_hau",
+        province_code=36,
+    )
+    D_369 = District(
+        name="Thành phố Ninh Bình",
+        code=369,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_ninh_binh",
+        province_code=37,
+    )
+    D_370 = District(
+        name="Thành phố Tam Điệp",
+        code=370,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_tam_diep",
+        province_code=37,
+    )
+    D_372 = District(
+        name="Huyện Nho Quan",
+        code=372,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_nho_quan",
+        province_code=37,
+    )
+    D_373 = District(
+        name="Huyện Gia Viễn",
+        code=373,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_gia_vien",
+        province_code=37,
+    )
+    D_374 = District(
+        name="Huyện Hoa Lư",
+        code=374,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_hoa_lu",
+        province_code=37,
+    )
+    D_375 = District(
+        name="Huyện Yên Khánh",
+        code=375,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_yen_khanh",
+        province_code=37,
+    )
+    D_376 = District(
+        name="Huyện Kim Sơn",
+        code=376,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_kim_son",
+        province_code=37,
+    )
+    D_377 = District(
+        name="Huyện Yên Mô",
+        code=377,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_yen_mo",
+        province_code=37,
+    )
+    D_380 = District(
+        name="Thành phố Thanh Hóa",
+        code=380,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_thanh_hoa",
+        province_code=38,
+    )
+    D_381 = District(
+        name="Thị xã Bỉm Sơn",
+        code=381,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_bim_son",
+        province_code=38,
+    )
+    D_382 = District(
+        name="Thành phố Sầm Sơn",
+        code=382,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_sam_son",
+        province_code=38,
+    )
+    D_384 = District(
+        name="Huyện Mường Lát",
+        code=384,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_muong_lat",
+        province_code=38,
+    )
+    D_385 = District(
+        name="Huyện Quan Hóa",
+        code=385,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_quan_hoa",
+        province_code=38,
+    )
+    D_386 = District(
+        name="Huyện Bá Thước",
+        code=386,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_ba_thuoc",
+        province_code=38,
+    )
+    D_387 = District(
+        name="Huyện Quan Sơn",
+        code=387,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_quan_son",
+        province_code=38,
+    )
+    D_388 = District(
+        name="Huyện Lang Chánh",
+        code=388,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_lang_chanh",
+        province_code=38,
+    )
+    D_389 = District(
+        name="Huyện Ngọc Lặc",
+        code=389,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_ngoc_lac",
+        province_code=38,
+    )
+    D_390 = District(
+        name="Huyện Cẩm Thủy",
+        code=390,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_cam_thuy",
+        province_code=38,
+    )
+    D_391 = District(
+        name="Huyện Thạch Thành",
+        code=391,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_thach_thanh",
+        province_code=38,
+    )
+    D_392 = District(
+        name="Huyện Hà Trung",
+        code=392,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_ha_trung",
+        province_code=38,
+    )
+    D_393 = District(
+        name="Huyện Vĩnh Lộc",
+        code=393,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_vinh_loc",
+        province_code=38,
+    )
+    D_394 = District(
+        name="Huyện Yên Định",
+        code=394,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_yen_dinh",
+        province_code=38,
+    )
+    D_395 = District(
+        name="Huyện Thọ Xuân",
+        code=395,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tho_xuan",
+        province_code=38,
+    )
+    D_396 = District(
+        name="Huyện Thường Xuân",
+        code=396,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_thuong_xuan",
+        province_code=38,
+    )
+    D_397 = District(
+        name="Huyện Triệu Sơn",
+        code=397,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_trieu_son",
+        province_code=38,
+    )
+    D_398 = District(
+        name="Huyện Thiệu Hóa",
+        code=398,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_thieu_hoa",
+        province_code=38,
+    )
+    D_399 = District(
+        name="Huyện Hoằng Hóa",
+        code=399,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_hoang_hoa",
+        province_code=38,
+    )
+    D_400 = District(
+        name="Huyện Hậu Lộc",
+        code=400,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_hau_loc",
+        province_code=38,
+    )
+    D_401 = District(
+        name="Huyện Nga Sơn",
+        code=401,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_nga_son",
+        province_code=38,
+    )
+    D_402 = District(
+        name="Huyện Như Xuân",
+        code=402,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_nhu_xuan",
+        province_code=38,
+    )
+    D_403 = District(
+        name="Huyện Như Thanh",
+        code=403,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_nhu_thanh",
+        province_code=38,
+    )
+    D_404 = District(
+        name="Huyện Nông Cống",
+        code=404,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_nong_cong",
+        province_code=38,
+    )
+    D_405 = District(
+        name="Huyện Đông Sơn",
+        code=405,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_dong_son",
+        province_code=38,
+    )
+    D_406 = District(
+        name="Huyện Quảng Xương",
+        code=406,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_quang_xuong",
+        province_code=38,
+    )
+    D_407 = District(
+        name="Huyện Tĩnh Gia",
+        code=407,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tinh_gia",
+        province_code=38,
+    )
+    D_412 = District(
+        name="Thành phố Vinh",
+        code=412,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_vinh",
+        province_code=40,
+    )
+    D_413 = District(
+        name="Thị xã Cửa Lò",
+        code=413,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_cua_lo",
+        province_code=40,
+    )
+    D_414 = District(
+        name="Thị xã Thái Hoà",
+        code=414,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_thai_hoa",
+        province_code=40,
+    )
+    D_415 = District(
+        name="Huyện Quế Phong",
+        code=415,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_que_phong",
+        province_code=40,
+    )
+    D_416 = District(
+        name="Huyện Quỳ Châu",
+        code=416,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_quy_chau",
+        province_code=40,
+    )
+    D_417 = District(
+        name="Huyện Kỳ Sơn",
+        code=417,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_ky_son",
+        province_code=40,
+    )
+    D_418 = District(
+        name="Huyện Tương Dương",
+        code=418,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tuong_duong",
+        province_code=40,
+    )
+    D_419 = District(
+        name="Huyện Nghĩa Đàn",
+        code=419,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_nghia_dan",
+        province_code=40,
+    )
+    D_420 = District(
+        name="Huyện Quỳ Hợp",
+        code=420,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_quy_hop",
+        province_code=40,
+    )
+    D_421 = District(
+        name="Huyện Quỳnh Lưu",
+        code=421,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_quynh_luu",
+        province_code=40,
+    )
+    D_422 = District(
+        name="Huyện Con Cuông",
+        code=422,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_con_cuong",
+        province_code=40,
+    )
+    D_423 = District(
+        name="Huyện Tân Kỳ",
+        code=423,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tan_ky",
+        province_code=40,
+    )
+    D_424 = District(
+        name="Huyện Anh Sơn",
+        code=424,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_anh_son",
+        province_code=40,
+    )
+    D_425 = District(
+        name="Huyện Diễn Châu",
+        code=425,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_dien_chau",
+        province_code=40,
+    )
+    D_426 = District(
+        name="Huyện Yên Thành",
+        code=426,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_yen_thanh",
+        province_code=40,
+    )
+    D_427 = District(
+        name="Huyện Đô Lương",
+        code=427,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_do_luong",
+        province_code=40,
+    )
+    D_428 = District(
+        name="Huyện Thanh Chương",
+        code=428,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_thanh_chuong",
+        province_code=40,
+    )
+    D_429 = District(
+        name="Huyện Nghi Lộc",
+        code=429,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_nghi_loc",
+        province_code=40,
+    )
+    D_430 = District(
+        name="Huyện Nam Đàn",
+        code=430,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_nam_dan",
+        province_code=40,
+    )
+    D_431 = District(
+        name="Huyện Hưng Nguyên",
+        code=431,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_hung_nguyen",
+        province_code=40,
+    )
+    D_432 = District(
+        name="Thị xã Hoàng Mai",
+        code=432,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_hoang_mai",
+        province_code=40,
+    )
+    D_436 = District(
+        name="Thành phố Hà Tĩnh",
+        code=436,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_ha_tinh",
+        province_code=42,
+    )
+    D_437 = District(
+        name="Thị xã Hồng Lĩnh",
+        code=437,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_hong_linh",
+        province_code=42,
+    )
+    D_439 = District(
+        name="Huyện Hương Sơn",
+        code=439,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_huong_son",
+        province_code=42,
+    )
+    D_440 = District(
+        name="Huyện Đức Thọ",
+        code=440,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_duc_tho",
+        province_code=42,
+    )
+    D_441 = District(
+        name="Huyện Vũ Quang",
+        code=441,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_vu_quang",
+        province_code=42,
+    )
+    D_442 = District(
+        name="Huyện Nghi Xuân",
+        code=442,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_nghi_xuan",
+        province_code=42,
+    )
+    D_443 = District(
+        name="Huyện Can Lộc",
+        code=443,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_can_loc",
+        province_code=42,
+    )
+    D_444 = District(
+        name="Huyện Hương Khê",
+        code=444,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_huong_khe",
+        province_code=42,
+    )
+    D_445 = District(
+        name="Huyện Thạch Hà",
+        code=445,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_thach_ha",
+        province_code=42,
+    )
+    D_446 = District(
+        name="Huyện Cẩm Xuyên",
+        code=446,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_cam_xuyen",
+        province_code=42,
+    )
+    D_447 = District(
+        name="Huyện Kỳ Anh",
+        code=447,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_ky_anh",
+        province_code=42,
+    )
+    D_448 = District(
+        name="Huyện Lộc Hà",
+        code=448,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_loc_ha",
+        province_code=42,
+    )
+    D_449 = District(
+        name="Thị xã Kỳ Anh",
+        code=449,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_ky_anh",
+        province_code=42,
+    )
+    D_450 = District(
+        name="Thành Phố Đồng Hới",
+        code=450,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_dong_hoi",
+        province_code=44,
+    )
+    D_452 = District(
+        name="Huyện Minh Hóa",
+        code=452,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_minh_hoa",
+        province_code=44,
+    )
+    D_453 = District(
+        name="Huyện Tuyên Hóa",
+        code=453,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tuyen_hoa",
+        province_code=44,
+    )
+    D_454 = District(
+        name="Huyện Quảng Trạch",
+        code=454,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_quang_trach",
+        province_code=44,
+    )
+    D_455 = District(
+        name="Huyện Bố Trạch",
+        code=455,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_bo_trach",
+        province_code=44,
+    )
+    D_456 = District(
+        name="Huyện Quảng Ninh",
+        code=456,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_quang_ninh",
+        province_code=44,
+    )
+    D_457 = District(
+        name="Huyện Lệ Thủy",
+        code=457,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_le_thuy",
+        province_code=44,
+    )
+    D_458 = District(
+        name="Thị xã Ba Đồn",
+        code=458,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_ba_don",
+        province_code=44,
+    )
+    D_461 = District(
+        name="Thành phố Đông Hà",
+        code=461,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_dong_ha",
+        province_code=45,
+    )
+    D_462 = District(
+        name="Thị xã Quảng Trị",
+        code=462,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_quang_tri",
+        province_code=45,
+    )
+    D_464 = District(
+        name="Huyện Vĩnh Linh",
+        code=464,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_vinh_linh",
+        province_code=45,
+    )
+    D_465 = District(
+        name="Huyện Hướng Hóa",
+        code=465,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_huong_hoa",
+        province_code=45,
+    )
+    D_466 = District(
+        name="Huyện Gio Linh",
+        code=466,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_gio_linh",
+        province_code=45,
+    )
+    D_467 = District(
+        name="Huyện Đa Krông",
+        code=467,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_da_krong",
+        province_code=45,
+    )
+    D_468 = District(
+        name="Huyện Cam Lộ",
+        code=468,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_cam_lo",
+        province_code=45,
+    )
+    D_469 = District(
+        name="Huyện Triệu Phong",
+        code=469,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_trieu_phong",
+        province_code=45,
+    )
+    D_470 = District(
+        name="Huyện Hải Lăng",
+        code=470,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_hai_lang",
+        province_code=45,
+    )
+    D_474 = District(
+        name="Thành phố Huế",
+        code=474,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_hue",
+        province_code=46,
+    )
+    D_476 = District(
+        name="Huyện Phong Điền",
+        code=476,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_phong_dien",
+        province_code=46,
+    )
+    D_477 = District(
+        name="Huyện Quảng Điền",
+        code=477,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_quang_dien",
+        province_code=46,
+    )
+    D_478 = District(
+        name="Huyện Phú Vang",
+        code=478,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_phu_vang",
+        province_code=46,
+    )
+    D_479 = District(
+        name="Thị xã Hương Thủy",
+        code=479,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_huong_thuy",
+        province_code=46,
+    )
+    D_480 = District(
+        name="Thị xã Hương Trà",
+        code=480,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_huong_tra",
+        province_code=46,
+    )
+    D_481 = District(
+        name="Huyện A Lưới",
+        code=481,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_a_luoi",
+        province_code=46,
+    )
+    D_482 = District(
+        name="Huyện Phú Lộc",
+        code=482,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_phu_loc",
+        province_code=46,
+    )
+    D_483 = District(
+        name="Huyện Nam Đông",
+        code=483,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_nam_dong",
+        province_code=46,
+    )
+    D_490 = District(
+        name="Quận Liên Chiểu",
+        code=490,
+        division_type=VietNamDivisionType.QUAN,
+        codename="quan_lien_chieu",
+        province_code=48,
+    )
+    D_491 = District(
+        name="Quận Thanh Khê",
+        code=491,
+        division_type=VietNamDivisionType.QUAN,
+        codename="quan_thanh_khe",
+        province_code=48,
+    )
+    D_492 = District(
+        name="Quận Hải Châu",
+        code=492,
+        division_type=VietNamDivisionType.QUAN,
+        codename="quan_hai_chau",
+        province_code=48,
+    )
+    D_493 = District(
+        name="Quận Sơn Trà", code=493, division_type=VietNamDivisionType.QUAN, codename="quan_son_tra", province_code=48
+    )
+    D_494 = District(
+        name="Quận Ngũ Hành Sơn",
+        code=494,
+        division_type=VietNamDivisionType.QUAN,
+        codename="quan_ngu_hanh_son",
+        province_code=48,
+    )
+    D_495 = District(
+        name="Quận Cẩm Lệ", code=495, division_type=VietNamDivisionType.QUAN, codename="quan_cam_le", province_code=48
+    )
+    D_497 = District(
+        name="Huyện Hòa Vang",
+        code=497,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_hoa_vang",
+        province_code=48,
+    )
+    D_502 = District(
+        name="Thành phố Tam Kỳ",
+        code=502,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_tam_ky",
+        province_code=49,
+    )
+    D_503 = District(
+        name="Thành phố Hội An",
+        code=503,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_hoi_an",
+        province_code=49,
+    )
+    D_504 = District(
+        name="Huyện Tây Giang",
+        code=504,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tay_giang",
+        province_code=49,
+    )
+    D_505 = District(
+        name="Huyện Đông Giang",
+        code=505,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_dong_giang",
+        province_code=49,
+    )
+    D_506 = District(
+        name="Huyện Đại Lộc",
+        code=506,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_dai_loc",
+        province_code=49,
+    )
+    D_507 = District(
+        name="Thị xã Điện Bàn",
+        code=507,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_dien_ban",
+        province_code=49,
+    )
+    D_508 = District(
+        name="Huyện Duy Xuyên",
+        code=508,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_duy_xuyen",
+        province_code=49,
+    )
+    D_509 = District(
+        name="Huyện Quế Sơn",
+        code=509,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_que_son",
+        province_code=49,
+    )
+    D_510 = District(
+        name="Huyện Nam Giang",
+        code=510,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_nam_giang",
+        province_code=49,
+    )
+    D_511 = District(
+        name="Huyện Phước Sơn",
+        code=511,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_phuoc_son",
+        province_code=49,
+    )
+    D_512 = District(
+        name="Huyện Hiệp Đức",
+        code=512,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_hiep_duc",
+        province_code=49,
+    )
+    D_513 = District(
+        name="Huyện Thăng Bình",
+        code=513,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_thang_binh",
+        province_code=49,
+    )
+    D_514 = District(
+        name="Huyện Tiên Phước",
+        code=514,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tien_phuoc",
+        province_code=49,
+    )
+    D_515 = District(
+        name="Huyện Bắc Trà My",
+        code=515,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_bac_tra_my",
+        province_code=49,
+    )
+    D_516 = District(
+        name="Huyện Nam Trà My",
+        code=516,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_nam_tra_my",
+        province_code=49,
+    )
+    D_517 = District(
+        name="Huyện Núi Thành",
+        code=517,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_nui_thanh",
+        province_code=49,
+    )
+    D_518 = District(
+        name="Huyện Phú Ninh",
+        code=518,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_phu_ninh",
+        province_code=49,
+    )
+    D_519 = District(
+        name="Huyện Nông Sơn",
+        code=519,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_nong_son",
+        province_code=49,
+    )
+    D_522 = District(
+        name="Thành phố Quảng Ngãi",
+        code=522,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_quang_ngai",
+        province_code=51,
+    )
+    D_524 = District(
+        name="Huyện Bình Sơn",
+        code=524,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_binh_son",
+        province_code=51,
+    )
+    D_525 = District(
+        name="Huyện Trà Bồng",
+        code=525,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tra_bong",
+        province_code=51,
+    )
+    D_526 = District(
+        name="Huyện Tây Trà",
+        code=526,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tay_tra",
+        province_code=51,
+    )
+    D_527 = District(
+        name="Huyện Sơn Tịnh",
+        code=527,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_son_tinh",
+        province_code=51,
+    )
+    D_528 = District(
+        name="Huyện Tư Nghĩa",
+        code=528,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tu_nghia",
+        province_code=51,
+    )
+    D_529 = District(
+        name="Huyện Sơn Hà",
+        code=529,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_son_ha",
+        province_code=51,
+    )
+    D_530 = District(
+        name="Huyện Sơn Tây",
+        code=530,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_son_tay",
+        province_code=51,
+    )
+    D_531 = District(
+        name="Huyện Minh Long",
+        code=531,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_minh_long",
+        province_code=51,
+    )
+    D_532 = District(
+        name="Huyện Nghĩa Hành",
+        code=532,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_nghia_hanh",
+        province_code=51,
+    )
+    D_533 = District(
+        name="Huyện Mộ Đức",
+        code=533,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_mo_duc",
+        province_code=51,
+    )
+    D_534 = District(
+        name="Huyện Đức Phổ",
+        code=534,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_duc_pho",
+        province_code=51,
+    )
+    D_535 = District(
+        name="Huyện Ba Tơ", code=535, division_type=VietNamDivisionType.HUYEN, codename="huyen_ba_to", province_code=51
+    )
+    D_536 = District(
+        name="Huyện Lý Sơn",
+        code=536,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_ly_son",
+        province_code=51,
+    )
+    D_540 = District(
+        name="Thành phố Qui Nhơn",
+        code=540,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_qui_nhon",
+        province_code=52,
+    )
+    D_542 = District(
+        name="Huyện An Lão",
+        code=542,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_an_lao",
+        province_code=52,
+    )
+    D_543 = District(
+        name="Huyện Hoài Nhơn",
+        code=543,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_hoai_nhon",
+        province_code=52,
+    )
+    D_544 = District(
+        name="Huyện Hoài Ân",
+        code=544,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_hoai_an",
+        province_code=52,
+    )
+    D_545 = District(
+        name="Huyện Phù Mỹ",
+        code=545,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_phu_my",
+        province_code=52,
+    )
+    D_546 = District(
+        name="Huyện Vĩnh Thạnh",
+        code=546,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_vinh_thanh",
+        province_code=52,
+    )
+    D_547 = District(
+        name="Huyện Tây Sơn",
+        code=547,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tay_son",
+        province_code=52,
+    )
+    D_548 = District(
+        name="Huyện Phù Cát",
+        code=548,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_phu_cat",
+        province_code=52,
+    )
+    D_549 = District(
+        name="Thị xã An Nhơn",
+        code=549,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_an_nhon",
+        province_code=52,
+    )
+    D_550 = District(
+        name="Huyện Tuy Phước",
+        code=550,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tuy_phuoc",
+        province_code=52,
+    )
+    D_551 = District(
+        name="Huyện Vân Canh",
+        code=551,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_van_canh",
+        province_code=52,
+    )
+    D_555 = District(
+        name="Thành phố Tuy Hoà",
+        code=555,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_tuy_hoa",
+        province_code=54,
+    )
+    D_557 = District(
+        name="Thị xã Sông Cầu",
+        code=557,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_song_cau",
+        province_code=54,
+    )
+    D_558 = District(
+        name="Huyện Đồng Xuân",
+        code=558,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_dong_xuan",
+        province_code=54,
+    )
+    D_559 = District(
+        name="Huyện Tuy An",
+        code=559,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tuy_an",
+        province_code=54,
+    )
+    D_560 = District(
+        name="Huyện Sơn Hòa",
+        code=560,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_son_hoa",
+        province_code=54,
+    )
+    D_561 = District(
+        name="Huyện Sông Hinh",
+        code=561,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_song_hinh",
+        province_code=54,
+    )
+    D_562 = District(
+        name="Huyện Tây Hoà",
+        code=562,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tay_hoa",
+        province_code=54,
+    )
+    D_563 = District(
+        name="Huyện Phú Hoà",
+        code=563,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_phu_hoa",
+        province_code=54,
+    )
+    D_564 = District(
+        name="Huyện Đông Hòa",
+        code=564,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_dong_hoa",
+        province_code=54,
+    )
+    D_568 = District(
+        name="Thành phố Nha Trang",
+        code=568,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_nha_trang",
+        province_code=56,
+    )
+    D_569 = District(
+        name="Thành phố Cam Ranh",
+        code=569,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_cam_ranh",
+        province_code=56,
+    )
+    D_570 = District(
+        name="Huyện Cam Lâm",
+        code=570,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_cam_lam",
+        province_code=56,
+    )
+    D_571 = District(
+        name="Huyện Vạn Ninh",
+        code=571,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_van_ninh",
+        province_code=56,
+    )
+    D_572 = District(
+        name="Thị xã Ninh Hòa",
+        code=572,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_ninh_hoa",
+        province_code=56,
+    )
+    D_573 = District(
+        name="Huyện Khánh Vĩnh",
+        code=573,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_khanh_vinh",
+        province_code=56,
+    )
+    D_574 = District(
+        name="Huyện Diên Khánh",
+        code=574,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_dien_khanh",
+        province_code=56,
+    )
+    D_575 = District(
+        name="Huyện Khánh Sơn",
+        code=575,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_khanh_son",
+        province_code=56,
+    )
+    D_576 = District(
+        name="Huyện Trường Sa",
+        code=576,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_truong_sa",
+        province_code=56,
+    )
+    D_582 = District(
+        name="Thành phố Phan Rang-Tháp Chàm",
+        code=582,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_phan_rang_thap_cham",
+        province_code=58,
+    )
+    D_584 = District(
+        name="Huyện Bác Ái",
+        code=584,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_bac_ai",
+        province_code=58,
+    )
+    D_585 = District(
+        name="Huyện Ninh Sơn",
+        code=585,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_ninh_son",
+        province_code=58,
+    )
+    D_586 = District(
+        name="Huyện Ninh Hải",
+        code=586,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_ninh_hai",
+        province_code=58,
+    )
+    D_587 = District(
+        name="Huyện Ninh Phước",
+        code=587,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_ninh_phuoc",
+        province_code=58,
+    )
+    D_588 = District(
+        name="Huyện Thuận Bắc",
+        code=588,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_thuan_bac",
+        province_code=58,
+    )
+    D_589 = District(
+        name="Huyện Thuận Nam",
+        code=589,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_thuan_nam",
+        province_code=58,
+    )
+    D_593 = District(
+        name="Thành phố Phan Thiết",
+        code=593,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_phan_thiet",
+        province_code=60,
+    )
+    D_594 = District(
+        name="Thị xã La Gi",
+        code=594,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_la_gi",
+        province_code=60,
+    )
+    D_595 = District(
+        name="Huyện Tuy Phong",
+        code=595,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tuy_phong",
+        province_code=60,
+    )
+    D_596 = District(
+        name="Huyện Bắc Bình",
+        code=596,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_bac_binh",
+        province_code=60,
+    )
+    D_597 = District(
+        name="Huyện Hàm Thuận Bắc",
+        code=597,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_ham_thuan_bac",
+        province_code=60,
+    )
+    D_598 = District(
+        name="Huyện Hàm Thuận Nam",
+        code=598,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_ham_thuan_nam",
+        province_code=60,
+    )
+    D_599 = District(
+        name="Huyện Tánh Linh",
+        code=599,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tanh_linh",
+        province_code=60,
+    )
+    D_600 = District(
+        name="Huyện Đức Linh",
+        code=600,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_duc_linh",
+        province_code=60,
+    )
+    D_601 = District(
+        name="Huyện Hàm Tân",
+        code=601,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_ham_tan",
+        province_code=60,
+    )
+    D_602 = District(
+        name="Huyện Phú Quí",
+        code=602,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_phu_qui",
+        province_code=60,
+    )
+    D_608 = District(
+        name="Thành phố Kon Tum",
+        code=608,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_kon_tum",
+        province_code=62,
+    )
+    D_610 = District(
+        name="Huyện Đắk Glei",
+        code=610,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_dak_glei",
+        province_code=62,
+    )
+    D_611 = District(
+        name="Huyện Ngọc Hồi",
+        code=611,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_ngoc_hoi",
+        province_code=62,
+    )
+    D_612 = District(
+        name="Huyện Đắk Tô",
+        code=612,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_dak_to",
+        province_code=62,
+    )
+    D_613 = District(
+        name="Huyện Kon Plông",
+        code=613,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_kon_plong",
+        province_code=62,
+    )
+    D_614 = District(
+        name="Huyện Kon Rẫy",
+        code=614,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_kon_ray",
+        province_code=62,
+    )
+    D_615 = District(
+        name="Huyện Đắk Hà",
+        code=615,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_dak_ha",
+        province_code=62,
+    )
+    D_616 = District(
+        name="Huyện Sa Thầy",
+        code=616,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_sa_thay",
+        province_code=62,
+    )
+    D_617 = District(
+        name="Huyện Tu Mơ Rông",
+        code=617,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tu_mo_rong",
+        province_code=62,
+    )
+    D_618 = District(
+        name="Huyện Ia H' Drai",
+        code=618,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_ia_h_drai",
+        province_code=62,
+    )
+    D_622 = District(
+        name="Thành phố Pleiku",
+        code=622,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_pleiku",
+        province_code=64,
+    )
+    D_623 = District(
+        name="Thị xã An Khê",
+        code=623,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_an_khe",
+        province_code=64,
+    )
+    D_624 = District(
+        name="Thị xã Ayun Pa",
+        code=624,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_ayun_pa",
+        province_code=64,
+    )
+    D_625 = District(
+        name="Huyện KBang", code=625, division_type=VietNamDivisionType.HUYEN, codename="huyen_kbang", province_code=64
+    )
+    D_626 = District(
+        name="Huyện Đăk Đoa",
+        code=626,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_dak_doa",
+        province_code=64,
+    )
+    D_627 = District(
+        name="Huyện Chư Păh",
+        code=627,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_chu_pah",
+        province_code=64,
+    )
+    D_628 = District(
+        name="Huyện Ia Grai",
+        code=628,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_ia_grai",
+        province_code=64,
+    )
+    D_629 = District(
+        name="Huyện Mang Yang",
+        code=629,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_mang_yang",
+        province_code=64,
+    )
+    D_630 = District(
+        name="Huyện Kông Chro",
+        code=630,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_kong_chro",
+        province_code=64,
+    )
+    D_631 = District(
+        name="Huyện Đức Cơ",
+        code=631,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_duc_co",
+        province_code=64,
+    )
+    D_632 = District(
+        name="Huyện Chư Prông",
+        code=632,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_chu_prong",
+        province_code=64,
+    )
+    D_633 = District(
+        name="Huyện Chư Sê",
+        code=633,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_chu_se",
+        province_code=64,
+    )
+    D_634 = District(
+        name="Huyện Đăk Pơ",
+        code=634,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_dak_po",
+        province_code=64,
+    )
+    D_635 = District(
+        name="Huyện Ia Pa", code=635, division_type=VietNamDivisionType.HUYEN, codename="huyen_ia_pa", province_code=64
+    )
+    D_637 = District(
+        name="Huyện Krông Pa",
+        code=637,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_krong_pa",
+        province_code=64,
+    )
+    D_638 = District(
+        name="Huyện Phú Thiện",
+        code=638,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_phu_thien",
+        province_code=64,
+    )
+    D_639 = District(
+        name="Huyện Chư Pưh",
+        code=639,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_chu_puh",
+        province_code=64,
+    )
+    D_643 = District(
+        name="Thành phố Buôn Ma Thuột",
+        code=643,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_buon_ma_thuot",
+        province_code=66,
+    )
+    D_644 = District(
+        name="Thị Xã Buôn Hồ",
+        code=644,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_buon_ho",
+        province_code=66,
+    )
+    D_645 = District(
+        name="Huyện Ea H'leo",
+        code=645,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_ea_hleo",
+        province_code=66,
+    )
+    D_646 = District(
+        name="Huyện Ea Súp",
+        code=646,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_ea_sup",
+        province_code=66,
+    )
+    D_647 = District(
+        name="Huyện Buôn Đôn",
+        code=647,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_buon_don",
+        province_code=66,
+    )
+    D_648 = District(
+        name="Huyện Cư M'gar",
+        code=648,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_cu_mgar",
+        province_code=66,
+    )
+    D_649 = District(
+        name="Huyện Krông Búk",
+        code=649,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_krong_buk",
+        province_code=66,
+    )
+    D_650 = District(
+        name="Huyện Krông Năng",
+        code=650,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_krong_nang",
+        province_code=66,
+    )
+    D_651 = District(
+        name="Huyện Ea Kar",
+        code=651,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_ea_kar",
+        province_code=66,
+    )
+    D_652 = District(
+        name="Huyện M'Đrắk", code=652, division_type=VietNamDivisionType.HUYEN, codename="huyen_mdrak", province_code=66
+    )
+    D_653 = District(
+        name="Huyện Krông Bông",
+        code=653,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_krong_bong",
+        province_code=66,
+    )
+    D_654 = District(
+        name="Huyện Krông Pắc",
+        code=654,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_krong_pac",
+        province_code=66,
+    )
+    D_655 = District(
+        name="Huyện Krông A Na",
+        code=655,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_krong_a_na",
+        province_code=66,
+    )
+    D_656 = District(
+        name="Huyện Lắk", code=656, division_type=VietNamDivisionType.HUYEN, codename="huyen_lak", province_code=66
+    )
+    D_657 = District(
+        name="Huyện Cư Kuin",
+        code=657,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_cu_kuin",
+        province_code=66,
+    )
+    D_660 = District(
+        name="Thành phố Gia Nghĩa",
+        code=660,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_gia_nghia",
+        province_code=67,
+    )
+    D_661 = District(
+        name="Huyện Đăk Glong",
+        code=661,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_dak_glong",
+        province_code=67,
+    )
+    D_662 = District(
+        name="Huyện Cư Jút",
+        code=662,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_cu_jut",
+        province_code=67,
+    )
+    D_663 = District(
+        name="Huyện Đắk Mil",
+        code=663,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_dak_mil",
+        province_code=67,
+    )
+    D_664 = District(
+        name="Huyện Krông Nô",
+        code=664,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_krong_no",
+        province_code=67,
+    )
+    D_665 = District(
+        name="Huyện Đắk Song",
+        code=665,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_dak_song",
+        province_code=67,
+    )
+    D_666 = District(
+        name="Huyện Đắk R'Lấp",
+        code=666,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_dak_rlap",
+        province_code=67,
+    )
+    D_667 = District(
+        name="Huyện Tuy Đức",
+        code=667,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tuy_duc",
+        province_code=67,
+    )
+    D_672 = District(
+        name="Thành phố Đà Lạt",
+        code=672,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_da_lat",
+        province_code=68,
+    )
+    D_673 = District(
+        name="Thành phố Bảo Lộc",
+        code=673,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_bao_loc",
+        province_code=68,
+    )
+    D_674 = District(
+        name="Huyện Đam Rông",
+        code=674,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_dam_rong",
+        province_code=68,
+    )
+    D_675 = District(
+        name="Huyện Lạc Dương",
+        code=675,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_lac_duong",
+        province_code=68,
+    )
+    D_676 = District(
+        name="Huyện Lâm Hà",
+        code=676,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_lam_ha",
+        province_code=68,
+    )
+    D_677 = District(
+        name="Huyện Đơn Dương",
+        code=677,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_don_duong",
+        province_code=68,
+    )
+    D_678 = District(
+        name="Huyện Đức Trọng",
+        code=678,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_duc_trong",
+        province_code=68,
+    )
+    D_679 = District(
+        name="Huyện Di Linh",
+        code=679,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_di_linh",
+        province_code=68,
+    )
+    D_680 = District(
+        name="Huyện Bảo Lâm",
+        code=680,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_bao_lam",
+        province_code=68,
+    )
+    D_681 = District(
+        name="Huyện Đạ Huoai",
+        code=681,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_da_huoai",
+        province_code=68,
+    )
+    D_682 = District(
+        name="Huyện Đạ Tẻh",
+        code=682,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_da_teh",
+        province_code=68,
+    )
+    D_683 = District(
+        name="Huyện Cát Tiên",
+        code=683,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_cat_tien",
+        province_code=68,
+    )
+    D_688 = District(
+        name="Thị xã Phước Long",
+        code=688,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_phuoc_long",
+        province_code=70,
+    )
+    D_689 = District(
+        name="Thành phố Đồng Xoài",
+        code=689,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_dong_xoai",
+        province_code=70,
+    )
+    D_690 = District(
+        name="Thị xã Bình Long",
+        code=690,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_binh_long",
+        province_code=70,
+    )
+    D_691 = District(
+        name="Huyện Bù Gia Mập",
+        code=691,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_bu_gia_map",
+        province_code=70,
+    )
+    D_692 = District(
+        name="Huyện Lộc Ninh",
+        code=692,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_loc_ninh",
+        province_code=70,
+    )
+    D_693 = District(
+        name="Huyện Bù Đốp",
+        code=693,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_bu_dop",
+        province_code=70,
+    )
+    D_694 = District(
+        name="Huyện Hớn Quản",
+        code=694,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_hon_quan",
+        province_code=70,
+    )
+    D_695 = District(
+        name="Huyện Đồng Phú",
+        code=695,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_dong_phu",
+        province_code=70,
+    )
+    D_696 = District(
+        name="Huyện Bù Đăng",
+        code=696,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_bu_dang",
+        province_code=70,
+    )
+    D_697 = District(
+        name="Huyện Chơn Thành",
+        code=697,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_chon_thanh",
+        province_code=70,
+    )
+    D_698 = District(
+        name="Huyện Phú Riềng",
+        code=698,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_phu_rieng",
+        province_code=70,
+    )
+    D_703 = District(
+        name="Thành phố Tây Ninh",
+        code=703,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_tay_ninh",
+        province_code=72,
+    )
+    D_705 = District(
+        name="Huyện Tân Biên",
+        code=705,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tan_bien",
+        province_code=72,
+    )
+    D_706 = District(
+        name="Huyện Tân Châu",
+        code=706,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tan_chau",
+        province_code=72,
+    )
+    D_707 = District(
+        name="Huyện Dương Minh Châu",
+        code=707,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_duong_minh_chau",
+        province_code=72,
+    )
+    D_708 = District(
+        name="Huyện Châu Thành",
+        code=708,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_chau_thanh",
+        province_code=72,
+    )
+    D_709 = District(
+        name="Huyện Hòa Thành",
+        code=709,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_hoa_thanh",
+        province_code=72,
+    )
+    D_710 = District(
+        name="Huyện Gò Dầu",
+        code=710,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_go_dau",
+        province_code=72,
+    )
+    D_711 = District(
+        name="Huyện Bến Cầu",
+        code=711,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_ben_cau",
+        province_code=72,
+    )
+    D_712 = District(
+        name="Huyện Trảng Bàng",
+        code=712,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_trang_bang",
+        province_code=72,
+    )
+    D_718 = District(
+        name="Thành phố Thủ Dầu Một",
+        code=718,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_thu_dau_mot",
+        province_code=74,
+    )
+    D_719 = District(
+        name="Huyện Bàu Bàng",
+        code=719,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_bau_bang",
+        province_code=74,
+    )
+    D_720 = District(
+        name="Huyện Dầu Tiếng",
+        code=720,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_dau_tieng",
+        province_code=74,
+    )
+    D_721 = District(
+        name="Thị xã Bến Cát",
+        code=721,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_ben_cat",
+        province_code=74,
+    )
+    D_722 = District(
+        name="Huyện Phú Giáo",
+        code=722,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_phu_giao",
+        province_code=74,
+    )
+    D_723 = District(
+        name="Thị xã Tân Uyên",
+        code=723,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_tan_uyen",
+        province_code=74,
+    )
+    D_724 = District(
+        name="Thị xã Dĩ An",
+        code=724,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_di_an",
+        province_code=74,
+    )
+    D_725 = District(
+        name="Thị xã Thuận An",
+        code=725,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_thuan_an",
+        province_code=74,
+    )
+    D_726 = District(
+        name="Huyện Bắc Tân Uyên",
+        code=726,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_bac_tan_uyen",
+        province_code=74,
+    )
+    D_731 = District(
+        name="Thành phố Biên Hòa",
+        code=731,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_bien_hoa",
+        province_code=75,
+    )
+    D_732 = District(
+        name="Thành phố Long Khánh",
+        code=732,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_long_khanh",
+        province_code=75,
+    )
+    D_734 = District(
+        name="Huyện Tân Phú",
+        code=734,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tan_phu",
+        province_code=75,
+    )
+    D_735 = District(
+        name="Huyện Vĩnh Cửu",
+        code=735,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_vinh_cuu",
+        province_code=75,
+    )
+    D_736 = District(
+        name="Huyện Định Quán",
+        code=736,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_dinh_quan",
+        province_code=75,
+    )
+    D_737 = District(
+        name="Huyện Trảng Bom",
+        code=737,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_trang_bom",
+        province_code=75,
+    )
+    D_738 = District(
+        name="Huyện Thống Nhất",
+        code=738,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_thong_nhat",
+        province_code=75,
+    )
+    D_739 = District(
+        name="Huyện Cẩm Mỹ",
+        code=739,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_cam_my",
+        province_code=75,
+    )
+    D_740 = District(
+        name="Huyện Long Thành",
+        code=740,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_long_thanh",
+        province_code=75,
+    )
+    D_741 = District(
+        name="Huyện Xuân Lộc",
+        code=741,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_xuan_loc",
+        province_code=75,
+    )
+    D_742 = District(
+        name="Huyện Nhơn Trạch",
+        code=742,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_nhon_trach",
+        province_code=75,
+    )
+    D_747 = District(
+        name="Thành phố Vũng Tàu",
+        code=747,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_vung_tau",
+        province_code=77,
+    )
+    D_748 = District(
+        name="Thành phố Bà Rịa",
+        code=748,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_ba_ria",
+        province_code=77,
+    )
+    D_750 = District(
+        name="Huyện Châu Đức",
+        code=750,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_chau_duc",
+        province_code=77,
+    )
+    D_751 = District(
+        name="Huyện Xuyên Mộc",
+        code=751,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_xuyen_moc",
+        province_code=77,
+    )
+    D_752 = District(
+        name="Huyện Long Điền",
+        code=752,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_long_dien",
+        province_code=77,
+    )
+    D_753 = District(
+        name="Huyện Đất Đỏ",
+        code=753,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_dat_do",
+        province_code=77,
+    )
+    D_754 = District(
+        name="Thị xã Phú Mỹ",
+        code=754,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_phu_my",
+        province_code=77,
+    )
+    D_760 = District(
+        name="Quận 1", code=760, division_type=VietNamDivisionType.QUAN, codename="quan_1", province_code=79
+    )
+    D_761 = District(
+        name="Quận 12", code=761, division_type=VietNamDivisionType.QUAN, codename="quan_12", province_code=79
+    )
+    D_762 = District(
+        name="Quận Thủ Đức", code=762, division_type=VietNamDivisionType.QUAN, codename="quan_thu_duc", province_code=79
+    )
+    D_763 = District(
+        name="Quận 9", code=763, division_type=VietNamDivisionType.QUAN, codename="quan_9", province_code=79
+    )
+    D_764 = District(
+        name="Quận Gò Vấp", code=764, division_type=VietNamDivisionType.QUAN, codename="quan_go_vap", province_code=79
+    )
+    D_765 = District(
+        name="Quận Bình Thạnh",
+        code=765,
+        division_type=VietNamDivisionType.QUAN,
+        codename="quan_binh_thanh",
+        province_code=79,
+    )
+    D_766 = District(
+        name="Quận Tân Bình",
+        code=766,
+        division_type=VietNamDivisionType.QUAN,
+        codename="quan_tan_binh",
+        province_code=79,
+    )
+    D_767 = District(
+        name="Quận Tân Phú", code=767, division_type=VietNamDivisionType.QUAN, codename="quan_tan_phu", province_code=79
+    )
+    D_768 = District(
+        name="Quận Phú Nhuận",
+        code=768,
+        division_type=VietNamDivisionType.QUAN,
+        codename="quan_phu_nhuan",
+        province_code=79,
+    )
+    D_769 = District(
+        name="Quận 2", code=769, division_type=VietNamDivisionType.QUAN, codename="quan_2", province_code=79
+    )
+    D_770 = District(
+        name="Quận 3", code=770, division_type=VietNamDivisionType.QUAN, codename="quan_3", province_code=79
+    )
+    D_771 = District(
+        name="Quận 10", code=771, division_type=VietNamDivisionType.QUAN, codename="quan_10", province_code=79
+    )
+    D_772 = District(
+        name="Quận 11", code=772, division_type=VietNamDivisionType.QUAN, codename="quan_11", province_code=79
+    )
+    D_773 = District(
+        name="Quận 4", code=773, division_type=VietNamDivisionType.QUAN, codename="quan_4", province_code=79
+    )
+    D_774 = District(
+        name="Quận 5", code=774, division_type=VietNamDivisionType.QUAN, codename="quan_5", province_code=79
+    )
+    D_775 = District(
+        name="Quận 6", code=775, division_type=VietNamDivisionType.QUAN, codename="quan_6", province_code=79
+    )
+    D_776 = District(
+        name="Quận 8", code=776, division_type=VietNamDivisionType.QUAN, codename="quan_8", province_code=79
+    )
+    D_777 = District(
+        name="Quận Bình Tân",
+        code=777,
+        division_type=VietNamDivisionType.QUAN,
+        codename="quan_binh_tan",
+        province_code=79,
+    )
+    D_778 = District(
+        name="Quận 7", code=778, division_type=VietNamDivisionType.QUAN, codename="quan_7", province_code=79
+    )
+    D_783 = District(
+        name="Huyện Củ Chi",
+        code=783,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_cu_chi",
+        province_code=79,
+    )
+    D_784 = District(
+        name="Huyện Hóc Môn",
+        code=784,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_hoc_mon",
+        province_code=79,
+    )
+    D_785 = District(
+        name="Huyện Bình Chánh",
+        code=785,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_binh_chanh",
+        province_code=79,
+    )
+    D_786 = District(
+        name="Huyện Nhà Bè",
+        code=786,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_nha_be",
+        province_code=79,
+    )
+    D_787 = District(
+        name="Huyện Cần Giờ",
+        code=787,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_can_gio",
+        province_code=79,
+    )
+    D_794 = District(
+        name="Thành phố Tân An",
+        code=794,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_tan_an",
+        province_code=80,
+    )
+    D_795 = District(
+        name="Thị xã Kiến Tường",
+        code=795,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_kien_tuong",
+        province_code=80,
+    )
+    D_796 = District(
+        name="Huyện Tân Hưng",
+        code=796,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tan_hung",
+        province_code=80,
+    )
+    D_797 = District(
+        name="Huyện Vĩnh Hưng",
+        code=797,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_vinh_hung",
+        province_code=80,
+    )
+    D_798 = District(
+        name="Huyện Mộc Hóa",
+        code=798,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_moc_hoa",
+        province_code=80,
+    )
+    D_799 = District(
+        name="Huyện Tân Thạnh",
+        code=799,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tan_thanh",
+        province_code=80,
+    )
+    D_800 = District(
+        name="Huyện Thạnh Hóa",
+        code=800,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_thanh_hoa",
+        province_code=80,
+    )
+    D_801 = District(
+        name="Huyện Đức Huệ",
+        code=801,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_duc_hue",
+        province_code=80,
+    )
+    D_802 = District(
+        name="Huyện Đức Hòa",
+        code=802,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_duc_hoa",
+        province_code=80,
+    )
+    D_803 = District(
+        name="Huyện Bến Lức",
+        code=803,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_ben_luc",
+        province_code=80,
+    )
+    D_804 = District(
+        name="Huyện Thủ Thừa",
+        code=804,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_thu_thua",
+        province_code=80,
+    )
+    D_805 = District(
+        name="Huyện Tân Trụ",
+        code=805,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tan_tru",
+        province_code=80,
+    )
+    D_806 = District(
+        name="Huyện Cần Đước",
+        code=806,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_can_duoc",
+        province_code=80,
+    )
+    D_807 = District(
+        name="Huyện Cần Giuộc",
+        code=807,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_can_giuoc",
+        province_code=80,
+    )
+    D_808 = District(
+        name="Huyện Châu Thành",
+        code=808,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_chau_thanh",
+        province_code=80,
+    )
+    D_815 = District(
+        name="Thành phố Mỹ Tho",
+        code=815,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_my_tho",
+        province_code=82,
+    )
+    D_816 = District(
+        name="Thị xã Gò Công",
+        code=816,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_go_cong",
+        province_code=82,
+    )
+    D_817 = District(
+        name="Thị xã Cai Lậy",
+        code=817,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_cai_lay",
+        province_code=82,
+    )
+    D_818 = District(
+        name="Huyện Tân Phước",
+        code=818,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tan_phuoc",
+        province_code=82,
+    )
+    D_819 = District(
+        name="Huyện Cái Bè",
+        code=819,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_cai_be",
+        province_code=82,
+    )
+    D_820 = District(
+        name="Huyện Cai Lậy",
+        code=820,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_cai_lay",
+        province_code=82,
+    )
+    D_821 = District(
+        name="Huyện Châu Thành",
+        code=821,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_chau_thanh",
+        province_code=82,
+    )
+    D_822 = District(
+        name="Huyện Chợ Gạo",
+        code=822,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_cho_gao",
+        province_code=82,
+    )
+    D_823 = District(
+        name="Huyện Gò Công Tây",
+        code=823,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_go_cong_tay",
+        province_code=82,
+    )
+    D_824 = District(
+        name="Huyện Gò Công Đông",
+        code=824,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_go_cong_dong",
+        province_code=82,
+    )
+    D_825 = District(
+        name="Huyện Tân Phú Đông",
+        code=825,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tan_phu_dong",
+        province_code=82,
+    )
+    D_829 = District(
+        name="Thành phố Bến Tre",
+        code=829,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_ben_tre",
+        province_code=83,
+    )
+    D_831 = District(
+        name="Huyện Châu Thành",
+        code=831,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_chau_thanh",
+        province_code=83,
+    )
+    D_832 = District(
+        name="Huyện Chợ Lách",
+        code=832,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_cho_lach",
+        province_code=83,
+    )
+    D_833 = District(
+        name="Huyện Mỏ Cày Nam",
+        code=833,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_mo_cay_nam",
+        province_code=83,
+    )
+    D_834 = District(
+        name="Huyện Giồng Trôm",
+        code=834,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_giong_trom",
+        province_code=83,
+    )
+    D_835 = District(
+        name="Huyện Bình Đại",
+        code=835,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_binh_dai",
+        province_code=83,
+    )
+    D_836 = District(
+        name="Huyện Ba Tri",
+        code=836,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_ba_tri",
+        province_code=83,
+    )
+    D_837 = District(
+        name="Huyện Thạnh Phú",
+        code=837,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_thanh_phu",
+        province_code=83,
+    )
+    D_838 = District(
+        name="Huyện Mỏ Cày Bắc",
+        code=838,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_mo_cay_bac",
+        province_code=83,
+    )
+    D_842 = District(
+        name="Thành phố Trà Vinh",
+        code=842,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_tra_vinh",
+        province_code=84,
+    )
+    D_844 = District(
+        name="Huyện Càng Long",
+        code=844,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_cang_long",
+        province_code=84,
+    )
+    D_845 = District(
+        name="Huyện Cầu Kè",
+        code=845,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_cau_ke",
+        province_code=84,
+    )
+    D_846 = District(
+        name="Huyện Tiểu Cần",
+        code=846,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tieu_can",
+        province_code=84,
+    )
+    D_847 = District(
+        name="Huyện Châu Thành",
+        code=847,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_chau_thanh",
+        province_code=84,
+    )
+    D_848 = District(
+        name="Huyện Cầu Ngang",
+        code=848,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_cau_ngang",
+        province_code=84,
+    )
+    D_849 = District(
+        name="Huyện Trà Cú",
+        code=849,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tra_cu",
+        province_code=84,
+    )
+    D_850 = District(
+        name="Huyện Duyên Hải",
+        code=850,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_duyen_hai",
+        province_code=84,
+    )
+    D_851 = District(
+        name="Thị xã Duyên Hải",
+        code=851,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_duyen_hai",
+        province_code=84,
+    )
+    D_855 = District(
+        name="Thành phố Vĩnh Long",
+        code=855,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_vinh_long",
+        province_code=86,
+    )
+    D_857 = District(
+        name="Huyện Long Hồ",
+        code=857,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_long_ho",
+        province_code=86,
+    )
+    D_858 = District(
+        name="Huyện Mang Thít",
+        code=858,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_mang_thit",
+        province_code=86,
+    )
+    D_859 = District(
+        name="Huyện Vũng Liêm",
+        code=859,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_vung_liem",
+        province_code=86,
+    )
+    D_860 = District(
+        name="Huyện Tam Bình",
+        code=860,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tam_binh",
+        province_code=86,
+    )
+    D_861 = District(
+        name="Thị xã Bình Minh",
+        code=861,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_binh_minh",
+        province_code=86,
+    )
+    D_862 = District(
+        name="Huyện Trà Ôn",
+        code=862,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tra_on",
+        province_code=86,
+    )
+    D_863 = District(
+        name="Huyện Bình Tân",
+        code=863,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_binh_tan",
+        province_code=86,
+    )
+    D_866 = District(
+        name="Thành phố Cao Lãnh",
+        code=866,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_cao_lanh",
+        province_code=87,
+    )
+    D_867 = District(
+        name="Thành phố Sa Đéc",
+        code=867,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_sa_dec",
+        province_code=87,
+    )
+    D_868 = District(
+        name="Thị xã Hồng Ngự",
+        code=868,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_hong_ngu",
+        province_code=87,
+    )
+    D_869 = District(
+        name="Huyện Tân Hồng",
+        code=869,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tan_hong",
+        province_code=87,
+    )
+    D_870 = District(
+        name="Huyện Hồng Ngự",
+        code=870,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_hong_ngu",
+        province_code=87,
+    )
+    D_871 = District(
+        name="Huyện Tam Nông",
+        code=871,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tam_nong",
+        province_code=87,
+    )
+    D_872 = District(
+        name="Huyện Tháp Mười",
+        code=872,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_thap_muoi",
+        province_code=87,
+    )
+    D_873 = District(
+        name="Huyện Cao Lãnh",
+        code=873,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_cao_lanh",
+        province_code=87,
+    )
+    D_874 = District(
+        name="Huyện Thanh Bình",
+        code=874,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_thanh_binh",
+        province_code=87,
+    )
+    D_875 = District(
+        name="Huyện Lấp Vò",
+        code=875,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_lap_vo",
+        province_code=87,
+    )
+    D_876 = District(
+        name="Huyện Lai Vung",
+        code=876,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_lai_vung",
+        province_code=87,
+    )
+    D_877 = District(
+        name="Huyện Châu Thành",
+        code=877,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_chau_thanh",
+        province_code=87,
+    )
+    D_883 = District(
+        name="Thành phố Long Xuyên",
+        code=883,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_long_xuyen",
+        province_code=89,
+    )
+    D_884 = District(
+        name="Thành phố Châu Đốc",
+        code=884,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_chau_doc",
+        province_code=89,
+    )
+    D_886 = District(
+        name="Huyện An Phú",
+        code=886,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_an_phu",
+        province_code=89,
+    )
+    D_887 = District(
+        name="Thị xã Tân Châu",
+        code=887,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_tan_chau",
+        province_code=89,
+    )
+    D_888 = District(
+        name="Huyện Phú Tân",
+        code=888,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_phu_tan",
+        province_code=89,
+    )
+    D_889 = District(
+        name="Huyện Châu Phú",
+        code=889,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_chau_phu",
+        province_code=89,
+    )
+    D_890 = District(
+        name="Huyện Tịnh Biên",
+        code=890,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tinh_bien",
+        province_code=89,
+    )
+    D_891 = District(
+        name="Huyện Tri Tôn",
+        code=891,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tri_ton",
+        province_code=89,
+    )
+    D_892 = District(
+        name="Huyện Châu Thành",
+        code=892,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_chau_thanh",
+        province_code=89,
+    )
+    D_893 = District(
+        name="Huyện Chợ Mới",
+        code=893,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_cho_moi",
+        province_code=89,
+    )
+    D_894 = District(
+        name="Huyện Thoại Sơn",
+        code=894,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_thoai_son",
+        province_code=89,
+    )
+    D_899 = District(
+        name="Thành phố Rạch Giá",
+        code=899,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_rach_gia",
+        province_code=91,
+    )
+    D_900 = District(
+        name="Thành phố Hà Tiên",
+        code=900,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_ha_tien",
+        province_code=91,
+    )
+    D_902 = District(
+        name="Huyện Kiên Lương",
+        code=902,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_kien_luong",
+        province_code=91,
+    )
+    D_903 = District(
+        name="Huyện Hòn Đất",
+        code=903,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_hon_dat",
+        province_code=91,
+    )
+    D_904 = District(
+        name="Huyện Tân Hiệp",
+        code=904,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tan_hiep",
+        province_code=91,
+    )
+    D_905 = District(
+        name="Huyện Châu Thành",
+        code=905,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_chau_thanh",
+        province_code=91,
+    )
+    D_906 = District(
+        name="Huyện Giồng Riềng",
+        code=906,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_giong_rieng",
+        province_code=91,
+    )
+    D_907 = District(
+        name="Huyện Gò Quao",
+        code=907,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_go_quao",
+        province_code=91,
+    )
+    D_908 = District(
+        name="Huyện An Biên",
+        code=908,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_an_bien",
+        province_code=91,
+    )
+    D_909 = District(
+        name="Huyện An Minh",
+        code=909,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_an_minh",
+        province_code=91,
+    )
+    D_910 = District(
+        name="Huyện Vĩnh Thuận",
+        code=910,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_vinh_thuan",
+        province_code=91,
+    )
+    D_911 = District(
+        name="Huyện Phú Quốc",
+        code=911,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_phu_quoc",
+        province_code=91,
+    )
+    D_912 = District(
+        name="Huyện Kiên Hải",
+        code=912,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_kien_hai",
+        province_code=91,
+    )
+    D_913 = District(
+        name="Huyện U Minh Thượng",
+        code=913,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_u_minh_thuong",
+        province_code=91,
+    )
+    D_914 = District(
+        name="Huyện Giang Thành",
+        code=914,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_giang_thanh",
+        province_code=91,
+    )
+    D_916 = District(
+        name="Quận Ninh Kiều",
+        code=916,
+        division_type=VietNamDivisionType.QUAN,
+        codename="quan_ninh_kieu",
+        province_code=92,
+    )
+    D_917 = District(
+        name="Quận Ô Môn", code=917, division_type=VietNamDivisionType.QUAN, codename="quan_o_mon", province_code=92
+    )
+    D_918 = District(
+        name="Quận Bình Thuỷ",
+        code=918,
+        division_type=VietNamDivisionType.QUAN,
+        codename="quan_binh_thuy",
+        province_code=92,
+    )
+    D_919 = District(
+        name="Quận Cái Răng",
+        code=919,
+        division_type=VietNamDivisionType.QUAN,
+        codename="quan_cai_rang",
+        province_code=92,
+    )
+    D_923 = District(
+        name="Quận Thốt Nốt",
+        code=923,
+        division_type=VietNamDivisionType.QUAN,
+        codename="quan_thot_not",
+        province_code=92,
+    )
+    D_924 = District(
+        name="Huyện Vĩnh Thạnh",
+        code=924,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_vinh_thanh",
+        province_code=92,
+    )
+    D_925 = District(
+        name="Huyện Cờ Đỏ", code=925, division_type=VietNamDivisionType.HUYEN, codename="huyen_co_do", province_code=92
+    )
+    D_926 = District(
+        name="Huyện Phong Điền",
+        code=926,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_phong_dien",
+        province_code=92,
+    )
+    D_927 = District(
+        name="Huyện Thới Lai",
+        code=927,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_thoi_lai",
+        province_code=92,
+    )
+    D_930 = District(
+        name="Thành phố Vị Thanh",
+        code=930,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_vi_thanh",
+        province_code=93,
+    )
+    D_931 = District(
+        name="Thị xã Ngã Bảy",
+        code=931,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_nga_bay",
+        province_code=93,
+    )
+    D_932 = District(
+        name="Huyện Châu Thành A",
+        code=932,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_chau_thanh_a",
+        province_code=93,
+    )
+    D_933 = District(
+        name="Huyện Châu Thành",
+        code=933,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_chau_thanh",
+        province_code=93,
+    )
+    D_934 = District(
+        name="Huyện Phụng Hiệp",
+        code=934,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_phung_hiep",
+        province_code=93,
+    )
+    D_935 = District(
+        name="Huyện Vị Thuỷ",
+        code=935,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_vi_thuy",
+        province_code=93,
+    )
+    D_936 = District(
+        name="Huyện Long Mỹ",
+        code=936,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_long_my",
+        province_code=93,
+    )
+    D_937 = District(
+        name="Thị xã Long Mỹ",
+        code=937,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_long_my",
+        province_code=93,
+    )
+    D_941 = District(
+        name="Thành phố Sóc Trăng",
+        code=941,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_soc_trang",
+        province_code=94,
+    )
+    D_942 = District(
+        name="Huyện Châu Thành",
+        code=942,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_chau_thanh",
+        province_code=94,
+    )
+    D_943 = District(
+        name="Huyện Kế Sách",
+        code=943,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_ke_sach",
+        province_code=94,
+    )
+    D_944 = District(
+        name="Huyện Mỹ Tú", code=944, division_type=VietNamDivisionType.HUYEN, codename="huyen_my_tu", province_code=94
+    )
+    D_945 = District(
+        name="Huyện Cù Lao Dung",
+        code=945,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_cu_lao_dung",
+        province_code=94,
+    )
+    D_946 = District(
+        name="Huyện Long Phú",
+        code=946,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_long_phu",
+        province_code=94,
+    )
+    D_947 = District(
+        name="Huyện Mỹ Xuyên",
+        code=947,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_my_xuyen",
+        province_code=94,
+    )
+    D_948 = District(
+        name="Thị xã Ngã Năm",
+        code=948,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_nga_nam",
+        province_code=94,
+    )
+    D_949 = District(
+        name="Huyện Thạnh Trị",
+        code=949,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_thanh_tri",
+        province_code=94,
+    )
+    D_950 = District(
+        name="Thị xã Vĩnh Châu",
+        code=950,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_vinh_chau",
+        province_code=94,
+    )
+    D_951 = District(
+        name="Huyện Trần Đề",
+        code=951,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tran_de",
+        province_code=94,
+    )
+    D_954 = District(
+        name="Thành phố Bạc Liêu",
+        code=954,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_bac_lieu",
+        province_code=95,
+    )
+    D_956 = District(
+        name="Huyện Hồng Dân",
+        code=956,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_hong_dan",
+        province_code=95,
+    )
+    D_957 = District(
+        name="Huyện Phước Long",
+        code=957,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_phuoc_long",
+        province_code=95,
+    )
+    D_958 = District(
+        name="Huyện Vĩnh Lợi",
+        code=958,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_vinh_loi",
+        province_code=95,
+    )
+    D_959 = District(
+        name="Thị xã Giá Rai",
+        code=959,
+        division_type=VietNamDivisionType.THI_XA,
+        codename="thi_xa_gia_rai",
+        province_code=95,
+    )
+    D_960 = District(
+        name="Huyện Đông Hải",
+        code=960,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_dong_hai",
+        province_code=95,
+    )
+    D_961 = District(
+        name="Huyện Hoà Bình",
+        code=961,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_hoa_binh",
+        province_code=95,
+    )
+    D_964 = District(
+        name="Thành phố Cà Mau",
+        code=964,
+        division_type=VietNamDivisionType.THANH_PHO,
+        codename="thanh_pho_ca_mau",
+        province_code=96,
+    )
+    D_966 = District(
+        name="Huyện U Minh",
+        code=966,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_u_minh",
+        province_code=96,
+    )
+    D_967 = District(
+        name="Huyện Thới Bình",
+        code=967,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_thoi_binh",
+        province_code=96,
+    )
+    D_968 = District(
+        name="Huyện Trần Văn Thời",
+        code=968,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_tran_van_thoi",
+        province_code=96,
+    )
+    D_969 = District(
+        name="Huyện Cái Nước",
+        code=969,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_cai_nuoc",
+        province_code=96,
+    )
+    D_970 = District(
+        name="Huyện Đầm Dơi",
+        code=970,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_dam_doi",
+        province_code=96,
+    )
+    D_971 = District(
+        name="Huyện Năm Căn",
+        code=971,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_nam_can",
+        province_code=96,
+    )
+    D_972 = District(
+        name="Huyện Phú Tân",
+        code=972,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_phu_tan",
+        province_code=96,
+    )
+    D_973 = District(
+        name="Huyện Ngọc Hiển",
+        code=973,
+        division_type=VietNamDivisionType.HUYEN,
+        codename="huyen_ngoc_hien",
+        province_code=96,
+    )
 
 
-class DistrictDEnum(District, Enum):
+class DistrictDEnum(Enum):
     """
     District Enum type, whose member name is more descriptive, with district name.
 
