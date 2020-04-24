@@ -56,10 +56,11 @@ Note that this variable only returns the path of the file, not the content. It i
     import rapidjson
     from vietnam_provinces import NESTED_DIVISIONS_JSON_PATH
 
-    NESTED_DIVISIONS_JSON_PATH.open() as f:
+    # With rapidjson
+    with NESTED_DIVISIONS_JSON_PATH.open() as f:
         rapidjson.load(f)
 
-    # Or
+    # With orjson
     orjson.loads(NESTED_DIVISIONS_JSON_PATH.read_bytes())
 
 Due to the big amount of data (10767 wards all over Viet Nam), this loading will be slow.
@@ -118,14 +119,16 @@ Example of looking up ``Ward``, ``District``, ``Province`` with theirs numeric c
 
 Unlike ``ProvinceDEnum``, ``DistrictDEnum``, the ``WardDEnum`` has ward code in member name. It is because there are too many Vietnamese wards with the same name. There is no way to build unique ID for wards, with pure Latin letters (Vietnamese punctuations stripped), even if we add district and province info to the ID. Let's take "Xã Đông Thành" and "Xã Đông Thạnh" as example. Both belong to "Huyện Bình Minh" of "Vĩnh Long", both produces ID name "DONG_THANH". Although Python allows Unicode as ID name, like "ĐÔNG_THẠNH", but it is not practical yet because the code formatter tool (`Black`_) will still normalizes it to Latin form.
 
-Because the ``WardEnum`` has many records (10767 at the time of wring, February 2020) and may not be needed in some applications, I move it to separate module, to avoid loading automatically to application.
+Because the ``WardEnum`` has many records (10767 at the time of writing, February 2020) and may not be needed in some applications, I move it to separate module, to avoid loading automatically to application.
 
 
-Member of these enums, the ``Province``, ``District`` and ``Ward`` data types, all are immutable.
+Member of these enums, the ``Province``, ``District`` and ``Ward`` data types, all are immutable (defined as frozen `dataclass`_).
 They can be imported from top-level of ``vietnam_provinces``.
 
-While ``Province`` and ``District`` types are `namedtuple`_, ``Ward`` are a frozen `dataclass`_.
-This is because of a difficult situation, where standard ``Enum`` is too slow to load when it has very many members, and the faster alternative, `fast-enum`_, has compatible issue with namedtuple.
+.. code-block:: python
+
+    >>> from vietnam_provinces import Province, District, Ward
+
 
 Install
 -------
