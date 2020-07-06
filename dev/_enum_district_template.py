@@ -7,7 +7,7 @@ class ProvinceEnum(Province, Enum):
     '''
     Province Enum type, which is convenient for fast looking up Province by its numeric code.
     '''
-    P_1 = Province('Thành phố Hà Nội', 1, VietNamDivisionType.THANH_PHO_TRUNG_UONG, 'thanh_pho_ha_noi', 24)
+    P_1 = ('Thành phố Hà Nội', 1, VietNamDivisionType.THANH_PHO_TRUNG_UONG, 'thanh_pho_ha_noi', 24)
 
 
 class ProvinceDEnum(Province, Enum):
@@ -23,7 +23,7 @@ class DistrictEnum(District, Enum):
     '''
     District Enum type, which is convenient for fast looking up District by its numeric code.
     '''
-    D_656 = District("Huyện Lắk", 656, VietNamDivisionType.HUYEN, "huyen_lak", 66)
+    D_656 = ("Huyện Lắk", 656, VietNamDivisionType.HUYEN, "huyen_lak", 66)
 
 
 class DistrictDEnum(District, Enum):

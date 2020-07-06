@@ -284,20 +284,18 @@ def convert_to_nested(records: Sequence[WardCSVRecord],
 def province_enum_member(province: Province):
     '''
     Generate AST tree for line of code equivalent to:
-    P_1 = Province('Thành phố Hà Nội', 1, VietNamDivisionType.THANH_PHO_TRUNG_UONG, 'thanh_pho_ha_noi', 24)
+    P_1 = ('Thành phố Hà Nội', 1, VietNamDivisionType.THANH_PHO_TRUNG_UONG, 'thanh_pho_ha_noi', 24)
     '''
     province_id = f'P_{province.code}'
-    enum_def_args = [
-        ast.Str(s=province.name),
-        ast.Num(n=province.code),
+    province_args = ast.Tuple(elts=[
+        ast.Constant(province.name),
+        ast.Constant(province.code),
         ast.Attribute(value=ast.Name(id='VietNamDivisionType'), attr=province.division_type.name),
-        ast.Str(s=province.codename),
-        ast.Num(province.phone_code)
-    ]
+        ast.Constant(province.codename),
+        ast.Constant(province.phone_code)
+    ])
     node = ast.Assign(targets=[ast.Name(id=province_id)],
-                      value=ast.Call(func=ast.Name(id='Province'),
-                                     args=enum_def_args,
-                                     keywords=[]))
+                      value=province_args)
     return node
 
 
@@ -319,20 +317,18 @@ def province_descriptive_enum_member(province: Province):
 def district_enum_member(district: District, province: Province):
     '''
     Generate AST tree for line of code equivalent to:
-    D_958 = District('Huyện Vĩnh Lợi', 958, VietNamDivisionType.HUYEN, 'huyen_vinh_loi', 95)
+    D_958 = ('Huyện Vĩnh Lợi', 958, VietNamDivisionType.HUYEN, 'huyen_vinh_loi', 95)
     '''
     # For example, Huyện Châu Thành of Tỉnh Tiền Giang will have ID "CHAU_THANH_TG"
-    enum_def_args = [
-        ast.Str(s=district.name),
-        ast.Num(n=district.code),
+    district_args = ast.Tuple(elts=[
+        ast.Constant(district.name),
+        ast.Constant(district.code),
         ast.Attribute(value=ast.Name(id='VietNamDivisionType'), attr=district.division_type.name),
-        ast.Str(s=district.codename),
+        ast.Constant(district.codename),
         ast.Num(province.code)
-    ]
+    ])
     node = ast.Assign(targets=[ast.Name(id=f'D_{district.code}')],
-                      value=ast.Call(func=ast.Name(id='District'),
-                                     args=enum_def_args,
-                                     keywords=[]))
+                      value=district_args)
     return node
 
 
