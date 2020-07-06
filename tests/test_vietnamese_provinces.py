@@ -18,7 +18,7 @@ def test_district_enum():
     assert isinstance(DistrictDEnum.PHAN_RANG_THAP_CHAM_NT, District)
     assert DistrictEnum.D_234.value.name == 'Huyện Yên Lập'
     assert DistrictEnum.D_234.value.province_code == 25
-    assert DistrictDEnum.DistrictDEnum.LAK_DL.value.name == 'Huyện Lắk'
+    assert DistrictDEnum.LAK_DL.value.name == 'Huyện Lắk'
 
 
 def test_importable_ward_enum():

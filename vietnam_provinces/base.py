@@ -31,6 +31,11 @@ class Ward:
     codename: str
     district_code: int
 
+    def __eq__(self, other: 'Ward'):
+        if not isinstance(other, Ward):
+            return False
+        return other.code == self.code
+
 
 class District(NamedTuple):
     name: str
@@ -39,6 +44,11 @@ class District(NamedTuple):
     codename: str
     province_code: int
 
+    def __eq__(self, other: 'District'):
+        if not isinstance(other, District):
+            return False
+        return other.code == self.code
+
 
 class Province(NamedTuple):
     name: str
@@ -46,3 +56,8 @@ class Province(NamedTuple):
     division_type: VietNamDivisionType
     codename: str
     phone_code: int
+
+    def __eq__(self, other: 'Province'):
+        if not isinstance(other, Province):
+            return False
+        return other.code == self.code
