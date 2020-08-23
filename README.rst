@@ -97,7 +97,7 @@ This data is useful for some applications which need to access the data more oft
 
 Loading wards this way is far more faster than the JSON option.
 
-They are made as ``Enum``, so that library user can take advantage of auto-complete feature of IDE/code editors in development. It prevents mistake due to typing wrong variable.
+They are made as ``Enum``, so that library user can take advantage of auto-complete feature of IDE/code editors in development. It prevents typo mistake.
 
 The Ward Enum has two variants:
 
@@ -138,7 +138,19 @@ Install
     pip3 install vietnam-provinces
 
 
-This library is compatible with Python 3.7+ (due to the use of dataclass).
+This library is compatible with Python 3.7+ (due to the use of *dataclass*).
+
+
+Future change
+-------------
+
+I am making VietnamProvinces toward `Pydantic`_-friendly, so that ones can use this library for validating and correcting input data (like when you get province name from user form). This will cause some breaking changes:
+
+- Change data type of ``Province``, ``District`` from *named tuple* to *dataclass*.
+- Those classes become mutable.
+- It is more verbose to retrieve ``Province``, ``District`` from enums.
+
+Due to lack of time, the change is not made yet, but please aware if you are depending on this library.
 
 
 Development
@@ -201,5 +213,6 @@ Given to you by `Nguyễn Hồng Quân <quan_>`_, after nights and weekends.
 .. _namedtuple: https://docs.python.org/3/library/collections.html#collections.namedtuple
 .. _dataclass: https://docs.python.org/3/library/dataclasses.html
 .. _fast-enum: https://pypi.org/project/fast-enum/
+.. _pydantic: https://pypi.org/project/pydantic/
 .. _Black: https://github.com/psf/black
 .. _quan: https://quan.hoabinh.vn
