@@ -141,18 +141,6 @@ Install
 This library is compatible with Python 3.7+ (due to the use of *dataclass*).
 
 
-Future change
--------------
-
-I am making VietnamProvinces toward `Pydantic`_-friendly, so that ones can use this library for validating and correcting input data (like when you get province name from user form). This will cause some breaking changes:
-
-- Change data type of ``Province``, ``District`` from *named tuple* to *dataclass*.
-- Those classes become mutable.
-- It is more verbose to retrieve ``Province``, ``District`` from enums.
-
-Due to lack of time, the change is not made yet, but please aware if you are depending on this library.
-
-
 Development
 -----------
 
@@ -210,7 +198,6 @@ Given to you by `Nguyễn Hồng Quân <quan_>`_, after nights and weekends.
 
 .. _gso_vn: https://www.gso.gov.vn/
 .. _tb_ic: https://sotttt.thaibinh.gov.vn/tin-tuc/buu-chinh-vien-thong/tra-cuu-ma-vung-dien-thoai-co-dinh-mat-dat-ma-mang-dien-thoa2.html
-.. _namedtuple: https://docs.python.org/3/library/collections.html#collections.namedtuple
 .. _dataclass: https://docs.python.org/3/library/dataclasses.html
 .. _fast-enum: https://pypi.org/project/fast-enum/
 .. _pydantic: https://pypi.org/project/pydantic/
