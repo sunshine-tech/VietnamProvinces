@@ -1,5 +1,4 @@
 from enum import Enum
-from typing import NamedTuple
 from dataclasses import dataclass
 
 
@@ -37,7 +36,8 @@ class Ward:
         return other.code == self.code
 
 
-class District(NamedTuple):
+@dataclass(frozen=True)
+class District:
     name: str
     code: int
     division_type: VietNamDivisionType
@@ -50,7 +50,8 @@ class District(NamedTuple):
         return other.code == self.code
 
 
-class Province(NamedTuple):
+@dataclass(frozen=True)
+class Province:
     name: str
     code: int
     division_type: VietNamDivisionType

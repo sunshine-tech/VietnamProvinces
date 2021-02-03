@@ -22,9 +22,9 @@ classifiers = [
 
 [tool.poetry.dependencies]
 python = "^3.7"
-single-version = "^1.1"
 logbook = "^1.5.3"
-unidecode = "^1.1.1"
+single-version = "^1.5.1"
+Unidecode = "^1.1.2"
 fast-enum = "^1.3.0"
 
 
@@ -37,7 +37,7 @@ black = "^19.10b0"
 python-rapidjson = "^0.9.1"
 requests = "^2.23.0"
 click = "^7.0"
-pydantic = "^1.4"
+pydantic = "^1.7.3"
 
 [build-system]
 requires = ["poetry>=0.12"]
