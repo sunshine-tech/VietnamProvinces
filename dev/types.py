@@ -1,7 +1,13 @@
+import re
+import unicodedata
 from typing import Union
 
 from unidecode import unidecode
 from pydantic import ConstrainedStr
+
+
+REGEX_THI_XA = re.compile('^Thị Xã')
+REGEX_THI_TRAN = re.compile('^Thị Trấn')
 
 
 class Name(ConstrainedStr):
@@ -10,8 +16,13 @@ class Name(ConstrainedStr):
     @classmethod
     def validate(cls, value: Union[str]) -> Union[str]:
         value = super().validate(value)
-        if value:
-            return ' '.join(value.split())
+        value = unicodedata.normalize('NFC', value)
+        if not value:
+            return ''
+        # Reduce whitespaces
+        value = ' '.join(value.split())
+        value = REGEX_THI_XA.sub('Thị xã', value)
+        value = REGEX_THI_TRAN.sub('Thị trấn', value)
         return value
 
 
