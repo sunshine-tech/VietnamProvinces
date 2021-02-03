@@ -88,8 +88,8 @@ def main(input_filename: str, output_format: ExportingFormat, output: str, verbo
         out_wards = gen_python_ward_enums(provinces.values())
         logger.info('Built AST')
         logger.info('Prettify code with Black')
-        out_districts = black.format_str(out_districts, mode=black.FileMode(line_length=120))
-        out_wards = black.format_str(out_wards, mode=black.FileMode(line_length=120))
+        out_districts = black.format_str(out_districts, mode=black.Mode({black.TargetVersion.PY37}, line_length=120))
+        out_wards = black.format_str(out_wards, mode=black.Mode({black.TargetVersion.PY37}, line_length=120))
         file_districts = folder / 'districts.py'    # type: Path
         file_districts.write_text(out_districts)
         click.secho(f'Wrote to {file_districts}', file=sys.stderr, fg='green')

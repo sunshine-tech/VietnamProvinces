@@ -5,329 +5,74 @@ from ..base import District, Province, VietNamDivisionType
 class ProvinceEnum(Enum):
     """
     Province Enum type, which is convenient for fast looking up Province by its numeric code.
+
+    We cannot use tuple syntax here, because Enum cannot set member attributes from tuple syntax
+    if one field is string.
     """
 
-    P_1 = Province(
-        name="Thành phố Hà Nội",
-        code=1,
-        division_type=VietNamDivisionType.THANH_PHO_TRUNG_UONG,
-        codename="thanh_pho_ha_noi",
-        phone_code=24,
-    )
-    P_2 = Province(
-        name="Tỉnh Hà Giang", code=2, division_type=VietNamDivisionType.TINH, codename="tinh_ha_giang", phone_code=219
-    )
-    P_4 = Province(
-        name="Tỉnh Cao Bằng", code=4, division_type=VietNamDivisionType.TINH, codename="tinh_cao_bang", phone_code=206
-    )
-    P_6 = Province(
-        name="Tỉnh Bắc Kạn", code=6, division_type=VietNamDivisionType.TINH, codename="tinh_bac_kan", phone_code=209
-    )
-    P_8 = Province(
-        name="Tỉnh Tuyên Quang",
-        code=8,
-        division_type=VietNamDivisionType.TINH,
-        codename="tinh_tuyen_quang",
-        phone_code=207,
-    )
-    P_10 = Province(
-        name="Tỉnh Lào Cai", code=10, division_type=VietNamDivisionType.TINH, codename="tinh_lao_cai", phone_code=214
-    )
-    P_11 = Province(
-        name="Tỉnh Điện Biên",
-        code=11,
-        division_type=VietNamDivisionType.TINH,
-        codename="tinh_dien_bien",
-        phone_code=215,
-    )
-    P_12 = Province(
-        name="Tỉnh Lai Châu", code=12, division_type=VietNamDivisionType.TINH, codename="tinh_lai_chau", phone_code=213
-    )
-    P_14 = Province(
-        name="Tỉnh Sơn La", code=14, division_type=VietNamDivisionType.TINH, codename="tinh_son_la", phone_code=212
-    )
-    P_15 = Province(
-        name="Tỉnh Yên Bái", code=15, division_type=VietNamDivisionType.TINH, codename="tinh_yen_bai", phone_code=216
-    )
-    P_17 = Province(
-        name="Tỉnh Hoà Bình", code=17, division_type=VietNamDivisionType.TINH, codename="tinh_hoa_binh", phone_code=218
-    )
-    P_19 = Province(
-        name="Tỉnh Thái Nguyên",
-        code=19,
-        division_type=VietNamDivisionType.TINH,
-        codename="tinh_thai_nguyen",
-        phone_code=208,
-    )
-    P_20 = Province(
-        name="Tỉnh Lạng Sơn", code=20, division_type=VietNamDivisionType.TINH, codename="tinh_lang_son", phone_code=205
-    )
-    P_22 = Province(
-        name="Tỉnh Quảng Ninh",
-        code=22,
-        division_type=VietNamDivisionType.TINH,
-        codename="tinh_quang_ninh",
-        phone_code=203,
-    )
-    P_24 = Province(
-        name="Tỉnh Bắc Giang",
-        code=24,
-        division_type=VietNamDivisionType.TINH,
-        codename="tinh_bac_giang",
-        phone_code=204,
-    )
-    P_25 = Province(
-        name="Tỉnh Phú Thọ", code=25, division_type=VietNamDivisionType.TINH, codename="tinh_phu_tho", phone_code=210
-    )
-    P_26 = Province(
-        name="Tỉnh Vĩnh Phúc",
-        code=26,
-        division_type=VietNamDivisionType.TINH,
-        codename="tinh_vinh_phuc",
-        phone_code=211,
-    )
-    P_27 = Province(
-        name="Tỉnh Bắc Ninh", code=27, division_type=VietNamDivisionType.TINH, codename="tinh_bac_ninh", phone_code=222
-    )
-    P_30 = Province(
-        name="Tỉnh Hải Dương",
-        code=30,
-        division_type=VietNamDivisionType.TINH,
-        codename="tinh_hai_duong",
-        phone_code=220,
-    )
-    P_31 = Province(
-        name="Thành phố Hải Phòng",
-        code=31,
-        division_type=VietNamDivisionType.THANH_PHO_TRUNG_UONG,
-        codename="thanh_pho_hai_phong",
-        phone_code=225,
-    )
-    P_33 = Province(
-        name="Tỉnh Hưng Yên", code=33, division_type=VietNamDivisionType.TINH, codename="tinh_hung_yen", phone_code=221
-    )
-    P_34 = Province(
-        name="Tỉnh Thái Bình",
-        code=34,
-        division_type=VietNamDivisionType.TINH,
-        codename="tinh_thai_binh",
-        phone_code=227,
-    )
-    P_35 = Province(
-        name="Tỉnh Hà Nam", code=35, division_type=VietNamDivisionType.TINH, codename="tinh_ha_nam", phone_code=226
-    )
-    P_36 = Province(
-        name="Tỉnh Nam Định", code=36, division_type=VietNamDivisionType.TINH, codename="tinh_nam_dinh", phone_code=228
-    )
-    P_37 = Province(
-        name="Tỉnh Ninh Bình",
-        code=37,
-        division_type=VietNamDivisionType.TINH,
-        codename="tinh_ninh_binh",
-        phone_code=229,
-    )
-    P_38 = Province(
-        name="Tỉnh Thanh Hóa",
-        code=38,
-        division_type=VietNamDivisionType.TINH,
-        codename="tinh_thanh_hoa",
-        phone_code=237,
-    )
-    P_40 = Province(
-        name="Tỉnh Nghệ An", code=40, division_type=VietNamDivisionType.TINH, codename="tinh_nghe_an", phone_code=238
-    )
-    P_42 = Province(
-        name="Tỉnh Hà Tĩnh", code=42, division_type=VietNamDivisionType.TINH, codename="tinh_ha_tinh", phone_code=239
-    )
-    P_44 = Province(
-        name="Tỉnh Quảng Bình",
-        code=44,
-        division_type=VietNamDivisionType.TINH,
-        codename="tinh_quang_binh",
-        phone_code=232,
-    )
-    P_45 = Province(
-        name="Tỉnh Quảng Trị",
-        code=45,
-        division_type=VietNamDivisionType.TINH,
-        codename="tinh_quang_tri",
-        phone_code=233,
-    )
-    P_46 = Province(
-        name="Tỉnh Thừa Thiên Huế",
-        code=46,
-        division_type=VietNamDivisionType.TINH,
-        codename="tinh_thua_thien_hue",
-        phone_code=234,
-    )
-    P_48 = Province(
-        name="Thành phố Đà Nẵng",
-        code=48,
-        division_type=VietNamDivisionType.THANH_PHO_TRUNG_UONG,
-        codename="thanh_pho_da_nang",
-        phone_code=236,
-    )
-    P_49 = Province(
-        name="Tỉnh Quảng Nam",
-        code=49,
-        division_type=VietNamDivisionType.TINH,
-        codename="tinh_quang_nam",
-        phone_code=235,
-    )
-    P_51 = Province(
-        name="Tỉnh Quảng Ngãi",
-        code=51,
-        division_type=VietNamDivisionType.TINH,
-        codename="tinh_quang_ngai",
-        phone_code=255,
-    )
-    P_52 = Province(
-        name="Tỉnh Bình Định",
-        code=52,
-        division_type=VietNamDivisionType.TINH,
-        codename="tinh_binh_dinh",
-        phone_code=256,
-    )
-    P_54 = Province(
-        name="Tỉnh Phú Yên", code=54, division_type=VietNamDivisionType.TINH, codename="tinh_phu_yen", phone_code=257
-    )
-    P_56 = Province(
-        name="Tỉnh Khánh Hòa",
-        code=56,
-        division_type=VietNamDivisionType.TINH,
-        codename="tinh_khanh_hoa",
-        phone_code=258,
-    )
-    P_58 = Province(
-        name="Tỉnh Ninh Thuận",
-        code=58,
-        division_type=VietNamDivisionType.TINH,
-        codename="tinh_ninh_thuan",
-        phone_code=259,
-    )
-    P_60 = Province(
-        name="Tỉnh Bình Thuận",
-        code=60,
-        division_type=VietNamDivisionType.TINH,
-        codename="tinh_binh_thuan",
-        phone_code=252,
-    )
-    P_62 = Province(
-        name="Tỉnh Kon Tum", code=62, division_type=VietNamDivisionType.TINH, codename="tinh_kon_tum", phone_code=260
-    )
-    P_64 = Province(
-        name="Tỉnh Gia Lai", code=64, division_type=VietNamDivisionType.TINH, codename="tinh_gia_lai", phone_code=269
-    )
-    P_66 = Province(
-        name="Tỉnh Đắk Lắk", code=66, division_type=VietNamDivisionType.TINH, codename="tinh_dak_lak", phone_code=262
-    )
-    P_67 = Province(
-        name="Tỉnh Đắk Nông", code=67, division_type=VietNamDivisionType.TINH, codename="tinh_dak_nong", phone_code=261
-    )
-    P_68 = Province(
-        name="Tỉnh Lâm Đồng", code=68, division_type=VietNamDivisionType.TINH, codename="tinh_lam_dong", phone_code=263
-    )
-    P_70 = Province(
-        name="Tỉnh Bình Phước",
-        code=70,
-        division_type=VietNamDivisionType.TINH,
-        codename="tinh_binh_phuoc",
-        phone_code=271,
-    )
-    P_72 = Province(
-        name="Tỉnh Tây Ninh", code=72, division_type=VietNamDivisionType.TINH, codename="tinh_tay_ninh", phone_code=276
-    )
-    P_74 = Province(
-        name="Tỉnh Bình Dương",
-        code=74,
-        division_type=VietNamDivisionType.TINH,
-        codename="tinh_binh_duong",
-        phone_code=274,
-    )
-    P_75 = Province(
-        name="Tỉnh Đồng Nai", code=75, division_type=VietNamDivisionType.TINH, codename="tinh_dong_nai", phone_code=251
-    )
-    P_77 = Province(
-        name="Tỉnh Bà Rịa - Vũng Tàu",
-        code=77,
-        division_type=VietNamDivisionType.TINH,
-        codename="tinh_ba_ria_vung_tau",
-        phone_code=254,
-    )
-    P_79 = Province(
-        name="Thành phố Hồ Chí Minh",
-        code=79,
-        division_type=VietNamDivisionType.THANH_PHO_TRUNG_UONG,
-        codename="thanh_pho_ho_chi_minh",
-        phone_code=28,
-    )
-    P_80 = Province(
-        name="Tỉnh Long An", code=80, division_type=VietNamDivisionType.TINH, codename="tinh_long_an", phone_code=272
-    )
-    P_82 = Province(
-        name="Tỉnh Tiền Giang",
-        code=82,
-        division_type=VietNamDivisionType.TINH,
-        codename="tinh_tien_giang",
-        phone_code=273,
-    )
-    P_83 = Province(
-        name="Tỉnh Bến Tre", code=83, division_type=VietNamDivisionType.TINH, codename="tinh_ben_tre", phone_code=275
-    )
-    P_84 = Province(
-        name="Tỉnh Trà Vinh", code=84, division_type=VietNamDivisionType.TINH, codename="tinh_tra_vinh", phone_code=294
-    )
-    P_86 = Province(
-        name="Tỉnh Vĩnh Long",
-        code=86,
-        division_type=VietNamDivisionType.TINH,
-        codename="tinh_vinh_long",
-        phone_code=270,
-    )
-    P_87 = Province(
-        name="Tỉnh Đồng Tháp",
-        code=87,
-        division_type=VietNamDivisionType.TINH,
-        codename="tinh_dong_thap",
-        phone_code=277,
-    )
-    P_89 = Province(
-        name="Tỉnh An Giang", code=89, division_type=VietNamDivisionType.TINH, codename="tinh_an_giang", phone_code=296
-    )
-    P_91 = Province(
-        name="Tỉnh Kiên Giang",
-        code=91,
-        division_type=VietNamDivisionType.TINH,
-        codename="tinh_kien_giang",
-        phone_code=297,
-    )
-    P_92 = Province(
-        name="Thành phố Cần Thơ",
-        code=92,
-        division_type=VietNamDivisionType.THANH_PHO_TRUNG_UONG,
-        codename="thanh_pho_can_tho",
-        phone_code=292,
-    )
-    P_93 = Province(
-        name="Tỉnh Hậu Giang",
-        code=93,
-        division_type=VietNamDivisionType.TINH,
-        codename="tinh_hau_giang",
-        phone_code=293,
-    )
-    P_94 = Province(
-        name="Tỉnh Sóc Trăng",
-        code=94,
-        division_type=VietNamDivisionType.TINH,
-        codename="tinh_soc_trang",
-        phone_code=299,
-    )
-    P_95 = Province(
-        name="Tỉnh Bạc Liêu", code=95, division_type=VietNamDivisionType.TINH, codename="tinh_bac_lieu", phone_code=291
-    )
-    P_96 = Province(
-        name="Tỉnh Cà Mau", code=96, division_type=VietNamDivisionType.TINH, codename="tinh_ca_mau", phone_code=290
-    )
+    P_1 = Province("Thành phố Hà Nội", 1, VietNamDivisionType.THANH_PHO_TRUNG_UONG, "thanh_pho_ha_noi", 24)
+    P_2 = Province("Tỉnh Hà Giang", 2, VietNamDivisionType.TINH, "tinh_ha_giang", 219)
+    P_4 = Province("Tỉnh Cao Bằng", 4, VietNamDivisionType.TINH, "tinh_cao_bang", 206)
+    P_6 = Province("Tỉnh Bắc Kạn", 6, VietNamDivisionType.TINH, "tinh_bac_kan", 209)
+    P_8 = Province("Tỉnh Tuyên Quang", 8, VietNamDivisionType.TINH, "tinh_tuyen_quang", 207)
+    P_10 = Province("Tỉnh Lào Cai", 10, VietNamDivisionType.TINH, "tinh_lao_cai", 214)
+    P_11 = Province("Tỉnh Điện Biên", 11, VietNamDivisionType.TINH, "tinh_dien_bien", 215)
+    P_12 = Province("Tỉnh Lai Châu", 12, VietNamDivisionType.TINH, "tinh_lai_chau", 213)
+    P_14 = Province("Tỉnh Sơn La", 14, VietNamDivisionType.TINH, "tinh_son_la", 212)
+    P_15 = Province("Tỉnh Yên Bái", 15, VietNamDivisionType.TINH, "tinh_yen_bai", 216)
+    P_17 = Province("Tỉnh Hoà Bình", 17, VietNamDivisionType.TINH, "tinh_hoa_binh", 218)
+    P_19 = Province("Tỉnh Thái Nguyên", 19, VietNamDivisionType.TINH, "tinh_thai_nguyen", 208)
+    P_20 = Province("Tỉnh Lạng Sơn", 20, VietNamDivisionType.TINH, "tinh_lang_son", 205)
+    P_22 = Province("Tỉnh Quảng Ninh", 22, VietNamDivisionType.TINH, "tinh_quang_ninh", 203)
+    P_24 = Province("Tỉnh Bắc Giang", 24, VietNamDivisionType.TINH, "tinh_bac_giang", 204)
+    P_25 = Province("Tỉnh Phú Thọ", 25, VietNamDivisionType.TINH, "tinh_phu_tho", 210)
+    P_26 = Province("Tỉnh Vĩnh Phúc", 26, VietNamDivisionType.TINH, "tinh_vinh_phuc", 211)
+    P_27 = Province("Tỉnh Bắc Ninh", 27, VietNamDivisionType.TINH, "tinh_bac_ninh", 222)
+    P_30 = Province("Tỉnh Hải Dương", 30, VietNamDivisionType.TINH, "tinh_hai_duong", 220)
+    P_31 = Province("Thành phố Hải Phòng", 31, VietNamDivisionType.THANH_PHO_TRUNG_UONG, "thanh_pho_hai_phong", 225)
+    P_33 = Province("Tỉnh Hưng Yên", 33, VietNamDivisionType.TINH, "tinh_hung_yen", 221)
+    P_34 = Province("Tỉnh Thái Bình", 34, VietNamDivisionType.TINH, "tinh_thai_binh", 227)
+    P_35 = Province("Tỉnh Hà Nam", 35, VietNamDivisionType.TINH, "tinh_ha_nam", 226)
+    P_36 = Province("Tỉnh Nam Định", 36, VietNamDivisionType.TINH, "tinh_nam_dinh", 228)
+    P_37 = Province("Tỉnh Ninh Bình", 37, VietNamDivisionType.TINH, "tinh_ninh_binh", 229)
+    P_38 = Province("Tỉnh Thanh Hóa", 38, VietNamDivisionType.TINH, "tinh_thanh_hoa", 237)
+    P_40 = Province("Tỉnh Nghệ An", 40, VietNamDivisionType.TINH, "tinh_nghe_an", 238)
+    P_42 = Province("Tỉnh Hà Tĩnh", 42, VietNamDivisionType.TINH, "tinh_ha_tinh", 239)
+    P_44 = Province("Tỉnh Quảng Bình", 44, VietNamDivisionType.TINH, "tinh_quang_binh", 232)
+    P_45 = Province("Tỉnh Quảng Trị", 45, VietNamDivisionType.TINH, "tinh_quang_tri", 233)
+    P_46 = Province("Tỉnh Thừa Thiên Huế", 46, VietNamDivisionType.TINH, "tinh_thua_thien_hue", 234)
+    P_48 = Province("Thành phố Đà Nẵng", 48, VietNamDivisionType.THANH_PHO_TRUNG_UONG, "thanh_pho_da_nang", 236)
+    P_49 = Province("Tỉnh Quảng Nam", 49, VietNamDivisionType.TINH, "tinh_quang_nam", 235)
+    P_51 = Province("Tỉnh Quảng Ngãi", 51, VietNamDivisionType.TINH, "tinh_quang_ngai", 255)
+    P_52 = Province("Tỉnh Bình Định", 52, VietNamDivisionType.TINH, "tinh_binh_dinh", 256)
+    P_54 = Province("Tỉnh Phú Yên", 54, VietNamDivisionType.TINH, "tinh_phu_yen", 257)
+    P_56 = Province("Tỉnh Khánh Hòa", 56, VietNamDivisionType.TINH, "tinh_khanh_hoa", 258)
+    P_58 = Province("Tỉnh Ninh Thuận", 58, VietNamDivisionType.TINH, "tinh_ninh_thuan", 259)
+    P_60 = Province("Tỉnh Bình Thuận", 60, VietNamDivisionType.TINH, "tinh_binh_thuan", 252)
+    P_62 = Province("Tỉnh Kon Tum", 62, VietNamDivisionType.TINH, "tinh_kon_tum", 260)
+    P_64 = Province("Tỉnh Gia Lai", 64, VietNamDivisionType.TINH, "tinh_gia_lai", 269)
+    P_66 = Province("Tỉnh Đắk Lắk", 66, VietNamDivisionType.TINH, "tinh_dak_lak", 262)
+    P_67 = Province("Tỉnh Đắk Nông", 67, VietNamDivisionType.TINH, "tinh_dak_nong", 261)
+    P_68 = Province("Tỉnh Lâm Đồng", 68, VietNamDivisionType.TINH, "tinh_lam_dong", 263)
+    P_70 = Province("Tỉnh Bình Phước", 70, VietNamDivisionType.TINH, "tinh_binh_phuoc", 271)
+    P_72 = Province("Tỉnh Tây Ninh", 72, VietNamDivisionType.TINH, "tinh_tay_ninh", 276)
+    P_74 = Province("Tỉnh Bình Dương", 74, VietNamDivisionType.TINH, "tinh_binh_duong", 274)
+    P_75 = Province("Tỉnh Đồng Nai", 75, VietNamDivisionType.TINH, "tinh_dong_nai", 251)
+    P_77 = Province("Tỉnh Bà Rịa - Vũng Tàu", 77, VietNamDivisionType.TINH, "tinh_ba_ria_vung_tau", 254)
+    P_79 = Province("Thành phố Hồ Chí Minh", 79, VietNamDivisionType.THANH_PHO_TRUNG_UONG, "thanh_pho_ho_chi_minh", 28)
+    P_80 = Province("Tỉnh Long An", 80, VietNamDivisionType.TINH, "tinh_long_an", 272)
+    P_82 = Province("Tỉnh Tiền Giang", 82, VietNamDivisionType.TINH, "tinh_tien_giang", 273)
+    P_83 = Province("Tỉnh Bến Tre", 83, VietNamDivisionType.TINH, "tinh_ben_tre", 275)
+    P_84 = Province("Tỉnh Trà Vinh", 84, VietNamDivisionType.TINH, "tinh_tra_vinh", 294)
+    P_86 = Province("Tỉnh Vĩnh Long", 86, VietNamDivisionType.TINH, "tinh_vinh_long", 270)
+    P_87 = Province("Tỉnh Đồng Tháp", 87, VietNamDivisionType.TINH, "tinh_dong_thap", 277)
+    P_89 = Province("Tỉnh An Giang", 89, VietNamDivisionType.TINH, "tinh_an_giang", 296)
+    P_91 = Province("Tỉnh Kiên Giang", 91, VietNamDivisionType.TINH, "tinh_kien_giang", 297)
+    P_92 = Province("Thành phố Cần Thơ", 92, VietNamDivisionType.THANH_PHO_TRUNG_UONG, "thanh_pho_can_tho", 292)
+    P_93 = Province("Tỉnh Hậu Giang", 93, VietNamDivisionType.TINH, "tinh_hau_giang", 293)
+    P_94 = Province("Tỉnh Sóc Trăng", 94, VietNamDivisionType.TINH, "tinh_soc_trang", 299)
+    P_95 = Province("Tỉnh Bạc Liêu", 95, VietNamDivisionType.TINH, "tinh_bac_lieu", 291)
+    P_96 = Province("Tỉnh Cà Mau", 96, VietNamDivisionType.TINH, "tinh_ca_mau", 290)
 
 
 class ProvinceDEnum(Enum):
@@ -451,13 +196,10 @@ class DistrictEnum(Enum):
     D_40 = District("Thành phố Cao Bằng", 40, VietNamDivisionType.THANH_PHO, "thanh_pho_cao_bang", 4)
     D_42 = District("Huyện Bảo Lâm", 42, VietNamDivisionType.HUYEN, "huyen_bao_lam", 4)
     D_43 = District("Huyện Bảo Lạc", 43, VietNamDivisionType.HUYEN, "huyen_bao_lac", 4)
-    D_44 = District("Huyện Thông Nông", 44, VietNamDivisionType.HUYEN, "huyen_thong_nong", 4)
     D_45 = District("Huyện Hà Quảng", 45, VietNamDivisionType.HUYEN, "huyen_ha_quang", 4)
-    D_46 = District("Huyện Trà Lĩnh", 46, VietNamDivisionType.HUYEN, "huyen_tra_linh", 4)
     D_47 = District("Huyện Trùng Khánh", 47, VietNamDivisionType.HUYEN, "huyen_trung_khanh", 4)
     D_48 = District("Huyện Hạ Lang", 48, VietNamDivisionType.HUYEN, "huyen_ha_lang", 4)
-    D_49 = District("Huyện Quảng Uyên", 49, VietNamDivisionType.HUYEN, "huyen_quang_uyen", 4)
-    D_50 = District("Huyện Phục Hoà", 50, VietNamDivisionType.HUYEN, "huyen_phuc_hoa", 4)
+    D_49 = District("Huyện Quảng Hòa", 49, VietNamDivisionType.HUYEN, "huyen_quang_hoa", 4)
     D_51 = District("Huyện Hoà An", 51, VietNamDivisionType.HUYEN, "huyen_hoa_an", 4)
     D_52 = District("Huyện Nguyên Bình", 52, VietNamDivisionType.HUYEN, "huyen_nguyen_binh", 4)
     D_53 = District("Huyện Thạch An", 53, VietNamDivisionType.HUYEN, "huyen_thach_an", 4)
@@ -633,6 +375,7 @@ class DistrictEnum(Enum):
     D_315 = District("Huyện Tiên Lãng", 315, VietNamDivisionType.HUYEN, "huyen_tien_lang", 31)
     D_316 = District("Huyện Vĩnh Bảo", 316, VietNamDivisionType.HUYEN, "huyen_vinh_bao", 31)
     D_317 = District("Huyện Cát Hải", 317, VietNamDivisionType.HUYEN, "huyen_cat_hai", 31)
+    D_318 = District("Huyện Bạch Long Vĩ", 318, VietNamDivisionType.HUYEN, "huyen_bach_long_vi", 31)
     D_323 = District("Thành phố Hưng Yên", 323, VietNamDivisionType.THANH_PHO, "thanh_pho_hung_yen", 33)
     D_325 = District("Huyện Văn Lâm", 325, VietNamDivisionType.HUYEN, "huyen_van_lam", 33)
     D_326 = District("Huyện Văn Giang", 326, VietNamDivisionType.HUYEN, "huyen_van_giang", 33)
@@ -701,7 +444,7 @@ class DistrictEnum(Enum):
     D_404 = District("Huyện Nông Cống", 404, VietNamDivisionType.HUYEN, "huyen_nong_cong", 38)
     D_405 = District("Huyện Đông Sơn", 405, VietNamDivisionType.HUYEN, "huyen_dong_son", 38)
     D_406 = District("Huyện Quảng Xương", 406, VietNamDivisionType.HUYEN, "huyen_quang_xuong", 38)
-    D_407 = District("Huyện Tĩnh Gia", 407, VietNamDivisionType.HUYEN, "huyen_tinh_gia", 38)
+    D_407 = District("Thị xã Nghi Sơn", 407, VietNamDivisionType.THI_XA, "thi_xa_nghi_son", 38)
     D_412 = District("Thành phố Vinh", 412, VietNamDivisionType.THANH_PHO, "thanh_pho_vinh", 40)
     D_413 = District("Thị xã Cửa Lò", 413, VietNamDivisionType.THI_XA, "thi_xa_cua_lo", 40)
     D_414 = District("Thị xã Thái Hoà", 414, VietNamDivisionType.THI_XA, "thi_xa_thai_hoa", 40)
@@ -753,6 +496,7 @@ class DistrictEnum(Enum):
     D_468 = District("Huyện Cam Lộ", 468, VietNamDivisionType.HUYEN, "huyen_cam_lo", 45)
     D_469 = District("Huyện Triệu Phong", 469, VietNamDivisionType.HUYEN, "huyen_trieu_phong", 45)
     D_470 = District("Huyện Hải Lăng", 470, VietNamDivisionType.HUYEN, "huyen_hai_lang", 45)
+    D_471 = District("Huyện Cồn Cỏ", 471, VietNamDivisionType.HUYEN, "huyen_con_co", 45)
     D_474 = District("Thành phố Huế", 474, VietNamDivisionType.THANH_PHO, "thanh_pho_hue", 46)
     D_476 = District("Huyện Phong Điền", 476, VietNamDivisionType.HUYEN, "huyen_phong_dien", 46)
     D_477 = District("Huyện Quảng Điền", 477, VietNamDivisionType.HUYEN, "huyen_quang_dien", 46)
@@ -769,6 +513,7 @@ class DistrictEnum(Enum):
     D_494 = District("Quận Ngũ Hành Sơn", 494, VietNamDivisionType.QUAN, "quan_ngu_hanh_son", 48)
     D_495 = District("Quận Cẩm Lệ", 495, VietNamDivisionType.QUAN, "quan_cam_le", 48)
     D_497 = District("Huyện Hòa Vang", 497, VietNamDivisionType.HUYEN, "huyen_hoa_vang", 48)
+    D_498 = District("Huyện Hoàng Sa", 498, VietNamDivisionType.HUYEN, "huyen_hoang_sa", 48)
     D_502 = District("Thành phố Tam Kỳ", 502, VietNamDivisionType.THANH_PHO, "thanh_pho_tam_ky", 49)
     D_503 = District("Thành phố Hội An", 503, VietNamDivisionType.THANH_PHO, "thanh_pho_hoi_an", 49)
     D_504 = District("Huyện Tây Giang", 504, VietNamDivisionType.HUYEN, "huyen_tay_giang", 49)
@@ -790,7 +535,6 @@ class DistrictEnum(Enum):
     D_522 = District("Thành phố Quảng Ngãi", 522, VietNamDivisionType.THANH_PHO, "thanh_pho_quang_ngai", 51)
     D_524 = District("Huyện Bình Sơn", 524, VietNamDivisionType.HUYEN, "huyen_binh_son", 51)
     D_525 = District("Huyện Trà Bồng", 525, VietNamDivisionType.HUYEN, "huyen_tra_bong", 51)
-    D_526 = District("Huyện Tây Trà", 526, VietNamDivisionType.HUYEN, "huyen_tay_tra", 51)
     D_527 = District("Huyện Sơn Tịnh", 527, VietNamDivisionType.HUYEN, "huyen_son_tinh", 51)
     D_528 = District("Huyện Tư Nghĩa", 528, VietNamDivisionType.HUYEN, "huyen_tu_nghia", 51)
     D_529 = District("Huyện Sơn Hà", 529, VietNamDivisionType.HUYEN, "huyen_son_ha", 51)
@@ -798,12 +542,12 @@ class DistrictEnum(Enum):
     D_531 = District("Huyện Minh Long", 531, VietNamDivisionType.HUYEN, "huyen_minh_long", 51)
     D_532 = District("Huyện Nghĩa Hành", 532, VietNamDivisionType.HUYEN, "huyen_nghia_hanh", 51)
     D_533 = District("Huyện Mộ Đức", 533, VietNamDivisionType.HUYEN, "huyen_mo_duc", 51)
-    D_534 = District("Huyện Đức Phổ", 534, VietNamDivisionType.HUYEN, "huyen_duc_pho", 51)
+    D_534 = District("Thị xã Đức Phổ", 534, VietNamDivisionType.THI_XA, "thi_xa_duc_pho", 51)
     D_535 = District("Huyện Ba Tơ", 535, VietNamDivisionType.HUYEN, "huyen_ba_to", 51)
     D_536 = District("Huyện Lý Sơn", 536, VietNamDivisionType.HUYEN, "huyen_ly_son", 51)
-    D_540 = District("Thành phố Qui Nhơn", 540, VietNamDivisionType.THANH_PHO, "thanh_pho_qui_nhon", 52)
+    D_540 = District("Thành phố Quy Nhơn", 540, VietNamDivisionType.THANH_PHO, "thanh_pho_quy_nhon", 52)
     D_542 = District("Huyện An Lão", 542, VietNamDivisionType.HUYEN, "huyen_an_lao", 52)
-    D_543 = District("Huyện Hoài Nhơn", 543, VietNamDivisionType.HUYEN, "huyen_hoai_nhon", 52)
+    D_543 = District("Thị xã Hoài Nhơn", 543, VietNamDivisionType.THI_XA, "thi_xa_hoai_nhon", 52)
     D_544 = District("Huyện Hoài Ân", 544, VietNamDivisionType.HUYEN, "huyen_hoai_an", 52)
     D_545 = District("Huyện Phù Mỹ", 545, VietNamDivisionType.HUYEN, "huyen_phu_my", 52)
     D_546 = District("Huyện Vĩnh Thạnh", 546, VietNamDivisionType.HUYEN, "huyen_vinh_thanh", 52)
@@ -820,7 +564,7 @@ class DistrictEnum(Enum):
     D_561 = District("Huyện Sông Hinh", 561, VietNamDivisionType.HUYEN, "huyen_song_hinh", 54)
     D_562 = District("Huyện Tây Hoà", 562, VietNamDivisionType.HUYEN, "huyen_tay_hoa", 54)
     D_563 = District("Huyện Phú Hoà", 563, VietNamDivisionType.HUYEN, "huyen_phu_hoa", 54)
-    D_564 = District("Huyện Đông Hòa", 564, VietNamDivisionType.HUYEN, "huyen_dong_hoa", 54)
+    D_564 = District("Thị xã Đông Hòa", 564, VietNamDivisionType.THI_XA, "thi_xa_dong_hoa", 54)
     D_568 = District("Thành phố Nha Trang", 568, VietNamDivisionType.THANH_PHO, "thanh_pho_nha_trang", 56)
     D_569 = District("Thành phố Cam Ranh", 569, VietNamDivisionType.THANH_PHO, "thanh_pho_cam_ranh", 56)
     D_570 = District("Huyện Cam Lâm", 570, VietNamDivisionType.HUYEN, "huyen_cam_lam", 56)
@@ -927,18 +671,18 @@ class DistrictEnum(Enum):
     D_706 = District("Huyện Tân Châu", 706, VietNamDivisionType.HUYEN, "huyen_tan_chau", 72)
     D_707 = District("Huyện Dương Minh Châu", 707, VietNamDivisionType.HUYEN, "huyen_duong_minh_chau", 72)
     D_708 = District("Huyện Châu Thành", 708, VietNamDivisionType.HUYEN, "huyen_chau_thanh", 72)
-    D_709 = District("Huyện Hòa Thành", 709, VietNamDivisionType.HUYEN, "huyen_hoa_thanh", 72)
+    D_709 = District("Thị xã Hòa Thành", 709, VietNamDivisionType.THI_XA, "thi_xa_hoa_thanh", 72)
     D_710 = District("Huyện Gò Dầu", 710, VietNamDivisionType.HUYEN, "huyen_go_dau", 72)
     D_711 = District("Huyện Bến Cầu", 711, VietNamDivisionType.HUYEN, "huyen_ben_cau", 72)
-    D_712 = District("Huyện Trảng Bàng", 712, VietNamDivisionType.HUYEN, "huyen_trang_bang", 72)
+    D_712 = District("Thị xã Trảng Bàng", 712, VietNamDivisionType.THI_XA, "thi_xa_trang_bang", 72)
     D_718 = District("Thành phố Thủ Dầu Một", 718, VietNamDivisionType.THANH_PHO, "thanh_pho_thu_dau_mot", 74)
     D_719 = District("Huyện Bàu Bàng", 719, VietNamDivisionType.HUYEN, "huyen_bau_bang", 74)
     D_720 = District("Huyện Dầu Tiếng", 720, VietNamDivisionType.HUYEN, "huyen_dau_tieng", 74)
     D_721 = District("Thị xã Bến Cát", 721, VietNamDivisionType.THI_XA, "thi_xa_ben_cat", 74)
     D_722 = District("Huyện Phú Giáo", 722, VietNamDivisionType.HUYEN, "huyen_phu_giao", 74)
     D_723 = District("Thị xã Tân Uyên", 723, VietNamDivisionType.THI_XA, "thi_xa_tan_uyen", 74)
-    D_724 = District("Thị xã Dĩ An", 724, VietNamDivisionType.THI_XA, "thi_xa_di_an", 74)
-    D_725 = District("Thị xã Thuận An", 725, VietNamDivisionType.THI_XA, "thi_xa_thuan_an", 74)
+    D_724 = District("Thành phố Dĩ An", 724, VietNamDivisionType.THANH_PHO, "thanh_pho_di_an", 74)
+    D_725 = District("Thành phố Thuận An", 725, VietNamDivisionType.THANH_PHO, "thanh_pho_thuan_an", 74)
     D_726 = District("Huyện Bắc Tân Uyên", 726, VietNamDivisionType.HUYEN, "huyen_bac_tan_uyen", 74)
     D_731 = District("Thành phố Biên Hòa", 731, VietNamDivisionType.THANH_PHO, "thanh_pho_bien_hoa", 75)
     D_732 = District("Thành phố Long Khánh", 732, VietNamDivisionType.THANH_PHO, "thanh_pho_long_khanh", 75)
@@ -958,16 +702,15 @@ class DistrictEnum(Enum):
     D_752 = District("Huyện Long Điền", 752, VietNamDivisionType.HUYEN, "huyen_long_dien", 77)
     D_753 = District("Huyện Đất Đỏ", 753, VietNamDivisionType.HUYEN, "huyen_dat_do", 77)
     D_754 = District("Thị xã Phú Mỹ", 754, VietNamDivisionType.THI_XA, "thi_xa_phu_my", 77)
+    D_755 = District("Huyện Côn Đảo", 755, VietNamDivisionType.HUYEN, "huyen_con_dao", 77)
     D_760 = District("Quận 1", 760, VietNamDivisionType.QUAN, "quan_1", 79)
     D_761 = District("Quận 12", 761, VietNamDivisionType.QUAN, "quan_12", 79)
-    D_762 = District("Quận Thủ Đức", 762, VietNamDivisionType.QUAN, "quan_thu_duc", 79)
-    D_763 = District("Quận 9", 763, VietNamDivisionType.QUAN, "quan_9", 79)
     D_764 = District("Quận Gò Vấp", 764, VietNamDivisionType.QUAN, "quan_go_vap", 79)
     D_765 = District("Quận Bình Thạnh", 765, VietNamDivisionType.QUAN, "quan_binh_thanh", 79)
     D_766 = District("Quận Tân Bình", 766, VietNamDivisionType.QUAN, "quan_tan_binh", 79)
     D_767 = District("Quận Tân Phú", 767, VietNamDivisionType.QUAN, "quan_tan_phu", 79)
     D_768 = District("Quận Phú Nhuận", 768, VietNamDivisionType.QUAN, "quan_phu_nhuan", 79)
-    D_769 = District("Quận 2", 769, VietNamDivisionType.QUAN, "quan_2", 79)
+    D_769 = District("Thành phố Thủ Đức", 769, VietNamDivisionType.THANH_PHO, "thanh_pho_thu_duc", 79)
     D_770 = District("Quận 3", 770, VietNamDivisionType.QUAN, "quan_3", 79)
     D_771 = District("Quận 10", 771, VietNamDivisionType.QUAN, "quan_10", 79)
     D_772 = District("Quận 11", 772, VietNamDivisionType.QUAN, "quan_11", 79)
@@ -1036,7 +779,7 @@ class DistrictEnum(Enum):
     D_863 = District("Huyện Bình Tân", 863, VietNamDivisionType.HUYEN, "huyen_binh_tan", 86)
     D_866 = District("Thành phố Cao Lãnh", 866, VietNamDivisionType.THANH_PHO, "thanh_pho_cao_lanh", 87)
     D_867 = District("Thành phố Sa Đéc", 867, VietNamDivisionType.THANH_PHO, "thanh_pho_sa_dec", 87)
-    D_868 = District("Thị xã Hồng Ngự", 868, VietNamDivisionType.THI_XA, "thi_xa_hong_ngu", 87)
+    D_868 = District("Thành phố Hồng Ngự", 868, VietNamDivisionType.THANH_PHO, "thanh_pho_hong_ngu", 87)
     D_869 = District("Huyện Tân Hồng", 869, VietNamDivisionType.HUYEN, "huyen_tan_hong", 87)
     D_870 = District("Huyện Hồng Ngự", 870, VietNamDivisionType.HUYEN, "huyen_hong_ngu", 87)
     D_871 = District("Huyện Tam Nông", 871, VietNamDivisionType.HUYEN, "huyen_tam_nong", 87)
@@ -1068,7 +811,7 @@ class DistrictEnum(Enum):
     D_908 = District("Huyện An Biên", 908, VietNamDivisionType.HUYEN, "huyen_an_bien", 91)
     D_909 = District("Huyện An Minh", 909, VietNamDivisionType.HUYEN, "huyen_an_minh", 91)
     D_910 = District("Huyện Vĩnh Thuận", 910, VietNamDivisionType.HUYEN, "huyen_vinh_thuan", 91)
-    D_911 = District("Huyện Phú Quốc", 911, VietNamDivisionType.HUYEN, "huyen_phu_quoc", 91)
+    D_911 = District("Thành phố Phú Quốc", 911, VietNamDivisionType.THANH_PHO, "thanh_pho_phu_quoc", 91)
     D_912 = District("Huyện Kiên Hải", 912, VietNamDivisionType.HUYEN, "huyen_kien_hai", 91)
     D_913 = District("Huyện U Minh Thượng", 913, VietNamDivisionType.HUYEN, "huyen_u_minh_thuong", 91)
     D_914 = District("Huyện Giang Thành", 914, VietNamDivisionType.HUYEN, "huyen_giang_thanh", 91)
@@ -1082,7 +825,7 @@ class DistrictEnum(Enum):
     D_926 = District("Huyện Phong Điền", 926, VietNamDivisionType.HUYEN, "huyen_phong_dien", 92)
     D_927 = District("Huyện Thới Lai", 927, VietNamDivisionType.HUYEN, "huyen_thoi_lai", 92)
     D_930 = District("Thành phố Vị Thanh", 930, VietNamDivisionType.THANH_PHO, "thanh_pho_vi_thanh", 93)
-    D_931 = District("Thị xã Ngã Bảy", 931, VietNamDivisionType.THI_XA, "thi_xa_nga_bay", 93)
+    D_931 = District("Thành phố Ngã Bảy", 931, VietNamDivisionType.THANH_PHO, "thanh_pho_nga_bay", 93)
     D_932 = District("Huyện Châu Thành A", 932, VietNamDivisionType.HUYEN, "huyen_chau_thanh_a", 93)
     D_933 = District("Huyện Châu Thành", 933, VietNamDivisionType.HUYEN, "huyen_chau_thanh", 93)
     D_934 = District("Huyện Phụng Hiệp", 934, VietNamDivisionType.HUYEN, "huyen_phung_hiep", 93)

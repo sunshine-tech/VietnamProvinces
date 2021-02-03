@@ -10,9 +10,7 @@ class ProvinceEnum(Enum):
     We cannot use tuple syntax here, because Enum cannot set member attributes from tuple syntax
     if one field is string.
     '''
-    P_1 = Province(name='Thành phố Hà Nội', code=1,
-                   division_type=VietNamDivisionType.THANH_PHO_TRUNG_UONG,
-                   codename='thanh_pho_ha_noi', phone_code=24)
+    P_1 = Province('Thành phố Hà Nội', 1, VietNamDivisionType.THANH_PHO_TRUNG_UONG, 'thanh_pho_ha_noi', 24)
 
 
 class ProvinceDEnum(Enum):
@@ -28,8 +26,7 @@ class DistrictEnum(Enum):
     '''
     District Enum type, which is convenient for fast looking up District by its numeric code.
     '''
-    D_656 = District(name="Huyện Lắk", code=656, division_type=VietNamDivisionType.HUYEN,
-                     codename="huyen_lak", province_code=66)
+    D_656 = District("Huyện Lắk", 656, VietNamDivisionType.HUYEN, "huyen_lak", 66)
 
 
 class DistrictDEnum(Enum):
