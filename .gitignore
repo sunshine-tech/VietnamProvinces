@@ -20,6 +20,8 @@ fake-static
 
 # Database file
 *.sqlite
+*.xls
+*.xlsx
 
 # Distribution / packaging
 .Python

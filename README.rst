@@ -165,16 +165,16 @@ Update data
 
 In the future, when the authority reorganize administrative divisions, we need to collect this data again from GSOVN website. Do:
 
-- Go to: https://www.gso.gov.vn/dmhc2015/ (this URL may change when `GSOVN <gso_vn_>`_ replaces their software).
+- Go to: https://danhmuchanhchinh.gso.gov.vn/ (this URL may change when `GSOVN <gso_vn_>`_ replaces their software).
 - Find the button "Xuất Excel".
 - Tick the "Quận Huyện Phường Xã" checkbox.
 - Click the button to export and download list of units in Excel (XLS) file.
-- Use LibreOffice to convert Excel file to CSV file. For example, we name it *Xa_2020-02-25.csv*.
+- Use LibreOffice to convert Excel file to CSV file. For example, we name it *Xa_2021-02-03.csv*.
 - Run this tool to compute data to JSON format:
 
 .. code-block:: sh
 
-    python3 -m dev -i dev/seed-data/Xa_2020-02-25.csv -o data/nested-divisions.json
+    python3 -m dev -i dev/seed-data/Xa_2021-02-03.csv -o vietnam_provinces/data/nested-divisions.json
 
 You can run
 
@@ -192,7 +192,7 @@ Generate Python code
 
 .. code-block:: sh
 
-    python3 -m dev -i dev/seed-data/Xa_2020-02-25.csv -f python
+    python3 -m dev -i dev/seed-data/Xa_2021-02-03.csv -f python
 
 
 Data source

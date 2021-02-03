@@ -5,7 +5,7 @@ from typing import NamedTuple, Optional, List, Tuple, Dict, Sequence
 
 import astor
 from logbook import Logger
-from pydantic import BaseModel, validator
+from pydantic import BaseModel, validator, ValidationError
 
 from vietnam_provinces.base import VietNamDivisionType
 from .types import Name, convert_to_codename, convert_to_id_friendly
@@ -66,8 +66,9 @@ class WardCSVRecord(BaseModel):
     district_name: Name
     district_code: int
     district_codename: Optional[str]
-    ward_name: Name
-    ward_code: int
+    # Some districts don't have ward, like Huyện Bạch Long Vĩ (2021)
+    ward_name: Optional[Name]
+    ward_code: Optional[int]
     ward_codename: Optional[str]
 
     @validator('province_codename', always=True)
@@ -82,10 +83,19 @@ class WardCSVRecord(BaseModel):
     def set_ward_codename(cls, v, values):
         return convert_to_codename(values['ward_name'])
 
+    @validator('ward_code', pre=True)
+    def set_ward_code(cls, v, values):
+        if not v:
+            return None
+        return v
+
     @classmethod
-    def from_csv_row(cls, values: List[str]):
+    def from_csv_row(cls, values: List[str]) -> Optional['WardCSVRecord']:
         row = WardCSVInputRow.strip_make(values)
-        return cls.parse_obj(row._asdict())
+        ward = cls.parse_obj(row._asdict())
+        if not ward.ward_name:
+            logger.info('The row {} does not have ward', row)
+        return ward
 
 
 class BaseRegion(BaseModel):
@@ -240,14 +250,18 @@ def generate_unique_ward_ids(district: District, province: Province):
 
 
 def add_to_existing_province(w: WardCSVRecord, province: Province) -> Ward:
-    ward = Ward(name=w.ward_name, code=w.ward_code, codename=w.ward_codename)
+    if w.ward_name:
+        ward = Ward(name=w.ward_name, code=w.ward_code, codename=w.ward_codename)
+    else:
+        ward = None
     try:
         district = province.indexed_districts[w.district_code]
         district.indexed_wards[w.ward_code] = ward
     except KeyError:
         district = District(name=w.district_name, code=w.district_code, codename=w.district_codename)
         province.indexed_districts[w.district_code] = district
-        district.indexed_wards = {w.ward_code: ward}
+        if ward:
+            district.indexed_wards = {w.ward_code: ward}
     return ward
 
 
@@ -255,6 +269,7 @@ def convert_to_nested(records: Sequence[WardCSVRecord],
                       phone_codes: Sequence[PhoneCodeCSVRecord]) -> Dict[int, Province]:
     table = {}    # type: Dict[int, Province]
     for w in records:
+        # This district doesn't have ward
         province_code = w.province_code
         try:
             province = table[province_code]
@@ -271,8 +286,9 @@ def convert_to_nested(records: Sequence[WardCSVRecord],
                 province.phone_code = matched_phone_code.code
             district = District(name=w.district_name, code=w.district_code, codename=w.district_codename)
             province.indexed_districts[w.district_code] = district
-            ward = Ward(name=w.ward_name, code=w.ward_code, codename=w.ward_codename)
-            district.indexed_wards[w.ward_code] = ward
+            if w.ward_code:
+                ward = Ward(name=w.ward_name, code=w.ward_code, codename=w.ward_codename)
+                district.indexed_wards[w.ward_code] = ward
             table[province_code] = province
     for p in table.values():
         generate_district_short_codenames(p)
