@@ -137,7 +137,7 @@ Install
     pip3 install vietnam-provinces
 
 
-This library is compatible with Python 3.7+ (due to the use of *dataclass*).
+This library is compatible with Python 3.6+.
 
 
 Development

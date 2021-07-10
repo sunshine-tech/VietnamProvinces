@@ -47,6 +47,7 @@ python-versions = ">=3.6"
 [package.dependencies]
 appdirs = "*"
 click = ">=7.1.2"
+dataclasses = {version = ">=0.6", markers = "python_version < \"3.7\""}
 mypy-extensions = ">=0.4.3"
 pathspec = ">=0.6,<1"
 regex = ">=2020.1.8"
@@ -89,6 +90,14 @@ description = "Cross-platform colored terminal text."
 category = "dev"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+
+[[package]]
+name = "dataclasses"
+version = "0.8"
+description = "A backport of the dataclasses module for Python 3.6"
+category = "main"
+optional = false
+python-versions = ">=3.6, <3.7"
 
 [[package]]
 name = "devtools"
@@ -247,6 +256,7 @@ optional = false
 python-versions = ">=3.6.1"
 
 [package.dependencies]
+dataclasses = {version = ">=0.6", markers = "python_version < \"3.7\""}
 typing-extensions = ">=3.7.4.3"
 
 [package.extras]
@@ -416,8 +426,8 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytes
 
 [metadata]
 lock-version = "1.1"
-python-versions = "^3.7"
-content-hash = "8ae70a41925593a305a1ee1df9436d380b9d2519f64836cb5e56a9ea053ec78a"
+python-versions = "^3.6.1"
+content-hash = "85cf53dbc2ef088dc471e15398c4b8ebf3d29fb46e3477bfa0cfc391c7a3bdeb"
 
 [metadata.files]
 appdirs = [
@@ -454,6 +464,10 @@ click = [
 colorama = [
     {file = "colorama-0.4.4-py2.py3-none-any.whl", hash = "sha256:9f47eda37229f68eee03b24b9748937c7dc3868f906e8ba69fbcbdd3bc5dc3e2"},
     {file = "colorama-0.4.4.tar.gz", hash = "sha256:5941b2b48a20143d2267e95b1c2a7603ce057ee39fd88e7329b0c292aa16869b"},
+]
+dataclasses = [
+    {file = "dataclasses-0.8-py3-none-any.whl", hash = "sha256:0201d89fa866f68c8ebd9d08ee6ff50c0b255f8ec63a71c16fda7af82bb887bf"},
+    {file = "dataclasses-0.8.tar.gz", hash = "sha256:8479067f342acf957dc82ec415d355ab5edb7e7646b90dc6e2fd1d96ad084c97"},
 ]
 devtools = [
     {file = "devtools-0.5.1-py35.py36-none-any.whl", hash = "sha256:7a1f7db6ade0a71840ca4014d75dd72390aed2ef04e39e2b2445af7b3a3f4679"},

@@ -134,7 +134,7 @@ Cài đặt
     pip3 install vietnam-provinces
 
 
-Thư viện này tương thích với Python 3.7 trở lên (do có sử dụng *dataclass*).
+Thư viện này tương thích với Python 3.6 trở lên.
 
 
 Phát triển
