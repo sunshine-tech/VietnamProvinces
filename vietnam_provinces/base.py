@@ -22,7 +22,7 @@ class VietNamDivisionType(str, Enum):
 # - Using fast-enum to work-around problem of slow loading standard Enum type in Python.
 # In the future, when Python fix the issue with slow Enum, I will base Ward on NamedTuple,
 # as other types in this module.
-@dataclass(frozen=True)
+@dataclass
 class Ward:
     name: str
     code: int
@@ -36,7 +36,7 @@ class Ward:
         return other.code == self.code
 
 
-@dataclass(frozen=True)
+@dataclass
 class District:
     name: str
     code: int
@@ -50,7 +50,7 @@ class District:
         return other.code == self.code
 
 
-@dataclass(frozen=True)
+@dataclass
 class Province:
     name: str
     code: int
