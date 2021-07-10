@@ -2,9 +2,7 @@
 VietnamProvinces
 ================
 
-.. image:: https://madewithlove.now.sh/vn?heart=true&colorA=%23ffcd00&colorB=%23da251d
-.. image:: https://badgen.net/pypi/v/vietnam-provinces
-   :target: https://pypi.org/project/vietnam-provinces/
+|image love| |image pypi|
 
 [`Tiếng Việt <vietnamese_>`_]
 
@@ -187,8 +185,8 @@ Generate Python code
 Data source
 ~~~~~~~~~~~
 
-- Name and code of provinces, districts and wards:  `General Statistics Office of Viet Nam <gso_vn_>`_
-- Phone area code: `Thái Bình province's department of Information and Communication <tb_ic_>`_
+- Name and code of provinces, districts and wards:  `General Statistics Office of Viet Nam <gso_vn_>`_.
+- Phone area code: `Thái Bình province's department of Information and Communication <tb_ic_>`_.
 
 
 Credit
@@ -197,6 +195,9 @@ Credit
 Given to you by `Nguyễn Hồng Quân <quan_>`_, after nights and weekends.
 
 
+.. |image love| image:: https://madewithlove.now.sh/vn?heart=true&colorA=%23ffcd00&colorB=%23da251d
+.. |image pypi| image:: https://badgen.net/pypi/v/vietnam-provinces
+   :target: https://pypi.org/project/vietnam-provinces/
 .. _vietnamese: README.vi_VN.rst
 .. _gso_vn: https://www.gso.gov.vn/
 .. _tb_ic: https://sotttt.thaibinh.gov.vn/tin-tuc/buu-chinh-vien-thong/tra-cuu-ma-vung-dien-thoai-co-dinh-mat-dat-ma-mang-dien-thoa2.html

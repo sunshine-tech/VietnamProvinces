@@ -2,9 +2,7 @@
 VietnamProvinces
 ================
 
-.. image:: https://madewithlove.now.sh/vn?heart=true&colorA=%23ffcd00&colorB=%23da251d
-.. image:: https://badgen.net/pypi/v/vietnam-provinces
-   :target: https://pypi.org/project/vietnam-provinces/
+|image love| |image pypi|
 
 [`English <english_>`_]
 
@@ -121,14 +119,14 @@ Không như ``ProvinceDEnum`` hay ``DistrictDEnum``, ``WardDEnum`` có mã phư�
 
 Vì ``WardEnum`` có quá nhiều bản ghi (10609 tại thời điểm Tháng 2 2021) và không cần lắm với một số ứng dụng, tôi chuyển nó qua một module riêng, để không bị tự động nạp vào ứng dụng.
 
-Kiểu dữ liệu của thành viên enum, như ``Province``, ``District`` and ``Ward``, có thể import từ cấp đầu của thư viện ``vietnam_provinces``.
+Kiểu dữ liệu của thành viên enum, như ``Province``, ``District`` and ``Ward``, có thể import từ cấp trên cùng của thư viện ``vietnam_provinces``.
 
 .. code-block:: python
 
     >>> from vietnam_provinces import Province, District, Ward
 
 
-Install
+Cài đặt
 -------
 
 .. code-block:: sh
@@ -184,8 +182,8 @@ Sinh mã Python
 Nguồn dữ liệu
 ~~~~~~~~~~~~~
 
-- Tên và mã tỉnh thành, quận huyện, phường xã:  `Tổng cục Thống kê Việt Nam <gso_vn_>`_
-- Mã vùng điện thoại: `Sở Thông tin và Truyền thông Thái Bình <tb_ic_>`_
+- Tên và mã tỉnh thành, quận huyện, phường xã:  `Tổng cục Thống kê Việt Nam <gso_vn_>`_.
+- Mã vùng điện thoại: `Sở Thông tin và Truyền thông Thái Bình <tb_ic_>`_.
 
 
 Công trạng
@@ -194,6 +192,9 @@ Công trạng
 Mang đến cho bạn bởi `Nguyễn Hồng Quân <quan_>`_, sau hàng đêm và cuối tuần làm lụng.
 
 
+.. |image love| image:: https://madewithlove.now.sh/vn?heart=true&colorA=%23ffcd00&colorB=%23da251d
+.. |image pypi| image:: https://badgen.net/pypi/v/vietnam-provinces
+   :target: https://pypi.org/project/vietnam-provinces/
 .. _english: README.rst
 .. _gso_vn: https://www.gso.gov.vn/
 .. _tb_ic: https://sotttt.thaibinh.gov.vn/tin-tuc/buu-chinh-vien-thong/tra-cuu-ma-vung-dien-thoai-co-dinh-mat-dat-ma-mang-dien-thoa2.html
