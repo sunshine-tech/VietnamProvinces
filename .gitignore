@@ -42,6 +42,7 @@ node_modules/
 .installed.cfg
 *.egg
 yarn.lock
+.python-version
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
