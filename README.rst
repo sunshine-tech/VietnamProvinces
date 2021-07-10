@@ -6,6 +6,8 @@ VietnamProvinces
 .. image:: https://badgen.net/pypi/v/vietnam-provinces
    :target: https://pypi.org/project/vietnam-provinces/
 
+[`Tiếng Việt <vietnamese_>`_]
+
 Library to provide list of Vietnam administrative divisions (tỉnh thành, quận huyện, phường xã) with the name and code as defined by `General Statistics Office of Viet Nam <gso_vn_>`_ (Tổng cục Thống kê).
 
 Example:
@@ -63,7 +65,7 @@ Note that this variable only returns the path of the file, not the content. It i
     # With orjson
     orjson.loads(NESTED_DIVISIONS_JSON_PATH.read_bytes())
 
-Due to the big amount of data (10767 wards all over Viet Nam), this loading will be slow.
+Due to the big amount of data (10609 wards all over Viet Nam), this loading will be slow.
 
 
 2. Python data type
@@ -119,11 +121,10 @@ Example of looking up ``Ward``, ``District``, ``Province`` with theirs numeric c
 
 Unlike ``ProvinceDEnum``, ``DistrictDEnum``, the ``WardDEnum`` has ward code in member name. It is because there are too many Vietnamese wards with the same name. There is no way to build unique ID for wards, with pure Latin letters (Vietnamese punctuations stripped), even if we add district and province info to the ID. Let's take "Xã Đông Thành" and "Xã Đông Thạnh" as example. Both belong to "Huyện Bình Minh" of "Vĩnh Long", both produces ID name "DONG_THANH". Although Python allows Unicode as ID name, like "ĐÔNG_THẠNH", but it is not practical yet because the code formatter tool (`Black`_) will still normalizes it to Latin form.
 
-Because the ``WardEnum`` has many records (10767 at the time of writing, February 2020) and may not be needed in some applications, I move it to separate module, to avoid loading automatically to application.
+Because the ``WardEnum`` has many records (10609 in February 2021) and may not be needed in some applications, I move it to separate module, to avoid loading automatically to application.
 
 
-Member of these enums, the ``Province``, ``District`` and ``Ward`` data types, all are immutable (defined as frozen `dataclass`_).
-They can be imported from top-level of ``vietnam_provinces``.
+Member of these enums, the ``Province``, ``District`` and ``Ward`` data types, can be imported from top-level of ``vietnam_provinces``.
 
 .. code-block:: python
 
@@ -196,6 +197,7 @@ Credit
 Given to you by `Nguyễn Hồng Quân <quan_>`_, after nights and weekends.
 
 
+.. _vietnamese: README.vi_VN.rst
 .. _gso_vn: https://www.gso.gov.vn/
 .. _tb_ic: https://sotttt.thaibinh.gov.vn/tin-tuc/buu-chinh-vien-thong/tra-cuu-ma-vung-dien-thoai-co-dinh-mat-dat-ma-mang-dien-thoa2.html
 .. _dataclass: https://docs.python.org/3/library/dataclasses.html
