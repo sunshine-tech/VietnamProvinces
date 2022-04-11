@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "vietnam-provinces"
-version = "0.4.2"
+version = "0.4.3"
 description = "Library to provide list of Vietnam administrative divisions (tỉnh thành, quận huyện, phường xã)."
 authors = ["Nguyễn Hồng Quân <ng.hong.quan@gmail.com>"]
 repository = "https://github.com/sunshine-tech/VietnamProvinces.git"
@@ -19,6 +19,7 @@ classifiers = [
     'Development Status :: 4 - Beta',
     'Intended Audience :: Developers',
 ]
+include = ["vietnam_provinces/py.typed"]
 
 [tool.poetry.dependencies]
 python = "^3.6.1"
