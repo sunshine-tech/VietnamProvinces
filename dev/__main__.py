@@ -1,5 +1,7 @@
+import re
 import sys
 import csv
+from datetime import datetime
 from enum import Enum
 from pathlib import Path
 
@@ -20,6 +22,10 @@ class ExportingFormat(str, Enum):
     FLAT_JSON = 'flat-json'
     NESTED_JSON = 'nested-json'
     PYTHON = 'python'
+
+
+def echo(msg: str):
+    click.secho(msg, file=sys.stderr, fg='green')
 
 
 class EnumChoice(click.Choice):
@@ -69,15 +75,15 @@ def main(input_filename: str, output_format: ExportingFormat, output: str, verbo
     if output_format == ExportingFormat.FLAT_JSON:
         with open(output, 'w') as f:
             f.write(rapidjson.dumps(tuple(a.dict() for a in originals), indent=2, ensure_ascii=False))
-        click.secho(f'Wrote to {output}', file=sys.stderr, fg='green')
+        echo(f'Wrote to {output}')
     elif output_format == ExportingFormat.NESTED_JSON:
         provinces = convert_to_nested(originals, phone_codes)
         provinces_dicts = tuple(p.dict() for p in provinces.values())
         with open(output, 'w') as f:
             f.write(rapidjson.dumps(provinces_dicts, indent=2, ensure_ascii=False))
-        click.secho(f'Wrote to {output}', file=sys.stderr, fg='green')
+        echo(f'Wrote to {output}')
     elif output_format == ExportingFormat.PYTHON:
-        folder = Path(__file__).parent.parent / 'vietnam_provinces' / 'enums'  # type: Path
+        folder: Path = Path(__file__).parent.parent / 'vietnam_provinces' / 'enums'
         if folder.exists() and folder.is_file():
             click.secho(f'{output} is not a folder.', file=sys.stderr, fg='red')
             sys.exit(1)
@@ -90,16 +96,22 @@ def main(input_filename: str, output_format: ExportingFormat, output: str, verbo
         logger.info('Prettify code with Black')
         out_districts = black.format_str(out_districts, mode=black.Mode({black.TargetVersion.PY37}, line_length=120))
         out_wards = black.format_str(out_wards, mode=black.Mode({black.TargetVersion.PY37}, line_length=120))
-        file_districts = folder / 'districts.py'    # type: Path
+        file_districts = folder / 'districts.py'
         file_districts.write_text(out_districts)
-        click.secho(f'Wrote to {file_districts}', file=sys.stderr, fg='green')
-        file_wards = folder / 'wards.py'    # type: Path
+        echo(f'Wrote to {file_districts}')
+        file_wards = folder / 'wards.py'
         file_wards.write_text(out_wards)
-        click.secho(f'Wrote to {file_wards}', file=sys.stderr, fg='green')
+        echo(f'Wrote to {file_wards}')
         # Create __init__ file
-        init_file = folder / '__init__.py'   # type: Path
+        init_file = folder / '__init__.py'
         if not init_file.exists():
             init_file.touch()
+        pkg_init_file = folder.parent / '__init__.py'
+        now = datetime.utcnow()
+        init_content = pkg_init_file.read_text()
+        echo(f'Update data version {now:%Y-%m-%d}')
+        updated = re.sub(r'__data_version__ = .+', f"__data_version__ = '{now:%Y-%m-%d}'", init_content)
+        pkg_init_file.write_text(updated)
 
 
 if __name__ == '__main__':

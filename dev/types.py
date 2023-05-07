@@ -1,6 +1,5 @@
 import re
 import unicodedata
-from typing import Union
 
 from unidecode import unidecode
 from pydantic import ConstrainedStr
@@ -14,7 +13,7 @@ class Name(ConstrainedStr):
     strip_whitespace = True
 
     @classmethod
-    def validate(cls, value: Union[str]) -> Union[str]:
+    def validate(cls, value: str) -> str:
         value = super().validate(value)
         value = unicodedata.normalize('NFC', value)
         if not value:

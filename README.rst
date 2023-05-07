@@ -137,7 +137,7 @@ Install
     pip3 install vietnam-provinces
 
 
-This library is compatible with Python 3.6+.
+This library is compatible with Python 3.7+.
 
 
 Development
@@ -146,6 +146,8 @@ Development
 In development, this project has a tool to convert data from government sources.
 
 The tool doesn't directly crawl data from government websites because the data rarely change (it doesn't worth developing the feature which you only need to use each ten years), and because those websites provide data in unfriendly Microsoft Office formats.
+
+The tool is tested on Linux only (may not run on Windows).
 
 Update data
 ~~~~~~~~~~~
@@ -156,12 +158,12 @@ In the future, when the authority reorganize administrative divisions, we need t
 - Find the button "Xuất Excel".
 - Tick the "Quận Huyện Phường Xã" checkbox.
 - Click the button to export and download list of units in Excel (XLS) file.
-- Use LibreOffice to convert Excel file to CSV file. For example, we name it *Xa_2021-02-03.csv*.
+- Use LibreOffice to convert Excel file to CSV file. For example, we name it *Xa_2023-05-07.csv*.
 - Run this tool to compute data to JSON format:
 
 .. code-block:: sh
 
-    python3 -m dev -i dev/seed-data/Xa_2021-02-03.csv -o vietnam_provinces/data/nested-divisions.json
+    python3 -m dev -i dev/seed-data/Xa_2023-05-07.csv -o vietnam_provinces/data/nested-divisions.json
 
 You can run
 
@@ -179,7 +181,7 @@ Generate Python code
 
 .. code-block:: sh
 
-    python3 -m dev -i dev/seed-data/Xa_2021-02-03.csv -f python
+    python3 -m dev -i dev/seed-data/Xa_2023-05-07.csv -f python
 
 
 Data source

@@ -10698,9 +10698,9 @@
     "district_name": "Huyện Ngân Sơn",
     "district_code": 62,
     "district_codename": "huyen_ngan_son",
-    "ward_name": "Xã Vân Tùng",
+    "ward_name": "Thị trấn Vân Tùng",
     "ward_code": 1954,
-    "ward_codename": "xa_van_tung"
+    "ward_codename": "thi_tran_van_tung"
   },
   {
     "province_name": "Tỉnh Bắc Kạn",
@@ -11655,9 +11655,9 @@
     "district_name": "Huyện Lâm Bình",
     "district_code": 71,
     "district_codename": "huyen_lam_binh",
-    "ward_name": "Xã Lăng Can",
+    "ward_name": "Thị trấn Lăng Can",
     "ward_code": 2266,
-    "ward_codename": "xa_lang_can"
+    "ward_codename": "thi_tran_lang_can"
   },
   {
     "province_name": "Tỉnh Tuyên Quang",
@@ -11702,6 +11702,28 @@
     "ward_name": "Xã Thổ Bình",
     "ward_code": 2296,
     "ward_codename": "xa_tho_binh"
+  },
+  {
+    "province_name": "Tỉnh Tuyên Quang",
+    "province_code": 8,
+    "province_codename": "tinh_tuyen_quang",
+    "district_name": "Huyện Lâm Bình",
+    "district_code": 71,
+    "district_codename": "huyen_lam_binh",
+    "ward_name": "Xã Phúc Sơn",
+    "ward_code": 2299,
+    "ward_codename": "xa_phuc_son"
+  },
+  {
+    "province_name": "Tỉnh Tuyên Quang",
+    "province_code": 8,
+    "province_codename": "tinh_tuyen_quang",
+    "district_name": "Huyện Lâm Bình",
+    "district_code": 71,
+    "district_codename": "huyen_lam_binh",
+    "ward_name": "Xã Minh Quang",
+    "ward_code": 2302,
+    "ward_codename": "xa_minh_quang"
   },
   {
     "province_name": "Tỉnh Tuyên Quang",
@@ -11845,28 +11867,6 @@
     "ward_name": "Thị trấn Vĩnh Lộc",
     "ward_code": 2287,
     "ward_codename": "thi_tran_vinh_loc"
-  },
-  {
-    "province_name": "Tỉnh Tuyên Quang",
-    "province_code": 8,
-    "province_codename": "tinh_tuyen_quang",
-    "district_name": "Huyện Chiêm Hóa",
-    "district_code": 73,
-    "district_codename": "huyen_chiem_hoa",
-    "ward_name": "Xã Phúc Sơn",
-    "ward_code": 2299,
-    "ward_codename": "xa_phuc_son"
-  },
-  {
-    "province_name": "Tỉnh Tuyên Quang",
-    "province_code": 8,
-    "province_codename": "tinh_tuyen_quang",
-    "district_name": "Huyện Chiêm Hóa",
-    "district_code": 73,
-    "district_codename": "huyen_chiem_hoa",
-    "ward_name": "Xã Minh Quang",
-    "ward_code": 2302,
-    "ward_codename": "xa_minh_quang"
   },
   {
     "province_name": "Tỉnh Tuyên Quang",
@@ -12480,9 +12480,9 @@
     "district_name": "Huyện Yên Sơn",
     "district_code": 75,
     "district_codename": "huyen_yen_son",
-    "ward_name": "Xã Thắng Quân",
+    "ward_name": "Thị trấn Yên Sơn",
     "ward_code": 2473,
-    "ward_codename": "xa_thang_quan"
+    "ward_codename": "thi_tran_yen_son"
   },
   {
     "province_name": "Tỉnh Tuyên Quang",
@@ -14776,7 +14776,7 @@
     "province_name": "Tỉnh Điện Biên",
     "province_code": 11,
     "province_codename": "tinh_dien_bien",
-    "district_name": "Thị Xã Mường Lay",
+    "district_name": "Thị xã Mường Lay",
     "district_code": 95,
     "district_codename": "thi_xa_muong_lay",
     "ward_name": "Phường Sông Đà",
@@ -14787,7 +14787,7 @@
     "province_name": "Tỉnh Điện Biên",
     "province_code": 11,
     "province_codename": "tinh_dien_bien",
-    "district_name": "Thị Xã Mường Lay",
+    "district_name": "Thị xã Mường Lay",
     "district_code": 95,
     "district_codename": "thi_xa_muong_lay",
     "ward_name": "Phường Na Lay",
@@ -14798,7 +14798,7 @@
     "province_name": "Tỉnh Điện Biên",
     "province_code": 11,
     "province_codename": "tinh_dien_bien",
-    "district_name": "Thị Xã Mường Lay",
+    "district_name": "Thị xã Mường Lay",
     "district_code": 95,
     "district_codename": "thi_xa_muong_lay",
     "ward_name": "Xã Lay Nưa",
@@ -14933,7 +14933,7 @@
     "district_name": "Huyện Mường Chà",
     "district_code": 97,
     "district_codename": "huyen_muong_cha",
-    "ward_name": "Thị Trấn Mường Chà",
+    "ward_name": "Thị trấn Mường Chà",
     "ward_code": 3172,
     "ward_codename": "thi_tran_muong_cha"
   },
@@ -24041,9 +24041,9 @@
     "district_name": "Huyện Đồng Hỷ",
     "district_code": 169,
     "district_codename": "huyen_dong_hy",
-    "ward_name": "Xã Hóa Thượng",
+    "ward_name": "Thị trấn Hóa Thượng",
     "ward_code": 5692,
-    "ward_codename": "xa_hoa_thuong"
+    "ward_codename": "thi_tran_hoa_thuong"
   },
   {
     "province_name": "Tỉnh Thái Nguyên",
@@ -24253,17 +24253,6 @@
     "ward_name": "Thị trấn Hùng Sơn",
     "ward_code": 5761,
     "ward_codename": "thi_tran_hung_son"
-  },
-  {
-    "province_name": "Tỉnh Thái Nguyên",
-    "province_code": 19,
-    "province_codename": "tinh_thai_nguyen",
-    "district_name": "Huyện Đại Từ",
-    "district_code": 171,
-    "district_codename": "huyen_dai_tu",
-    "ward_name": "Thị trấn Quân Chu",
-    "ward_code": 5764,
-    "ward_codename": "thi_tran_quan_chu"
   },
   {
     "province_name": "Tỉnh Thái Nguyên",
@@ -24569,17 +24558,17 @@
     "district_name": "Huyện Đại Từ",
     "district_code": 171,
     "district_codename": "huyen_dai_tu",
-    "ward_name": "Xã Quân Chu",
+    "ward_name": "Thị trấn Quân Chu",
     "ward_code": 5851,
-    "ward_codename": "xa_quan_chu"
+    "ward_codename": "thi_tran_quan_chu"
   },
   {
     "province_name": "Tỉnh Thái Nguyên",
     "province_code": 19,
     "province_codename": "tinh_thai_nguyen",
-    "district_name": "Thị xã Phổ Yên",
+    "district_name": "Thành phố Phổ Yên",
     "district_code": 172,
-    "district_codename": "thi_xa_pho_yen",
+    "district_codename": "thanh_pho_pho_yen",
     "ward_name": "Phường Bãi Bông",
     "ward_code": 5854,
     "ward_codename": "phuong_bai_bong"
@@ -24588,9 +24577,9 @@
     "province_name": "Tỉnh Thái Nguyên",
     "province_code": 19,
     "province_codename": "tinh_thai_nguyen",
-    "district_name": "Thị xã Phổ Yên",
+    "district_name": "Thành phố Phổ Yên",
     "district_code": 172,
-    "district_codename": "thi_xa_pho_yen",
+    "district_codename": "thanh_pho_pho_yen",
     "ward_name": "Phường Bắc Sơn",
     "ward_code": 5857,
     "ward_codename": "phuong_bac_son"
@@ -24599,9 +24588,9 @@
     "province_name": "Tỉnh Thái Nguyên",
     "province_code": 19,
     "province_codename": "tinh_thai_nguyen",
-    "district_name": "Thị xã Phổ Yên",
+    "district_name": "Thành phố Phổ Yên",
     "district_code": 172,
-    "district_codename": "thi_xa_pho_yen",
+    "district_codename": "thanh_pho_pho_yen",
     "ward_name": "Phường Ba Hàng",
     "ward_code": 5860,
     "ward_codename": "phuong_ba_hang"
@@ -24610,9 +24599,9 @@
     "province_name": "Tỉnh Thái Nguyên",
     "province_code": 19,
     "province_codename": "tinh_thai_nguyen",
-    "district_name": "Thị xã Phổ Yên",
+    "district_name": "Thành phố Phổ Yên",
     "district_code": 172,
-    "district_codename": "thi_xa_pho_yen",
+    "district_codename": "thanh_pho_pho_yen",
     "ward_name": "Xã Phúc Tân",
     "ward_code": 5863,
     "ward_codename": "xa_phuc_tan"
@@ -24621,9 +24610,9 @@
     "province_name": "Tỉnh Thái Nguyên",
     "province_code": 19,
     "province_codename": "tinh_thai_nguyen",
-    "district_name": "Thị xã Phổ Yên",
+    "district_name": "Thành phố Phổ Yên",
     "district_code": 172,
-    "district_codename": "thi_xa_pho_yen",
+    "district_codename": "thanh_pho_pho_yen",
     "ward_name": "Xã Phúc Thuận",
     "ward_code": 5866,
     "ward_codename": "xa_phuc_thuan"
@@ -24632,20 +24621,20 @@
     "province_name": "Tỉnh Thái Nguyên",
     "province_code": 19,
     "province_codename": "tinh_thai_nguyen",
-    "district_name": "Thị xã Phổ Yên",
+    "district_name": "Thành phố Phổ Yên",
     "district_code": 172,
-    "district_codename": "thi_xa_pho_yen",
-    "ward_name": "Xã Hồng Tiến",
+    "district_codename": "thanh_pho_pho_yen",
+    "ward_name": "Phường Hồng Tiến",
     "ward_code": 5869,
-    "ward_codename": "xa_hong_tien"
+    "ward_codename": "phuong_hong_tien"
   },
   {
     "province_name": "Tỉnh Thái Nguyên",
     "province_code": 19,
     "province_codename": "tinh_thai_nguyen",
-    "district_name": "Thị xã Phổ Yên",
+    "district_name": "Thành phố Phổ Yên",
     "district_code": 172,
-    "district_codename": "thi_xa_pho_yen",
+    "district_codename": "thanh_pho_pho_yen",
     "ward_name": "Xã Minh Đức",
     "ward_code": 5872,
     "ward_codename": "xa_minh_duc"
@@ -24654,20 +24643,20 @@
     "province_name": "Tỉnh Thái Nguyên",
     "province_code": 19,
     "province_codename": "tinh_thai_nguyen",
-    "district_name": "Thị xã Phổ Yên",
+    "district_name": "Thành phố Phổ Yên",
     "district_code": 172,
-    "district_codename": "thi_xa_pho_yen",
-    "ward_name": "Xã Đắc Sơn",
+    "district_codename": "thanh_pho_pho_yen",
+    "ward_name": "Phường Đắc Sơn",
     "ward_code": 5875,
-    "ward_codename": "xa_dac_son"
+    "ward_codename": "phuong_dac_son"
   },
   {
     "province_name": "Tỉnh Thái Nguyên",
     "province_code": 19,
     "province_codename": "tinh_thai_nguyen",
-    "district_name": "Thị xã Phổ Yên",
+    "district_name": "Thành phố Phổ Yên",
     "district_code": 172,
-    "district_codename": "thi_xa_pho_yen",
+    "district_codename": "thanh_pho_pho_yen",
     "ward_name": "Phường Đồng Tiến",
     "ward_code": 5878,
     "ward_codename": "phuong_dong_tien"
@@ -24676,9 +24665,9 @@
     "province_name": "Tỉnh Thái Nguyên",
     "province_code": 19,
     "province_codename": "tinh_thai_nguyen",
-    "district_name": "Thị xã Phổ Yên",
+    "district_name": "Thành phố Phổ Yên",
     "district_code": 172,
-    "district_codename": "thi_xa_pho_yen",
+    "district_codename": "thanh_pho_pho_yen",
     "ward_name": "Xã Thành Công",
     "ward_code": 5881,
     "ward_codename": "xa_thanh_cong"
@@ -24687,20 +24676,20 @@
     "province_name": "Tỉnh Thái Nguyên",
     "province_code": 19,
     "province_codename": "tinh_thai_nguyen",
-    "district_name": "Thị xã Phổ Yên",
+    "district_name": "Thành phố Phổ Yên",
     "district_code": 172,
-    "district_codename": "thi_xa_pho_yen",
-    "ward_name": "Xã Tiên Phong",
+    "district_codename": "thanh_pho_pho_yen",
+    "ward_name": "Phường Tiên Phong",
     "ward_code": 5884,
-    "ward_codename": "xa_tien_phong"
+    "ward_codename": "phuong_tien_phong"
   },
   {
     "province_name": "Tỉnh Thái Nguyên",
     "province_code": 19,
     "province_codename": "tinh_thai_nguyen",
-    "district_name": "Thị xã Phổ Yên",
+    "district_name": "Thành phố Phổ Yên",
     "district_code": 172,
-    "district_codename": "thi_xa_pho_yen",
+    "district_codename": "thanh_pho_pho_yen",
     "ward_name": "Xã Vạn Phái",
     "ward_code": 5887,
     "ward_codename": "xa_van_phai"
@@ -24709,67 +24698,67 @@
     "province_name": "Tỉnh Thái Nguyên",
     "province_code": 19,
     "province_codename": "tinh_thai_nguyen",
-    "district_name": "Thị xã Phổ Yên",
+    "district_name": "Thành phố Phổ Yên",
     "district_code": 172,
-    "district_codename": "thi_xa_pho_yen",
-    "ward_name": "Xã Nam Tiến",
+    "district_codename": "thanh_pho_pho_yen",
+    "ward_name": "Phường Nam Tiến",
     "ward_code": 5890,
-    "ward_codename": "xa_nam_tien"
+    "ward_codename": "phuong_nam_tien"
   },
   {
     "province_name": "Tỉnh Thái Nguyên",
     "province_code": 19,
     "province_codename": "tinh_thai_nguyen",
-    "district_name": "Thị xã Phổ Yên",
+    "district_name": "Thành phố Phổ Yên",
     "district_code": 172,
-    "district_codename": "thi_xa_pho_yen",
-    "ward_name": "Xã Tân Hương",
+    "district_codename": "thanh_pho_pho_yen",
+    "ward_name": "Phường Tân Hương",
     "ward_code": 5893,
-    "ward_codename": "xa_tan_huong"
+    "ward_codename": "phuong_tan_huong"
   },
   {
     "province_name": "Tỉnh Thái Nguyên",
     "province_code": 19,
     "province_codename": "tinh_thai_nguyen",
-    "district_name": "Thị xã Phổ Yên",
+    "district_name": "Thành phố Phổ Yên",
     "district_code": 172,
-    "district_codename": "thi_xa_pho_yen",
-    "ward_name": "Xã Đông Cao",
+    "district_codename": "thanh_pho_pho_yen",
+    "ward_name": "Phường Đông Cao",
     "ward_code": 5896,
-    "ward_codename": "xa_dong_cao"
+    "ward_codename": "phuong_dong_cao"
   },
   {
     "province_name": "Tỉnh Thái Nguyên",
     "province_code": 19,
     "province_codename": "tinh_thai_nguyen",
-    "district_name": "Thị xã Phổ Yên",
+    "district_name": "Thành phố Phổ Yên",
     "district_code": 172,
-    "district_codename": "thi_xa_pho_yen",
-    "ward_name": "Xã Trung Thành",
+    "district_codename": "thanh_pho_pho_yen",
+    "ward_name": "Phường Trung Thành",
     "ward_code": 5899,
-    "ward_codename": "xa_trung_thanh"
+    "ward_codename": "phuong_trung_thanh"
   },
   {
     "province_name": "Tỉnh Thái Nguyên",
     "province_code": 19,
     "province_codename": "tinh_thai_nguyen",
-    "district_name": "Thị xã Phổ Yên",
+    "district_name": "Thành phố Phổ Yên",
     "district_code": 172,
-    "district_codename": "thi_xa_pho_yen",
-    "ward_name": "Xã Tân Phú",
+    "district_codename": "thanh_pho_pho_yen",
+    "ward_name": "Phường Tân Phú",
     "ward_code": 5902,
-    "ward_codename": "xa_tan_phu"
+    "ward_codename": "phuong_tan_phu"
   },
   {
     "province_name": "Tỉnh Thái Nguyên",
     "province_code": 19,
     "province_codename": "tinh_thai_nguyen",
-    "district_name": "Thị xã Phổ Yên",
+    "district_name": "Thành phố Phổ Yên",
     "district_code": 172,
-    "district_codename": "thi_xa_pho_yen",
-    "ward_name": "Xã Thuận Thành",
+    "district_codename": "thanh_pho_pho_yen",
+    "ward_name": "Phường Thuận Thành",
     "ward_code": 5905,
-    "ward_codename": "xa_thuan_thanh"
+    "ward_codename": "phuong_thuan_thanh"
   },
   {
     "province_name": "Tỉnh Thái Nguyên",
@@ -30102,9 +30091,9 @@
     "district_name": "Huyện Lục Nam",
     "district_code": 218,
     "district_codename": "huyen_luc_nam",
-    "ward_name": "Xã Phương Sơn",
+    "ward_name": "Thị trấn Phương Sơn",
     "ward_code": 7477,
-    "ward_codename": "xa_phuong_son"
+    "ward_codename": "thi_tran_phuong_son"
   },
   {
     "province_name": "Tỉnh Bắc Giang",
@@ -31378,9 +31367,9 @@
     "district_name": "Huyện Hiệp Hòa",
     "district_code": 223,
     "district_codename": "huyen_hiep_hoa",
-    "ward_name": "Xã Bắc Lý",
+    "ward_name": "Thị trấn Bắc Lý",
     "ward_code": 7870,
-    "ward_codename": "xa_bac_ly"
+    "ward_codename": "thi_tran_bac_ly"
   },
   {
     "province_name": "Tỉnh Bắc Giang",
@@ -33985,9 +33974,9 @@
     "district_name": "Thành phố Vĩnh Yên",
     "district_code": 243,
     "district_codename": "thanh_pho_vinh_yen",
-    "ward_name": "Xã Định Trung",
+    "ward_name": "Phường Định Trung",
     "ward_code": 8725,
-    "ward_codename": "xa_dinh_trung"
+    "ward_codename": "phuong_dinh_trung"
   },
   {
     "province_name": "Tỉnh Vĩnh Phúc",
@@ -34381,9 +34370,9 @@
     "district_name": "Huyện Tam Dương",
     "district_code": 247,
     "district_codename": "huyen_tam_duong",
-    "ward_name": "Xã Kim Long",
+    "ward_name": "Thị trấn Kim Long",
     "ward_code": 8878,
-    "ward_codename": "xa_kim_long"
+    "ward_codename": "thi_tran_kim_long"
   },
   {
     "province_name": "Tỉnh Vĩnh Phúc",
@@ -34799,9 +34788,9 @@
     "district_name": "Huyện Yên Lạc",
     "district_code": 251,
     "district_codename": "huyen_yen_lac",
-    "ward_name": "Xã Tam Hồng",
+    "ward_name": "Thị trấn Tam Hồng",
     "ward_code": 9043,
-    "ward_codename": "xa_tam_hong"
+    "ward_codename": "thi_tran_tam_hong"
   },
   {
     "province_name": "Tỉnh Vĩnh Phúc",
@@ -35052,7 +35041,7 @@
     "district_name": "Huyện Vĩnh Tường",
     "district_code": 252,
     "district_codename": "huyen_vinh_tuong",
-    "ward_name": "Thị Trấn Thổ Tang",
+    "ward_name": "Thị trấn Thổ Tang",
     "ward_code": 9112,
     "ward_codename": "thi_tran_tho_tang"
   },
@@ -35775,20 +35764,20 @@
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Huyện Quế Võ",
+    "district_name": "Thị xã Quế Võ",
     "district_code": 259,
-    "district_codename": "huyen_que_vo",
-    "ward_name": "Thị trấn Phố Mới",
+    "district_codename": "thi_xa_que_vo",
+    "ward_name": "Phường Phố Mới",
     "ward_code": 9247,
-    "ward_codename": "thi_tran_pho_moi"
+    "ward_codename": "phuong_pho_moi"
   },
   {
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Huyện Quế Võ",
+    "district_name": "Thị xã Quế Võ",
     "district_code": 259,
-    "district_codename": "huyen_que_vo",
+    "district_codename": "thi_xa_que_vo",
     "ward_name": "Xã Việt Thống",
     "ward_code": 9250,
     "ward_codename": "xa_viet_thong"
@@ -35797,75 +35786,75 @@
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Huyện Quế Võ",
+    "district_name": "Thị xã Quế Võ",
     "district_code": 259,
-    "district_codename": "huyen_que_vo",
-    "ward_name": "Xã Đại Xuân",
+    "district_codename": "thi_xa_que_vo",
+    "ward_name": "Phường Đại Xuân",
     "ward_code": 9253,
-    "ward_codename": "xa_dai_xuan"
+    "ward_codename": "phuong_dai_xuan"
   },
   {
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Huyện Quế Võ",
+    "district_name": "Thị xã Quế Võ",
     "district_code": 259,
-    "district_codename": "huyen_que_vo",
-    "ward_name": "Xã Nhân Hòa",
+    "district_codename": "thi_xa_que_vo",
+    "ward_name": "Phường Nhân Hòa",
     "ward_code": 9259,
-    "ward_codename": "xa_nhan_hoa"
+    "ward_codename": "phuong_nhan_hoa"
   },
   {
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Huyện Quế Võ",
+    "district_name": "Thị xã Quế Võ",
     "district_code": 259,
-    "district_codename": "huyen_que_vo",
-    "ward_name": "Xã Bằng An",
+    "district_codename": "thi_xa_que_vo",
+    "ward_name": "Phường Bằng An",
     "ward_code": 9262,
-    "ward_codename": "xa_bang_an"
+    "ward_codename": "phuong_bang_an"
   },
   {
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Huyện Quế Võ",
+    "district_name": "Thị xã Quế Võ",
     "district_code": 259,
-    "district_codename": "huyen_que_vo",
-    "ward_name": "Xã Phương Liễu",
+    "district_codename": "thi_xa_que_vo",
+    "ward_name": "Phường Phương Liễu",
     "ward_code": 9265,
-    "ward_codename": "xa_phuong_lieu"
+    "ward_codename": "phuong_phuong_lieu"
   },
   {
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Huyện Quế Võ",
+    "district_name": "Thị xã Quế Võ",
     "district_code": 259,
-    "district_codename": "huyen_que_vo",
-    "ward_name": "Xã Quế Tân",
+    "district_codename": "thi_xa_que_vo",
+    "ward_name": "Phường Quế Tân",
     "ward_code": 9268,
-    "ward_codename": "xa_que_tan"
+    "ward_codename": "phuong_que_tan"
   },
   {
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Huyện Quế Võ",
+    "district_name": "Thị xã Quế Võ",
     "district_code": 259,
-    "district_codename": "huyen_que_vo",
-    "ward_name": "Xã Phù Lương",
+    "district_codename": "thi_xa_que_vo",
+    "ward_name": "Phường Phù Lương",
     "ward_code": 9274,
-    "ward_codename": "xa_phu_luong"
+    "ward_codename": "phuong_phu_luong"
   },
   {
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Huyện Quế Võ",
+    "district_name": "Thị xã Quế Võ",
     "district_code": 259,
-    "district_codename": "huyen_que_vo",
+    "district_codename": "thi_xa_que_vo",
     "ward_name": "Xã Phù Lãng",
     "ward_code": 9277,
     "ward_codename": "xa_phu_lang"
@@ -35874,31 +35863,31 @@
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Huyện Quế Võ",
+    "district_name": "Thị xã Quế Võ",
     "district_code": 259,
-    "district_codename": "huyen_que_vo",
-    "ward_name": "Xã Phượng Mao",
+    "district_codename": "thi_xa_que_vo",
+    "ward_name": "Phường Phượng Mao",
     "ward_code": 9280,
-    "ward_codename": "xa_phuong_mao"
+    "ward_codename": "phuong_phuong_mao"
   },
   {
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Huyện Quế Võ",
+    "district_name": "Thị xã Quế Võ",
     "district_code": 259,
-    "district_codename": "huyen_que_vo",
-    "ward_name": "Xã Việt Hùng",
+    "district_codename": "thi_xa_que_vo",
+    "ward_name": "Phường Việt Hùng",
     "ward_code": 9283,
-    "ward_codename": "xa_viet_hung"
+    "ward_codename": "phuong_viet_hung"
   },
   {
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Huyện Quế Võ",
+    "district_name": "Thị xã Quế Võ",
     "district_code": 259,
-    "district_codename": "huyen_que_vo",
+    "district_codename": "thi_xa_que_vo",
     "ward_name": "Xã Ngọc Xá",
     "ward_code": 9289,
     "ward_codename": "xa_ngoc_xa"
@@ -35907,9 +35896,9 @@
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Huyện Quế Võ",
+    "district_name": "Thị xã Quế Võ",
     "district_code": 259,
-    "district_codename": "huyen_que_vo",
+    "district_codename": "thi_xa_que_vo",
     "ward_name": "Xã Châu Phong",
     "ward_code": 9292,
     "ward_codename": "xa_chau_phong"
@@ -35918,31 +35907,31 @@
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Huyện Quế Võ",
+    "district_name": "Thị xã Quế Võ",
     "district_code": 259,
-    "district_codename": "huyen_que_vo",
-    "ward_name": "Xã Bồng Lai",
+    "district_codename": "thi_xa_que_vo",
+    "ward_name": "Phường Bồng Lai",
     "ward_code": 9295,
-    "ward_codename": "xa_bong_lai"
+    "ward_codename": "phuong_bong_lai"
   },
   {
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Huyện Quế Võ",
+    "district_name": "Thị xã Quế Võ",
     "district_code": 259,
-    "district_codename": "huyen_que_vo",
-    "ward_name": "Xã Cách Bi",
+    "district_codename": "thi_xa_que_vo",
+    "ward_name": "Phường Cách Bi",
     "ward_code": 9298,
-    "ward_codename": "xa_cach_bi"
+    "ward_codename": "phuong_cach_bi"
   },
   {
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Huyện Quế Võ",
+    "district_name": "Thị xã Quế Võ",
     "district_code": 259,
-    "district_codename": "huyen_que_vo",
+    "district_codename": "thi_xa_que_vo",
     "ward_name": "Xã Đào Viên",
     "ward_code": 9301,
     "ward_codename": "xa_dao_vien"
@@ -35951,9 +35940,9 @@
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Huyện Quế Võ",
+    "district_name": "Thị xã Quế Võ",
     "district_code": 259,
-    "district_codename": "huyen_que_vo",
+    "district_codename": "thi_xa_que_vo",
     "ward_name": "Xã Yên Giả",
     "ward_code": 9304,
     "ward_codename": "xa_yen_gia"
@@ -35962,9 +35951,9 @@
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Huyện Quế Võ",
+    "district_name": "Thị xã Quế Võ",
     "district_code": 259,
-    "district_codename": "huyen_que_vo",
+    "district_codename": "thi_xa_que_vo",
     "ward_name": "Xã Mộ Đạo",
     "ward_code": 9307,
     "ward_codename": "xa_mo_dao"
@@ -35973,9 +35962,9 @@
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Huyện Quế Võ",
+    "district_name": "Thị xã Quế Võ",
     "district_code": 259,
-    "district_codename": "huyen_que_vo",
+    "district_codename": "thi_xa_que_vo",
     "ward_name": "Xã Đức Long",
     "ward_code": 9310,
     "ward_codename": "xa_duc_long"
@@ -35984,9 +35973,9 @@
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Huyện Quế Võ",
+    "district_name": "Thị xã Quế Võ",
     "district_code": 259,
-    "district_codename": "huyen_que_vo",
+    "district_codename": "thi_xa_que_vo",
     "ward_name": "Xã Chi Lăng",
     "ward_code": 9313,
     "ward_codename": "xa_chi_lang"
@@ -35995,9 +35984,9 @@
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Huyện Quế Võ",
+    "district_name": "Thị xã Quế Võ",
     "district_code": 259,
-    "district_codename": "huyen_que_vo",
+    "district_codename": "thi_xa_que_vo",
     "ward_name": "Xã Hán Quảng",
     "ward_code": 9316,
     "ward_codename": "xa_han_quang"
@@ -36160,9 +36149,9 @@
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Thị xã Từ Sơn",
+    "district_name": "Thành phố Từ Sơn",
     "district_code": 261,
-    "district_codename": "thi_xa_tu_son",
+    "district_codename": "thanh_pho_tu_son",
     "ward_name": "Phường Đông Ngàn",
     "ward_code": 9367,
     "ward_codename": "phuong_dong_ngan"
@@ -36171,9 +36160,9 @@
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Thị xã Từ Sơn",
+    "district_name": "Thành phố Từ Sơn",
     "district_code": 261,
-    "district_codename": "thi_xa_tu_son",
+    "district_codename": "thanh_pho_tu_son",
     "ward_name": "Phường Tam Sơn",
     "ward_code": 9370,
     "ward_codename": "phuong_tam_son"
@@ -36182,9 +36171,9 @@
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Thị xã Từ Sơn",
+    "district_name": "Thành phố Từ Sơn",
     "district_code": 261,
-    "district_codename": "thi_xa_tu_son",
+    "district_codename": "thanh_pho_tu_son",
     "ward_name": "Phường Hương Mạc",
     "ward_code": 9373,
     "ward_codename": "phuong_huong_mac"
@@ -36193,9 +36182,9 @@
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Thị xã Từ Sơn",
+    "district_name": "Thành phố Từ Sơn",
     "district_code": 261,
-    "district_codename": "thi_xa_tu_son",
+    "district_codename": "thanh_pho_tu_son",
     "ward_name": "Phường Tương Giang",
     "ward_code": 9376,
     "ward_codename": "phuong_tuong_giang"
@@ -36204,9 +36193,9 @@
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Thị xã Từ Sơn",
+    "district_name": "Thành phố Từ Sơn",
     "district_code": 261,
-    "district_codename": "thi_xa_tu_son",
+    "district_codename": "thanh_pho_tu_son",
     "ward_name": "Phường Phù Khê",
     "ward_code": 9379,
     "ward_codename": "phuong_phu_khe"
@@ -36215,9 +36204,9 @@
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Thị xã Từ Sơn",
+    "district_name": "Thành phố Từ Sơn",
     "district_code": 261,
-    "district_codename": "thi_xa_tu_son",
+    "district_codename": "thanh_pho_tu_son",
     "ward_name": "Phường Đồng Kỵ",
     "ward_code": 9382,
     "ward_codename": "phuong_dong_ky"
@@ -36226,9 +36215,9 @@
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Thị xã Từ Sơn",
+    "district_name": "Thành phố Từ Sơn",
     "district_code": 261,
-    "district_codename": "thi_xa_tu_son",
+    "district_codename": "thanh_pho_tu_son",
     "ward_name": "Phường Trang Hạ",
     "ward_code": 9383,
     "ward_codename": "phuong_trang_ha"
@@ -36237,9 +36226,9 @@
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Thị xã Từ Sơn",
+    "district_name": "Thành phố Từ Sơn",
     "district_code": 261,
-    "district_codename": "thi_xa_tu_son",
+    "district_codename": "thanh_pho_tu_son",
     "ward_name": "Phường Đồng Nguyên",
     "ward_code": 9385,
     "ward_codename": "phuong_dong_nguyen"
@@ -36248,9 +36237,9 @@
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Thị xã Từ Sơn",
+    "district_name": "Thành phố Từ Sơn",
     "district_code": 261,
-    "district_codename": "thi_xa_tu_son",
+    "district_codename": "thanh_pho_tu_son",
     "ward_name": "Phường Châu Khê",
     "ward_code": 9388,
     "ward_codename": "phuong_chau_khe"
@@ -36259,9 +36248,9 @@
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Thị xã Từ Sơn",
+    "district_name": "Thành phố Từ Sơn",
     "district_code": 261,
-    "district_codename": "thi_xa_tu_son",
+    "district_codename": "thanh_pho_tu_son",
     "ward_name": "Phường Tân Hồng",
     "ward_code": 9391,
     "ward_codename": "phuong_tan_hong"
@@ -36270,9 +36259,9 @@
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Thị xã Từ Sơn",
+    "district_name": "Thành phố Từ Sơn",
     "district_code": 261,
-    "district_codename": "thi_xa_tu_son",
+    "district_codename": "thanh_pho_tu_son",
     "ward_name": "Phường Đình Bảng",
     "ward_code": 9394,
     "ward_codename": "phuong_dinh_bang"
@@ -36281,9 +36270,9 @@
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Thị xã Từ Sơn",
+    "district_name": "Thành phố Từ Sơn",
     "district_code": 261,
-    "district_codename": "thi_xa_tu_son",
+    "district_codename": "thanh_pho_tu_son",
     "ward_name": "Phường Phù Chẩn",
     "ward_code": 9397,
     "ward_codename": "phuong_phu_chan"
@@ -36292,20 +36281,20 @@
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Huyện Thuận Thành",
+    "district_name": "Thị xã Thuận Thành",
     "district_code": 262,
-    "district_codename": "huyen_thuan_thanh",
-    "ward_name": "Thị trấn Hồ",
+    "district_codename": "thi_xa_thuan_thanh",
+    "ward_name": "Phường Hồ",
     "ward_code": 9400,
-    "ward_codename": "thi_tran_ho"
+    "ward_codename": "phuong_ho"
   },
   {
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Huyện Thuận Thành",
+    "district_name": "Thị xã Thuận Thành",
     "district_code": 262,
-    "district_codename": "huyen_thuan_thanh",
+    "district_codename": "thi_xa_thuan_thanh",
     "ward_name": "Xã Hoài Thượng",
     "ward_code": 9403,
     "ward_codename": "xa_hoai_thuong"
@@ -36314,9 +36303,9 @@
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Huyện Thuận Thành",
+    "district_name": "Thị xã Thuận Thành",
     "district_code": 262,
-    "district_codename": "huyen_thuan_thanh",
+    "district_codename": "thi_xa_thuan_thanh",
     "ward_name": "Xã Đại Đồng Thành",
     "ward_code": 9406,
     "ward_codename": "xa_dai_dong_thanh"
@@ -36325,9 +36314,9 @@
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Huyện Thuận Thành",
+    "district_name": "Thị xã Thuận Thành",
     "district_code": 262,
-    "district_codename": "huyen_thuan_thanh",
+    "district_codename": "thi_xa_thuan_thanh",
     "ward_name": "Xã Mão Điền",
     "ward_code": 9409,
     "ward_codename": "xa_mao_dien"
@@ -36336,20 +36325,20 @@
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Huyện Thuận Thành",
+    "district_name": "Thị xã Thuận Thành",
     "district_code": 262,
-    "district_codename": "huyen_thuan_thanh",
-    "ward_name": "Xã Song Hồ",
+    "district_codename": "thi_xa_thuan_thanh",
+    "ward_name": "Phường Song Hồ",
     "ward_code": 9412,
-    "ward_codename": "xa_song_ho"
+    "ward_codename": "phuong_song_ho"
   },
   {
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Huyện Thuận Thành",
+    "district_name": "Thị xã Thuận Thành",
     "district_code": 262,
-    "district_codename": "huyen_thuan_thanh",
+    "district_codename": "thi_xa_thuan_thanh",
     "ward_name": "Xã Đình Tổ",
     "ward_code": 9415,
     "ward_codename": "xa_dinh_to"
@@ -36358,86 +36347,86 @@
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Huyện Thuận Thành",
+    "district_name": "Thị xã Thuận Thành",
     "district_code": 262,
-    "district_codename": "huyen_thuan_thanh",
-    "ward_name": "Xã An Bình",
+    "district_codename": "thi_xa_thuan_thanh",
+    "ward_name": "Phường An Bình",
     "ward_code": 9418,
-    "ward_codename": "xa_an_binh"
+    "ward_codename": "phuong_an_binh"
   },
   {
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Huyện Thuận Thành",
+    "district_name": "Thị xã Thuận Thành",
     "district_code": 262,
-    "district_codename": "huyen_thuan_thanh",
-    "ward_name": "Xã Trí Quả",
+    "district_codename": "thi_xa_thuan_thanh",
+    "ward_name": "Phường Trí Quả",
     "ward_code": 9421,
-    "ward_codename": "xa_tri_qua"
+    "ward_codename": "phuong_tri_qua"
   },
   {
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Huyện Thuận Thành",
+    "district_name": "Thị xã Thuận Thành",
     "district_code": 262,
-    "district_codename": "huyen_thuan_thanh",
-    "ward_name": "Xã Gia Đông",
+    "district_codename": "thi_xa_thuan_thanh",
+    "ward_name": "Phường Gia Đông",
     "ward_code": 9424,
-    "ward_codename": "xa_gia_dong"
+    "ward_codename": "phuong_gia_dong"
   },
   {
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Huyện Thuận Thành",
+    "district_name": "Thị xã Thuận Thành",
     "district_code": 262,
-    "district_codename": "huyen_thuan_thanh",
-    "ward_name": "Xã Thanh Khương",
+    "district_codename": "thi_xa_thuan_thanh",
+    "ward_name": "Phường Thanh Khương",
     "ward_code": 9427,
-    "ward_codename": "xa_thanh_khuong"
+    "ward_codename": "phuong_thanh_khuong"
   },
   {
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Huyện Thuận Thành",
+    "district_name": "Thị xã Thuận Thành",
     "district_code": 262,
-    "district_codename": "huyen_thuan_thanh",
-    "ward_name": "Xã Trạm Lộ",
+    "district_codename": "thi_xa_thuan_thanh",
+    "ward_name": "Phường Trạm Lộ",
     "ward_code": 9430,
-    "ward_codename": "xa_tram_lo"
+    "ward_codename": "phuong_tram_lo"
   },
   {
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Huyện Thuận Thành",
+    "district_name": "Thị xã Thuận Thành",
     "district_code": 262,
-    "district_codename": "huyen_thuan_thanh",
-    "ward_name": "Xã Xuân Lâm",
+    "district_codename": "thi_xa_thuan_thanh",
+    "ward_name": "Phường Xuân Lâm",
     "ward_code": 9433,
-    "ward_codename": "xa_xuan_lam"
+    "ward_codename": "phuong_xuan_lam"
   },
   {
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Huyện Thuận Thành",
+    "district_name": "Thị xã Thuận Thành",
     "district_code": 262,
-    "district_codename": "huyen_thuan_thanh",
-    "ward_name": "Xã Hà Mãn",
+    "district_codename": "thi_xa_thuan_thanh",
+    "ward_name": "Phường Hà Mãn",
     "ward_code": 9436,
-    "ward_codename": "xa_ha_man"
+    "ward_codename": "phuong_ha_man"
   },
   {
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Huyện Thuận Thành",
+    "district_name": "Thị xã Thuận Thành",
     "district_code": 262,
-    "district_codename": "huyen_thuan_thanh",
+    "district_codename": "thi_xa_thuan_thanh",
     "ward_name": "Xã Ngũ Thái",
     "ward_code": 9439,
     "ward_codename": "xa_ngu_thai"
@@ -36446,9 +36435,9 @@
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Huyện Thuận Thành",
+    "district_name": "Thị xã Thuận Thành",
     "district_code": 262,
-    "district_codename": "huyen_thuan_thanh",
+    "district_codename": "thi_xa_thuan_thanh",
     "ward_name": "Xã Nguyệt Đức",
     "ward_code": 9442,
     "ward_codename": "xa_nguyet_duc"
@@ -36457,20 +36446,20 @@
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Huyện Thuận Thành",
+    "district_name": "Thị xã Thuận Thành",
     "district_code": 262,
-    "district_codename": "huyen_thuan_thanh",
-    "ward_name": "Xã Ninh Xá",
+    "district_codename": "thi_xa_thuan_thanh",
+    "ward_name": "Phường Ninh Xá",
     "ward_code": 9445,
-    "ward_codename": "xa_ninh_xa"
+    "ward_codename": "phuong_ninh_xa"
   },
   {
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Huyện Thuận Thành",
+    "district_name": "Thị xã Thuận Thành",
     "district_code": 262,
-    "district_codename": "huyen_thuan_thanh",
+    "district_codename": "thi_xa_thuan_thanh",
     "ward_name": "Xã Nghĩa Đạo",
     "ward_code": 9448,
     "ward_codename": "xa_nghia_dao"
@@ -36479,9 +36468,9 @@
     "province_name": "Tỉnh Bắc Ninh",
     "province_code": 27,
     "province_codename": "tinh_bac_ninh",
-    "district_name": "Huyện Thuận Thành",
+    "district_name": "Thị xã Thuận Thành",
     "district_code": 262,
-    "district_codename": "huyen_thuan_thanh",
+    "district_codename": "thi_xa_thuan_thanh",
     "ward_name": "Xã Song Liễu",
     "ward_code": 9451,
     "ward_codename": "xa_song_lieu"
@@ -39540,6 +39529,17 @@
     "district_name": "Quận Ngô Quyền",
     "district_code": 304,
     "district_codename": "quan_ngo_quyen",
+    "ward_name": "Phường Cầu Đất",
+    "ward_code": 11344,
+    "ward_codename": "phuong_cau_dat"
+  },
+  {
+    "province_name": "Thành phố Hải Phòng",
+    "province_code": 31,
+    "province_codename": "thanh_pho_hai_phong",
+    "district_name": "Quận Ngô Quyền",
+    "district_code": 304,
+    "district_codename": "quan_ngo_quyen",
     "ward_name": "Phường Gia Viên",
     "ward_code": 11347,
     "ward_codename": "phuong_gia_vien"
@@ -39554,17 +39554,6 @@
     "ward_name": "Phường Đông Khê",
     "ward_code": 11350,
     "ward_codename": "phuong_dong_khe"
-  },
-  {
-    "province_name": "Thành phố Hải Phòng",
-    "province_code": 31,
-    "province_codename": "thanh_pho_hai_phong",
-    "district_name": "Quận Ngô Quyền",
-    "district_code": 304,
-    "district_codename": "quan_ngo_quyen",
-    "ward_name": "Phường Cầu Đất",
-    "ward_code": 11353,
-    "ward_codename": "phuong_cau_dat"
   },
   {
     "province_name": "Thành phố Hải Phòng",
@@ -52971,7 +52960,7 @@
     "district_name": "Huyện Ngọc Lặc",
     "district_code": 389,
     "district_codename": "huyen_ngoc_lac",
-    "ward_name": "Thị Trấn Ngọc Lặc",
+    "ward_name": "Thị trấn Ngọc Lặc",
     "ward_code": 15061,
     "ward_codename": "thi_tran_ngoc_lac"
   },
@@ -54038,9 +54027,9 @@
     "district_name": "Huyện Yên Định",
     "district_code": 394,
     "district_codename": "huyen_yen_dinh",
-    "ward_name": "Xã Yên Lâm",
+    "ward_name": "Thị trấn Yên Lâm",
     "ward_code": 15403,
-    "ward_codename": "xa_yen_lam"
+    "ward_codename": "thi_tran_yen_lam"
   },
   {
     "province_name": "Tỉnh Thanh Hóa",
@@ -54071,9 +54060,9 @@
     "district_name": "Huyện Yên Định",
     "district_code": 394,
     "district_codename": "huyen_yen_dinh",
-    "ward_name": "Xã Quí Lộc",
+    "ward_name": "Thị trấn Quý Lộc",
     "ward_code": 15412,
-    "ward_codename": "xa_qui_loc"
+    "ward_codename": "thi_tran_quy_loc"
   },
   {
     "province_name": "Tỉnh Thanh Hóa",
@@ -67920,7 +67909,7 @@
     "district_name": "Huyện Triệu Phong",
     "district_code": 469,
     "district_codename": "huyen_trieu_phong",
-    "ward_name": "Thị Trấn Ái Tử",
+    "ward_name": "Thị trấn Ái Tử",
     "ward_code": 19624,
     "ward_codename": "thi_tran_ai_tu"
   },
@@ -68305,28 +68294,6 @@
     "district_name": "Thành phố Huế",
     "district_code": 474,
     "district_codename": "thanh_pho_hue",
-    "ward_name": "Phường Phú Thuận",
-    "ward_code": 19744,
-    "ward_codename": "phuong_phu_thuan"
-  },
-  {
-    "province_name": "Tỉnh Thừa Thiên Huế",
-    "province_code": 46,
-    "province_codename": "tinh_thua_thien_hue",
-    "district_name": "Thành phố Huế",
-    "district_code": 474,
-    "district_codename": "thanh_pho_hue",
-    "ward_name": "Phường Phú Bình",
-    "ward_code": 19747,
-    "ward_codename": "phuong_phu_binh"
-  },
-  {
-    "province_name": "Tỉnh Thừa Thiên Huế",
-    "province_code": 46,
-    "province_codename": "tinh_thua_thien_hue",
-    "district_name": "Thành phố Huế",
-    "district_code": 474,
-    "district_codename": "thanh_pho_hue",
     "ward_name": "Phường Tây Lộc",
     "ward_code": 19750,
     "ward_codename": "phuong_tay_loc"
@@ -68349,9 +68316,9 @@
     "district_name": "Thành phố Huế",
     "district_code": 474,
     "district_codename": "thanh_pho_hue",
-    "ward_name": "Phường Phú Hiệp",
+    "ward_name": "Phường Gia Hội",
     "ward_code": 19756,
-    "ward_codename": "phuong_phu_hiep"
+    "ward_codename": "phuong_gia_hoi"
   },
   {
     "province_name": "Tỉnh Thừa Thiên Huế",
@@ -68382,31 +68349,9 @@
     "district_name": "Thành phố Huế",
     "district_code": 474,
     "district_codename": "thanh_pho_hue",
-    "ward_name": "Phường Thuận Thành",
-    "ward_code": 19765,
-    "ward_codename": "phuong_thuan_thanh"
-  },
-  {
-    "province_name": "Tỉnh Thừa Thiên Huế",
-    "province_code": 46,
-    "province_codename": "tinh_thua_thien_hue",
-    "district_name": "Thành phố Huế",
-    "district_code": 474,
-    "district_codename": "thanh_pho_hue",
-    "ward_name": "Phường Phú Hòa",
+    "ward_name": "Phường Đông Ba",
     "ward_code": 19768,
-    "ward_codename": "phuong_phu_hoa"
-  },
-  {
-    "province_name": "Tỉnh Thừa Thiên Huế",
-    "province_code": 46,
-    "province_codename": "tinh_thua_thien_hue",
-    "district_name": "Thành phố Huế",
-    "district_code": 474,
-    "district_codename": "thanh_pho_hue",
-    "ward_name": "Phường Phú Cát",
-    "ward_code": 19771,
-    "ward_codename": "phuong_phu_cat"
+    "ward_codename": "phuong_dong_ba"
   },
   {
     "province_name": "Tỉnh Thừa Thiên Huế",
@@ -68594,6 +68539,149 @@
     "ward_name": "Phường An Tây",
     "ward_code": 19816,
     "ward_codename": "phuong_an_tay"
+  },
+  {
+    "province_name": "Tỉnh Thừa Thiên Huế",
+    "province_code": 46,
+    "province_codename": "tinh_thua_thien_hue",
+    "district_name": "Thành phố Huế",
+    "district_code": 474,
+    "district_codename": "thanh_pho_hue",
+    "ward_name": "Phường Thuận An",
+    "ward_code": 19900,
+    "ward_codename": "phuong_thuan_an"
+  },
+  {
+    "province_name": "Tỉnh Thừa Thiên Huế",
+    "province_code": 46,
+    "province_codename": "tinh_thua_thien_hue",
+    "district_name": "Thành phố Huế",
+    "district_code": 474,
+    "district_codename": "thanh_pho_hue",
+    "ward_name": "Xã Phú Dương",
+    "ward_code": 19906,
+    "ward_codename": "xa_phu_duong"
+  },
+  {
+    "province_name": "Tỉnh Thừa Thiên Huế",
+    "province_code": 46,
+    "province_codename": "tinh_thua_thien_hue",
+    "district_name": "Thành phố Huế",
+    "district_code": 474,
+    "district_codename": "thanh_pho_hue",
+    "ward_name": "Xã Phú Mậu",
+    "ward_code": 19909,
+    "ward_codename": "xa_phu_mau"
+  },
+  {
+    "province_name": "Tỉnh Thừa Thiên Huế",
+    "province_code": 46,
+    "province_codename": "tinh_thua_thien_hue",
+    "district_name": "Thành phố Huế",
+    "district_code": 474,
+    "district_codename": "thanh_pho_hue",
+    "ward_name": "Xã Phú Thanh",
+    "ward_code": 19924,
+    "ward_codename": "xa_phu_thanh"
+  },
+  {
+    "province_name": "Tỉnh Thừa Thiên Huế",
+    "province_code": 46,
+    "province_codename": "tinh_thua_thien_hue",
+    "district_name": "Thành phố Huế",
+    "district_code": 474,
+    "district_codename": "thanh_pho_hue",
+    "ward_name": "Phường Phú Thượng",
+    "ward_code": 19930,
+    "ward_codename": "phuong_phu_thuong"
+  },
+  {
+    "province_name": "Tỉnh Thừa Thiên Huế",
+    "province_code": 46,
+    "province_codename": "tinh_thua_thien_hue",
+    "district_name": "Thành phố Huế",
+    "district_code": 474,
+    "district_codename": "thanh_pho_hue",
+    "ward_name": "Phường Thủy Vân",
+    "ward_code": 19963,
+    "ward_codename": "phuong_thuy_van"
+  },
+  {
+    "province_name": "Tỉnh Thừa Thiên Huế",
+    "province_code": 46,
+    "province_codename": "tinh_thua_thien_hue",
+    "district_name": "Thành phố Huế",
+    "district_code": 474,
+    "district_codename": "thanh_pho_hue",
+    "ward_name": "Xã Thủy Bằng",
+    "ward_code": 19981,
+    "ward_codename": "xa_thuy_bang"
+  },
+  {
+    "province_name": "Tỉnh Thừa Thiên Huế",
+    "province_code": 46,
+    "province_codename": "tinh_thua_thien_hue",
+    "district_name": "Thành phố Huế",
+    "district_code": 474,
+    "district_codename": "thanh_pho_hue",
+    "ward_name": "Xã Hải Dương",
+    "ward_code": 19999,
+    "ward_codename": "xa_hai_duong"
+  },
+  {
+    "province_name": "Tỉnh Thừa Thiên Huế",
+    "province_code": 46,
+    "province_codename": "tinh_thua_thien_hue",
+    "district_name": "Thành phố Huế",
+    "district_code": 474,
+    "district_codename": "thanh_pho_hue",
+    "ward_name": "Xã Hương Phong",
+    "ward_code": 20002,
+    "ward_codename": "xa_huong_phong"
+  },
+  {
+    "province_name": "Tỉnh Thừa Thiên Huế",
+    "province_code": 46,
+    "province_codename": "tinh_thua_thien_hue",
+    "district_name": "Thành phố Huế",
+    "district_code": 474,
+    "district_codename": "thanh_pho_hue",
+    "ward_name": "Phường Hương Vinh",
+    "ward_code": 20014,
+    "ward_codename": "phuong_huong_vinh"
+  },
+  {
+    "province_name": "Tỉnh Thừa Thiên Huế",
+    "province_code": 46,
+    "province_codename": "tinh_thua_thien_hue",
+    "district_name": "Thành phố Huế",
+    "district_code": 474,
+    "district_codename": "thanh_pho_hue",
+    "ward_name": "Phường Hương An",
+    "ward_code": 20023,
+    "ward_codename": "phuong_huong_an"
+  },
+  {
+    "province_name": "Tỉnh Thừa Thiên Huế",
+    "province_code": 46,
+    "province_codename": "tinh_thua_thien_hue",
+    "district_name": "Thành phố Huế",
+    "district_code": 474,
+    "district_codename": "thanh_pho_hue",
+    "ward_name": "Phường Hương Hồ",
+    "ward_code": 20029,
+    "ward_codename": "phuong_huong_ho"
+  },
+  {
+    "province_name": "Tỉnh Thừa Thiên Huế",
+    "province_code": 46,
+    "province_codename": "tinh_thua_thien_hue",
+    "district_name": "Thành phố Huế",
+    "district_code": 474,
+    "district_codename": "thanh_pho_hue",
+    "ward_name": "Xã Hương Thọ",
+    "ward_code": 20032,
+    "ward_codename": "xa_huong_tho"
   },
   {
     "province_name": "Tỉnh Thừa Thiên Huế",
@@ -68899,42 +68987,9 @@
     "district_name": "Huyện Phú Vang",
     "district_code": 478,
     "district_codename": "huyen_phu_vang",
-    "ward_name": "Thị trấn Thuận An",
-    "ward_code": 19900,
-    "ward_codename": "thi_tran_thuan_an"
-  },
-  {
-    "province_name": "Tỉnh Thừa Thiên Huế",
-    "province_code": 46,
-    "province_codename": "tinh_thua_thien_hue",
-    "district_name": "Huyện Phú Vang",
-    "district_code": 478,
-    "district_codename": "huyen_phu_vang",
     "ward_name": "Xã Phú Thuận",
     "ward_code": 19903,
     "ward_codename": "xa_phu_thuan"
-  },
-  {
-    "province_name": "Tỉnh Thừa Thiên Huế",
-    "province_code": 46,
-    "province_codename": "tinh_thua_thien_hue",
-    "district_name": "Huyện Phú Vang",
-    "district_code": 478,
-    "district_codename": "huyen_phu_vang",
-    "ward_name": "Xã Phú Dương",
-    "ward_code": 19906,
-    "ward_codename": "xa_phu_duong"
-  },
-  {
-    "province_name": "Tỉnh Thừa Thiên Huế",
-    "province_code": 46,
-    "province_codename": "tinh_thua_thien_hue",
-    "district_name": "Huyện Phú Vang",
-    "district_code": 478,
-    "district_codename": "huyen_phu_vang",
-    "ward_name": "Xã Phú Mậu",
-    "ward_code": 19909,
-    "ward_codename": "xa_phu_mau"
   },
   {
     "province_name": "Tỉnh Thừa Thiên Huế",
@@ -68987,31 +69042,9 @@
     "district_name": "Huyện Phú Vang",
     "district_code": 478,
     "district_codename": "huyen_phu_vang",
-    "ward_name": "Xã Phú Thanh",
-    "ward_code": 19924,
-    "ward_codename": "xa_phu_thanh"
-  },
-  {
-    "province_name": "Tỉnh Thừa Thiên Huế",
-    "province_code": 46,
-    "province_codename": "tinh_thua_thien_hue",
-    "district_name": "Huyện Phú Vang",
-    "district_code": 478,
-    "district_codename": "huyen_phu_vang",
     "ward_name": "Xã Phú Mỹ",
     "ward_code": 19927,
     "ward_codename": "xa_phu_my"
-  },
-  {
-    "province_name": "Tỉnh Thừa Thiên Huế",
-    "province_code": 46,
-    "province_codename": "tinh_thua_thien_hue",
-    "district_name": "Huyện Phú Vang",
-    "district_code": 478,
-    "district_codename": "huyen_phu_vang",
-    "ward_name": "Xã Phú Thượng",
-    "ward_code": 19930,
-    "ward_codename": "xa_phu_thuong"
   },
   {
     "province_name": "Tỉnh Thừa Thiên Huế",
@@ -69119,17 +69152,6 @@
     "district_name": "Thị xã Hương Thủy",
     "district_code": 479,
     "district_codename": "thi_xa_huong_thuy",
-    "ward_name": "Xã Thủy Vân",
-    "ward_code": 19963,
-    "ward_codename": "xa_thuy_van"
-  },
-  {
-    "province_name": "Tỉnh Thừa Thiên Huế",
-    "province_code": 46,
-    "province_codename": "tinh_thua_thien_hue",
-    "district_name": "Thị xã Hương Thủy",
-    "district_code": 479,
-    "district_codename": "thi_xa_huong_thuy",
     "ward_name": "Xã Thủy Thanh",
     "ward_code": 19966,
     "ward_codename": "xa_thuy_thanh"
@@ -69177,17 +69199,6 @@
     "ward_name": "Phường Thủy Lương",
     "ward_code": 19978,
     "ward_codename": "phuong_thuy_luong"
-  },
-  {
-    "province_name": "Tỉnh Thừa Thiên Huế",
-    "province_code": 46,
-    "province_codename": "tinh_thua_thien_hue",
-    "district_name": "Thị xã Hương Thủy",
-    "district_code": 479,
-    "district_codename": "thi_xa_huong_thuy",
-    "ward_name": "Xã Thủy Bằng",
-    "ward_code": 19981,
-    "ward_codename": "xa_thuy_bang"
   },
   {
     "province_name": "Tỉnh Thừa Thiên Huế",
@@ -69251,28 +69262,6 @@
     "district_name": "Thị xã Hương Trà",
     "district_code": 480,
     "district_codename": "thi_xa_huong_tra",
-    "ward_name": "Xã Hải Dương",
-    "ward_code": 19999,
-    "ward_codename": "xa_hai_duong"
-  },
-  {
-    "province_name": "Tỉnh Thừa Thiên Huế",
-    "province_code": 46,
-    "province_codename": "tinh_thua_thien_hue",
-    "district_name": "Thị xã Hương Trà",
-    "district_code": 480,
-    "district_codename": "thi_xa_huong_tra",
-    "ward_name": "Xã Hương Phong",
-    "ward_code": 20002,
-    "ward_codename": "xa_huong_phong"
-  },
-  {
-    "province_name": "Tỉnh Thừa Thiên Huế",
-    "province_code": 46,
-    "province_codename": "tinh_thua_thien_hue",
-    "district_name": "Thị xã Hương Trà",
-    "district_code": 480,
-    "district_codename": "thi_xa_huong_tra",
     "ward_name": "Xã Hương Toàn",
     "ward_code": 20005,
     "ward_codename": "xa_huong_toan"
@@ -69306,17 +69295,6 @@
     "district_name": "Thị xã Hương Trà",
     "district_code": 480,
     "district_codename": "thi_xa_huong_tra",
-    "ward_name": "Xã Hương Vinh",
-    "ward_code": 20014,
-    "ward_codename": "xa_huong_vinh"
-  },
-  {
-    "province_name": "Tỉnh Thừa Thiên Huế",
-    "province_code": 46,
-    "province_codename": "tinh_thua_thien_hue",
-    "district_name": "Thị xã Hương Trà",
-    "district_code": 480,
-    "district_codename": "thi_xa_huong_tra",
     "ward_name": "Phường Hương Xuân",
     "ward_code": 20017,
     "ward_codename": "phuong_huong_xuan"
@@ -69339,42 +69317,9 @@
     "district_name": "Thị xã Hương Trà",
     "district_code": 480,
     "district_codename": "thi_xa_huong_tra",
-    "ward_name": "Phường Hương An",
-    "ward_code": 20023,
-    "ward_codename": "phuong_huong_an"
-  },
-  {
-    "province_name": "Tỉnh Thừa Thiên Huế",
-    "province_code": 46,
-    "province_codename": "tinh_thua_thien_hue",
-    "district_name": "Thị xã Hương Trà",
-    "district_code": 480,
-    "district_codename": "thi_xa_huong_tra",
     "ward_name": "Xã Hương Bình",
     "ward_code": 20026,
     "ward_codename": "xa_huong_binh"
-  },
-  {
-    "province_name": "Tỉnh Thừa Thiên Huế",
-    "province_code": 46,
-    "province_codename": "tinh_thua_thien_hue",
-    "district_name": "Thị xã Hương Trà",
-    "district_code": 480,
-    "district_codename": "thi_xa_huong_tra",
-    "ward_name": "Phường Hương Hồ",
-    "ward_code": 20029,
-    "ward_codename": "phuong_huong_ho"
-  },
-  {
-    "province_name": "Tỉnh Thừa Thiên Huế",
-    "province_code": 46,
-    "province_codename": "tinh_thua_thien_hue",
-    "district_name": "Thị xã Hương Trà",
-    "district_code": 480,
-    "district_codename": "thi_xa_huong_tra",
-    "ward_name": "Xã Hương Thọ",
-    "ward_code": 20032,
-    "ward_codename": "xa_huong_tho"
   },
   {
     "province_name": "Tỉnh Thừa Thiên Huế",
@@ -71044,7 +70989,7 @@
     "district_name": "Huyện Đại Lộc",
     "district_code": 506,
     "district_codename": "huyen_dai_loc",
-    "ward_name": "Thị Trấn Ái Nghĩa",
+    "ward_name": "Thị trấn Ái Nghĩa",
     "ward_code": 20500,
     "ward_codename": "thi_tran_ai_nghia"
   },
@@ -71275,9 +71220,9 @@
     "district_name": "Thị xã Điện Bàn",
     "district_code": 507,
     "district_codename": "thi_xa_dien_ban",
-    "ward_name": "Xã Điện Thắng Bắc",
+    "ward_name": "Phường Điện Thắng Bắc",
     "ward_code": 20560,
-    "ward_codename": "xa_dien_thang_bac"
+    "ward_codename": "phuong_dien_thang_bac"
   },
   {
     "province_name": "Tỉnh Quảng Nam",
@@ -71286,9 +71231,9 @@
     "district_name": "Thị xã Điện Bàn",
     "district_code": 507,
     "district_codename": "thi_xa_dien_ban",
-    "ward_name": "Xã Điện Thắng Trung",
+    "ward_name": "Phường Điện Thắng Trung",
     "ward_code": 20561,
-    "ward_codename": "xa_dien_thang_trung"
+    "ward_codename": "phuong_dien_thang_trung"
   },
   {
     "province_name": "Tỉnh Quảng Nam",
@@ -71297,9 +71242,9 @@
     "district_name": "Thị xã Điện Bàn",
     "district_code": 507,
     "district_codename": "thi_xa_dien_ban",
-    "ward_name": "Xã Điện Thắng Nam",
+    "ward_name": "Phường Điện Thắng Nam",
     "ward_code": 20562,
-    "ward_codename": "xa_dien_thang_nam"
+    "ward_codename": "phuong_dien_thang_nam"
   },
   {
     "province_name": "Tỉnh Quảng Nam",
@@ -71440,9 +71385,9 @@
     "district_name": "Thị xã Điện Bàn",
     "district_code": 507,
     "district_codename": "thi_xa_dien_ban",
-    "ward_name": "Xã Điện Minh",
+    "ward_name": "Phường Điện Minh",
     "ward_code": 20593,
-    "ward_codename": "xa_dien_minh"
+    "ward_codename": "phuong_dien_minh"
   },
   {
     "province_name": "Tỉnh Quảng Nam",
@@ -71451,9 +71396,9 @@
     "district_name": "Thị xã Điện Bàn",
     "district_code": 507,
     "district_codename": "thi_xa_dien_ban",
-    "ward_name": "Xã Điện Phương",
+    "ward_name": "Phường Điện Phương",
     "ward_code": 20596,
-    "ward_codename": "xa_dien_phuong"
+    "ward_codename": "phuong_dien_phuong"
   },
   {
     "province_name": "Tỉnh Quảng Nam",
@@ -73112,9 +73057,9 @@
     "district_name": "Huyện Nông Sơn",
     "district_code": 519,
     "district_codename": "huyen_nong_son",
-    "ward_name": "Xã Quế Trung",
+    "ward_name": "Thị trấn Trung Phước",
     "ward_code": 20656,
-    "ward_codename": "xa_que_trung"
+    "ward_codename": "thi_tran_trung_phuoc"
   },
   {
     "province_name": "Tỉnh Quảng Nam",
@@ -73431,7 +73376,7 @@
     "district_name": "Huyện Bình Sơn",
     "district_code": 524,
     "district_codename": "huyen_binh_son",
-    "ward_name": "Thị Trấn Châu Ổ",
+    "ward_name": "Thị trấn Châu Ổ",
     "ward_code": 21040,
     "ward_codename": "thi_tran_chau_o"
   },
@@ -77908,7 +77853,7 @@
     "district_name": "Huyện Phú Hoà",
     "district_code": 563,
     "district_codename": "huyen_phu_hoa",
-    "ward_name": "Thị Trấn Phú Hoà",
+    "ward_name": "Thị trấn Phú Hoà",
     "ward_code": 22319,
     "ward_codename": "thi_tran_phu_hoa"
   },
@@ -85429,7 +85374,7 @@
     "province_name": "Tỉnh Đắk Lắk",
     "province_code": 66,
     "province_codename": "tinh_dak_lak",
-    "district_name": "Thị Xã Buôn Hồ",
+    "district_name": "Thị xã Buôn Hồ",
     "district_code": 644,
     "district_codename": "thi_xa_buon_ho",
     "ward_name": "Phường An Lạc",
@@ -85440,7 +85385,7 @@
     "province_name": "Tỉnh Đắk Lắk",
     "province_code": 66,
     "province_codename": "tinh_dak_lak",
-    "district_name": "Thị Xã Buôn Hồ",
+    "district_name": "Thị xã Buôn Hồ",
     "district_code": 644,
     "district_codename": "thi_xa_buon_ho",
     "ward_name": "Phường An Bình",
@@ -85451,7 +85396,7 @@
     "province_name": "Tỉnh Đắk Lắk",
     "province_code": 66,
     "province_codename": "tinh_dak_lak",
-    "district_name": "Thị Xã Buôn Hồ",
+    "district_name": "Thị xã Buôn Hồ",
     "district_code": 644,
     "district_codename": "thi_xa_buon_ho",
     "ward_name": "Phường Thiện An",
@@ -85462,7 +85407,7 @@
     "province_name": "Tỉnh Đắk Lắk",
     "province_code": 66,
     "province_codename": "tinh_dak_lak",
-    "district_name": "Thị Xã Buôn Hồ",
+    "district_name": "Thị xã Buôn Hồ",
     "district_code": 644,
     "district_codename": "thi_xa_buon_ho",
     "ward_name": "Phường Đạt Hiếu",
@@ -85473,7 +85418,7 @@
     "province_name": "Tỉnh Đắk Lắk",
     "province_code": 66,
     "province_codename": "tinh_dak_lak",
-    "district_name": "Thị Xã Buôn Hồ",
+    "district_name": "Thị xã Buôn Hồ",
     "district_code": 644,
     "district_codename": "thi_xa_buon_ho",
     "ward_name": "Phường Đoàn Kết",
@@ -85484,7 +85429,7 @@
     "province_name": "Tỉnh Đắk Lắk",
     "province_code": 66,
     "province_codename": "tinh_dak_lak",
-    "district_name": "Thị Xã Buôn Hồ",
+    "district_name": "Thị xã Buôn Hồ",
     "district_code": 644,
     "district_codename": "thi_xa_buon_ho",
     "ward_name": "Xã Ea Blang",
@@ -85495,7 +85440,7 @@
     "province_name": "Tỉnh Đắk Lắk",
     "province_code": 66,
     "province_codename": "tinh_dak_lak",
-    "district_name": "Thị Xã Buôn Hồ",
+    "district_name": "Thị xã Buôn Hồ",
     "district_code": 644,
     "district_codename": "thi_xa_buon_ho",
     "ward_name": "Xã Ea Drông",
@@ -85506,7 +85451,7 @@
     "province_name": "Tỉnh Đắk Lắk",
     "province_code": 66,
     "province_codename": "tinh_dak_lak",
-    "district_name": "Thị Xã Buôn Hồ",
+    "district_name": "Thị xã Buôn Hồ",
     "district_code": 644,
     "district_codename": "thi_xa_buon_ho",
     "ward_name": "Phường Thống Nhất",
@@ -85517,7 +85462,7 @@
     "province_name": "Tỉnh Đắk Lắk",
     "province_code": 66,
     "province_codename": "tinh_dak_lak",
-    "district_name": "Thị Xã Buôn Hồ",
+    "district_name": "Thị xã Buôn Hồ",
     "district_code": 644,
     "district_codename": "thi_xa_buon_ho",
     "ward_name": "Phường Bình Tân",
@@ -85528,7 +85473,7 @@
     "province_name": "Tỉnh Đắk Lắk",
     "province_code": 66,
     "province_codename": "tinh_dak_lak",
-    "district_name": "Thị Xã Buôn Hồ",
+    "district_name": "Thị xã Buôn Hồ",
     "district_code": 644,
     "district_codename": "thi_xa_buon_ho",
     "ward_name": "Xã Ea Siên",
@@ -85539,7 +85484,7 @@
     "province_name": "Tỉnh Đắk Lắk",
     "province_code": 66,
     "province_codename": "tinh_dak_lak",
-    "district_name": "Thị Xã Buôn Hồ",
+    "district_name": "Thị xã Buôn Hồ",
     "district_code": 644,
     "district_codename": "thi_xa_buon_ho",
     "ward_name": "Xã Bình Thuận",
@@ -85550,7 +85495,7 @@
     "province_name": "Tỉnh Đắk Lắk",
     "province_code": 66,
     "province_codename": "tinh_dak_lak",
-    "district_name": "Thị Xã Buôn Hồ",
+    "district_name": "Thị xã Buôn Hồ",
     "district_code": 644,
     "district_codename": "thi_xa_buon_ho",
     "ward_name": "Xã Cư Bao",
@@ -86114,9 +86059,9 @@
     "district_name": "Huyện Krông Búk",
     "district_code": 649,
     "district_codename": "huyen_krong_buk",
-    "ward_name": "Xã Pơng Drang",
+    "ward_name": "Thị trấn Pơng Drang",
     "ward_code": 24316,
-    "ward_codename": "xa_pong_drang"
+    "ward_codename": "thi_tran_pong_drang"
   },
   {
     "province_name": "Tỉnh Đắk Lắk",
@@ -90577,31 +90522,31 @@
     "province_name": "Tỉnh Bình Phước",
     "province_code": 70,
     "province_codename": "tinh_binh_phuoc",
-    "district_name": "Huyện Chơn Thành",
+    "district_name": "Thị xã Chơn Thành",
     "district_code": 697,
-    "district_codename": "huyen_chon_thanh",
-    "ward_name": "Thị trấn Chơn Thành",
+    "district_codename": "thi_xa_chon_thanh",
+    "ward_name": "Phường Hưng Long",
     "ward_code": 25432,
-    "ward_codename": "thi_tran_chon_thanh"
+    "ward_codename": "phuong_hung_long"
   },
   {
     "province_name": "Tỉnh Bình Phước",
     "province_code": 70,
     "province_codename": "tinh_binh_phuoc",
-    "district_name": "Huyện Chơn Thành",
+    "district_name": "Thị xã Chơn Thành",
     "district_code": 697,
-    "district_codename": "huyen_chon_thanh",
-    "ward_name": "Xã Thành Tâm",
+    "district_codename": "thi_xa_chon_thanh",
+    "ward_name": "Phường Thành Tâm",
     "ward_code": 25433,
-    "ward_codename": "xa_thanh_tam"
+    "ward_codename": "phuong_thanh_tam"
   },
   {
     "province_name": "Tỉnh Bình Phước",
     "province_code": 70,
     "province_codename": "tinh_binh_phuoc",
-    "district_name": "Huyện Chơn Thành",
+    "district_name": "Thị xã Chơn Thành",
     "district_code": 697,
-    "district_codename": "huyen_chon_thanh",
+    "district_codename": "thi_xa_chon_thanh",
     "ward_name": "Xã Minh Lập",
     "ward_code": 25435,
     "ward_codename": "xa_minh_lap"
@@ -90610,9 +90555,9 @@
     "province_name": "Tỉnh Bình Phước",
     "province_code": 70,
     "province_codename": "tinh_binh_phuoc",
-    "district_name": "Huyện Chơn Thành",
+    "district_name": "Thị xã Chơn Thành",
     "district_code": 697,
-    "district_codename": "huyen_chon_thanh",
+    "district_codename": "thi_xa_chon_thanh",
     "ward_name": "Xã Quang Minh",
     "ward_code": 25439,
     "ward_codename": "xa_quang_minh"
@@ -90621,42 +90566,42 @@
     "province_name": "Tỉnh Bình Phước",
     "province_code": 70,
     "province_codename": "tinh_binh_phuoc",
-    "district_name": "Huyện Chơn Thành",
+    "district_name": "Thị xã Chơn Thành",
     "district_code": 697,
-    "district_codename": "huyen_chon_thanh",
-    "ward_name": "Xã Minh Hưng",
+    "district_codename": "thi_xa_chon_thanh",
+    "ward_name": "Phường Minh Hưng",
     "ward_code": 25441,
-    "ward_codename": "xa_minh_hung"
+    "ward_codename": "phuong_minh_hung"
   },
   {
     "province_name": "Tỉnh Bình Phước",
     "province_code": 70,
     "province_codename": "tinh_binh_phuoc",
-    "district_name": "Huyện Chơn Thành",
+    "district_name": "Thị xã Chơn Thành",
     "district_code": 697,
-    "district_codename": "huyen_chon_thanh",
-    "ward_name": "Xã Minh Long",
+    "district_codename": "thi_xa_chon_thanh",
+    "ward_name": "Phường Minh Long",
     "ward_code": 25444,
-    "ward_codename": "xa_minh_long"
+    "ward_codename": "phuong_minh_long"
   },
   {
     "province_name": "Tỉnh Bình Phước",
     "province_code": 70,
     "province_codename": "tinh_binh_phuoc",
-    "district_name": "Huyện Chơn Thành",
+    "district_name": "Thị xã Chơn Thành",
     "district_code": 697,
-    "district_codename": "huyen_chon_thanh",
-    "ward_name": "Xã Minh Thành",
+    "district_codename": "thi_xa_chon_thanh",
+    "ward_name": "Phường Minh Thành",
     "ward_code": 25447,
-    "ward_codename": "xa_minh_thanh"
+    "ward_codename": "phuong_minh_thanh"
   },
   {
     "province_name": "Tỉnh Bình Phước",
     "province_code": 70,
     "province_codename": "tinh_binh_phuoc",
-    "district_name": "Huyện Chơn Thành",
+    "district_name": "Thị xã Chơn Thành",
     "district_code": 697,
-    "district_codename": "huyen_chon_thanh",
+    "district_codename": "thi_xa_chon_thanh",
     "ward_name": "Xã Nha Bích",
     "ward_code": 25450,
     "ward_codename": "xa_nha_bich"
@@ -90665,9 +90610,9 @@
     "province_name": "Tỉnh Bình Phước",
     "province_code": 70,
     "province_codename": "tinh_binh_phuoc",
-    "district_name": "Huyện Chơn Thành",
+    "district_name": "Thị xã Chơn Thành",
     "district_code": 697,
-    "district_codename": "huyen_chon_thanh",
+    "district_codename": "thi_xa_chon_thanh",
     "ward_name": "Xã Minh Thắng",
     "ward_code": 25453,
     "ward_codename": "xa_minh_thang"
@@ -92392,9 +92337,9 @@
     "province_name": "Tỉnh Bình Dương",
     "province_code": 74,
     "province_codename": "tinh_binh_duong",
-    "district_name": "Thị xã Tân Uyên",
+    "district_name": "Thành phố Tân Uyên",
     "district_code": 723,
-    "district_codename": "thi_xa_tan_uyen",
+    "district_codename": "thanh_pho_tan_uyen",
     "ward_name": "Phường Uyên Hưng",
     "ward_code": 25888,
     "ward_codename": "phuong_uyen_hung"
@@ -92403,9 +92348,9 @@
     "province_name": "Tỉnh Bình Dương",
     "province_code": 74,
     "province_codename": "tinh_binh_duong",
-    "district_name": "Thị xã Tân Uyên",
+    "district_name": "Thành phố Tân Uyên",
     "district_code": 723,
-    "district_codename": "thi_xa_tan_uyen",
+    "district_codename": "thanh_pho_tan_uyen",
     "ward_name": "Phường Tân Phước Khánh",
     "ward_code": 25891,
     "ward_codename": "phuong_tan_phuoc_khanh"
@@ -92414,9 +92359,9 @@
     "province_name": "Tỉnh Bình Dương",
     "province_code": 74,
     "province_codename": "tinh_binh_duong",
-    "district_name": "Thị xã Tân Uyên",
+    "district_name": "Thành phố Tân Uyên",
     "district_code": 723,
-    "district_codename": "thi_xa_tan_uyen",
+    "district_codename": "thanh_pho_tan_uyen",
     "ward_name": "Phường Vĩnh Tân",
     "ward_code": 25912,
     "ward_codename": "phuong_vinh_tan"
@@ -92425,9 +92370,9 @@
     "province_name": "Tỉnh Bình Dương",
     "province_code": 74,
     "province_codename": "tinh_binh_duong",
-    "district_name": "Thị xã Tân Uyên",
+    "district_name": "Thành phố Tân Uyên",
     "district_code": 723,
-    "district_codename": "thi_xa_tan_uyen",
+    "district_codename": "thanh_pho_tan_uyen",
     "ward_name": "Phường Hội Nghĩa",
     "ward_code": 25915,
     "ward_codename": "phuong_hoi_nghia"
@@ -92436,9 +92381,9 @@
     "province_name": "Tỉnh Bình Dương",
     "province_code": 74,
     "province_codename": "tinh_binh_duong",
-    "district_name": "Thị xã Tân Uyên",
+    "district_name": "Thành phố Tân Uyên",
     "district_code": 723,
-    "district_codename": "thi_xa_tan_uyen",
+    "district_codename": "thanh_pho_tan_uyen",
     "ward_name": "Phường Tân Hiệp",
     "ward_code": 25920,
     "ward_codename": "phuong_tan_hiep"
@@ -92447,9 +92392,9 @@
     "province_name": "Tỉnh Bình Dương",
     "province_code": 74,
     "province_codename": "tinh_binh_duong",
-    "district_name": "Thị xã Tân Uyên",
+    "district_name": "Thành phố Tân Uyên",
     "district_code": 723,
-    "district_codename": "thi_xa_tan_uyen",
+    "district_codename": "thanh_pho_tan_uyen",
     "ward_name": "Phường Khánh Bình",
     "ward_code": 25921,
     "ward_codename": "phuong_khanh_binh"
@@ -92458,9 +92403,9 @@
     "province_name": "Tỉnh Bình Dương",
     "province_code": 74,
     "province_codename": "tinh_binh_duong",
-    "district_name": "Thị xã Tân Uyên",
+    "district_name": "Thành phố Tân Uyên",
     "district_code": 723,
-    "district_codename": "thi_xa_tan_uyen",
+    "district_codename": "thanh_pho_tan_uyen",
     "ward_name": "Phường Phú Chánh",
     "ward_code": 25924,
     "ward_codename": "phuong_phu_chanh"
@@ -92469,9 +92414,9 @@
     "province_name": "Tỉnh Bình Dương",
     "province_code": 74,
     "province_codename": "tinh_binh_duong",
-    "district_name": "Thị xã Tân Uyên",
+    "district_name": "Thành phố Tân Uyên",
     "district_code": 723,
-    "district_codename": "thi_xa_tan_uyen",
+    "district_codename": "thanh_pho_tan_uyen",
     "ward_name": "Xã Bạch Đằng",
     "ward_code": 25930,
     "ward_codename": "xa_bach_dang"
@@ -92480,9 +92425,9 @@
     "province_name": "Tỉnh Bình Dương",
     "province_code": 74,
     "province_codename": "tinh_binh_duong",
-    "district_name": "Thị xã Tân Uyên",
+    "district_name": "Thành phố Tân Uyên",
     "district_code": 723,
-    "district_codename": "thi_xa_tan_uyen",
+    "district_codename": "thanh_pho_tan_uyen",
     "ward_name": "Phường Tân Vĩnh Hiệp",
     "ward_code": 25933,
     "ward_codename": "phuong_tan_vinh_hiep"
@@ -92491,9 +92436,9 @@
     "province_name": "Tỉnh Bình Dương",
     "province_code": 74,
     "province_codename": "tinh_binh_duong",
-    "district_name": "Thị xã Tân Uyên",
+    "district_name": "Thành phố Tân Uyên",
     "district_code": 723,
-    "district_codename": "thi_xa_tan_uyen",
+    "district_codename": "thanh_pho_tan_uyen",
     "ward_name": "Phường Thạnh Phước",
     "ward_code": 25936,
     "ward_codename": "phuong_thanh_phuoc"
@@ -92502,9 +92447,9 @@
     "province_name": "Tỉnh Bình Dương",
     "province_code": 74,
     "province_codename": "tinh_binh_duong",
-    "district_name": "Thị xã Tân Uyên",
+    "district_name": "Thành phố Tân Uyên",
     "district_code": 723,
-    "district_codename": "thi_xa_tan_uyen",
+    "district_codename": "thanh_pho_tan_uyen",
     "ward_name": "Xã Thạnh Hội",
     "ward_code": 25937,
     "ward_codename": "xa_thanh_hoi"
@@ -92513,9 +92458,9 @@
     "province_name": "Tỉnh Bình Dương",
     "province_code": 74,
     "province_codename": "tinh_binh_duong",
-    "district_name": "Thị xã Tân Uyên",
+    "district_name": "Thành phố Tân Uyên",
     "district_code": 723,
-    "district_codename": "thi_xa_tan_uyen",
+    "district_codename": "thanh_pho_tan_uyen",
     "ward_name": "Phường Thái Hòa",
     "ward_code": 25939,
     "ward_codename": "phuong_thai_hoa"
@@ -94144,9 +94089,9 @@
     "district_name": "Huyện Cẩm Mỹ",
     "district_code": 739,
     "district_codename": "huyen_cam_my",
-    "ward_name": "Xã Long Giao",
+    "ward_name": "Thị trấn Long Giao",
     "ward_code": 26341,
-    "ward_codename": "xa_long_giao"
+    "ward_codename": "thi_tran_long_giao"
   },
   {
     "province_name": "Tỉnh Đồng Nai",
@@ -102064,9 +102009,9 @@
     "district_name": "Huyện Cai Lậy",
     "district_code": 820,
     "district_codename": "huyen_cai_lay",
-    "ward_name": "Xã Bình Phú",
+    "ward_name": "Thị trấn Bình Phú",
     "ward_code": 28471,
-    "ward_codename": "xa_binh_phu"
+    "ward_codename": "thi_tran_binh_phu"
   },
   {
     "province_name": "Tỉnh Tiền Giang",
@@ -103362,9 +103307,9 @@
     "district_name": "Huyện Châu Thành",
     "district_code": 831,
     "district_codename": "huyen_chau_thanh",
-    "ward_name": "Xã Tiên Thủy",
+    "ward_name": "Thị trấn Tiên Thủy",
     "ward_code": 28861,
-    "ward_codename": "xa_tien_thuy"
+    "ward_codename": "thi_tran_tien_thuy"
   },
   {
     "province_name": "Tỉnh Bến Tre",
@@ -104374,9 +104319,9 @@
     "district_name": "Huyện Ba Tri",
     "district_code": 836,
     "district_codename": "huyen_ba_tri",
-    "ward_name": "Xã An Thủy",
+    "ward_name": "Thị trấn Tiệm Tôm",
     "ward_code": 29179,
-    "ward_codename": "xa_an_thuy"
+    "ward_codename": "thi_tran_tiem_tom"
   },
   {
     "province_name": "Tỉnh Bến Tre",
@@ -104638,9 +104583,9 @@
     "district_name": "Huyện Mỏ Cày Bắc",
     "district_code": 838,
     "district_codename": "huyen_mo_cay_bac",
-    "ward_name": "Xã Phước Mỹ Trung",
+    "ward_name": "Thị trấn Phước Mỹ Trung",
     "ward_code": 28915,
-    "ward_codename": "xa_phuoc_my_trung"
+    "ward_codename": "thi_tran_phuoc_my_trung"
   },
   {
     "province_name": "Tỉnh Bến Tre",
@@ -108884,7 +108829,7 @@
     "district_name": "Huyện An Phú",
     "district_code": 886,
     "district_codename": "huyen_an_phu",
-    "ward_name": "Thị Trấn Long Bình",
+    "ward_name": "Thị trấn Long Bình",
     "ward_code": 30341,
     "ward_codename": "thi_tran_long_binh"
   },
@@ -109005,9 +108950,9 @@
     "district_name": "Huyện An Phú",
     "district_code": 886,
     "district_codename": "huyen_an_phu",
-    "ward_name": "Xã Đa Phước",
+    "ward_name": "Thị trấn Đa Phước",
     "ward_code": 30373,
-    "ward_codename": "xa_da_phuoc"
+    "ward_codename": "thi_tran_da_phuoc"
   },
   {
     "province_name": "Tỉnh An Giang",
@@ -109508,86 +109453,86 @@
     "province_name": "Tỉnh An Giang",
     "province_code": 89,
     "province_codename": "tinh_an_giang",
-    "district_name": "Huyện Tịnh Biên",
+    "district_name": "Thị xã Tịnh Biên",
     "district_code": 890,
-    "district_codename": "huyen_tinh_bien",
-    "ward_name": "Thị trấn Nhà Bàng",
+    "district_codename": "thi_xa_tinh_bien",
+    "ward_name": "Phường Nhà Bàng",
     "ward_code": 30502,
-    "ward_codename": "thi_tran_nha_bang"
+    "ward_codename": "phuong_nha_bang"
   },
   {
     "province_name": "Tỉnh An Giang",
     "province_code": 89,
     "province_codename": "tinh_an_giang",
-    "district_name": "Huyện Tịnh Biên",
+    "district_name": "Thị xã Tịnh Biên",
     "district_code": 890,
-    "district_codename": "huyen_tinh_bien",
-    "ward_name": "Thị trấn Chi Lăng",
+    "district_codename": "thi_xa_tinh_bien",
+    "ward_name": "Phường Chi Lăng",
     "ward_code": 30505,
-    "ward_codename": "thi_tran_chi_lang"
+    "ward_codename": "phuong_chi_lang"
   },
   {
     "province_name": "Tỉnh An Giang",
     "province_code": 89,
     "province_codename": "tinh_an_giang",
-    "district_name": "Huyện Tịnh Biên",
+    "district_name": "Thị xã Tịnh Biên",
     "district_code": 890,
-    "district_codename": "huyen_tinh_bien",
-    "ward_name": "Xã Núi Voi",
+    "district_codename": "thi_xa_tinh_bien",
+    "ward_name": "Phường Núi Voi",
     "ward_code": 30508,
-    "ward_codename": "xa_nui_voi"
+    "ward_codename": "phuong_nui_voi"
   },
   {
     "province_name": "Tỉnh An Giang",
     "province_code": 89,
     "province_codename": "tinh_an_giang",
-    "district_name": "Huyện Tịnh Biên",
+    "district_name": "Thị xã Tịnh Biên",
     "district_code": 890,
-    "district_codename": "huyen_tinh_bien",
-    "ward_name": "Xã Nhơn Hưng",
+    "district_codename": "thi_xa_tinh_bien",
+    "ward_name": "Phường Nhơn Hưng",
     "ward_code": 30511,
-    "ward_codename": "xa_nhon_hung"
+    "ward_codename": "phuong_nhon_hung"
   },
   {
     "province_name": "Tỉnh An Giang",
     "province_code": 89,
     "province_codename": "tinh_an_giang",
-    "district_name": "Huyện Tịnh Biên",
+    "district_name": "Thị xã Tịnh Biên",
     "district_code": 890,
-    "district_codename": "huyen_tinh_bien",
-    "ward_name": "Xã An Phú",
+    "district_codename": "thi_xa_tinh_bien",
+    "ward_name": "Phường An Phú",
     "ward_code": 30514,
-    "ward_codename": "xa_an_phu"
+    "ward_codename": "phuong_an_phu"
   },
   {
     "province_name": "Tỉnh An Giang",
     "province_code": 89,
     "province_codename": "tinh_an_giang",
-    "district_name": "Huyện Tịnh Biên",
+    "district_name": "Thị xã Tịnh Biên",
     "district_code": 890,
-    "district_codename": "huyen_tinh_bien",
-    "ward_name": "Xã Thới Sơn",
+    "district_codename": "thi_xa_tinh_bien",
+    "ward_name": "Phường Thới Sơn",
     "ward_code": 30517,
-    "ward_codename": "xa_thoi_son"
+    "ward_codename": "phuong_thoi_son"
   },
   {
     "province_name": "Tỉnh An Giang",
     "province_code": 89,
     "province_codename": "tinh_an_giang",
-    "district_name": "Huyện Tịnh Biên",
+    "district_name": "Thị xã Tịnh Biên",
     "district_code": 890,
-    "district_codename": "huyen_tinh_bien",
-    "ward_name": "Thị trấn Tịnh Biên",
+    "district_codename": "thi_xa_tinh_bien",
+    "ward_name": "Phường Tịnh Biên",
     "ward_code": 30520,
-    "ward_codename": "thi_tran_tinh_bien"
+    "ward_codename": "phuong_tinh_bien"
   },
   {
     "province_name": "Tỉnh An Giang",
     "province_code": 89,
     "province_codename": "tinh_an_giang",
-    "district_name": "Huyện Tịnh Biên",
+    "district_name": "Thị xã Tịnh Biên",
     "district_code": 890,
-    "district_codename": "huyen_tinh_bien",
+    "district_codename": "thi_xa_tinh_bien",
     "ward_name": "Xã Văn Giáo",
     "ward_code": 30523,
     "ward_codename": "xa_van_giao"
@@ -109596,9 +109541,9 @@
     "province_name": "Tỉnh An Giang",
     "province_code": 89,
     "province_codename": "tinh_an_giang",
-    "district_name": "Huyện Tịnh Biên",
+    "district_name": "Thị xã Tịnh Biên",
     "district_code": 890,
-    "district_codename": "huyen_tinh_bien",
+    "district_codename": "thi_xa_tinh_bien",
     "ward_name": "Xã An Cư",
     "ward_code": 30526,
     "ward_codename": "xa_an_cu"
@@ -109607,9 +109552,9 @@
     "province_name": "Tỉnh An Giang",
     "province_code": 89,
     "province_codename": "tinh_an_giang",
-    "district_name": "Huyện Tịnh Biên",
+    "district_name": "Thị xã Tịnh Biên",
     "district_code": 890,
-    "district_codename": "huyen_tinh_bien",
+    "district_codename": "thi_xa_tinh_bien",
     "ward_name": "Xã An Nông",
     "ward_code": 30529,
     "ward_codename": "xa_an_nong"
@@ -109618,9 +109563,9 @@
     "province_name": "Tỉnh An Giang",
     "province_code": 89,
     "province_codename": "tinh_an_giang",
-    "district_name": "Huyện Tịnh Biên",
+    "district_name": "Thị xã Tịnh Biên",
     "district_code": 890,
-    "district_codename": "huyen_tinh_bien",
+    "district_codename": "thi_xa_tinh_bien",
     "ward_name": "Xã Vĩnh Trung",
     "ward_code": 30532,
     "ward_codename": "xa_vinh_trung"
@@ -109629,9 +109574,9 @@
     "province_name": "Tỉnh An Giang",
     "province_code": 89,
     "province_codename": "tinh_an_giang",
-    "district_name": "Huyện Tịnh Biên",
+    "district_name": "Thị xã Tịnh Biên",
     "district_code": 890,
-    "district_codename": "huyen_tinh_bien",
+    "district_codename": "thi_xa_tinh_bien",
     "ward_name": "Xã Tân Lợi",
     "ward_code": 30535,
     "ward_codename": "xa_tan_loi"
@@ -109640,9 +109585,9 @@
     "province_name": "Tỉnh An Giang",
     "province_code": 89,
     "province_codename": "tinh_an_giang",
-    "district_name": "Huyện Tịnh Biên",
+    "district_name": "Thị xã Tịnh Biên",
     "district_code": 890,
-    "district_codename": "huyen_tinh_bien",
+    "district_codename": "thi_xa_tinh_bien",
     "ward_name": "Xã An Hảo",
     "ward_code": 30538,
     "ward_codename": "xa_an_hao"
@@ -109651,9 +109596,9 @@
     "province_name": "Tỉnh An Giang",
     "province_code": 89,
     "province_codename": "tinh_an_giang",
-    "district_name": "Huyện Tịnh Biên",
+    "district_name": "Thị xã Tịnh Biên",
     "district_code": 890,
-    "district_codename": "huyen_tinh_bien",
+    "district_codename": "thi_xa_tinh_bien",
     "ward_name": "Xã Tân Lập",
     "ward_code": 30541,
     "ward_codename": "xa_tan_lap"
@@ -110138,9 +110083,9 @@
     "district_name": "Huyện Chợ Mới",
     "district_code": 893,
     "district_codename": "huyen_cho_moi",
-    "ward_name": "Xã Hội An",
+    "ward_name": "Thị trấn Hội An",
     "ward_code": 30673,
-    "ward_codename": "xa_hoi_an"
+    "ward_codename": "thi_tran_hoi_an"
   },
   {
     "province_name": "Tỉnh An Giang",
@@ -110193,7 +110138,7 @@
     "district_name": "Huyện Thoại Sơn",
     "district_code": 894,
     "district_codename": "huyen_thoai_son",
-    "ward_name": "Thị Trấn Óc Eo",
+    "ward_name": "Thị trấn Óc Eo",
     "ward_code": 30688,
     "ward_codename": "thi_tran_oc_eo"
   },
@@ -111040,7 +110985,7 @@
     "district_name": "Huyện Giồng Riềng",
     "district_code": 906,
     "district_codename": "huyen_giong_rieng",
-    "ward_name": "Thị Trấn Giồng Riềng",
+    "ward_name": "Thị trấn Giồng Riềng",
     "ward_code": 30904,
     "ward_codename": "thi_tran_giong_rieng"
   },
@@ -113130,7 +113075,7 @@
     "district_name": "Huyện Châu Thành",
     "district_code": 933,
     "district_codename": "huyen_chau_thanh",
-    "ward_name": "Thị Trấn Ngã Sáu",
+    "ward_name": "Thị trấn Ngã Sáu",
     "ward_code": 31366,
     "ward_codename": "thi_tran_nga_sau"
   },
@@ -116430,7 +116375,7 @@
     "district_name": "Huyện Năm Căn",
     "district_code": 971,
     "district_codename": "huyen_nam_can",
-    "ward_name": "Thị Trấn Năm Căn",
+    "ward_name": "Thị trấn Năm Căn",
     "ward_code": 32191,
     "ward_codename": "thi_tran_nam_can"
   },
