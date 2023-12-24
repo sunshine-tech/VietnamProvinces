@@ -21,6 +21,6 @@ def test_build_from_dict():
     profile = Profile(name='Nguyễn Hồng Quân', address=address)
     debug(profile)
     assert profile.address.province == ProvinceEnum.P_77
-    d = profile.dict()
+    d = profile.model_dump()
     debug(d)
     assert d['address']['province'] == ProvinceEnum.P_77
