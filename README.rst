@@ -167,12 +167,12 @@ In the future, when the authority reorganize administrative divisions, we need t
 - Find the button "Xuất Excel".
 - Tick the "Quận Huyện Phường Xã" checkbox.
 - Click the button to export and download list of units in Excel (XLS) file.
-- Use LibreOffice to convert Excel file to CSV file. For example, we name it *Xa_2023-05-07.csv*.
+- Use LibreOffice to convert Excel file to CSV file. For example, we name it *Xa_2025-01-04.csv*.
 - Run this tool to compute data to JSON format:
 
 .. code-block:: sh
 
-    python3 -m dev -i dev/seed-data/Xa_2023-05-07.csv -o vietnam_provinces/data/nested-divisions.json
+    python3 -m dev -i dev/seed-data/Xa_2025-01-04.csv -o vietnam_provinces/data/nested-divisions.json
 
 You can run
 
@@ -190,7 +190,7 @@ Generate Python code
 
 .. code-block:: sh
 
-    python3 -m dev -i dev/seed-data/Xa_2023-05-07.csv -f python
+    python3 -m dev -i dev/seed-data/Xa_2025-01-04.csv -f python
 
 
 Data source
