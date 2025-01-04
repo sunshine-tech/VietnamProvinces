@@ -1,13 +1,15 @@
+#!/usr/bin/env python
+
 import re
 import sys
 import csv
+import subprocess
 from datetime import datetime
 from enum import Enum
 from pathlib import Path
 
 import click
 import rapidjson
-import black
 import logbook
 from logbook import Logger
 from logbook.more import ColorizedStderrHandler
@@ -55,6 +57,14 @@ def configure_logging(verbose):
     colored_handler.push_application()
 
 
+# Beautify code using Ruff and save to file
+def format_code(content: str, outfile: Path) -> bool:
+    cmd = ('ruff', 'format', '-', '--stdin-filename', 'code.py')
+    with outfile.open() as f:
+        p = subprocess.run(cmd, input=content, text=True, stdout=f)
+    return p.returncode == 0
+
+
 @click.command()
 @click.option('-i', '--input', 'input_filename', required=True, type=click.Path(exists=True))
 @click.option('-f', '--output-format', default=ExportingFormat.NESTED_JSON, type=EnumChoice(ExportingFormat))
@@ -64,7 +74,7 @@ def configure_logging(verbose):
 def main(input_filename: str, output_format: ExportingFormat, output: str, verbose: int):
     configure_logging(verbose)
     logger.debug('File {}', input_filename)
-    originals = tuple()
+    originals: tuple[WardCSVRecord, ...] = tuple()
     with open(input_filename, newline='') as f:
         reader = csv.reader(f)
         # Skip header row
@@ -74,11 +84,11 @@ def main(input_filename: str, output_format: ExportingFormat, output: str, verbo
     phone_codes = load_phone_area_table()
     if output_format == ExportingFormat.FLAT_JSON:
         with open(output, 'w') as f:
-            f.write(rapidjson.dumps(tuple(a.dict() for a in originals), indent=2, ensure_ascii=False))
+            f.write(rapidjson.dumps(tuple(a.model_dump() for a in originals), indent=2, ensure_ascii=False))
         echo(f'Wrote to {output}')
     elif output_format == ExportingFormat.NESTED_JSON:
         provinces = convert_to_nested(originals, phone_codes)
-        provinces_dicts = tuple(p.dict() for p in provinces.values())
+        provinces_dicts = tuple(p.model_dump() for p in provinces.values())
         with open(output, 'w') as f:
             f.write(rapidjson.dumps(provinces_dicts, indent=2, ensure_ascii=False))
         echo(f'Wrote to {output}')
@@ -93,15 +103,15 @@ def main(input_filename: str, output_format: ExportingFormat, output: str, verbo
         out_districts = gen_python_district_enums(provinces.values())
         out_wards = gen_python_ward_enums(provinces.values())
         logger.info('Built AST')
-        logger.info('Prettify code with Black')
-        out_districts = black.format_str(out_districts, mode=black.Mode({black.TargetVersion.PY37}, line_length=120))
-        out_wards = black.format_str(out_wards, mode=black.Mode({black.TargetVersion.PY37}, line_length=120))
+        logger.info('Prettify code with Ruff')
         file_districts = folder / 'districts.py'
-        file_districts.write_text(out_districts)
-        echo(f'Wrote to {file_districts}')
+        format_code(out_districts, file_districts)
+        rel_path = file_districts.relative_to(Path.cwd())
+        echo(f'Wrote to {rel_path}')
         file_wards = folder / 'wards.py'
-        file_wards.write_text(out_wards)
-        echo(f'Wrote to {file_wards}')
+        format_code(out_wards, file_wards)
+        rel_path = file_wards.relative_to(Path.cwd())
+        echo(f'Wrote to {rel_path}')
         # Create __init__ file
         init_file = folder / '__init__.py'
         if not init_file.exists():

@@ -129,6 +129,15 @@ Member of these enums, the ``Province``, ``District`` and ``Ward`` data types, c
     >>> from vietnam_provinces import Province, District, Ward
 
 
+To know if the data is up-to-date, check the `__data_version__` attribute of the module:
+
+.. code-block:: python
+
+    >>> import vietnam_provinces
+    >>> vietnam_provinces.__data_version__
+    '2025-01-04'
+
+
 Install
 -------
 
@@ -137,7 +146,7 @@ Install
     pip3 install vietnam-provinces
 
 
-This library is compatible with Python 3.7+.
+This library is compatible with Python 3.10+.
 
 
 Development

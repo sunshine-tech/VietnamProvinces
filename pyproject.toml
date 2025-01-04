@@ -1,55 +1,59 @@
-[tool.poetry]
+[project]
 name = "vietnam-provinces"
-version = "0.5.0"
 description = "Library to provide list of Vietnam administrative divisions (tỉnh thành, quận huyện, phường xã)."
-authors = ["Nguyễn Hồng Quân <ng.hong.quan@gmail.com>"]
-repository = "https://github.com/sunshine-tech/VietnamProvinces.git"
-readme = "README.rst"
-license = "GPL-3.0-or-later"
-keywords = ["Vietnam", "administrative", "division", "locality"]
-classifiers = [
-    'Natural Language :: Vietnamese',
-    'Intended Audience :: Information Technology',
-    'Intended Audience :: Financial and Insurance Industry',
-    'Intended Audience :: Telecommunications Industry',
-    'Operating System :: OS Independent',
-    'Topic :: Software Development :: Localization',
-    'Programming Language :: Python :: 3 :: Only',
-    'Topic :: Software Development :: Libraries :: Python Modules',
-    'Development Status :: 4 - Beta',
-    'Intended Audience :: Developers',
+authors = [
+    {name = "Nguyễn Hồng Quân", email = "ng.hong.quan@gmail.com"},
 ]
-include = ["vietnam_provinces/py.typed"]
+license = {text = "GPL-3.0-or-later"}
+requires-python = "<4.0,>=3.10"
+dynamic = ["version"]
+dependencies = [
+    "Unidecode<2.0.0,>=1.3.8",
+    "fast-enum<2.0.0,>=1.3.0",
+]
+readme = "README.rst"
+keywords = [
+    "Vietnam",
+    "administrative",
+    "division",
+    "locality",
+]
+classifiers = [
+    "Natural Language :: Vietnamese",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: Financial and Insurance Industry",
+    "Intended Audience :: Telecommunications Industry",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Localization",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+]
 
-[tool.poetry.dependencies]
-python = "^3.7"
-single-version = "^1.5.1"
-Unidecode = "^1.3.6"
-fast-enum = "^1.3.0"
+[project.urls]
+repository = "https://github.com/sunshine-tech/VietnamProvinces.git"
 
-
-[tool.poetry.group.dev.dependencies]
-pytest = "^7.3.1"
-devtools = "^0.11.0"
-astor = "^0.8.1"
-python-rapidjson = "^1.10"
-requests = "^2.23.0"
-click = "^8.1.3"
-pydantic = "^2.5.3"
-black = "^23.3.0"
-logbook = "^1.5.3"
-
-[tool.black]
-line-length = 120
-target-version = ['py310']
-include = '\.pyi?$'
-skip-string-normalization = true
+[dependency-groups]
+dev = [
+    "pytest<9.0.0,>=8.3.4",
+    "devtools<1.0.0,>=0.12.2",
+    "astor<1.0.0,>=0.8.1",
+    "python-rapidjson<2.0,>=1.20",
+    "click<9.0.0,>=8.1.8",
+    "pydantic<3.0.0,>=2.10.4",
+    "logbook<2.0.0,>=1.8.0",
+    "httpx<1.0.0,>=0.28.1",
+    "mypy>=1.14.1",
+]
+lint = [
+    "ruff<1.0.0,>=0.8.5",
+]
 
 [tool.ruff]
+# Assume Python 3.12.
+target-version = "py312"
 line-length = 120
-# Enable Pyflakes `E` and `F` codes by default.
-select = ["E", "F"]
-ignore = []
 # Exclude a variety of commonly ignored directories.
 exclude = [
   ".bzr",
@@ -72,13 +76,44 @@ exclude = [
   "node_modules",
   "venv",
 ]
+
+[tool.ruff.lint]
+# Enable Pyflakes `E` and `F` codes by default.
+select = ["E", "F"]
+ignore = []
 # Allow unused variables when underscore-prefixed.
 dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
-# Assume Python 3.10.
-target-version = "py310"
-[tool.ruff.per-file-ignores]
+
+[tool.ruff.lint.per-file-ignores]
 "vietnam_provinces/__init__.py" = ["F401"]
 
+[tool.ruff.format]
+quote-style = "single"
+
+[tool.mypy]
+python_version = "3.12"
+plugins = [
+  "pydantic.mypy",
+]
+# These options are recommended by Pydantic.
+follow_imports = "silent"
+warn_redundant_casts = true
+warn_unused_ignores = true
+disallow_any_generics = true
+exclude = [
+  '_enum_\w+\.py'
+]
+disable_error_code = 'prop-decorator'
+
+[[tool.mypy.overrides]]
+module = [
+  "astor.*",
+  "logbook.*"
+]
+ignore_missing_imports = true
+
 [build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["flit_core >= 3.4"]
+build-backend = "flit_core.buildapi"
+
+

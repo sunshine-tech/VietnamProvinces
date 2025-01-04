@@ -2,7 +2,7 @@ import csv
 from pathlib import Path
 from typing import NamedTuple, List
 
-from pydantic import BaseModel
+from pydantic import BaseModel, field_validator
 
 from .types import Name, convert_to_codename
 
@@ -20,6 +20,14 @@ class PhoneCodeCSVRecord(BaseModel):
     province_name: Name
     code: int
 
+    # Some provinces are renamed after the data of phone code is published
+    @field_validator('province_name', mode='after')
+    @classmethod
+    def rename(cls, value: str) -> str:
+        if value == 'Thừa Thiên - Huế':
+            return 'Thành phố Huế'
+        return value
+
     @property
     def province_codename(self):
         codename = convert_to_codename(self.province_name)
@@ -34,7 +42,7 @@ class PhoneCodeCSVRecord(BaseModel):
     @classmethod
     def from_csv_row(cls, values: List[str]):
         row = PhoneCodeInputRow._make(values)
-        return cls.parse_obj(row._asdict())
+        return cls.model_validate(row._asdict())
 
 
 def load_phone_area_table():
