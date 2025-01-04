@@ -38,7 +38,6 @@ repository = "https://github.com/sunshine-tech/VietnamProvinces.git"
 dev = [
     "pytest<9.0.0,>=8.3.4",
     "devtools<1.0.0,>=0.12.2",
-    "astor<1.0.0,>=0.8.1",
     "python-rapidjson<2.0,>=1.20",
     "click<9.0.0,>=8.1.8",
     "pydantic<3.0.0,>=2.10.4",
@@ -111,6 +110,11 @@ module = [
   "logbook.*"
 ]
 ignore_missing_imports = true
+
+[tool.pydantic-mypy]
+init_forbid_extra = true
+init_typed = true
+warn_required_dynamic_aliases = true
 
 [build-system]
 requires = ["flit_core >= 3.4"]

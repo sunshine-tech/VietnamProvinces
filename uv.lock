@@ -26,15 +26,6 @@ wheels = [
 ]
 
 [[package]]
-name = "astor"
-version = "0.8.1"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/5a/21/75b771132fee241dfe601d39ade629548a9626d1d39f333fde31bc46febe/astor-0.8.1.tar.gz", hash = "sha256:6a6effda93f4e1ce9f618779b2dd1d9d84f1e32812c23a29b3fff6fd7f63fa5e", size = 35090 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/c3/88/97eef84f48fa04fbd6750e62dcceafba6c63c81b7ac1420856c8dcc0a3f9/astor-0.8.1-py2.py3-none-any.whl", hash = "sha256:070a54e890cefb5b3739d19f30f5a5ec840ffc9c50ffa7d23cc9fc1a38ebbfc5", size = 27488 },
-]
-
-[[package]]
 name = "asttokens"
 version = "2.4.1"
 source = { registry = "https://pypi.org/simple" }
@@ -546,7 +537,7 @@ wheels = [
 
 [[package]]
 name = "vietnam-provinces"
-version = "0.6.0"
+version = "0.5.8"
 source = { editable = "." }
 dependencies = [
     { name = "fast-enum" },
@@ -555,7 +546,6 @@ dependencies = [
 
 [package.dev-dependencies]
 dev = [
-    { name = "astor" },
     { name = "click" },
     { name = "devtools" },
     { name = "httpx" },
@@ -577,7 +567,6 @@ requires-dist = [
 
 [package.metadata.requires-dev]
 dev = [
-    { name = "astor", specifier = ">=0.8.1,<1.0.0" },
     { name = "click", specifier = ">=8.1.8,<9.0.0" },
     { name = "devtools", specifier = ">=0.12.2,<1.0.0" },
     { name = "httpx", specifier = ">=0.28.1,<1.0.0" },

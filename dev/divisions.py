@@ -3,7 +3,6 @@ from pathlib import Path
 from collections import deque
 from typing import NamedTuple, Optional, List, Dict, Sequence, Deque, Iterable, Any, Annotated
 
-import astor
 from logbook import Logger
 from pydantic import BaseModel, ValidationInfo, Field, field_validator, computed_field
 
@@ -91,7 +90,7 @@ class WardCSVRecord(BaseModel):
         return value
 
     @classmethod
-    def from_csv_row(cls, values: List[str]) -> WardCSVRecord:
+    def from_csv_row(cls, values: List[str]) -> 'WardCSVRecord':
         row = WardCSVInputRow.strip_make(values)
         ward = cls.model_validate(row._asdict())
         if not ward.ward_name:
@@ -102,7 +101,7 @@ class WardCSVRecord(BaseModel):
 class BaseRegion(BaseModel):
     name: str
     code: int
-    codename: Optional[str]
+    codename: str | None
 
 
 class Ward(BaseRegion):
@@ -125,7 +124,7 @@ class District(BaseRegion):
     division_type: VietNamDivisionType = VietNamDivisionType.HUYEN
     short_codename: str | None = None
     # Actual wards are saved here for fast searching
-    indexed_wards: Annotated[Dict[str, Ward], Field(exclude=True, default_factory=dict)]
+    indexed_wards: dict[str, Ward] = Field(exclude=True, default_factory=dict)
 
     @computed_field
     @property
@@ -156,7 +155,7 @@ class Province(BaseRegion):
     division_type: VietNamDivisionType = VietNamDivisionType.TINH
     phone_code: str | None = None
     # Actual districts are saved here for fast searching
-    indexed_districts: Annotated[Dict[str, District], Field(exclude=True, default_factory=dict)]
+    indexed_districts: dict[str, District] = Field(exclude=True, default_factory=dict)
 
     @computed_field
     @property
@@ -192,7 +191,8 @@ def generate_district_short_codenames(province: Province):
     prefixes = ('huyen_', 'thi_xa_', 'quan_', 'thanh_pho_')
     # First, just generate short_codename as normal
     for d in province.indexed_districts.values():
-        d.short_codename = truncate_leading(d.codename, prefixes)
+        if d.codename:
+            d.short_codename = truncate_leading(d.codename, prefixes)
     # Second, find ones whose short_codename is the same as other
     # Nummeric codes of districts whose shortname is duplicate
     duplicates: Deque[str] = deque()
@@ -219,7 +219,8 @@ def generate_ward_short_codenames(district: District):
     prefixes = ('xa_', 'phuong_', 'thi_tran_')
     # First, just generate short_codename as normal
     for w in district.indexed_wards.values():
-        w.short_codename = truncate_leading(w.codename, prefixes)
+        if w.codename:
+            w.short_codename = truncate_leading(w.codename, prefixes)
     # Second, find ones whose short_codename is the same as other
     # Nummeric codes of wards whose shortname is duplicate
     duplicates: Deque[str] = deque()
@@ -233,7 +234,7 @@ def generate_ward_short_codenames(district: District):
     # OK, now fix short codename for those duplicated wards
     for i in duplicates:
         w = district.indexed_wards[i]
-        w.short_codename = truncate_leading(w.codename, ('phuong_', 'thi_tran_'))
+        w.short_codename = truncate_leading(w.codename, ('phuong_', 'thi_tran_')) if w.codename else None
     # There are still duplicate:
     # - "Phường Sa Pa" and "Phường Sa Pả", both belong to "Thị xã Sa Pa" (Lào Cai)
     # "Xã Đông Thạnh" and "Xã Đông Thành", both belong to "Huyện Bình Minh" (Vĩnh Long)
@@ -248,11 +249,10 @@ def generate_unique_ward_ids(district: District, province: Province):
     pass
 
 
-def add_to_existing_province(w: WardCSVRecord, province: Province) -> Ward:
-    if w.ward_name:
-        ward = Ward(name=w.ward_name, code=w.ward_code, codename=w.ward_codename)
-    else:
-        ward = None
+def add_to_existing_province(w: WardCSVRecord, province: Province) -> Ward | None:
+    if not w.ward_name or not w.ward_code:
+        return None
+    ward = Ward(name=w.ward_name, code=w.ward_code, codename=w.ward_codename)
     try:
         district = province.indexed_districts[str(w.district_code)]
         district.indexed_wards[str(w.ward_code)] = ward
@@ -265,7 +265,7 @@ def add_to_existing_province(w: WardCSVRecord, province: Province) -> Ward:
 
 
 def convert_to_nested(
-    records: Sequence[WardCSVRecord], phone_codes: Sequence[PhoneCodeCSVRecord]
+    records: Sequence[WardCSVRecord], phone_codes: Iterable[PhoneCodeCSVRecord]
 ) -> Dict[int, Province]:
     table: Dict[int,Province] = {}
     for w in records:
@@ -279,14 +279,14 @@ def convert_to_nested(
             # Find phone_code
             # c.province_codename will be 'ba_ria_vung_tau'
             # province.codename will be 'tinh_ba_ria_vung_tau'
-            matched_phone_code = next((c for c in phone_codes if province.codename.endswith(c.province_codename)), None)
+            matched_phone_code = next((ph for ph in phone_codes if w.province_codename.endswith(ph.province_codename)), None)
             if matched_phone_code is None:
                 logger.error('Could not find phone code for {}', province.name)
             else:
-                province.phone_code = matched_phone_code.code
+                province.phone_code = str(matched_phone_code.code)
             district = District(name=w.district_name, code=w.district_code, codename=w.district_codename)
             province.indexed_districts[str(w.district_code)] = district
-            if w.ward_code:
+            if w.ward_code and w.ward_name:
                 ward = Ward(name=w.ward_name, code=w.ward_code, codename=w.ward_codename)
                 district.indexed_wards[str(w.ward_code)] = ward
             table[province_code] = province
@@ -415,24 +415,24 @@ def ward_descriptive_enum_member(ward: Ward, district: District, province: Provi
 
 def gen_python_district_enums(provinces: Iterable[Province]) -> str:
     template_file = Path(__file__).parent / '_enum_district_template.py'
-    module = astor.parse_file(template_file)
+    module = ast.parse(template_file.read_text())
     class_defs = tuple(n for n in module.body if isinstance(n, ast.ClassDef))
     # Will generate definition for ProvinceEnum, ProvinceDEnum
     province_enum_def = next(n for n in class_defs if n.name == 'ProvinceEnum')
     province_enum_desc_def = next(n for n in class_defs if n.name == 'ProvinceDEnum')
     # Remove example members, except for the docstring.
     old_body = province_enum_def.body
-    province_enum_def.body = deque(m for m in old_body if isinstance(m, ast.Expr))
+    province_enum_def.body = [m for m in old_body if isinstance(m, ast.Expr)]
     old_body = province_enum_desc_def.body
-    province_enum_desc_def.body = deque(m for m in old_body if isinstance(m, ast.Expr))
+    province_enum_desc_def.body = [m for m in old_body if isinstance(m, ast.Expr)]
     # Will generate members for DistrictEnum, DistrictDEnum
     district_enum_def = next(n for n in class_defs if n.name == 'DistrictEnum')
     district_enum_desc_def = next(n for n in class_defs if n.name == 'DistrictDEnum')
     # Remove example members, except for the docstring.
     old_body = district_enum_def.body
-    district_enum_def.body = deque(m for m in old_body if isinstance(m, ast.Expr))
+    district_enum_def.body = [m for m in old_body if isinstance(m, ast.Expr)]
     old_body = district_enum_desc_def.body
-    district_enum_desc_def.body = deque(m for m in old_body if isinstance(m, ast.Expr))
+    district_enum_desc_def.body = [m for m in old_body if isinstance(m, ast.Expr)]
     for p in provinces:
         node = province_enum_member(p)
         province_enum_def.body.append(node)
@@ -443,21 +443,21 @@ def gen_python_district_enums(provinces: Iterable[Province]) -> str:
             district_enum_def.body.append(node_d)
             desc_node_d = district_descriptive_enum_member(d, p)
             district_enum_desc_def.body.append(desc_node_d)
-    return astor.to_source(module)
+    return ast.unparse(ast.fix_missing_locations(module))
 
 
 def gen_python_ward_enums(provinces: Iterable[Province]) -> str:
     template_file = Path(__file__).parent / '_enum_ward_template.py'
-    module = astor.parse_file(template_file)
+    module = ast.parse(template_file.read_text())
     class_defs = tuple(n for n in module.body if isinstance(n, ast.ClassDef))
     # Will generate members for WardEnum and WardDEnum
     ward_enum_def = next(n for n in class_defs if n.name == 'WardEnum')
     ward_desc_enum_def = next(n for n in class_defs if n.name == 'WardDEnum')
     # Remove example members, except for the docstring.
     old_body = ward_enum_def.body
-    ward_enum_def.body = deque(m for m in old_body if isinstance(m, ast.Expr))
+    ward_enum_def.body = [m for m in old_body if isinstance(m, ast.Expr)]
     old_body = ward_desc_enum_def.body
-    ward_desc_enum_def.body = deque(m for m in old_body if isinstance(m, ast.Expr))
+    ward_desc_enum_def.body = [m for m in old_body if isinstance(m, ast.Expr)]
     for p in provinces:
         for d in p.indexed_districts.values():
             for w in d.indexed_wards.values():
@@ -465,4 +465,4 @@ def gen_python_ward_enums(provinces: Iterable[Province]) -> str:
                 ward_enum_def.body.append(node_w)
                 node_dw = ward_descriptive_enum_member(w, d, p)
                 ward_desc_enum_def.body.append(node_dw)
-    return astor.to_source(module)
+    return ast.unparse(ast.fix_missing_locations(module))
