@@ -18,4 +18,4 @@ class WardDEnum(metaclass=FastEnum):
 
     It helps developer have more idea what Ward he is selecting.
     '''
-    DA_UY_NO_478 = WardEnum.W_478.value
+    DA_UY_NO_478 = WardEnum.W_478

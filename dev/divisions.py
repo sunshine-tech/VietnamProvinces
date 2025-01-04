@@ -153,7 +153,7 @@ class District(BaseRegion):
 class Province(BaseRegion):
     # Redefine here, or the validator won't run
     division_type: VietNamDivisionType = VietNamDivisionType.TINH
-    phone_code: str | None = None
+    phone_code: int | None = None
     # Actual districts are saved here for fast searching
     indexed_districts: dict[str, District] = Field(exclude=True, default_factory=dict)
 
@@ -283,7 +283,7 @@ def convert_to_nested(
             if matched_phone_code is None:
                 logger.error('Could not find phone code for {}', province.name)
             else:
-                province.phone_code = str(matched_phone_code.code)
+                province.phone_code = matched_phone_code.code
             district = District(name=w.district_name, code=w.district_code, codename=w.district_codename)
             province.indexed_districts[str(w.district_code)] = district
             if w.ward_code and w.ward_name:
@@ -400,15 +400,13 @@ def ward_enum_member(ward: Ward, district: District, province: Province):
 def ward_descriptive_enum_member(ward: Ward, district: District, province: Province):
     """
     Generate AST tree for line of code equivalent to:
-    QN_TAN_BINH_6904 = WardEnum.W_6904.value
+    QN_TAN_BINH_6904 = WardEnum.W_6904
     where:
     - QN means "Tỉnh Quảng Ninh"
     - 6904 is the numeric code of "Xã Tân Bình"
     """
     ward_id = f'{province.abbrev}_{ward.short_codename}_{ward.code}'.upper()
-    right_hand_side = ast.Attribute(
-        value=ast.Attribute(value=ast.Name(id='WardEnum'), attr=f'W_{ward.code}'), attr='value'
-    )
+    right_hand_side = ast.Attribute(value=ast.Name(id='WardEnum'), attr=f'W_{ward.code}')
     node = ast.Assign(targets=[ast.Name(id=ward_id)], value=right_hand_side)
     return node
 

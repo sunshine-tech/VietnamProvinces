@@ -31,7 +31,7 @@ class Ward:
     codename: str
     district_code: int
 
-    def __eq__(self, other: 'Ward'):
+    def __eq__(self, other: object):
         if not isinstance(other, Ward):
             return False
         return other.code == self.code
@@ -45,7 +45,7 @@ class District:
     codename: str
     province_code: int
 
-    def __eq__(self, other: 'District'):
+    def __eq__(self, other: object):
         if not isinstance(other, District):
             return False
         return other.code == self.code
@@ -59,7 +59,7 @@ class Province:
     codename: str
     phone_code: int
 
-    def __eq__(self, other: 'Province'):
+    def __eq__(self, other: object):
         if not isinstance(other, Province):
             return False
         return other.code == self.code

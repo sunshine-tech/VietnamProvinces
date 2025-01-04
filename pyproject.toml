@@ -106,7 +106,7 @@ disable_error_code = 'prop-decorator'
 
 [[tool.mypy.overrides]]
 module = [
-  "astor.*",
+  "fast_enum",
   "logbook.*"
 ]
 ignore_missing_imports = true

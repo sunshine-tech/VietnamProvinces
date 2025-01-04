@@ -60,7 +60,7 @@ def configure_logging(verbose):
 # Beautify code using Ruff and save to file
 def format_code(content: str, outfile: Path) -> bool:
     cmd = ('ruff', 'format', '-', '--stdin-filename', 'code.py')
-    with outfile.open() as f:
+    with outfile.open('w') as f:
         p = subprocess.run(cmd, input=content, text=True, stdout=f)
     return p.returncode == 0
 
