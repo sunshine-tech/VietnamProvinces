@@ -213,7 +213,7 @@ Given to you by `Nguyễn Hồng Quân <quan_>`_, after nights and weekends.
 .. _gso_vn: https://www.gso.gov.vn/
 .. _tb_ic: https://sotttt.thaibinh.gov.vn/tin-tuc/buu-chinh-vien-thong/tra-cuu-ma-vung-dien-thoai-co-dinh-mat-dat-ma-mang-dien-thoa2.html
 .. _dataclass: https://docs.python.org/3/library/dataclasses.html
-.. _fast-enum: https://pypi.org/project/fast-enum/
+.. _fast-enum: https://pypi.org/project/fastenumplus/
 .. _pydantic: https://pypi.org/project/pydantic/
 .. _Black: https://github.com/psf/black
 .. _quan: https://quan.hoabinh.vn

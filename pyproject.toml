@@ -9,7 +9,7 @@ requires-python = "<4.0,>=3.10"
 dynamic = ["version"]
 dependencies = [
     "Unidecode<2.0.0,>=1.3.8",
-    "fast-enum<2.0.0,>=1.3.0",
+    "fastenumplus>=1.4.0",
 ]
 readme = "README.rst"
 keywords = [

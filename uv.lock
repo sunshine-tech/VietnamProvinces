@@ -100,12 +100,12 @@ wheels = [
 ]
 
 [[package]]
-name = "fast-enum"
-version = "1.3.0"
+name = "fastenumplus"
+version = "1.4.0"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/d6/b6/369ce2c8ae78f7d4b20da6e8eee484658b70a246a9172a033e71043ec2ff/fast-enum-1.3.0.tar.gz", hash = "sha256:4ea5b8f263eeb295bcaa6b377eec7ae1e3df20754dfbd7ead1a3aa78a8f0fc0e", size = 9444 }
+sdist = { url = "https://files.pythonhosted.org/packages/61/6e/ca9c58a707197b6d961b05875c63ff0b472f8b06dd3f5ee803b7b644c198/fastenumplus-1.4.0.tar.gz", hash = "sha256:b31f6f62b072919416c7da2ae43ec808a3307a967843e8c7af6519e86a7b2265", size = 8916 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/0d/94/5de3a7d69130c1db32876d82cd6f90ac7f89922e9dba9e67224885f50415/fast_enum-1.3.0-py3-none-any.whl", hash = "sha256:9ea5105e7789f1b805962bdef0f232537a3b5e03d9ae46c53511ad686f0bd88d", size = 10347 },
+    { url = "https://files.pythonhosted.org/packages/9e/10/de1dba65cb76ead1ddc981e5f21f8e66430174cb5f806d96cf004b0a1136/fastenumplus-1.4.0-py3-none-any.whl", hash = "sha256:256754cd3c16c56d6292bd26d92408a11bf311213d0bea2f44698151212b09bd", size = 7884 },
 ]
 
 [[package]]
@@ -540,7 +540,7 @@ name = "vietnam-provinces"
 version = "0.5.8"
 source = { editable = "." }
 dependencies = [
-    { name = "fast-enum" },
+    { name = "fastenumplus" },
     { name = "unidecode" },
 ]
 
@@ -561,7 +561,7 @@ lint = [
 
 [package.metadata]
 requires-dist = [
-    { name = "fast-enum", specifier = ">=1.3.0,<2.0.0" },
+    { name = "fastenumplus", specifier = ">=1.4.0" },
     { name = "unidecode", specifier = ">=1.3.8,<2.0.0" },
 ]
 
