@@ -1,23 +1,13 @@
 [project]
 name = "vietnam-provinces"
 description = "Library to provide list of Vietnam administrative divisions (tỉnh thành, quận huyện, phường xã)."
-authors = [
-    {name = "Nguyễn Hồng Quân", email = "ng.hong.quan@gmail.com"},
-]
-license = {text = "GPL-3.0-or-later"}
+authors = [{ name = "Nguyễn Hồng Quân", email = "ng.hong.quan@gmail.com" }]
+license = { text = "GPL-3.0-or-later" }
 requires-python = "<4.0,>=3.10"
 dynamic = ["version"]
-dependencies = [
-    "Unidecode<2.0.0,>=1.3.8",
-    "fastenumplus>=1.4.0",
-]
+dependencies = ["Unidecode >= 1.4.0", "fastenumplus >= 1.4.0"]
 readme = "README.rst"
-keywords = [
-    "Vietnam",
-    "administrative",
-    "division",
-    "locality",
-]
+keywords = ["Vietnam", "administrative", "division", "locality"]
 classifiers = [
     "Natural Language :: Vietnamese",
     "Intended Audience :: Information Technology",
@@ -36,19 +26,16 @@ repository = "https://github.com/sunshine-tech/VietnamProvinces.git"
 
 [dependency-groups]
 dev = [
-    "pytest<9.0.0,>=8.3.4",
-    "devtools<1.0.0,>=0.12.2",
-    "python-rapidjson<2.0,>=1.20",
-    "click<9.0.0,>=8.1.8",
-    "pydantic<3.0.0,>=2.10.4",
-    "logbook<2.0.0,>=1.8.0",
-    "httpx<1.0.0,>=0.28.1",
-    "mypy>=1.14.1",
+    "pytest >= 8.4.1",
+    "devtools >= 0.12.2",
+    "python-rapidjson >= 1.20",
+    "click >= 8.2.1",
+    "pydantic >= 2.11.7",
+    "logbook >= 1.8.1",
+    "httpx >= 0.28.1",
+    "mypy >= 1.16.1",
 ]
-lint = [
-    "pre-commit>=4.2.0",
-    "ruff >= 0.12.1",
-]
+lint = ["pre-commit >= 4.2.0", "ruff >= 0.12.1"]
 
 [tool.ruff]
 # Assume Python 3.12.
@@ -56,25 +43,25 @@ target-version = "py312"
 line-length = 120
 # Exclude a variety of commonly ignored directories.
 exclude = [
-  ".bzr",
-  ".direnv",
-  ".eggs",
-  ".git",
-  ".hg",
-  ".mypy_cache",
-  ".nox",
-  ".pants.d",
-  ".ruff_cache",
-  ".svn",
-  ".tox",
-  ".venv",
-  "__pypackages__",
-  "_build",
-  "buck-out",
-  "build",
-  "dist",
-  "node_modules",
-  "venv",
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
 ]
 
 [tool.ruff.lint]
@@ -95,24 +82,17 @@ quote-style = "single"
 
 [tool.mypy]
 python_version = "3.12"
-plugins = [
-  "pydantic.mypy",
-]
+plugins = ["pydantic.mypy"]
 # These options are recommended by Pydantic.
 follow_imports = "silent"
 warn_redundant_casts = true
 warn_unused_ignores = true
 disallow_any_generics = true
-exclude = [
-  '_enum_\w+\.py'
-]
+exclude = ['_enum_\w+\.py']
 disable_error_code = 'prop-decorator'
 
 [[tool.mypy.overrides]]
-module = [
-  "fast_enum",
-  "logbook.*"
-]
+module = ["fast_enum", "logbook.*"]
 ignore_missing_imports = true
 
 [tool.pydantic-mypy]

@@ -43,7 +43,7 @@ class EnumChoice(click.Choice):
 class MyColorizedStderrHandler(ColorizedStderrHandler):
     default_format_string = '{record.level_name}: {record.message}'
 
-    def get_color(self, record):
+    def get_color(self, record):  # pyright: ignore[reportIncompatibleMethodOverride]
         color = super().get_color(record)
         if logbook.DEBUG < record.level <= logbook.INFO:
             return 'darkteal'
