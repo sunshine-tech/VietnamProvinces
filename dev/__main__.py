@@ -68,8 +68,12 @@ def format_code(content: str, outfile: Path) -> bool:
 @click.command()
 @click.option('-i', '--input', 'input_filename', required=True, type=click.Path(exists=True))
 @click.option('-f', '--output-format', default=ExportingFormat.NESTED_JSON, type=EnumChoice(ExportingFormat))
-@click.option('-o', '--output', type=click.Path(exists=False, writable=True),
-              help='Output file if exporting JSON, output folder if exporting Python code')
+@click.option(
+    '-o',
+    '--output',
+    type=click.Path(exists=False, writable=True),
+    help='Output file if exporting JSON, output folder if exporting Python code',
+)
 @click.option('-v', '--verbose', count=True, default=False, help='Show more log to debug (verbose mode).')
 def main(input_filename: str, output_format: ExportingFormat, output: str, verbose: int):
     configure_logging(verbose)

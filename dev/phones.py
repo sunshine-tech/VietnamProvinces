@@ -33,7 +33,7 @@ class PhoneCodeCSVRecord(BaseModel):
         codename = convert_to_codename(self.province_name)
         # The province name in source data of phone doesn't always follow spelling in Tổng cục Thống kê, so
         # we need to adjust it.
-        if codename.startswith('tp_'):   # tp_ho_chi_minh
+        if codename.startswith('tp_'):  # tp_ho_chi_minh
             codename = codename[3:]
         elif codename == 'bac_can':
             codename = 'bac_kan'

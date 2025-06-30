@@ -1,7 +1,7 @@
 import ast
 from pathlib import Path
 from collections import deque
-from typing import NamedTuple, Optional, List, Dict, Sequence, Deque, Iterable, Any, Annotated
+from typing import NamedTuple, List, Dict, Sequence, Deque, Iterable, Any
 
 from logbook import Logger
 from pydantic import BaseModel, ValidationInfo, Field, field_validator, computed_field
@@ -267,7 +267,7 @@ def add_to_existing_province(w: WardCSVRecord, province: Province) -> Ward | Non
 def convert_to_nested(
     records: Sequence[WardCSVRecord], phone_codes: Iterable[PhoneCodeCSVRecord]
 ) -> Dict[int, Province]:
-    table: Dict[int,Province] = {}
+    table: Dict[int, Province] = {}
     for w in records:
         # This district doesn't have ward
         province_code = w.province_code
@@ -279,7 +279,9 @@ def convert_to_nested(
             # Find phone_code
             # c.province_codename will be 'ba_ria_vung_tau'
             # province.codename will be 'tinh_ba_ria_vung_tau'
-            matched_phone_code = next((ph for ph in phone_codes if w.province_codename.endswith(ph.province_codename)), None)
+            matched_phone_code = next(
+                (ph for ph in phone_codes if w.province_codename.endswith(ph.province_codename)), None
+            )
             if matched_phone_code is None:
                 logger.error('Could not find phone code for {}', province.name)
             else:

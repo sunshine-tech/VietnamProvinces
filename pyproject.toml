@@ -46,7 +46,8 @@ dev = [
     "mypy>=1.14.1",
 ]
 lint = [
-    "ruff<1.0.0,>=0.8.5",
+    "pre-commit>=4.2.0",
+    "ruff >= 0.12.1",
 ]
 
 [tool.ruff]
@@ -86,6 +87,9 @@ dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 [tool.ruff.lint.per-file-ignores]
 "vietnam_provinces/__init__.py" = ["F401"]
 
+[tool.ruff.lint.isort]
+lines-after-imports = 2
+
 [tool.ruff.format]
 quote-style = "single"
 
@@ -119,5 +123,3 @@ warn_required_dynamic_aliases = true
 [build-system]
 requires = ["flit_core >= 3.4"]
 build-backend = "flit_core.buildapi"
-
-

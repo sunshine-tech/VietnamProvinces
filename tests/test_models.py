@@ -1,4 +1,3 @@
-
 from devtools import debug
 from pydantic import BaseModel
 
@@ -15,9 +14,7 @@ class Profile(BaseModel):
 
 
 def test_build_from_dict():
-    address = {
-        'province': ProvinceEnum.P_77
-    }
+    address = {'province': ProvinceEnum.P_77}
     profile = Profile(name='Nguyễn Hồng Quân', address=address)
     debug(profile)
     assert profile.address.province == ProvinceEnum.P_77
