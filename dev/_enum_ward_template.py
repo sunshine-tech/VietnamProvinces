@@ -1,8 +1,6 @@
-# Please be careful, this file takes a lot of time to load
-
 from fast_enum import FastEnum
 
-from ..base import Ward, VietNamDivisionType
+from ..base import VietNamDivisionType, Ward
 
 
 class WardEnum(metaclass=FastEnum):
@@ -20,4 +18,4 @@ class WardDEnum(metaclass=FastEnum):
     It helps developer have more idea what Ward he is selecting.
     """
 
-    DA_UY_NO_478 = WardEnum.W_478
+    DA_UY_NO = WardEnum.W_478

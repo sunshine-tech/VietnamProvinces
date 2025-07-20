@@ -14,10 +14,10 @@ class Profile(BaseModel):
 
 
 def test_build_from_dict():
-    address = {'province': ProvinceEnum.P_77}
+    address = {'province': ProvinceEnum.P_79}
     profile = Profile(name='Nguyễn Hồng Quân', address=address)
     debug(profile)
-    assert profile.address.province == ProvinceEnum.P_77
+    assert profile.address.province == ProvinceEnum.P_79
     d = profile.model_dump()
     debug(d)
-    assert d['address']['province'] == ProvinceEnum.P_77
+    assert d['address']['province'] == ProvinceEnum.P_79

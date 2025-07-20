@@ -38,8 +38,8 @@ dev = [
 lint = ["pre-commit >= 4.2.0", "ruff >= 0.12.1"]
 
 [tool.ruff]
-# Assume Python 3.12.
-target-version = "py312"
+# Assume Python 3.13.
+target-version = "py313"
 line-length = 120
 # Exclude a variety of commonly ignored directories.
 exclude = [
@@ -81,7 +81,7 @@ lines-after-imports = 2
 quote-style = "single"
 
 [tool.mypy]
-python_version = "3.12"
+python_version = "3.13"
 plugins = ["pydantic.mypy"]
 # These options are recommended by Pydantic.
 follow_imports = "silent"

@@ -21,6 +21,9 @@ def clean_name(value: str) -> str:
     return value
 
 
+Name = Annotated[str, AfterValidator(clean_name)]
+
+
 def convert_to_codename(value: str) -> str:
     return '_'.join(unidecode(value).lower().replace('-', ' ').replace('.', ' ').replace("'", '').split())
 
@@ -29,4 +32,10 @@ def convert_to_id_friendly(value: str) -> str:
     return '_'.join(value.lower().replace('-', ' ').replace('.', ' ').replace("'", '').split())
 
 
-Name = Annotated[str, AfterValidator(clean_name)]
+def make_province_codename(name: str) -> str:
+    # Since 2025, we no longer keep devision type in codename
+    return convert_to_codename(name).removeprefix('tinh_').removeprefix('thanh_pho_').removeprefix('tp_')
+
+
+def make_ward_short_codename(codename: str) -> str:
+    return codename.removeprefix('xa_').removeprefix('phuong_').removeprefix('dac_khu_')

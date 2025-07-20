@@ -29,7 +29,7 @@ class Ward:
     code: int
     division_type: VietNamDivisionType
     codename: str
-    district_code: int
+    province_code: int
 
     def __eq__(self, other: object):
         if not isinstance(other, Ward):

@@ -1,1 +1,4 @@
-from .districts import ProvinceEnum, ProvinceDEnum, DistrictEnum, DistrictDEnum  # noqa
+from .provinces import ProvinceEnum, ProvinceDEnum
+
+
+__all__ = ('ProvinceEnum', 'ProvinceDEnum')
