@@ -5,7 +5,7 @@ authors = [{ name = "Nguyễn Hồng Quân", email = "ng.hong.quan@gmail.com" }]
 license = { text = "GPL-3.0-or-later" }
 requires-python = "<4.0,>=3.10"
 dynamic = ["version"]
-dependencies = ["Unidecode >= 1.4.0", "fastenumplus >= 1.4.0"]
+dependencies = ["Unidecode >= 1.4.0"]
 readme = "README.rst"
 keywords = ["Vietnam", "administrative", "division", "locality"]
 classifiers = [
@@ -34,6 +34,7 @@ dev = [
     "logbook >= 1.8.1",
     "httpx >= 0.28.1",
     "mypy >= 1.16.1",
+    "ptpython>=3.0.30",
 ]
 lint = ["pre-commit >= 4.2.0", "ruff >= 0.12.1"]
 

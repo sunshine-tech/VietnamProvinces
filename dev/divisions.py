@@ -157,71 +157,8 @@ class Ward(BaseRegion):
         if value:
             return value
         name = info.data['name'].lower()
-        possibles = (VietNamDivisionType.THI_TRAN, VietNamDivisionType.XA, VietNamDivisionType.PHUONG)
+        possibles = (VietNamDivisionType.DAC_KHU, VietNamDivisionType.XA, VietNamDivisionType.PHUONG)
         return next((t for t in possibles if name.startswith(f'{t.value} ')), None)
-
-
-class District(BaseRegion):
-    # Redefine here, or the validator won't run
-    division_type: VietNamDivisionType = VietNamDivisionType.HUYEN
-    short_codename: str | None = None
-    # Actual wards are saved here for fast searching
-    indexed_wards: dict[str, Ward] = Field(exclude=True, default_factory=dict)
-
-    @computed_field
-    @property
-    def wards(self) -> tuple[Ward, ...]:
-        return tuple(self.indexed_wards.values())
-
-    @field_validator('division_type', mode='before')
-    @classmethod
-    def parse_division_type(cls, value, info: ValidationInfo):
-        if value:
-            return value
-        name = info.data['name'].lower()
-        possibles = (
-            VietNamDivisionType.THANH_PHO,
-            VietNamDivisionType.THI_XA,
-            VietNamDivisionType.QUAN,
-            VietNamDivisionType.HUYEN,
-        )
-        return next((t for t in possibles if name.startswith(f'{t.value} ')), None)
-
-    @property
-    def abbrev(self) -> str:
-        return abbreviate_doub_codename(self.short_codename) if self.short_codename else ''
-
-
-class Pre2025Province(BaseRegion):
-    # Redefine here, or the validator won't run
-    division_type: VietNamDivisionType = VietNamDivisionType.TINH
-    phone_code: int | None = None
-    # Actual districts are saved here for fast searching
-    indexed_districts: dict[str, District] = Field(exclude=True, default_factory=dict)
-
-    @computed_field
-    @property
-    def districts(self) -> tuple[District, ...]:
-        return tuple(self.indexed_districts.values())
-
-    @field_validator('division_type', mode='before')
-    @classmethod
-    def parse_division_type(cls, value, info: ValidationInfo):
-        if value:
-            return value
-        name = info.data['name'].lower()
-        if name.startswith(f'{VietNamDivisionType.THANH_PHO} '):
-            return VietNamDivisionType.THANH_PHO_TRUNG_UONG
-        if name.startswith(f'{VietNamDivisionType.TINH} '):
-            return VietNamDivisionType.TINH
-
-    @property
-    def short_codename(self) -> str:
-        return truncate_leading(self.codename, ('tinh_', 'thanh_pho_')) if self.codename else ''
-
-    @property
-    def abbrev(self) -> str:
-        return abbreviate_codename(self.short_codename) if self.short_codename else ''
 
 
 class Province(BaseRegion):
@@ -241,7 +178,7 @@ class Province(BaseRegion):
         if value:
             return value
         name = info.data['name'].lower()
-        if name.startswith(f'{VietNamDivisionType.THANH_PHO} '):
+        if name.startswith('thành phố '):
             return VietNamDivisionType.THANH_PHO_TRUNG_UONG
         if name.startswith(f'{VietNamDivisionType.TINH} '):
             return VietNamDivisionType.TINH
@@ -322,41 +259,6 @@ def province_descriptive_enum_member(province: Province):
     return node
 
 
-def district_enum_member(district: District, province: Pre2025Province):
-    """
-    Generate AST tree for line of code equivalent to:
-    D_958 = District('Huyện Vĩnh Lợi', 958, VietNamDivisionType.HUYEN, 'huyen_vinh_loi', 95)
-    """
-    # For example, Huyện Châu Thành of Tỉnh Tiền Giang will have ID "CHAU_THANH_TG"
-    enum_def_args = [
-        ast.Constant(value=district.name),
-        ast.Constant(value=district.code),
-        ast.Attribute(value=ast.Name(id='VietNamDivisionType'), attr=district.division_type.name),
-        ast.Constant(value=district.codename),
-        ast.Constant(value=province.code),
-    ]
-    node = ast.Assign(
-        targets=[ast.Name(id=f'D_{district.code}')],
-        value=ast.Call(func=ast.Name(id='District'), args=enum_def_args, keywords=[]),
-    )
-    return node
-
-
-def district_descriptive_enum_member(district: District, province: Pre2025Province):
-    """
-    Generate AST tree for line of code equivalent to:
-    VINH_LOI_BL = DistrictDEnum.D_958.value
-    """
-    province_abbr = province.abbrev
-    # For example, Huyện Châu Thành of Tỉnh Tiền Giang will have ID "CHAU_THANH_TG"
-    district_id = f'{district.short_codename}_{province_abbr}'.upper()
-    right_hand_side = ast.Attribute(
-        value=ast.Attribute(value=ast.Name(id='DistrictEnum'), attr=f'D_{district.code}'), attr='value'
-    )
-    node = ast.Assign(targets=[ast.Name(id=district_id)], value=right_hand_side)
-    return node
-
-
 def gen_ast_ward_tuple(ward: Ward, province: Province):
     enum_def_args = [
         ast.Constant(value=ward.name),
@@ -382,7 +284,7 @@ def ward_enum_member(ward: Ward, province: Province):
     and "Xã Đông Thạnh". If only rely on Latin letters, they produce "XA_SA_PA", "XA_SA_PA",
     "XA_DONG_THANNH", "XA_DONG_THANH", indistinguishable.
     """
-    ward_id = f'W_{ward.code}'.upper()
+    ward_id = f'W_{ward.code:05}'.upper()
     node = ast.Assign(targets=[ast.Name(id=ward_id)], value=gen_ast_ward_tuple(ward, province))
     return node
 
@@ -390,12 +292,15 @@ def ward_enum_member(ward: Ward, province: Province):
 def ward_descriptive_enum_member(ward: Ward, province: Province):
     """
     Generate AST tree for line of code equivalent to:
-    QN_TAN_BINH = WardEnum.W_6904
+    QN_TAN_BINH_04 = WardEnum.W_6904
     where:
     - QN means "Tỉnh Quảng Ninh"
+    - 04 is the last 2 numbers of ward code.
+    It is to avoid collision when there are more than one wards with the same code name.
     """
-    ward_id = f'{province.abbrev}_{ward.short_codename}'.upper()
-    right_hand_side = ast.Attribute(value=ast.Name(id='WardEnum'), attr=f'W_{ward.code}')
+    tail_code = str(ward.code)[-2:]
+    ward_id = f'{province.abbrev}_{ward.short_codename}_{tail_code}'.upper()
+    right_hand_side = ast.Attribute(value=ast.Name(id='WardEnum'), attr=f'W_{ward.code:05}')
     node = ast.Assign(targets=[ast.Name(id=ward_id)], value=right_hand_side)
     return node
 

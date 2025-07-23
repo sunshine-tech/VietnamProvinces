@@ -63,8 +63,6 @@ Note that this variable only returns the path of the file, not the content. It i
     # With orjson
     orjson.loads(NESTED_DIVISIONS_JSON_PATH.read_bytes())
 
-Due to the big amount of data (10609 wards all over Viet Nam), this loading will be slow.
-
 
 2. Python data type
 
@@ -72,30 +70,22 @@ This data is useful for some applications which need to access the data more oft
 
 .. code-block:: python
 
-    >>> from vietnam_provinces.enums import ProvinceEnum, ProvinceDEnum, DistrictEnum, DistrictDEnum
+    >>> from vietnam_provinces.enums import ProvinceEnum, ProvinceDEnum
 
-    >>> ProvinceEnum.P_77
-    <ProvinceEnum.P_77: Province(name='Tỉnh Bà Rịa - Vũng Tàu', code=77, division_type=<VietNamDivisionType.TINH: 'tỉnh'>, codename='tinh_ba_ria_vung_tau', phone_code=254)>
+    >>> ProvinceEnum.P_44
+    <ProvinceEnum.P_44: Province(name='Quảng Trị', code=44, division_type=<VietNamDivisionType.TINH: 'tỉnh'>, codename='quang_tri', phone_code=233)>
 
-    >>> ProvinceDEnum.BA_RIA_VUNG_TAU
-    <ProvinceDEnum.BA_RIA_VUNG_TAU: Province(name='Tỉnh Bà Rịa - Vũng Tàu', code=77, division_type=<VietNamDivisionType.TINH: 'tỉnh'>, codename='tinh_ba_ria_vung_tau', phone_code=254)>
-
-    >>> DistrictEnum.D_624
-    >>> <DistrictEnum.D_624: District(name='Thị xã Ayun Pa', code=624, division_type=<VietNamDivisionType.THI_XA: 'thị xã'>, codename='thi_xa_ayun_pa', province_code=64)>
-
-    >>> DistrictDEnum.AYUN_PA_GL
-    <DistrictDEnum.AYUN_PA_GL: District(name='Thị xã Ayun Pa', code=624, division_type=<VietNamDivisionType.THI_XA: 'thị xã'>, codename='thi_xa_ayun_pa', province_code=64)>
+    >>>  ProvinceDEnum.CA_MAU
+    <ProvinceDEnum.CA_MAU: Province(name='Cà Mau', code=96, division_type=<VietNamDivisionType.TINH: 'tỉnh'>, codename='ca_mau', phone_code=290)>
 
     >>> from vietnam_provinces.enums.wards import WardEnum, WardDEnum
 
-    >>> WardEnum.W_7450
-    <WardEnum.W_7450: Ward(name='Xã Đông Hưng', code=7450, division_type=<VietNamDivisionType.XA: 'xã'>, codename='xa_dong_hung', district_code=218)>
+    >>> WardEnum.W_7894
+    <WardEnum.W_7894: Ward(name='Phường Nông Trang', code=7894, division_type=<VietNamDivisionType.XA: 'xã'>, codename='phuong_nong_trang', province_code=25)>
 
-    >>> WardDEnum.BG_DONG_HUNG_7450
-    <WardDEnum.BG_DONG_HUNG_7450: Ward(name='Xã Đông Hưng', code=7450, division_type=<VietNamDivisionType.XA: 'xã'>, codename='xa_dong_hung', district_code=218)>
+    >>> WardDEnum.DL_EA_KHAL_08
+    <WardDEnum.DL_EA_KHAL_08: <WardEnum.W_24208: Ward(name='Xã Ea Khăl', code=24208, division_type=<VietNamDivisionType.XA: 'xã'>, codename='xa_ea_khal', province_code=66)>>
 
-
-Loading wards this way is far more faster than the JSON option.
 
 They are made as ``Enum``, so that library user can take advantage of auto-complete feature of IDE/code editors in development. It prevents typo mistake.
 
