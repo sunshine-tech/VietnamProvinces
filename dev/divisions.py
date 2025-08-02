@@ -1,4 +1,5 @@
 import ast
+import itertools
 from pathlib import Path
 from collections.abc import Iterable, Sequence
 from typing import Self, NamedTuple, Any, Annotated
@@ -226,121 +227,94 @@ def convert_to_nested(
     return province_dict
 
 
-def province_enum_member(province: Province):
+def province_code_enum_member(province: Province):
     """
     Generate AST tree for line of code equivalent to:
-    P_1 = Province('Thành phố Hà Nội', 1, VietNamDivisionType.THANH_PHO_TRUNG_UONG, 'thanh_pho_ha_noi', 24)
+    P_01 = 1
     """
-    province_id = f'P_{province.code}'
-    enum_def_args = [
+    province_id = f'P_{province.code:02}'
+    node = ast.Assign(
+        targets=[ast.Name(id=province_id)],
+        value=ast.Constant(value=province.code),
+    )
+    return node
+
+
+def ward_code_enum_member(ward: Ward):
+    """
+    Generate AST tree for line of code equivalent to:
+    W_00001 = 1
+    """
+    ward_id = f'W_{ward.code:05}'
+    node = ast.Assign(
+        targets=[ast.Name(id=ward_id)],
+        value=ast.Constant(value=ward.code),
+    )
+    return node
+
+
+def gen_python_code_enums(provinces: Iterable[Province]) -> str:
+    template_file = Path(__file__).parent / '_enum_code_template.py'
+    module = ast.parse(template_file.read_text())
+    class_defs = tuple(n for n in module.body if isinstance(n, ast.ClassDef))
+    # Will generate members for ProvinceCode
+    province_enum_def = next(n for n in class_defs if n.name == 'ProvinceCode')
+    # Remove example members, except for the docstring.
+    old_body = province_enum_def.body
+    province_enum_def.body = [m for m in old_body if isinstance(m, ast.Expr)]
+    # Will generate members for WardCode
+    ward_enum_def = next(n for n in class_defs if n.name == 'WardCode')
+    # Remove example members, except for the docstring.
+    old_body = ward_enum_def.body
+    ward_enum_def.body = [m for m in old_body if isinstance(m, ast.Expr)]
+    for p in provinces:
+        node = province_code_enum_member(p)
+        province_enum_def.body.append(node)
+        for w in p.indexed_wards.values():
+            node_w = ward_code_enum_member(w)
+            ward_enum_def.body.append(node_w)
+    return ast.unparse(ast.fix_missing_locations(module))
+
+
+def gen_province_object_creation(province: Province) -> ast.Call:
+    def_args = [
         ast.Constant(value=province.name),
         ast.Constant(value=province.code),
         ast.Attribute(value=ast.Name(id='VietNamDivisionType'), attr=province.division_type.name),
         ast.Constant(value=province.codename),
         ast.Constant(value=province.phone_code),
     ]
-    node = ast.Assign(
-        targets=[ast.Name(id=province_id)],
-        value=ast.Call(func=ast.Name(id='Province'), args=enum_def_args, keywords=[]),
-    )
-    return node
+    return ast.Call(func=ast.Name(id='Province'), args=def_args, keywords=[])
 
 
-def province_descriptive_enum_member(province: Province):
-    """
-    Generate AST tree for line of code equivalent to:
-    HA_NOI = ProvinceEnum.P_1.value
-    """
-    province_id = province.short_codename.upper()
-    right_hand_side = ast.Attribute(
-        value=ast.Attribute(value=ast.Name(id='ProvinceEnum'), attr=f'P_{province.code}'), attr='value'
-    )
-    node = ast.Assign(targets=[ast.Name(id=province_id)], value=right_hand_side)
-    return node
-
-
-def gen_ast_ward_tuple(ward: Ward, province: Province):
-    enum_def_args = [
+def gen_ward_object_creation(ward: Ward, province: Province) -> ast.Call:
+    def_args = [
         ast.Constant(value=ward.name),
         ast.Constant(value=ward.code),
         ast.Attribute(value=ast.Name(id='VietNamDivisionType'), attr=ward.division_type.name),
         ast.Constant(value=ward.codename),
         ast.Constant(value=province.code),
     ]
-    return ast.Call(func=ast.Name(id='Ward'), args=enum_def_args, keywords=[])
+    return ast.Call(func=ast.Name(id='Ward'), args=def_args, keywords=[])
 
 
-def ward_enum_member(ward: Ward, province: Province):
-    """
-    Generate AST tree for line of code equivalent to:
-    W_6904 = Ward('Xã Tân Bình', 6904, VietNamDivisionType.XA, 'xa_tan_binh', 200)
-    where:
-    - 6904 is the numeric code of "Xã Tân Bình"
-
-    I choose that naming scheme for Ward ID,
-    because there are a lot of wards with the same pure-Latin name (after stripping Vietnamese marks),
-    stopping us from building unique ID based on Latin letters only.
-    For example, we have "Xã Sa Pa" and "Xã Sa Pả", in the same district and province, "Xã Đông Thành"
-    and "Xã Đông Thạnh". If only rely on Latin letters, they produce "XA_SA_PA", "XA_SA_PA",
-    "XA_DONG_THANNH", "XA_DONG_THANH", indistinguishable.
-    """
-    ward_id = f'W_{ward.code:05}'.upper()
-    node = ast.Assign(targets=[ast.Name(id=ward_id)], value=gen_ast_ward_tuple(ward, province))
-    return node
-
-
-def ward_descriptive_enum_member(ward: Ward, province: Province):
-    """
-    Generate AST tree for line of code equivalent to:
-    QN_TAN_BINH_04 = WardEnum.W_6904
-    where:
-    - QN means "Tỉnh Quảng Ninh"
-    - 04 is the last 2 numbers of ward code.
-    It is to avoid collision when there are more than one wards with the same code name.
-    """
-    tail_code = str(ward.code)[-2:]
-    ward_id = f'{province.abbrev}_{ward.short_codename}_{tail_code}'.upper()
-    right_hand_side = ast.Attribute(value=ast.Name(id='WardEnum'), attr=f'W_{ward.code:05}')
-    node = ast.Assign(targets=[ast.Name(id=ward_id)], value=right_hand_side)
-    return node
-
-
-def gen_python_province_enums(provinces: Iterable[Province]) -> str:
-    template_file = Path(__file__).parent / '_enum_province_template.py'
+def gen_python_province_lookup(provinces: Iterable[Province]) -> str:
+    template_file = Path(__file__).parent / '_lookup_template.py'
     module = ast.parse(template_file.read_text())
-    class_defs = tuple(n for n in module.body if isinstance(n, ast.ClassDef))
-    # Will generate definition for ProvinceEnum, ProvinceDEnum
-    province_enum_def = next(n for n in class_defs if n.name == 'ProvinceEnum')
-    province_enum_desc_def = next(n for n in class_defs if n.name == 'ProvinceDEnum')
-    # Remove example members, except for the docstring.
-    old_body = province_enum_def.body
-    province_enum_def.body = [m for m in old_body if isinstance(m, ast.Expr)]
-    old_body = province_enum_desc_def.body
-    province_enum_desc_def.body = [m for m in old_body if isinstance(m, ast.Expr)]
-    for p in provinces:
-        node = province_enum_member(p)
-        province_enum_def.body.append(node)
-        desc_node = province_descriptive_enum_member(p)
-        province_enum_desc_def.body.append(desc_node)
-    return ast.unparse(ast.fix_missing_locations(module))
-
-
-def gen_python_ward_enums(provinces: Iterable[Province]) -> str:
-    template_file = Path(__file__).parent / '_enum_ward_template.py'
-    module = ast.parse(template_file.read_text())
-    class_defs = tuple(n for n in module.body if isinstance(n, ast.ClassDef))
-    # Will generate members for WardEnum and WardDEnum
-    ward_enum_def = next(n for n in class_defs if n.name == 'WardEnum')
-    ward_desc_enum_def = next(n for n in class_defs if n.name == 'WardDEnum')
-    # Remove example members, except for the docstring.
-    old_body = ward_enum_def.body
-    ward_enum_def.body = [m for m in old_body if isinstance(m, ast.Expr)]
-    old_body = ward_desc_enum_def.body
-    ward_desc_enum_def.body = [m for m in old_body if isinstance(m, ast.Expr)]
+    ward_map_node = next(
+        n for n in module.body if isinstance(n, ast.Assign) and ast.unparse(n.targets[0]) == 'WARD_MAPPING'
+    )
+    province_map_node = next(
+        n for n in module.body if isinstance(n, ast.Assign) and ast.unparse(n.targets[0]) == 'PROVINCE_MAPPING'
+    )
+    p_keys: list[ast.expr | None] = [ast.Constant(value=p.code) for p in provinces]
+    p_values: list[ast.expr] = [gen_province_object_creation(p) for p in provinces]
+    province_map_node.value = ast.Dict(keys=p_keys, values=p_values)
+    wards = itertools.chain.from_iterable(p.indexed_wards.values() for p in provinces)
+    w_keys: list[ast.expr | None] = [ast.Constant(value=w.code) for w in wards]
+    w_values: list[ast.expr] = []
     for p in provinces:
         for w in p.indexed_wards.values():
-            node_w = ward_enum_member(w, p)
-            ward_enum_def.body.append(node_w)
-            node_dw = ward_descriptive_enum_member(w, p)
-            ward_desc_enum_def.body.append(node_dw)
+            w_values.append(gen_ward_object_creation(w, p))
+    ward_map_node.value = ast.Dict(keys=w_keys, values=w_values)
     return ast.unparse(ast.fix_missing_locations(module))

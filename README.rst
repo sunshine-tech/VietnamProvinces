@@ -6,41 +6,35 @@ VietnamProvinces
 
 [`Tiếng Việt <vietnamese_>`_]
 
-Library to provide list of Vietnam administrative divisions (tỉnh thành, quận huyện, phường xã) with the name and code as defined by `General Statistics Office of Viet Nam <gso_vn_>`_ (Tổng cục Thống kê).
+Library to provide list of Vietnam administrative divisions (tỉnh thành, phường xã, after the rearrangement in July 2025) with the name and code as defined by `General Statistics Office of Viet Nam <gso_vn_>`_ (Tổng cục Thống kê).
 
 Example:
 
 .. code-block:: json
 
-    {
-        "name": "Tỉnh Cà Mau",
-        "code": 96,
-        "codename": "tinh_ca_mau",
-        "division_type": "tỉnh",
-        "phone_code": 290,
-        "districts": [
-            {
-                "name": "Huyện Đầm Dơi",
-                "code": 970,
-                "codename": "huyen_dam_doi",
-                "division_type": "huyện",
-                "wards": [
-                    {
-                        "name": "Thị trấn Đầm Dơi",
-                        "code": 32152,
-                        "codename": "thi_tran_dam_doi",
-                        "division_type": "thị trấn"
-                    },
-                    {
-                        "name": "Xã Tạ An Khương",
-                        "code": 32155,
-                        "codename": "xa_ta_an_khuong",
-                        "division_type": "xã"
-                    },
-                ]
-            }
-        ]
-    }
+  {
+    "name": "Tuyên Quang",
+    "code": 8,
+    "codename": "tuyen_quang",
+    "division_type": "tỉnh",
+    "phone_code": 207,
+    "wards": [
+      {
+        "name": "Xã Thượng Lâm",
+        "code": 2269,
+        "codename": "xa_thuong_lam",
+        "division_type": "xã",
+        "short_codename": "thuong_lam"
+      },
+      {
+        "name": "Xã Lâm Bình",
+        "code": 2266,
+        "codename": "xa_lam_binh",
+        "division_type": "xã",
+        "short_codename": "lam_binh"
+      },
+    ]
+  }
 
 This library provides data in these forms:
 
@@ -66,57 +60,18 @@ Note that this variable only returns the path of the file, not the content. It i
 
 2. Python data type
 
-This data is useful for some applications which need to access the data more often. They are built as ``Enum``, where you can import in Python code:
+This data is useful for some applications which need to access the data more often.
+There are two kind of objects, first is the object presenting a single province or ward, second is province code or ward code in form of `enum`, which you can import in Python code:
 
 .. code-block:: python
 
-    >>> from vietnam_provinces.enums import ProvinceEnum, ProvinceDEnum
+    >>> from vietnam_provinces import ProvinceCode, Province, WardCode, Ward
 
-    >>> ProvinceEnum.P_44
-    <ProvinceEnum.P_44: Province(name='Quảng Trị', code=44, division_type=<VietNamDivisionType.TINH: 'tỉnh'>, codename='quang_tri', phone_code=233)>
+    >>> Province.from_code(ProvinceCode.P_15)
+    Province(name='Lào Cai', code=15, division_type=<VietNamDivisionType.TINH: 'tỉnh'>, codename='lao_cai', phone_code=214)
 
-    >>>  ProvinceDEnum.CA_MAU
-    <ProvinceDEnum.CA_MAU: Province(name='Cà Mau', code=96, division_type=<VietNamDivisionType.TINH: 'tỉnh'>, codename='ca_mau', phone_code=290)>
-
-    >>> from vietnam_provinces.enums.wards import WardEnum, WardDEnum
-
-    >>> WardEnum.W_7894
-    <WardEnum.W_7894: Ward(name='Phường Nông Trang', code=7894, division_type=<VietNamDivisionType.XA: 'xã'>, codename='phuong_nong_trang', province_code=25)>
-
-    >>> WardDEnum.DL_EA_KHAL_08
-    <WardDEnum.DL_EA_KHAL_08: <WardEnum.W_24208: Ward(name='Xã Ea Khăl', code=24208, division_type=<VietNamDivisionType.XA: 'xã'>, codename='xa_ea_khal', province_code=66)>>
-
-
-They are made as ``Enum``, so that library user can take advantage of auto-complete feature of IDE/code editors in development. It prevents typo mistake.
-
-The Ward Enum has two variants:
-
-- ``WardEnum``: Has member name in form of numeric ward code (``W_28912``). It helps look up a ward by its code (which is a most-seen use case).
-
-- ``WardDEnum``: Has more readable member name (``D`` means "descriptive"), to help the application code easier to reason about. For example, looking at ``WardDEnum.BT_PHAN_RI_CUA_22972``, the programmer can guess that this ward is "Phan Rí Cửa", of "Bình Thuận" province.
-
-Similarly, other levels (District, Province) also have two variants of Enum.
-
-Example of looking up ``Ward``, ``District``, ``Province`` with theirs numeric code:
-
-.. code-block:: python
-
-    # Assume that you are loading user info from your database
-    user_info = load_user_info()
-
-    province_code = user_info['province_code']
-    province = ProvinceEnum[f'P_{province_code}'].value
-
-Unlike ``ProvinceDEnum``, ``DistrictDEnum``, the ``WardDEnum`` has ward code in member name. It is because there are too many Vietnamese wards with the same name. There is no way to build unique ID for wards, with pure Latin letters (Vietnamese punctuations stripped), even if we add district and province info to the ID. Let's take "Xã Đông Thành" and "Xã Đông Thạnh" as example. Both belong to "Huyện Bình Minh" of "Vĩnh Long", both produces ID name "DONG_THANH". Although Python allows Unicode as ID name, like "ĐÔNG_THẠNH", but it is not practical yet because the code formatter tool (`Black`_) will still normalizes it to Latin form.
-
-Because the ``WardEnum`` has many records (10609 in February 2021) and may not be needed in some applications, I move it to separate module, to avoid loading automatically to application.
-
-
-Member of these enums, the ``Province``, ``District`` and ``Ward`` data types, can be imported from top-level of ``vietnam_provinces``.
-
-.. code-block:: python
-
-    >>> from vietnam_provinces import Province, District, Ward
+    >>> Ward.from_code(WardCode.W_01234)
+    Ward(name='Xã Yên Thành', code=1234, division_type=<VietNamDivisionType.XA: 'xã'>, codename='xa_yen_thanh', province_code=8)
 
 
 To know if the data is up-to-date, check the `__data_version__` attribute of the module:
@@ -162,7 +117,7 @@ In the future, when the authority reorganize administrative divisions, we need t
 
 .. code-block:: sh
 
-    python3 -m dev -i dev/seed-data/Xa_2025-01-04.csv -o vietnam_provinces/data/nested-divisions.json
+    python3 -m dev -w dev/seed-data/2025-07/Cap-xa-2025.csv -p dev/seed-data/2025-07/Cap-tinh-2025.csv -f nested-json
 
 You can run
 
@@ -180,7 +135,7 @@ Generate Python code
 
 .. code-block:: sh
 
-    python3 -m dev -i dev/seed-data/Xa_2025-01-04.csv -f python
+    python3 -m dev -w dev/seed-data/2025-07/Cap-xa-2025.csv -p dev/seed-data/2025-07/Cap-tinh-2025.csv -f python
 
 
 Data source
@@ -203,7 +158,5 @@ Given to you by `Nguyễn Hồng Quân <quan_>`_, after nights and weekends.
 .. _gso_vn: https://www.gso.gov.vn/
 .. _tb_ic: https://sotttt.thaibinh.gov.vn/tin-tuc/buu-chinh-vien-thong/tra-cuu-ma-vung-dien-thoai-co-dinh-mat-dat-ma-mang-dien-thoa2.html
 .. _dataclass: https://docs.python.org/3/library/dataclasses.html
-.. _fast-enum: https://pypi.org/project/fastenumplus/
 .. _pydantic: https://pypi.org/project/pydantic/
-.. _Black: https://github.com/psf/black
 .. _quan: https://quan.hoabinh.vn

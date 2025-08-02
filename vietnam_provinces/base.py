@@ -1,5 +1,7 @@
 from enum import Enum
-from dataclasses import dataclass
+from typing import NamedTuple
+
+from .codes import ProvinceCode, WardCode
 
 
 class VietNamDivisionType(str, Enum):
@@ -12,9 +14,7 @@ class VietNamDivisionType(str, Enum):
     DAC_KHU = 'đặc khu'
 
 
-@dataclass(frozen=True)
-class Ward:
-    __slots__ = ('name', 'code', 'division_type', 'codename', 'province_code')
+class Ward(NamedTuple):
     name: str
     code: int
     division_type: VietNamDivisionType
@@ -26,9 +26,18 @@ class Ward:
             return False
         return other.code == self.code
 
+    @staticmethod
+    def from_code(code: WardCode) -> 'Ward':
+        from .lookup import WARD_MAPPING
 
-@dataclass
-class Province:
+        try:
+            return WARD_MAPPING[code]
+        except KeyError as e:
+            msg = f'Ward code {code} is invalid.'
+            raise ValueError(msg) from e
+
+
+class Province(NamedTuple):
     name: str
     code: int
     division_type: VietNamDivisionType
@@ -39,3 +48,13 @@ class Province:
         if not isinstance(other, Province):
             return False
         return other.code == self.code
+
+    @staticmethod
+    def from_code(code: ProvinceCode) -> 'Province':
+        from .lookup import PROVINCE_MAPPING
+
+        try:
+            return PROVINCE_MAPPING[code]
+        except KeyError as e:
+            msg = f'Province code {code} is invalid.'
+            raise ValueError(msg) from e

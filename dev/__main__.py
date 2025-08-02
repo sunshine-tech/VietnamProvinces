@@ -20,8 +20,8 @@ from .divisions import (
     WardCSVInputRow,
     WardCSVRecord,
     ProvinceCSVRecord,
-    gen_python_province_enums,
-    gen_python_ward_enums,
+    gen_python_code_enums,
+    gen_python_province_lookup,
     convert_to_nested,
 )
 
@@ -126,30 +126,21 @@ def main(ward_csv_file: str, province_csv_file: str, output_format: ExportingFor
             f.write(rapidjson.dumps(provinces_dicts, indent=2, ensure_ascii=False))
         echo(f'Wrote to {output}')
     elif output_format == ExportingFormat.PYTHON:
-        folder: Path = Path(__file__).parent.parent / 'vietnam_provinces' / 'enums'
-        if folder.exists() and folder.is_file():
-            click.secho(f'{output} is not a folder.', file=sys.stderr, fg='red')
-            sys.exit(1)
-        if not folder.exists():
-            folder.mkdir()
         provinces = convert_to_nested(csv_provinces, csv_wards, phone_codes)
         logger.info('Built AST')
-        out_provinces = gen_python_province_enums(provinces.values())
-        out_wards = gen_python_ward_enums(provinces.values())
+        out_enums = gen_python_code_enums(provinces.values())
+        pkg_folder = Path(__file__).parent.parent / 'vietnam_provinces'
+        file_path = pkg_folder / 'codes.py'
         logger.info('Prettify code with Ruff')
-        file_provinces = folder / 'provinces.py'
-        format_code(out_provinces, file_provinces)
-        rel_path = file_provinces.relative_to(Path.cwd())
+        format_code(out_enums, file_path)
+        rel_path = file_path.relative_to(Path.cwd())
         echo(f'Wrote to {rel_path}')
-        file_wards = folder / 'wards.py'
-        format_code(out_wards, file_wards)
-        rel_path = file_wards.relative_to(Path.cwd())
+        file_path = pkg_folder / 'lookup.py'
+        out_lookup = gen_python_province_lookup(provinces.values())
+        format_code(out_lookup, file_path)
+        rel_path = file_path.relative_to(Path.cwd())
         echo(f'Wrote to {rel_path}')
-        # Create __init__ file
-        init_file = folder / '__init__.py'
-        if not init_file.exists():
-            init_file.touch()
-        pkg_init_file = folder.parent / '__init__.py'
+        pkg_init_file = pkg_folder / '__init__.py'
         now = datetime.now(UTC)
         init_content = pkg_init_file.read_text()
         echo(f'Update data version {now:%Y-%m-%d}')
