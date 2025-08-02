@@ -5,7 +5,7 @@ authors = [{ name = "Nguyễn Hồng Quân", email = "ng.hong.quan@gmail.com" }]
 license = { text = "GPL-3.0-or-later" }
 requires-python = "<4.0,>=3.10"
 dynamic = ["version"]
-dependencies = ["Unidecode >= 1.4.0"]
+dependencies = []
 readme = "README.rst"
 keywords = ["Vietnam", "administrative", "division", "locality"]
 classifiers = [
@@ -22,7 +22,9 @@ classifiers = [
 ]
 
 [project.urls]
-repository = "https://github.com/sunshine-tech/VietnamProvinces.git"
+Homepage = "https://github.com/sunshine-tech/VietnamProvinces"
+Repository = "https://github.com/sunshine-tech/VietnamProvinces.git"
+Documentation = "https://vietnam-provinces.readthedocs.io"
 
 [dependency-groups]
 dev = [
@@ -35,6 +37,7 @@ dev = [
     "httpx >= 0.28.1",
     "mypy >= 1.16.1",
     "ptpython>=3.0.30",
+    "unidecode>=1.4.0",
 ]
 lint = ["pre-commit >= 4.2.0", "ruff >= 0.12.1"]
 docs = [

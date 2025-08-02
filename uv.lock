@@ -1665,11 +1665,8 @@ wheels = [
 
 [[package]]
 name = "vietnam-provinces"
-version = "0.6.0"
+version = "2025.8.1"
 source = { editable = "." }
-dependencies = [
-    { name = "unidecode" },
-]
 
 [package.dev-dependencies]
 dev = [
@@ -1682,6 +1679,7 @@ dev = [
     { name = "pydantic" },
     { name = "pytest" },
     { name = "python-rapidjson" },
+    { name = "unidecode" },
 ]
 docs = [
     { name = "enum-tools" },
@@ -1697,7 +1695,6 @@ lint = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "unidecode", specifier = ">=1.4.0" }]
 
 [package.metadata.requires-dev]
 dev = [
@@ -1710,6 +1707,7 @@ dev = [
     { name = "pydantic", specifier = ">=2.11.7" },
     { name = "pytest", specifier = ">=8.4.1" },
     { name = "python-rapidjson", specifier = ">=1.20" },
+    { name = "unidecode", specifier = ">=1.4.0" },
 ]
 docs = [
     { name = "enum-tools", specifier = ">=0.13.0" },
