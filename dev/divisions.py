@@ -227,7 +227,7 @@ def convert_to_nested(
     return province_dict
 
 
-def province_code_enum_member(province: Province):
+def province_code_enum_member(province: Province) -> tuple[ast.Assign, ast.Expr]:
     """
     Generate AST tree for line of code equivalent to:
     P_01 = 1
@@ -237,10 +237,11 @@ def province_code_enum_member(province: Province):
         targets=[ast.Name(id=province_id)],
         value=ast.Constant(value=province.code),
     )
-    return node
+    docstring = ast.Expr(value=ast.Constant(value=province.name))
+    return (node, docstring)
 
 
-def ward_code_enum_member(ward: Ward):
+def ward_code_enum_member(ward: Ward) -> tuple[ast.Assign, ast.Expr]:
     """
     Generate AST tree for line of code equivalent to:
     W_00001 = 1
@@ -250,7 +251,8 @@ def ward_code_enum_member(ward: Ward):
         targets=[ast.Name(id=ward_id)],
         value=ast.Constant(value=ward.code),
     )
-    return node
+    docstring = ast.Expr(value=ast.Constant(value=ward.name))
+    return (node, docstring)
 
 
 def gen_python_code_enums(provinces: Iterable[Province]) -> str:
@@ -259,20 +261,20 @@ def gen_python_code_enums(provinces: Iterable[Province]) -> str:
     class_defs = tuple(n for n in module.body if isinstance(n, ast.ClassDef))
     # Will generate members for ProvinceCode
     province_enum_def = next(n for n in class_defs if n.name == 'ProvinceCode')
-    # Remove example members, except for the docstring.
-    old_body = province_enum_def.body
-    province_enum_def.body = [m for m in old_body if isinstance(m, ast.Expr)]
+    # Remove example members, except for the first docstring.
+    first_member = next(iter(province_enum_def.body))
+    province_enum_def.body = [first_member] if isinstance(first_member, ast.Expr) else []
     # Will generate members for WardCode
     ward_enum_def = next(n for n in class_defs if n.name == 'WardCode')
-    # Remove example members, except for the docstring.
-    old_body = ward_enum_def.body
-    ward_enum_def.body = [m for m in old_body if isinstance(m, ast.Expr)]
+    # Remove example members, except for the first docstring.
+    first_member = next(iter(ward_enum_def.body))
+    ward_enum_def.body = [first_member] if isinstance(first_member, ast.Expr) else []
     for p in provinces:
         node = province_code_enum_member(p)
-        province_enum_def.body.append(node)
+        province_enum_def.body.extend(node)
         for w in p.indexed_wards.values():
             node_w = ward_code_enum_member(w)
-            ward_enum_def.body.append(node_w)
+            ward_enum_def.body.extend(node_w)
     return ast.unparse(ast.fix_missing_locations(module))
 
 

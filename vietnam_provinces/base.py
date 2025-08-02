@@ -33,6 +33,7 @@ class Ward(NamedTuple):
 
     @staticmethod
     def from_code(code: WardCode) -> 'Ward':
+        """Look up a Ward from code."""
         from .lookup import WARD_MAPPING
 
         try:
@@ -61,6 +62,7 @@ class Province(NamedTuple):
 
     @staticmethod
     def from_code(code: ProvinceCode) -> 'Province':
+        """Look up a Province from code."""
         from .lookup import PROVINCE_MAPPING
 
         try:

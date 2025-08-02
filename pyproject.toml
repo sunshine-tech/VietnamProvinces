@@ -37,6 +37,14 @@ dev = [
     "ptpython>=3.0.30",
 ]
 lint = ["pre-commit >= 4.2.0", "ruff >= 0.12.1"]
+docs = [
+    "enum-tools>=0.13.0",
+    "furo>=2025.7.19",
+    "myst-parser>=4.0.1",
+    "sphinx-autobuild>=2024.10.3",
+    "sphinx-book-theme>=1.1.4",
+    "sphinx-toolbox>=4.0.0",
+]
 
 [tool.ruff]
 # Assume Python 3.13.
@@ -89,7 +97,7 @@ follow_imports = "silent"
 warn_redundant_casts = true
 warn_unused_ignores = true
 disallow_any_generics = true
-exclude = ['_enum_\w+\.py']
+exclude = ['dev/_\w+\.py']
 disable_error_code = 'prop-decorator'
 
 [[tool.mypy.overrides]]
