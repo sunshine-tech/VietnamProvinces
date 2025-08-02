@@ -5,7 +5,7 @@ from collections.abc import Iterable, Sequence
 from typing import Self, NamedTuple, Any, Annotated
 
 from logbook import Logger
-from pydantic import BaseModel, ValidationInfo, Field, StringConstraints, field_validator, computed_field
+from pydantic import BaseModel, ValidationInfo, Field, StringConstraints, ConfigDict, field_validator, computed_field
 
 from vietnam_provinces.base import VietNamDivisionType
 from .types import Name, convert_to_codename, make_province_codename, make_ward_short_codename
@@ -151,15 +151,14 @@ class Ward(BaseRegion):
     # Redefine here, or the validator won't run
     division_type: VietNamDivisionType = VietNamDivisionType.XA
     short_codename: str | None = None
+    model_config = ConfigDict(validate_default=True)
 
-    @field_validator('division_type', mode='before')
+    @field_validator('division_type', mode='after')
     @classmethod
-    def parse_division_type(cls, value, info: ValidationInfo):
-        if value:
-            return value
+    def parse_division_type(cls, value: VietNamDivisionType, info: ValidationInfo) -> VietNamDivisionType:
         name = info.data['name'].lower()
         possibles = (VietNamDivisionType.DAC_KHU, VietNamDivisionType.XA, VietNamDivisionType.PHUONG)
-        return next((t for t in possibles if name.startswith(f'{t.value} ')), None)
+        return next((t for t in possibles if name.startswith(f'{t.value} ')), VietNamDivisionType.XA)
 
 
 class Province(BaseRegion):
@@ -167,22 +166,20 @@ class Province(BaseRegion):
     phone_code: int = 0
     # Actual wards are saved here for fast searching
     indexed_wards: dict[str, Ward] = Field(exclude=True, default_factory=dict)
+    model_config = ConfigDict(validate_default=True)
 
     @computed_field
     @property
     def wards(self) -> tuple[Ward, ...]:
         return tuple(self.indexed_wards.values())
 
-    @field_validator('division_type', mode='before')
+    @field_validator('division_type', mode='after')
     @classmethod
-    def parse_division_type(cls, value, info: ValidationInfo):
-        if value:
-            return value
+    def parse_division_type(cls, value: VietNamDivisionType, info: ValidationInfo) -> VietNamDivisionType:
         name = info.data['name'].lower()
         if name.startswith('thành phố '):
             return VietNamDivisionType.THANH_PHO_TRUNG_UONG
-        if name.startswith(f'{VietNamDivisionType.TINH} '):
-            return VietNamDivisionType.TINH
+        return value
 
     @property
     def short_codename(self) -> str:
@@ -205,7 +202,7 @@ def convert_to_nested(
         try:
             province_dict[p.codename]
         except KeyError:
-            province = Province(name=p.name, code=p.code, codename=p.codename)
+            province = Province.model_validate(dict(name=p.name, code=p.code, codename=p.codename))
             # Find phone_code
             matched_phone_code = next(
                 (ph for ph in phone_codes if province.codename.endswith(ph.province_codename)), None
