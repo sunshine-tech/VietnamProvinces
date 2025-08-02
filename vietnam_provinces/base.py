@@ -21,10 +21,15 @@ class Ward(NamedTuple):
     codename: str
     province_code: int
 
-    def __eq__(self, other: object):
-        if not isinstance(other, Ward):
-            return False
-        return other.code == self.code
+    def __eq__(self, other: object) -> bool:
+        if isinstance(other, Ward):
+            return other.code == self.code
+        if isinstance(other, tuple):
+            return other == tuple(self)
+        return False
+
+    def __str__(self) -> str:
+        return self.name
 
     @staticmethod
     def from_code(code: WardCode) -> 'Ward':
@@ -44,10 +49,15 @@ class Province(NamedTuple):
     codename: str
     phone_code: int
 
-    def __eq__(self, other: object):
-        if not isinstance(other, Province):
-            return False
-        return other.code == self.code
+    def __eq__(self, other: object) -> bool:
+        if isinstance(other, Province):
+            return other.code == self.code
+        if isinstance(other, tuple):
+            return other == tuple(self)
+        return False
+
+    def __str__(self) -> str:
+        return self.name
 
     @staticmethod
     def from_code(code: ProvinceCode) -> 'Province':

@@ -1,11 +1,11 @@
 from devtools import debug
 from pydantic import BaseModel
 
-from vietnam_provinces.enums import ProvinceEnum
+from vietnam_provinces import Province, ProvinceCode
 
 
 class Address(BaseModel):
-    province: ProvinceEnum
+    province: Province
 
 
 class Profile(BaseModel):
@@ -14,10 +14,11 @@ class Profile(BaseModel):
 
 
 def test_build_from_dict():
-    address = {'province': ProvinceEnum.P_79}
+    p = Province.from_code(ProvinceCode.P_79)
+    address = {'province': p}
     profile = Profile(name='Nguyễn Hồng Quân', address=address)
     debug(profile)
-    assert profile.address.province == ProvinceEnum.P_79
+    assert profile.address.province.code == ProvinceCode.P_79
     d = profile.model_dump()
     debug(d)
-    assert d['address']['province'] == ProvinceEnum.P_79
+    assert d['address']['province'] == p
