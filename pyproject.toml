@@ -24,7 +24,7 @@ classifiers = [
 [project.urls]
 Homepage = "https://github.com/sunshine-tech/VietnamProvinces"
 Repository = "https://github.com/sunshine-tech/VietnamProvinces.git"
-Documentation = "https://vietnam-provinces.readthedocs.io"
+Documentation = "https://vietnamprovinces.readthedocs.io"
 
 [dependency-groups]
 dev = [

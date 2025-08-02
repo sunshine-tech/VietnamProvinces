@@ -80,7 +80,7 @@ To know if the data is up-to-date, check the `__data_version__` attribute of the
 
     >>> import vietnam_provinces
     >>> vietnam_provinces.__data_version__
-    '2025-01-04'
+    '2025-08-02'
 
 
 Install
@@ -117,7 +117,7 @@ In the future, when the authority reorganize administrative divisions, we need t
 
 .. code-block:: sh
 
-    python3 -m dev -w dev/seed-data/2025-07/Cap-xa-2025.csv -p dev/seed-data/2025-07/Cap-tinh-2025.csv -f nested-json
+    python3 -m dev -w dev/seed-data/2025-07/Cap-xa.csv -p dev/seed-data/2025-07/Cap-tinh.csv -f nested-json
 
 You can run
 
@@ -135,7 +135,7 @@ Generate Python code
 
 .. code-block:: sh
 
-    python3 -m dev -w dev/seed-data/2025-07/Cap-xa-2025.csv -p dev/seed-data/2025-07/Cap-tinh-2025.csv -f python
+    python3 -m dev -w dev/seed-data/2025-07/Cap-xa.csv -p dev/seed-data/2025-07/Cap-tinh.csv -f python
 
 
 Data source

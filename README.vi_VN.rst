@@ -6,7 +6,7 @@ VietnamProvinces
 
 [`English <english_>`_]
 
-Thư viện cung cấp danh sách đơn vị hành chính Việt Nam (tỉnh thành, phường xã) với tên và mã số lấy theo `Tổng cục Thống kê <gso_vn_>`_.
+Thư viện cung cấp danh sách đơn vị hành chính Việt Nam (tỉnh thành, phường xã, không còn cấp quận huyện từ Tháng 7, 2025) với tên và mã số lấy theo `Tổng cục Thống kê <gso_vn_>`_.
 
 Ví dụ:
 
@@ -61,7 +61,7 @@ Lưu ý rằng biến này chỉ cung cấp đường dẫn file, không phải 
 2. Kiểu dữ liệu Python
 
 Dạng này có ích cho những ứng dụng nào cần truy cập dữ liệu thường xuyên (cắt bớt thời gian đọc file JSON và phân tách dữ liệu từ cấu trúc JSON).
-Có hai loại đối tượng: `Province` / `Ward` đại diện cho một tỉnh, xã và `ProvinceCode` / `WardCode` là mã số của tỉnh , xã ở dạng `enum`.
+Có hai loại đối tượng: `Province` / `Ward` đại diện cho một tỉnh, xã và `ProvinceCode` / `WardCode` là mã số của tỉnh, xã ở dạng `enum`.
 Bạn có thể import vào code Python để dùng ngay.
 
 .. code-block:: python
@@ -73,9 +73,6 @@ Bạn có thể import vào code Python để dùng ngay.
 
     >>> Ward.from_code(WardCode.W_01234)
     Ward(name='Xã Yên Thành', code=1234, division_type=<VietNamDivisionType.XA: 'xã'>, codename='xa_yen_thanh', province_code=8)
-
-
-Nạp danh sách phường xã bằng cách này nhanh hơn từ JSON nhiều. Việc ở kiểu ``Enum`` cũng giúp người dùng thư viện tận dụng được tính năng gợi ý của phần mềm soạn thảo / IDE trong khi viết code, ngăn ngừa lỗi đánh máy.
 
 
 Cài đặt
@@ -110,7 +107,7 @@ Trong tương lai, nếu chính quyền sắp xếp lại các đơn vị hành 
 
 .. code-block:: sh
 
-    python3 -m dev -w dev/seed-data/2025-07/Cap-xa-2025.csv -p dev/seed-data/2025-07/Cap-tinh-2025.csv -f nested-json
+    python3 -m dev -w dev/seed-data/2025-07/Cap-xa.csv -p dev/seed-data/2025-07/Cap-tinh.csv -f nested-json
 
 Bạn có thể dùng lệnh
 
@@ -128,7 +125,7 @@ Sinh mã Python
 
 .. code-block:: sh
 
-    python3 -m dev -w dev/seed-data/2025-07/Cap-xa-2025.csv -p dev/seed-data/2025-07/Cap-tinh-2025.csv -f python
+    python3 -m dev -w dev/seed-data/2025-07/Cap-xa.csv -p dev/seed-data/2025-07/Cap-tinh.csv -f python
 
 
 Nguồn dữ liệu
