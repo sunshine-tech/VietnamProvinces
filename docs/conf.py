@@ -9,7 +9,7 @@
 project = 'VietnamProvinces'
 copyright = '2025, Nguyễn Hồng Quân'
 author = 'Nguyễn Hồng Quân'
-release = '2025.08.1'
+release = '2025.8.1'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
