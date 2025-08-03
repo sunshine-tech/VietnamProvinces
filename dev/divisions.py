@@ -278,7 +278,7 @@ def gen_python_code_enums(provinces: Iterable[Province]) -> str:
 def gen_province_object_creation(province: Province) -> ast.Call:
     def_args = [
         ast.Constant(value=province.name),
-        ast.Constant(value=province.code),
+        ast.Attribute(value=ast.Name(id='ProvinceCode'), attr=f'P_{province.code:02}'),
         ast.Attribute(value=ast.Name(id='VietNamDivisionType'), attr=province.division_type.name),
         ast.Constant(value=province.codename),
         ast.Constant(value=province.phone_code),
@@ -289,10 +289,10 @@ def gen_province_object_creation(province: Province) -> ast.Call:
 def gen_ward_object_creation(ward: Ward, province: Province) -> ast.Call:
     def_args = [
         ast.Constant(value=ward.name),
-        ast.Constant(value=ward.code),
+        ast.Attribute(value=ast.Name(id='WardCode'), attr=f'W_{ward.code:05}'),
         ast.Attribute(value=ast.Name(id='VietNamDivisionType'), attr=ward.division_type.name),
         ast.Constant(value=ward.codename),
-        ast.Constant(value=province.code),
+        ast.Attribute(value=ast.Name(id='ProvinceCode'), attr=f'P_{province.code:02}'),
     ]
     return ast.Call(func=ast.Name(id='Ward'), args=def_args, keywords=[])
 

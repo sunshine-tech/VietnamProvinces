@@ -69,10 +69,10 @@ Bạn có thể import vào code Python để dùng ngay.
     >>> from vietnam_provinces import ProvinceCode, Province, WardCode, Ward
 
     >>> Province.from_code(ProvinceCode.P_15)
-    Province(name='Lào Cai', code=15, division_type=<VietNamDivisionType.TINH: 'tỉnh'>, codename='lao_cai', phone_code=214)
+    Province(name='Lào Cai', code=<ProvinceCode.P_15: 15>, division_type=<VietNamDivisionType.TINH: 'tỉnh'>, codename='lao_cai', phone_code=214)
 
-    >>> Ward.from_code(WardCode.W_01234)
-    Ward(name='Xã Yên Thành', code=1234, division_type=<VietNamDivisionType.XA: 'xã'>, codename='xa_yen_thanh', province_code=8)
+    >>> Ward.from_code(23425)
+    Ward(name='Xã Tu Mơ Rông', code=<WardCode.W_23425: 23425>, division_type=<VietNamDivisionType.XA: 'xã'>, codename='xa_tu_mo_rong', province_code=<ProvinceCode.P_51: 51>)
 
 
 Cài đặt
