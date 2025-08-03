@@ -2,11 +2,11 @@
 VietnamProvinces
 ================
 
-|image love| |image pypi|
+|image love| |image pypi| |common changelog|
 
 [`Tiếng Việt <vietnamese_>`_]
 
-Library to provide list of Vietnam administrative divisions (tỉnh thành, phường xã, after the rearrangement in July 2025) with the name and code as defined by `General Statistics Office of Viet Nam <gso_vn_>`_ (Tổng cục Thống kê).
+Library to provide list of Vietnam administrative divisions (tỉnh thành, phường xã, after the rearrangement in July 2025) with the name and code as defined by `Draft of new administrative units <draft_new_units_>`_ (Tổng cục Thống kê).
 
 Example:
 
@@ -141,7 +141,7 @@ Generate Python code
 Data source
 ~~~~~~~~~~~
 
-- Name and code of provinces, districts and wards:  `General Statistics Office of Viet Nam <gso_vn_>`_.
+- Name and code of provinces, and wards:  `General Statistics Office of Viet Nam <gso_vn_>`_.
 - Phone area code: `Thái Bình province's department of Information and Communication <tb_ic_>`_.
 
 
@@ -154,8 +154,11 @@ Given to you by `Nguyễn Hồng Quân <quan_>`_, after nights and weekends.
 .. |image love| image:: https://madewithlove.now.sh/vn?heart=true&colorA=%23ffcd00&colorB=%23da251d
 .. |image pypi| image:: https://badgen.net/pypi/v/vietnam-provinces
    :target: https://pypi.org/project/vietnam-provinces/
+.. |common changelog| image:: https://common-changelog.org/badge.svg
+   :target: https://common-changelog.org
 .. _vietnamese: README.vi_VN.rst
-.. _gso_vn: https://www.gso.gov.vn/
+.. _gso_vn: https://danhmuchanhchinh.gso.gov.vn/
+.. _draft_new_units: https://chinhphu.vn/du-thao-vbqppl/du-thao-quyet-dinh-cua-thu-tuong-chinh-phu-ban-hanh-bang-danh-muc-va-ma-so-cac-don-vi-hanh-chinh-7546
 .. _tb_ic: https://sotttt.thaibinh.gov.vn/tin-tuc/buu-chinh-vien-thong/tra-cuu-ma-vung-dien-thoai-co-dinh-mat-dat-ma-mang-dien-thoa2.html
 .. _dataclass: https://docs.python.org/3/library/dataclasses.html
 .. _pydantic: https://pypi.org/project/pydantic/

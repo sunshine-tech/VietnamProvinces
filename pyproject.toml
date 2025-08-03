@@ -25,6 +25,7 @@ classifiers = [
 Homepage = "https://github.com/sunshine-tech/VietnamProvinces"
 Repository = "https://github.com/sunshine-tech/VietnamProvinces.git"
 Documentation = "https://vietnamprovinces.readthedocs.io"
+Changelog = "https://github.com/sunshine-tech/VietnamProvinces/blob/main/CHANGELOG.md"
 
 [dependency-groups]
 dev = [

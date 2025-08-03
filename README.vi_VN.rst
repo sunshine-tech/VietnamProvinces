@@ -6,7 +6,7 @@ VietnamProvinces
 
 [`English <english_>`_]
 
-Thư viện cung cấp danh sách đơn vị hành chính Việt Nam (tỉnh thành, phường xã, không còn cấp quận huyện từ Tháng 7, 2025) với tên và mã số lấy theo `Tổng cục Thống kê <gso_vn_>`_.
+Thư viện cung cấp danh sách đơn vị hành chính Việt Nam (tỉnh thành, phường xã, không còn cấp quận huyện từ Tháng 7, 2025) với tên và mã số lấy theo `Dự thảo Quyết định của Thủ tướng Chính phủ ban hành Bảng danh mục và mã số các đơn vị hành chính Việt Nam <draft_new_units_>`_.
 
 Ví dụ:
 
@@ -131,7 +131,7 @@ Sinh mã Python
 Nguồn dữ liệu
 ~~~~~~~~~~~~~
 
-- Tên và mã tỉnh thành, quận huyện, phường xã:  `Tổng cục Thống kê Việt Nam <gso_vn_>`_.
+- Tên và mã tỉnh thành, phường xã:  `Tổng cục Thống kê Việt Nam <gso_vn_>`_.
 - Mã vùng điện thoại: `Sở Thông tin và Truyền thông Thái Bình <tb_ic_>`_.
 
 
@@ -145,7 +145,8 @@ Mang đến cho bạn bởi `Nguyễn Hồng Quân <quan_>`_, sau hàng đêm v�
 .. |image pypi| image:: https://badgen.net/pypi/v/vietnam-provinces
    :target: https://pypi.org/project/vietnam-provinces/
 .. _english: README.rst
-.. _gso_vn: https://www.gso.gov.vn/
+.. _gso_vn: https://danhmuchanhchinh.gso.gov.vn/
+.. _draft_new_units: https://chinhphu.vn/du-thao-vbqppl/du-thao-quyet-dinh-cua-thu-tuong-chinh-phu-ban-hanh-bang-danh-muc-va-ma-so-cac-don-vi-hanh-chinh-7546
 .. _tb_ic: https://sotttt.thaibinh.gov.vn/tin-tuc/buu-chinh-vien-thong/tra-cuu-ma-vung-dien-thoai-co-dinh-mat-dat-ma-mang-dien-thoa2.html
 .. _dataclass: https://docs.python.org/3/library/dataclasses.html
 .. _pydantic: https://pypi.org/project/pydantic/
