@@ -1,5 +1,6 @@
+from dataclasses import dataclass
 from enum import Enum
-from typing import NamedTuple, Iterator
+from typing import Iterator
 
 from .codes import ProvinceCode, WardCode
 
@@ -14,7 +15,10 @@ class VietNamDivisionType(str, Enum):
     DAC_KHU = 'đặc khu'
 
 
-class Province(NamedTuple):
+# We use dataclass instead of NamedTuple to allow this class
+# to be mixed in Pydandic dataclass in application side.
+@dataclass(frozen=True)
+class Province:
     name: str
     code: ProvinceCode
     division_type: VietNamDivisionType
@@ -22,11 +26,9 @@ class Province(NamedTuple):
     phone_code: int
 
     def __eq__(self, other: object) -> bool:
-        if isinstance(other, Province):
-            return other.code == self.code
-        if isinstance(other, tuple):
-            return other == tuple(self)
-        return False
+        if not isinstance(other, Province):
+            return False
+        return other.code == self.code
 
     def __str__(self) -> str:
         return self.name
@@ -51,7 +53,8 @@ class Province(NamedTuple):
         return iter(values)
 
 
-class Ward(NamedTuple):
+@dataclass(frozen=True)
+class Ward:
     name: str
     code: WardCode
     division_type: VietNamDivisionType
@@ -59,11 +62,9 @@ class Ward(NamedTuple):
     province_code: ProvinceCode
 
     def __eq__(self, other: object) -> bool:
-        if isinstance(other, Ward):
-            return other.code == self.code
-        if isinstance(other, tuple):
-            return other == tuple(self)
-        return False
+        if not isinstance(other, Ward):
+            return False
+        return other.code == self.code
 
     def __str__(self) -> str:
         return self.name

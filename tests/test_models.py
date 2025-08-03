@@ -1,3 +1,5 @@
+from dataclasses import asdict
+
 from devtools import debug
 from pydantic import BaseModel, field_serializer
 
@@ -18,7 +20,7 @@ class DAddress(BaseModel):
 
     @field_serializer('province')
     def serialize_province(self, province: Province):
-        return province._asdict()
+        return asdict(province)
 
 
 class DProfile(BaseModel):
@@ -28,13 +30,13 @@ class DProfile(BaseModel):
 
 def test_build_from_dict():
     p = Province.from_code(ProvinceCode.P_79)
-    address = {'province': p._asdict()}
+    address = {'province': asdict(p)}
     profile = Profile(name='Nguyễn Hồng Quân', address=address)
     debug(profile)
     assert profile.address.province.code == ProvinceCode.P_79
     d = profile.model_dump()
     debug(d)
-    assert d['address']['province'] == p
+    assert d['address']['province'] == asdict(p)
 
 
 def test_dump_as_dict():
@@ -45,4 +47,4 @@ def test_dump_as_dict():
     assert profile.address.province.code == ProvinceCode.P_79
     d = profile.model_dump()
     debug(d)
-    assert d['address']['province'] == p._asdict()
+    assert d['address']['province'] == asdict(p)
