@@ -61,7 +61,7 @@ Note that this variable only returns the path of the file, not the content. It i
 2. Python data type
 
 This data is useful for some applications which need to access the data more often.
-There are two kind of objects, first is the object presenting a single province or ward, second is province code or ward code in form of `enum`, which you can import in Python code:
+There are two kinds of objects, first is the object presenting a single province or ward, second is province code or ward code in form of `enum`, which you can import in Python code:
 
 .. code-block:: python
 
@@ -74,7 +74,7 @@ There are two kind of objects, first is the object presenting a single province 
     Ward(name='Xã Tu Mơ Rông', code=<WardCode.W_23425: 23425>, division_type=<VietNamDivisionType.XA: 'xã'>, codename='xa_tu_mo_rong', province_code=<ProvinceCode.P_51: 51>)
 
 
-To know if the data is up-to-date, check the `__data_version__` attribute of the module:
+To know if the data is up-to-date, check the ``__data_version__`` attribute of the module:
 
 .. code-block:: python
 
@@ -88,7 +88,9 @@ Install
 
 .. code-block:: sh
 
-    pip3 install vietnam-provinces
+    python -m pip install vietnam-provinces
+    # or
+    uv add vietnam-provinces
 
 
 This library is compatible with Python 3.10+.
