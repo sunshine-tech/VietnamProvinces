@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from .base import VietNamDivisionType, Province, Ward
+from .base import Province, VietNamDivisionType, Ward
 from .codes import ProvinceCode, WardCode
 
 
