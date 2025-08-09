@@ -6,4 +6,3 @@
    :caption: Contents:
 
    api-ref/index
-   api-ref/codes

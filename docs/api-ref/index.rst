@@ -1,15 +1,8 @@
 API Reference
 =============
 
-.. module:: vietnam_provinces
+.. toctree::
+   :maxdepth: 2
 
-.. autoenum:: VietNamDivisionType
-   :members:
-
-.. autoclass:: Province
-   :members:
-   :member-order: groupwise
-
-.. autoclass:: Ward
-   :members:
-   :member-order: groupwise
+   classes
+   codes
