@@ -1,29 +1,31 @@
 #!/usr/bin/env python
 
-import re
-import sys
 import csv
+import re
 import subprocess
-from datetime import datetime, UTC
+import sys
+from datetime import UTC, datetime
 from enum import Enum, StrEnum
 from pathlib import Path
 
 import click
-import rapidjson
 import logbook
-from pydantic import TypeAdapter, OnErrorOmit
+import rapidjson
 from logbook import Logger
+from logbook.base import LogRecord
 from logbook.more import ColorizedStderrHandler
+from pydantic import OnErrorOmit, TypeAdapter
 
-from .phones import load_phone_area_table
 from .divisions import (
+    ProvinceCSVRecord,
     WardCSVInputRow,
     WardCSVRecord,
-    ProvinceCSVRecord,
+    convert_to_nested,
     gen_python_code_enums,
     gen_python_province_lookup,
-    convert_to_nested,
 )
+from .phones import load_phone_area_table
+
 
 logger = Logger(__name__)
 
@@ -52,16 +54,16 @@ def echo(msg: str):
 
 
 class MyColorizedStderrHandler(ColorizedStderrHandler):
-    default_format_string = '{record.level_name}: {record.message}'
+    default_format_string: str = '{record.level_name}: {record.message}'
 
-    def get_color(self, record):  # pyright: ignore[reportIncompatibleMethodOverride]
+    def get_color(self, record: LogRecord):  # pyright: ignore[reportIncompatibleMethodOverride]
         color = super().get_color(record)
         if logbook.DEBUG < record.level <= logbook.INFO:
             return 'darkteal'
         return color
 
 
-def configure_logging(verbose):
+def configure_logging(verbose: int):
     levels = (logbook.WARNING, logbook.INFO, logbook.DEBUG)
     l = min(verbose, len(levels) - 1)  # noqa
     colored_handler = MyColorizedStderrHandler(level=levels[l])
@@ -76,7 +78,7 @@ def format_code(content: str, outfile: Path) -> bool:
     return p.returncode == 0
 
 
-def validate_output(ctx: click.Context, param: click.Parameter, value: str):
+def validate_output(ctx: click.Context, _param: click.Parameter, value: str):
     if ctx.params.get('output_format') in (ExportingFormat.FLAT_JSON, ExportingFormat.NESTED_JSON) and not value:
         raise click.BadParameter('Require a path')
     return value
@@ -102,13 +104,13 @@ def validate_output(ctx: click.Context, param: click.Parameter, value: str):
 def main(ward_csv_file: str, province_csv_file: str, output_format: ExportingFormat, output: str, verbose: int):
     configure_logging(verbose)
     logger.debug('File {}', ward_csv_file)
-    csv_wards: tuple[WardCSVRecord, ...] = tuple()
+    csv_wards: list[WardCSVRecord] = []
     with open(ward_csv_file, newline='') as f:
         reader = csv.reader(f)
         # Skip header row
-        next(reader)
+        _heading_row = next(reader)
         rows = (WardCSVInputRow._make(r[:3])._asdict() for r in reader)
-        csv_wards = TypeAdapter(tuple[OnErrorOmit[WardCSVRecord], ...]).validate_python(rows)
+        csv_wards = TypeAdapter(list[OnErrorOmit[WardCSVRecord]]).validate_python(rows)
     with open(province_csv_file, newline='') as f:
         reader = csv.reader(f)
         csv_provinces = tuple(map(ProvinceCSVRecord.from_csv_row, reader))

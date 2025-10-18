@@ -1,4 +1,5 @@
-from .base import Province, VietNamDivisionType, Ward, ProvinceCode, WardCode
+from .base import Province, ProvinceCode, VietNamDivisionType, Ward, WardCode
+
 
 PROVINCE_MAPPING = {
     1: Province('Thành phố Hà Nội', ProvinceCode.P_01, VietNamDivisionType.THANH_PHO_TRUNG_UONG, 'ha_noi', 24),
@@ -406,7 +407,7 @@ WARD_MAPPING = {
     3172: Ward('Xã Na Sang', WardCode.W_03172, VietNamDivisionType.XA, 'xa_na_sang', ProvinceCode.P_11),
     3181: Ward('Xã Mường Tùng', WardCode.W_03181, VietNamDivisionType.XA, 'xa_muong_tung', ProvinceCode.P_11),
     3193: Ward('Xã Pa Ham', WardCode.W_03193, VietNamDivisionType.XA, 'xa_pa_ham', ProvinceCode.P_11),
-    3194: Ward('Xã Nậm Nèn', WardCode.W_03194, VietNamDivisionType.XA, 'xa_nam_nen', ProvinceCode.P_11),
+    3194: Ward('Xã Nậm Nèn', WardCode.W_03194, VietNamDivisionType.XA, 'xa_nam_nen', ProvinceCode.P_11),
     3202: Ward('Xã Mường Pồn', WardCode.W_03202, VietNamDivisionType.XA, 'xa_muong_pon', ProvinceCode.P_11),
     3203: Ward('Xã Na Son', WardCode.W_03203, VietNamDivisionType.XA, 'xa_na_son', ProvinceCode.P_11),
     3208: Ward('Xã Xa Dung', WardCode.W_03208, VietNamDivisionType.XA, 'xa_xa_dung', ProvinceCode.P_11),
@@ -550,7 +551,7 @@ WARD_MAPPING = {
     4465: Ward('Xã Khao Mang', WardCode.W_04465, VietNamDivisionType.XA, 'xa_khao_mang', ProvinceCode.P_15),
     4456: Ward('Xã Mù Cang Chải', WardCode.W_04456, VietNamDivisionType.XA, 'xa_mu_cang_chai', ProvinceCode.P_15),
     4492: Ward('Xã Púng Luông', WardCode.W_04492, VietNamDivisionType.XA, 'xa_pung_luong', ProvinceCode.P_15),
-    4630: Ward('Xã Tú Lệ', WardCode.W_04630, VietNamDivisionType.XA, 'xa_tu_le', ProvinceCode.P_15),
+    4630: Ward('Xã Tú Lệ', WardCode.W_04630, VietNamDivisionType.XA, 'xa_tu_le', ProvinceCode.P_15),
     4591: Ward('Xã Trạm Tấu', WardCode.W_04591, VietNamDivisionType.XA, 'xa_tram_tau', ProvinceCode.P_15),
     4585: Ward('Xã Hạnh Phúc', WardCode.W_04585, VietNamDivisionType.XA, 'xa_hanh_phuc', ProvinceCode.P_15),
     4609: Ward('Xã Phình Hồ', WardCode.W_04609, VietNamDivisionType.XA, 'xa_phinh_ho', ProvinceCode.P_15),
@@ -560,24 +561,24 @@ WARD_MAPPING = {
     4660: Ward('Xã Liên Sơn', WardCode.W_04660, VietNamDivisionType.XA, 'xa_lien_son', ProvinceCode.P_15),
     4636: Ward('Xã Gia Hội', WardCode.W_04636, VietNamDivisionType.XA, 'xa_gia_hoi', ProvinceCode.P_15),
     4651: Ward('Xã Sơn Lương', WardCode.W_04651, VietNamDivisionType.XA, 'xa_son_luong', ProvinceCode.P_15),
-    4705: Ward('Xã Thượng Bằng La', WardCode.W_04705, VietNamDivisionType.XA, 'xa_thuong_bang_la', ProvinceCode.P_15),
-    4699: Ward('Xã Chấn Thịnh', WardCode.W_04699, VietNamDivisionType.XA, 'xa_chan_thinh', ProvinceCode.P_15),
+    4705: Ward('Xã Thượng Bằng La', WardCode.W_04705, VietNamDivisionType.XA, 'xa_thuong_bang_la', ProvinceCode.P_15),
+    4699: Ward('Xã Chấn Thịnh', WardCode.W_04699, VietNamDivisionType.XA, 'xa_chan_thinh', ProvinceCode.P_15),
     4711: Ward('Xã Nghĩa Tâm', WardCode.W_04711, VietNamDivisionType.XA, 'xa_nghia_tam', ProvinceCode.P_15),
     4672: Ward('Xã Văn Chấn', WardCode.W_04672, VietNamDivisionType.XA, 'xa_van_chan', ProvinceCode.P_15),
     4402: Ward('Xã Phong Dụ Hạ', WardCode.W_04402, VietNamDivisionType.XA, 'xa_phong_du_ha', ProvinceCode.P_15),
-    4387: Ward('Xã Châu Quế', WardCode.W_04387, VietNamDivisionType.XA, 'xa_chau_que', ProvinceCode.P_15),
+    4387: Ward('Xã Châu Quế', WardCode.W_04387, VietNamDivisionType.XA, 'xa_chau_que', ProvinceCode.P_15),
     4381: Ward('Xã Lâm Giang', WardCode.W_04381, VietNamDivisionType.XA, 'xa_lam_giang', ProvinceCode.P_15),
     4399: Ward('Xã Đông Cuông', WardCode.W_04399, VietNamDivisionType.XA, 'xa_dong_cuong', ProvinceCode.P_15),
-    4429: Ward('Xã Tân Hợp', WardCode.W_04429, VietNamDivisionType.XA, 'xa_tan_hop', ProvinceCode.P_15),
+    4429: Ward('Xã Tân Hợp', WardCode.W_04429, VietNamDivisionType.XA, 'xa_tan_hop', ProvinceCode.P_15),
     4375: Ward('Xã Mậu A', WardCode.W_04375, VietNamDivisionType.XA, 'xa_mau_a', ProvinceCode.P_15),
-    4441: Ward('Xã Xuân Ái', WardCode.W_04441, VietNamDivisionType.XA, 'xa_xuan_ai', ProvinceCode.P_15),
-    4450: Ward('Xã Mỏ Vàng', WardCode.W_04450, VietNamDivisionType.XA, 'xa_mo_vang', ProvinceCode.P_15),
+    4441: Ward('Xã Xuân Ái', WardCode.W_04441, VietNamDivisionType.XA, 'xa_xuan_ai', ProvinceCode.P_15),
+    4450: Ward('Xã Mỏ Vàng', WardCode.W_04450, VietNamDivisionType.XA, 'xa_mo_vang', ProvinceCode.P_15),
     4318: Ward('Xã Lâm Thượng', WardCode.W_04318, VietNamDivisionType.XA, 'xa_lam_thuong', ProvinceCode.P_15),
     4303: Ward('Xã Lục Yên', WardCode.W_04303, VietNamDivisionType.XA, 'xa_luc_yen', ProvinceCode.P_15),
     4336: Ward('Xã Tân Lĩnh', WardCode.W_04336, VietNamDivisionType.XA, 'xa_tan_linh', ProvinceCode.P_15),
-    4333: Ward('Xã Khánh Hòa', WardCode.W_04333, VietNamDivisionType.XA, 'xa_khanh_hoa', ProvinceCode.P_15),
-    4363: Ward('Xã Phúc Lợi', WardCode.W_04363, VietNamDivisionType.XA, 'xa_phuc_loi', ProvinceCode.P_15),
-    4345: Ward('Xã Mường Lai', WardCode.W_04345, VietNamDivisionType.XA, 'xa_muong_lai', ProvinceCode.P_15),
+    4333: Ward('Xã Khánh Hòa', WardCode.W_04333, VietNamDivisionType.XA, 'xa_khanh_hoa', ProvinceCode.P_15),
+    4363: Ward('Xã Phúc Lợi', WardCode.W_04363, VietNamDivisionType.XA, 'xa_phuc_loi', ProvinceCode.P_15),
+    4345: Ward('Xã Mường Lai', WardCode.W_04345, VietNamDivisionType.XA, 'xa_muong_lai', ProvinceCode.P_15),
     4726: Ward('Xã Cảm Nhân', WardCode.W_04726, VietNamDivisionType.XA, 'xa_cam_nhan', ProvinceCode.P_15),
     4744: Ward('Xã Yên Thành', WardCode.W_04744, VietNamDivisionType.XA, 'xa_yen_thanh', ProvinceCode.P_15),
     4717: Ward('Xã Thác Bà', WardCode.W_04717, VietNamDivisionType.XA, 'xa_thac_ba', ProvinceCode.P_15),
@@ -589,7 +590,7 @@ WARD_MAPPING = {
     4543: Ward('Phường Âu Lâu', WardCode.W_04543, VietNamDivisionType.PHUONG, 'phuong_au_lau', ProvinceCode.P_15),
     4498: Ward('Xã Trấn Yên', WardCode.W_04498, VietNamDivisionType.XA, 'xa_tran_yen', ProvinceCode.P_15),
     4576: Ward('Xã Hưng Khánh', WardCode.W_04576, VietNamDivisionType.XA, 'xa_hung_khanh', ProvinceCode.P_15),
-    4537: Ward('Xã Lương Thịnh', WardCode.W_04537, VietNamDivisionType.XA, 'xa_luong_thinh', ProvinceCode.P_15),
+    4537: Ward('Xã Lương Thịnh', WardCode.W_04537, VietNamDivisionType.XA, 'xa_luong_thinh', ProvinceCode.P_15),
     4564: Ward('Xã Việt Hồng', WardCode.W_04564, VietNamDivisionType.XA, 'xa_viet_hong', ProvinceCode.P_15),
     4531: Ward('Xã Quy Mông', WardCode.W_04531, VietNamDivisionType.XA, 'xa_quy_mong', ProvinceCode.P_15),
     2902: Ward('Xã Phong Hải', WardCode.W_02902, VietNamDivisionType.XA, 'xa_phong_hai', ProvinceCode.P_15),
@@ -2576,12 +2577,14 @@ WARD_MAPPING = {
     22528: Ward('Phường Ninh Hòa', WardCode.W_22528, VietNamDivisionType.PHUONG, 'phuong_ninh_hoa', ProvinceCode.P_56),
     22576: Ward('Xã Tân Định', WardCode.W_22576, VietNamDivisionType.XA, 'xa_tan_dinh', ProvinceCode.P_56),
     22561: Ward(
-        'Phường Đông Ninh Hòa', WardCode.W_22561, VietNamDivisionType.XA, 'phuong_dong_ninh_hoa', ProvinceCode.P_56
+        'Phường Đông Ninh Hòa', WardCode.W_22561, VietNamDivisionType.PHUONG, 'phuong_dong_ninh_hoa', ProvinceCode.P_56
     ),
-    22591: Ward('Phường Hòa Thắng', WardCode.W_22591, VietNamDivisionType.XA, 'phuong_hoa_thang', ProvinceCode.P_56),
-    22597: Ward('Xã Nam Ninh Hòa', WardCode.W_22597, VietNamDivisionType.XA, 'xa_nam_ninh_hoa', ProvinceCode.P_56),
-    22552: Ward('Xã Tây Ninh Hòa', WardCode.W_22552, VietNamDivisionType.XA, 'xa_tay_ninh_hoa', ProvinceCode.P_56),
-    22558: Ward('Xã Hòa Trí', WardCode.W_22558, VietNamDivisionType.XA, 'xa_hoa_tri', ProvinceCode.P_56),
+    22591: Ward(
+        'Phường Hòa Thắng', WardCode.W_22591, VietNamDivisionType.PHUONG, 'phuong_hoa_thang', ProvinceCode.P_56
+    ),
+    22597: Ward('Xã Nam Ninh Hòa', WardCode.W_22597, VietNamDivisionType.XA, 'xa_nam_ninh_hoa', ProvinceCode.P_56),
+    22552: Ward('Xã Tây Ninh Hòa', WardCode.W_22552, VietNamDivisionType.XA, 'xa_tay_ninh_hoa', ProvinceCode.P_56),
+    22558: Ward('Xã Hòa Trí', WardCode.W_22558, VietNamDivisionType.XA, 'xa_hoa_tri', ProvinceCode.P_56),
     22504: Ward('Xã Đại Lãnh', WardCode.W_22504, VietNamDivisionType.XA, 'xa_dai_lanh', ProvinceCode.P_56),
     22498: Ward('Xã Tu Bông', WardCode.W_22498, VietNamDivisionType.XA, 'xa_tu_bong', ProvinceCode.P_56),
     22516: Ward('Xã Vạn Thắng', WardCode.W_22516, VietNamDivisionType.XA, 'xa_van_thang', ProvinceCode.P_56),
@@ -3158,9 +3161,13 @@ WARD_MAPPING = {
     27142: Ward(
         'Phường Nhiêu Lộc', WardCode.W_27142, VietNamDivisionType.PHUONG, 'phuong_nhieu_loc', ProvinceCode.P_79
     ),
-    27259: Ward('Phường Xóm Chiếu', WardCode.W_27259, VietNamDivisionType.XA, 'phuong_xom_chieu', ProvinceCode.P_79),
-    27265: Ward('Phường Khánh Hội', WardCode.W_27265, VietNamDivisionType.XA, 'phuong_khanh_hoi', ProvinceCode.P_79),
-    27286: Ward('Phường Vĩnh Hội', WardCode.W_27286, VietNamDivisionType.XA, 'phuong_vinh_hoi', ProvinceCode.P_79),
+    27259: Ward(
+        'Phường Xóm Chiếu', WardCode.W_27259, VietNamDivisionType.PHUONG, 'phuong_xom_chieu', ProvinceCode.P_79
+    ),
+    27265: Ward(
+        'Phường Khánh Hội', WardCode.W_27265, VietNamDivisionType.PHUONG, 'phuong_khanh_hoi', ProvinceCode.P_79
+    ),
+    27286: Ward('Phường Vĩnh Hội', WardCode.W_27286, VietNamDivisionType.PHUONG, 'phuong_vinh_hoi', ProvinceCode.P_79),
     27301: Ward('Phường Chợ Quán', WardCode.W_27301, VietNamDivisionType.PHUONG, 'phuong_cho_quan', ProvinceCode.P_79),
     27316: Ward('Phường An Đông', WardCode.W_27316, VietNamDivisionType.PHUONG, 'phuong_an_dong', ProvinceCode.P_79),
     27343: Ward('Phường Chợ Lớn', WardCode.W_27343, VietNamDivisionType.PHUONG, 'phuong_cho_lon', ProvinceCode.P_79),
@@ -3171,12 +3178,12 @@ WARD_MAPPING = {
     27385: Ward('Phường Bình Phú', WardCode.W_27385, VietNamDivisionType.PHUONG, 'phuong_binh_phu', ProvinceCode.P_79),
     27349: Ward('Phường Phú Lâm', WardCode.W_27349, VietNamDivisionType.PHUONG, 'phuong_phu_lam', ProvinceCode.P_79),
     27478: Ward(
-        'Phường Tân Thuận', WardCode.W_27478, VietNamDivisionType.PHUONG, 'phuong_tan_thuan', ProvinceCode.P_79
+        'Phường Tân Thuận', WardCode.W_27478, VietNamDivisionType.PHUONG, 'phuong_tan_thuan', ProvinceCode.P_79
     ),
     27484: Ward(
         'Phường Phú Thuận', WardCode.W_27484, VietNamDivisionType.PHUONG, 'phuong_phu_thuan', ProvinceCode.P_79
     ),
-    27487: Ward('Phường Tân Mỹ', WardCode.W_27487, VietNamDivisionType.PHUONG, 'phuong_tan_my', ProvinceCode.P_79),
+    27487: Ward('Phường Tân Mỹ', WardCode.W_27487, VietNamDivisionType.PHUONG, 'phuong_tan_my', ProvinceCode.P_79),
     27475: Ward('Phường Tân Hưng', WardCode.W_27475, VietNamDivisionType.PHUONG, 'phuong_tan_hung', ProvinceCode.P_79),
     27418: Ward(
         'Phường Chánh Hưng', WardCode.W_27418, VietNamDivisionType.PHUONG, 'phuong_chanh_hung', ProvinceCode.P_79
@@ -3215,14 +3222,14 @@ WARD_MAPPING = {
     26767: Ward(
         'Phường An Phú Đông', WardCode.W_26767, VietNamDivisionType.PHUONG, 'phuong_an_phu_dong', ProvinceCode.P_79
     ),
-    27460: Ward('Phường An Lạc', WardCode.W_27460, VietNamDivisionType.XA, 'phuong_an_lac', ProvinceCode.P_79),
-    27457: Ward('Phường Tân Tạo', WardCode.W_27457, VietNamDivisionType.XA, 'phuong_tan_tao', ProvinceCode.P_79),
-    27442: Ward('Phường Bình Tân', WardCode.W_27442, VietNamDivisionType.XA, 'phuong_binh_tan', ProvinceCode.P_79),
+    27460: Ward('Phường An Lạc', WardCode.W_27460, VietNamDivisionType.PHUONG, 'phuong_an_lac', ProvinceCode.P_79),
+    27457: Ward('Phường Tân Tạo', WardCode.W_27457, VietNamDivisionType.PHUONG, 'phuong_tan_tao', ProvinceCode.P_79),
+    27442: Ward('Phường Bình Tân', WardCode.W_27442, VietNamDivisionType.PHUONG, 'phuong_binh_tan', ProvinceCode.P_79),
     27448: Ward(
-        'Phường Bình Trị Đông', WardCode.W_27448, VietNamDivisionType.XA, 'phuong_binh_tri_dong', ProvinceCode.P_79
+        'Phường Bình Trị Đông', WardCode.W_27448, VietNamDivisionType.PHUONG, 'phuong_binh_tri_dong', ProvinceCode.P_79
     ),
     27439: Ward(
-        'Phường Bình Hưng Hòa', WardCode.W_27439, VietNamDivisionType.XA, 'phuong_binh_hung_hoa', ProvinceCode.P_79
+        'Phường Bình Hưng Hòa', WardCode.W_27439, VietNamDivisionType.PHUONG, 'phuong_binh_hung_hoa', ProvinceCode.P_79
     ),
     26944: Ward('Phường Gia Định', WardCode.W_26944, VietNamDivisionType.PHUONG, 'phuong_gia_dinh', ProvinceCode.P_79),
     26929: Ward(
@@ -3241,16 +3248,20 @@ WARD_MAPPING = {
     26911: Ward(
         'Phường Bình Quới', WardCode.W_26911, VietNamDivisionType.PHUONG, 'phuong_binh_quoi', ProvinceCode.P_79
     ),
-    26902: Ward('Phường Hạnh Thông', WardCode.W_26902, VietNamDivisionType.XA, 'phuong_hanh_thong', ProvinceCode.P_79),
-    26887: Ward('Phường  An Nhơn', WardCode.W_26887, VietNamDivisionType.XA, 'phuong_an_nhon', ProvinceCode.P_79),
-    26884: Ward('Phường Gò Vấp', WardCode.W_26884, VietNamDivisionType.XA, 'phuong_go_vap', ProvinceCode.P_79),
+    26902: Ward(
+        'Phường Hạnh Thông', WardCode.W_26902, VietNamDivisionType.PHUONG, 'phuong_hanh_thong', ProvinceCode.P_79
+    ),
+    26887: Ward('Phường  An Nhơn', WardCode.W_26887, VietNamDivisionType.PHUONG, 'phuong_an_nhon', ProvinceCode.P_79),
+    26884: Ward('Phường Gò Vấp', WardCode.W_26884, VietNamDivisionType.PHUONG, 'phuong_go_vap', ProvinceCode.P_79),
     26878: Ward(
-        'Phường An Hội Đông', WardCode.W_26878, VietNamDivisionType.XA, 'phuong_an_hoi_dong', ProvinceCode.P_79
+        'Phường An Hội Đông', WardCode.W_26878, VietNamDivisionType.PHUONG, 'phuong_an_hoi_dong', ProvinceCode.P_79
     ),
     26899: Ward(
-        'Phường Thông Tây Hội', WardCode.W_26899, VietNamDivisionType.XA, 'phuong_thong_tay_hoi', ProvinceCode.P_79
+        'Phường Thông Tây Hội', WardCode.W_26899, VietNamDivisionType.PHUONG, 'phuong_thong_tay_hoi', ProvinceCode.P_79
     ),
-    26882: Ward('Phường An Hội Tây', WardCode.W_26882, VietNamDivisionType.XA, 'phuong_an_hoi_tay', ProvinceCode.P_79),
+    26882: Ward(
+        'Phường An Hội Tây', WardCode.W_26882, VietNamDivisionType.PHUONG, 'phuong_an_hoi_tay', ProvinceCode.P_79
+    ),
     27043: Ward(
         'Phường Đức Nhuận', WardCode.W_27043, VietNamDivisionType.PHUONG, 'phuong_duc_nhuan', ProvinceCode.P_79
     ),
@@ -3259,15 +3270,15 @@ WARD_MAPPING = {
         'Phường Phú Nhuận', WardCode.W_27073, VietNamDivisionType.PHUONG, 'phuong_phu_nhuan', ProvinceCode.P_79
     ),
     26977: Ward(
-        'Phường Tân Sơn Hòa', WardCode.W_26977, VietNamDivisionType.XA, 'phuong_tan_son_hoa', ProvinceCode.P_79
+        'Phường Tân Sơn Hòa', WardCode.W_26977, VietNamDivisionType.PHUONG, 'phuong_tan_son_hoa', ProvinceCode.P_79
     ),
     26968: Ward(
-        'Phường Tân Sơn Nhất', WardCode.W_26968, VietNamDivisionType.XA, 'phuong_tan_son_nhat', ProvinceCode.P_79
+        'Phường Tân Sơn Nhất', WardCode.W_26968, VietNamDivisionType.PHUONG, 'phuong_tan_son_nhat', ProvinceCode.P_79
     ),
-    26995: Ward('Phường Tân Hòa', WardCode.W_26995, VietNamDivisionType.XA, 'phuong_tan_hoa', ProvinceCode.P_79),
-    26983: Ward('Phường Bảy Hiền', WardCode.W_26983, VietNamDivisionType.XA, 'phuong_bay_hien', ProvinceCode.P_79),
-    27004: Ward('Phường Tân Bình', WardCode.W_27004, VietNamDivisionType.XA, 'phuong_tan_binh', ProvinceCode.P_79),
-    27007: Ward('Phường Tân Sơn', WardCode.W_27007, VietNamDivisionType.XA, 'phuong_tan_son', ProvinceCode.P_79),
+    26995: Ward('Phường Tân Hòa', WardCode.W_26995, VietNamDivisionType.PHUONG, 'phuong_tan_hoa', ProvinceCode.P_79),
+    26983: Ward('Phường Bảy Hiền', WardCode.W_26983, VietNamDivisionType.PHUONG, 'phuong_bay_hien', ProvinceCode.P_79),
+    27004: Ward('Phường Tân Bình', WardCode.W_27004, VietNamDivisionType.PHUONG, 'phuong_tan_binh', ProvinceCode.P_79),
+    27007: Ward('Phường Tân Sơn', WardCode.W_27007, VietNamDivisionType.PHUONG, 'phuong_tan_son', ProvinceCode.P_79),
     27013: Ward(
         'Phường Tây Thạnh', WardCode.W_27013, VietNamDivisionType.PHUONG, 'phuong_tay_thanh', ProvinceCode.P_79
     ),
@@ -3569,27 +3580,33 @@ WARD_MAPPING = {
     30259: Ward('Xã Tân Phú Trung', WardCode.W_30259, VietNamDivisionType.XA, 'xa_tan_phu_trung', ProvinceCode.P_82),
     29641: Ward('Xã Cái Nhum', WardCode.W_29641, VietNamDivisionType.XA, 'xa_cai_nhum', ProvinceCode.P_86),
     29653: Ward('Xã Tân Long Hội', WardCode.W_29653, VietNamDivisionType.XA, 'xa_tan_long_hoi', ProvinceCode.P_86),
-    29623: Ward('Xã Nhơn Phú', WardCode.W_29623, VietNamDivisionType.XA, 'xa_nhon_phu', ProvinceCode.P_86),
-    29638: Ward('Xã Bình Phước', WardCode.W_29638, VietNamDivisionType.XA, 'xa_binh_phuoc', ProvinceCode.P_86),
-    29584: Ward('Xã An Bình', WardCode.W_29584, VietNamDivisionType.XA, 'xa_an_binh', ProvinceCode.P_86),
+    29623: Ward('Xã Nhơn Phú', WardCode.W_29623, VietNamDivisionType.XA, 'xa_nhon_phu', ProvinceCode.P_86),
+    29638: Ward('Xã Bình Phước', WardCode.W_29638, VietNamDivisionType.XA, 'xa_binh_phuoc', ProvinceCode.P_86),
+    29584: Ward('Xã An Bình', WardCode.W_29584, VietNamDivisionType.XA, 'xa_an_binh', ProvinceCode.P_86),
     29602: Ward('Xã Long Hồ', WardCode.W_29602, VietNamDivisionType.XA, 'xa_long_ho', ProvinceCode.P_86),
     29611: Ward('Xã Phú Quới', WardCode.W_29611, VietNamDivisionType.XA, 'xa_phu_quoi', ProvinceCode.P_86),
-    29590: Ward('Phường Thanh Đức', WardCode.W_29590, VietNamDivisionType.XA, 'phuong_thanh_duc', ProvinceCode.P_86),
-    29551: Ward('Phường Long Châu', WardCode.W_29551, VietNamDivisionType.XA, 'phuong_long_chau', ProvinceCode.P_86),
-    29557: Ward('Phường Phước Hậu', WardCode.W_29557, VietNamDivisionType.XA, 'phuong_phuoc_hau', ProvinceCode.P_86),
+    29590: Ward(
+        'Phường Thanh Đức', WardCode.W_29590, VietNamDivisionType.PHUONG, 'phuong_thanh_duc', ProvinceCode.P_86
+    ),
+    29551: Ward(
+        'Phường Long Châu', WardCode.W_29551, VietNamDivisionType.PHUONG, 'phuong_long_chau', ProvinceCode.P_86
+    ),
+    29557: Ward(
+        'Phường Phước Hậu', WardCode.W_29557, VietNamDivisionType.PHUONG, 'phuong_phuoc_hau', ProvinceCode.P_86
+    ),
     29593: Ward('Phường Tân Hạnh', WardCode.W_29593, VietNamDivisionType.PHUONG, 'phuong_tan_hanh', ProvinceCode.P_86),
     29566: Ward('Phường Tân Ngãi', WardCode.W_29566, VietNamDivisionType.PHUONG, 'phuong_tan_ngai', ProvinceCode.P_86),
     29677: Ward('Xã Quới Thiện', WardCode.W_29677, VietNamDivisionType.XA, 'xa_quoi_thien', ProvinceCode.P_86),
     29659: Ward('Xã Trung Thành', WardCode.W_29659, VietNamDivisionType.XA, 'xa_trung_thanh', ProvinceCode.P_86),
-    29698: Ward('Xã Trung Ngãi', WardCode.W_29698, VietNamDivisionType.XA, 'xa_trung_ngai', ProvinceCode.P_86),
-    29668: Ward('Xã Quới An', WardCode.W_29668, VietNamDivisionType.XA, 'xa_quoi_an', ProvinceCode.P_86),
+    29698: Ward('Xã Trung Ngãi', WardCode.W_29698, VietNamDivisionType.XA, 'xa_trung_ngai', ProvinceCode.P_86),
+    29668: Ward('Xã Quới An', WardCode.W_29668, VietNamDivisionType.XA, 'xa_quoi_an', ProvinceCode.P_86),
     29683: Ward('Xã Trung Hiệp', WardCode.W_29683, VietNamDivisionType.XA, 'xa_trung_hiep', ProvinceCode.P_86),
     29701: Ward('Xã Hiếu Phụng', WardCode.W_29701, VietNamDivisionType.XA, 'xa_hieu_phung', ProvinceCode.P_86),
-    29713: Ward('Xã Hiếu Thành', WardCode.W_29713, VietNamDivisionType.XA, 'xa_hieu_thanh', ProvinceCode.P_86),
+    29713: Ward('Xã Hiếu Thành', WardCode.W_29713, VietNamDivisionType.XA, 'xa_hieu_thanh', ProvinceCode.P_86),
     29857: Ward('Xã Lục Sỹ Thành', WardCode.W_29857, VietNamDivisionType.XA, 'xa_luc_sy_thanh', ProvinceCode.P_86),
     29821: Ward('Xã Trà Ôn', WardCode.W_29821, VietNamDivisionType.XA, 'xa_tra_on', ProvinceCode.P_86),
     29836: Ward('Xã Trà Côn', WardCode.W_29836, VietNamDivisionType.XA, 'xa_tra_con', ProvinceCode.P_86),
-    29845: Ward('Xã Vĩnh Xuân', WardCode.W_29845, VietNamDivisionType.XA, 'xa_vinh_xuan', ProvinceCode.P_86),
+    29845: Ward('Xã Vĩnh Xuân', WardCode.W_29845, VietNamDivisionType.XA, 'xa_vinh_xuan', ProvinceCode.P_86),
     29830: Ward('Xã Hòa Bình', WardCode.W_29830, VietNamDivisionType.XA, 'xa_hoa_binh', ProvinceCode.P_86),
     29734: Ward('Xã Hòa Hiệp', WardCode.W_29734, VietNamDivisionType.XA, 'xa_hoa_hiep', ProvinceCode.P_86),
     29719: Ward('Xã Tam Bình', WardCode.W_29719, VietNamDivisionType.XA, 'xa_tam_binh', ProvinceCode.P_86),
@@ -3597,7 +3614,7 @@ WARD_MAPPING = {
     29752: Ward('Xã Song Phú', WardCode.W_29752, VietNamDivisionType.XA, 'xa_song_phu', ProvinceCode.P_86),
     29728: Ward('Xã Cái Ngang', WardCode.W_29728, VietNamDivisionType.XA, 'xa_cai_ngang', ProvinceCode.P_86),
     29800: Ward('Xã Tân Quới', WardCode.W_29800, VietNamDivisionType.XA, 'xa_tan_quoi', ProvinceCode.P_86),
-    29785: Ward('Xã Tân Lược', WardCode.W_29785, VietNamDivisionType.XA, 'xa_tan_luoc', ProvinceCode.P_86),
+    29785: Ward('Xã Tân Lược', WardCode.W_29785, VietNamDivisionType.XA, 'xa_tan_luoc', ProvinceCode.P_86),
     29788: Ward('Xã Mỹ Thuận', WardCode.W_29788, VietNamDivisionType.XA, 'xa_my_thuan', ProvinceCode.P_86),
     29771: Ward(
         'Phường Bình Minh', WardCode.W_29771, VietNamDivisionType.PHUONG, 'phuong_binh_minh', ProvinceCode.P_86

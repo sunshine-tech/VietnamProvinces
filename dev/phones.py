@@ -1,6 +1,6 @@
 import csv
 from pathlib import Path
-from typing import NamedTuple, List
+from typing import NamedTuple
 
 from pydantic import BaseModel, field_validator
 
@@ -38,7 +38,7 @@ class PhoneCodeCSVRecord(BaseModel):
         return codename
 
     @classmethod
-    def from_csv_row(cls, values: List[str]):
+    def from_csv_row(cls, values: list[str]):
         row = PhoneCodeInputRow._make(values)
         return cls.model_validate(row._asdict())
 

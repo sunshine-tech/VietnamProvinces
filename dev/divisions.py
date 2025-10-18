@@ -1,15 +1,26 @@
 import ast
 import itertools
-from pathlib import Path
+import unicodedata
 from collections.abc import Iterable, Sequence
-from typing import Self, NamedTuple, Any, Annotated
+from pathlib import Path
+from typing import Annotated, Any, NamedTuple, Self
 
 from logbook import Logger
-from pydantic import BaseModel, ValidationInfo, Field, StringConstraints, ConfigDict, field_validator, computed_field
+from pydantic import (
+    AfterValidator,
+    BaseModel,
+    ConfigDict,
+    Field,
+    StringConstraints,
+    ValidationInfo,
+    computed_field,
+    field_validator,
+)
 
 from vietnam_provinces.base import VietNamDivisionType
-from .types import Name, convert_to_codename, make_province_codename, make_ward_short_codename
+
 from .phones import PhoneCodeCSVRecord
+from .types import Name, convert_to_codename, make_province_codename, make_ward_short_codename
 
 
 logger = Logger(__name__)
@@ -28,12 +39,19 @@ def truncate_leading(line: str, prefixes: Sequence[str]) -> str:
     return line
 
 
+def normalize_vietnamese(text: str) -> str:
+    """
+    Converts decomposed ("tổ hợp") to composed ("dựng sẵn") Unicode.
+    """
+    return unicodedata.normalize('NFC', text)
+
+
 def abbreviate_codename(name: str) -> str:
     """
     ha_noi -> hano
     """
     words = name.split('_')
-    return ''.join((w[0] for w in words))
+    return ''.join(w[0] for w in words)
 
 
 def abbreviate_doub_codename(name: str) -> str:
@@ -43,7 +61,7 @@ def abbreviate_doub_codename(name: str) -> str:
     quan_11 -> qu11
     """
     words = name.split('_')
-    return ''.join((w[:2] for w in words))
+    return ''.join(w[:2] for w in words)
 
 
 class Pre2025WardCSVInputRow(NamedTuple):
@@ -112,8 +130,8 @@ class ProvinceCSVInputRow(NamedTuple):
 
 class WardCSVRecord(BaseModel):
     code: int
-    name: Annotated[str, StringConstraints(strip_whitespace=True)]
-    province_name: str
+    name: Annotated[str, StringConstraints(strip_whitespace=True), AfterValidator(normalize_vietnamese)]
+    province_name: Annotated[str, StringConstraints(strip_whitespace=True), AfterValidator(normalize_vietnamese)]
 
     @computed_field
     @property
@@ -128,7 +146,7 @@ class WardCSVRecord(BaseModel):
 
 class ProvinceCSVRecord(BaseModel):
     code: int
-    name: str
+    name: Annotated[str, StringConstraints(strip_whitespace=True), AfterValidator(normalize_vietnamese)]
 
     @computed_field
     @property

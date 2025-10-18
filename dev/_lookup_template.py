@@ -1,4 +1,4 @@
-from .base import Province, VietNamDivisionType, Ward, ProvinceCode, WardCode
+from .base import Province, ProvinceCode, VietNamDivisionType, Ward, WardCode
 
 
 PROVINCE_MAPPING = {1: Province('Thành phố Hà Nội', ProvinceCode.P_01, VietNamDivisionType.TINH, 'ha_noi', 24)}

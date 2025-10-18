@@ -1,4 +1,5 @@
 from enum import IntEnum
+
 from .compat import document_enum
 
 
@@ -735,7 +736,7 @@ class WardCode(IntEnum):
     W_03193 = 3193
     'Xã Pa Ham'
     W_03194 = 3194
-    'Xã Nậm Nèn'
+    'Xã Nậm Nèn'
     W_03202 = 3202
     'Xã Mường Pồn'
     W_03203 = 3203
@@ -1011,7 +1012,7 @@ class WardCode(IntEnum):
     W_04492 = 4492
     'Xã Púng Luông'
     W_04630 = 4630
-    'Xã Tú Lệ'
+    'Xã Tú Lệ'
     W_04591 = 4591
     'Xã Trạm Tấu'
     W_04585 = 4585
@@ -1031,9 +1032,9 @@ class WardCode(IntEnum):
     W_04651 = 4651
     'Xã Sơn Lương'
     W_04705 = 4705
-    'Xã Thượng Bằng La'
+    'Xã Thượng Bằng La'
     W_04699 = 4699
-    'Xã Chấn Thịnh'
+    'Xã Chấn Thịnh'
     W_04711 = 4711
     'Xã Nghĩa Tâm'
     W_04672 = 4672
@@ -1041,19 +1042,19 @@ class WardCode(IntEnum):
     W_04402 = 4402
     'Xã Phong Dụ Hạ'
     W_04387 = 4387
-    'Xã Châu Quế'
+    'Xã Châu Quế'
     W_04381 = 4381
     'Xã Lâm Giang'
     W_04399 = 4399
     'Xã Đông Cuông'
     W_04429 = 4429
-    'Xã Tân Hợp'
+    'Xã Tân Hợp'
     W_04375 = 4375
     'Xã Mậu A'
     W_04441 = 4441
-    'Xã Xuân Ái'
+    'Xã Xuân Ái'
     W_04450 = 4450
-    'Xã Mỏ Vàng'
+    'Xã Mỏ Vàng'
     W_04318 = 4318
     'Xã Lâm Thượng'
     W_04303 = 4303
@@ -1061,11 +1062,11 @@ class WardCode(IntEnum):
     W_04336 = 4336
     'Xã Tân Lĩnh'
     W_04333 = 4333
-    'Xã Khánh Hòa'
+    'Xã Khánh Hòa'
     W_04363 = 4363
-    'Xã Phúc Lợi'
+    'Xã Phúc Lợi'
     W_04345 = 4345
-    'Xã Mường Lai'
+    'Xã Mường Lai'
     W_04726 = 4726
     'Xã Cảm Nhân'
     W_04744 = 4744
@@ -1089,7 +1090,7 @@ class WardCode(IntEnum):
     W_04576 = 4576
     'Xã Hưng Khánh'
     W_04537 = 4537
-    'Xã Lương Thịnh'
+    'Xã Lương Thịnh'
     W_04564 = 4564
     'Xã Việt Hồng'
     W_04531 = 4531
@@ -4453,15 +4454,15 @@ class WardCode(IntEnum):
     W_22576 = 22576
     'Xã Tân Định'
     W_22561 = 22561
-    'Phường Đông Ninh Hòa'
+    'Phường Đông Ninh Hòa'
     W_22591 = 22591
-    'Phường Hòa Thắng'
+    'Phường Hòa Thắng'
     W_22597 = 22597
-    'Xã Nam Ninh Hòa'
+    'Xã Nam Ninh Hòa'
     W_22552 = 22552
-    'Xã Tây Ninh Hòa'
+    'Xã Tây Ninh Hòa'
     W_22558 = 22558
-    'Xã Hòa Trí'
+    'Xã Hòa Trí'
     W_22504 = 22504
     'Xã Đại Lãnh'
     W_22498 = 22498
@@ -5339,11 +5340,11 @@ class WardCode(IntEnum):
     W_27142 = 27142
     'Phường Nhiêu Lộc'
     W_27259 = 27259
-    'Phường Xóm Chiếu'
+    'Phường Xóm Chiếu'
     W_27265 = 27265
-    'Phường Khánh Hội'
+    'Phường Khánh Hội'
     W_27286 = 27286
-    'Phường Vĩnh Hội'
+    'Phường Vĩnh Hội'
     W_27301 = 27301
     'Phường Chợ Quán'
     W_27316 = 27316
@@ -5359,11 +5360,11 @@ class WardCode(IntEnum):
     W_27349 = 27349
     'Phường Phú Lâm'
     W_27478 = 27478
-    'Phường Tân Thuận'
+    'Phường Tân Thuận'
     W_27484 = 27484
     'Phường Phú Thuận'
     W_27487 = 27487
-    'Phường Tân Mỹ'
+    'Phường Tân Mỹ'
     W_27475 = 27475
     'Phường Tân Hưng'
     W_27418 = 27418
@@ -5397,15 +5398,15 @@ class WardCode(IntEnum):
     W_26767 = 26767
     'Phường An Phú Đông'
     W_27460 = 27460
-    'Phường An Lạc'
+    'Phường An Lạc'
     W_27457 = 27457
-    'Phường Tân Tạo'
+    'Phường Tân Tạo'
     W_27442 = 27442
-    'Phường Bình Tân'
+    'Phường Bình Tân'
     W_27448 = 27448
-    'Phường Bình Trị Đông'
+    'Phường Bình Trị Đông'
     W_27439 = 27439
-    'Phường Bình Hưng Hòa'
+    'Phường Bình Hưng Hòa'
     W_26944 = 26944
     'Phường Gia Định'
     W_26929 = 26929
@@ -5417,17 +5418,17 @@ class WardCode(IntEnum):
     W_26911 = 26911
     'Phường Bình Quới'
     W_26902 = 26902
-    'Phường Hạnh Thông'
+    'Phường Hạnh Thông'
     W_26887 = 26887
-    'Phường  An Nhơn'
+    'Phường  An Nhơn'
     W_26884 = 26884
-    'Phường Gò Vấp'
+    'Phường Gò Vấp'
     W_26878 = 26878
-    'Phường An Hội Đông'
+    'Phường An Hội Đông'
     W_26899 = 26899
-    'Phường Thông Tây Hội'
+    'Phường Thông Tây Hội'
     W_26882 = 26882
-    'Phường An Hội Tây'
+    'Phường An Hội Tây'
     W_27043 = 27043
     'Phường Đức Nhuận'
     W_27058 = 27058
@@ -5435,17 +5436,17 @@ class WardCode(IntEnum):
     W_27073 = 27073
     'Phường Phú Nhuận'
     W_26977 = 26977
-    'Phường Tân Sơn Hòa'
+    'Phường Tân Sơn Hòa'
     W_26968 = 26968
-    'Phường Tân Sơn Nhất'
+    'Phường Tân Sơn Nhất'
     W_26995 = 26995
-    'Phường Tân Hòa'
+    'Phường Tân Hòa'
     W_26983 = 26983
-    'Phường Bảy Hiền'
+    'Phường Bảy Hiền'
     W_27004 = 27004
-    'Phường Tân Bình'
+    'Phường Tân Bình'
     W_27007 = 27007
-    'Phường Tân Sơn'
+    'Phường Tân Sơn'
     W_27013 = 27013
     'Phường Tây Thạnh'
     W_27010 = 27010
@@ -5937,21 +5938,21 @@ class WardCode(IntEnum):
     W_29653 = 29653
     'Xã Tân Long Hội'
     W_29623 = 29623
-    'Xã Nhơn Phú'
+    'Xã Nhơn Phú'
     W_29638 = 29638
-    'Xã Bình Phước'
+    'Xã Bình Phước'
     W_29584 = 29584
-    'Xã An Bình'
+    'Xã An Bình'
     W_29602 = 29602
     'Xã Long Hồ'
     W_29611 = 29611
     'Xã Phú Quới'
     W_29590 = 29590
-    'Phường Thanh Đức'
+    'Phường Thanh Đức'
     W_29551 = 29551
-    'Phường Long Châu'
+    'Phường Long Châu'
     W_29557 = 29557
-    'Phường Phước Hậu'
+    'Phường Phước Hậu'
     W_29593 = 29593
     'Phường Tân Hạnh'
     W_29566 = 29566
@@ -5961,15 +5962,15 @@ class WardCode(IntEnum):
     W_29659 = 29659
     'Xã Trung Thành'
     W_29698 = 29698
-    'Xã Trung Ngãi'
+    'Xã Trung Ngãi'
     W_29668 = 29668
-    'Xã Quới An'
+    'Xã Quới An'
     W_29683 = 29683
     'Xã Trung Hiệp'
     W_29701 = 29701
     'Xã Hiếu Phụng'
     W_29713 = 29713
-    'Xã Hiếu Thành'
+    'Xã Hiếu Thành'
     W_29857 = 29857
     'Xã Lục Sỹ Thành'
     W_29821 = 29821
@@ -5977,7 +5978,7 @@ class WardCode(IntEnum):
     W_29836 = 29836
     'Xã Trà Côn'
     W_29845 = 29845
-    'Xã Vĩnh Xuân'
+    'Xã Vĩnh Xuân'
     W_29830 = 29830
     'Xã Hòa Bình'
     W_29734 = 29734
@@ -5993,7 +5994,7 @@ class WardCode(IntEnum):
     W_29800 = 29800
     'Xã Tân Quới'
     W_29785 = 29785
-    'Xã Tân Lược'
+    'Xã Tân Lược'
     W_29788 = 29788
     'Xã Mỹ Thuận'
     W_29771 = 29771

@@ -1,6 +1,7 @@
 from enum import EnumMeta
 from typing import TypeVar
 
+
 try:
     from enum_tools.documentation import document_enum
 except ModuleNotFoundError:

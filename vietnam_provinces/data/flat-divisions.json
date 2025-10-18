@@ -2304,7 +2304,7 @@
   },
   {
     "code": 3194,
-    "name": "Xã Nậm Nèn",
+    "name": "Xã Nậm Nèn",
     "province_name": "Tỉnh Điện Biên",
     "codename": "xa_nam_nen",
     "province_codename": "dien_bien"
@@ -3270,7 +3270,7 @@
   },
   {
     "code": 4630,
-    "name": "Xã Tú Lệ",
+    "name": "Xã Tú Lệ",
     "province_name": "Tỉnh Lào Cai",
     "codename": "xa_tu_le",
     "province_codename": "lao_cai"
@@ -3340,14 +3340,14 @@
   },
   {
     "code": 4705,
-    "name": "Xã Thượng Bằng La",
+    "name": "Xã Thượng Bằng La",
     "province_name": "Tỉnh Lào Cai",
     "codename": "xa_thuong_bang_la",
     "province_codename": "lao_cai"
   },
   {
     "code": 4699,
-    "name": "Xã Chấn Thịnh",
+    "name": "Xã Chấn Thịnh",
     "province_name": "Tỉnh Lào Cai",
     "codename": "xa_chan_thinh",
     "province_codename": "lao_cai"
@@ -3375,7 +3375,7 @@
   },
   {
     "code": 4387,
-    "name": "Xã Châu Quế",
+    "name": "Xã Châu Quế",
     "province_name": "Tỉnh Lào Cai",
     "codename": "xa_chau_que",
     "province_codename": "lao_cai"
@@ -3396,7 +3396,7 @@
   },
   {
     "code": 4429,
-    "name": "Xã Tân Hợp",
+    "name": "Xã Tân Hợp",
     "province_name": "Tỉnh Lào Cai",
     "codename": "xa_tan_hop",
     "province_codename": "lao_cai"
@@ -3410,14 +3410,14 @@
   },
   {
     "code": 4441,
-    "name": "Xã Xuân Ái",
+    "name": "Xã Xuân Ái",
     "province_name": "Tỉnh Lào Cai",
     "codename": "xa_xuan_ai",
     "province_codename": "lao_cai"
   },
   {
     "code": 4450,
-    "name": "Xã Mỏ Vàng",
+    "name": "Xã Mỏ Vàng",
     "province_name": "Tỉnh Lào Cai",
     "codename": "xa_mo_vang",
     "province_codename": "lao_cai"
@@ -3445,21 +3445,21 @@
   },
   {
     "code": 4333,
-    "name": "Xã Khánh Hòa",
+    "name": "Xã Khánh Hòa",
     "province_name": "Tỉnh Lào Cai",
     "codename": "xa_khanh_hoa",
     "province_codename": "lao_cai"
   },
   {
     "code": 4363,
-    "name": "Xã Phúc Lợi",
+    "name": "Xã Phúc Lợi",
     "province_name": "Tỉnh Lào Cai",
     "codename": "xa_phuc_loi",
     "province_codename": "lao_cai"
   },
   {
     "code": 4345,
-    "name": "Xã Mường Lai",
+    "name": "Xã Mường Lai",
     "province_name": "Tỉnh Lào Cai",
     "codename": "xa_muong_lai",
     "province_codename": "lao_cai"
@@ -3543,7 +3543,7 @@
   },
   {
     "code": 4537,
-    "name": "Xã Lương Thịnh",
+    "name": "Xã Lương Thịnh",
     "province_name": "Tỉnh Lào Cai",
     "codename": "xa_luong_thinh",
     "province_codename": "lao_cai"
@@ -12679,280 +12679,280 @@
   {
     "code": 19900,
     "name": "Phường Thuận An",
-    "province_name": " Thành phố Huế",
+    "province_name": "Thành phố Huế",
     "codename": "phuong_thuan_an",
     "province_codename": "hue"
   },
   {
     "code": 20014,
     "name": "Phường Hóa Châu",
-    "province_name": " Thành phố Huế",
+    "province_name": "Thành phố Huế",
     "codename": "phuong_hoa_chau",
     "province_codename": "hue"
   },
   {
     "code": 19930,
     "name": "Phường Mỹ Thượng",
-    "province_name": " Thành phố Huế",
+    "province_name": "Thành phố Huế",
     "codename": "phuong_my_thuong",
     "province_codename": "hue"
   },
   {
     "code": 19777,
     "name": "Phường Vỹ Dạ",
-    "province_name": " Thành phố Huế",
+    "province_name": "Thành phố Huế",
     "codename": "phuong_vy_da",
     "province_codename": "hue"
   },
   {
     "code": 19786,
     "name": "Phường Thuận Hóa",
-    "province_name": " Thành phố Huế",
+    "province_name": "Thành phố Huế",
     "codename": "phuong_thuan_hoa",
     "province_codename": "hue"
   },
   {
     "code": 19815,
     "name": "Phường An Cựu",
-    "province_name": " Thành phố Huế",
+    "province_name": "Thành phố Huế",
     "codename": "phuong_an_cuu",
     "province_codename": "hue"
   },
   {
     "code": 19813,
     "name": "Phường Thủy Xuân",
-    "province_name": " Thành phố Huế",
+    "province_name": "Thành phố Huế",
     "codename": "phuong_thuy_xuan",
     "province_codename": "hue"
   },
   {
     "code": 19810,
     "name": "Phường Kim Long",
-    "province_name": " Thành phố Huế",
+    "province_name": "Thành phố Huế",
     "codename": "phuong_kim_long",
     "province_codename": "hue"
   },
   {
     "code": 20023,
     "name": "Phường Hương An",
-    "province_name": " Thành phố Huế",
+    "province_name": "Thành phố Huế",
     "codename": "phuong_huong_an",
     "province_codename": "hue"
   },
   {
     "code": 19768,
     "name": "Phường Phú Xuân",
-    "province_name": " Thành phố Huế",
+    "province_name": "Thành phố Huế",
     "codename": "phuong_phu_xuan",
     "province_codename": "hue"
   },
   {
     "code": 19996,
     "name": "Phường Hương Trà",
-    "province_name": " Thành phố Huế",
+    "province_name": "Thành phố Huế",
     "codename": "phuong_huong_tra",
     "province_codename": "hue"
   },
   {
     "code": 20017,
     "name": "Phường Kim Trà",
-    "province_name": " Thành phố Huế",
+    "province_name": "Thành phố Huế",
     "codename": "phuong_kim_tra",
     "province_codename": "hue"
   },
   {
     "code": 19969,
     "name": "Phường Thanh Thủy",
-    "province_name": " Thành phố Huế",
+    "province_name": "Thành phố Huế",
     "codename": "phuong_thanh_thuy",
     "province_codename": "hue"
   },
   {
     "code": 19975,
     "name": "Phường Hương Thủy",
-    "province_name": " Thành phố Huế",
+    "province_name": "Thành phố Huế",
     "codename": "phuong_huong_thuy",
     "province_codename": "hue"
   },
   {
     "code": 19960,
     "name": "Phường Phú Bài",
-    "province_name": " Thành phố Huế",
+    "province_name": "Thành phố Huế",
     "codename": "phuong_phu_bai",
     "province_codename": "hue"
   },
   {
     "code": 19819,
     "name": "Phường Phong Điền",
-    "province_name": " Thành phố Huế",
+    "province_name": "Thành phố Huế",
     "codename": "phuong_phong_dien",
     "province_codename": "hue"
   },
   {
     "code": 19864,
     "name": "Phường Phong Thái",
-    "province_name": " Thành phố Huế",
+    "province_name": "Thành phố Huế",
     "codename": "phuong_phong_thai",
     "province_codename": "hue"
   },
   {
     "code": 19831,
     "name": "Phường Phong Dinh",
-    "province_name": " Thành phố Huế",
+    "province_name": "Thành phố Huế",
     "codename": "phuong_phong_dinh",
     "province_codename": "hue"
   },
   {
     "code": 19828,
     "name": "Phường Phong Phú",
-    "province_name": " Thành phố Huế",
+    "province_name": "Thành phố Huế",
     "codename": "phuong_phong_phu",
     "province_codename": "hue"
   },
   {
     "code": 19873,
     "name": "Phường Phong Quảng",
-    "province_name": " Thành phố Huế",
+    "province_name": "Thành phố Huế",
     "codename": "phuong_phong_quang",
     "province_codename": "hue"
   },
   {
     "code": 19885,
     "name": "Xã Đan Điền",
-    "province_name": " Thành phố Huế",
+    "province_name": "Thành phố Huế",
     "codename": "xa_dan_dien",
     "province_codename": "hue"
   },
   {
     "code": 19867,
     "name": "Xã Quảng Điền",
-    "province_name": " Thành phố Huế",
+    "province_name": "Thành phố Huế",
     "codename": "xa_quang_dien",
     "province_codename": "hue"
   },
   {
     "code": 19945,
     "name": "Xã Phú Vinh",
-    "province_name": " Thành phố Huế",
+    "province_name": "Thành phố Huế",
     "codename": "xa_phu_vinh",
     "province_codename": "hue"
   },
   {
     "code": 19918,
     "name": "Xã Phú Hồ",
-    "province_name": " Thành phố Huế",
+    "province_name": "Thành phố Huế",
     "codename": "xa_phu_ho",
     "province_codename": "hue"
   },
   {
     "code": 19942,
     "name": "Xã Phú Vang",
-    "province_name": " Thành phố Huế",
+    "province_name": "Thành phố Huế",
     "codename": "xa_phu_vang",
     "province_codename": "hue"
   },
   {
     "code": 20122,
     "name": "Xã Vinh Lộc",
-    "province_name": " Thành phố Huế",
+    "province_name": "Thành phố Huế",
     "codename": "xa_vinh_loc",
     "province_codename": "hue"
   },
   {
     "code": 20131,
     "name": "Xã Hưng Lộc",
-    "province_name": " Thành phố Huế",
+    "province_name": "Thành phố Huế",
     "codename": "xa_hung_loc",
     "province_codename": "hue"
   },
   {
     "code": 20140,
     "name": "Xã Lộc An",
-    "province_name": " Thành phố Huế",
+    "province_name": "Thành phố Huế",
     "codename": "xa_loc_an",
     "province_codename": "hue"
   },
   {
     "code": 20107,
     "name": "Xã Phú Lộc",
-    "province_name": " Thành phố Huế",
+    "province_name": "Thành phố Huế",
     "codename": "xa_phu_loc",
     "province_codename": "hue"
   },
   {
     "code": 20152,
     "name": "Xã Chân Mây – Lăng Cô",
-    "province_name": " Thành phố Huế",
+    "province_name": "Thành phố Huế",
     "codename": "xa_chan_may_lang_co",
     "province_codename": "hue"
   },
   {
     "code": 20182,
     "name": "Xã Long Quảng",
-    "province_name": " Thành phố Huế",
+    "province_name": "Thành phố Huế",
     "codename": "xa_long_quang",
     "province_codename": "hue"
   },
   {
     "code": 20179,
     "name": "Xã Nam Đông",
-    "province_name": " Thành phố Huế",
+    "province_name": "Thành phố Huế",
     "codename": "xa_nam_dong",
     "province_codename": "hue"
   },
   {
     "code": 20161,
     "name": "Xã Khe Tre",
-    "province_name": " Thành phố Huế",
+    "province_name": "Thành phố Huế",
     "codename": "xa_khe_tre",
     "province_codename": "hue"
   },
   {
     "code": 20035,
     "name": "Xã Bình Điền",
-    "province_name": " Thành phố Huế",
+    "province_name": "Thành phố Huế",
     "codename": "xa_binh_dien",
     "province_codename": "hue"
   },
   {
     "code": 20056,
     "name": "Xã A Lưới 1",
-    "province_name": " Thành phố Huế",
+    "province_name": "Thành phố Huế",
     "codename": "xa_a_luoi_1",
     "province_codename": "hue"
   },
   {
     "code": 20044,
     "name": "Xã A Lưới 2",
-    "province_name": " Thành phố Huế",
+    "province_name": "Thành phố Huế",
     "codename": "xa_a_luoi_2",
     "province_codename": "hue"
   },
   {
     "code": 20071,
     "name": "Xã A Lưới 3",
-    "province_name": " Thành phố Huế",
+    "province_name": "Thành phố Huế",
     "codename": "xa_a_luoi_3",
     "province_codename": "hue"
   },
   {
     "code": 20101,
     "name": "Xã A Lưới 4",
-    "province_name": " Thành phố Huế",
+    "province_name": "Thành phố Huế",
     "codename": "xa_a_luoi_4",
     "province_codename": "hue"
   },
   {
     "code": 20050,
     "name": "Xã A Lưới 5",
-    "province_name": " Thành phố Huế",
+    "province_name": "Thành phố Huế",
     "codename": "xa_a_luoi_5",
     "province_codename": "hue"
   },
   {
     "code": 19909,
     "name": "Phường Dương Nỗ",
-    "province_name": " Thành phố Huế",
+    "province_name": "Thành phố Huế",
     "codename": "phuong_duong_no",
     "province_codename": "hue"
   },
@@ -15317,35 +15317,35 @@
   },
   {
     "code": 22561,
-    "name": "Phường Đông Ninh Hòa",
+    "name": "Phường Đông Ninh Hòa",
     "province_name": "Tỉnh Khánh Hòa",
     "codename": "phuong_dong_ninh_hoa",
     "province_codename": "khanh_hoa"
   },
   {
     "code": 22591,
-    "name": "Phường Hòa Thắng",
+    "name": "Phường Hòa Thắng",
     "province_name": "Tỉnh Khánh Hòa",
     "codename": "phuong_hoa_thang",
     "province_codename": "khanh_hoa"
   },
   {
     "code": 22597,
-    "name": "Xã Nam Ninh Hòa",
+    "name": "Xã Nam Ninh Hòa",
     "province_name": "Tỉnh Khánh Hòa",
     "codename": "xa_nam_ninh_hoa",
     "province_codename": "khanh_hoa"
   },
   {
     "code": 22552,
-    "name": "Xã Tây Ninh Hòa",
+    "name": "Xã Tây Ninh Hòa",
     "province_name": "Tỉnh Khánh Hòa",
     "codename": "xa_tay_ninh_hoa",
     "province_codename": "khanh_hoa"
   },
   {
     "code": 22558,
-    "name": "Xã Hòa Trí",
+    "name": "Xã Hòa Trí",
     "province_name": "Tỉnh Khánh Hòa",
     "codename": "xa_hoa_tri",
     "province_codename": "khanh_hoa"
@@ -18418,21 +18418,21 @@
   },
   {
     "code": 27259,
-    "name": "Phường Xóm Chiếu",
+    "name": "Phường Xóm Chiếu",
     "province_name": "Tp Hồ Chí Minh",
     "codename": "phuong_xom_chieu",
     "province_codename": "ho_chi_minh"
   },
   {
     "code": 27265,
-    "name": "Phường Khánh Hội",
+    "name": "Phường Khánh Hội",
     "province_name": "Tp Hồ Chí Minh",
     "codename": "phuong_khanh_hoi",
     "province_codename": "ho_chi_minh"
   },
   {
     "code": 27286,
-    "name": "Phường Vĩnh Hội",
+    "name": "Phường Vĩnh Hội",
     "province_name": "Tp Hồ Chí Minh",
     "codename": "phuong_vinh_hoi",
     "province_codename": "ho_chi_minh"
@@ -18488,7 +18488,7 @@
   },
   {
     "code": 27478,
-    "name": "Phường Tân Thuận",
+    "name": "Phường Tân Thuận",
     "province_name": "Tp Hồ Chí Minh",
     "codename": "phuong_tan_thuan",
     "province_codename": "ho_chi_minh"
@@ -18502,7 +18502,7 @@
   },
   {
     "code": 27487,
-    "name": "Phường Tân Mỹ",
+    "name": "Phường Tân Mỹ",
     "province_name": "Tp Hồ Chí Minh",
     "codename": "phuong_tan_my",
     "province_codename": "ho_chi_minh"
@@ -18621,35 +18621,35 @@
   },
   {
     "code": 27460,
-    "name": "Phường An Lạc",
+    "name": "Phường An Lạc",
     "province_name": "Tp Hồ Chí Minh",
     "codename": "phuong_an_lac",
     "province_codename": "ho_chi_minh"
   },
   {
     "code": 27457,
-    "name": "Phường Tân Tạo",
+    "name": "Phường Tân Tạo",
     "province_name": "Tp Hồ Chí Minh",
     "codename": "phuong_tan_tao",
     "province_codename": "ho_chi_minh"
   },
   {
     "code": 27442,
-    "name": "Phường Bình Tân",
+    "name": "Phường Bình Tân",
     "province_name": "Tp Hồ Chí Minh",
     "codename": "phuong_binh_tan",
     "province_codename": "ho_chi_minh"
   },
   {
     "code": 27448,
-    "name": "Phường Bình Trị Đông",
+    "name": "Phường Bình Trị Đông",
     "province_name": "Tp Hồ Chí Minh",
     "codename": "phuong_binh_tri_dong",
     "province_codename": "ho_chi_minh"
   },
   {
     "code": 27439,
-    "name": "Phường Bình Hưng Hòa",
+    "name": "Phường Bình Hưng Hòa",
     "province_name": "Tp Hồ Chí Minh",
     "codename": "phuong_binh_hung_hoa",
     "province_codename": "ho_chi_minh"
@@ -18691,42 +18691,42 @@
   },
   {
     "code": 26902,
-    "name": "Phường Hạnh Thông",
+    "name": "Phường Hạnh Thông",
     "province_name": "Tp Hồ Chí Minh",
     "codename": "phuong_hanh_thong",
     "province_codename": "ho_chi_minh"
   },
   {
     "code": 26887,
-    "name": "Phường  An Nhơn",
+    "name": "Phường  An Nhơn",
     "province_name": "Tp Hồ Chí Minh",
     "codename": "phuong_an_nhon",
     "province_codename": "ho_chi_minh"
   },
   {
     "code": 26884,
-    "name": "Phường Gò Vấp",
+    "name": "Phường Gò Vấp",
     "province_name": "Tp Hồ Chí Minh",
     "codename": "phuong_go_vap",
     "province_codename": "ho_chi_minh"
   },
   {
     "code": 26878,
-    "name": "Phường An Hội Đông",
+    "name": "Phường An Hội Đông",
     "province_name": "Tp Hồ Chí Minh",
     "codename": "phuong_an_hoi_dong",
     "province_codename": "ho_chi_minh"
   },
   {
     "code": 26899,
-    "name": "Phường Thông Tây Hội",
+    "name": "Phường Thông Tây Hội",
     "province_name": "Tp Hồ Chí Minh",
     "codename": "phuong_thong_tay_hoi",
     "province_codename": "ho_chi_minh"
   },
   {
     "code": 26882,
-    "name": "Phường An Hội Tây",
+    "name": "Phường An Hội Tây",
     "province_name": "Tp Hồ Chí Minh",
     "codename": "phuong_an_hoi_tay",
     "province_codename": "ho_chi_minh"
@@ -18754,42 +18754,42 @@
   },
   {
     "code": 26977,
-    "name": "Phường Tân Sơn Hòa",
+    "name": "Phường Tân Sơn Hòa",
     "province_name": "Tp Hồ Chí Minh",
     "codename": "phuong_tan_son_hoa",
     "province_codename": "ho_chi_minh"
   },
   {
     "code": 26968,
-    "name": "Phường Tân Sơn Nhất",
+    "name": "Phường Tân Sơn Nhất",
     "province_name": "Tp Hồ Chí Minh",
     "codename": "phuong_tan_son_nhat",
     "province_codename": "ho_chi_minh"
   },
   {
     "code": 26995,
-    "name": "Phường Tân Hòa",
+    "name": "Phường Tân Hòa",
     "province_name": "Tp Hồ Chí Minh",
     "codename": "phuong_tan_hoa",
     "province_codename": "ho_chi_minh"
   },
   {
     "code": 26983,
-    "name": "Phường Bảy Hiền",
+    "name": "Phường Bảy Hiền",
     "province_name": "Tp Hồ Chí Minh",
     "codename": "phuong_bay_hien",
     "province_codename": "ho_chi_minh"
   },
   {
     "code": 27004,
-    "name": "Phường Tân Bình",
+    "name": "Phường Tân Bình",
     "province_name": "Tp Hồ Chí Minh",
     "codename": "phuong_tan_binh",
     "province_codename": "ho_chi_minh"
   },
   {
     "code": 27007,
-    "name": "Phường Tân Sơn",
+    "name": "Phường Tân Sơn",
     "province_name": "Tp Hồ Chí Minh",
     "codename": "phuong_tan_son",
     "province_codename": "ho_chi_minh"
@@ -20511,21 +20511,21 @@
   },
   {
     "code": 29623,
-    "name": "Xã Nhơn Phú",
+    "name": "Xã Nhơn Phú",
     "province_name": "Tỉnh Vĩnh Long",
     "codename": "xa_nhon_phu",
     "province_codename": "vinh_long"
   },
   {
     "code": 29638,
-    "name": "Xã Bình Phước",
+    "name": "Xã Bình Phước",
     "province_name": "Tỉnh Vĩnh Long",
     "codename": "xa_binh_phuoc",
     "province_codename": "vinh_long"
   },
   {
     "code": 29584,
-    "name": "Xã An Bình",
+    "name": "Xã An Bình",
     "province_name": "Tỉnh Vĩnh Long",
     "codename": "xa_an_binh",
     "province_codename": "vinh_long"
@@ -20546,21 +20546,21 @@
   },
   {
     "code": 29590,
-    "name": "Phường Thanh Đức",
+    "name": "Phường Thanh Đức",
     "province_name": "Tỉnh Vĩnh Long",
     "codename": "phuong_thanh_duc",
     "province_codename": "vinh_long"
   },
   {
     "code": 29551,
-    "name": "Phường Long Châu",
+    "name": "Phường Long Châu",
     "province_name": "Tỉnh Vĩnh Long",
     "codename": "phuong_long_chau",
     "province_codename": "vinh_long"
   },
   {
     "code": 29557,
-    "name": "Phường Phước Hậu",
+    "name": "Phường Phước Hậu",
     "province_name": "Tỉnh Vĩnh Long",
     "codename": "phuong_phuoc_hau",
     "province_codename": "vinh_long"
@@ -20595,14 +20595,14 @@
   },
   {
     "code": 29698,
-    "name": "Xã Trung Ngãi",
+    "name": "Xã Trung Ngãi",
     "province_name": "Tỉnh Vĩnh Long",
     "codename": "xa_trung_ngai",
     "province_codename": "vinh_long"
   },
   {
     "code": 29668,
-    "name": "Xã Quới An",
+    "name": "Xã Quới An",
     "province_name": "Tỉnh Vĩnh Long",
     "codename": "xa_quoi_an",
     "province_codename": "vinh_long"
@@ -20623,7 +20623,7 @@
   },
   {
     "code": 29713,
-    "name": "Xã Hiếu Thành",
+    "name": "Xã Hiếu Thành",
     "province_name": "Tỉnh Vĩnh Long",
     "codename": "xa_hieu_thanh",
     "province_codename": "vinh_long"
@@ -20651,7 +20651,7 @@
   },
   {
     "code": 29845,
-    "name": "Xã Vĩnh Xuân",
+    "name": "Xã Vĩnh Xuân",
     "province_name": "Tỉnh Vĩnh Long",
     "codename": "xa_vinh_xuan",
     "province_codename": "vinh_long"
@@ -20707,7 +20707,7 @@
   },
   {
     "code": 29785,
-    "name": "Xã Tân Lược",
+    "name": "Xã Tân Lược",
     "province_name": "Tỉnh Vĩnh Long",
     "codename": "xa_tan_luoc",
     "province_codename": "vinh_long"

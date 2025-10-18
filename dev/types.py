@@ -2,8 +2,8 @@ import re
 import unicodedata
 from typing import Annotated
 
-from unidecode import unidecode
 from pydantic import AfterValidator
+from unidecode import unidecode
 
 
 REGEX_THI_XA = re.compile('^Thị Xã')

@@ -3,7 +3,8 @@ from dataclasses import asdict
 from devtools import debug
 from pydantic import BaseModel, field_serializer
 
-from vietnam_provinces import Province, ProvinceCode
+from vietnam_provinces import Province, ProvinceCode, Ward, WardCode
+from vietnam_provinces.base import VietNamDivisionType
 
 
 class Address(BaseModel):
@@ -48,3 +49,8 @@ def test_dump_as_dict():
     d = profile.model_dump()
     debug(d)
     assert d['address']['province'] == asdict(p)
+
+
+def test_ward_type_correctly_parsed_from_source():
+    ward = Ward.from_code(WardCode.W_26878)
+    assert ward.division_type == VietNamDivisionType.PHUONG
