@@ -16,6 +16,7 @@ from logbook.base import LogRecord
 from logbook.more import ColorizedStderrHandler
 from pydantic import OnErrorOmit, TypeAdapter
 
+from .amend import fix_ward
 from .divisions import (
     ProvinceCSVRecord,
     WardCSVInputRow,
@@ -114,6 +115,7 @@ def main(ward_csv_file: str, province_csv_file: str, output_format: ExportingFor
     with open(province_csv_file, newline='') as f:
         reader = csv.reader(f)
         csv_provinces = tuple(map(ProvinceCSVRecord.from_csv_row, reader))
+    csv_wards = [fix_ward(w) for w in csv_wards]
     logger.debug('Wards data: {}', csv_wards)
     logger.debug('Provinces data: {}', csv_provinces)
     phone_codes = load_phone_area_table()

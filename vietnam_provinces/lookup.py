@@ -788,7 +788,7 @@ WARD_MAPPING = {
     6154: Ward('Xã Văn Lãng', WardCode.W_06154, VietNamDivisionType.XA, 'xa_van_lang', ProvinceCode.P_20),
     6151: Ward('Xã Hội Hoan', WardCode.W_06151, VietNamDivisionType.XA, 'xa_hoi_hoan', ProvinceCode.P_20),
     6148: Ward('Xã Thụy Hùng', WardCode.W_06148, VietNamDivisionType.XA, 'xa_thuy_hung', ProvinceCode.P_20),
-    6172: Ward('Xã Tân Thanh', WardCode.W_06172, VietNamDivisionType.XA, 'xa_tan_thanh', ProvinceCode.P_20),
+    6172: Ward('Xã Hoàng Văn Thụ', WardCode.W_06172, VietNamDivisionType.XA, 'xa_hoang_van_thu', ProvinceCode.P_20),
     6529: Ward('Xã Lộc Bình', WardCode.W_06529, VietNamDivisionType.XA, 'xa_loc_binh', ProvinceCode.P_20),
     6541: Ward('Xã Mẫu Sơn', WardCode.W_06541, VietNamDivisionType.XA, 'xa_mau_son', ProvinceCode.P_20),
     6526: Ward('Xã Na Dương', WardCode.W_06526, VietNamDivisionType.XA, 'xa_na_duong', ProvinceCode.P_20),
@@ -822,9 +822,7 @@ WARD_MAPPING = {
     5983: Ward(
         'Phường Lương Văn Tri', WardCode.W_05983, VietNamDivisionType.PHUONG, 'phuong_luong_van_tri', ProvinceCode.P_20
     ),
-    6187: Ward(
-        'Phường Hoàng Văn Thụ', WardCode.W_06187, VietNamDivisionType.PHUONG, 'phuong_hoang_van_thu', ProvinceCode.P_20
-    ),
+    6187: Ward('Phường Kỳ Lừa', WardCode.W_06187, VietNamDivisionType.PHUONG, 'phuong_ky_lua', ProvinceCode.P_20),
     5977: Ward('Phường Đông Kinh', WardCode.W_05977, VietNamDivisionType.PHUONG, 'phuong_dong_kinh', ProvinceCode.P_20),
     7090: Ward('Phường An Sinh', WardCode.W_07090, VietNamDivisionType.PHUONG, 'phuong_an_sinh', ProvinceCode.P_22),
     7093: Ward(
@@ -1638,7 +1636,7 @@ WARD_MAPPING = {
     16597: Ward('Phường Hải Lĩnh', WardCode.W_16597, VietNamDivisionType.PHUONG, 'phuong_hai_linh', ProvinceCode.P_38),
     16561: Ward('Phường Tĩnh Gia', WardCode.W_16561, VietNamDivisionType.PHUONG, 'phuong_tinh_gia', ProvinceCode.P_38),
     16609: Ward(
-        'Phường Đào Duy Tư', WardCode.W_16609, VietNamDivisionType.PHUONG, 'phuong_dao_duy_tu', ProvinceCode.P_38
+        'Phường Đào Duy Từ', WardCode.W_16609, VietNamDivisionType.PHUONG, 'phuong_dao_duy_tu', ProvinceCode.P_38
     ),
     16645: Ward('Phường Hải Bình', WardCode.W_16645, VietNamDivisionType.PHUONG, 'phuong_hai_binh', ProvinceCode.P_38),
     16624: Ward('Phường Trúc Lâm', WardCode.W_16624, VietNamDivisionType.PHUONG, 'phuong_truc_lam', ProvinceCode.P_38),
@@ -2496,7 +2494,7 @@ WARD_MAPPING = {
     23941: Ward('Xã Chư Sê', WardCode.W_23941, VietNamDivisionType.XA, 'xa_chu_se', ProvinceCode.P_52),
     23947: Ward('Xã Bờ Ngoong', WardCode.W_23947, VietNamDivisionType.XA, 'xa_bo_ngoong', ProvinceCode.P_52),
     23977: Ward('Xã Ia Ko', WardCode.W_23977, VietNamDivisionType.XA, 'xa_ia_ko', ProvinceCode.P_52),
-    23954: Ward('Xã Albá', WardCode.W_23954, VietNamDivisionType.XA, 'xa_alba', ProvinceCode.P_52),
+    23954: Ward('Xã Al Bá', WardCode.W_23954, VietNamDivisionType.XA, 'xa_al_ba', ProvinceCode.P_52),
     23942: Ward('Xã Chư Pưh', WardCode.W_23942, VietNamDivisionType.XA, 'xa_chu_puh', ProvinceCode.P_52),
     23986: Ward('Xã Ia Le', WardCode.W_23986, VietNamDivisionType.XA, 'xa_ia_le', ProvinceCode.P_52),
     23971: Ward('Xã Ia Hrú', WardCode.W_23971, VietNamDivisionType.XA, 'xa_ia_hru', ProvinceCode.P_52),
@@ -3603,7 +3601,7 @@ WARD_MAPPING = {
     29683: Ward('Xã Trung Hiệp', WardCode.W_29683, VietNamDivisionType.XA, 'xa_trung_hiep', ProvinceCode.P_86),
     29701: Ward('Xã Hiếu Phụng', WardCode.W_29701, VietNamDivisionType.XA, 'xa_hieu_phung', ProvinceCode.P_86),
     29713: Ward('Xã Hiếu Thành', WardCode.W_29713, VietNamDivisionType.XA, 'xa_hieu_thanh', ProvinceCode.P_86),
-    29857: Ward('Xã Lục Sỹ Thành', WardCode.W_29857, VietNamDivisionType.XA, 'xa_luc_sy_thanh', ProvinceCode.P_86),
+    29857: Ward('Xã Lục Sĩ Thành', WardCode.W_29857, VietNamDivisionType.XA, 'xa_luc_si_thanh', ProvinceCode.P_86),
     29821: Ward('Xã Trà Ôn', WardCode.W_29821, VietNamDivisionType.XA, 'xa_tra_on', ProvinceCode.P_86),
     29836: Ward('Xã Trà Côn', WardCode.W_29836, VietNamDivisionType.XA, 'xa_tra_con', ProvinceCode.P_86),
     29845: Ward('Xã Vĩnh Xuân', WardCode.W_29845, VietNamDivisionType.XA, 'xa_vinh_xuan', ProvinceCode.P_86),

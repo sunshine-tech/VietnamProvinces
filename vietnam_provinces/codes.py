@@ -1450,7 +1450,7 @@ class WardCode(IntEnum):
     W_06148 = 6148
     'Xã Thụy Hùng'
     W_06172 = 6172
-    'Xã Tân Thanh'
+    'Xã Hoàng Văn Thụ'
     W_06529 = 6529
     'Xã Lộc Bình'
     W_06541 = 6541
@@ -1514,7 +1514,7 @@ class WardCode(IntEnum):
     W_05983 = 5983
     'Phường Lương Văn Tri'
     W_06187 = 6187
-    'Phường Hoàng Văn Thụ'
+    'Phường Kỳ Lừa'
     W_05977 = 5977
     'Phường Đông Kinh'
     W_07090 = 7090
@@ -2844,7 +2844,7 @@ class WardCode(IntEnum):
     W_16561 = 16561
     'Phường Tĩnh Gia'
     W_16609 = 16609
-    'Phường Đào Duy Tư'
+    'Phường Đào Duy Từ'
     W_16645 = 16645
     'Phường Hải Bình'
     W_16624 = 16624
@@ -4314,7 +4314,7 @@ class WardCode(IntEnum):
     W_23977 = 23977
     'Xã Ia Ko'
     W_23954 = 23954
-    'Xã Albá'
+    'Xã Al Bá'
     W_23942 = 23942
     'Xã Chư Pưh'
     W_23986 = 23986
@@ -5972,7 +5972,7 @@ class WardCode(IntEnum):
     W_29713 = 29713
     'Xã Hiếu Thành'
     W_29857 = 29857
-    'Xã Lục Sỹ Thành'
+    'Xã Lục Sĩ Thành'
     W_29821 = 29821
     'Xã Trà Ôn'
     W_29836 = 29836

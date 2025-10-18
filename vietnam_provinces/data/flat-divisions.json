@@ -4803,9 +4803,9 @@
   },
   {
     "code": 6172,
-    "name": "Xã Tân Thanh",
+    "name": "Xã Hoàng Văn Thụ",
     "province_name": "Tỉnh Lạng Sơn",
-    "codename": "xa_tan_thanh",
+    "codename": "xa_hoang_van_thu",
     "province_codename": "lang_son"
   },
   {
@@ -5027,9 +5027,9 @@
   },
   {
     "code": 6187,
-    "name": "Phường Hoàng Văn Thụ",
+    "name": "Phường Kỳ Lừa",
     "province_name": "Tỉnh Lạng Sơn",
-    "codename": "phuong_hoang_van_thu",
+    "codename": "phuong_ky_lua",
     "province_codename": "lang_son"
   },
   {
@@ -9682,7 +9682,7 @@
   },
   {
     "code": 16609,
-    "name": "Phường Đào Duy Tư",
+    "name": "Phường Đào Duy Từ",
     "province_name": "Tỉnh Thanh Hóa",
     "codename": "phuong_dao_duy_tu",
     "province_codename": "thanh_hoa"
@@ -14827,9 +14827,9 @@
   },
   {
     "code": 23954,
-    "name": "Xã Albá",
+    "name": "Xã Al Bá",
     "province_name": "Tỉnh Gia Lai",
-    "codename": "xa_alba",
+    "codename": "xa_al_ba",
     "province_codename": "gia_lai"
   },
   {
@@ -20630,9 +20630,9 @@
   },
   {
     "code": 29857,
-    "name": "Xã Lục Sỹ Thành",
+    "name": "Xã Lục Sĩ Thành",
     "province_name": "Tỉnh Vĩnh Long",
-    "codename": "xa_luc_sy_thanh",
+    "codename": "xa_luc_si_thanh",
     "province_codename": "vinh_long"
   },
   {

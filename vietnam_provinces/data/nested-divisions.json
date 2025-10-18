@@ -4881,11 +4881,11 @@
         "short_codename": "thuy_hung"
       },
       {
-        "name": "Xã Tân Thanh",
+        "name": "Xã Hoàng Văn Thụ",
         "code": 6172,
-        "codename": "xa_tan_thanh",
+        "codename": "xa_hoang_van_thu",
         "division_type": "xã",
-        "short_codename": "tan_thanh"
+        "short_codename": "hoang_van_thu"
       },
       {
         "name": "Xã Lộc Bình",
@@ -5105,11 +5105,11 @@
         "short_codename": "luong_van_tri"
       },
       {
-        "name": "Phường Hoàng Văn Thụ",
+        "name": "Phường Kỳ Lừa",
         "code": 6187,
-        "codename": "phuong_hoang_van_thu",
+        "codename": "phuong_ky_lua",
         "division_type": "phường",
-        "short_codename": "hoang_van_thu"
+        "short_codename": "ky_lua"
       },
       {
         "name": "Phường Đông Kinh",
@@ -9823,7 +9823,7 @@
         "short_codename": "tinh_gia"
       },
       {
-        "name": "Phường Đào Duy Tư",
+        "name": "Phường Đào Duy Từ",
         "code": 16609,
         "codename": "phuong_dao_duy_tu",
         "division_type": "phường",
@@ -15031,11 +15031,11 @@
         "short_codename": "ia_ko"
       },
       {
-        "name": "Xã Albá",
+        "name": "Xã Al Bá",
         "code": 23954,
-        "codename": "xa_alba",
+        "codename": "xa_al_ba",
         "division_type": "xã",
-        "short_codename": "alba"
+        "short_codename": "al_ba"
       },
       {
         "name": "Xã Chư Pưh",
@@ -20906,11 +20906,11 @@
         "short_codename": "hieu_thanh"
       },
       {
-        "name": "Xã Lục Sỹ Thành",
+        "name": "Xã Lục Sĩ Thành",
         "code": 29857,
-        "codename": "xa_luc_sy_thanh",
+        "codename": "xa_luc_si_thanh",
         "division_type": "xã",
-        "short_codename": "luc_sy_thanh"
+        "short_codename": "luc_si_thanh"
       },
       {
         "name": "Xã Trà Ôn",
