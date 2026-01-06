@@ -26,6 +26,7 @@ from .divisions import (
     gen_python_province_lookup,
 )
 from .phones import load_phone_area_table
+from .scraping import scrape_danhmuchanhchinh
 
 
 logger = Logger(__name__)
@@ -85,7 +86,20 @@ def validate_output(ctx: click.Context, _param: click.Parameter, value: str):
     return value
 
 
-@click.command()
+@click.group()
+def app():
+    pass
+
+
+@app.command()
+@click.option('-v', '--verbose', count=True, default=False, help='Show more log to debug (verbose mode).')
+def scrape(verbose: int):
+    """Generate Python code or JSON data by scraping government website."""
+    configure_logging(verbose)
+    scrape_danhmuchanhchinh()
+
+
+@app.command()
 @click.option('-w', '--ward-csv', 'ward_csv_file', required=True, type=click.Path(exists=True))
 @click.option('-p', '--province-csv', 'province_csv_file', required=True, type=click.Path(exists=True))
 @click.option(
@@ -102,7 +116,8 @@ def validate_output(ctx: click.Context, _param: click.Parameter, value: str):
     help='Output file if exporting JSON, output folder if exporting Python code',
 )
 @click.option('-v', '--verbose', count=True, default=False, help='Show more log to debug (verbose mode).')
-def main(ward_csv_file: str, province_csv_file: str, output_format: ExportingFormat, output: str, verbose: int):
+def process_csv(ward_csv_file: str, province_csv_file: str, output_format: ExportingFormat, output: str, verbose: int):
+    """Generate Python code or JSON data from pre-saved CSV files."""
     configure_logging(verbose)
     logger.debug('File {}', ward_csv_file)
     csv_wards: list[WardCSVRecord] = []
@@ -153,4 +168,4 @@ def main(ward_csv_file: str, province_csv_file: str, output_format: ExportingFor
 
 
 if __name__ == '__main__':
-    main(prog_name='vietnamese-provinces')
+    app(prog_name='vietnamese-provinces')

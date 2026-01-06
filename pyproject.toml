@@ -3,9 +3,11 @@ name = "vietnam-provinces"
 description = "Library to provide list of Vietnam administrative divisions (tỉnh thành, quận huyện, phường xã)."
 authors = [{ name = "Nguyễn Hồng Quân", email = "ng.hong.quan@gmail.com" }]
 license = { text = "GPL-3.0-or-later" }
-requires-python = "<4.0,>=3.10"
+requires-python = "<4.0,>=3.12"
 dynamic = ["version"]
-dependencies = []
+dependencies = [
+    "multidict>=6.7.0",
+]
 readme = "README.rst"
 keywords = ["Vietnam", "administrative", "division", "locality"]
 classifiers = [
@@ -39,6 +41,9 @@ dev = [
     "mypy >= 1.16.1",
     "ptpython>=3.0.30",
     "unidecode>=1.4.0",
+    "parsel>=1.10.0",
+    "markupever>=0.3.2",
+    "pyjson5>=2.0.0",
 ]
 lint = ["pre-commit >= 4.2.0", "ruff >= 0.14.1"]
 docs = [

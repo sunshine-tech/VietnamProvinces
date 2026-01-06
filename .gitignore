@@ -11,12 +11,7 @@ __pycache__/
 custom_settings.toml
 .secrets.toml
 .prettierrc.json
-
-# Frontend compiled files
-frontend-compiled/webpack
-
-# Folder to contain dummy static file.
-fake-static
+.env.fish
 
 # Database file
 *.sqlite
@@ -90,6 +85,9 @@ target/
 *.komodoproject
 .komodotools
 .vscode
-
+.zed
+.helix
 # GitEye
 .project
+
+.aider.*
