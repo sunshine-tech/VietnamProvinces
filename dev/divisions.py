@@ -42,7 +42,11 @@ def truncate_leading(line: str, prefixes: Sequence[str]) -> str:
 def normalize_vietnamese(text: str) -> str:
     """
     Converts decomposed ("tổ hợp") to composed ("dựng sẵn") Unicode.
+    Also removes newline characters.
     """
+    text = text.replace('\n', ' ').replace('\r', ' ')
+    # Remove multiple spaces
+    text = ' '.join(text.split())
     return unicodedata.normalize('NFC', text)
 
 
@@ -128,7 +132,7 @@ class ProvinceCSVInputRow(NamedTuple):
     name: str
 
 
-class WardCSVRecord(BaseModel):
+class WardSourceRecord(BaseModel):
     code: int
     name: Annotated[str, StringConstraints(strip_whitespace=True), AfterValidator(normalize_vietnamese)]
     province_name: Annotated[str, StringConstraints(strip_whitespace=True), AfterValidator(normalize_vietnamese)]
@@ -144,7 +148,7 @@ class WardCSVRecord(BaseModel):
         return make_province_codename(self.province_name)
 
 
-class ProvinceCSVRecord(BaseModel):
+class ProvinceSourceRecord(BaseModel):
     code: int
     name: Annotated[str, StringConstraints(strip_whitespace=True), AfterValidator(normalize_vietnamese)]
 
@@ -209,8 +213,8 @@ class Province(BaseRegion):
 
 
 def convert_to_nested(
-    csv_provinces: Sequence[ProvinceCSVRecord],
-    csv_wards: Sequence[WardCSVRecord],
+    csv_provinces: Sequence[ProvinceSourceRecord],
+    csv_wards: Sequence[WardSourceRecord],
     phone_codes: Iterable[PhoneCodeCSVRecord],
 ) -> dict[str, Province]:
     # Map from codename to Province. The codename is used for key because the Wards CSV refers to province by name.

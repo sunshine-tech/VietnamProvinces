@@ -1,9 +1,9 @@
 # Fix data per report from https://github.com/hongquan/vn-open-api-provinces/issues/8
 
-from .divisions import WardCSVRecord
+from .divisions import WardSourceRecord
 
 
-def fix_ward(ward: WardCSVRecord) -> WardCSVRecord:
+def fix_ward(ward: WardSourceRecord) -> WardSourceRecord:
     match ward.code:
         case 29857:
             ward.name = 'Xã Lục Sĩ Thành'

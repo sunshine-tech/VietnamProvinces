@@ -8,239 +8,229 @@ class ProvinceCode(IntEnum):
     P_01 = 1
     'Thành phố Hà Nội'
     P_04 = 4
-    'Cao Bằng'
+    'Tỉnh Cao Bằng'
     P_08 = 8
-    'Tuyên Quang'
+    'Tỉnh Tuyên Quang'
     P_11 = 11
-    'Điện Biên'
+    'Tỉnh Điện Biên'
     P_12 = 12
-    'Lai Châu'
+    'Tỉnh Lai Châu'
     P_14 = 14
-    'Sơn La'
+    'Tỉnh Sơn La'
     P_15 = 15
-    'Lào Cai'
+    'Tỉnh Lào Cai'
     P_19 = 19
-    'Thái Nguyên'
+    'Tỉnh Thái Nguyên'
     P_20 = 20
-    'Lạng Sơn'
+    'Tỉnh Lạng Sơn'
     P_22 = 22
-    'Quảng Ninh'
+    'Tỉnh Quảng Ninh'
     P_24 = 24
-    'Bắc Ninh'
+    'Tỉnh Bắc Ninh'
     P_25 = 25
-    'Phú Thọ'
+    'Tỉnh Phú Thọ'
     P_31 = 31
     'Thành phố Hải Phòng'
     P_33 = 33
-    'Hưng Yên'
+    'Tỉnh Hưng Yên'
     P_37 = 37
-    'Ninh Bình'
+    'Tỉnh Ninh Bình'
     P_38 = 38
-    'Thanh Hóa'
+    'Tỉnh Thanh Hóa'
     P_40 = 40
-    'Nghệ An'
+    'Tỉnh Nghệ An'
     P_42 = 42
-    'Hà Tĩnh'
+    'Tỉnh Hà Tĩnh'
     P_44 = 44
-    'Quảng Trị'
+    'Tỉnh Quảng Trị'
     P_46 = 46
     'Thành phố Huế'
     P_48 = 48
     'Thành phố Đà Nẵng'
     P_51 = 51
-    'Quảng Ngãi'
+    'Tỉnh Quảng Ngãi'
     P_52 = 52
-    'Gia Lai'
+    'Tỉnh Gia Lai'
     P_56 = 56
-    'Khánh Hòa'
+    'Tỉnh Khánh Hòa'
     P_66 = 66
-    'Đắk Lắk'
+    'Tỉnh Đắk Lắk'
     P_68 = 68
-    'Lâm Đồng'
+    'Tỉnh Lâm Đồng'
     P_75 = 75
-    'Đồng Nai'
+    'Tỉnh Đồng Nai'
     P_79 = 79
     'Thành phố Hồ Chí Minh'
     P_80 = 80
-    'Tây Ninh'
+    'Tỉnh Tây Ninh'
     P_82 = 82
-    'Đồng Tháp'
+    'Tỉnh Đồng Tháp'
     P_86 = 86
-    'Vĩnh Long'
+    'Tỉnh Vĩnh Long'
     P_91 = 91
-    'An Giang'
+    'Tỉnh An Giang'
     P_92 = 92
     'Thành phố Cần Thơ'
     P_96 = 96
-    'Cà Mau'
+    'Tỉnh Cà Mau'
 
 
 @document_enum
 class WardCode(IntEnum):
-    W_00070 = 70
-    'Phường Hoàn Kiếm'
-    W_00073 = 73
-    'Phường Cửa Nam'
     W_00004 = 4
     'Phường Ba Đình'
     W_00008 = 8
     'Phường Ngọc Hà'
     W_00025 = 25
     'Phường Giảng Võ'
+    W_00070 = 70
+    'Phường Hoàn Kiếm'
+    W_00082 = 82
+    'Phường Cửa Nam'
+    W_00091 = 91
+    'Phường Phú Thượng'
+    W_00097 = 97
+    'Phường Hồng Hà'
+    W_00103 = 103
+    'Phường Tây Hồ'
+    W_00118 = 118
+    'Phường Bồ Đề'
+    W_00127 = 127
+    'Phường Việt Hưng'
+    W_00136 = 136
+    'Phường Phúc Lợi'
+    W_00145 = 145
+    'Phường Long Biên'
+    W_00160 = 160
+    'Phường Nghĩa Đô'
+    W_00166 = 166
+    'Phường Cầu Giấy'
+    W_00175 = 175
+    'Phường Yên Hòa'
+    W_00190 = 190
+    'Phường Ô Chợ Dừa'
+    W_00199 = 199
+    'Phường Láng'
+    W_00226 = 226
+    'Phường Văn Miếu - Quốc Tử Giám'
+    W_00229 = 229
+    'Phường Kim Liên'
+    W_00235 = 235
+    'Phường Đống Đa'
     W_00256 = 256
     'Phường Hai Bà Trưng'
     W_00283 = 283
     'Phường Vĩnh Tuy'
-    W_00277 = 277
+    W_00292 = 292
     'Phường Bạch Mai'
-    W_00235 = 235
-    'Phường Đống Đa'
-    W_00226 = 226
-    'Phường Kim Liên'
-    W_00196 = 196
-    'Phường Văn Miếu - Quốc Tử Giám'
-    W_00187 = 187
-    'Phường Láng'
-    W_00190 = 190
-    'Phường Ô Chợ Dừa'
-    W_00097 = 97
-    'Phường Hồng Hà'
-    W_00328 = 328
-    'Phường Lĩnh Nam'
-    W_00319 = 319
-    'Phường Hoàng Mai'
-    W_00304 = 304
+    W_00301 = 301
     'Phường Vĩnh Hưng'
-    W_00313 = 313
-    'Phường Tương Mai'
     W_00316 = 316
     'Phường Định Công'
+    W_00322 = 322
+    'Phường Tương Mai'
+    W_00328 = 328
+    'Phường Lĩnh Nam'
+    W_00331 = 331
+    'Phường Hoàng Mai'
     W_00337 = 337
     'Phường Hoàng Liệt'
-    W_00331 = 331
+    W_00340 = 340
     'Phường Yên Sở'
-    W_00367 = 367
-    'Phường Thanh Xuân'
-    W_00364 = 364
-    'Phường Khương Đình'
     W_00352 = 352
     'Phường Phương Liệt'
-    W_00167 = 167
-    'Phường Cầu Giấy'
-    W_00160 = 160
-    'Phường Nghĩa Đô'
-    W_00175 = 175
-    'Phường Yên Hòa'
-    W_00103 = 103
-    'Phường Tây Hồ'
-    W_00091 = 91
-    'Phường Phú Thượng'
+    W_00364 = 364
+    'Phường Khương Đình'
+    W_00367 = 367
+    'Phường Thanh Xuân'
+    W_00376 = 376
+    'Xã Sóc Sơn'
+    W_00382 = 382
+    'Xã Kim Anh'
+    W_00385 = 385
+    'Xã Trung Giã'
+    W_00430 = 430
+    'Xã Đa Phúc'
+    W_00433 = 433
+    'Xã Nội Bài'
+    W_00454 = 454
+    'Xã Đông Anh'
+    W_00466 = 466
+    'Xã Phúc Thịnh'
+    W_00475 = 475
+    'Xã Thư Lâm'
+    W_00493 = 493
+    'Xã Thiên Lộc'
+    W_00508 = 508
+    'Xã Vĩnh Thanh'
+    W_00541 = 541
+    'Xã Phù Đổng'
+    W_00562 = 562
+    'Xã Thuận An'
+    W_00565 = 565
+    'Xã Gia Lâm'
+    W_00577 = 577
+    'Xã Bát Tràng'
+    W_00592 = 592
+    'Phường Từ Liêm'
+    W_00598 = 598
+    'Phường Thượng Cát'
+    W_00602 = 602
+    'Phường Đông Ngạc'
+    W_00611 = 611
+    'Phường Xuân Đỉnh'
     W_00613 = 613
     'Phường Tây Tựu'
     W_00619 = 619
     'Phường Phú Diễn'
-    W_00611 = 611
-    'Phường Xuân Đỉnh'
-    W_00602 = 602
-    'Phường Đông Ngạc'
-    W_00598 = 598
-    'Phường Thượng Cát'
-    W_00592 = 592
-    'Phường Từ Liêm'
     W_00622 = 622
     'Phường Xuân Phương'
     W_00634 = 634
     'Phường Tây Mỗ'
     W_00637 = 637
     'Phường Đại Mỗ'
-    W_00148 = 148
-    'Phường Long Biên'
-    W_00130 = 130
-    'Phường Bồ Đề'
-    W_00127 = 127
-    'Phường Việt Hưng'
-    W_00136 = 136
-    'Phường Phúc Lợi'
+    W_00640 = 640
+    'Xã Thanh Trì'
+    W_00643 = 643
+    'Phường Thanh Liệt'
+    W_00664 = 664
+    'Xã Đại Thanh'
+    W_00679 = 679
+    'Xã Ngọc Hồi'
+    W_00685 = 685
+    'Xã Nam Phù'
+    W_04930 = 4930
+    'Xã Yên Xuân'
+    W_08974 = 8974
+    'Xã Quang Minh'
+    W_08980 = 8980
+    'Xã Yên Lãng'
+    W_08995 = 8995
+    'Xã Tiến Thắng'
+    W_09022 = 9022
+    'Xã Mê Linh'
+    W_09552 = 9552
+    'Phường Kiến Hưng'
     W_09556 = 9556
     'Phường Hà Đông'
-    W_09886 = 9886
-    'Phường Dương Nội'
     W_09562 = 9562
     'Phường Yên Nghĩa'
     W_09568 = 9568
     'Phường Phú Lương'
-    W_09552 = 9552
-    'Phường Kiến Hưng'
-    W_00640 = 640
-    'Xã Thanh Trì'
-    W_00664 = 664
-    'Xã Đại Thanh'
-    W_00685 = 685
-    'Xã Nam Phù'
-    W_00679 = 679
-    'Xã Ngọc Hồi'
-    W_00646 = 646
-    'Phường Thanh Liệt'
-    W_10231 = 10231
-    'Xã Thượng Phúc'
-    W_10183 = 10183
-    'Xã Thường Tín'
-    W_10237 = 10237
-    'Xã Chương Dương'
-    W_10210 = 10210
-    'Xã Hồng Vân'
-    W_10273 = 10273
-    'Xã Phú Xuyên'
-    W_10279 = 10279
-    'Xã Phượng Dực'
-    W_10330 = 10330
-    'Xã Chuyên Mỹ'
-    W_10333 = 10333
-    'Xã Đại Xuyên'
-    W_10114 = 10114
-    'Xã Thanh Oai'
-    W_10141 = 10141
-    'Xã Bình Minh'
-    W_10144 = 10144
-    'Xã Tam Hưng'
-    W_10180 = 10180
-    'Xã Dân Hòa'
-    W_10354 = 10354
-    'Xã Vân Đình'
-    W_10369 = 10369
-    'Xã Ứng Thiên'
-    W_10417 = 10417
-    'Xã Hòa Xá'
-    W_10402 = 10402
-    'Xã Ứng Hòa'
-    W_10441 = 10441
-    'Xã Mỹ Đức'
-    W_10465 = 10465
-    'Xã Hồng Sơn'
-    W_10459 = 10459
-    'Xã Phúc Sơn'
-    W_10489 = 10489
-    'Xã Hương Sơn'
-    W_10015 = 10015
-    'Phường Chương Mỹ'
-    W_10030 = 10030
-    'Xã Phú Nghĩa'
-    W_10018 = 10018
-    'Xã Xuân Mai'
-    W_10081 = 10081
-    'Xã Trần Phú'
-    W_10108 = 10108
-    'Xã Hòa Phú'
-    W_10084 = 10084
-    'Xã Quảng Bị'
-    W_09661 = 9661
-    'Xã Minh Châu'
+    W_09574 = 9574
+    'Phường Sơn Tây'
+    W_09604 = 9604
+    'Phường Tùng Thiện'
+    W_09616 = 9616
+    'Xã Đoài Phương'
     W_09619 = 9619
     'Xã Quảng Oai'
-    W_09664 = 9664
-    'Xã Vật Lại'
     W_09634 = 9634
     'Xã Cổ Đô'
+    W_09661 = 9661
+    'Xã Minh Châu'
+    W_09664 = 9664
+    'Xã Vật Lại'
     W_09676 = 9676
     'Xã Bất Bạt'
     W_09694 = 9694
@@ -249,106 +239,112 @@ class WardCode(IntEnum):
     'Xã Ba Vì'
     W_09706 = 9706
     'Xã Yên Bài'
-    W_09574 = 9574
-    'Phường Sơn Tây'
-    W_09604 = 9604
-    'Phường Tùng Thiện'
-    W_09616 = 9616
-    'Xã Đoài Phương'
     W_09715 = 9715
     'Xã Phúc Thọ'
     W_09739 = 9739
     'Xã Phúc Lộc'
     W_09772 = 9772
     'Xã Hát Môn'
-    W_09955 = 9955
-    'Xã Thạch Thất'
-    W_10009 = 10009
-    'Xã Hạ Bằng'
-    W_10006 = 10006
-    'Xã Tây Phương'
-    W_09988 = 9988
-    'Xã Hòa Lạc'
-    W_04936 = 4936
-    'Xã Yên Xuân'
-    W_09895 = 9895
-    'Xã Quốc Oai'
-    W_09931 = 9931
-    'Xã Hưng Đạo'
-    W_09928 = 9928
-    'Xã Kiều Phú'
-    W_09922 = 9922
-    'Xã Phú Cát'
+    W_09784 = 9784
+    'Xã Đan Phượng'
+    W_09787 = 9787
+    'Xã Liên Minh'
+    W_09817 = 9817
+    'Xã Ô Diên'
     W_09832 = 9832
     'Xã Hoài Đức'
-    W_09838 = 9838
+    W_09856 = 9856
     'Xã Dương Hòa'
-    W_09859 = 9859
+    W_09871 = 9871
     'Xã Sơn Đồng'
     W_09877 = 9877
     'Xã An Khánh'
-    W_09784 = 9784
-    'Xã Đan Phượng'
-    W_09817 = 9817
-    'Xã Ô Diên'
-    W_09793 = 9793
-    'Xã Liên Minh'
-    W_00565 = 565
-    'Xã Gia Lâm'
-    W_00562 = 562
-    'Xã Thuận An'
-    W_00583 = 583
-    'Xã Bát Tràng'
-    W_00541 = 541
-    'Xã Phù Đổng'
-    W_00484 = 484
-    'Xã Thư Lâm'
-    W_00454 = 454
-    'Xã Đông Anh'
-    W_00466 = 466
-    'Xã Phúc Thịnh'
-    W_00493 = 493
-    'Xã Thiên Lộc'
-    W_00508 = 508
-    'Xã Vĩnh Thanh'
-    W_09022 = 9022
-    'Xã Mê Linh'
-    W_08980 = 8980
-    'Xã Yên Lãng'
-    W_08995 = 8995
-    'Xã Tiến Thắng'
-    W_08974 = 8974
-    'Xã Quang Minh'
-    W_00376 = 376
-    'Xã Sóc Sơn'
-    W_00424 = 424
-    'Xã Đa Phúc'
-    W_00433 = 433
-    'Xã Nội Bài'
-    W_00385 = 385
-    'Xã Trung Giã'
-    W_00382 = 382
-    'Xã Kim Anh'
+    W_09886 = 9886
+    'Phường Dương Nội'
+    W_09895 = 9895
+    'Xã Quốc Oai'
+    W_09910 = 9910
+    'Xã Kiều Phú'
+    W_09931 = 9931
+    'Xã Hưng Đạo'
+    W_09952 = 9952
+    'Xã Phú Cát'
+    W_09955 = 9955
+    'Xã Thạch Thất'
+    W_09982 = 9982
+    'Xã Hạ Bằng'
+    W_09988 = 9988
+    'Xã Hòa Lạc'
+    W_10003 = 10003
+    'Xã Tây Phương'
+    W_10015 = 10015
+    'Phường Chương Mỹ'
+    W_10030 = 10030
+    'Xã Phú Nghĩa'
+    W_10045 = 10045
+    'Xã Xuân Mai'
+    W_10072 = 10072
+    'Xã Quảng Bị'
+    W_10081 = 10081
+    'Xã Trần Phú'
+    W_10096 = 10096
+    'Xã Hòa Phú'
+    W_10114 = 10114
+    'Xã Thanh Oai'
+    W_10126 = 10126
+    'Xã Bình Minh'
+    W_10144 = 10144
+    'Xã Tam Hưng'
+    W_10180 = 10180
+    'Xã Dân Hòa'
+    W_10183 = 10183
+    'Xã Thường Tín'
+    W_10210 = 10210
+    'Xã Hồng Vân'
+    W_10231 = 10231
+    'Xã Thượng Phúc'
+    W_10237 = 10237
+    'Xã Chương Dương'
+    W_10273 = 10273
+    'Xã Phú Xuyên'
+    W_10279 = 10279
+    'Xã Phượng Dực'
+    W_10330 = 10330
+    'Xã Chuyên Mỹ'
+    W_10342 = 10342
+    'Xã Đại Xuyên'
+    W_10354 = 10354
+    'Xã Vân Đình'
+    W_10369 = 10369
+    'Xã Ứng Thiên'
+    W_10402 = 10402
+    'Xã Ứng Hòa'
+    W_10417 = 10417
+    'Xã Hòa Xá'
+    W_10441 = 10441
+    'Xã Mỹ Đức'
+    W_10459 = 10459
+    'Xã Phúc Sơn'
+    W_10465 = 10465
+    'Xã Hồng Sơn'
+    W_10489 = 10489
+    'Xã Hương Sơn'
     W_01273 = 1273
     'Phường Thục Phán'
     W_01279 = 1279
     'Phường Nùng Trí Cao'
     W_01288 = 1288
     'Phường Tân Giang'
-    W_01304 = 1304
-    'Xã Quảng Lâm'
-    W_01297 = 1297
-    'Xã Nam Quang'
-    W_01294 = 1294
-    'Xã Lý Bôn'
     W_01290 = 1290
     'Xã Bảo Lâm'
+    W_01294 = 1294
+    'Xã Lý Bôn'
+    W_01297 = 1297
+    'Xã Nam Quang'
+    W_01304 = 1304
+    'Xã Quảng Lâm'
     W_01318 = 1318
     'Xã Yên Thổ'
-    W_01360 = 1360
-    'Xã Sơn Lộ'
-    W_01351 = 1351
-    'Xã Hưng Đạo'
     W_01321 = 1321
     'Xã Bảo Lạc'
     W_01324 = 1324
@@ -359,190 +355,100 @@ class WardCode(IntEnum):
     'Xã Khánh Xuân'
     W_01339 = 1339
     'Xã Xuân Trường'
+    W_01351 = 1351
+    'Xã Hưng Đạo'
     W_01354 = 1354
     'Xã Huy Giáp'
-    W_01738 = 1738
-    'Xã Ca Thành'
-    W_01768 = 1768
-    'Xã Phan Thanh'
-    W_01777 = 1777
-    'Xã Thành Công'
-    W_01729 = 1729
-    'Xã Tĩnh Túc'
-    W_01774 = 1774
-    'Xã Tam Kim'
-    W_01726 = 1726
-    'Xã Nguyên Bình'
-    W_01747 = 1747
-    'Xã Minh Tâm'
-    W_01387 = 1387
-    'Xã Thanh Long'
-    W_01366 = 1366
-    'Xã Cần Yên'
+    W_01360 = 1360
+    'Xã Sơn Lộ'
     W_01363 = 1363
     'Xã Thông Nông'
+    W_01366 = 1366
+    'Xã Cần Yên'
+    W_01387 = 1387
+    'Xã Thanh Long'
     W_01392 = 1392
     'Xã Trường Hà'
-    W_01438 = 1438
-    'Xã Hà Quảng'
     W_01393 = 1393
     'Xã Lũng Nặm'
     W_01414 = 1414
     'Xã Tổng Cọt'
-    W_01660 = 1660
-    'Xã Nam Tuấn'
+    W_01438 = 1438
+    'Xã Hà Quảng'
+    W_01447 = 1447
+    'Xã Trà Lĩnh'
+    W_01456 = 1456
+    'Xã Quang Hán'
+    W_01465 = 1465
+    'Xã Quang Trung'
+    W_01477 = 1477
+    'Xã Trùng Khánh'
+    W_01489 = 1489
+    'Xã Đình Phong'
+    W_01501 = 1501
+    'Xã Đàm Thủy'
+    W_01525 = 1525
+    'Xã Đoài Dương'
+    W_01537 = 1537
+    'Xã Lý Quốc'
+    W_01552 = 1552
+    'Xã Quang Long'
+    W_01558 = 1558
+    'Xã Hạ Lang'
+    W_01561 = 1561
+    'Xã Vinh Quý'
+    W_01576 = 1576
+    'Xã Quảng Uyên'
+    W_01594 = 1594
+    'Xã Độc Lập'
+    W_01618 = 1618
+    'Xã Hạnh Phúc'
+    W_01636 = 1636
+    'Xã Bế Văn Đàn'
+    W_01648 = 1648
+    'Xã Phục Hòa'
     W_01654 = 1654
     'Xã Hòa An'
-    W_01708 = 1708
-    'Xã Bạch Đằng'
+    W_01660 = 1660
+    'Xã Nam Tuấn'
     W_01699 = 1699
     'Xã Nguyễn Huệ'
-    W_01795 = 1795
-    'Xã Minh Khai'
+    W_01708 = 1708
+    'Xã Bạch Đằng'
+    W_01726 = 1726
+    'Xã Nguyên Bình'
+    W_01729 = 1729
+    'Xã Tĩnh Túc'
+    W_01738 = 1738
+    'Xã Ca Thành'
+    W_01747 = 1747
+    'Xã Minh Tâm'
+    W_01768 = 1768
+    'Xã Phan Thanh'
+    W_01774 = 1774
+    'Xã Tam Kim'
+    W_01777 = 1777
+    'Xã Thành Công'
+    W_01786 = 1786
+    'Xã Đông Khê'
     W_01789 = 1789
     'Xã Canh Tân'
     W_01792 = 1792
     'Xã Kim Đồng'
+    W_01795 = 1795
+    'Xã Minh Khai'
     W_01807 = 1807
     'Xã Thạch An'
-    W_01786 = 1786
-    'Xã Đông Khê'
     W_01822 = 1822
     'Xã Đức Long'
-    W_01648 = 1648
-    'Xã Phục Hòa'
-    W_01636 = 1636
-    'Xã Bế Văn Đàn'
-    W_01594 = 1594
-    'Xã Độc Lập'
-    W_01576 = 1576
-    'Xã Quảng Uyên'
-    W_01618 = 1618
-    'Xã Hạnh Phúc'
-    W_01456 = 1456
-    'Xã Quang Hán'
-    W_01447 = 1447
-    'Xã Trà Lĩnh'
-    W_01465 = 1465
-    'Xã Quang Trung'
-    W_01525 = 1525
-    'Xã Đoài Dương'
-    W_01477 = 1477
-    'Xã Trùng Khánh'
-    W_01501 = 1501
-    'Xã Đàm Thuỷ'
-    W_01489 = 1489
-    'Xã Đình Phong'
-    W_01558 = 1558
-    'Xã Lý Quốc'
-    W_01561 = 1561
-    'Xã Hạ Lang'
-    W_01537 = 1537
-    'Xã Vinh Quý'
-    W_01552 = 1552
-    'Xã Quang Long'
-    W_02269 = 2269
-    'Xã Thượng Lâm'
-    W_02266 = 2266
-    'Xã Lâm Bình'
-    W_02302 = 2302
-    'Xã Minh Quang'
-    W_02296 = 2296
-    'Xã Bình An'
-    W_02245 = 2245
-    'Xã Côn Lôn'
-    W_02248 = 2248
-    'Xã Yên Hoa'
-    W_02239 = 2239
-    'Xã Thượng Nông'
-    W_02260 = 2260
-    'Xã Hồng Thái'
-    W_02221 = 2221
-    'Xã Nà Hang'
-    W_02308 = 2308
-    'Xã Tân Mỹ'
-    W_02317 = 2317
-    'Xã Yên Lập'
-    W_02320 = 2320
-    'Xã Tân An'
-    W_02287 = 2287
-    'Xã Chiêm Hoá'
-    W_02353 = 2353
-    'Xã Hoà An'
-    W_02332 = 2332
-    'Xã Kiên Đài'
-    W_02359 = 2359
-    'Xã Tri Phú'
-    W_02350 = 2350
-    'Xã Kim Bình'
-    W_02365 = 2365
-    'Xã Yên Nguyên'
-    W_02305 = 2305
-    'Xã Trung Hà'
-    W_02398 = 2398
-    'Xã Yên Phú'
-    W_02380 = 2380
-    'Xã Bạch Xa'
-    W_02392 = 2392
-    'Xã Phù Lưu'
-    W_02374 = 2374
-    'Xã Hàm Yên'
-    W_02404 = 2404
-    'Xã Bình Xa'
-    W_02407 = 2407
-    'Xã Thái Sơn'
-    W_02419 = 2419
-    'Xã Thái Hoà'
-    W_02425 = 2425
-    'Xã Hùng Đức'
-    W_02455 = 2455
-    'Xã Hùng Lợi'
-    W_02458 = 2458
-    'Xã Trung Sơn'
-    W_02494 = 2494
-    'Xã Thái Bình'
-    W_02470 = 2470
-    'Xã Tân Long'
-    W_02449 = 2449
-    'Xã Xuân Vân'
-    W_02434 = 2434
-    'Xã Lực Hành'
-    W_02473 = 2473
-    'Xã Yên Sơn'
-    W_02530 = 2530
-    'Xã Nhữ Khê'
-    W_02437 = 2437
-    'Xã Kiến Thiết'
-    W_02545 = 2545
-    'Xã Tân Trào'
-    W_02554 = 2554
-    'Xã Minh Thanh'
-    W_02536 = 2536
-    'Xã Sơn Dương'
-    W_02548 = 2548
-    'Xã Bình Ca'
-    W_02578 = 2578
-    'Xã Tân Thanh'
-    W_02620 = 2620
-    'Xã Sơn Thuỷ'
-    W_02611 = 2611
-    'Xã Phú Lương'
-    W_02623 = 2623
-    'Xã Trường Sinh'
-    W_02608 = 2608
-    'Xã Hồng Sơn'
-    W_02572 = 2572
-    'Xã Đông Thọ'
-    W_02509 = 2509
-    'Phường Mỹ Lâm'
-    W_02215 = 2215
-    'Phường Minh Xuân'
-    W_02212 = 2212
-    'Phường Nông Tiến'
-    W_02512 = 2512
-    'Phường An Tường'
-    W_02524 = 2524
-    'Phường Bình Thuận'
+    W_00691 = 691
+    'Phường Hà Giang 2'
+    W_00694 = 694
+    'Phường Hà Giang 1'
+    W_00700 = 700
+    'Xã Ngọc Đường'
+    W_00706 = 706
+    'Xã Phú Linh'
     W_00715 = 715
     'Xã Lũng Cú'
     W_00721 = 721
@@ -553,262 +459,378 @@ class WardCode(IntEnum):
     'Xã Phố Bảng'
     W_00763 = 763
     'Xã Lũng Phìn'
-    W_00787 = 787
-    'Xã Sủng Máng'
-    W_00778 = 778
-    'Xã Sơn Vĩ'
     W_00769 = 769
     'Xã Mèo Vạc'
+    W_00778 = 778
+    'Xã Sơn Vĩ'
+    W_00787 = 787
+    'Xã Sủng Máng'
     W_00802 = 802
     'Xã Khâu Vai'
-    W_00817 = 817
-    'Xã Niêm Sơn'
     W_00808 = 808
     'Xã Tát Ngà'
+    W_00817 = 817
+    'Xã Niêm Sơn'
+    W_00820 = 820
+    'Xã Yên Minh'
     W_00829 = 829
     'Xã Thắng Mố'
     W_00832 = 832
     'Xã Bạch Đích'
-    W_00820 = 820
-    'Xã Yên Minh'
     W_00847 = 847
     'Xã Mậu Duệ'
     W_00859 = 859
     'Xã Ngọc Long'
-    W_00871 = 871
-    'Xã Du Già'
     W_00865 = 865
     'Xã Đường Thượng'
-    W_00901 = 901
-    'Xã Lùng Tám'
+    W_00871 = 871
+    'Xã Du Già'
+    W_00874 = 874
+    'Xã Quản Bạ'
     W_00883 = 883
     'Xã Cán Tỷ'
     W_00889 = 889
     'Xã Nghĩa Thuận'
-    W_00874 = 874
-    'Xã Quản Bạ'
     W_00892 = 892
     'Xã Tùng Vài'
-    W_01006 = 1006
-    'Xã Yên Cường'
-    W_01012 = 1012
-    'Xã Đường Hồng'
-    W_00991 = 991
-    'Xã Bắc Mê'
-    W_00985 = 985
-    'Xã Giáp Trung'
-    W_00982 = 982
-    'Xã Minh Sơn'
-    W_00994 = 994
-    'Xã Minh Ngọc'
-    W_00700 = 700
-    'Xã Ngọc Đường'
-    W_00694 = 694
-    'Phường Hà Giang 1'
-    W_00691 = 691
-    'Phường Hà Giang 2'
-    W_00937 = 937
-    'Xã Lao Chải'
-    W_00928 = 928
-    'Xã Thanh Thuỷ'
+    W_00901 = 901
+    'Xã Lùng Tám'
+    W_00913 = 913
+    'Xã Vị Xuyên'
     W_00919 = 919
     'Xã Minh Tân'
     W_00922 = 922
     'Xã Thuận Hoà'
     W_00925 = 925
     'Xã Tùng Bá'
-    W_00706 = 706
-    'Xã Phú Linh'
-    W_00970 = 970
-    'Xã Linh Hồ'
-    W_00976 = 976
-    'Xã Bạch Ngọc'
-    W_00913 = 913
-    'Xã Vị Xuyên'
-    W_00967 = 967
-    'Xã Việt Lâm'
+    W_00928 = 928
+    'Xã Thanh Thủy'
+    W_00937 = 937
+    'Xã Lao Chải'
     W_00952 = 952
     'Xã Cao Bồ'
     W_00958 = 958
     'Xã Thượng Sơn'
-    W_01171 = 1171
-    'Xã Tân Quang'
-    W_01165 = 1165
-    'Xã Đồng Tâm'
-    W_01192 = 1192
-    'Xã Liên Hiệp'
-    W_01180 = 1180
-    'Xã Bằng Hành'
+    W_00967 = 967
+    'Xã Việt Lâm'
+    W_00970 = 970
+    'Xã Linh Hồ'
+    W_00976 = 976
+    'Xã Bạch Ngọc'
+    W_00982 = 982
+    'Xã Minh Sơn'
+    W_00985 = 985
+    'Xã Giáp Trung'
+    W_00991 = 991
+    'Xã Bắc Mê'
+    W_00994 = 994
+    'Xã Minh Ngọc'
+    W_01006 = 1006
+    'Xã Yên Cường'
+    W_01012 = 1012
+    'Xã Đường Hồng'
+    W_01021 = 1021
+    'Xã Hoàng Su Phì'
+    W_01024 = 1024
+    'Xã Bản Máy'
+    W_01033 = 1033
+    'Xã Thàng Tín'
+    W_01051 = 1051
+    'Xã Tân Tiến'
+    W_01057 = 1057
+    'Xã Pờ Ly Ngài'
+    W_01075 = 1075
+    'Xã Nậm Dịch'
+    W_01084 = 1084
+    'Xã Hồ Thầu'
+    W_01090 = 1090
+    'Xã Thông Nguyên'
+    W_01096 = 1096
+    'Xã Pà Vầy Sủ'
+    W_01108 = 1108
+    'Xã Xín Mần'
+    W_01117 = 1117
+    'Xã Trung Thịnh'
+    W_01141 = 1141
+    'Xã Nấm Dẩn'
+    W_01144 = 1144
+    'Xã Quảng Nguyên'
+    W_01147 = 1147
+    'Xã Khuôn Lùng'
     W_01153 = 1153
     'Xã Bắc Quang'
-    W_01201 = 1201
-    'Xã Hùng An'
     W_01156 = 1156
     'Xã Vĩnh Tuy'
+    W_01165 = 1165
+    'Xã Đồng Tâm'
+    W_01171 = 1171
+    'Xã Tân Quang'
+    W_01180 = 1180
+    'Xã Bằng Hành'
+    W_01192 = 1192
+    'Xã Liên Hiệp'
+    W_01201 = 1201
+    'Xã Hùng An'
     W_01216 = 1216
     'Xã Đồng Yên'
-    W_01261 = 1261
-    'Xã Tiên Yên'
-    W_01255 = 1255
-    'Xã Xuân Giang'
-    W_01246 = 1246
-    'Xã Bằng Lang'
+    W_01225 = 1225
+    'Xã Tiên Nguyên'
     W_01234 = 1234
     'Xã Yên Thành'
     W_01237 = 1237
     'Xã Quang Bình'
     W_01243 = 1243
     'Xã Tân Trịnh'
-    W_01225 = 1225
-    'Xã Tiên Nguyên'
-    W_01090 = 1090
-    'Xã Thông Nguyên'
-    W_01084 = 1084
-    'Xã Hồ Thầu'
-    W_01075 = 1075
-    'Xã Nậm Dịch'
-    W_01051 = 1051
-    'Xã Tân Tiến'
-    W_01021 = 1021
-    'Xã Hoàng Su Phì'
-    W_01033 = 1033
-    'Xã Thàng Tín'
-    W_01024 = 1024
-    'Xã Bản Máy'
-    W_01057 = 1057
-    'Xã Pờ Ly Ngài'
-    W_01108 = 1108
-    'Xã Xín Mần'
-    W_01096 = 1096
-    'Xã Pà Vầy Sủ'
-    W_01141 = 1141
-    'Xã Nấm Dẩn'
-    W_01117 = 1117
-    'Xã Trung Thịnh'
-    W_01144 = 1144
-    'Xã Quảng Nguyên'
-    W_01147 = 1147
-    'Xã Khuôn Lùng'
-    W_03325 = 3325
-    'Xã Mường Phăng'
+    W_01246 = 1246
+    'Xã Bằng Lang'
+    W_01255 = 1255
+    'Xã Xuân Giang'
+    W_01261 = 1261
+    'Xã Tiên Yên'
+    W_02212 = 2212
+    'Phường Nông Tiến'
+    W_02215 = 2215
+    'Phường Minh Xuân'
+    W_02221 = 2221
+    'Xã Nà Hang'
+    W_02239 = 2239
+    'Xã Thượng Nông'
+    W_02245 = 2245
+    'Xã Côn Lôn'
+    W_02248 = 2248
+    'Xã Yên Hoa'
+    W_02260 = 2260
+    'Xã Hồng Thái'
+    W_02266 = 2266
+    'Xã Lâm Bình'
+    W_02269 = 2269
+    'Xã Thượng Lâm'
+    W_02287 = 2287
+    'Xã Chiêm Hoá'
+    W_02296 = 2296
+    'Xã Bình An'
+    W_02302 = 2302
+    'Xã Minh Quang'
+    W_02305 = 2305
+    'Xã Trung Hà'
+    W_02308 = 2308
+    'Xã Tân Mỹ'
+    W_02317 = 2317
+    'Xã Yên Lập'
+    W_02320 = 2320
+    'Xã Tân An'
+    W_02332 = 2332
+    'Xã Kiên Đài'
+    W_02350 = 2350
+    'Xã Kim Bình'
+    W_02353 = 2353
+    'Xã Hoà An'
+    W_02359 = 2359
+    'Xã Tri Phú'
+    W_02365 = 2365
+    'Xã Yên Nguyên'
+    W_02374 = 2374
+    'Xã Hàm Yên'
+    W_02380 = 2380
+    'Xã Bạch Xa'
+    W_02392 = 2392
+    'Xã Phù Lưu'
+    W_02398 = 2398
+    'Xã Yên Phú'
+    W_02404 = 2404
+    'Xã Bình Xa'
+    W_02407 = 2407
+    'Xã Thái Sơn'
+    W_02419 = 2419
+    'Xã Thái Hoà'
+    W_02425 = 2425
+    'Xã Hùng Đức'
+    W_02434 = 2434
+    'Xã Lực Hành'
+    W_02437 = 2437
+    'Xã Kiến Thiết'
+    W_02449 = 2449
+    'Xã Xuân Vân'
+    W_02455 = 2455
+    'Xã Hùng Lợi'
+    W_02458 = 2458
+    'Xã Trung Sơn'
+    W_02470 = 2470
+    'Xã Tân Long'
+    W_02473 = 2473
+    'Xã Yên Sơn'
+    W_02494 = 2494
+    'Xã Thái Bình'
+    W_02509 = 2509
+    'Phường Mỹ Lâm'
+    W_02512 = 2512
+    'Phường An Tường'
+    W_02524 = 2524
+    'Phường Bình Thuận'
+    W_02530 = 2530
+    'Xã Nhữ Khê'
+    W_02536 = 2536
+    'Xã Sơn Dương'
+    W_02545 = 2545
+    'Xã Tân Trào'
+    W_02548 = 2548
+    'Xã Bình Ca'
+    W_02554 = 2554
+    'Xã Minh Thanh'
+    W_02572 = 2572
+    'Xã Đông Thọ'
+    W_02578 = 2578
+    'Xã Tân Thanh'
+    W_02608 = 2608
+    'Xã Hồng Sơn'
+    W_02611 = 2611
+    'Xã Phú Lương'
+    W_02620 = 2620
+    'Xã Sơn Thuỷ'
+    W_02623 = 2623
+    'Xã Trường Sinh'
     W_03127 = 3127
     'Phường Điện Biên Phủ'
-    W_03334 = 3334
-    'Phường Mường Thanh'
     W_03151 = 3151
     'Phường Mường Lay'
-    W_03328 = 3328
-    'Xã Thanh Nưa'
-    W_03352 = 3352
-    'Xã Thanh An'
-    W_03349 = 3349
-    'Xã Thanh Yên'
-    W_03356 = 3356
-    'Xã Sam Mứn'
-    W_03358 = 3358
-    'Xã Núa Ngam'
-    W_03368 = 3368
-    'Xã Mường Nhà'
-    W_03253 = 3253
-    'Xã Tuần Giáo'
-    W_03295 = 3295
-    'Xã Quài Tở'
-    W_03268 = 3268
-    'Xã Mường Mùn'
-    W_03260 = 3260
-    'Xã Pú Nhung'
-    W_03283 = 3283
-    'Xã Chiềng Sinh'
-    W_03217 = 3217
-    'Xã Tủa Chùa'
-    W_03226 = 3226
-    'Xã Sín Chải'
-    W_03241 = 3241
-    'Xã Sính Phình'
-    W_03220 = 3220
-    'Xã Tủa Thàng'
-    W_03244 = 3244
-    'Xã Sáng Nhè'
+    W_03158 = 3158
+    'Xã Sín Thầu'
+    W_03160 = 3160
+    'Xã Mường Nhé'
+    W_03162 = 3162
+    'Xã Nậm Kè'
+    W_03163 = 3163
+    'Xã Mường Toong'
+    W_03164 = 3164
+    'Xã Quảng Lâm'
+    W_03166 = 3166
+    'Xã Mường Chà'
+    W_03169 = 3169
+    'Xã Nà Hỳ'
     W_03172 = 3172
     'Xã Na Sang'
+    W_03175 = 3175
+    'Xã Chà Tở'
+    W_03176 = 3176
+    'Xã Nà Bủng'
     W_03181 = 3181
     'Xã Mường Tùng'
     W_03193 = 3193
     'Xã Pa Ham'
     W_03194 = 3194
     'Xã Nậm Nèn'
+    W_03199 = 3199
+    'Xã Si Pa Phìn'
     W_03202 = 3202
     'Xã Mường Pồn'
     W_03203 = 3203
     'Xã Na Son'
     W_03208 = 3208
     'Xã Xa Dung'
-    W_03370 = 3370
-    'Xã Pu Nhi'
     W_03214 = 3214
     'Xã Mường Luân'
-    W_03385 = 3385
-    'Xã Tìa Dình'
-    W_03382 = 3382
-    'Xã Phình Giàng'
-    W_03166 = 3166
-    'Xã Mường Chà'
-    W_03169 = 3169
-    'Xã Nà Hỳ'
-    W_03176 = 3176
-    'Xã Nà Bủng'
-    W_03175 = 3175
-    'Xã Chà Tở'
-    W_03199 = 3199
-    'Xã Si Pa Phìn'
-    W_03160 = 3160
-    'Xã Mường Nhé'
-    W_03158 = 3158
-    'Xã Sín Thầu'
-    W_03163 = 3163
-    'Xã Mường Toong'
-    W_03162 = 3162
-    'Xã Nậm Kè'
-    W_03164 = 3164
-    'Xã Quảng Lâm'
+    W_03217 = 3217
+    'Xã Tủa Chùa'
+    W_03220 = 3220
+    'Xã Tủa Thàng'
+    W_03226 = 3226
+    'Xã Sín Chải'
+    W_03241 = 3241
+    'Xã Sính Phình'
+    W_03244 = 3244
+    'Xã Sáng Nhè'
+    W_03253 = 3253
+    'Xã Tuần Giáo'
     W_03256 = 3256
     'Xã Mường Ảng'
-    W_03316 = 3316
-    'Xã Nà Tấu'
+    W_03260 = 3260
+    'Xã Pú Nhung'
+    W_03268 = 3268
+    'Xã Mường Mùn'
+    W_03283 = 3283
+    'Xã Chiềng Sinh'
+    W_03295 = 3295
+    'Xã Quài Tở'
     W_03301 = 3301
     'Xã Búng Lao'
     W_03313 = 3313
     'Xã Mường Lạn'
-    W_03637 = 3637
-    'Xã Mường Kim'
-    W_03640 = 3640
-    'Xã Khoen On'
-    W_03595 = 3595
-    'Xã Than Uyên'
-    W_03618 = 3618
-    'Xã Mường Than'
-    W_03616 = 3616
-    'Xã Pắc Ta'
-    W_03613 = 3613
-    'Xã Nậm Sỏ'
-    W_03598 = 3598
-    'Xã Tân Uyên'
-    W_03601 = 3601
-    'Xã Mường Khoa'
-    W_03424 = 3424
-    'Xã Bản Bo'
-    W_03390 = 3390
-    'Xã Bình Lư'
-    W_03405 = 3405
-    'Xã Tả Lèng'
-    W_03430 = 3430
-    'Xã Khun Há'
-    W_03408 = 3408
-    'Phường Tân Phong'
+    W_03316 = 3316
+    'Xã Nà Tấu'
+    W_03325 = 3325
+    'Xã Mường Phăng'
+    W_03328 = 3328
+    'Xã Thanh Nưa'
+    W_03334 = 3334
+    'Phường Mường Thanh'
+    W_03349 = 3349
+    'Xã Thanh Yên'
+    W_03352 = 3352
+    'Xã Thanh An'
+    W_03356 = 3356
+    'Xã Sam Mứn'
+    W_03358 = 3358
+    'Xã Núa Ngam'
+    W_03368 = 3368
+    'Xã Mường Nhà'
+    W_03370 = 3370
+    'Xã Pu Nhi'
+    W_03382 = 3382
+    'Xã Phình Giàng'
+    W_03385 = 3385
+    'Xã Tìa Dình'
     W_03388 = 3388
     'Phường Đoàn Kết'
+    W_03390 = 3390
+    'Xã Bình Lư'
     W_03394 = 3394
     'Xã Sin Suối Hồ'
+    W_03405 = 3405
+    'Xã Tả Lèng'
+    W_03408 = 3408
+    'Phường Tân Phong'
+    W_03424 = 3424
+    'Xã Bản Bo'
+    W_03430 = 3430
+    'Xã Khun Há'
+    W_03433 = 3433
+    'Xã Bum Tở'
+    W_03434 = 3434
+    'Xã Nậm Hàng'
+    W_03439 = 3439
+    'Xã Thu Lũm'
+    W_03442 = 3442
+    'Xã Pa Ủ'
+    W_03445 = 3445
+    'Xã Mường Tè'
+    W_03451 = 3451
+    'Xã Mù Cả'
+    W_03460 = 3460
+    'Xã Hua Bum'
+    W_03463 = 3463
+    'Xã Tà Tổng'
+    W_03466 = 3466
+    'Xã Bum Nưa'
+    W_03472 = 3472
+    'Xã Mường Mô'
+    W_03478 = 3478
+    'Xã Sìn Hồ'
+    W_03487 = 3487
+    'Xã Lê Lợi'
+    W_03503 = 3503
+    'Xã Pa Tần'
+    W_03508 = 3508
+    'Xã Hồng Thu'
+    W_03517 = 3517
+    'Xã Nậm Tăm'
+    W_03529 = 3529
+    'Xã Tủa Sín Chải'
+    W_03532 = 3532
+    'Xã Pu Sam Cáp'
+    W_03538 = 3538
+    'Xã Nậm Mạ'
+    W_03544 = 3544
+    'Xã Nậm Cuổi'
     W_03549 = 3549
     'Xã Phong Thổ'
     W_03562 = 3562
@@ -817,552 +839,432 @@ class WardCode(IntEnum):
     'Xã Dào San'
     W_03583 = 3583
     'Xã Khổng Lào'
-    W_03529 = 3529
-    'Xã Tủa Sín Chải'
-    W_03478 = 3478
-    'Xã Sìn Hồ'
-    W_03508 = 3508
-    'Xã Hồng Thu'
-    W_03517 = 3517
-    'Xã Nậm Tăm'
-    W_03532 = 3532
-    'Xã Pu Sam Cáp'
-    W_03544 = 3544
-    'Xã Nậm Cuổi'
-    W_03538 = 3538
-    'Xã Nậm Mạ'
-    W_03487 = 3487
-    'Xã Lê Lợi'
-    W_03434 = 3434
-    'Xã Nậm Hàng'
-    W_03472 = 3472
-    'Xã Mường Mô'
-    W_03460 = 3460
-    'Xã Hua Bum'
-    W_03503 = 3503
-    'Xã Pa Tần'
-    W_03466 = 3466
-    'Xã Bum Nưa'
-    W_03433 = 3433
-    'Xã Bum Tở'
-    W_03445 = 3445
-    'Xã Mường Tè'
-    W_03439 = 3439
-    'Xã Thu Lũm'
-    W_03442 = 3442
-    'Xã Pa Ủ'
-    W_03463 = 3463
-    'Xã Tà Tổng'
-    W_03451 = 3451
-    'Xã Mù Cả'
+    W_03595 = 3595
+    'Xã Than Uyên'
+    W_03598 = 3598
+    'Xã Tân Uyên'
+    W_03601 = 3601
+    'Xã Mường Khoa'
+    W_03613 = 3613
+    'Xã Nậm Sỏ'
+    W_03616 = 3616
+    'Xã Pắc Ta'
+    W_03618 = 3618
+    'Xã Mường Than'
+    W_03637 = 3637
+    'Xã Mường Kim'
+    W_03640 = 3640
+    'Xã Khoen On'
     W_03646 = 3646
     'Phường Tô Hiệu'
-    W_03667 = 3667
+    W_03664 = 3664
     'Phường Chiềng An'
     W_03670 = 3670
     'Phường Chiềng Cơi'
     W_03679 = 3679
     'Phường Chiềng Sinh'
-    W_03980 = 3980
-    'Phường Mộc Châu'
-    W_03979 = 3979
-    'Phường Mộc Sơn'
-    W_04033 = 4033
-    'Phường Vân Sơn'
-    W_03982 = 3982
-    'Phường Thảo Nguyên'
-    W_04000 = 4000
-    'Xã Đoàn Kết'
-    W_04045 = 4045
-    'Xã Lóng Sập'
-    W_03985 = 3985
-    'Xã Chiềng Sơn'
-    W_04048 = 4048
-    'Xã Vân Hồ'
-    W_04006 = 4006
-    'Xã Song Khủa'
-    W_04018 = 4018
-    'Xã Tô Múa'
-    W_04057 = 4057
-    'Xã Xuân Nha'
-    W_03703 = 3703
-    'Xã Quỳnh Nhai'
     W_03688 = 3688
     'Xã Mường Chiên'
     W_03694 = 3694
     'Xã Mường Giôn'
+    W_03703 = 3703
+    'Xã Quỳnh Nhai'
     W_03712 = 3712
     'Xã Mường Sại'
     W_03721 = 3721
     'Xã Thuận Châu'
-    W_03754 = 3754
-    'Xã Chiềng La'
-    W_03784 = 3784
-    'Xã Nậm Lầu'
-    W_03799 = 3799
-    'Xã Muổi Nọi'
-    W_03757 = 3757
-    'Xã Mường Khiêng'
-    W_03781 = 3781
-    'Xã Co Mạ'
     W_03724 = 3724
     'Xã Bình Thuận'
     W_03727 = 3727
     'Xã Mường É'
+    W_03754 = 3754
+    'Xã Chiềng La'
+    W_03757 = 3757
+    'Xã Mường Khiêng'
+    W_03760 = 3760
+    'Xã Mường Bám'
     W_03763 = 3763
     'Xã Long Hẹ'
+    W_03781 = 3781
+    'Xã Co Mạ'
+    W_03784 = 3784
+    'Xã Nậm Lầu'
+    W_03799 = 3799
+    'Xã Muổi Nọi'
     W_03808 = 3808
     'Xã Mường La'
     W_03814 = 3814
     'Xã Chiềng Lao'
+    W_03820 = 3820
+    'Xã Ngọc Chiến'
     W_03847 = 3847
     'Xã Mường Bú'
     W_03850 = 3850
     'Xã Chiềng Hoa'
     W_03856 = 3856
     'Xã Bắc Yên'
-    W_03868 = 3868
-    'Xã Tà Xùa'
-    W_03880 = 3880
-    'Xã Tạ Khoa'
     W_03862 = 3862
     'Xã Xím Vàng'
+    W_03868 = 3868
+    'Xã Tà Xùa'
     W_03871 = 3871
     'Xã Pắc Ngà'
+    W_03880 = 3880
+    'Xã Tạ Khoa'
     W_03892 = 3892
     'Xã Chiềng Sại'
+    W_03901 = 3901
+    'Xã Suối Tọ'
+    W_03907 = 3907
+    'Xã Mường Cơi'
     W_03910 = 3910
     'Xã Phù Yên'
     W_03922 = 3922
     'Xã Gia Phù'
-    W_03958 = 3958
-    'Xã Tường Hạ'
-    W_03907 = 3907
-    'Xã Mường Cơi'
     W_03943 = 3943
     'Xã Mường Bang'
-    W_03970 = 3970
-    'Xã Tân Phong'
+    W_03958 = 3958
+    'Xã Tường Hạ'
     W_03961 = 3961
     'Xã Kim Bon'
+    W_03970 = 3970
+    'Xã Tân Phong'
+    W_03979 = 3979
+    'Phường Mộc Sơn'
+    W_03980 = 3980
+    'Phường Mộc Châu'
+    W_03982 = 3982
+    'Phường Thảo Nguyên'
+    W_03985 = 3985
+    'Xã Chiềng Sơn'
+    W_03997 = 3997
+    'Xã Tân Yên'
+    W_04000 = 4000
+    'Xã Đoàn Kết'
+    W_04006 = 4006
+    'Xã Song Khủa'
+    W_04018 = 4018
+    'Xã Tô Múa'
+    W_04033 = 4033
+    'Phường Vân Sơn'
+    W_04045 = 4045
+    'Xã Lóng Sập'
+    W_04048 = 4048
+    'Xã Vân Hồ'
+    W_04057 = 4057
+    'Xã Xuân Nha'
     W_04075 = 4075
     'Xã Yên Châu'
     W_04078 = 4078
     'Xã Chiềng Hặc'
-    W_04096 = 4096
-    'Xã Lóng Phiêng'
     W_04087 = 4087
     'Xã Yên Sơn'
-    W_04132 = 4132
-    'Xã Chiềng Mai'
+    W_04096 = 4096
+    'Xã Lóng Phiêng'
+    W_04099 = 4099
+    'Xã Phiêng Khoài'
     W_04105 = 4105
     'Xã Mai Sơn'
-    W_04159 = 4159
-    'Xã Phiêng Pằn'
-    W_04123 = 4123
-    'Xã Chiềng Mung'
-    W_04144 = 4144
-    'Xã Phiêng Cằm'
-    W_04117 = 4117
-    'Xã Mường Chanh'
-    W_04136 = 4136
-    'Xã Tà Hộc'
     W_04108 = 4108
     'Xã Chiềng Sung'
+    W_04117 = 4117
+    'Xã Mường Chanh'
+    W_04123 = 4123
+    'Xã Chiềng Mung'
+    W_04132 = 4132
+    'Xã Chiềng Mai'
+    W_04136 = 4136
+    'Xã Tà Hộc'
+    W_04144 = 4144
+    'Xã Phiêng Cằm'
+    W_04159 = 4159
+    'Xã Phiêng Pằn'
+    W_04168 = 4168
+    'Xã Sông Mã'
     W_04171 = 4171
     'Xã Bó Sinh'
-    W_04222 = 4222
-    'Xã Chiềng Khương'
-    W_04219 = 4219
-    'Xã Mường Hung'
-    W_04204 = 4204
-    'Xã Chiềng Khoong'
     W_04183 = 4183
     'Xã Mường Lầm'
     W_04186 = 4186
     'Xã Nậm Ty'
-    W_04168 = 4168
-    'Xã Sông Mã'
-    W_04210 = 4210
-    'Xã Huổi Một'
     W_04195 = 4195
     'Xã Chiềng Sơ'
-    W_04231 = 4231
-    'Xã Sốp Cộp'
+    W_04204 = 4204
+    'Xã Chiềng Khoong'
+    W_04210 = 4210
+    'Xã Huổi Một'
+    W_04219 = 4219
+    'Xã Mường Hung'
+    W_04222 = 4222
+    'Xã Chiềng Khương'
     W_04228 = 4228
     'Xã Púng Bánh'
-    W_03997 = 3997
-    'Xã Tân Yên'
-    W_03760 = 3760
-    'Xã Mường Bám'
-    W_03820 = 3820
-    'Xã Ngọc Chiến'
-    W_03901 = 3901
-    'Xã Suối Tọ'
-    W_04099 = 4099
-    'Xã Phiêng Khoài'
-    W_04246 = 4246
-    'Xã Mường Lạn'
+    W_04231 = 4231
+    'Xã Sốp Cộp'
     W_04240 = 4240
     'Xã Mường Lèo'
-    W_04465 = 4465
-    'Xã Khao Mang'
-    W_04456 = 4456
-    'Xã Mù Cang Chải'
-    W_04492 = 4492
-    'Xã Púng Luông'
-    W_04630 = 4630
-    'Xã Tú Lệ'
-    W_04591 = 4591
-    'Xã Trạm Tấu'
-    W_04585 = 4585
-    'Xã Hạnh Phúc'
-    W_04609 = 4609
-    'Xã Phình Hồ'
-    W_04288 = 4288
-    'Phường Nghĩa Lộ'
-    W_04663 = 4663
-    'Phường Trung Tâm'
-    W_04678 = 4678
-    'Phường Cầu Thia'
-    W_04660 = 4660
-    'Xã Liên Sơn'
-    W_04636 = 4636
-    'Xã Gia Hội'
-    W_04651 = 4651
-    'Xã Sơn Lương'
-    W_04705 = 4705
-    'Xã Thượng Bằng La'
-    W_04699 = 4699
-    'Xã Chấn Thịnh'
-    W_04711 = 4711
-    'Xã Nghĩa Tâm'
-    W_04672 = 4672
-    'Xã Văn Chấn'
-    W_04402 = 4402
-    'Xã Phong Dụ Hạ'
-    W_04387 = 4387
-    'Xã Châu Quế'
-    W_04381 = 4381
-    'Xã Lâm Giang'
-    W_04399 = 4399
-    'Xã Đông Cuông'
-    W_04429 = 4429
-    'Xã Tân Hợp'
-    W_04375 = 4375
-    'Xã Mậu A'
-    W_04441 = 4441
-    'Xã Xuân Ái'
-    W_04450 = 4450
-    'Xã Mỏ Vàng'
-    W_04318 = 4318
-    'Xã Lâm Thượng'
-    W_04303 = 4303
-    'Xã Lục Yên'
-    W_04336 = 4336
-    'Xã Tân Lĩnh'
-    W_04333 = 4333
-    'Xã Khánh Hòa'
-    W_04363 = 4363
-    'Xã Phúc Lợi'
-    W_04345 = 4345
-    'Xã Mường Lai'
-    W_04726 = 4726
-    'Xã Cảm Nhân'
-    W_04744 = 4744
-    'Xã Yên Thành'
-    W_04717 = 4717
-    'Xã Thác Bà'
-    W_04714 = 4714
-    'Xã Yên Bình'
-    W_04750 = 4750
-    'Xã Bảo Ái'
-    W_04279 = 4279
-    'Phường Văn Phú'
-    W_04252 = 4252
-    'Phường Yên Bái'
-    W_04273 = 4273
-    'Phường Nam Cường'
-    W_04543 = 4543
-    'Phường Âu Lâu'
-    W_04498 = 4498
-    'Xã Trấn Yên'
-    W_04576 = 4576
-    'Xã Hưng Khánh'
-    W_04537 = 4537
-    'Xã Lương Thịnh'
-    W_04564 = 4564
-    'Xã Việt Hồng'
-    W_04531 = 4531
-    'Xã Quy Mông'
-    W_02902 = 2902
-    'Xã Phong Hải'
-    W_02926 = 2926
-    'Xã Xuân Quang'
-    W_02905 = 2905
-    'Xã Bảo Thắng'
-    W_02908 = 2908
-    'Xã Tằng Loỏng'
-    W_02923 = 2923
-    'Xã Gia Phú'
-    W_02746 = 2746
-    'Xã Cốc San'
-    W_02680 = 2680
-    'Xã Hợp Thành'
-    W_02674 = 2674
-    'Phường Cam Đường'
+    W_04246 = 4246
+    'Xã Mường Lạn'
     W_02647 = 2647
     'Phường Lào Cai'
-    W_02728 = 2728
-    'Xã Mường Hum'
-    W_02707 = 2707
-    'Xã Dền Sáng'
-    W_02701 = 2701
-    'Xã Y Tý'
+    W_02671 = 2671
+    'Phường Cam Đường'
+    W_02680 = 2680
+    'Xã Hợp Thành'
+    W_02683 = 2683
+    'Xã Bát Xát'
     W_02686 = 2686
     'Xã A Mú Sung'
     W_02695 = 2695
     'Xã Trịnh Tường'
+    W_02701 = 2701
+    'Xã Y Tý'
+    W_02707 = 2707
+    'Xã Dền Sáng'
     W_02725 = 2725
     'Xã Bản Xèo'
-    W_02683 = 2683
-    'Xã Bát Xát'
-    W_02953 = 2953
-    'Xã Nghĩa Đô'
-    W_02968 = 2968
-    'Xã Thượng Hà'
-    W_02947 = 2947
-    'Xã Bảo Yên'
-    W_02962 = 2962
-    'Xã Xuân Hòa'
-    W_02998 = 2998
-    'Xã Phúc Khánh'
-    W_02989 = 2989
-    'Xã Bảo Hà'
-    W_03061 = 3061
-    'Xã Võ Lao'
-    W_03103 = 3103
-    'Xã Khánh Yên'
-    W_03082 = 3082
-    'Xã Văn Bàn'
-    W_03106 = 3106
-    'Xã Dương Quỳ'
-    W_03091 = 3091
-    'Xã Chiềng Ken'
-    W_03121 = 3121
-    'Xã Minh Lương'
-    W_03076 = 3076
-    'Xã Nậm Chày'
-    W_03043 = 3043
-    'Xã Mường Bo'
-    W_03046 = 3046
-    'Xã Bản Hồ'
-    W_03013 = 3013
-    'Xã Tả Phìn'
-    W_03037 = 3037
-    'Xã Tả Van'
-    W_03006 = 3006
-    'Phường Sa Pa'
-    W_02896 = 2896
-    'Xã Cốc Lầu'
-    W_02890 = 2890
-    'Xã Bảo Nhai'
-    W_02869 = 2869
-    'Xã Bản Liền'
+    W_02728 = 2728
+    'Xã Mường Hum'
+    W_02746 = 2746
+    'Xã Cốc San'
+    W_02752 = 2752
+    'Xã Pha Long'
+    W_02761 = 2761
+    'Xã Mường Khương'
+    W_02782 = 2782
+    'Xã Cao Sơn'
+    W_02788 = 2788
+    'Xã Bản Lầu'
+    W_02809 = 2809
+    'Xã Si Ma Cai'
+    W_02824 = 2824
+    'Xã Sín Chéng'
     W_02839 = 2839
     'Xã Bắc Hà'
     W_02842 = 2842
     'Xã Tả Củ Tỷ'
     W_02848 = 2848
     'Xã Lùng Phình'
-    W_02752 = 2752
-    'Xã Pha Long'
-    W_02761 = 2761
-    'Xã Mường Khương'
-    W_02788 = 2788
-    'Xã Bản Lầu'
-    W_02791 = 2791
-    'Xã Cao Sơn'
-    W_02809 = 2809
-    'Xã Si Ma Cai'
-    W_02824 = 2824
-    'Xã Sín Chéng'
+    W_02869 = 2869
+    'Xã Bản Liền'
+    W_02890 = 2890
+    'Xã Bảo Nhai'
+    W_02896 = 2896
+    'Xã Cốc Lầu'
+    W_02902 = 2902
+    'Xã Phong Hải'
+    W_02905 = 2905
+    'Xã Bảo Thắng'
+    W_02908 = 2908
+    'Xã Tằng Loỏng'
+    W_02923 = 2923
+    'Xã Gia Phú'
+    W_02926 = 2926
+    'Xã Xuân Quang'
+    W_02947 = 2947
+    'Xã Bảo Yên'
+    W_02953 = 2953
+    'Xã Nghĩa Đô'
+    W_02962 = 2962
+    'Xã Xuân Hòa'
+    W_02968 = 2968
+    'Xã Thượng Hà'
+    W_02989 = 2989
+    'Xã Bảo Hà'
+    W_02998 = 2998
+    'Xã Phúc Khánh'
+    W_03004 = 3004
+    'Xã Ngũ Chỉ Sơn'
+    W_03006 = 3006
+    'Phường Sa Pa'
+    W_03013 = 3013
+    'Xã Tả Phìn'
+    W_03037 = 3037
+    'Xã Tả Van'
+    W_03043 = 3043
+    'Xã Mường Bo'
+    W_03046 = 3046
+    'Xã Bản Hồ'
+    W_03061 = 3061
+    'Xã Võ Lao'
+    W_03076 = 3076
+    'Xã Nậm Chày'
+    W_03082 = 3082
+    'Xã Văn Bàn'
+    W_03085 = 3085
+    'Xã Nậm Xé'
+    W_03091 = 3091
+    'Xã Chiềng Ken'
+    W_03103 = 3103
+    'Xã Khánh Yên'
+    W_03106 = 3106
+    'Xã Dương Quỳ'
+    W_03121 = 3121
+    'Xã Minh Lương'
+    W_04252 = 4252
+    'Phường Yên Bái'
+    W_04273 = 4273
+    'Phường Nam Cường'
+    W_04279 = 4279
+    'Phường Văn Phú'
+    W_04288 = 4288
+    'Phường Nghĩa Lộ'
+    W_04303 = 4303
+    'Xã Lục Yên'
+    W_04309 = 4309
+    'Xã Lâm Thượng'
+    W_04336 = 4336
+    'Xã Tân Lĩnh'
+    W_04342 = 4342
+    'Xã Khánh Hòa'
+    W_04345 = 4345
+    'Xã Mường Lai'
+    W_04363 = 4363
+    'Xã Phúc Lợi'
+    W_04375 = 4375
+    'Xã Mậu A'
+    W_04381 = 4381
+    'Xã Lâm Giang'
+    W_04387 = 4387
+    'Xã Châu Quế'
+    W_04399 = 4399
+    'Xã Đông Cuông'
+    W_04402 = 4402
+    'Xã Phong Dụ Hạ'
+    W_04423 = 4423
+    'Xã Phong Dụ Thượng'
+    W_04429 = 4429
+    'Xã Tân Hợp'
+    W_04441 = 4441
+    'Xã Xuân Ái'
+    W_04450 = 4450
+    'Xã Mỏ Vàng'
+    W_04456 = 4456
+    'Xã Mù Cang Chải'
+    W_04462 = 4462
+    'Xã Nậm Có'
+    W_04465 = 4465
+    'Xã Khao Mang'
     W_04474 = 4474
     'Xã Lao Chải'
     W_04489 = 4489
     'Xã Chế Tạo'
-    W_04462 = 4462
-    'Xã Nậm Có'
+    W_04492 = 4492
+    'Xã Púng Luông'
+    W_04498 = 4498
+    'Xã Trấn Yên'
+    W_04531 = 4531
+    'Xã Quy Mông'
+    W_04537 = 4537
+    'Xã Lương Thịnh'
+    W_04543 = 4543
+    'Phường Âu Lâu'
+    W_04564 = 4564
+    'Xã Việt Hồng'
+    W_04576 = 4576
+    'Xã Hưng Khánh'
+    W_04585 = 4585
+    'Xã Hạnh Phúc'
     W_04603 = 4603
     'Xã Tà Xi Láng'
-    W_04423 = 4423
-    'Xã Phong Dụ Thượng'
+    W_04606 = 4606
+    'Xã Trạm Tấu'
+    W_04609 = 4609
+    'Xã Phình Hồ'
+    W_04630 = 4630
+    'Xã Tú Lệ'
+    W_04636 = 4636
+    'Xã Gia Hội'
+    W_04651 = 4651
+    'Xã Sơn Lương'
+    W_04660 = 4660
+    'Xã Liên Sơn'
+    W_04663 = 4663
+    'Phường Trung Tâm'
+    W_04672 = 4672
+    'Xã Văn Chấn'
+    W_04681 = 4681
+    'Phường Cầu Thia'
     W_04693 = 4693
     'Xã Cát Thịnh'
-    W_03085 = 3085
-    'Xã Nậm Xé'
-    W_03004 = 3004
-    'Xã Ngũ Chỉ Sơn'
-    W_05443 = 5443
-    'Phường Phan Đình Phùng'
-    W_05710 = 5710
-    'Phường Linh Sơn'
-    W_05500 = 5500
-    'Phường Tích Lương'
-    W_05467 = 5467
-    'Phường Gia Sàng'
-    W_05455 = 5455
-    'Phường Quyết Thắng'
-    W_05482 = 5482
-    'Phường Quan Triều'
-    W_05503 = 5503
-    'Xã Tân Cương'
-    W_05488 = 5488
-    'Xã Đại Phúc'
-    W_05830 = 5830
-    'Xã Đại Từ'
-    W_05776 = 5776
-    'Xã Đức Lương'
-    W_05800 = 5800
-    'Xã Phú Thịnh'
-    W_05818 = 5818
-    'Xã La Bằng'
-    W_05794 = 5794
-    'Xã Phú Lạc'
-    W_05809 = 5809
-    'Xã An Khánh'
-    W_05851 = 5851
-    'Xã Quân Chu'
-    W_05845 = 5845
-    'Xã Vạn Phú'
-    W_05773 = 5773
-    'Xã Phú Xuyên'
-    W_05860 = 5860
-    'Phường Phổ Yên'
-    W_05890 = 5890
-    'Phường Vạn Xuân'
-    W_05899 = 5899
-    'Phường Trung Thành'
-    W_05857 = 5857
-    'Phường Phúc Thuận'
-    W_05881 = 5881
-    'Xã Thành Công'
-    W_05908 = 5908
-    'Xã Phú Bình'
-    W_05923 = 5923
-    'Xã Tân Thành'
-    W_05941 = 5941
-    'Xã Điềm Thụy'
-    W_05953 = 5953
-    'Xã Kha Sơn'
-    W_05917 = 5917
-    'Xã Tân Khánh'
-    W_05692 = 5692
-    'Xã Đồng Hỷ'
-    W_05674 = 5674
-    'Xã Quang Sơn'
-    W_05662 = 5662
-    'Xã Trại Cau'
-    W_05707 = 5707
-    'Xã Nam Hòa'
-    W_05680 = 5680
-    'Xã Văn Hán'
-    W_05665 = 5665
-    'Xã Văn Lăng'
-    W_05518 = 5518
-    'Phường Sông Công'
-    W_05533 = 5533
-    'Phường Bá Xuyên'
-    W_05528 = 5528
-    'Phường Bách Quang'
-    W_05611 = 5611
-    'Xã Phú Lương'
-    W_05641 = 5641
-    'Xã Vô Tranh'
-    W_05620 = 5620
-    'Xã Yên Trạch'
-    W_05632 = 5632
-    'Xã Hợp Thành'
-    W_05569 = 5569
-    'Xã Định Hóa'
-    W_05587 = 5587
-    'Xã Bình Yên'
-    W_05581 = 5581
-    'Xã Trung Hội'
-    W_05563 = 5563
-    'Xã Phượng Tiến'
-    W_05602 = 5602
-    'Xã Phú Đình'
-    W_05605 = 5605
-    'Xã Bình Thành'
-    W_05551 = 5551
-    'Xã Kim Phượng'
-    W_05542 = 5542
-    'Xã Lam Vỹ'
-    W_05716 = 5716
-    'Xã Võ Nhai'
-    W_05755 = 5755
-    'Xã Dân Tiến'
-    W_05722 = 5722
-    'Xã Nghinh Tường'
-    W_05725 = 5725
-    'Xã Thần Sa'
-    W_05740 = 5740
-    'Xã La Hiên'
-    W_05746 = 5746
-    'Xã Tràng Xá'
+    W_04699 = 4699
+    'Xã Chấn Thịnh'
+    W_04705 = 4705
+    'Xã Thượng Bằng La'
+    W_04711 = 4711
+    'Xã Nghĩa Tâm'
+    W_04714 = 4714
+    'Xã Yên Bình'
+    W_04717 = 4717
+    'Xã Thác Bà'
+    W_04726 = 4726
+    'Xã Cảm Nhân'
+    W_04744 = 4744
+    'Xã Yên Thành'
+    W_04750 = 4750
+    'Xã Bảo Ái'
+    W_01840 = 1840
+    'Phường Đức Xuân'
+    W_01843 = 1843
+    'Phường Bắc Kạn'
+    W_01849 = 1849
+    'Xã Phong Quang'
     W_01864 = 1864
     'Xã Bằng Thành'
-    W_01882 = 1882
-    'Xã Nghiên Loan'
     W_01879 = 1879
     'Xã Cao Minh'
+    W_01882 = 1882
+    'Xã Nghiên Loan'
+    W_01894 = 1894
+    'Xã Phúc Lộc'
     W_01906 = 1906
     'Xã Ba Bể'
     W_01912 = 1912
     'Xã Chợ Rã'
-    W_01894 = 1894
-    'Xã Phúc Lộc'
     W_01921 = 1921
     'Xã Thượng Minh'
     W_01933 = 1933
     'Xã Đồng Phúc'
-    W_02116 = 2116
-    'Xã Yên Bình'
+    W_01936 = 1936
+    'Xã Nà Phặc'
     W_01942 = 1942
     'Xã Bằng Vân'
     W_01954 = 1954
     'Xã Ngân Sơn'
-    W_01936 = 1936
-    'Xã Nà Phặc'
+    W_01957 = 1957
+    'Xã Thượng Quan'
     W_01960 = 1960
     'Xã Hiệp Lực'
+    W_01969 = 1969
+    'Xã Phủ Thông'
+    W_01981 = 1981
+    'Xã Vĩnh Thông'
+    W_02008 = 2008
+    'Xã Cẩm Giàng'
+    W_02014 = 2014
+    'Xã Bạch Thông'
+    W_02020 = 2020
+    'Xã Chợ Đồn'
     W_02026 = 2026
     'Xã Nam Cường'
     W_02038 = 2038
     'Xã Quảng Bạch'
     W_02044 = 2044
     'Xã Yên Thịnh'
-    W_02020 = 2020
-    'Xã Chợ Đồn'
-    W_02083 = 2083
-    'Xã Yên Phong'
     W_02071 = 2071
     'Xã Nghĩa Tá'
-    W_01969 = 1969
-    'Xã Phủ Thông'
-    W_02008 = 2008
-    'Xã Cẩm Giàng'
-    W_01981 = 1981
-    'Xã Vĩnh Thông'
-    W_02014 = 2014
-    'Xã Bạch Thông'
-    W_01849 = 1849
-    'Xã Phong Quang'
-    W_01840 = 1840
-    'Phường Đức Xuân'
-    W_01843 = 1843
-    'Phường Bắc Kạn'
+    W_02083 = 2083
+    'Xã Yên Phong'
+    W_02086 = 2086
+    'Xã Chợ Mới'
+    W_02101 = 2101
+    'Xã Thanh Mai'
+    W_02104 = 2104
+    'Xã Tân Kỳ'
+    W_02107 = 2107
+    'Xã Thanh Thịnh'
+    W_02116 = 2116
+    'Xã Yên Bình'
     W_02143 = 2143
     'Xã Văn Lang'
     W_02152 = 2152
@@ -1375,208 +1277,296 @@ class WardCode(IntEnum):
     'Xã Côn Minh'
     W_02191 = 2191
     'Xã Xuân Dương'
-    W_02104 = 2104
-    'Xã Tân Kỳ'
-    W_02101 = 2101
-    'Xã Thanh Mai'
-    W_02107 = 2107
-    'Xã Thanh Thịnh'
-    W_02086 = 2086
-    'Xã Chợ Mới'
+    W_05443 = 5443
+    'Phường Phan Đình Phùng'
+    W_05455 = 5455
+    'Phường Quyết Thắng'
+    W_05467 = 5467
+    'Phường Gia Sàng'
+    W_05482 = 5482
+    'Phường Quan Triều'
+    W_05488 = 5488
+    'Xã Đại Phúc'
+    W_05500 = 5500
+    'Phường Tích Lương'
+    W_05503 = 5503
+    'Xã Tân Cương'
+    W_05518 = 5518
+    'Phường Sông Công'
+    W_05528 = 5528
+    'Phường Bách Quang'
+    W_05533 = 5533
+    'Phường Bá Xuyên'
+    W_05542 = 5542
+    'Xã Lam Vỹ'
+    W_05551 = 5551
+    'Xã Kim Phượng'
+    W_05563 = 5563
+    'Xã Phượng Tiến'
+    W_05569 = 5569
+    'Xã Định Hóa'
+    W_05581 = 5581
+    'Xã Trung Hội'
+    W_05587 = 5587
+    'Xã Bình Yên'
+    W_05602 = 5602
+    'Xã Phú Đình'
+    W_05605 = 5605
+    'Xã Bình Thành'
+    W_05611 = 5611
+    'Xã Phú Lương'
+    W_05620 = 5620
+    'Xã Yên Trạch'
+    W_05632 = 5632
+    'Xã Hợp Thành'
+    W_05641 = 5641
+    'Xã Vô Tranh'
+    W_05662 = 5662
+    'Xã Trại Cau'
+    W_05665 = 5665
+    'Xã Văn Lăng'
+    W_05674 = 5674
+    'Xã Quang Sơn'
+    W_05680 = 5680
+    'Xã Văn Hán'
+    W_05692 = 5692
+    'Xã Đồng Hỷ'
+    W_05707 = 5707
+    'Xã Nam Hòa'
+    W_05710 = 5710
+    'Phường Linh Sơn'
+    W_05716 = 5716
+    'Xã Võ Nhai'
     W_05719 = 5719
     'Xã Sảng Mộc'
-    W_01957 = 1957
-    'Xã Thượng Quan'
-    W_06040 = 6040
-    'Xã Thất Khê'
+    W_05722 = 5722
+    'Xã Nghinh Tường'
+    W_05725 = 5725
+    'Xã Thần Sa'
+    W_05740 = 5740
+    'Xã La Hiên'
+    W_05746 = 5746
+    'Xã Tràng Xá'
+    W_05755 = 5755
+    'Xã Dân Tiến'
+    W_05773 = 5773
+    'Xã Phú Xuyên'
+    W_05776 = 5776
+    'Xã Đức Lương'
+    W_05788 = 5788
+    'Xã Phú Lạc'
+    W_05800 = 5800
+    'Xã Phú Thịnh'
+    W_05809 = 5809
+    'Xã An Khánh'
+    W_05818 = 5818
+    'Xã La Bằng'
+    W_05830 = 5830
+    'Xã Đại Từ'
+    W_05845 = 5845
+    'Xã Vạn Phú'
+    W_05851 = 5851
+    'Xã Quân Chu'
+    W_05857 = 5857
+    'Phường Phúc Thuận'
+    W_05860 = 5860
+    'Phường Phổ Yên'
+    W_05881 = 5881
+    'Xã Thành Công'
+    W_05890 = 5890
+    'Phường Vạn Xuân'
+    W_05899 = 5899
+    'Phường Trung Thành'
+    W_05908 = 5908
+    'Xã Phú Bình'
+    W_05917 = 5917
+    'Xã Tân Khánh'
+    W_05923 = 5923
+    'Xã Tân Thành'
+    W_05941 = 5941
+    'Xã Điềm Thụy'
+    W_05953 = 5953
+    'Xã Kha Sơn'
+    W_05977 = 5977
+    'Phường Đông Kinh'
+    W_05983 = 5983
+    'Phường Lương Văn Tri'
+    W_05986 = 5986
+    'Phường Tam Thanh'
     W_06001 = 6001
     'Xã Đoàn Kết'
+    W_06004 = 6004
+    'Xã Quốc Khánh'
     W_06019 = 6019
     'Xã Tân Tiến'
-    W_06046 = 6046
-    'Xã Tràng Định'
-    W_06016 = 6016
-    'Xã Quốc Khánh'
     W_06037 = 6037
     'Xã Kháng Chiến'
+    W_06040 = 6040
+    'Xã Thất Khê'
+    W_06046 = 6046
+    'Xã Tràng Định'
     W_06058 = 6058
     'Xã Quốc Việt'
-    W_06112 = 6112
-    'Xã Bình Gia'
-    W_06115 = 6115
-    'Xã Tân Văn'
-    W_06079 = 6079
-    'Xã Hồng Phong'
     W_06073 = 6073
     'Xã Hoa Thám'
     W_06076 = 6076
     'Xã Quý Hòa'
+    W_06079 = 6079
+    'Xã Hồng Phong'
     W_06085 = 6085
     'Xã Thiện Hòa'
     W_06091 = 6091
     'Xã Thiện Thuật'
     W_06103 = 6103
     'Xã Thiện Long'
-    W_06325 = 6325
-    'Xã Bắc Sơn'
-    W_06349 = 6349
-    'Xã Hưng Vũ'
-    W_06367 = 6367
-    'Xã Vũ Lăng'
-    W_06376 = 6376
-    'Xã Nhất Hòa'
-    W_06364 = 6364
-    'Xã Vũ Lễ'
-    W_06337 = 6337
-    'Xã Tân Tri'
+    W_06112 = 6112
+    'Xã Bình Gia'
+    W_06115 = 6115
+    'Xã Tân Văn'
+    W_06124 = 6124
+    'Xã Na Sầm'
+    W_06148 = 6148
+    'Xã Thụy Hùng'
+    W_06151 = 6151
+    'Xã Hội Hoan'
+    W_06154 = 6154
+    'Xã Văn Lãng'
+    W_06172 = 6172
+    'Xã Hoàng Văn Thụ'
+    W_06184 = 6184
+    'Xã Đồng Đăng'
+    W_06187 = 6187
+    'Phường Kỳ Lừa'
+    W_06196 = 6196
+    'Xã Ba Sơn'
+    W_06211 = 6211
+    'Xã Cao Lộc'
+    W_06220 = 6220
+    'Xã Công Sơn'
     W_06253 = 6253
     'Xã Văn Quan'
     W_06280 = 6280
     'Xã Điềm He'
-    W_06313 = 6313
-    'Xã Tri Lễ'
-    W_06298 = 6298
-    'Xã Yên Phúc'
-    W_06316 = 6316
-    'Xã Tân Đoàn'
     W_06286 = 6286
     'Xã Khánh Khê'
-    W_06214 = 6214
-    'Xã Na Sầm'
-    W_06154 = 6154
-    'Xã Văn Lãng'
-    W_06151 = 6151
-    'Xã Hội Hoan'
-    W_06148 = 6148
-    'Xã Thụy Hùng'
-    W_06172 = 6172
-    'Xã Hoàng Văn Thụ'
-    W_06529 = 6529
-    'Xã Lộc Bình'
-    W_06541 = 6541
-    'Xã Mẫu Sơn'
-    W_06526 = 6526
-    'Xã Na Dương'
-    W_06601 = 6601
-    'Xã Lợi Bác'
-    W_06577 = 6577
-    'Xã Thống Nhất'
-    W_06607 = 6607
-    'Xã Xuân Dương'
-    W_06565 = 6565
-    'Xã Khuất Xá'
-    W_06613 = 6613
-    'Xã Đình Lập'
-    W_06637 = 6637
-    'Xã Châu Sơn'
-    W_06625 = 6625
-    'Xã Kiên Mộc'
-    W_06616 = 6616
-    'Xã Thái Bình'
+    W_06298 = 6298
+    'Xã Yên Phúc'
+    W_06313 = 6313
+    'Xã Tri Lễ'
+    W_06316 = 6316
+    'Xã Tân Đoàn'
+    W_06325 = 6325
+    'xã Bắc Sơn'
+    W_06337 = 6337
+    'Xã Tân Tri'
+    W_06349 = 6349
+    'Xã Hưng Vũ'
+    W_06364 = 6364
+    'Xã Vũ Lễ'
+    W_06367 = 6367
+    'Xã Vũ Lăng'
+    W_06376 = 6376
+    'Xã Nhất Hòa'
     W_06385 = 6385
     'Xã Hữu Lũng'
-    W_06457 = 6457
-    'Xã Tuấn Sơn'
-    W_06445 = 6445
-    'Xã Tân Thành'
-    W_06415 = 6415
-    'Xã Vân Nham'
-    W_06421 = 6421
-    'Xã Thiện Tân'
     W_06391 = 6391
     'Xã Yên Bình'
     W_06400 = 6400
     'Xã Hữu Liên'
+    W_06415 = 6415
+    'Xã Vân Nham'
     W_06427 = 6427
     'Xã Cai Kinh'
+    W_06436 = 6436
+    'Xã Thiện Tân'
+    W_06445 = 6445
+    'Xã Tân Thành'
+    W_06457 = 6457
+    'Xã Tuấn Sơn'
     W_06463 = 6463
     'Xã Chi Lăng'
-    W_06496 = 6496
-    'Xã Nhân Lý'
-    W_06481 = 6481
-    'Xã Chiến Thắng'
-    W_06517 = 6517
-    'Xã Quan Sơn'
     W_06475 = 6475
     'Xã Bằng Mạc'
+    W_06481 = 6481
+    'Xã Chiến Thắng'
+    W_06496 = 6496
+    'Xã Nhân Lý'
     W_06505 = 6505
     'Xã Vạn Linh'
-    W_06184 = 6184
-    'Xã Đồng Đăng'
-    W_06193 = 6193
-    'Xã Cao Lộc'
-    W_06220 = 6220
-    'Xã Công Sơn'
-    W_06202 = 6202
-    'Xã Ba Sơn'
-    W_05986 = 5986
-    'Phường Tam Thanh'
-    W_05983 = 5983
-    'Phường Lương Văn Tri'
-    W_06187 = 6187
-    'Phường Kỳ Lừa'
-    W_05977 = 5977
-    'Phường Đông Kinh'
-    W_07090 = 7090
-    'Phường An Sinh'
-    W_07093 = 7093
-    'Phường Đông Triều'
-    W_07081 = 7081
-    'Phường Bình Khê'
-    W_07069 = 7069
-    'Phường Mạo Khê'
-    W_07114 = 7114
-    'Phường Hoàng Quế'
-    W_06832 = 6832
-    'Phường Yên Tử'
-    W_06820 = 6820
-    'Phường Vàng Danh'
-    W_06811 = 6811
-    'Phường Uông Bí'
-    W_07135 = 7135
-    'Phường Đông Mai'
-    W_07147 = 7147
-    'Phường Hiệp Hòa'
-    W_07132 = 7132
-    'Phường Quảng Yên'
-    W_07168 = 7168
-    'Phường Hà An'
-    W_07183 = 7183
-    'Phường Phong Cốc'
-    W_07180 = 7180
-    'Phường Liên Hòa'
-    W_06706 = 6706
-    'Phường Tuần Châu'
+    W_06517 = 6517
+    'Xã Quan Sơn'
+    W_06526 = 6526
+    'Xã Na Dương'
+    W_06529 = 6529
+    'Xã Lộc Bình'
+    W_06541 = 6541
+    'Xã Mẫu Sơn'
+    W_06565 = 6565
+    'Xã Khuất Xá'
+    W_06577 = 6577
+    'Xã Thống Nhất'
+    W_06601 = 6601
+    'Xã Lợi Bác'
+    W_06607 = 6607
+    'Xã Xuân Dương'
+    W_06613 = 6613
+    'Xã Đình Lập'
+    W_06616 = 6616
+    'Xã Thái Bình'
+    W_06625 = 6625
+    'Xã Kiên Mộc'
+    W_06637 = 6637
+    'Xã Châu Sơn'
+    W_06652 = 6652
+    'Phường Hà Tu'
+    W_06658 = 6658
+    'Phường Cao Xanh'
     W_06661 = 6661
     'Phường Việt Hưng'
     W_06673 = 6673
     'Phường Bãi Cháy'
-    W_06652 = 6652
-    'Phường Hà Tu'
     W_06676 = 6676
     'Phường Hà Lầm'
-    W_06658 = 6658
-    'Phường Cao Xanh'
     W_06685 = 6685
     'Phường Hồng Gai'
     W_06688 = 6688
     'Phường Hạ Long'
-    W_07030 = 7030
-    'Phường Hoành Bồ'
-    W_07054 = 7054
-    'Xã Quảng La'
-    W_07060 = 7060
-    'Xã Thống Nhất'
+    W_06706 = 6706
+    'Phường Tuần Châu'
+    W_06709 = 6709
+    'Phường Móng Cái 2'
+    W_06712 = 6712
+    'Phường Móng Cái 1'
+    W_06724 = 6724
+    'Xã Hải Sơn'
+    W_06733 = 6733
+    'Xã Hải Ninh'
+    W_06736 = 6736
+    'Phường Móng Cái 3'
+    W_06757 = 6757
+    'Xã Vĩnh Thực'
     W_06760 = 6760
     'Phường Mông Dương'
     W_06778 = 6778
     'Phường Quang Hanh'
-    W_06793 = 6793
-    'Phường Cẩm Phả'
     W_06781 = 6781
     'Phường Cửa Ông'
+    W_06793 = 6793
+    'Phường Cẩm Phả'
     W_06799 = 6799
     'Xã Hải Hòa'
+    W_06811 = 6811
+    'Phường Uông Bí'
+    W_06820 = 6820
+    'Phường Vàng Danh'
+    W_06832 = 6832
+    'Phường Yên Tử'
+    W_06838 = 6838
+    'Xã Bình Liêu'
+    W_06841 = 6841
+    'Xã Hoành Mô'
+    W_06856 = 6856
+    'Xã Lục Hồn'
     W_06862 = 6862
     'Xã Tiên Yên'
     W_06874 = 6874
@@ -1585,136 +1575,156 @@ class WardCode(IntEnum):
     'Xã Đông Ngũ'
     W_06886 = 6886
     'Xã Hải Lạng'
-    W_06985 = 6985
-    'Xã Lương Minh'
-    W_06979 = 6979
-    'Xã Kỳ Thượng'
-    W_06970 = 6970
-    'Xã Ba Chẽ'
-    W_06913 = 6913
-    'Xã Quảng Tân'
     W_06895 = 6895
     'Xã Đầm Hà'
+    W_06913 = 6913
+    'Xã Quảng Tân'
     W_06922 = 6922
     'Xã Quảng Hà'
-    W_06946 = 6946
-    'Xã Đường Hoa'
     W_06931 = 6931
     'Xã Quảng Đức'
-    W_06841 = 6841
-    'Xã Hoành Mô'
-    W_06856 = 6856
-    'Xã Lục Hồn'
-    W_06838 = 6838
-    'Xã Bình Liêu'
-    W_06724 = 6724
-    'Xã Hải Sơn'
-    W_06733 = 6733
-    'Xã Hải Ninh'
-    W_06757 = 6757
-    'Xã Vĩnh Thực'
-    W_06712 = 6712
-    'Phường Móng Cái 1'
-    W_06709 = 6709
-    'Phường Móng Cái 2'
-    W_06736 = 6736
-    'Phường Móng Cái 3'
-    W_06994 = 6994
-    'Đặc khu Vân Đồn'
-    W_07192 = 7192
-    'Đặc khu Cô Tô'
+    W_06946 = 6946
+    'Xã Đường Hoa'
     W_06967 = 6967
     'Xã Cái Chiên'
-    W_07627 = 7627
-    'Xã Đại Sơn'
-    W_07615 = 7615
-    'Xã Sơn Động'
-    W_07616 = 7616
-    'Xã Tây Yên Tử'
-    W_07672 = 7672
-    'Xã Dương Hưu'
-    W_07642 = 7642
-    'Xã Yên Định'
-    W_07654 = 7654
-    'Xã An Lạc'
-    W_07621 = 7621
-    'Xã Vân Sơn'
-    W_07573 = 7573
-    'Xã Biển Động'
-    W_07582 = 7582
-    'Xã Lục Ngạn'
-    W_07594 = 7594
-    'Xã Đèo Gia'
-    W_07543 = 7543
-    'Xã Sơn Hải'
-    W_07531 = 7531
-    'Xã Tân Sơn'
-    W_07537 = 7537
-    'Xã Biên Sơn'
-    W_07534 = 7534
-    'Xã Sa Lý'
-    W_07603 = 7603
-    'Xã Nam Dương'
-    W_07552 = 7552
-    'Xã Kiên Lao'
-    W_07525 = 7525
-    'Phường Chũ'
-    W_07612 = 7612
-    'Phường Phượng Sơn'
-    W_07492 = 7492
-    'Xã Lục Sơn'
-    W_07489 = 7489
-    'Xã Trường Sơn'
-    W_07519 = 7519
-    'Xã Cẩm Lý'
-    W_07450 = 7450
-    'Xã Đông Phú'
-    W_07486 = 7486
-    'Xã Nghĩa Phương'
-    W_07444 = 7444
-    'Xã Lục Nam'
-    W_07498 = 7498
-    'Xã Bắc Lũng'
-    W_07462 = 7462
-    'Xã Bảo Đài'
-    W_07375 = 7375
-    'Xã Lạng Giang'
-    W_07420 = 7420
-    'Xã Mỹ Thái'
-    W_07399 = 7399
-    'Xã Kép'
-    W_07432 = 7432
-    'Xã Tân Dĩnh'
-    W_07381 = 7381
-    'Xã Tiên Lục'
-    W_07288 = 7288
-    'Xã Yên Thế'
-    W_07294 = 7294
-    'Xã Bố Hạ'
-    W_07282 = 7282
-    'Xã Đồng Kỳ'
+    W_06970 = 6970
+    'Xã Ba Chẽ'
+    W_06979 = 6979
+    'Xã Kỳ Thượng'
+    W_06985 = 6985
+    'Xã Lương Minh'
+    W_06994 = 6994
+    'Đặc khu Vân Đồn'
+    W_07030 = 7030
+    'Phường Hoành Bồ'
+    W_07054 = 7054
+    'Xã Quảng La'
+    W_07060 = 7060
+    'Xã Thống Nhất'
+    W_07069 = 7069
+    'Phường Mạo Khê'
+    W_07081 = 7081
+    'Phường Bình Khê'
+    W_07090 = 7090
+    'Phường An Sinh'
+    W_07093 = 7093
+    'Phường Đông Triều'
+    W_07114 = 7114
+    'Phường Hoàng Quế'
+    W_07132 = 7132
+    'Phường Quảng Yên'
+    W_07135 = 7135
+    'Phường Đông Mai'
+    W_07147 = 7147
+    'Phường Hiệp Hòa'
+    W_07168 = 7168
+    'Phường Hà An'
+    W_07180 = 7180
+    'Phường Liên Hòa'
+    W_07183 = 7183
+    'Phường Phong Cốc'
+    W_07192 = 7192
+    'Đặc khu Cô Tô'
+    W_07210 = 7210
+    'Phường Bắc Giang'
+    W_07228 = 7228
+    'Phường Đa Mai'
     W_07246 = 7246
     'Xã Xuân Lương'
     W_07264 = 7264
     'Xã Tam Tiến'
-    W_07339 = 7339
-    'Xã Tân Yên'
-    W_07351 = 7351
-    'Xã Ngọc Thiện'
+    W_07282 = 7282
+    'Xã Đồng Kỳ'
+    W_07288 = 7288
+    'Xã Yên Thế'
+    W_07294 = 7294
+    'Xã Bố Hạ'
     W_07306 = 7306
     'Xã Nhã Nam'
     W_07330 = 7330
     'Xã Phúc Hòa'
     W_07333 = 7333
     'Xã Quang Trung'
-    W_07864 = 7864
-    'Xã Hợp Thịnh'
-    W_07840 = 7840
-    'Xã Hiệp Hoà'
-    W_07822 = 7822
-    'Xã Hoàng Vân'
-    W_07870 = 7870
-    'Xã Xuân Cẩm'
+    W_07339 = 7339
+    'Xã Tân Yên'
+    W_07351 = 7351
+    'Xã Ngọc Thiện'
+    W_07375 = 7375
+    'Xã Lạng Giang'
+    W_07381 = 7381
+    'Xã Tiên Lục'
+    W_07399 = 7399
+    'Xã Kép'
+    W_07420 = 7420
+    'Xã Mỹ Thái'
+    W_07432 = 7432
+    'Xã Tân Dĩnh'
+    W_07444 = 7444
+    'Xã Lục Nam'
+    W_07450 = 7450
+    'Xã Đông Phú'
+    W_07462 = 7462
+    'Xã Bảo Đài'
+    W_07486 = 7486
+    'Xã Nghĩa Phương'
+    W_07489 = 7489
+    'Xã Trường Sơn'
+    W_07492 = 7492
+    'Xã Lục Sơn'
+    W_07498 = 7498
+    'Xã Bắc Lũng'
+    W_07519 = 7519
+    'Xã Cẩm Lý'
+    W_07525 = 7525
+    'Phường Chũ'
+    W_07531 = 7531
+    'Xã Tân Sơn'
+    W_07534 = 7534
+    'Xã Sa Lý'
+    W_07537 = 7537
+    'Xã Biên Sơn'
+    W_07543 = 7543
+    'Xã Sơn Hải'
+    W_07552 = 7552
+    'Xã Kiên Lao'
+    W_07573 = 7573
+    'Xã Biển Động'
+    W_07582 = 7582
+    'Xã Lục Ngạn'
+    W_07594 = 7594
+    'Xã Đèo Gia'
+    W_07603 = 7603
+    'Xã Nam Dương'
+    W_07612 = 7612
+    'Phường Phượng Sơn'
+    W_07615 = 7615
+    'Xã Sơn Động'
+    W_07616 = 7616
+    'Xã Tây Yên Tử'
+    W_07621 = 7621
+    'Xã Vân Sơn'
+    W_07627 = 7627
+    'Xã Đại Sơn'
+    W_07642 = 7642
+    'Xã Yên Định'
+    W_07654 = 7654
+    'Xã An Lạc'
+    W_07663 = 7663
+    'Xã Tuấn Đạo'
+    W_07672 = 7672
+    'Xã Dương Hưu'
+    W_07681 = 7681
+    'Phường Yên Dũng'
+    W_07682 = 7682
+    'Phường Tân An'
+    W_07696 = 7696
+    'Phường Tiền Phong'
+    W_07699 = 7699
+    'Phường Tân Tiến'
+    W_07735 = 7735
+    'Xã Đồng Việt'
+    W_07738 = 7738
+    'Phường Cảnh Thụy'
     W_07774 = 7774
     'Phường Tự Lạn'
     W_07777 = 7777
@@ -1723,574 +1733,470 @@ class WardCode(IntEnum):
     'Phường Nếnh'
     W_07798 = 7798
     'Phường Vân Hà'
-    W_07735 = 7735
-    'Xã Đồng Việt'
-    W_07210 = 7210
-    'Phường Bắc Giang'
-    W_07228 = 7228
-    'Phường Đa Mai'
-    W_07696 = 7696
-    'Phường Tiền Phong'
-    W_07682 = 7682
-    'Phường Tân An'
-    W_07681 = 7681
-    'Phường Yên Dũng'
-    W_07699 = 7699
-    'Phường Tân Tiến'
-    W_07738 = 7738
-    'Phường Cảnh Thụy'
+    W_07822 = 7822
+    'Xã Hoàng Vân'
+    W_07840 = 7840
+    'Xã Hiệp Hoà'
+    W_07864 = 7864
+    'Xã Hợp Thịnh'
+    W_07870 = 7870
+    'Xã Xuân Cẩm'
+    W_09169 = 9169
+    'Phường Vũ Ninh'
     W_09187 = 9187
     'Phường Kinh Bắc'
     W_09190 = 9190
     'Phường Võ Cường'
-    W_09169 = 9169
-    'Phường Vũ Ninh'
-    W_09325 = 9325
-    'Phường Hạp Lĩnh'
-    W_09286 = 9286
-    'Phường Nam Sơn'
-    W_09367 = 9367
-    'Phường Từ Sơn'
-    W_09376 = 9376
-    'Phường Tam Sơn'
-    W_09382 = 9382
-    'Phường Đồng Nguyên'
-    W_09373 = 9373
-    'Phường Phù Khê'
-    W_09400 = 9400
-    'Phường Thuận Thành'
-    W_09409 = 9409
-    'Phường Mão Điền'
-    W_09430 = 9430
-    'Phường Trạm Lộ'
-    W_09427 = 9427
-    'Phường Trí Quả'
-    W_09433 = 9433
-    'Phường Song Liễu'
-    W_09445 = 9445
-    'Phường Ninh Xá'
-    W_09247 = 9247
-    'Phường Quế Võ'
-    W_09265 = 9265
-    'Phường Phương Liễu'
-    W_09253 = 9253
-    'Phường Nhân Hòa'
-    W_09301 = 9301
-    'Phường Đào Viên'
-    W_09295 = 9295
-    'Phường Bồng Lai'
-    W_09313 = 9313
-    'Xã Chi Lăng'
-    W_09292 = 9292
-    'Xã Phù Lãng'
     W_09193 = 9193
     'Xã Yên Phong'
-    W_09238 = 9238
-    'Xã Văn Môn'
     W_09202 = 9202
     'Xã Tam Giang'
     W_09205 = 9205
     'Xã Yên Trung'
     W_09208 = 9208
     'Xã Tam Đa'
+    W_09238 = 9238
+    'Xã Văn Môn'
+    W_09247 = 9247
+    'Phường Quế Võ'
+    W_09253 = 9253
+    'Phường Nhân Hòa'
+    W_09265 = 9265
+    'Phường Phương Liễu'
+    W_09286 = 9286
+    'Phường Nam Sơn'
+    W_09292 = 9292
+    'Xã Phù Lãng'
+    W_09295 = 9295
+    'Phường Bồng Lai'
+    W_09301 = 9301
+    'Phường Đào Viên'
+    W_09313 = 9313
+    'Xã Chi Lăng'
     W_09319 = 9319
     'Xã Tiên Du'
+    W_09325 = 9325
+    'Phường Hạp Lĩnh'
     W_09334 = 9334
     'Xã Liên Bão'
-    W_09343 = 9343
-    'Xã Tân Chi'
     W_09340 = 9340
     'Xã Đại Đồng'
+    W_09343 = 9343
+    'Xã Tân Chi'
     W_09349 = 9349
     'Xã Phật Tích'
+    W_09367 = 9367
+    'Phường Từ Sơn'
+    W_09370 = 9370
+    'Phường Tam Sơn'
+    W_09379 = 9379
+    'Phường Phù Khê'
+    W_09385 = 9385
+    'Phường Đồng Nguyên'
+    W_09400 = 9400
+    'Phường Thuận Thành'
+    W_09409 = 9409
+    'Phường Mão Điền'
+    W_09427 = 9427
+    'Phường Trí Quả'
+    W_09430 = 9430
+    'Phường Trạm Lộ'
+    W_09433 = 9433
+    'Phường Song Liễu'
+    W_09445 = 9445
+    'Phường Ninh Xá'
     W_09454 = 9454
     'Xã Gia Bình'
-    W_09475 = 9475
-    'Xã Nhân Thắng'
-    W_09469 = 9469
-    'Xã Đại Lai'
     W_09466 = 9466
     'Xã Cao Đức'
+    W_09469 = 9469
+    'Xã Đại Lai'
+    W_09475 = 9475
+    'Xã Nhân Thắng'
     W_09487 = 9487
     'Xã Đông Cứu'
     W_09496 = 9496
     'Xã Lương Tài'
-    W_09529 = 9529
-    'Xã Lâm Thao'
-    W_09523 = 9523
-    'Xã Trung Chính'
     W_09499 = 9499
     'Xã Trung Kênh'
-    W_07663 = 7663
-    'Xã Tuấn Đạo'
-    W_07900 = 7900
-    'Phường Việt Trì'
-    W_07894 = 7894
-    'Phường Nông Trang'
-    W_07909 = 7909
-    'Phường Thanh Miếu'
-    W_07918 = 7918
-    'Phường Vân Phú'
-    W_08515 = 8515
-    'Xã Hy Cương'
-    W_08494 = 8494
+    W_09523 = 9523
+    'Xã Trung Chính'
+    W_09529 = 9529
     'Xã Lâm Thao'
-    W_08497 = 8497
-    'Xã Xuân Lũng'
-    W_08521 = 8521
-    'Xã Phùng Nguyên'
-    W_08527 = 8527
-    'Xã Bản Nguyên'
-    W_07954 = 7954
-    'Phường Phong Châu'
-    W_07942 = 7942
-    'Phường Phú Thọ'
-    W_07948 = 7948
-    'Phường Âu Cơ'
-    W_08230 = 8230
-    'Xã Phù Ninh'
-    W_08254 = 8254
-    'Xã Dân Chủ'
-    W_08236 = 8236
-    'Xã Phú Mỹ'
-    W_08245 = 8245
-    'Xã Trạm Thản'
-    W_08275 = 8275
-    'Xã Bình Phú'
-    W_08152 = 8152
-    'Xã Thanh Ba'
-    W_08161 = 8161
-    'Xã Quảng Yên'
-    W_08203 = 8203
-    'Xã Hoàng Cương'
-    W_08209 = 8209
-    'Xã Đông Thành'
-    W_08215 = 8215
-    'Xã Chí Tiên'
-    W_08227 = 8227
-    'Xã Liên Minh'
-    W_07969 = 7969
-    'Xã Đoan Hùng'
-    W_08023 = 8023
-    'Xã Tây Cốc'
-    W_08035 = 8035
-    'Xã Chân Mộng'
-    W_07999 = 7999
-    'Xã Chí Đám'
-    W_07996 = 7996
-    'Xã Bằng Luân'
-    W_08053 = 8053
-    'Xã Hạ Hòa'
-    W_08071 = 8071
-    'Xã Đan Thượng'
-    W_08113 = 8113
-    'Xã Yên Kỳ'
-    W_08143 = 8143
-    'Xã Vĩnh Chân'
-    W_08134 = 8134
-    'Xã Văn Lang'
-    W_08110 = 8110
-    'Xã Hiền Lương'
-    W_08341 = 8341
-    'Xã Cẩm Khê'
-    W_08398 = 8398
-    'Xã Phú Khê'
-    W_08416 = 8416
-    'Xã Hùng Việt'
-    W_08431 = 8431
-    'Xã Đồng Lương'
-    W_08344 = 8344
-    'Xã Tiên Lương'
-    W_08380 = 8380
-    'Xã Vân Bán'
-    W_08434 = 8434
-    'Xã Tam Nông'
-    W_08479 = 8479
-    'Xã Thọ Văn'
-    W_08461 = 8461
-    'Xã Vạn Xuân'
-    W_08443 = 8443
-    'Xã Hiền Quan'
-    W_08674 = 8674
-    'Xã Thanh Thuỷ'
-    W_08662 = 8662
-    'Xã Đào Xá'
-    W_08686 = 8686
-    'Xã Tu Vũ'
-    W_08542 = 8542
-    'Xã Thanh Sơn'
-    W_08584 = 8584
-    'Xã Võ Miếu'
-    W_08611 = 8611
-    'Xã Văn Miếu'
-    W_08614 = 8614
-    'Xã Cự Đồng'
-    W_08632 = 8632
-    'Xã Hương Cần'
-    W_08656 = 8656
-    'Xã Yên Sơn'
-    W_08635 = 8635
-    'Xã Khả Cửu'
-    W_08566 = 8566
-    'Xã Tân Sơn'
-    W_08593 = 8593
-    'Xã Minh Đài'
-    W_08560 = 8560
-    'Xã Lai Đồng'
-    W_08545 = 8545
-    'Xã Thu Cúc'
-    W_08590 = 8590
-    'Xã Xuân Đài'
-    W_08620 = 8620
-    'Xã Long Cốc'
-    W_08290 = 8290
-    'Xã Yên Lập'
-    W_08323 = 8323
-    'Xã Thượng Long'
-    W_08296 = 8296
-    'Xã Sơn Lương'
-    W_08305 = 8305
-    'Xã Xuân Viên'
-    W_08338 = 8338
-    'Xã Minh Hòa'
-    W_08311 = 8311
-    'Xã Trung Sơn'
-    W_08824 = 8824
-    'Xã Tam Sơn'
-    W_08848 = 8848
-    'Xã Sông Lô'
-    W_08782 = 8782
-    'Xã Hải Lựu'
-    W_08773 = 8773
-    'Xã Yên Lãng'
-    W_08761 = 8761
-    'Xã Lập Thạch'
-    W_08842 = 8842
-    'Xã Tiên Lữ'
-    W_08788 = 8788
-    'Xã Thái Hòa'
-    W_08812 = 8812
-    'Xã Liên Hòa'
-    W_08770 = 8770
-    'Xã Hợp Lý'
-    W_08866 = 8866
-    'Xã Sơn Đông'
-    W_08911 = 8911
-    'Xã Tam Đảo'
-    W_08923 = 8923
-    'Xã Đại Đình'
-    W_08914 = 8914
-    'Xã Đạo Trù'
-    W_08869 = 8869
-    'Xã Tam Dương'
-    W_08905 = 8905
-    'Xã Hội Thịnh'
-    W_08896 = 8896
-    'Xã Hoàng An'
-    W_08872 = 8872
-    'Xã Tam Dương Bắc'
-    W_09076 = 9076
-    'Xã Vĩnh Tường'
-    W_09112 = 9112
-    'Xã Thổ Tang'
-    W_09100 = 9100
-    'Xã Vĩnh Hưng'
-    W_09079 = 9079
-    'Xã Vĩnh An'
-    W_09154 = 9154
-    'Xã Vĩnh Phú'
-    W_09106 = 9106
-    'Xã Vĩnh Thành'
-    W_09025 = 9025
-    'Xã Yên Lạc'
-    W_09040 = 9040
-    'Xã Tề Lỗ'
-    W_09064 = 9064
-    'Xã Liên Châu'
-    W_09043 = 9043
-    'Xã Tam Hồng'
-    W_09052 = 9052
-    'Xã Nguyệt Đức'
-    W_08935 = 8935
-    'Xã Bình Nguyên'
-    W_08971 = 8971
-    'Xã Xuân Lãng'
-    W_08950 = 8950
-    'Xã Bình Xuyên'
-    W_08944 = 8944
-    'Xã Bình Tuyền'
-    W_08716 = 8716
-    'Phường Vĩnh Phúc'
-    W_08707 = 8707
-    'Phường Vĩnh Yên'
-    W_08740 = 8740
-    'Phường Phúc Yên'
-    W_08749 = 8749
-    'Phường Xuân Hòa'
-    W_05089 = 5089
-    'Xã Cao Phong'
-    W_05116 = 5116
-    'Xã Mường Thàng'
-    W_05098 = 5098
-    'Xã Thung Nai'
+    W_04792 = 4792
+    'Phường Tân Hòa'
+    W_04795 = 4795
+    'Phường Hòa Bình'
+    W_04828 = 4828
+    'Phường Thống Nhất'
     W_04831 = 4831
     'Xã Đà Bắc'
-    W_04876 = 4876
-    'Xã Cao Sơn'
     W_04846 = 4846
     'Xã Đức Nhàn'
-    W_04873 = 4873
-    'Xã Quy Đức'
     W_04849 = 4849
     'Xã Tân Pheo'
+    W_04873 = 4873
+    'Xã Quy Đức'
+    W_04876 = 4876
+    'Xã Cao Sơn'
     W_04891 = 4891
     'Xã Tiền Phong'
-    W_04978 = 4978
-    'Xã Kim Bôi'
-    W_05014 = 5014
-    'Xã Mường Động'
-    W_05086 = 5086
-    'Xã Dũng Tiến'
-    W_05068 = 5068
-    'Xã Hợp Kim'
-    W_04990 = 4990
-    'Xã Nật Sơn'
-    W_05266 = 5266
-    'Xã Lạc Sơn'
-    W_05287 = 5287
-    'Xã Mường Vang'
-    W_05347 = 5347
-    'Xã Đại Đồng'
-    W_05329 = 5329
-    'Xã Ngọc Sơn'
-    W_05290 = 5290
-    'Xã Nhân Nghĩa'
-    W_05323 = 5323
-    'Xã Quyết Thắng'
-    W_05293 = 5293
-    'Xã Thượng Cốc'
-    W_05305 = 5305
-    'Xã Yên Phú'
-    W_05392 = 5392
-    'Xã Lạc Thủy'
-    W_05425 = 5425
-    'Xã An Bình'
-    W_05395 = 5395
-    'Xã An Nghĩa'
+    W_04894 = 4894
+    'Phường Kỳ Sơn'
+    W_04897 = 4897
+    'Xã Thịnh Minh'
     W_04924 = 4924
     'Xã Lương Sơn'
-    W_05047 = 5047
-    'Xã Cao Dương'
     W_04960 = 4960
     'Xã Liên Sơn'
+    W_04978 = 4978
+    'Xã Kim Bôi'
+    W_04990 = 4990
+    'Xã Nật Sơn'
+    W_05014 = 5014
+    'Xã Mường Động'
+    W_05047 = 5047
+    'Xã Cao Dương'
+    W_05068 = 5068
+    'Xã Hợp Kim'
+    W_05086 = 5086
+    'Xã Dũng Tiến'
+    W_05089 = 5089
+    'Xã Cao Phong'
+    W_05092 = 5092
+    'Xã Thung Nai'
+    W_05116 = 5116
+    'Xã Mường Thàng'
+    W_05128 = 5128
+    'Xã Tân Lạc'
+    W_05134 = 5134
+    'Xã Mường Hoa'
+    W_05152 = 5152
+    'Xã Vân Sơn'
+    W_05158 = 5158
+    'Xã Mường Bi'
+    W_05191 = 5191
+    'Xã Toàn Thắng'
     W_05200 = 5200
     'Xã Mai Châu'
+    W_05206 = 5206
+    'Xã Tân Mai'
+    W_05212 = 5212
+    'Xã Pà Cò'
     W_05245 = 5245
     'Xã Bao La'
     W_05251 = 5251
     'Xã Mai Hạ'
-    W_05212 = 5212
-    'Xã Pà Cò'
-    W_05206 = 5206
-    'Xã Tân Mai'
-    W_05128 = 5128
-    'Xã Tân Lạc'
-    W_05158 = 5158
-    'Xã Mường Bi'
-    W_05134 = 5134
-    'Xã Mường Hoa'
-    W_05191 = 5191
-    'Xã Toàn Thắng'
-    W_05152 = 5152
-    'Xã Vân Sơn'
+    W_05266 = 5266
+    'Xã Lạc Sơn'
+    W_05287 = 5287
+    'Xã Mường Vang'
+    W_05290 = 5290
+    'Xã Nhân Nghĩa'
+    W_05293 = 5293
+    'Xã Thượng Cốc'
+    W_05305 = 5305
+    'Xã Yên Phú'
+    W_05323 = 5323
+    'Xã Quyết Thắng'
+    W_05329 = 5329
+    'Xã Ngọc Sơn'
+    W_05347 = 5347
+    'Xã Đại Đồng'
     W_05353 = 5353
     'Xã Yên Thủy'
     W_05362 = 5362
     'Xã Lạc Lương'
     W_05386 = 5386
     'Xã Yên Trị'
-    W_04897 = 4897
-    'Xã Thịnh Minh'
-    W_04795 = 4795
-    'Phường Hòa Bình'
-    W_04894 = 4894
-    'Phường Kỳ Sơn'
-    W_04792 = 4792
-    'Phường Tân Hòa'
-    W_04828 = 4828
-    'Phường Thống Nhất'
-    W_11560 = 11560
-    'Phường Thuỷ Nguyên'
-    W_11557 = 11557
-    'Phường Thiên Hương'
-    W_11533 = 11533
-    'Phường Hoà Bình'
-    W_11542 = 11542
-    'Phường Nam Triệu'
-    W_11473 = 11473
-    'Phường Bạch Đằng'
-    W_11488 = 11488
-    'Phường Lưu Kiếm'
-    W_11506 = 11506
-    'Phường Lê Ích Mộc'
-    W_11311 = 11311
-    'Phường Hồng Bàng'
-    W_11602 = 11602
-    'Phường Hồng An'
-    W_11341 = 11341
-    'Phường Ngô Quyền'
-    W_11359 = 11359
-    'Phường Gia Viên'
-    W_11383 = 11383
-    'Phường Lê Chân'
-    W_11407 = 11407
-    'Phường An Biên'
-    W_11413 = 11413
-    'Phường Hải An'
-    W_11411 = 11411
-    'Phường Đông Hải'
-    W_11443 = 11443
-    'Phường Kiến An'
-    W_11446 = 11446
-    'Phường Phù Liễn'
-    W_11737 = 11737
-    'Phường Nam Đồ Sơn'
-    W_11455 = 11455
-    'Phường Đồ Sơn'
-    W_11689 = 11689
-    'Phường Hưng Đạo'
-    W_11692 = 11692
-    'Phường Dương Kinh'
-    W_11581 = 11581
-    'Phường An Dương'
-    W_11617 = 11617
-    'Phường An Hải'
-    W_11593 = 11593
-    'Phường An Phong'
-    W_11674 = 11674
-    'Xã An Hưng'
-    W_11668 = 11668
-    'Xã An Khánh'
-    W_11647 = 11647
-    'Xã An Quang'
-    W_11635 = 11635
-    'Xã An Trường'
-    W_11629 = 11629
-    'Xã An Lão'
-    W_11680 = 11680
-    'Xã Kiến Thụy'
-    W_11725 = 11725
-    'Xã Kiến Minh'
-    W_11749 = 11749
-    'Xã Kiến Hải'
-    W_11728 = 11728
-    'Xã Kiến Hưng'
-    W_11713 = 11713
-    'Xã Nghi Dương'
-    W_11761 = 11761
-    'Xã Quyết Thắng'
-    W_11755 = 11755
-    'Xã Tiên Lãng'
-    W_11779 = 11779
-    'Xã Tân Minh'
-    W_11791 = 11791
-    'Xã Tiên Minh'
-    W_11806 = 11806
-    'Xã Chấn Hưng'
-    W_11809 = 11809
-    'Xã Hùng Thắng'
-    W_11824 = 11824
-    'Xã Vĩnh Bảo'
-    W_11911 = 11911
-    'Xã Nguyễn Bỉnh Khiêm'
-    W_11887 = 11887
-    'Xã Vĩnh Am'
-    W_11875 = 11875
-    'Xã Vĩnh Hải'
-    W_11848 = 11848
-    'Xã Vĩnh Hòa'
-    W_11836 = 11836
-    'Xã Vĩnh Thịnh'
-    W_11842 = 11842
-    'Xã Vĩnh Thuận'
-    W_11503 = 11503
-    'Xã Việt Khê'
-    W_11914 = 11914
-    'Đặc khu Cát Hải'
-    W_11948 = 11948
-    'Đặc khu Bạch Long Vĩ'
+    W_05392 = 5392
+    'Xã Lạc Thủy'
+    W_05395 = 5395
+    'Xã An Nghĩa'
+    W_05425 = 5425
+    'Xã An Bình'
+    W_07894 = 7894
+    'Phường Nông Trang'
+    W_07900 = 7900
+    'Phường Việt Trì'
+    W_07909 = 7909
+    'Phường Thanh Miếu'
+    W_07918 = 7918
+    'Phường Vân Phú'
+    W_07942 = 7942
+    'Phường Phú Thọ'
+    W_07948 = 7948
+    'Phường Âu Cơ'
+    W_07954 = 7954
+    'Phường Phong Châu'
+    W_07969 = 7969
+    'Xã Đoan Hùng'
+    W_07996 = 7996
+    'Xã Bằng Luân'
+    W_07999 = 7999
+    'Xã Chí Đám'
+    W_08023 = 8023
+    'Xã Tây Cốc'
+    W_08038 = 8038
+    'Xã Chân Mộng'
+    W_08053 = 8053
+    'Xã Hạ Hòa'
+    W_08071 = 8071
+    'Xã Đan Thượng'
+    W_08110 = 8110
+    'Xã Hiền Lương'
+    W_08113 = 8113
+    'Xã Yên Kỳ'
+    W_08134 = 8134
+    'Xã Văn Lang'
+    W_08143 = 8143
+    'Xã Vĩnh Chân'
+    W_08152 = 8152
+    'Xã Thanh Ba'
+    W_08173 = 8173
+    'Xã Quảng Yên'
+    W_08203 = 8203
+    'Xã Hoàng Cương'
+    W_08209 = 8209
+    'Xã Đông Thành'
+    W_08218 = 8218
+    'Xã Chí Tiên'
+    W_08227 = 8227
+    'Xã Liên Minh'
+    W_08230 = 8230
+    'Xã Phù Ninh'
+    W_08236 = 8236
+    'Xã Phú Mỹ'
+    W_08245 = 8245
+    'Xã Trạm Thản'
+    W_08254 = 8254
+    'Xã Dân Chủ'
+    W_08275 = 8275
+    'Xã Bình Phú'
+    W_08290 = 8290
+    'Xã Yên Lập'
+    W_08296 = 8296
+    'Xã Sơn Lương'
+    W_08305 = 8305
+    'Xã Xuân Viên'
+    W_08311 = 8311
+    'Xã Trung Sơn'
+    W_08323 = 8323
+    'Xã Thượng Long'
+    W_08338 = 8338
+    'Xã Minh Hòa'
+    W_08341 = 8341
+    'Xã Cẩm Khê'
+    W_08344 = 8344
+    'Xã Tiên Lương'
+    W_08377 = 8377
+    'Xã Vân Bán'
+    W_08398 = 8398
+    'Xã Phú Khê'
+    W_08416 = 8416
+    'Xã Hùng Việt'
+    W_08431 = 8431
+    'Xã Đồng Lương'
+    W_08434 = 8434
+    'Xã Tam Nông'
+    W_08443 = 8443
+    'Xã Hiền Quan'
+    W_08467 = 8467
+    'Xã Vạn Xuân'
+    W_08479 = 8479
+    'Xã Thọ Văn'
+    W_08494 = 8494
+    'Xã Lâm Thao'
+    W_08500 = 8500
+    'Xã Xuân Lũng'
+    W_08515 = 8515
+    'Xã Hy Cương'
+    W_08521 = 8521
+    'Xã Phùng Nguyên'
+    W_08527 = 8527
+    'Xã Bản Nguyên'
+    W_08542 = 8542
+    'Xã Thanh Sơn'
+    W_08545 = 8545
+    'Xã Thu Cúc'
+    W_08560 = 8560
+    'Xã Lai Đồng'
+    W_08566 = 8566
+    'Xã Tân Sơn'
+    W_08584 = 8584
+    'Xã Võ Miếu'
+    W_08590 = 8590
+    'Xã Xuân Đài'
+    W_08593 = 8593
+    'Xã Minh Đài'
+    W_08611 = 8611
+    'Xã Văn Miếu'
+    W_08614 = 8614
+    'Xã Cự Đồng'
+    W_08620 = 8620
+    'Xã Long Cốc'
+    W_08632 = 8632
+    'Xã Hương Cần'
+    W_08635 = 8635
+    'Xã Khả Cửu'
+    W_08656 = 8656
+    'Xã Yên Sơn'
+    W_08662 = 8662
+    'Xã Đào Xá'
+    W_08674 = 8674
+    'Xã Thanh Thủy'
+    W_08686 = 8686
+    'Xã Tu Vũ'
+    W_08707 = 8707
+    'Phường Vĩnh Yên'
+    W_08716 = 8716
+    'Phường Vĩnh Phúc'
+    W_08740 = 8740
+    'Phường Phúc Yên'
+    W_08746 = 8746
+    'Phường Xuân Hòa'
+    W_08761 = 8761
+    'Xã Lập Thạch'
+    W_08770 = 8770
+    'Xã Hợp Lý'
+    W_08773 = 8773
+    'Xã Yên Lãng'
+    W_08782 = 8782
+    'Xã Hải Lựu'
+    W_08788 = 8788
+    'Xã Thái Hòa'
+    W_08812 = 8812
+    'Xã Liên Hòa'
+    W_08824 = 8824
+    'Xã Tam Sơn'
+    W_08842 = 8842
+    'Xã Tiên Lữ'
+    W_08848 = 8848
+    'Xã Sông Lô'
+    W_08866 = 8866
+    'Xã Sơn Đông'
+    W_08869 = 8869
+    'Xã Tam Dương'
+    W_08872 = 8872
+    'Xã Tam Dương Bắc'
+    W_08896 = 8896
+    'Xã Hoàng An'
+    W_08905 = 8905
+    'Xã Hội Thịnh'
+    W_08911 = 8911
+    'Xã Tam Đảo'
+    W_08914 = 8914
+    'Xã Đạo Trù'
+    W_08923 = 8923
+    'Xã Đại Đình'
+    W_08935 = 8935
+    'Xã Bình Nguyên'
+    W_08944 = 8944
+    'Xã Bình Tuyền'
+    W_08950 = 8950
+    'Xã Bình Xuyên'
+    W_08971 = 8971
+    'Xã Xuân Lãng'
+    W_09025 = 9025
+    'Xã Yên Lạc'
+    W_09040 = 9040
+    'Xã Tề Lỗ'
+    W_09043 = 9043
+    'Xã Tam Hồng'
+    W_09052 = 9052
+    'Xã Nguyệt Đức'
+    W_09064 = 9064
+    'Xã Liên Châu'
+    W_09076 = 9076
+    'Xã Vĩnh Tường'
+    W_09079 = 9079
+    'Xã Vĩnh An'
+    W_09100 = 9100
+    'Xã Vĩnh Hưng'
+    W_09106 = 9106
+    'Xã Vĩnh Thành'
+    W_09112 = 9112
+    'Xã Thổ Tang'
+    W_09154 = 9154
+    'Xã Vĩnh Phú'
+    W_10507 = 10507
+    'Phường Thành Đông'
     W_10525 = 10525
     'Phường Hải Dương'
     W_10532 = 10532
     'Phường Lê Thanh Nghị'
-    W_10543 = 10543
-    'Phường Việt Hòa'
-    W_10510 = 10510
-    'Phường Thành Đông'
-    W_10672 = 10672
-    'Phường Nam Đồng'
     W_10537 = 10537
     'Phường Tân Hưng'
-    W_11002 = 11002
-    'Phường Thạch Khôi'
-    W_10540 = 10540
-    'Phường Tứ Minh'
-    W_10660 = 10660
-    'Phường Ái Quốc'
-    W_10549 = 10549
-    'Phường Chu Văn An'
+    W_10543 = 10543
+    'Phường Việt Hòa'
     W_10546 = 10546
     'Phường Chí Linh'
-    W_10570 = 10570
-    'Phường Trần Hưng Đạo'
+    W_10549 = 10549
+    'Phường Chu Văn An'
     W_10552 = 10552
     'Phường Nguyễn Trãi'
+    W_10570 = 10570
+    'Phường Trần Hưng Đạo'
     W_10573 = 10573
     'Phường Trần Nhân Tông'
     W_10603 = 10603
     'Phường Lê Đại Hành'
-    W_10675 = 10675
-    'Phường Kinh Môn'
-    W_10744 = 10744
-    'Phường Nguyễn Đại Năng'
-    W_10729 = 10729
-    'Phường Trần Liễu'
-    W_10678 = 10678
-    'Phường Bắc An Phụ'
-    W_10726 = 10726
-    'Phường Phạm Sư Mạnh'
-    W_10714 = 10714
-    'Phường Nhị Chiểu'
-    W_10705 = 10705
-    'Xã Nam An Phụ'
     W_10606 = 10606
     'Xã Nam Sách'
-    W_10642 = 10642
-    'Xã Thái Tân'
     W_10615 = 10615
     'Xã Hợp Tiến'
     W_10633 = 10633
     'Xã Trần Phú'
+    W_10642 = 10642
+    'Xã Thái Tân'
     W_10645 = 10645
     'Xã An Phú'
+    W_10660 = 10660
+    'Phường Ái Quốc'
+    W_10675 = 10675
+    'Phường Kinh Môn'
+    W_10678 = 10678
+    'Phường Bắc An Phụ'
+    W_10705 = 10705
+    'Xã Nam An Phụ'
+    W_10714 = 10714
+    'Phường Nhị Chiểu'
+    W_10726 = 10726
+    'Phường Phạm Sư Mạnh'
+    W_10729 = 10729
+    'Phường Trần Liễu'
+    W_10744 = 10744
+    'Phường Nguyễn Đại Năng'
+    W_10750 = 10750
+    'Xã Phú Thái'
+    W_10756 = 10756
+    'Xã Lai Khê'
+    W_10792 = 10792
+    'Xã An Thành'
+    W_10804 = 10804
+    'Xã Kim Thành'
     W_10813 = 10813
     'Xã Thanh Hà'
-    W_10846 = 10846
-    'Xã Hà Tây'
     W_10816 = 10816
     'Xã Hà Bắc'
+    W_10837 = 10837
+    'Phường Nam Đồng'
     W_10843 = 10843
     'Xã Hà Nam'
+    W_10846 = 10846
+    'Xã Hà Tây'
     W_10882 = 10882
     'Xã Hà Đông'
     W_10888 = 10888
     'Xã Cẩm Giang'
+    W_10891 = 10891
+    'Phường Tứ Minh'
+    W_10903 = 10903
+    'Xã Cẩm Giàng'
     W_10909 = 10909
     'Xã Tuệ Tĩnh'
     W_10930 = 10930
     'Xã Mao Điền'
-    W_10903 = 10903
-    'Xã Cẩm Giàng'
     W_10945 = 10945
     'Xã Kẻ Sặt'
     W_10966 = 10966
@@ -2301,6 +2207,8 @@ class WardCode(IntEnum):
     'Xã Thượng Hồng'
     W_10999 = 10999
     'Xã Gia Lộc'
+    W_11002 = 11002
+    'Phường Thạch Khôi'
     W_11020 = 11020
     'Xã Yết Kiêu'
     W_11050 = 11050
@@ -2309,64 +2217,206 @@ class WardCode(IntEnum):
     'Xã Trường Tân'
     W_11074 = 11074
     'Xã Tứ Kỳ'
-    W_11113 = 11113
-    'Xã Tân Kỳ'
     W_11086 = 11086
     'Xã Đại Sơn'
+    W_11113 = 11113
+    'Xã Tân Kỳ'
     W_11131 = 11131
     'Xã Chí Minh'
     W_11140 = 11140
     'Xã Lạc Phượng'
     W_11146 = 11146
     'Xã Nguyên Giáp'
-    W_11203 = 11203
-    'Xã Ninh Giang'
     W_11164 = 11164
     'Xã Vĩnh Lại'
-    W_11224 = 11224
-    'Xã Khúc Thừa Dụ'
     W_11167 = 11167
     'Xã Tân An'
+    W_11203 = 11203
+    'Xã Ninh Giang'
     W_11218 = 11218
     'Xã Hồng Châu'
+    W_11224 = 11224
+    'Xã Khúc Thừa Dụ'
     W_11239 = 11239
     'Xã Thanh Miện'
+    W_11242 = 11242
+    'Xã Nguyễn Lương Bằng'
     W_11254 = 11254
     'Xã Bắc Thanh Miện'
     W_11257 = 11257
     'Xã Hải Hưng'
-    W_11242 = 11242
-    'Xã Nguyễn Lương Bằng'
     W_11284 = 11284
     'Xã Nam Thanh Miện'
-    W_10750 = 10750
-    'Xã Phú Thái'
-    W_10756 = 10756
-    'Xã Lai Khê'
-    W_10777 = 10777
-    'Xã An Thành'
-    W_10804 = 10804
-    'Xã Kim Thành'
+    W_11311 = 11311
+    'Phường Hồng Bàng'
+    W_11329 = 11329
+    'Phường Ngô Quyền'
+    W_11359 = 11359
+    'Phường Gia Viên'
+    W_11383 = 11383
+    'Phường Lê Chân'
+    W_11407 = 11407
+    'Phường An Biên'
+    W_11411 = 11411
+    'Phường Đông Hải'
+    W_11413 = 11413
+    'Phường Hải An'
+    W_11443 = 11443
+    'Phường Kiến An'
+    W_11446 = 11446
+    'Phường Phù Liễn'
+    W_11455 = 11455
+    'Phường Đồ Sơn'
+    W_11473 = 11473
+    'Phường Bạch Đằng'
+    W_11488 = 11488
+    'Phường Lưu Kiếm'
+    W_11503 = 11503
+    'Xã Việt Khê'
+    W_11506 = 11506
+    'Phường Lê Ích Mộc'
+    W_11533 = 11533
+    'Phường Hòa Bình'
+    W_11542 = 11542
+    'Phường Nam Triệu'
+    W_11557 = 11557
+    'Phường Thiên Hương'
+    W_11560 = 11560
+    'Phường Thủy Nguyên'
+    W_11581 = 11581
+    'Phường An Dương'
+    W_11593 = 11593
+    'Phường An Phong'
+    W_11602 = 11602
+    'Phường Hồng An'
+    W_11617 = 11617
+    'Phường An Hải'
+    W_11629 = 11629
+    'Xã An Lão'
+    W_11635 = 11635
+    'Xã An Trường'
+    W_11647 = 11647
+    'Xã An Quang'
+    W_11668 = 11668
+    'Xã An Khánh'
+    W_11674 = 11674
+    'Xã An Hưng'
+    W_11680 = 11680
+    'Xã Kiến Thụy'
+    W_11689 = 11689
+    'Phường Hưng Đạo'
+    W_11692 = 11692
+    'Phường Dương Kinh'
+    W_11713 = 11713
+    'Xã Nghi Dương'
+    W_11725 = 11725
+    'Xã Kiến Minh'
+    W_11728 = 11728
+    'Xã Kiến Hưng'
+    W_11737 = 11737
+    'Phường Nam Đồ Sơn'
+    W_11749 = 11749
+    'Xã Kiến Hải'
+    W_11755 = 11755
+    'Xã Tiên Lãng'
+    W_11761 = 11761
+    'Xã Quyết Thắng'
+    W_11779 = 11779
+    'Xã Tân Minh'
+    W_11791 = 11791
+    'Xã Tiên Minh'
+    W_11806 = 11806
+    'Xã Chấn Hưng'
+    W_11809 = 11809
+    'Xã Hùng Thắng'
+    W_11824 = 11824
+    'Xã Vĩnh Bảo'
+    W_11836 = 11836
+    'Xã Vĩnh Thịnh'
+    W_11842 = 11842
+    'Xã Vĩnh Thuận'
+    W_11848 = 11848
+    'Xã Vĩnh Hòa'
+    W_11875 = 11875
+    'Xã Vĩnh Hải'
+    W_11887 = 11887
+    'Xã Vĩnh Am'
+    W_11911 = 11911
+    'Xã Nguyễn Bỉnh Khiêm'
+    W_11914 = 11914
+    'Đặc khu Cát Hải'
+    W_11948 = 11948
+    'Đặc khu Bạch Long Vĩ'
     W_11953 = 11953
     'Phường Phố Hiến'
-    W_11983 = 11983
-    'Phường Sơn Nam'
-    W_11980 = 11980
-    'Phường Hồng Châu'
-    W_12103 = 12103
-    'Phường Mỹ Hào'
-    W_12133 = 12133
-    'Phường Đường Hào'
-    W_12127 = 12127
-    'Phường Thượng Hồng'
     W_11977 = 11977
     'Xã Tân Hưng'
+    W_11980 = 11980
+    'Phường Hồng Châu'
+    W_11983 = 11983
+    'Phường Sơn Nam'
+    W_11992 = 11992
+    'Xã Lạc Đạo'
+    W_11995 = 11995
+    'Xã Đại Đồng'
+    W_12004 = 12004
+    'Xã Như Quỳnh'
+    W_12019 = 12019
+    'Xã Văn Giang'
+    W_12025 = 12025
+    'Xã Phụng Công'
+    W_12031 = 12031
+    'Xã Nghĩa Trụ'
+    W_12049 = 12049
+    'Xã Mễ Sở'
+    W_12064 = 12064
+    'Xã Nguyễn Văn Linh'
+    W_12070 = 12070
+    'Xã Hoàn Long'
+    W_12073 = 12073
+    'Xã Yên Mỹ'
+    W_12091 = 12091
+    'Xã Việt Yên'
+    W_12103 = 12103
+    'Phường Mỹ Hào'
+    W_12127 = 12127
+    'Phường Thượng Hồng'
+    W_12133 = 12133
+    'Phường Đường Hào'
+    W_12142 = 12142
+    'Xã Ân Thi'
+    W_12148 = 12148
+    'Xã Phạm Ngũ Lão'
+    W_12166 = 12166
+    'Xã Xuân Trúc'
+    W_12184 = 12184
+    'Xã Nguyễn Trãi'
+    W_12196 = 12196
+    'Xã Hồng Quang'
+    W_12205 = 12205
+    'Xã Khoái Châu'
+    W_12223 = 12223
+    'Xã Triệu Việt Vương'
+    W_12238 = 12238
+    'Xã Việt Tiến'
+    W_12247 = 12247
+    'Xã Châu Ninh'
+    W_12271 = 12271
+    'Xã Chí Minh'
+    W_12280 = 12280
+    'Xã Lương Bằng'
+    W_12286 = 12286
+    'Xã Nghĩa Dân'
+    W_12313 = 12313
+    'Xã Đức Hợp'
+    W_12322 = 12322
+    'Xã Hiệp Cường'
     W_12337 = 12337
     'Xã Hoàng Hoa Thám'
-    W_12364 = 12364
-    'Xã Tiên Lữ'
     W_12361 = 12361
     'Xã Tiên Hoa'
+    W_12364 = 12364
+    'Xã Tiên Lữ'
     W_12391 = 12391
     'Xã Quang Hưng'
     W_12406 = 12406
@@ -2375,258 +2425,168 @@ class WardCode(IntEnum):
     'Xã Tiên Tiến'
     W_12427 = 12427
     'Xã Tống Trân'
-    W_12280 = 12280
-    'Xã Lương Bằng'
-    W_12286 = 12286
-    'Xã Nghĩa Dân'
-    W_12322 = 12322
-    'Xã Hiệp Cường'
-    W_12313 = 12313
-    'Xã Đức Hợp'
-    W_12142 = 12142
-    'Xã Ân Thi'
-    W_12166 = 12166
-    'Xã Xuân Trúc'
-    W_12148 = 12148
-    'Xã Phạm Ngũ Lão'
-    W_12184 = 12184
-    'Xã Nguyễn Trãi'
-    W_12196 = 12196
-    'Xã Hồng Quang'
-    W_12205 = 12205
-    'Xã Khoái Châu'
-    W_12220 = 12220
-    'Xã Triệu Việt Vương'
-    W_12238 = 12238
-    'Xã Việt Tiến'
-    W_12271 = 12271
-    'Xã Chí Minh'
-    W_12247 = 12247
-    'Xã Châu Ninh'
-    W_12052 = 12052
-    'Xã Yên Mỹ'
-    W_12091 = 12091
-    'Xã Việt Yên'
-    W_12070 = 12070
-    'Xã Hoàn Long'
-    W_12064 = 12064
-    'Xã Nguyễn Văn Linh'
-    W_11986 = 11986
-    'Xã Như Quỳnh'
-    W_11992 = 11992
-    'Xã Lạc Đạo'
-    W_11995 = 11995
-    'Xã Đại Đồng'
-    W_12031 = 12031
-    'Xã Nghĩa Trụ'
-    W_12025 = 12025
-    'Xã Phụng Công'
-    W_12019 = 12019
-    'Xã Văn Giang'
-    W_12049 = 12049
-    'Xã Mễ Sở'
-    W_13225 = 13225
-    'Phường Thái Bình'
-    W_12454 = 12454
-    'Phường Trần Lãm'
     W_12452 = 12452
     'Phường Trần Hưng Đạo'
-    W_12817 = 12817
-    'Phường Trà Lý'
+    W_12454 = 12454
+    'Phường Trần Lãm'
     W_12466 = 12466
     'Phường Vũ Phúc'
-    W_12826 = 12826
-    'Xã Thái Thụy'
-    W_12862 = 12862
-    'Xã Đông Thụy Anh'
-    W_12859 = 12859
-    'Xã Bắc Thụy Anh'
-    W_12865 = 12865
-    'Xã Thụy Anh'
-    W_12904 = 12904
-    'Xã Nam Thụy Anh'
-    W_12841 = 12841
-    'Xã Bắc Thái Ninh'
-    W_12922 = 12922
-    'Xã Thái Ninh'
-    W_12943 = 12943
-    'Xã Đông Thái Ninh'
-    W_12961 = 12961
-    'Xã Nam Thái Ninh'
-    W_12919 = 12919
-    'Xã Tây Thái Ninh'
-    W_12850 = 12850
-    'Xã Tây Thụy Anh'
-    W_12970 = 12970
-    'Xã Tiền Hải'
-    W_13039 = 13039
-    'Xã Tây Tiền Hải'
-    W_13021 = 13021
-    'Xã Ái Quốc'
-    W_13003 = 13003
-    'Xã Đồng Châu'
-    W_12988 = 12988
-    'Xã Đông Tiền Hải'
-    W_13057 = 13057
-    'Xã Nam Cường'
-    W_13066 = 13066
-    'Xã Hưng Phú'
-    W_13063 = 13063
-    'Xã Nam Tiền Hải'
     W_12472 = 12472
     'Xã Quỳnh Phụ'
+    W_12499 = 12499
+    'Xã A Sào'
     W_12511 = 12511
     'Xã Minh Thọ'
+    W_12517 = 12517
+    'Xã Ngọc Lâm'
+    W_12523 = 12523
+    'Xã Phụ Dực'
+    W_12526 = 12526
+    'Xã Đồng Bằng'
     W_12532 = 12532
     'Xã Nguyễn Du'
     W_12577 = 12577
     'Xã Quỳnh An'
-    W_12517 = 12517
-    'Xã Ngọc Lâm'
-    W_12526 = 12526
-    'Xã Đồng Bằng'
-    W_12499 = 12499
-    'Xã A Sào'
-    W_12523 = 12523
-    'Xã Phụ Dực'
-    W_12478 = 12478
+    W_12583 = 12583
     'Xã Tân Tiến'
     W_12586 = 12586
     'Xã Hưng Hà'
+    W_12595 = 12595
+    'Xã Ngự Thiên'
+    W_12613 = 12613
+    'Xã Long Hưng'
+    W_12619 = 12619
+    'Xã Diên Hà'
+    W_12631 = 12631
+    'Xã Thần Khê'
     W_12634 = 12634
     'Xã Tiên La'
     W_12676 = 12676
     'Xã Lê Quý Đôn'
     W_12685 = 12685
     'Xã Hồng Minh'
-    W_12631 = 12631
-    'Xã Thần Khê'
-    W_12619 = 12619
-    'Xã Diên Hà'
-    W_12595 = 12595
-    'Xã Ngự Thiên'
-    W_12613 = 12613
-    'Xã Long Hưng'
     W_12688 = 12688
     'Xã Đông Hưng'
+    W_12694 = 12694
+    'Xã Bắc Đông Hưng'
     W_12700 = 12700
     'Xã Bắc Tiên Hưng'
     W_12736 = 12736
     'Xã Đông Tiên Hưng'
-    W_12775 = 12775
-    'Xã Nam Đông Hưng'
     W_12745 = 12745
-    'Xã  Bắc Đông Quan'
-    W_12694 = 12694
-    'Xã Bắc Đông Hưng'
-    W_12793 = 12793
-    'Xã Đông Quan'
-    W_12763 = 12763
-    'Xã Nam Tiên Hưng'
+    'Xã Bắc Đông Quan'
     W_12754 = 12754
     'Xã Tiên Hưng'
-    W_13120 = 13120
-    'Xã Lê Lợi'
+    W_12763 = 12763
+    'Xã Nam Tiên Hưng'
+    W_12775 = 12775
+    'Xã Nam Đông Hưng'
+    W_12793 = 12793
+    'Xã Đông Quan'
+    W_12817 = 12817
+    'Phường Trà Lý'
+    W_12826 = 12826
+    'Xã Thái Thụy'
+    W_12850 = 12850
+    'Xã Tây Thụy Anh'
+    W_12859 = 12859
+    'Xã Bắc Thụy Anh'
+    W_12862 = 12862
+    'Xã Đông Thụy Anh'
+    W_12865 = 12865
+    'Xã Thụy Anh'
+    W_12904 = 12904
+    'Xã Nam Thụy Anh'
+    W_12916 = 12916
+    'Xã Bắc Thái Ninh'
+    W_12919 = 12919
+    'Xã Tây Thái Ninh'
+    W_12922 = 12922
+    'Xã Thái Ninh'
+    W_12943 = 12943
+    'Xã Đông Thái Ninh'
+    W_12961 = 12961
+    'Xã Nam Thái Ninh'
+    W_12970 = 12970
+    'Xã Tiền Hải'
+    W_12988 = 12988
+    'Xã Đông Tiền Hải'
+    W_13003 = 13003
+    'Xã Đồng Châu'
+    W_13021 = 13021
+    'Xã Ái Quốc'
+    W_13039 = 13039
+    'Xã Tây Tiền Hải'
+    W_13057 = 13057
+    'Xã Nam Cường'
+    W_13063 = 13063
+    'Xã Nam Tiền Hải'
+    W_13066 = 13066
+    'Xã Hưng Phú'
     W_13075 = 13075
     'Xã Kiến Xương'
+    W_13093 = 13093
+    'Xã Trà Giang'
+    W_13096 = 13096
+    'Xã Bình Nguyên'
+    W_13120 = 13120
+    'Xã Lê Lợi'
     W_13132 = 13132
     'Xã Quang Lịch'
     W_13141 = 13141
     'Xã Vũ Quý'
+    W_13159 = 13159
+    'Xã Hồng Vũ'
     W_13183 = 13183
     'Xã Bình Thanh'
     W_13186 = 13186
     'Xã Bình Định'
-    W_13159 = 13159
-    'Xã Hồng Vũ'
-    W_13096 = 13096
-    'Xã Bình Nguyên'
-    W_13093 = 13093
-    'Xã Trà Giang'
     W_13192 = 13192
     'Xã Vũ Thư'
+    W_13219 = 13219
+    'Xã Vạn Xuân'
     W_13222 = 13222
     'Xã Thư Trì'
+    W_13225 = 13225
+    'Phường Thái Bình'
     W_13246 = 13246
     'Xã Tân Thuận'
     W_13264 = 13264
     'Xã Thư Vũ'
     W_13279 = 13279
     'Xã Vũ Tiên'
-    W_13219 = 13219
-    'Xã Vạn Xuân'
-    W_14464 = 14464
-    'Xã Gia Viễn'
-    W_14500 = 14500
-    'Xã Đại Hoàng'
-    W_14482 = 14482
-    'Xã Gia Hưng'
-    W_14524 = 14524
-    'Xã Gia Phong'
-    W_14488 = 14488
-    'Xã Gia Vân'
-    W_14494 = 14494
-    'Xã Gia Trấn'
-    W_14428 = 14428
-    'Xã Nho Quan'
-    W_14389 = 14389
-    'Xã Gia Lâm'
-    W_14401 = 14401
-    'Xã Gia Tường'
-    W_14407 = 14407
-    'Xã Phú Sơn'
-    W_14404 = 14404
-    'Xã Cúc Phương'
-    W_14458 = 14458
-    'Xã Phú Long'
-    W_14434 = 14434
-    'Xã Thanh Sơn'
-    W_14452 = 14452
-    'Xã Quỳnh Lưu'
-    W_14560 = 14560
-    'Xã Yên Khánh'
-    W_14611 = 14611
-    'Xã Khánh Nhạc'
-    W_14563 = 14563
-    'Xã Khánh Thiện'
-    W_14599 = 14599
-    'Xã Khánh Hội'
-    W_14608 = 14608
-    'Xã Khánh Trung'
-    W_14701 = 14701
-    'Xã Yên Mô'
-    W_14728 = 14728
-    'Xã Yên Từ'
-    W_14743 = 14743
-    'Xã Yên Mạc'
-    W_14746 = 14746
-    'Xã Đồng Thái'
-    W_14653 = 14653
-    'Xã Chất Bình'
-    W_14638 = 14638
-    'Xã Kim Sơn'
-    W_14647 = 14647
-    'Xã Quang Thiện'
-    W_14620 = 14620
-    'Xã Phát Diệm'
-    W_14674 = 14674
-    'Xã Lai Thành'
-    W_14677 = 14677
-    'Xã Định Hóa'
-    W_14623 = 14623
-    'Xã Bình Minh'
-    W_14698 = 14698
-    'Xã Kim Đông'
-    W_13504 = 13504
-    'Xã Bình Lục'
-    W_13501 = 13501
-    'Xã Bình Mỹ'
-    W_13540 = 13540
-    'Xã Bình An'
-    W_13531 = 13531
-    'Xã Bình Giang'
-    W_13558 = 13558
-    'Xã Bình Sơn'
+    W_13285 = 13285
+    'Phường Phủ Lý'
+    W_13291 = 13291
+    'Phường Phù Vân'
+    W_13318 = 13318
+    'Phường Châu Sơn'
+    W_13324 = 13324
+    'Phường Duy Tiên'
+    W_13330 = 13330
+    'Phường Duy Tân'
+    W_13336 = 13336
+    'Phường Duy Hà'
+    W_13348 = 13348
+    'Phường Đồng Văn'
+    W_13363 = 13363
+    'Phường Tiên Sơn'
+    W_13366 = 13366
+    'Phường Hà Nam'
+    W_13384 = 13384
+    'Phường Kim Bảng'
+    W_13393 = 13393
+    'Phường Lê Hồ'
+    W_13396 = 13396
+    'Phường Nguyễn Uý'
+    W_13402 = 13402
+    'Phường Kim Thanh'
+    W_13420 = 13420
+    'Phường Tam Chúc'
+    W_13435 = 13435
+    'Phường Lý Thường Kiệt'
+    W_13444 = 13444
+    'Phường Liêm Tuyền'
     W_13456 = 13456
     'Xã Liêm Hà'
     W_13474 = 13474
@@ -2637,108 +2597,70 @@ class WardCode(IntEnum):
     'Xã Thanh Lâm'
     W_13495 = 13495
     'Xã Thanh Liêm'
+    W_13501 = 13501
+    'Xã Bình Mỹ'
+    W_13504 = 13504
+    'Xã Bình Lục'
+    W_13531 = 13531
+    'Xã Bình Giang'
+    W_13540 = 13540
+    'Xã Bình An'
+    W_13558 = 13558
+    'Xã Bình Sơn'
     W_13573 = 13573
     'Xã Lý Nhân'
-    W_13591 = 13591
-    'Xã Nam Xang'
     W_13579 = 13579
     'Xã Bắc Lý'
-    W_13597 = 13597
-    'Xã Vĩnh Trụ'
+    W_13591 = 13591
+    'Xã Nam Xang'
     W_13594 = 13594
     'Xã Trần Thương'
+    W_13597 = 13597
+    'Xã Vĩnh Trụ'
     W_13609 = 13609
     'Xã Nhân Hà'
     W_13627 = 13627
     'Xã Nam Lý'
-    W_13966 = 13966
-    'Xã Nam Trực'
-    W_14011 = 14011
-    'Xã Nam Minh'
-    W_14014 = 14014
-    'Xã Nam Đồng'
-    W_14005 = 14005
-    'Xã Nam Ninh'
-    W_13987 = 13987
-    'Xã Nam Hồng'
+    W_13669 = 13669
+    'Phường Nam Định'
+    W_13684 = 13684
+    'Phường Thiên Trường'
+    W_13693 = 13693
+    'Phường Đông A'
+    W_13699 = 13699
+    'Phường Thành Nam'
+    W_13708 = 13708
+    'Phường Mỹ Lộc'
+    W_13741 = 13741
+    'Xã Vụ Bản'
     W_13750 = 13750
     'Xã Minh Tân'
     W_13753 = 13753
     'Xã Hiển Khánh'
-    W_13741 = 13741
-    'Xã Vụ Bản'
+    W_13777 = 13777
+    'Phường Trường Thi'
     W_13786 = 13786
     'Xã Liên Minh'
     W_13795 = 13795
     'Xã Ý Yên'
-    W_13879 = 13879
-    'Xã Yên Đồng'
-    W_13870 = 13870
-    'Xã Yên Cường'
-    W_13864 = 13864
-    'Xã Vạn Thắng'
-    W_13834 = 13834
-    'Xã Vũ Dương'
     W_13807 = 13807
     'Xã Tân Minh'
     W_13822 = 13822
     'Xã Phong Doanh'
-    W_14026 = 14026
-    'Xã Cổ Lễ'
-    W_14038 = 14038
-    'Xã Ninh Giang'
-    W_14056 = 14056
-    'Xã Cát Thành'
-    W_14053 = 14053
-    'Xã Trực Ninh'
-    W_14062 = 14062
-    'Xã Quang Hưng'
-    W_14071 = 14071
-    'Xã Minh Thái'
-    W_14077 = 14077
-    'Xã Ninh Cường'
-    W_14089 = 14089
-    'Xã Xuân Trường'
-    W_14122 = 14122
-    'Xã Xuân Hưng'
-    W_14104 = 14104
-    'Xã  Xuân Giang'
-    W_14095 = 14095
-    'Xã Xuân Hồng'
-    W_14215 = 14215
-    'Xã Hải Hậu'
-    W_14236 = 14236
-    'Xã Hải Anh'
-    W_14218 = 14218
-    'Xã Hải Tiến'
-    W_14248 = 14248
-    'Xã Hải Hưng'
-    W_14281 = 14281
-    'Xã Hải An'
-    W_14287 = 14287
-    'Xã Hải Quang'
-    W_14308 = 14308
-    'Xã Hải Xuân'
-    W_14221 = 14221
-    'Xã Hải Thịnh'
-    W_14161 = 14161
-    'Xã Giao Minh'
-    W_14182 = 14182
-    'Xã Giao Hoà'
-    W_14167 = 14167
-    'Xã Giao Thuỷ'
-    W_14203 = 14203
-    'Xã Giao Phúc'
-    W_14179 = 14179
-    'Xã Giao Hưng'
-    W_14194 = 14194
-    'Xã Giao Bình'
-    W_14212 = 14212
-    'Xã Giao Ninh'
-    W_13900 = 13900
-    'Xã Đồng Thịnh'
+    W_13834 = 13834
+    'Xã Vũ Dương'
+    W_13864 = 13864
+    'Xã Vạn Thắng'
+    W_13870 = 13870
+    'Xã Yên Cường'
+    W_13879 = 13879
+    'Xã Yên Đồng'
     W_13891 = 13891
     'Xã Nghĩa Hưng'
+    W_13894 = 13894
+    'Xã Rạng Đông'
+    W_13900 = 13900
+    'Xã Đồng Thịnh'
     W_13918 = 13918
     'Xã Nghĩa Sơn'
     W_13927 = 13927
@@ -2747,344 +2669,250 @@ class WardCode(IntEnum):
     'Xã Quỹ Nhất'
     W_13957 = 13957
     'Xã Nghĩa Lâm'
-    W_13894 = 13894
-    'Xã Rạng Đông'
-    W_14533 = 14533
-    'Phường Tây Hoa Lư'
+    W_13966 = 13966
+    'Xã Nam Trực'
+    W_13972 = 13972
+    'Phường Vị Khê'
+    W_13984 = 13984
+    'Phường Hồng Quang'
+    W_13987 = 13987
+    'Xã Nam Hồng'
+    W_14005 = 14005
+    'Xã Nam Ninh'
+    W_14011 = 14011
+    'Xã Nam Minh'
+    W_14014 = 14014
+    'Xã Nam Đồng'
+    W_14026 = 14026
+    'Xã Cổ Lễ'
+    W_14038 = 14038
+    'Xã Ninh Giang'
+    W_14053 = 14053
+    'Xã Trực Ninh'
+    W_14056 = 14056
+    'Xã Cát Thành'
+    W_14062 = 14062
+    'Xã Quang Hưng'
+    W_14071 = 14071
+    'Xã Minh Thái'
+    W_14077 = 14077
+    'Xã Ninh Cường'
+    W_14089 = 14089
+    'Xã Xuân Trường'
+    W_14095 = 14095
+    'Xã Xuân Hồng'
+    W_14104 = 14104
+    'Xã Xuân Giang'
+    W_14122 = 14122
+    'Xã Xuân Hưng'
+    W_14161 = 14161
+    'Xã Giao Minh'
+    W_14167 = 14167
+    'Xã Giao Thuỷ'
+    W_14179 = 14179
+    'Xã Giao Hưng'
+    W_14182 = 14182
+    'Xã Giao Hoà'
+    W_14194 = 14194
+    'Xã Giao Bình'
+    W_14203 = 14203
+    'Xã Giao Phúc'
+    W_14212 = 14212
+    'Xã Giao Ninh'
+    W_14215 = 14215
+    'Xã Hải Hậu'
+    W_14218 = 14218
+    'Xã Hải Tiến'
+    W_14221 = 14221
+    'Xã Hải Thịnh'
+    W_14236 = 14236
+    'Xã Hải Anh'
+    W_14248 = 14248
+    'Xã Hải Hưng'
+    W_14281 = 14281
+    'Xã Hải An'
+    W_14287 = 14287
+    'Xã Hải Quang'
+    W_14308 = 14308
+    'Xã Hải Xuân'
     W_14329 = 14329
     'Phường Hoa Lư'
     W_14359 = 14359
     'Phường Nam Hoa Lư'
-    W_14566 = 14566
-    'Phường Đông Hoa Lư'
     W_14362 = 14362
     'Phường Tam Điệp'
-    W_14371 = 14371
-    'Phường Yên Sơn'
     W_14365 = 14365
     'Phường Trung Sơn'
+    W_14371 = 14371
+    'Phường Yên Sơn'
+    W_14389 = 14389
+    'Xã Gia Lâm'
+    W_14401 = 14401
+    'Xã Gia Tường'
+    W_14404 = 14404
+    'Xã Cúc Phương'
+    W_14407 = 14407
+    'Xã Phú Sơn'
+    W_14428 = 14428
+    'Xã Nho Quan'
+    W_14434 = 14434
+    'Xã Thanh Sơn'
+    W_14452 = 14452
+    'Xã Quỳnh Lưu'
+    W_14458 = 14458
+    'Xã Phú Long'
+    W_14464 = 14464
+    'Xã Gia Viễn'
+    W_14482 = 14482
+    'Xã Gia Hưng'
+    W_14488 = 14488
+    'Xã Gia Vân'
+    W_14494 = 14494
+    'Xã Gia Trấn'
+    W_14500 = 14500
+    'Xã Đại Hoàng'
+    W_14524 = 14524
+    'Xã Gia Phong'
+    W_14533 = 14533
+    'Phường Tây Hoa Lư'
+    W_14560 = 14560
+    'Xã Yên Khánh'
+    W_14563 = 14563
+    'Xã Khánh Thiện'
+    W_14566 = 14566
+    'Phường Đông Hoa Lư'
+    W_14608 = 14608
+    'Xã Khánh Trung'
+    W_14611 = 14611
+    'Xã Khánh Nhạc'
+    W_14614 = 14614
+    'Xã Khánh Hội'
+    W_14620 = 14620
+    'Xã Phát Diệm'
+    W_14623 = 14623
+    'Xã Bình Minh'
+    W_14638 = 14638
+    'Xã Kim Sơn'
+    W_14647 = 14647
+    'Xã Quang Thiện'
+    W_14653 = 14653
+    'Xã Chất Bình'
+    W_14674 = 14674
+    'Xã Lai Thành'
+    W_14677 = 14677
+    'Xã Định Hóa'
+    W_14698 = 14698
+    'Xã Kim Đông'
+    W_14701 = 14701
+    'Xã Yên Mô'
     W_14725 = 14725
     'Phường Yên Thắng'
-    W_13366 = 13366
-    'Phường Hà Nam'
-    W_13291 = 13291
-    'Phường Phủ Lý'
-    W_13318 = 13318
-    'Phường Phù Vân'
-    W_13285 = 13285
-    'Phường Châu Sơn'
-    W_13444 = 13444
-    'Phường Liêm Tuyền'
-    W_13324 = 13324
-    'Phường Duy Tiên'
-    W_13330 = 13330
-    'Phường Duy Tân'
-    W_13348 = 13348
-    'Phường Đồng Văn'
-    W_13336 = 13336
-    'Phường Duy Hà'
-    W_13363 = 13363
-    'Phường Tiên Sơn'
-    W_13393 = 13393
-    'Phường Lê Hồ'
-    W_13396 = 13396
-    'Phường Nguyễn Uý'
-    W_13435 = 13435
-    'Phường Lý Thường Kiệt'
-    W_13402 = 13402
-    'Phường Kim Thanh'
-    W_13420 = 13420
-    'Phường Tam Chúc'
-    W_13384 = 13384
-    'Phường Kim Bảng'
-    W_13666 = 13666
-    'Phường Nam Định'
-    W_13684 = 13684
-    'Phường Thiên Trường'
-    W_13693 = 13693
-    'Phường Đông A'
-    W_13972 = 13972
-    'Phường Vị Khê'
-    W_13699 = 13699
-    'Phường Thành Nam'
-    W_13777 = 13777
-    'Phường Trường Thi'
-    W_13984 = 13984
-    'Phường Hồng Quang'
-    W_13735 = 13735
-    'Phường Mỹ Lộc'
-    W_14797 = 14797
-    'Phường Hạc Thành'
-    W_16522 = 16522
-    'Phường Quảng Phú'
-    W_16417 = 16417
-    'Phường Đông Quang'
-    W_16378 = 16378
-    'Phường Đông Sơn'
-    W_15853 = 15853
-    'Phường Đông Tiến'
+    W_14728 = 14728
+    'Xã Yên Từ'
+    W_14743 = 14743
+    'Xã Yên Mạc'
+    W_14746 = 14746
+    'Xã Đồng Thái'
     W_14758 = 14758
     'Phường Hàm Rồng'
-    W_15925 = 15925
-    'Phường Nguyệt Viên'
-    W_16531 = 16531
-    'Phường Sầm Sơn'
-    W_16516 = 16516
-    'Phường Nam Sầm Sơn'
+    W_14797 = 14797
+    'Phường Hạc Thành'
     W_14812 = 14812
     'Phường Bỉm Sơn'
     W_14818 = 14818
     'Phường Quang Trung'
-    W_16576 = 16576
-    'Phường Ngọc Sơn'
-    W_16594 = 16594
-    'Phường Tân Dân'
-    W_16597 = 16597
-    'Phường Hải Lĩnh'
-    W_16561 = 16561
-    'Phường Tĩnh Gia'
-    W_16609 = 16609
-    'Phường Đào Duy Từ'
-    W_16645 = 16645
-    'Phường Hải Bình'
-    W_16624 = 16624
-    'Phường Trúc Lâm'
-    W_16654 = 16654
-    'Phường Nghi Sơn'
-    W_16591 = 16591
-    'Xã Các Sơn'
-    W_16636 = 16636
-    'Xã Trường Lâm'
-    W_15271 = 15271
-    'Xã Hà Trung'
-    W_15316 = 15316
-    'Xã Tống Sơn'
-    W_15274 = 15274
-    'Xã Hà Long'
-    W_15286 = 15286
-    'Xã Hoạt Giang'
-    W_15298 = 15298
-    'Xã Lĩnh Toại'
-    W_16021 = 16021
-    'Xã Triệu Lộc'
-    W_16033 = 16033
-    'Xã Đông Thành'
-    W_16012 = 16012
-    'Xã Hậu Lộc'
-    W_16063 = 16063
-    'Xã Hoa Lộc'
-    W_16078 = 16078
-    'Xã Vạn Lộc'
-    W_16093 = 16093
-    'Xã Nga Sơn'
-    W_16114 = 16114
-    'Xã Nga Thắng'
-    W_16138 = 16138
-    'Xã Hồ Vương'
-    W_16108 = 16108
-    'Xã Tân Tiến'
-    W_16144 = 16144
-    'Xã Nga An'
-    W_16171 = 16171
-    'Xã Ba Đình'
-    W_15865 = 15865
-    'Xã Hoằng Hóa'
-    W_15991 = 15991
-    'Xã Hoằng Tiến'
-    W_16000 = 16000
-    'Xã Hoằng Thanh'
-    W_15961 = 15961
-    'Xã Hoằng Lộc'
-    W_15976 = 15976
-    'Xã Hoằng Châu'
-    W_15910 = 15910
-    'Xã Hoằng Sơn'
-    W_15889 = 15889
-    'Xã Hoằng Phú'
-    W_15880 = 15880
-    'Xã Hoằng Giang'
-    W_16438 = 16438
-    'Xã Lưu Vệ'
-    W_16480 = 16480
-    'Xã Quảng Yên'
-    W_16498 = 16498
-    'Xã Quảng Ngọc'
-    W_16540 = 16540
-    'Xã Quảng Ninh'
-    W_16543 = 16543
-    'Xã Quảng Bình'
-    W_16549 = 16549
-    'Xã Tiên Trang'
-    W_16489 = 16489
-    'Xã Quảng Chính'
-    W_16279 = 16279
-    'Xã Nông Cống'
-    W_16309 = 16309
-    'Xã Thắng Lợi'
-    W_16297 = 16297
-    'Xã Trung Chính'
-    W_16348 = 16348
-    'Xã Trường Văn'
-    W_16342 = 16342
-    'Xã Thăng Bình'
-    W_16363 = 16363
-    'Xã Tượng Lĩnh'
-    W_16369 = 16369
-    'Xã Công Chính'
-    W_15772 = 15772
-    'Xã Thiệu Hóa'
-    W_15796 = 15796
-    'Xã Thiệu Quang'
-    W_15778 = 15778
-    'Xã Thiệu Tiến'
-    W_15820 = 15820
-    'Xã Thiệu Toán'
-    W_15835 = 15835
-    'Xã Thiệu Trung'
-    W_15469 = 15469
-    'Xã Yên Định'
-    W_15421 = 15421
-    'Xã Yên Trường'
-    W_15409 = 15409
-    'Xã Yên Phú'
-    W_15412 = 15412
-    'Xã Quý Lộc'
-    W_15442 = 15442
-    'Xã Yên Ninh'
-    W_15457 = 15457
-    'Xã Định Tân'
-    W_15448 = 15448
-    'Xã Định Hòa'
-    W_15499 = 15499
-    'Xã Thọ Xuân'
-    W_15505 = 15505
-    'Xã Thọ Long'
-    W_15520 = 15520
-    'Xã Xuân Hòa'
-    W_15553 = 15553
-    'Xã Sao Vàng'
-    W_15544 = 15544
-    'Xã Lam Sơn'
-    W_15568 = 15568
-    'Xã Thọ Lập'
-    W_15574 = 15574
-    'Xã Xuân Tín'
-    W_15592 = 15592
-    'Xã Xuân Lập'
-    W_15349 = 15349
-    'Xã Vĩnh Lộc'
-    W_15361 = 15361
-    'Xã Tây Đô'
-    W_15382 = 15382
-    'Xã Biện Thượng'
-    W_15664 = 15664
-    'Xã Triệu Sơn'
-    W_15667 = 15667
-    'Xã Thọ Bình'
-    W_15754 = 15754
-    'Xã Thọ Ngọc'
-    W_15763 = 15763
-    'Xã Thọ Phú'
-    W_15682 = 15682
-    'Xã Hợp Tiến'
-    W_15766 = 15766
-    'Xã An Nông'
-    W_15718 = 15718
-    'Xã Tân Ninh'
-    W_15724 = 15724
-    'Xã Đồng Tiến'
-    W_14866 = 14866
-    'Xã Mường Chanh'
-    W_14860 = 14860
-    'Xã Quang Chiểu'
-    W_14848 = 14848
-    'Xã Tam Chung'
     W_14845 = 14845
     'Xã Mường Lát'
-    W_14863 = 14863
-    'Xã Pù Nhi'
-    W_14864 = 14864
-    'Xã Nhi Sơn'
+    W_14848 = 14848
+    'Xã Tam Chung'
     W_14854 = 14854
     'Xã Mường Lý'
     W_14857 = 14857
     'Xã Trung Lý'
+    W_14860 = 14860
+    'Xã Quang Chiểu'
+    W_14863 = 14863
+    'Xã Pù Nhi'
+    W_14864 = 14864
+    'Xã Nhi Sơn'
+    W_14866 = 14866
+    'Xã Mường Chanh'
     W_14869 = 14869
     'Xã Hồi Xuân'
-    W_14902 = 14902
-    'Xã Nam Xuân'
-    W_14908 = 14908
-    'Xã Thiên Phủ'
-    W_14896 = 14896
-    'Xã Hiền Kiệt'
-    W_14890 = 14890
-    'Xã Phú Xuân'
-    W_14878 = 14878
-    'Xã Phú Lệ'
     W_14872 = 14872
     'Xã Trung Thành'
     W_14875 = 14875
     'Xã Trung Sơn'
-    W_15013 = 15013
-    'Xã Na Mèo'
-    W_15010 = 15010
-    'Xã Sơn Thủy'
-    W_15022 = 15022
-    'Xã Sơn Điện'
-    W_15025 = 15025
-    'Xã Mường Mìn'
-    W_15007 = 15007
-    'Xã Tam Thanh'
-    W_15019 = 15019
-    'Xã Tam Lư'
-    W_15016 = 15016
-    'Xã Quan Sơn'
-    W_15001 = 15001
-    'Xã Trung Hạ'
-    W_15055 = 15055
-    'Xã Linh Sơn'
-    W_15058 = 15058
-    'Xã Đồng Lương'
-    W_15049 = 15049
-    'Xã Văn Phú'
-    W_15043 = 15043
-    'Xã Giao An'
-    W_15031 = 15031
-    'Xã Yên Khương'
-    W_15034 = 15034
-    'Xã Yên Thắng'
+    W_14878 = 14878
+    'Xã Phú Lệ'
+    W_14890 = 14890
+    'Xã Phú Xuân'
+    W_14896 = 14896
+    'Xã Hiền Kiệt'
+    W_14902 = 14902
+    'Xã Nam Xuân'
+    W_14908 = 14908
+    'Xã Thiên Phủ'
+    W_14923 = 14923
+    'Xã Bá Thước'
+    W_14932 = 14932
+    'Xã Điền Quang'
+    W_14950 = 14950
+    'Xã Điền Lư'
+    W_14953 = 14953
+    'Xã Quý Lương'
+    W_14956 = 14956
+    'Xã Pù Luông'
+    W_14959 = 14959
+    'Xã Cổ Lũng'
     W_14974 = 14974
     'Xã Văn Nho'
     W_14980 = 14980
     'Xã Thiết Ống'
-    W_14923 = 14923
-    'Xã Bá Thước'
-    W_14959 = 14959
-    'Xã Cổ Lũng'
-    W_14956 = 14956
-    'Xã Pù Luông'
-    W_14950 = 14950
-    'Xã Điền Lư'
-    W_14932 = 14932
-    'Xã Điền Quang'
-    W_14953 = 14953
-    'Xã Quý Lương'
+    W_15001 = 15001
+    'Xã Trung Hạ'
+    W_15007 = 15007
+    'Xã Tam Thanh'
+    W_15010 = 15010
+    'Xã Sơn Thủy'
+    W_15013 = 15013
+    'Xã Na Mèo'
+    W_15016 = 15016
+    'Xã Quan Sơn'
+    W_15019 = 15019
+    'Xã Tam Lư'
+    W_15022 = 15022
+    'Xã Sơn Điện'
+    W_15025 = 15025
+    'Xã Mường Mìn'
+    W_15031 = 15031
+    'Xã Yên Khương'
+    W_15034 = 15034
+    'Xã Yên Thắng'
+    W_15043 = 15043
+    'Xã Giao An'
+    W_15049 = 15049
+    'Xã Văn Phú'
+    W_15055 = 15055
+    'Xã Linh Sơn'
+    W_15058 = 15058
+    'Xã Đồng Lương'
     W_15061 = 15061
     'Xã Ngọc Lặc'
     W_15085 = 15085
     'Xã Thạch Lập'
     W_15091 = 15091
     'Xã Ngọc Liên'
+    W_15106 = 15106
+    'Xã Nguyệt Ấn'
+    W_15112 = 15112
+    'Xã Kiên Thọ'
     W_15124 = 15124
     'Xã Minh Sơn'
-    W_15115 = 15115
-    'Xã Nguyệt Ấn'
-    W_15118 = 15118
-    'Xã Kiên Thọ'
-    W_15142 = 15142
-    'Xã Cẩm Thạch'
     W_15127 = 15127
     'Xã Cẩm Thủy'
+    W_15142 = 15142
+    'Xã Cẩm Thạch'
     W_15148 = 15148
     'Xã Cẩm Tú'
     W_15163 = 15163
@@ -3095,136 +2923,258 @@ class WardCode(IntEnum):
     'Xã Kim Tân'
     W_15190 = 15190
     'Xã Vân Du'
-    W_15250 = 15250
-    'Xã Ngọc Trạo'
+    W_15199 = 15199
+    'Xã Thạch Quảng'
     W_15211 = 15211
     'Xã Thạch Bình'
     W_15229 = 15229
     'Xã Thành Vinh'
-    W_15199 = 15199
-    'Xã Thạch Quảng'
-    W_16174 = 16174
-    'Xã Như Xuân'
-    W_16225 = 16225
-    'Xã Thượng Ninh'
-    W_16177 = 16177
-    'Xã Xuân Bình'
-    W_16186 = 16186
-    'Xã Hóa Quỳ'
-    W_16207 = 16207
-    'Xã Thanh Quân'
-    W_16219 = 16219
-    'Xã Thanh Phong'
-    W_16234 = 16234
-    'Xã Xuân Du'
-    W_16249 = 16249
-    'Xã Mậu Lâm'
-    W_16228 = 16228
-    'Xã Như Thanh'
-    W_16264 = 16264
-    'Xã Yên Thọ'
-    W_16258 = 16258
-    'Xã Xuân Thái'
-    W_16273 = 16273
-    'Xã Thanh Kỳ'
+    W_15250 = 15250
+    'Xã Ngọc Trạo'
+    W_15271 = 15271
+    'Xã Hà Trung'
+    W_15274 = 15274
+    'Xã Hà Long'
+    W_15286 = 15286
+    'Xã Hoạt Giang'
+    W_15298 = 15298
+    'Xã Lĩnh Toại'
+    W_15316 = 15316
+    'Xã Tống Sơn'
+    W_15349 = 15349
+    'Xã Vĩnh Lộc'
+    W_15361 = 15361
+    'Xã Tây Đô'
+    W_15382 = 15382
+    'Xã Biện Thượng'
+    W_15409 = 15409
+    'Xã Yên Phú'
+    W_15412 = 15412
+    'Xã Quý Lộc'
+    W_15421 = 15421
+    'Xã Yên Trường'
+    W_15442 = 15442
+    'Xã Yên Ninh'
+    W_15448 = 15448
+    'Xã Định Hòa'
+    W_15457 = 15457
+    'Xã Định Tân'
+    W_15469 = 15469
+    'Xã Yên Định'
+    W_15499 = 15499
+    'Xã Thọ Xuân'
+    W_15505 = 15505
+    'Xã Thọ Long'
+    W_15520 = 15520
+    'Xã Xuân Hòa'
+    W_15544 = 15544
+    'Xã Lam Sơn'
+    W_15553 = 15553
+    'Xã Sao Vàng'
+    W_15568 = 15568
+    'Xã Thọ Lập'
+    W_15574 = 15574
+    'Xã Xuân Tín'
+    W_15592 = 15592
+    'Xã Xuân Lập'
     W_15607 = 15607
     'Xã Bát Mọt'
     W_15610 = 15610
     'Xã Yên Nhân'
-    W_15628 = 15628
-    'Xã Lương Sơn'
-    W_15646 = 15646
-    'Xã Thường Xuân'
-    W_15634 = 15634
-    'Xã Luận Thành'
-    W_15661 = 15661
-    'Xã Tân Thành'
     W_15622 = 15622
     'Xã Vạn Xuân'
+    W_15628 = 15628
+    'Xã Lương Sơn'
+    W_15634 = 15634
+    'Xã Luận Thành'
     W_15643 = 15643
     'Xã Thắng Lộc'
+    W_15646 = 15646
+    'Xã Thường Xuân'
     W_15658 = 15658
     'Xã Xuân Chinh'
-    W_17329 = 17329
-    'Xã Anh Sơn'
-    W_17380 = 17380
-    'Xã Yên Xuân'
-    W_17344 = 17344
-    'Xã Nhân Hòa'
-    W_17365 = 17365
-    'Xã Anh Sơn Đông'
-    W_17357 = 17357
-    'Xã Vĩnh Tường'
-    W_17335 = 17335
-    'Xã Thành Bình Thọ'
-    W_17254 = 17254
-    'Xã Con Cuông'
-    W_17263 = 17263
-    'Xã Môn Sơn'
-    W_17239 = 17239
-    'Xã Mậu Thạch'
-    W_17242 = 17242
-    'Xã Cam Phục'
-    W_17248 = 17248
-    'Xã Châu Khê'
-    W_17230 = 17230
-    'Xã Bình Chuẩn'
-    W_17464 = 17464
-    'Xã Diễn Châu'
-    W_17416 = 17416
-    'Xã Đức Châu'
-    W_17443 = 17443
-    'Xã Quảng Châu'
-    W_17419 = 17419
-    'Xã Hải Châu'
-    W_17488 = 17488
-    'Xã Tân Châu'
-    W_17479 = 17479
-    'Xã An Châu'
-    W_17476 = 17476
-    'Xã Minh Châu'
-    W_17395 = 17395
-    'Xã Hùng Châu'
-    W_17662 = 17662
-    'Xã Đô Lương'
-    W_17623 = 17623
-    'Xã Bạch Ngọc'
-    W_17677 = 17677
-    'Xã Văn Hiến'
-    W_17707 = 17707
-    'Xã Bạch Hà'
-    W_17689 = 17689
-    'Xã Thuần Trung'
-    W_17641 = 17641
-    'Xã Lương Sơn'
-    W_17110 = 17110
-    'Phường Hoàng Mai'
-    W_17128 = 17128
-    'Phường Tân Mai'
-    W_17125 = 17125
-    'Phường Quỳnh Mai'
-    W_18001 = 18001
-    'Xã Hưng Nguyên'
-    W_18007 = 18007
-    'Xã Yên Trung'
-    W_18028 = 18028
-    'Xã Hưng Nguyên Nam'
-    W_18040 = 18040
-    'Xã Lam Thành'
+    W_15661 = 15661
+    'Xã Tân Thành'
+    W_15664 = 15664
+    'Xã Triệu Sơn'
+    W_15667 = 15667
+    'Xã Thọ Bình'
+    W_15682 = 15682
+    'Xã Hợp Tiến'
+    W_15715 = 15715
+    'Xã Tân Ninh'
+    W_15724 = 15724
+    'Xã Đồng Tiến'
+    W_15754 = 15754
+    'Xã Thọ Ngọc'
+    W_15763 = 15763
+    'Xã Thọ Phú'
+    W_15766 = 15766
+    'Xã An Nông'
+    W_15772 = 15772
+    'Xã Thiệu Hóa'
+    W_15778 = 15778
+    'Xã Thiệu Tiến'
+    W_15796 = 15796
+    'Xã Thiệu Quang'
+    W_15820 = 15820
+    'Xã Thiệu Toán'
+    W_15835 = 15835
+    'Xã Thiệu Trung'
+    W_15853 = 15853
+    'Phường Đông Tiến'
+    W_15865 = 15865
+    'Xã Hoằng Hóa'
+    W_15880 = 15880
+    'Xã Hoằng Giang'
+    W_15889 = 15889
+    'Xã Hoằng Phú'
+    W_15910 = 15910
+    'Xã Hoằng Sơn'
+    W_15925 = 15925
+    'Phường Nguyệt Viên'
+    W_15961 = 15961
+    'Xã Hoằng Lộc'
+    W_15976 = 15976
+    'Xã Hoằng Châu'
+    W_15991 = 15991
+    'Xã Hoằng Tiến'
+    W_16000 = 16000
+    'Xã Hoằng Thanh'
+    W_16012 = 16012
+    'Xã Hậu Lộc'
+    W_16021 = 16021
+    'Xã Triệu Lộc'
+    W_16033 = 16033
+    'Xã Đông Thành'
+    W_16072 = 16072
+    'Xã Hoa Lộc'
+    W_16078 = 16078
+    'Xã Vạn Lộc'
+    W_16093 = 16093
+    'Xã Nga Sơn'
+    W_16108 = 16108
+    'Xã Tân Tiến'
+    W_16114 = 16114
+    'Xã Nga Thắng'
+    W_16138 = 16138
+    'Xã Hồ Vương'
+    W_16144 = 16144
+    'Xã Nga An'
+    W_16171 = 16171
+    'Xã Ba Đình'
+    W_16174 = 16174
+    'Xã Như Xuân'
+    W_16177 = 16177
+    'Xã Xuân Bình'
+    W_16186 = 16186
+    'Xã Hóa Quỳ'
+    W_16213 = 16213
+    'Xã Thanh Phong'
+    W_16222 = 16222
+    'Xã Thanh Quân'
+    W_16225 = 16225
+    'Xã Thượng Ninh'
+    W_16228 = 16228
+    'Xã Như Thanh'
+    W_16234 = 16234
+    'Xã Xuân Du'
+    W_16249 = 16249
+    'Xã Mậu Lâm'
+    W_16258 = 16258
+    'Xã Xuân Thái'
+    W_16264 = 16264
+    'Xã Yên Thọ'
+    W_16273 = 16273
+    'Xã Thanh Kỳ'
+    W_16279 = 16279
+    'Xã Nông Cống'
+    W_16297 = 16297
+    'Xã Trung Chính'
+    W_16309 = 16309
+    'Xã Thắng Lợi'
+    W_16342 = 16342
+    'Xã Thăng Bình'
+    W_16348 = 16348
+    'Xã Trường Văn'
+    W_16363 = 16363
+    'Xã Tượng Lĩnh'
+    W_16369 = 16369
+    'Xã Công Chính'
+    W_16378 = 16378
+    'Phường Đông Sơn'
+    W_16417 = 16417
+    'Phường Đông Quang'
+    W_16438 = 16438
+    'Xã Lưu Vệ'
+    W_16480 = 16480
+    'Xã Quảng Yên'
+    W_16489 = 16489
+    'Xã Quảng Chính'
+    W_16498 = 16498
+    'Xã Quảng Ngọc'
+    W_16516 = 16516
+    'Phường Nam Sầm Sơn'
+    W_16522 = 16522
+    'Phường Quảng Phú'
+    W_16531 = 16531
+    'Phường Sầm Sơn'
+    W_16540 = 16540
+    'Xã Quảng Ninh'
+    W_16543 = 16543
+    'Xã Quảng Bình'
+    W_16549 = 16549
+    'Xã Tiên Trang'
+    W_16561 = 16561
+    'Phường Tĩnh Gia'
+    W_16576 = 16576
+    'Phường Ngọc Sơn'
+    W_16591 = 16591
+    'Xã Các Sơn'
+    W_16594 = 16594
+    'Phường Tân Dân'
+    W_16597 = 16597
+    'Phường Hải Lĩnh'
+    W_16609 = 16609
+    'Phường Đào Duy Từ'
+    W_16624 = 16624
+    'Phường Trúc Lâm'
+    W_16636 = 16636
+    'Xã Trường Lâm'
+    W_16645 = 16645
+    'Phường Hải Bình'
+    W_16654 = 16654
+    'Phường Nghi Sơn'
+    W_16681 = 16681
+    'Phường Thành Vinh'
+    W_16690 = 16690
+    'Phường Trường Vinh'
+    W_16702 = 16702
+    'Phường Vinh Phú'
+    W_16708 = 16708
+    'Phường Vinh Lộc'
+    W_16732 = 16732
+    'Phường Cửa Lò'
+    W_16738 = 16738
+    'Xã Quế Phong'
+    W_16744 = 16744
+    'Xã Thông Thụ'
+    W_16750 = 16750
+    'Xã Tiền Phong'
+    W_16756 = 16756
+    'Xã Tri Lễ'
+    W_16774 = 16774
+    'Xã Mường Quàng'
+    W_16777 = 16777
+    'Xã Quỳ Châu'
+    W_16792 = 16792
+    'Xã Châu Tiến'
+    W_16801 = 16801
+    'Xã Hùng Chân'
+    W_16804 = 16804
+    'Xã Châu Bình'
     W_16813 = 16813
     'Xã Mường Xén'
-    W_16849 = 16849
-    'Xã Hữu Kiệm'
-    W_16837 = 16837
-    'Xã Nậm Cắn'
-    W_16855 = 16855
-    'Xã Chiêu Lưu'
-    W_16834 = 16834
-    'Xã Na Loi'
-    W_16858 = 16858
-    'Xã Mường Típ'
-    W_16870 = 16870
-    'Xã Na Ngoi'
     W_16816 = 16816
     'Xã Mỹ Lý'
     W_16819 = 16819
@@ -3235,382 +3185,434 @@ class WardCode(IntEnum):
     'Xã Huồi Tụ'
     W_16831 = 16831
     'Xã Mường Lống'
-    W_17950 = 17950
-    'Xã Vạn An'
-    W_17935 = 17935
-    'Xã Nam Đàn'
-    W_17944 = 17944
-    'Xã Đại Huệ'
-    W_17989 = 17989
-    'Xã Thiên Nhẫn'
-    W_17971 = 17971
-    'Xã Kim Liên'
-    W_16941 = 16941
-    'Xã Nghĩa Đàn'
-    W_16969 = 16969
-    'Xã Nghĩa Thọ'
-    W_16951 = 16951
-    'Xã Nghĩa Lâm'
-    W_16975 = 16975
-    'Xã Nghĩa Mai'
-    W_16972 = 16972
-    'Xã Nghĩa Hưng'
-    W_17032 = 17032
-    'Xã Nghĩa Khánh'
-    W_17029 = 17029
-    'Xã Nghĩa Lộc'
-    W_17827 = 17827
-    'Xã Nghi Lộc'
-    W_17857 = 17857
-    'Xã Phúc Lộc'
-    W_17878 = 17878
-    'Xã Đông Lộc'
-    W_17866 = 17866
-    'Xã Trung Lộc'
-    W_17842 = 17842
-    'Xã Thần Lĩnh'
-    W_17833 = 17833
-    'Xã Hải Lộc'
-    W_17854 = 17854
-    'Xã Văn Kiều'
-    W_16738 = 16738
-    'Xã Quế Phong'
-    W_16750 = 16750
-    'Xã Tiền Phong'
-    W_16756 = 16756
-    'Xã Tri Lễ'
-    W_16774 = 16774
-    'Xã Mường Quàng'
-    W_16744 = 16744
-    'Xã Thông Thụ'
-    W_16777 = 16777
-    'Xã Quỳ Châu'
-    W_16792 = 16792
-    'Xã Châu Tiến'
-    W_16801 = 16801
-    'Xã Hùng Chân'
-    W_16804 = 16804
-    'Xã Châu Bình'
-    W_17035 = 17035
-    'Xã Quỳ Hợp'
-    W_17059 = 17059
-    'Xã Tam Hợp'
-    W_17056 = 17056
-    'Xã Châu Lộc'
-    W_17044 = 17044
-    'Xã Châu Hồng'
-    W_17077 = 17077
-    'Xã Mường Ham'
-    W_17089 = 17089
-    'Xã Mường Chọng'
-    W_17071 = 17071
-    'Xã Minh Hợp'
-    W_17179 = 17179
-    'Xã Quỳnh Lưu'
-    W_17143 = 17143
-    'Xã Quỳnh Văn'
-    W_17176 = 17176
-    'Xã Quỳnh Anh'
-    W_17149 = 17149
-    'Xã Quỳnh Tam'
-    W_17212 = 17212
-    'Xã Quỳnh Phú'
-    W_17152 = 17152
-    'Xã Quỳnh Sơn'
-    W_17224 = 17224
-    'Xã Quỳnh Thắng'
-    W_17266 = 17266
-    'Xã Tân Kỳ'
-    W_17272 = 17272
-    'Xã Tân Phú'
-    W_17305 = 17305
-    'Xã Tân An'
-    W_17284 = 17284
-    'Xã Nghĩa Đồng'
-    W_17278 = 17278
-    'Xã Giai Xuân'
-    W_17326 = 17326
-    'Xã Nghĩa Hành'
-    W_17287 = 17287
-    'Xã Tiên Đồng'
-    W_16939 = 16939
-    'Phường Thái Hòa'
-    W_16994 = 16994
-    'Phường Tây Hiếu'
-    W_17017 = 17017
-    'Xã Đông Hiếu'
-    W_17728 = 17728
-    'Xã Cát Ngạn'
-    W_17743 = 17743
-    'Xã Tam Đồng'
-    W_17722 = 17722
-    'Xã Hạnh Lâm'
-    W_17759 = 17759
-    'Xã Sơn Lâm'
-    W_17770 = 17770
-    'Xã Hoa Quân'
-    W_17791 = 17791
-    'Xã Kim Bảng'
-    W_17818 = 17818
-    'Xã Bích Hào'
-    W_17713 = 17713
-    'Xã Đại Đồng'
-    W_17779 = 17779
-    'Xã Xuân Lâm'
+    W_16834 = 16834
+    'Xã Na Loi'
+    W_16837 = 16837
+    'Xã Nậm Cắn'
+    W_16849 = 16849
+    'Xã Hữu Kiệm'
+    W_16855 = 16855
+    'Xã Chiêu Lưu'
+    W_16858 = 16858
+    'Xã Mường Típ'
+    W_16870 = 16870
+    'Xã Na Ngoi'
+    W_16876 = 16876
+    'Xã Tương Dương'
+    W_16882 = 16882
+    'Xã Nhôn Mai'
+    W_16885 = 16885
+    'Xã Hữu Khuông'
+    W_16903 = 16903
+    'Xã Nga My'
+    W_16906 = 16906
+    'Xã Lượng Minh'
+    W_16909 = 16909
+    'Xã Yên Hòa'
+    W_16912 = 16912
+    'Xã Yên Na'
     W_16933 = 16933
     'Xã Tam Quang'
     W_16936 = 16936
     'Xã Tam Thái'
-    W_16876 = 16876
-    'Xã Tương Dương'
-    W_16906 = 16906
-    'Xã Lượng Minh'
-    W_16912 = 16912
-    'Xã Yên Na'
-    W_16909 = 16909
-    'Xã Yên Hòa'
-    W_16903 = 16903
-    'Xã Nga My'
-    W_16885 = 16885
-    'Xã Hữu Khuông'
-    W_16882 = 16882
-    'Xã Nhôn Mai'
-    W_16690 = 16690
-    'Phường Trường Vinh'
-    W_16681 = 16681
-    'Phường Thành Vinh'
-    W_17920 = 17920
-    'Phường Vinh Hưng'
-    W_16702 = 16702
-    'Phường Vinh Phú'
-    W_16708 = 16708
-    'Phường Vinh Lộc'
-    W_16732 = 16732
-    'Phường Cửa Lò'
+    W_16939 = 16939
+    'Phường Thái Hòa'
+    W_16941 = 16941
+    'Xã Nghĩa Đàn'
+    W_16951 = 16951
+    'Xã Nghĩa Lâm'
+    W_16969 = 16969
+    'Xã Nghĩa Thọ'
+    W_16972 = 16972
+    'Xã Nghĩa Hưng'
+    W_16975 = 16975
+    'Xã Nghĩa Mai'
+    W_17011 = 17011
+    'Phường Tây Hiếu'
+    W_17017 = 17017
+    'Xã Đông Hiếu'
+    W_17029 = 17029
+    'Xã Nghĩa Lộc'
+    W_17032 = 17032
+    'Xã Nghĩa Khánh'
+    W_17035 = 17035
+    'Xã Quỳ Hợp'
+    W_17044 = 17044
+    'Xã Châu Hồng'
+    W_17056 = 17056
+    'Xã Châu Lộc'
+    W_17059 = 17059
+    'Xã Tam Hợp'
+    W_17071 = 17071
+    'Xã Minh Hợp'
+    W_17077 = 17077
+    'Xã Mường Ham'
+    W_17089 = 17089
+    'Xã Mường Chọng'
+    W_17110 = 17110
+    'Phường Hoàng Mai'
+    W_17125 = 17125
+    'Phường Quỳnh Mai'
+    W_17128 = 17128
+    'Phường Tân Mai'
+    W_17143 = 17143
+    'Xã Quỳnh Văn'
+    W_17149 = 17149
+    'Xã Quỳnh Tam'
+    W_17170 = 17170
+    'Xã Quỳnh Sơn'
+    W_17176 = 17176
+    'Xã Quỳnh Anh'
+    W_17179 = 17179
+    'Xã Quỳnh Lưu'
+    W_17212 = 17212
+    'Xã Quỳnh Phú'
+    W_17224 = 17224
+    'Xã Quỳnh Thắng'
+    W_17230 = 17230
+    'Xã Bình Chuẩn'
+    W_17239 = 17239
+    'Xã Mậu Thạch'
+    W_17242 = 17242
+    'Xã Cam Phục'
+    W_17248 = 17248
+    'Xã Châu Khê'
+    W_17254 = 17254
+    'Xã Con Cuông'
+    W_17263 = 17263
+    'Xã Môn Sơn'
+    W_17266 = 17266
+    'Xã Tân Kỳ'
+    W_17272 = 17272
+    'Xã Tân Phú'
+    W_17278 = 17278
+    'Xã Giai Xuân'
+    W_17284 = 17284
+    'Xã Nghĩa Đồng'
+    W_17287 = 17287
+    'Xã Tiên Đồng'
+    W_17305 = 17305
+    'Xã Tân An'
+    W_17326 = 17326
+    'Xã Nghĩa Hành'
+    W_17329 = 17329
+    'Xã Anh Sơn'
+    W_17335 = 17335
+    'Xã Thành Bình Thọ'
+    W_17344 = 17344
+    'Xã Nhân Hòa'
+    W_17357 = 17357
+    'Xã Vĩnh Tường'
+    W_17365 = 17365
+    'Xã Anh Sơn Đông'
+    W_17380 = 17380
+    'Xã Yên Xuân'
+    W_17395 = 17395
+    'Xã Hùng Châu'
+    W_17416 = 17416
+    'Xã Đức Châu'
+    W_17419 = 17419
+    'Xã Hải Châu'
+    W_17443 = 17443
+    'Xã Quảng Châu'
+    W_17464 = 17464
+    'Xã Diễn Châu'
+    W_17476 = 17476
+    'Xã Minh Châu'
+    W_17479 = 17479
+    'Xã An Châu'
+    W_17488 = 17488
+    'Xã Tân Châu'
     W_17506 = 17506
     'Xã Yên Thành'
+    W_17515 = 17515
+    'Xã Bình Minh'
+    W_17521 = 17521
+    'Xã Quang Đồng'
+    W_17524 = 17524
+    'Xã Giai Lạc'
+    W_17530 = 17530
+    'Xã Đông Thành'
+    W_17560 = 17560
+    'Xã Vân Du'
     W_17569 = 17569
     'Xã Quan Thành'
     W_17605 = 17605
     'Xã Hợp Minh'
     W_17611 = 17611
     'Xã Vân Tụ'
-    W_17560 = 17560
-    'Xã Vân Du'
-    W_17521 = 17521
-    'Xã Quang Đồng'
-    W_17524 = 17524
-    'Xã Giai Lạc'
-    W_17515 = 17515
-    'Xã Bình Minh'
-    W_17530 = 17530
-    'Xã Đông Thành'
-    W_18754 = 18754
-    'Phường Sông Trí'
-    W_18781 = 18781
-    'Phường Hải Ninh'
-    W_18832 = 18832
-    'Phường Hoành Sơn'
-    W_18823 = 18823
-    'Phường Vũng Áng'
-    W_18766 = 18766
-    'Xã Kỳ Xuân'
-    W_18775 = 18775
-    'Xã Kỳ Anh'
-    W_18814 = 18814
-    'Xã Kỳ Hoa'
-    W_18787 = 18787
-    'Xã Kỳ Văn'
-    W_18790 = 18790
-    'Xã Kỳ Khang'
-    W_18838 = 18838
-    'Xã Kỳ Lạc'
-    W_18844 = 18844
-    'Xã Kỳ Thượng'
-    W_18673 = 18673
-    'Xã Cẩm Xuyên'
-    W_18676 = 18676
-    'Xã Thiên Cầm'
-    W_18739 = 18739
-    'Xã Cẩm Duệ'
-    W_18736 = 18736
-    'Xã Cẩm Hưng'
-    W_18748 = 18748
-    'Xã Cẩm Lạc'
-    W_18742 = 18742
-    'Xã Cẩm Trung'
-    W_18682 = 18682
-    'Xã Yên Hòa'
+    W_17623 = 17623
+    'Xã Bạch Ngọc'
+    W_17641 = 17641
+    'Xã Lương Sơn'
+    W_17662 = 17662
+    'Xã Đô Lương'
+    W_17677 = 17677
+    'Xã Văn Hiến'
+    W_17689 = 17689
+    'Xã Thuần Trung'
+    W_17707 = 17707
+    'Xã Bạch Hà'
+    W_17713 = 17713
+    'Xã Đại Đồng'
+    W_17722 = 17722
+    'Xã Hạnh Lâm'
+    W_17728 = 17728
+    'Xã Cát Ngạn'
+    W_17743 = 17743
+    'Xã Tam Đồng'
+    W_17759 = 17759
+    'Xã Sơn Lâm'
+    W_17770 = 17770
+    'Xã Hoa Quân'
+    W_17779 = 17779
+    'Xã Xuân Lâm'
+    W_17791 = 17791
+    'Xã Kim Bảng'
+    W_17818 = 17818
+    'Xã Bích Hào'
+    W_17827 = 17827
+    'Xã Nghi Lộc'
+    W_17833 = 17833
+    'Xã Hải Lộc'
+    W_17842 = 17842
+    'Xã Thần Lĩnh'
+    W_17854 = 17854
+    'Xã Văn Kiều'
+    W_17857 = 17857
+    'Xã Phúc Lộc'
+    W_17866 = 17866
+    'Xã Trung Lộc'
+    W_17878 = 17878
+    'Xã Đông Lộc'
+    W_17920 = 17920
+    'Phường Vinh Hưng'
+    W_17935 = 17935
+    'Xã Nam Đàn'
+    W_17944 = 17944
+    'Xã Đại Huệ'
+    W_17950 = 17950
+    'Xã Vạn An'
+    W_17971 = 17971
+    'Xã Kim Liên'
+    W_17989 = 17989
+    'Xã Thiên Nhẫn'
+    W_18001 = 18001
+    'Xã Hưng Nguyên'
+    W_18007 = 18007
+    'Xã Yên Trung'
+    W_18028 = 18028
+    'Xã Hưng Nguyên Nam'
+    W_18040 = 18040
+    'Xã Lam Thành'
     W_18073 = 18073
     'Phường Thành Sen'
     W_18100 = 18100
     'Phường Trần Phú'
-    W_18652 = 18652
-    'Phường Hà Huy Tập'
-    W_18628 = 18628
-    'Xã Thạch Lạc'
-    W_18619 = 18619
-    'Xã Đồng Tiến'
-    W_18604 = 18604
-    'Xã Thạch Khê'
-    W_18685 = 18685
-    'Xã Cẩm Bình'
-    W_18562 = 18562
-    'Xã Thạch Hà'
-    W_18634 = 18634
-    'Xã Toàn Lưu'
-    W_18601 = 18601
-    'Xã Việt Xuyên'
-    W_18586 = 18586
-    'Xã Đông Kinh'
-    W_18667 = 18667
-    'Xã Thạch Xuân'
-    W_18568 = 18568
-    'Xã Lộc Hà'
-    W_18409 = 18409
-    'Xã Hồng Lộc'
-    W_18583 = 18583
-    'Xã Mai Phụ'
-    W_18406 = 18406
-    'Xã Can Lộc'
-    W_18418 = 18418
-    'Xã Tùng Lộc'
-    W_18466 = 18466
-    'Xã Gia Hanh'
-    W_18436 = 18436
-    'Xã Trường Lưu'
-    W_18481 = 18481
-    'Xã Xuân Lộc'
-    W_18484 = 18484
-    'Xã Đồng Lộc'
     W_18115 = 18115
     'Phường Bắc Hồng Lĩnh'
     W_18118 = 18118
     'Phường Nam Hồng Lĩnh'
-    W_18373 = 18373
-    'Xã Tiên Điền'
-    W_18352 = 18352
-    'Xã Nghi Xuân'
-    W_18394 = 18394
-    'Xã Cổ Đạm'
-    W_18364 = 18364
-    'Xã Đan Hải'
-    W_18229 = 18229
-    'Xã Đức Thọ'
-    W_18262 = 18262
-    'Xã Đức Quang'
-    W_18304 = 18304
-    'Xã Đức Đồng'
-    W_18277 = 18277
-    'Xã Đức Thịnh'
-    W_18244 = 18244
-    'Xã Đức Minh'
     W_18133 = 18133
     'Xã Hương Sơn'
-    W_18172 = 18172
-    'Xã Sơn Tây'
-    W_18202 = 18202
-    'Xã Tứ Mỹ'
-    W_18184 = 18184
-    'Xã Sơn Giang'
-    W_18163 = 18163
-    'Xã Sơn Tiến'
     W_18160 = 18160
     'Xã Sơn Hồng'
+    W_18163 = 18163
+    'Xã Sơn Tiến'
+    W_18172 = 18172
+    'Xã Sơn Tây'
+    W_18184 = 18184
+    'Xã Sơn Giang'
+    W_18196 = 18196
+    'Xã Sơn Kim 1'
+    W_18199 = 18199
+    'Xã Sơn Kim 2'
+    W_18202 = 18202
+    'Xã Tứ Mỹ'
     W_18223 = 18223
     'Xã Kim Hoa'
+    W_18229 = 18229
+    'Xã Đức Thọ'
+    W_18244 = 18244
+    'Xã Đức Minh'
+    W_18262 = 18262
+    'Xã Đức Quang'
+    W_18277 = 18277
+    'Xã Đức Thịnh'
+    W_18304 = 18304
+    'Xã Đức Đồng'
     W_18313 = 18313
     'Xã Vũ Quang'
     W_18322 = 18322
     'Xã Mai Hoa'
     W_18328 = 18328
     'Xã Thượng Đức'
+    W_18352 = 18352
+    'Xã Nghi Xuân'
+    W_18364 = 18364
+    'Xã Đan Hải'
+    W_18373 = 18373
+    'Xã Tiên Điền'
+    W_18394 = 18394
+    'Xã Cổ Đạm'
+    W_18406 = 18406
+    'Xã Can Lộc'
+    W_18409 = 18409
+    'Xã Hồng Lộc'
+    W_18418 = 18418
+    'Xã Tùng Lộc'
+    W_18436 = 18436
+    'Xã Trường Lưu'
+    W_18466 = 18466
+    'Xã Gia Hanh'
+    W_18481 = 18481
+    'Xã Xuân Lộc'
+    W_18484 = 18484
+    'Xã Đồng Lộc'
     W_18496 = 18496
     'Xã Hương Khê'
-    W_18532 = 18532
-    'Xã Hương Phố'
-    W_18550 = 18550
-    'Xã Hương Đô'
     W_18502 = 18502
     'Xã Hà Linh'
     W_18523 = 18523
     'Xã Hương Bình'
-    W_18547 = 18547
-    'Xã Phúc Trạch'
+    W_18532 = 18532
+    'Xã Hương Phố'
     W_18544 = 18544
     'Xã Hương Xuân'
-    W_18196 = 18196
-    'Xã Sơn Kim 1'
-    W_18199 = 18199
-    'Xã Sơn Kim 2'
-    W_18880 = 18880
-    'Phường Đồng Hới'
+    W_18547 = 18547
+    'Xã Phúc Trạch'
+    W_18550 = 18550
+    'Xã Hương Đô'
+    W_18562 = 18562
+    'Xã Thạch Hà'
+    W_18568 = 18568
+    'Xã Lộc Hà'
+    W_18583 = 18583
+    'Xã Mai Phụ'
+    W_18586 = 18586
+    'Xã Đông Kinh'
+    W_18601 = 18601
+    'Xã Việt Xuyên'
+    W_18604 = 18604
+    'Xã Thạch Khê'
+    W_18619 = 18619
+    'Xã Đồng Tiến'
+    W_18628 = 18628
+    'Xã Thạch Lạc'
+    W_18634 = 18634
+    'Xã Toàn Lưu'
+    W_18652 = 18652
+    'Phường Hà Huy Tập'
+    W_18667 = 18667
+    'Xã Thạch Xuân'
+    W_18673 = 18673
+    'Xã Cẩm Xuyên'
+    W_18676 = 18676
+    'Xã Thiên Cầm'
+    W_18682 = 18682
+    'Xã Yên Hòa'
+    W_18685 = 18685
+    'Xã Cẩm Bình'
+    W_18736 = 18736
+    'Xã Cẩm Hưng'
+    W_18739 = 18739
+    'Xã Cẩm Duệ'
+    W_18742 = 18742
+    'Xã Cẩm Trung'
+    W_18748 = 18748
+    'Xã Cẩm Lạc'
+    W_18754 = 18754
+    'Phường Sông Trí'
+    W_18766 = 18766
+    'Xã Kỳ Xuân'
+    W_18775 = 18775
+    'Xã Kỳ Anh'
+    W_18781 = 18781
+    'Phường Hải Ninh'
+    W_18787 = 18787
+    'Xã Kỳ Văn'
+    W_18790 = 18790
+    'Xã Kỳ Khang'
+    W_18814 = 18814
+    'Xã Kỳ Hoa'
+    W_18823 = 18823
+    'Phường Vũng Áng'
+    W_18832 = 18832
+    'Phường Hoành Sơn'
+    W_18838 = 18838
+    'Xã Kỳ Lạc'
+    W_18844 = 18844
+    'Xã Kỳ Thượng'
     W_18859 = 18859
     'Phường Đồng Thuận'
     W_18871 = 18871
     'Phường Đồng Sơn'
-    W_19093 = 19093
-    'Xã Nam Gianh'
-    W_19075 = 19075
-    'Xã Nam Ba Đồn'
-    W_19009 = 19009
-    'Phường Ba Đồn'
-    W_19066 = 19066
-    'Phường Bắc Gianh'
+    W_18880 = 18880
+    'Phường Đồng Hới'
+    W_18901 = 18901
+    'Xã Minh Hóa'
     W_18904 = 18904
     'Xã Dân Hóa'
+    W_18919 = 18919
+    'Xã Tân Thành'
     W_18922 = 18922
     'Xã Kim Điền'
     W_18943 = 18943
     'Xã Kim Phú'
-    W_18901 = 18901
-    'Xã Minh Hóa'
-    W_18919 = 18919
-    'Xã Tân Thành'
-    W_18958 = 18958
-    'Xã Tuyên Lâm'
-    W_18952 = 18952
-    'Xã Tuyên Sơn'
     W_18949 = 18949
     'Xã Đồng Lê'
+    W_18952 = 18952
+    'Xã Tuyên Sơn'
+    W_18958 = 18958
+    'Xã Tuyên Lâm'
     W_18985 = 18985
     'Xã Tuyên Phú'
     W_18991 = 18991
     'Xã Tuyên Bình'
     W_18997 = 18997
     'Xã Tuyên Hóa'
-    W_19051 = 19051
-    'Xã Tân Gianh'
-    W_19030 = 19030
-    'Xã Trung Thuần'
-    W_19057 = 19057
-    'Xã Quảng Trạch'
-    W_19033 = 19033
-    'Xã Hòa Trạch'
+    W_19009 = 19009
+    'Phường Ba Đồn'
     W_19021 = 19021
     'Xã Phú Trạch'
-    W_19147 = 19147
-    'Xã Thượng Trạch'
-    W_19165 = 19165
-    'Xã Phong Nha'
-    W_19126 = 19126
-    'Xã Bắc Trạch'
-    W_19159 = 19159
-    'Xã Đông Trạch'
+    W_19030 = 19030
+    'Xã Trung Thuần'
+    W_19033 = 19033
+    'Xã Hòa Trạch'
+    W_19051 = 19051
+    'Xã Tân Gianh'
+    W_19057 = 19057
+    'Xã Quảng Trạch'
+    W_19066 = 19066
+    'Phường Bắc Gianh'
+    W_19075 = 19075
+    'Xã Nam Ba Đồn'
+    W_19093 = 19093
+    'Xã Nam Gianh'
     W_19111 = 19111
     'Xã Hoàn Lão'
+    W_19126 = 19126
+    'Xã Bắc Trạch'
+    W_19138 = 19138
+    'Xã Phong Nha'
     W_19141 = 19141
     'Xã Bố Trạch'
+    W_19147 = 19147
+    'Xã Thượng Trạch'
+    W_19159 = 19159
+    'Xã Đông Trạch'
     W_19198 = 19198
     'Xã Nam Trạch'
+    W_19204 = 19204
+    'Xã Trường Sơn'
     W_19207 = 19207
     'Xã Quảng Ninh'
     W_19225 = 19225
     'Xã Ninh Châu'
     W_19237 = 19237
     'Xã Trường Ninh'
-    W_19204 = 19204
-    'Xã Trường Sơn'
+    W_19246 = 19246
+    'Xã Lệ Ninh'
     W_19249 = 19249
     'Xã Lệ Thủy'
     W_19255 = 19255
@@ -3621,8 +3623,6 @@ class WardCode(IntEnum):
     'Xã Tân Mỹ'
     W_19309 = 19309
     'Xã Trường Phú'
-    W_19246 = 19246
-    'Xã Lệ Ninh'
     W_19318 = 19318
     'Xã Kim Ngân'
     W_19333 = 19333
@@ -3633,876 +3633,876 @@ class WardCode(IntEnum):
     'Phường Quảng Trị'
     W_19363 = 19363
     'Xã Vĩnh Linh'
-    W_19414 = 19414
-    'Xã Cửa Tùng'
+    W_19366 = 19366
+    'Xã Bến Quan'
     W_19372 = 19372
     'Xã Vĩnh Hoàng'
     W_19405 = 19405
     'Xã Vĩnh Thủy'
-    W_19366 = 19366
-    'Xã Bến Quan'
-    W_19537 = 19537
-    'Xã Cồn Tiên'
-    W_19496 = 19496
-    'Xã Cửa Việt'
-    W_19495 = 19495
-    'Xã Gio Linh'
-    W_19501 = 19501
-    'Xã Bến Hải'
+    W_19414 = 19414
+    'Xã Cửa Tùng'
+    W_19429 = 19429
+    'Xã Khe Sanh'
+    W_19432 = 19432
+    'Xã Lao Bảo'
     W_19435 = 19435
     'Xã Hướng Lập'
     W_19441 = 19441
     'Xã Hướng Phùng'
-    W_19429 = 19429
-    'Xã Khe Sanh'
     W_19462 = 19462
     'Xã Tân Lập'
-    W_19432 = 19432
-    'Xã Lao Bảo'
-    W_19489 = 19489
-    'Xã Lìa'
     W_19483 = 19483
     'Xã A Dơi'
-    W_19594 = 19594
-    'Xã La Lay'
-    W_19588 = 19588
-    'Xã Tà Rụt'
+    W_19489 = 19489
+    'Xã Lìa'
+    W_19495 = 19495
+    'Xã Gio Linh'
+    W_19496 = 19496
+    'Xã Cửa Việt'
+    W_19501 = 19501
+    'Xã Bến Hải'
+    W_19537 = 19537
+    'Xã Cồn Tiên'
+    W_19555 = 19555
+    'Xã Hướng Hiệp'
     W_19564 = 19564
     'Xã Đakrông'
     W_19567 = 19567
     'Xã Ba Lòng'
-    W_19555 = 19555
-    'Xã Hướng Hiệp'
+    W_19588 = 19588
+    'Xã Tà Rụt'
+    W_19594 = 19594
+    'Xã La Lay'
     W_19597 = 19597
     'Xã Cam Lộ'
     W_19603 = 19603
     'Xã Hiếu Giang'
     W_19624 = 19624
     'Xã Triệu Phong'
-    W_19669 = 19669
-    'Xã Ái Tử'
+    W_19639 = 19639
+    'Xã Nam Cửa Việt'
     W_19645 = 19645
     'Xã Triệu Bình'
     W_19654 = 19654
     'Xã Triệu Cơ'
-    W_19639 = 19639
-    'Xã Nam Cửa Việt'
+    W_19669 = 19669
+    'Xã Ái Tử'
     W_19681 = 19681
     'Xã Diên Sanh'
-    W_19741 = 19741
-    'Xã Mỹ Thủy'
-    W_19702 = 19702
-    'Xã Hải Lăng'
     W_19699 = 19699
     'Xã Vĩnh Định'
+    W_19702 = 19702
+    'Xã Hải Lăng'
     W_19735 = 19735
     'Xã Nam Hải Lăng'
+    W_19741 = 19741
+    'Xã Mỹ Thủy'
     W_19742 = 19742
     'Đặc khu Cồn Cỏ'
-    W_19900 = 19900
-    'Phường Thuận An'
-    W_20014 = 20014
-    'Phường Hóa Châu'
-    W_19930 = 19930
-    'Phường Mỹ Thượng'
+    W_19753 = 19753
+    'Phường Phú Xuân'
+    W_19774 = 19774
+    'Phường Kim Long'
     W_19777 = 19777
     'Phường Vỹ Dạ'
-    W_19786 = 19786
+    W_19789 = 19789
     'Phường Thuận Hóa'
-    W_19815 = 19815
-    'Phường An Cựu'
+    W_19804 = 19804
+    'Phường Hương An'
     W_19813 = 19813
     'Phường Thủy Xuân'
-    W_19810 = 19810
-    'Phường Kim Long'
-    W_20023 = 20023
-    'Phường Hương An'
-    W_19768 = 19768
-    'Phường Phú Xuân'
-    W_19996 = 19996
-    'Phường Hương Trà'
-    W_20017 = 20017
-    'Phường Kim Trà'
-    W_19969 = 19969
-    'Phường Thanh Thủy'
-    W_19975 = 19975
-    'Phường Hương Thủy'
-    W_19960 = 19960
-    'Phường Phú Bài'
+    W_19815 = 19815
+    'Phường An Cựu'
     W_19819 = 19819
     'Phường Phong Điền'
-    W_19864 = 19864
-    'Phường Phong Thái'
-    W_19831 = 19831
-    'Phường Phong Dinh'
     W_19828 = 19828
     'Phường Phong Phú'
+    W_19831 = 19831
+    'Phường Phong Dinh'
+    W_19858 = 19858
+    'Phường Phong Thái'
+    W_19867 = 19867
+    'Xã Quảng Điền'
     W_19873 = 19873
     'Phường Phong Quảng'
     W_19885 = 19885
     'Xã Đan Điền'
-    W_19867 = 19867
-    'Xã Quảng Điền'
-    W_19945 = 19945
-    'Xã Phú Vinh'
+    W_19900 = 19900
+    'Phường Thuận An'
+    W_19909 = 19909
+    'Phường Dương Nỗ'
     W_19918 = 19918
     'Xã Phú Hồ'
+    W_19930 = 19930
+    'Phường Mỹ Thượng'
     W_19942 = 19942
     'Xã Phú Vang'
-    W_20122 = 20122
-    'Xã Vinh Lộc'
-    W_20131 = 20131
-    'Xã Hưng Lộc'
-    W_20140 = 20140
-    'Xã Lộc An'
-    W_20107 = 20107
-    'Xã Phú Lộc'
-    W_20152 = 20152
-    'Xã Chân Mây – Lăng Cô'
-    W_20182 = 20182
-    'Xã Long Quảng'
-    W_20179 = 20179
-    'Xã Nam Đông'
-    W_20161 = 20161
-    'Xã Khe Tre'
+    W_19945 = 19945
+    'Xã Phú Vinh'
+    W_19960 = 19960
+    'Phường Phú Bài'
+    W_19969 = 19969
+    'Phường Thanh Thủy'
+    W_19975 = 19975
+    'Phường Hương Thủy'
+    W_19996 = 19996
+    'Phường Hương Trà'
+    W_20014 = 20014
+    'Phường Hóa Châu'
+    W_20017 = 20017
+    'Phường Kim Trà'
     W_20035 = 20035
     'Xã Bình Điền'
-    W_20056 = 20056
-    'Xã A Lưới 1'
     W_20044 = 20044
     'Xã A Lưới 2'
+    W_20050 = 20050
+    'Xã A Lưới 5'
+    W_20056 = 20056
+    'Xã A Lưới 1'
     W_20071 = 20071
     'Xã A Lưới 3'
     W_20101 = 20101
     'Xã A Lưới 4'
-    W_20050 = 20050
-    'Xã A Lưới 5'
-    W_19909 = 19909
-    'Phường Dương Nỗ'
+    W_20107 = 20107
+    'Xã Phú Lộc'
+    W_20122 = 20122
+    'Xã Vinh Lộc'
+    W_20131 = 20131
+    'Xã Hưng Lộc'
+    W_20137 = 20137
+    'Xã Chân Mây - Lăng Cô'
+    W_20140 = 20140
+    'Xã Lộc An'
+    W_20161 = 20161
+    'Xã Khe Tre'
+    W_20179 = 20179
+    'Xã Nam Đông'
+    W_20182 = 20182
+    'Xã Long Quảng'
+    W_20194 = 20194
+    'Phường Hải Vân'
+    W_20197 = 20197
+    'Phường Liên Chiểu'
+    W_20200 = 20200
+    'Phường Hòa Khánh'
+    W_20209 = 20209
+    'Phường Thanh Khê'
     W_20242 = 20242
     'Phường Hải Châu'
     W_20257 = 20257
     'Phường Hòa Cường'
-    W_20209 = 20209
-    'Phường Thanh Khê'
-    W_20224 = 20224
-    'Phường An Khê'
-    W_20275 = 20275
-    'Phường An Hải'
-    W_20263 = 20263
-    'Phường Sơn Trà'
-    W_20285 = 20285
-    'Phường Ngũ Hành Sơn'
-    W_20200 = 20200
-    'Phường Hòa Khánh'
-    W_20195 = 20195
-    'Phường Hải Vân'
-    W_20197 = 20197
-    'Phường Liên Chiểu'
     W_20260 = 20260
     'Phường Cẩm Lệ'
+    W_20263 = 20263
+    'Phường Sơn Trà'
+    W_20275 = 20275
+    'Phường An Hải'
+    W_20285 = 20285
+    'Phường Ngũ Hành Sơn'
+    W_20305 = 20305
+    'Phường An Khê'
+    W_20308 = 20308
+    'Xã Bà Nà'
     W_20314 = 20314
     'Phường Hòa Xuân'
     W_20320 = 20320
     'Xã Hòa Vang'
     W_20332 = 20332
     'Xã Hòa Tiến'
-    W_20308 = 20308
-    'Xã Bà Nà'
     W_20333 = 20333
     'Đặc khu Hoàng Sa'
-    W_20965 = 20965
-    'Xã Núi Thành'
-    W_21004 = 21004
-    'Xã Tam Mỹ'
-    W_20984 = 20984
-    'Xã Tam Anh'
-    W_20977 = 20977
-    'Xã Đức Phú'
-    W_20971 = 20971
-    'Xã Tam Xuân'
-    W_20992 = 20992
-    'Xã Tam Hải'
-    W_20341 = 20341
-    'Phường Tam Kỳ'
-    W_20356 = 20356
-    'Phường Quảng Phú'
-    W_20350 = 20350
-    'Phường Hương Trà'
     W_20335 = 20335
     'Phường Bàn Thạch'
-    W_20380 = 20380
-    'Xã Tây Hồ'
+    W_20341 = 20341
+    'Phường Tam Kỳ'
+    W_20350 = 20350
+    'Phường Hương Trà'
+    W_20356 = 20356
+    'Phường Quảng Phú'
     W_20364 = 20364
     'Xã Chiên Đàn'
+    W_20380 = 20380
+    'Xã Tây Hồ'
     W_20392 = 20392
     'Xã Phú Ninh'
-    W_20872 = 20872
-    'Xã Lãnh Ngọc'
-    W_20854 = 20854
-    'Xã Tiên Phước'
-    W_20878 = 20878
-    'Xã Thạnh Bình'
-    W_20857 = 20857
-    'Xã Sơn Cẩm Hà'
-    W_20908 = 20908
-    'Xã Trà Liên'
-    W_20929 = 20929
-    'Xã Trà Giáp'
-    W_20923 = 20923
-    'Xã Trà Tân'
-    W_20920 = 20920
-    'Xã Trà Đốc'
-    W_20900 = 20900
-    'Xã Trà My'
-    W_20944 = 20944
-    'Xã Nam Trà My'
-    W_20941 = 20941
-    'Xã Trà Tập'
-    W_20959 = 20959
-    'Xã Trà Vân'
-    W_20950 = 20950
-    'Xã Trà Linh'
-    W_20938 = 20938
-    'Xã Trà Leng'
-    W_20791 = 20791
-    'Xã Thăng Bình'
-    W_20794 = 20794
-    'Xã Thăng An'
-    W_20836 = 20836
-    'Xã Thăng Trường'
-    W_20848 = 20848
-    'Xã Thăng Điền'
-    W_20827 = 20827
-    'Xã Thăng Phú'
-    W_20818 = 20818
-    'Xã Đồng Dương'
-    W_20662 = 20662
-    'Xã Quế Sơn Trung'
+    W_20401 = 20401
+    'Phường Hội An Tây'
+    W_20410 = 20410
+    'Phường Hội An'
+    W_20413 = 20413
+    'Phường Hội An Đông'
+    W_20434 = 20434
+    'Xã Tân Hiệp'
+    W_20443 = 20443
+    'Xã Hùng Sơn'
+    W_20455 = 20455
+    'Xã Tây Giang'
+    W_20458 = 20458
+    'Xã Avương'
+    W_20467 = 20467
+    'Xã Đông Giang'
+    W_20476 = 20476
+    'Xã Sông Kôn'
+    W_20485 = 20485
+    'Xã Sông Vàng'
+    W_20494 = 20494
+    'Xã Bến Hiên'
+    W_20500 = 20500
+    'Xã Đại Lộc'
+    W_20506 = 20506
+    'Xã Thượng Đức'
+    W_20515 = 20515
+    'Xã Hà Nha'
+    W_20539 = 20539
+    'Xã Vu Gia'
+    W_20542 = 20542
+    'Xã Phú Thuận'
+    W_20551 = 20551
+    'Phường Điện Bàn'
+    W_20557 = 20557
+    'Phường Điện Bàn Bắc'
+    W_20569 = 20569
+    'Xã Điện Bàn Tây'
+    W_20575 = 20575
+    'Phường An Thắng'
+    W_20579 = 20579
+    'Phường Điện Bàn Đông'
+    W_20587 = 20587
+    'Xã Gò Nổi'
+    W_20599 = 20599
+    'Xã Nam Phước'
+    W_20611 = 20611
+    'Xã Thu Bồn'
+    W_20623 = 20623
+    'Xã Duy Xuyên'
+    W_20635 = 20635
+    'Xã Duy Nghĩa'
     W_20641 = 20641
     'Xã Quế Sơn'
     W_20650 = 20650
     'Xã Xuân Phú'
     W_20656 = 20656
     'Xã Nông Sơn'
+    W_20662 = 20662
+    'Xã Quế Sơn Trung'
     W_20669 = 20669
     'Xã Quế Phước'
-    W_20635 = 20635
-    'Xã Duy Nghĩa'
-    W_20599 = 20599
-    'Xã Nam Phước'
-    W_20623 = 20623
-    'Xã Duy Xuyên'
-    W_20611 = 20611
-    'Xã Thu Bồn'
-    W_20551 = 20551
-    'Phường Điện Bàn'
-    W_20579 = 20579
-    'Phường Điện Bàn Đông'
-    W_20575 = 20575
-    'Phường An Thắng'
-    W_20557 = 20557
-    'Phường Điện Bàn Bắc'
-    W_20569 = 20569
-    'Xã Điện Bàn Tây'
-    W_20587 = 20587
-    'Xã Gò Nổi'
-    W_20410 = 20410
-    'Phường Hội An'
-    W_20413 = 20413
-    'Phường Hội An Đông'
-    W_20401 = 20401
-    'Phường Hội An Tây'
-    W_20434 = 20434
-    'Xã Tân Hiệp'
-    W_20500 = 20500
-    'Xã Đại Lộc'
-    W_20515 = 20515
-    'Xã Hà Nha'
-    W_20506 = 20506
-    'Xã Thượng Đức'
-    W_20539 = 20539
-    'Xã Vu Gia'
-    W_20542 = 20542
-    'Xã Phú Thuận'
     W_20695 = 20695
     'Xã Thạnh Mỹ'
-    W_20710 = 20710
-    'Xã Bến Giằng'
-    W_20707 = 20707
-    'Xã Nam Giang'
-    W_20716 = 20716
-    'Xã Đắc Pring'
-    W_20704 = 20704
-    'Xã La Dêê'
     W_20698 = 20698
     'Xã La Êê'
-    W_20485 = 20485
-    'Xã Sông Vàng'
-    W_20476 = 20476
-    'Xã Sông Kôn'
-    W_20467 = 20467
-    'Xã Đông Giang'
-    W_20494 = 20494
-    'Xã Bến Hiên'
-    W_20458 = 20458
-    'Xã Avương'
-    W_20455 = 20455
-    'Xã Tây Giang'
-    W_20443 = 20443
-    'Xã Hùng Sơn'
-    W_20779 = 20779
-    'Xã Hiệp Đức'
-    W_20767 = 20767
-    'Xã Việt An'
-    W_20770 = 20770
-    'Xã Phước Trà'
+    W_20704 = 20704
+    'Xã La Dêê'
+    W_20707 = 20707
+    'Xã Nam Giang'
+    W_20710 = 20710
+    'Xã Bến Giằng'
+    W_20716 = 20716
+    'Xã Đắc Pring'
     W_20722 = 20722
     'Xã Khâm Đức'
+    W_20728 = 20728
+    'Xã Phước Hiệp'
     W_20734 = 20734
     'Xã Phước Năng'
     W_20740 = 20740
     'Xã Phước Chánh'
     W_20752 = 20752
     'Xã Phước Thành'
-    W_20728 = 20728
-    'Xã Phước Hiệp'
-    W_21211 = 21211
-    'Xã Tịnh Khê'
-    W_21172 = 21172
-    'Phường Trương Quang Trọng'
-    W_21034 = 21034
-    'Xã An Phú'
+    W_20767 = 20767
+    'Xã Việt An'
+    W_20770 = 20770
+    'Xã Phước Trà'
+    W_20779 = 20779
+    'Xã Hiệp Đức'
+    W_20791 = 20791
+    'Xã Thăng Bình'
+    W_20794 = 20794
+    'Xã Thăng An'
+    W_20818 = 20818
+    'Xã Đồng Dương'
+    W_20827 = 20827
+    'Xã Thăng Phú'
+    W_20836 = 20836
+    'Xã Thăng Trường'
+    W_20848 = 20848
+    'Xã Thăng Điền'
+    W_20854 = 20854
+    'Xã Tiên Phước'
+    W_20857 = 20857
+    'Xã Sơn Cẩm Hà'
+    W_20875 = 20875
+    'Xã Lãnh Ngọc'
+    W_20878 = 20878
+    'Xã Thạnh Bình'
+    W_20900 = 20900
+    'Xã Trà My'
+    W_20908 = 20908
+    'Xã Trà Liên'
+    W_20920 = 20920
+    'Xã Trà Đốc'
+    W_20923 = 20923
+    'Xã Trà Tân'
+    W_20929 = 20929
+    'Xã Trà Giáp'
+    W_20938 = 20938
+    'Xã Trà Leng'
+    W_20941 = 20941
+    'Xã Trà Tập'
+    W_20944 = 20944
+    'Xã Nam Trà My'
+    W_20950 = 20950
+    'Xã Trà Linh'
+    W_20959 = 20959
+    'Xã Trà Vân'
+    W_20965 = 20965
+    'Xã Núi Thành'
+    W_20971 = 20971
+    'Xã Tam Xuân'
+    W_20977 = 20977
+    'Xã Đức Phú'
+    W_20984 = 20984
+    'Xã Tam Anh'
+    W_20992 = 20992
+    'Xã Tam Hải'
+    W_21004 = 21004
+    'Xã Tam Mỹ'
     W_21025 = 21025
     'Phường Cẩm Thành'
     W_21028 = 21028
     'Phường Nghĩa Lộ'
-    W_21451 = 21451
-    'Phường Trà Câu'
-    W_21457 = 21457
-    'Xã Nguyễn Nghiêm'
-    W_21439 = 21439
-    'Phường Đức Phổ'
-    W_21472 = 21472
-    'Xã Khánh Cường'
-    W_21478 = 21478
-    'Phường Sa Huỳnh'
-    W_21085 = 21085
-    'Xã Bình Minh'
-    W_21100 = 21100
-    'Xã Bình Chương'
+    W_21034 = 21034
+    'Xã An Phú'
     W_21040 = 21040
     'Xã Bình Sơn'
     W_21061 = 21061
     'Xã Vạn Tường'
+    W_21085 = 21085
+    'Xã Bình Minh'
+    W_21100 = 21100
+    'Xã Bình Chương'
     W_21109 = 21109
     'Xã Đông Sơn'
+    W_21115 = 21115
+    'Xã Trà Bồng'
+    W_21124 = 21124
+    'Xã Thanh Bồng'
+    W_21127 = 21127
+    'Xã Đông Trà Bồng'
+    W_21136 = 21136
+    'Xã Cà Đam'
+    W_21154 = 21154
+    'Xã Tây Trà'
+    W_21157 = 21157
+    'Xã Tây Trà Bồng'
+    W_21172 = 21172
+    'Phường Trương Quang Trọng'
+    W_21181 = 21181
+    'Xã Thọ Phong'
     W_21196 = 21196
     'Xã Trường Giang'
     W_21205 = 21205
     'Xã Ba Gia'
+    W_21211 = 21211
+    'Xã Tịnh Khê'
     W_21220 = 21220
     'Xã Sơn Tịnh'
-    W_21181 = 21181
-    'Xã Thọ Phong'
     W_21235 = 21235
     'Xã Tư Nghĩa'
     W_21238 = 21238
     'Xã Vệ Giang'
-    W_21250 = 21250
-    'Xã Nghĩa Giang'
     W_21244 = 21244
     'Xã Trà Giang'
-    W_21364 = 21364
-    'Xã Nghĩa Hành'
-    W_21385 = 21385
-    'Xã Đình Cương'
-    W_21388 = 21388
-    'Xã Thiện Tín'
-    W_21370 = 21370
-    'Xã Phước Giang'
-    W_21409 = 21409
-    'Xã Long Phụng'
-    W_21421 = 21421
-    'Xã Mỏ Cày'
-    W_21400 = 21400
-    'Xã Mộ Đức'
-    W_21433 = 21433
-    'Xã Lân Phong'
-    W_21115 = 21115
-    'Xã Trà Bồng'
-    W_21127 = 21127
-    'Xã Đông Trà Bồng'
-    W_21154 = 21154
-    'Xã Tây Trà'
-    W_21124 = 21124
-    'Xã Thanh Bồng'
-    W_21136 = 21136
-    'Xã Cà Đam'
-    W_21157 = 21157
-    'Xã Tây Trà Bồng'
+    W_21250 = 21250
+    'Xã Nghĩa Giang'
+    W_21289 = 21289
+    'Xã Sơn Hà'
     W_21292 = 21292
     'Xã Sơn Hạ'
     W_21307 = 21307
     'Xã Sơn Linh'
-    W_21289 = 21289
-    'Xã Sơn Hà'
     W_21319 = 21319
     'Xã Sơn Thủy'
     W_21325 = 21325
     'Xã Sơn Kỳ'
-    W_21340 = 21340
-    'Xã Sơn Tây'
     W_21334 = 21334
     'Xã Sơn Tây Thượng'
+    W_21340 = 21340
+    'Xã Sơn Tây'
     W_21343 = 21343
     'Xã Sơn Tây Hạ'
-    W_21361 = 21361
-    'Xã Minh Long'
     W_21349 = 21349
     'Xã Sơn Mai'
-    W_21529 = 21529
-    'Xã Ba Vì'
-    W_21523 = 21523
-    'Xã Ba Tô'
-    W_21499 = 21499
-    'Xã Ba Dinh'
+    W_21361 = 21361
+    'Xã Minh Long'
+    W_21364 = 21364
+    'Xã Nghĩa Hành'
+    W_21370 = 21370
+    'Xã Phước Giang'
+    W_21385 = 21385
+    'Xã Đình Cương'
+    W_21388 = 21388
+    'Xã Thiện Tín'
+    W_21400 = 21400
+    'Xã Mộ Đức'
+    W_21409 = 21409
+    'Xã Long Phụng'
+    W_21421 = 21421
+    'Xã Mỏ Cày'
+    W_21433 = 21433
+    'Xã Lân Phong'
+    W_21439 = 21439
+    'Phường Đức Phổ'
+    W_21451 = 21451
+    'Phường Trà Câu'
+    W_21457 = 21457
+    'Xã Nguyễn Nghiêm'
+    W_21472 = 21472
+    'Xã Khánh Cường'
+    W_21478 = 21478
+    'Phường Sa Huỳnh'
     W_21484 = 21484
     'Xã Ba Tơ'
     W_21490 = 21490
     'Xã Ba Vinh'
     W_21496 = 21496
     'Xã Ba Động'
+    W_21499 = 21499
+    'Xã Ba Dinh'
     W_21520 = 21520
     'Xã Đặng Thùy Trâm'
+    W_21523 = 21523
+    'Xã Ba Tô'
+    W_21529 = 21529
+    'Xã Ba Vì'
     W_21538 = 21538
     'Xã Ba Xa'
     W_21548 = 21548
     'Đặc khu Lý Sơn'
-    W_23293 = 23293
-    'Phường Kon Tum'
     W_23284 = 23284
     'Phường Đăk Cấm'
+    W_23293 = 23293
+    'Phường Kon Tum'
     W_23302 = 23302
-    'Phường Đăk BLa'
+    'Phường Đăk Bla'
     W_23317 = 23317
     'Xã Ngọk Bay'
     W_23326 = 23326
     'Xã Ia Chim'
     W_23332 = 23332
     'Xã Đăk Rơ Wa'
-    W_23504 = 23504
-    'Xã Đăk Pxi'
-    W_23512 = 23512
-    'Xã Đăk Mar'
-    W_23510 = 23510
-    'Xã Đăk Ui'
-    W_23515 = 23515
-    'Xã Ngọk Réo'
-    W_23500 = 23500
-    'Xã Đăk Hà'
-    W_23428 = 23428
-    'Xã Ngọk Tụ'
+    W_23341 = 23341
+    'Xã Đăk Pék'
+    W_23344 = 23344
+    'Xã Đăk Plô'
+    W_23356 = 23356
+    'Xã Xốp'
+    W_23365 = 23365
+    'Xã Ngọc Linh'
+    W_23368 = 23368
+    'Xã Đăk Long'
+    W_23374 = 23374
+    'Xã Đăk Môn'
+    W_23377 = 23377
+    'Xã Bờ Y'
+    W_23383 = 23383
+    'Xã Dục Nông'
+    W_23392 = 23392
+    'Xã Sa Loong'
     W_23401 = 23401
     'Xã Đăk Tô'
-    W_23430 = 23430
-    'Xã Kon Đào'
     W_23416 = 23416
     'Xã Đăk Sao'
     W_23419 = 23419
     'Xã Đăk Tờ Kan'
     W_23425 = 23425
     'Xã Tu Mơ Rông'
+    W_23428 = 23428
+    'Xã Ngọk Tụ'
+    W_23430 = 23430
+    'Xã Kon Đào'
     W_23446 = 23446
     'Xã Măng Ri'
-    W_23377 = 23377
-    'Xã Bờ Y'
-    W_23392 = 23392
-    'Xã Sa Loong'
-    W_23383 = 23383
-    'Xã Dục Nông'
-    W_23356 = 23356
-    'Xã Xốp'
-    W_23365 = 23365
-    'Xã Ngọc Linh'
-    W_23344 = 23344
-    'Xã Đăk Plô'
-    W_23341 = 23341
-    'Xã Đăk Pék'
-    W_23374 = 23374
-    'Xã Đăk Môn'
-    W_23527 = 23527
-    'Xã Sa Thầy'
-    W_23534 = 23534
-    'Xã Sa Bình'
-    W_23548 = 23548
-    'Xã Ya Ly'
-    W_23538 = 23538
-    'Xã Ia Tơi'
+    W_23455 = 23455
+    'Xã Măng Bút'
+    W_23473 = 23473
+    'Xã Măng Đen'
+    W_23476 = 23476
+    'Xã Kon Plông'
+    W_23479 = 23479
+    'Xã Đăk Rve'
     W_23485 = 23485
     'Xã Đăk Kôi'
     W_23497 = 23497
     'Xã Kon Braih'
-    W_23479 = 23479
-    'Xã Đăk Rve'
-    W_23473 = 23473
-    'Xã Măng Đen'
-    W_23455 = 23455
-    'Xã Măng Bút'
-    W_23476 = 23476
-    'Xã Kon Plông'
-    W_23368 = 23368
-    'Xã Đăk Long'
+    W_23500 = 23500
+    'Xã Đăk Hà'
+    W_23504 = 23504
+    'Xã Đăk Pxi'
+    W_23510 = 23510
+    'Xã Đăk Ui'
+    W_23512 = 23512
+    'Xã Đăk Mar'
+    W_23515 = 23515
+    'Xã Ngọk Réo'
+    W_23527 = 23527
+    'Xã Sa Thầy'
     W_23530 = 23530
     'Xã Rờ Kơi'
-    W_23536 = 23536
-    'Xã Mô Rai'
+    W_23534 = 23534
+    'Xã Sa Bình'
     W_23535 = 23535
     'Xã Ia Đal'
+    W_23536 = 23536
+    'Xã Mô Rai'
+    W_23538 = 23538
+    'Xã Ia Tơi'
+    W_23548 = 23548
+    'Xã Ya Ly'
+    W_21553 = 21553
+    'Phường Quy Nhơn Bắc'
     W_21583 = 21583
     'Phường Quy Nhơn'
-    W_21601 = 21601
-    'Phường Quy Nhơn Đông'
     W_21589 = 21589
     'Phường Quy Nhơn Tây'
     W_21592 = 21592
     'Phường Quy Nhơn Nam'
-    W_21553 = 21553
-    'Phường Quy Nhơn Bắc'
-    W_21907 = 21907
-    'Phường Bình Định'
-    W_21910 = 21910
-    'Phường An Nhơn'
-    W_21934 = 21934
-    'Phường An Nhơn Đông'
-    W_21943 = 21943
-    'Phường An Nhơn Nam'
-    W_21925 = 21925
-    'Phường An Nhơn Bắc'
-    W_21940 = 21940
-    'Xã An Nhơn Tây'
-    W_21640 = 21640
-    'Phường Bồng Sơn'
-    W_21664 = 21664
-    'Phường Hoài Nhơn'
-    W_21637 = 21637
-    'Phường Tam Quan'
-    W_21670 = 21670
-    'Phường Hoài Nhơn Đông'
-    W_21661 = 21661
-    'Phường Hoài Nhơn Tây'
-    W_21673 = 21673
-    'Phường Hoài Nhơn Nam'
-    W_21655 = 21655
-    'Phường Hoài Nhơn Bắc'
-    W_21853 = 21853
-    'Xã Phù Cát'
-    W_21892 = 21892
-    'Xã Xuân An'
-    W_21889 = 21889
-    'Xã Ngô Mây'
-    W_21898 = 21898
-    'Xã Cát Tiến'
-    W_21862 = 21862
-    'Xã Đề Gi'
-    W_21871 = 21871
-    'Xã Hòa Hội'
-    W_21868 = 21868
-    'Xã Hội Sơn'
-    W_21730 = 21730
-    'Xã Phù Mỹ'
-    W_21769 = 21769
-    'Xã An Lương'
-    W_21733 = 21733
-    'Xã Bình Dương'
-    W_21751 = 21751
-    'Xã Phù Mỹ Đông'
-    W_21757 = 21757
-    'Xã Phù Mỹ Tây'
-    W_21775 = 21775
-    'Xã Phù Mỹ Nam'
-    W_21739 = 21739
-    'Xã Phù Mỹ Bắc'
-    W_21952 = 21952
-    'Xã Tuy Phước'
-    W_21970 = 21970
-    'Xã Tuy Phước Đông'
-    W_21985 = 21985
-    'Xã Tuy Phước Tây'
-    W_21964 = 21964
-    'Xã Tuy Phước Bắc'
-    W_21808 = 21808
-    'Xã Tây Sơn'
-    W_21820 = 21820
-    'Xã Bình Khê'
-    W_21835 = 21835
-    'Xã Bình Phú'
-    W_21817 = 21817
-    'Xã Bình Hiệp'
-    W_21829 = 21829
-    'Xã Bình An'
-    W_21688 = 21688
-    'Xã Hoài Ân'
-    W_21715 = 21715
-    'Xã Ân Tường'
-    W_21727 = 21727
-    'Xã Kim Sơn'
-    W_21703 = 21703
-    'Xã Vạn Đức'
-    W_21697 = 21697
-    'Xã Ân Hảo'
-    W_21994 = 21994
-    'Xã Vân Canh'
-    W_22003 = 22003
-    'Xã Canh Vinh'
-    W_21997 = 21997
-    'Xã Canh Liên'
-    W_21786 = 21786
-    'Xã Vĩnh Thạnh'
-    W_21796 = 21796
-    'Xã Vĩnh Thịnh'
-    W_21805 = 21805
-    'Xã Vĩnh Quang'
-    W_21787 = 21787
-    'Xã Vĩnh Sơn'
-    W_21628 = 21628
-    'Xã An Hòa'
+    W_21601 = 21601
+    'Phường Quy Nhơn Đông'
+    W_21607 = 21607
+    'Xã Nhơn Châu'
     W_21609 = 21609
     'Xã An Lão'
     W_21616 = 21616
     'Xã An Vinh'
     W_21622 = 21622
     'Xã An Toàn'
-    W_23575 = 23575
-    'Phường Pleiku'
-    W_23586 = 23586
-    'Phường Hội Phú'
-    W_23584 = 23584
-    'Phường Thống Nhất'
+    W_21628 = 21628
+    'Xã An Hòa'
+    W_21637 = 21637
+    'Phường Tam Quan'
+    W_21640 = 21640
+    'Phường Bồng Sơn'
+    W_21655 = 21655
+    'Phường Hoài Nhơn Bắc'
+    W_21661 = 21661
+    'Phường Hoài Nhơn Tây'
+    W_21664 = 21664
+    'Phường Hoài Nhơn'
+    W_21670 = 21670
+    'Phường Hoài Nhơn Đông'
+    W_21673 = 21673
+    'Phường Hoài Nhơn Nam'
+    W_21688 = 21688
+    'Xã Hoài Ân'
+    W_21697 = 21697
+    'Xã Ân Hảo'
+    W_21703 = 21703
+    'Xã Vạn Đức'
+    W_21715 = 21715
+    'Xã Ân Tường'
+    W_21727 = 21727
+    'Xã Kim Sơn'
+    W_21730 = 21730
+    'Xã Phù Mỹ'
+    W_21733 = 21733
+    'Xã Bình Dương'
+    W_21739 = 21739
+    'Xã Phù Mỹ Bắc'
+    W_21751 = 21751
+    'Xã Phù Mỹ Đông'
+    W_21757 = 21757
+    'Xã Phù Mỹ Tây'
+    W_21769 = 21769
+    'Xã An Lương'
+    W_21775 = 21775
+    'Xã Phù Mỹ Nam'
+    W_21786 = 21786
+    'Xã Vĩnh Thạnh'
+    W_21787 = 21787
+    'Xã Vĩnh Sơn'
+    W_21796 = 21796
+    'Xã Vĩnh Thịnh'
+    W_21805 = 21805
+    'Xã Vĩnh Quang'
+    W_21808 = 21808
+    'Xã Tây Sơn'
+    W_21817 = 21817
+    'Xã Bình Hiệp'
+    W_21820 = 21820
+    'Xã Bình Khê'
+    W_21829 = 21829
+    'Xã Bình An'
+    W_21835 = 21835
+    'Xã Bình Phú'
+    W_21853 = 21853
+    'Xã Phù Cát'
+    W_21859 = 21859
+    'Xã Đề Gi'
+    W_21868 = 21868
+    'Xã Hội Sơn'
+    W_21871 = 21871
+    'Xã Hòa Hội'
+    W_21880 = 21880
+    'Xã Cát Tiến'
+    W_21892 = 21892
+    'Xã Xuân An'
+    W_21901 = 21901
+    'Xã Ngô Mây'
+    W_21907 = 21907
+    'Phường Bình Định'
+    W_21910 = 21910
+    'Phường An Nhơn'
+    W_21925 = 21925
+    'Phường An Nhơn Bắc'
+    W_21934 = 21934
+    'Phường An Nhơn Đông'
+    W_21940 = 21940
+    'Xã An Nhơn Tây'
+    W_21943 = 21943
+    'Phường An Nhơn Nam'
+    W_21952 = 21952
+    'Xã Tuy Phước'
+    W_21964 = 21964
+    'Xã Tuy Phước Bắc'
+    W_21970 = 21970
+    'Xã Tuy Phước Đông'
+    W_21985 = 21985
+    'Xã Tuy Phước Tây'
+    W_21994 = 21994
+    'Xã Vân Canh'
+    W_21997 = 21997
+    'Xã Canh Liên'
+    W_22006 = 22006
+    'Xã Canh Vinh'
     W_23563 = 23563
     'Phường Diên Hồng'
-    W_23602 = 23602
-    'Phường An Phú'
+    W_23575 = 23575
+    'Phường Pleiku'
+    W_23584 = 23584
+    'Phường Thống Nhất'
+    W_23586 = 23586
+    'Phường Hội Phú'
     W_23590 = 23590
     'Xã Biển Hồ'
+    W_23602 = 23602
+    'Phường An Phú'
     W_23611 = 23611
     'Xã Gào'
-    W_23734 = 23734
-    'Xã Ia Ly'
-    W_23722 = 23722
-    'Xã Chư Păh'
-    W_23728 = 23728
-    'Xã Ia Khươl'
-    W_23749 = 23749
-    'Xã Ia Phí'
-    W_23887 = 23887
-    'Xã Chư Prông'
-    W_23896 = 23896
-    'Xã Bàu Cạn'
-    W_23911 = 23911
-    'Xã Ia Boòng'
-    W_23935 = 23935
-    'Xã Ia Lâu'
-    W_23926 = 23926
-    'Xã Ia Pia'
-    W_23908 = 23908
-    'Xã Ia Tôr'
-    W_23941 = 23941
-    'Xã Chư Sê'
-    W_23947 = 23947
-    'Xã Bờ Ngoong'
-    W_23977 = 23977
-    'Xã Ia Ko'
-    W_23954 = 23954
-    'Xã Al Bá'
-    W_23942 = 23942
-    'Xã Chư Pưh'
-    W_23986 = 23986
-    'Xã Ia Le'
-    W_23971 = 23971
-    'Xã Ia Hrú'
-    W_23617 = 23617
-    'Phường An Khê'
     W_23614 = 23614
     'Phường An Bình'
+    W_23617 = 23617
+    'Phường An Khê'
     W_23629 = 23629
     'Xã Cửu An'
-    W_23995 = 23995
-    'Xã Đak Pơ'
-    W_24007 = 24007
-    'Xã Ya Hội'
     W_23638 = 23638
     'Xã Kbang'
-    W_23674 = 23674
-    'Xã Kông Bơ La'
-    W_23668 = 23668
-    'Xã Tơ Tung'
-    W_23647 = 23647
-    'Xã Sơn Lang'
     W_23644 = 23644
     'Xã Đak Rong'
-    W_23824 = 23824
-    'Xã Kông Chro'
-    W_23833 = 23833
-    'Xã Ya Ma'
-    W_23830 = 23830
-    'Xã Chư Krey'
-    W_23839 = 23839
-    'Xã SRó'
-    W_23842 = 23842
-    'Xã Đăk Song'
-    W_23851 = 23851
-    'Xã Chơ Long'
-    W_24044 = 24044
-    'Phường Ayun Pa'
-    W_24065 = 24065
-    'Xã Ia Rbol'
-    W_24073 = 24073
-    'Xã Ia Sao'
-    W_24043 = 24043
-    'Xã Phú Thiện'
-    W_24049 = 24049
-    'Xã Chư A Thai'
-    W_24061 = 24061
-    'Xã Ia Hiao'
-    W_24013 = 24013
-    'Xã Pờ Tó'
-    W_24022 = 24022
-    'Xã Ia Pa'
-    W_24028 = 24028
-    'Xã Ia Tul'
-    W_24076 = 24076
-    'Xã Phú Túc'
-    W_24100 = 24100
-    'Xã Ia Dreh'
-    W_24112 = 24112
-    'Xã Ia Rsai'
-    W_24109 = 24109
-    'Xã Uar'
+    W_23647 = 23647
+    'Xã Sơn Lang'
+    W_23650 = 23650
+    'Xã Krong'
+    W_23668 = 23668
+    'Xã Tơ Tung'
+    W_23674 = 23674
+    'Xã Kông Bơ La'
     W_23677 = 23677
     'Xã Đak Đoa'
+    W_23683 = 23683
+    'Xã Đak Sơmei'
     W_23701 = 23701
     'Xã Kon Gang'
     W_23710 = 23710
     'Xã Ia Băng'
     W_23714 = 23714
     'Xã KDang'
-    W_23683 = 23683
-    'Xã Đak Sơmei'
+    W_23722 = 23722
+    'Xã Chư Păh'
+    W_23728 = 23728
+    'Xã Ia Khươl'
+    W_23734 = 23734
+    'Xã Ia Ly'
+    W_23749 = 23749
+    'Xã Ia Phí'
+    W_23764 = 23764
+    'Xã Ia Grai'
+    W_23767 = 23767
+    'Xã Ia Hrung'
+    W_23776 = 23776
+    'Xã Ia Krái'
+    W_23782 = 23782
+    'Xã Ia O'
+    W_23788 = 23788
+    'Xã Ia Chia'
     W_23794 = 23794
     'Xã Mang Yang'
+    W_23798 = 23798
+    'Xã Ayun'
+    W_23799 = 23799
+    'Xã Hra'
     W_23812 = 23812
     'Xã Lơ Pang'
     W_23818 = 23818
     'Xã Kon Chiêng'
-    W_23799 = 23799
-    'Xã Hra'
-    W_23798 = 23798
-    'Xã Ayun'
-    W_23764 = 23764
-    'Xã Ia Grai'
-    W_23776 = 23776
-    'Xã Ia Krái'
-    W_23767 = 23767
-    'Xã Ia Hrung'
+    W_23824 = 23824
+    'Xã Kông Chro'
+    W_23830 = 23830
+    'Xã Chư Krey'
+    W_23833 = 23833
+    'Xã Ya Ma'
+    W_23839 = 23839
+    'Xã SRó'
+    W_23842 = 23842
+    'Xã Đăk Song'
+    W_23851 = 23851
+    'Xã Chơ Long'
     W_23857 = 23857
     'Xã Đức Cơ'
-    W_23869 = 23869
-    'Xã Ia Dơk'
     W_23866 = 23866
     'Xã Ia Krêl'
-    W_21607 = 21607
-    'Xã Nhơn Châu'
-    W_23917 = 23917
-    'Xã Ia Púch'
-    W_23737 = 23737
-    'Xã Ia Mơ'
+    W_23869 = 23869
+    'Xã Ia Dơk'
+    W_23872 = 23872
+    'Xã Ia Dom'
     W_23881 = 23881
     'Xã Ia Pnôn'
     W_23884 = 23884
     'Xã Ia Nan'
-    W_23872 = 23872
-    'Xã Ia Dom'
-    W_23788 = 23788
-    'Xã Ia Chia'
-    W_23782 = 23782
-    'Xã Ia O'
-    W_23650 = 23650
-    'Xã Krong'
-    W_22366 = 22366
-    'Phường Nha Trang'
+    W_23887 = 23887
+    'Xã Chư Prông'
+    W_23896 = 23896
+    'Xã Bàu Cạn'
+    W_23908 = 23908
+    'Xã Ia Tôr'
+    W_23911 = 23911
+    'Xã Ia Boòng'
+    W_23917 = 23917
+    'Xã Ia Púch'
+    W_23926 = 23926
+    'Xã Ia Pia'
+    W_23935 = 23935
+    'Xã Ia Lâu'
+    W_23938 = 23938
+    'Xã Ia Mơ'
+    W_23941 = 23941
+    'Xã Chư Sê'
+    W_23942 = 23942
+    'Xã Chư Pưh'
+    W_23947 = 23947
+    'Xã Bờ Ngoong'
+    W_23954 = 23954
+    'Xã Al Bá'
+    W_23971 = 23971
+    'Xã Ia Hrú'
+    W_23977 = 23977
+    'Xã Ia Ko'
+    W_23986 = 23986
+    'Xã Ia Le'
+    W_23995 = 23995
+    'Xã Đak Pơ'
+    W_24007 = 24007
+    'Xã Ya Hội'
+    W_24013 = 24013
+    'Xã Pờ Tó'
+    W_24022 = 24022
+    'Xã Ia Pa'
+    W_24028 = 24028
+    'Xã Ia Tul'
+    W_24043 = 24043
+    'Xã Phú Thiện'
+    W_24044 = 24044
+    'Phường Ayun Pa'
+    W_24049 = 24049
+    'Xã Chư A Thai'
+    W_24061 = 24061
+    'Xã Ia Hiao'
+    W_24065 = 24065
+    'Xã Ia Rbol'
+    W_24073 = 24073
+    'Xã Ia Sao'
+    W_24076 = 24076
+    'Xã Phú Túc'
+    W_24100 = 24100
+    'Xã Ia Dreh'
+    W_24109 = 24109
+    'Xã Uar'
+    W_24112 = 24112
+    'Xã Ia Rsai'
     W_22333 = 22333
     'Phường Bắc Nha Trang'
+    W_22366 = 22366
+    'Phường Nha Trang'
     W_22390 = 22390
     'Phường Tây Nha Trang'
     W_22402 = 22402
     'Phường Nam Nha Trang'
-    W_22408 = 22408
+    W_22411 = 22411
     'Phường Bắc Cam Ranh'
     W_22420 = 22420
     'Phường Cam Ranh'
-    W_22432 = 22432
-    'Phường Cam Linh'
     W_22423 = 22423
     'Phường Ba Ngòi'
+    W_22432 = 22432
+    'Phường Cam Linh'
+    W_22435 = 22435
+    'Xã Cam Hiệp'
+    W_22453 = 22453
+    'Xã Cam Lâm'
+    W_22465 = 22465
+    'Xã Cam An'
     W_22480 = 22480
     'Xã Nam Cam Ranh'
-    W_22546 = 22546
-    'Xã Bắc Ninh Hòa'
+    W_22489 = 22489
+    'Xã Vạn Ninh'
+    W_22498 = 22498
+    'Xã Tu Bông'
+    W_22504 = 22504
+    'Xã Đại Lãnh'
+    W_22516 = 22516
+    'Xã Vạn Thắng'
+    W_22525 = 22525
+    'Xã Vạn Hưng'
     W_22528 = 22528
     'Phường Ninh Hòa'
-    W_22576 = 22576
-    'Xã Tân Định'
-    W_22561 = 22561
-    'Phường Đông Ninh Hòa'
-    W_22591 = 22591
-    'Phường Hòa Thắng'
-    W_22597 = 22597
-    'Xã Nam Ninh Hòa'
+    W_22546 = 22546
+    'Xã Bắc Ninh Hòa'
     W_22552 = 22552
     'Xã Tây Ninh Hòa'
     W_22558 = 22558
     'Xã Hòa Trí'
-    W_22504 = 22504
-    'Xã Đại Lãnh'
-    W_22498 = 22498
-    'Xã Tu Bông'
-    W_22516 = 22516
-    'Xã Vạn Thắng'
-    W_22489 = 22489
-    'Xã Vạn Ninh'
-    W_22525 = 22525
-    'Xã Vạn Hưng'
+    W_22561 = 22561
+    'Phường Đông Ninh Hòa'
+    W_22576 = 22576
+    'Xã Tân Định'
+    W_22591 = 22591
+    'Phường Hòa Thắng'
+    W_22597 = 22597
+    'Xã Nam Ninh Hòa'
+    W_22609 = 22609
+    'Xã Khánh Vĩnh'
+    W_22612 = 22612
+    'Xã Trung Khánh Vĩnh'
+    W_22615 = 22615
+    'Xã Bắc Khánh Vĩnh'
+    W_22624 = 22624
+    'Xã Tây Khánh Vĩnh'
+    W_22648 = 22648
+    'Xã Nam Khánh Vĩnh'
     W_22651 = 22651
     'Xã Diên Khánh'
-    W_22678 = 22678
-    'Xã Diên Lạc'
     W_22657 = 22657
     'Xã Diên Điền'
     W_22660 = 22660
     'Xã Diên Lâm'
     W_22672 = 22672
     'Xã Diên Thọ'
+    W_22678 = 22678
+    'Xã Diên Lạc'
     W_22702 = 22702
     'Xã Suối Hiệp'
-    W_22453 = 22453
-    'Xã Cam Lâm'
     W_22708 = 22708
     'Xã Suối Dầu'
-    W_22435 = 22435
-    'Xã Cam Hiệp'
-    W_22465 = 22465
-    'Xã Cam An'
-    W_22615 = 22615
-    'Xã Bắc Khánh Vĩnh'
-    W_22612 = 22612
-    'Xã Trung Khánh Vĩnh'
-    W_22624 = 22624
-    'Xã Tây Khánh Vĩnh'
-    W_22648 = 22648
-    'Xã Nam Khánh Vĩnh'
-    W_22609 = 22609
-    'Xã Khánh Vĩnh'
     W_22714 = 22714
     'Xã Khánh Sơn'
     W_22720 = 22720
@@ -4511,116 +4511,184 @@ class WardCode(IntEnum):
     'Xã Đông Khánh Sơn'
     W_22736 = 22736
     'Đặc khu Trường Sa'
-    W_22759 = 22759
-    'Phường Phan Rang'
-    W_22779 = 22779
-    'Phường Đông Hải'
-    W_22834 = 22834
-    'Phường Ninh Chử'
-    W_22741 = 22741
-    'Phường Bảo An'
     W_22738 = 22738
     'Phường Đô Vinh'
-    W_22870 = 22870
-    'Xã Ninh Phước'
-    W_22891 = 22891
-    'Xã Phước Hữu'
-    W_22873 = 22873
-    'Xã Phước Hậu'
-    W_22897 = 22897
-    'Xã Thuận Nam'
-    W_22910 = 22910
-    'Xã Cà Ná'
-    W_22885 = 22885
-    'Xã Phước Hà'
-    W_22903 = 22903
-    'Xã Phước Dinh'
-    W_22852 = 22852
-    'Xã Ninh Hải'
-    W_22858 = 22858
-    'Xã Xuân Hải'
-    W_22868 = 22868
-    'Xã Vĩnh Hải'
-    W_22849 = 22849
-    'Xã Thuận Bắc'
-    W_22840 = 22840
-    'Xã Công Hải'
+    W_22741 = 22741
+    'Phường Bảo An'
+    W_22759 = 22759
+    'Phường Phan Rang'
+    W_22780 = 22780
+    'Phường Đông Hải'
+    W_22786 = 22786
+    'Xã Bác Ái Tây'
+    W_22795 = 22795
+    'Xã Bác Ái'
+    W_22801 = 22801
+    'Xã Bác Ái Đông'
     W_22810 = 22810
     'Xã Ninh Sơn'
     W_22813 = 22813
     'Xã Lâm Sơn'
-    W_22828 = 22828
-    'Xã Anh Dũng'
     W_22822 = 22822
     'Xã Mỹ Sơn'
-    W_22801 = 22801
-    'Xã Bác Ái Đông'
-    W_22795 = 22795
-    'Xã Bác Ái'
-    W_22786 = 22786
-    'Xã Bác Ái Tây'
-    W_24175 = 24175
-    'Xã Hòa Phú'
-    W_24133 = 24133
-    'Phường  Buôn Ma Thuột'
-    W_24163 = 24163
-    'Phường  Tân An'
+    W_22828 = 22828
+    'Xã Anh Dũng'
+    W_22834 = 22834
+    'Phường Ninh Chử'
+    W_22840 = 22840
+    'Xã Công Hải'
+    W_22846 = 22846
+    'Xã Vĩnh Hải'
+    W_22849 = 22849
+    'Xã Thuận Bắc'
+    W_22852 = 22852
+    'Xã Ninh Hải'
+    W_22861 = 22861
+    'Xã Xuân Hải'
+    W_22870 = 22870
+    'Xã Ninh Phước'
+    W_22873 = 22873
+    'Xã Phước Hậu'
+    W_22888 = 22888
+    'Xã Phước Dinh'
+    W_22891 = 22891
+    'Xã Phước Hữu'
+    W_22897 = 22897
+    'Xã Thuận Nam'
+    W_22900 = 22900
+    'Xã Phước Hà'
+    W_22909 = 22909
+    'Xã Cà Ná'
+    W_22015 = 22015
+    'Phường Tuy Hòa'
+    W_22045 = 22045
+    'Phường Bình Kiến'
+    W_22051 = 22051
+    'Phường Sông Cầu'
+    W_22057 = 22057
+    'Xã Xuân Lộc'
+    W_22060 = 22060
+    'Xã Xuân Cảnh'
+    W_22075 = 22075
+    'Xã Xuân Thọ'
+    W_22076 = 22076
+    'Phường Xuân Đài'
+    W_22081 = 22081
+    'Xã Đồng Xuân'
+    W_22090 = 22090
+    'Xã Xuân Lãnh'
+    W_22096 = 22096
+    'Xã Phú Mỡ'
+    W_22111 = 22111
+    'Xã Xuân Phước'
+    W_22114 = 22114
+    'Xã Tuy An Bắc'
+    W_22120 = 22120
+    'Xã Tuy An Đông'
+    W_22132 = 22132
+    'Xã Tuy An Tây'
+    W_22147 = 22147
+    'Xã Ô Loan'
+    W_22153 = 22153
+    'Xã Tuy An Nam'
+    W_22165 = 22165
+    'Xã Sơn Hòa'
+    W_22171 = 22171
+    'Xã Tây Sơn'
+    W_22177 = 22177
+    'Xã Vân Hòa'
+    W_22192 = 22192
+    'Xã Suối Trai'
+    W_22207 = 22207
+    'Xã Sông Hinh'
+    W_22222 = 22222
+    'Xã Đức Bình'
+    W_22225 = 22225
+    'Xã Ea Bá'
+    W_22237 = 22237
+    'Xã Ea Ly'
+    W_22240 = 22240
+    'Phường Phú Yên'
+    W_22250 = 22250
+    'Xã Sơn Thành'
+    W_22255 = 22255
+    'Xã Tây Hòa'
+    W_22258 = 22258
+    'Phường Đông Hòa'
+    W_22261 = 22261
+    'Phường Hòa Hiệp'
+    W_22276 = 22276
+    'Xã Hòa Thịnh'
+    W_22285 = 22285
+    'Xã Hòa Mỹ'
+    W_22291 = 22291
+    'Xã Hòa Xuân'
+    W_22303 = 22303
+    'Xã Phú Hòa 2'
+    W_22319 = 22319
+    'Xã Phú Hòa 1'
     W_24121 = 24121
-    'Phường  Tân Lập'
+    'Phường Tân Lập'
+    W_24133 = 24133
+    'Phường Buôn Ma Thuột'
     W_24154 = 24154
-    'Phường  Thành Nhất'
+    'Phường Thành Nhất'
+    W_24163 = 24163
+    'Phường Tân An'
     W_24169 = 24169
     'Phường Ea Kao'
-    W_24328 = 24328
-    'Xã Ea Drông'
-    W_24305 = 24305
-    'Phường Buôn Hồ'
-    W_24340 = 24340
-    'Phường Cư Bao'
+    W_24175 = 24175
+    'Xã Hòa Phú'
+    W_24181 = 24181
+    'Xã Ea Drăng'
+    W_24184 = 24184
+    'Xã Ea H’Leo'
+    W_24187 = 24187
+    'Xã Ea Hiao'
+    W_24193 = 24193
+    'Xã Ea Wy'
+    W_24208 = 24208
+    'Xã Ea Khăl'
     W_24211 = 24211
     'Xã Ea Súp'
-    W_24217 = 24217
-    'Xã Ea Rốk'
-    W_24229 = 24229
-    'Xã Ea Bung'
-    W_24221 = 24221
-    'Xã Ia Rvê'
     W_24214 = 24214
     'Xã Ia Lốp'
+    W_24217 = 24217
+    'Xã Ea Rốk'
+    W_24221 = 24221
+    'Xã Ia Rvê'
+    W_24229 = 24229
+    'Xã Ea Bung'
+    W_24235 = 24235
+    'Xã Buôn Đôn'
     W_24241 = 24241
     'Xã Ea Wer'
     W_24250 = 24250
     'Xã Ea Nuôl'
-    W_24235 = 24235
-    'Xã Buôn Đôn'
-    W_24265 = 24265
-    'Xã Ea Kiết'
-    W_24286 = 24286
-    'Xã Ea M’Droh'
     W_24259 = 24259
     'Xã Quảng Phú'
-    W_24301 = 24301
-    'Xã Cuôr Đăng'
-    W_24280 = 24280
-    'Xã Cư M’gar'
+    W_24265 = 24265
+    'Xã Ea Kiết'
     W_24277 = 24277
     'Xã Ea Tul'
-    W_24316 = 24316
-    'Xã Pơng Drang'
+    W_24280 = 24280
+    'Xã Cư M’gar'
+    W_24286 = 24286
+    'Xã Ea M’Droh'
+    W_24301 = 24301
+    'Xã Cuôr Đăng'
+    W_24305 = 24305
+    'Phường Buôn Hồ'
     W_24310 = 24310
     'Xã Krông Búk'
     W_24313 = 24313
     'Xã Cư Pơng'
-    W_24208 = 24208
-    'Xã Ea Khăl'
-    W_24181 = 24181
-    'Xã Ea Drăng'
-    W_24193 = 24193
-    'Xã Ea Wy'
-    W_24184 = 24184
-    'Xã Ea H’leo'
-    W_24187 = 24187
-    'Xã Ea Hiao'
+    W_24316 = 24316
+    'Xã Pơng Drang'
+    W_24328 = 24328
+    'Xã Ea Drông'
+    W_24340 = 24340
+    'Phường Cư Bao'
     W_24343 = 24343
     'Xã Krông Năng'
     W_24346 = 24346
@@ -4629,222 +4697,302 @@ class WardCode(IntEnum):
     'Xã Tam Giang'
     W_24364 = 24364
     'Xã Phú Xuân'
-    W_24490 = 24490
-    'Xã Krông Pắc'
-    W_24505 = 24505
-    'Xã Ea Knuếc'
-    W_24526 = 24526
-    'Xã Tân Tiến'
-    W_24502 = 24502
-    'Xã Ea Phê'
-    W_24496 = 24496
-    'Xã Ea Kly'
-    W_24529 = 24529
-    'Xã Vụ Bổn'
     W_24373 = 24373
     'Xã Ea Kar'
-    W_24403 = 24403
-    'Xã Ea Ô'
     W_24376 = 24376
     'Xã Ea Knốp'
-    W_24406 = 24406
-    'Xã Cư Yang'
     W_24400 = 24400
     'Xã Ea Păl'
+    W_24403 = 24403
+    'Xã Ea Ô'
+    W_24406 = 24406
+    'Xã Cư Yang'
     W_24412 = 24412
     'Xã M’Drắk'
+    W_24415 = 24415
+    'Xã Cư Prao'
     W_24433 = 24433
     'Xã Ea Riêng'
     W_24436 = 24436
     'Xã Cư M’ta'
     W_24444 = 24444
     'Xã Krông Á'
-    W_24415 = 24415
-    'Xã Cư Prao'
     W_24445 = 24445
     'Xã Ea Trang'
-    W_24481 = 24481
-    'Xã Hòa Sơn'
-    W_24454 = 24454
-    'Xã Dang Kang'
     W_24448 = 24448
     'Xã Krông Bông'
-    W_24484 = 24484
-    'Xã Yang Mao'
+    W_24454 = 24454
+    'Xã Dang Kang'
+    W_24472 = 24472
+    'Xã Hòa Sơn'
     W_24478 = 24478
     'Xã Cư Pui'
+    W_24484 = 24484
+    'Xã Yang Mao'
+    W_24490 = 24490
+    'Xã Krông Pắc'
+    W_24496 = 24496
+    'Xã Ea Kly'
+    W_24502 = 24502
+    'Xã Ea Phê'
+    W_24505 = 24505
+    'Xã Ea Knuếc'
+    W_24526 = 24526
+    'Xã Tân Tiến'
+    W_24529 = 24529
+    'Xã Vụ Bổn'
+    W_24538 = 24538
+    'Xã Krông Ana'
+    W_24540 = 24540
+    'Xã Ea Ning'
+    W_24544 = 24544
+    'Xã Ea Ktur'
+    W_24559 = 24559
+    'Xã Ea Na'
+    W_24561 = 24561
+    'Xã Dray Bhăng'
+    W_24568 = 24568
+    'Xã Dur Kmăl'
     W_24580 = 24580
     'Xã Liên Sơn Lắk'
     W_24595 = 24595
     'Xã Đắk Liêng'
-    W_24607 = 24607
-    'Xã Nam Ka'
     W_24598 = 24598
     'Xã Đắk Phơi'
     W_24604 = 24604
     'Xã Krông Nô'
-    W_24540 = 24540
-    'Xã Ea Ning'
-    W_24561 = 24561
-    'Xã Dray Bhăng'
-    W_24544 = 24544
-    'Xã Ea Ktur'
-    W_24538 = 24538
-    'Xã Krông Ana'
-    W_24568 = 24568
-    'Xã Dur Kmăl'
-    W_24559 = 24559
-    'Xã Ea Na'
-    W_22015 = 22015
-    'Phường Tuy Hòa'
-    W_22240 = 22240
-    'Phường Phú Yên'
-    W_22045 = 22045
-    'Phường Bình Kiến'
-    W_22075 = 22075
-    'Xã Xuân Thọ'
-    W_22066 = 22066
-    'Xã Xuân Cảnh'
-    W_22057 = 22057
-    'Xã Xuân Lộc'
-    W_22076 = 22076
-    'Phường Xuân Đài'
-    W_22051 = 22051
-    'Phường Sông Cầu'
-    W_22291 = 22291
-    'Xã Hòa Xuân'
-    W_22258 = 22258
-    'Phường Đông Hòa'
-    W_22261 = 22261
-    'Phường Hòa Hiệp'
-    W_22114 = 22114
-    'Xã Tuy An Bắc'
-    W_22120 = 22120
-    'Xã Tuy An Đông'
-    W_22147 = 22147
-    'Xã Ô Loan'
-    W_22153 = 22153
-    'Xã Tuy An Nam'
-    W_22132 = 22132
-    'Xã Tuy An Tây'
-    W_22319 = 22319
-    'Xã Phú Hòa 1'
-    W_22306 = 22306
-    'Xã Phú Hòa 2'
-    W_22255 = 22255
-    'Xã Tây Hòa'
-    W_22276 = 22276
-    'Xã Hòa Thịnh'
-    W_22285 = 22285
-    'Xã Hòa Mỹ'
-    W_22250 = 22250
-    'Xã Sơn Thành'
-    W_22165 = 22165
-    'Xã Sơn Hòa'
-    W_22177 = 22177
-    'Xã Vân Hòa'
-    W_22171 = 22171
-    'Xã Tây Sơn'
-    W_22192 = 22192
-    'Xã Suối Trai'
-    W_22237 = 22237
-    'Xã Ea Ly'
-    W_22225 = 22225
-    'Xã Ea Bá'
-    W_22222 = 22222
-    'Xã Đức Bình'
-    W_22207 = 22207
-    'Xã Sông Hinh'
-    W_22090 = 22090
-    'Xã Xuân Lãnh'
-    W_22096 = 22096
-    'Xã Phú Mỡ'
-    W_22111 = 22111
-    'Xã Xuân Phước'
-    W_22081 = 22081
-    'Xã Đồng Xuân'
+    W_24607 = 24607
+    'Xã Nam Ka'
+    W_22918 = 22918
+    'Phường Mũi Né'
+    W_22924 = 22924
+    'Phường Phú Thuỷ'
+    W_22933 = 22933
+    'Phường Hàm Thắng'
+    W_22945 = 22945
+    'Phường Phan Thiết'
+    W_22954 = 22954
+    'Phường Tiến Thành'
+    W_22960 = 22960
+    'Phường Bình Thuận'
+    W_22963 = 22963
+    'Xã Tuyên Quang'
+    W_22969 = 22969
+    'Xã Liên Hương'
+    W_22972 = 22972
+    'Xã Phan Rí Cửa'
+    W_22978 = 22978
+    'Xã Tuy Phong'
+    W_22981 = 22981
+    'Xã Vĩnh Hảo'
+    W_23005 = 23005
+    'Xã Bắc Bình'
+    W_23008 = 23008
+    'Xã Phan Sơn'
+    W_23020 = 23020
+    'Xã Hải Ninh'
+    W_23023 = 23023
+    'Xã Sông Lũy'
+    W_23032 = 23032
+    'Xã Lương Sơn'
+    W_23041 = 23041
+    'Xã Hồng Thái'
+    W_23053 = 23053
+    'Xã Hòa Thắng'
+    W_23059 = 23059
+    'Xã Hàm Thuận'
+    W_23065 = 23065
+    'Xã La Dạ'
+    W_23074 = 23074
+    'Xã Đông Giang'
+    W_23086 = 23086
+    'Xã Hồng Sơn'
+    W_23089 = 23089
+    'Xã Hàm Thuận Bắc'
+    W_23095 = 23095
+    'Xã Hàm Liêm'
+    W_23110 = 23110
+    'Xã Hàm Thuận Nam'
+    W_23122 = 23122
+    'Xã Hàm Thạnh'
+    W_23128 = 23128
+    'Xã Hàm Kiệm'
+    W_23134 = 23134
+    'Xã Tân Lập'
+    W_23143 = 23143
+    'Xã Tân Thành'
+    W_23149 = 23149
+    'Xã Tánh Linh'
+    W_23152 = 23152
+    'Xã Bắc Ruộng'
+    W_23158 = 23158
+    'Xã Nghị Đức'
+    W_23173 = 23173
+    'Xã Đồng Kho'
+    W_23188 = 23188
+    'Xã Suối Kiết'
+    W_23191 = 23191
+    'Xã Đức Linh'
+    W_23194 = 23194
+    'Xã Hoài Đức'
+    W_23200 = 23200
+    'Xã Nam Thành'
+    W_23227 = 23227
+    'Xã Trà Tân'
+    W_23230 = 23230
+    'Xã Tân Minh'
+    W_23231 = 23231
+    'Phường Phước Hội'
+    W_23235 = 23235
+    'Phường La Gi'
+    W_23236 = 23236
+    'Xã Hàm Tân'
+    W_23246 = 23246
+    'Xã Tân Hải'
+    W_23266 = 23266
+    'Xã Sơn Mỹ'
+    W_23272 = 23272
+    'Đặc khu Phú Quý'
+    W_24611 = 24611
+    'Phường Bắc Gia Nghĩa'
+    W_24615 = 24615
+    'Phường Nam Gia Nghĩa'
+    W_24616 = 24616
+    'Xã Quảng Sơn'
+    W_24617 = 24617
+    'Phường Đông Gia Nghĩa'
+    W_24620 = 24620
+    'Xã Quảng Hòa'
+    W_24631 = 24631
+    'Xã Quảng Khê'
+    W_24637 = 24637
+    'Xã Tà Đùng'
+    W_24640 = 24640
+    'Xã Cư Jút'
+    W_24646 = 24646
+    'Xã Đắk Wil'
+    W_24649 = 24649
+    'Xã Nam Dong'
+    W_24664 = 24664
+    'Xã Đức Lập'
+    W_24670 = 24670
+    'Xã Đắk Mil'
+    W_24678 = 24678
+    'Xã Đắk Sắk'
+    W_24682 = 24682
+    'Xã Thuận An'
+    W_24688 = 24688
+    'Xã Krông Nô'
+    W_24697 = 24697
+    'Xã Nam Đà'
+    W_24703 = 24703
+    'Xã Nâm Nung'
+    W_24712 = 24712
+    'Xã Quảng Phú'
+    W_24717 = 24717
+    'Xã Đức An'
+    W_24718 = 24718
+    'Xã Đắk Song'
+    W_24722 = 24722
+    'Xã Thuận Hạnh'
+    W_24730 = 24730
+    'Xã Trường Xuân'
+    W_24733 = 24733
+    'Xã Kiến Đức'
+    W_24736 = 24736
+    'Xã Quảng Trực'
+    W_24739 = 24739
+    'Xã Tuy Đức'
+    W_24748 = 24748
+    'Xã Quảng Tân'
+    W_24751 = 24751
+    'Xã Nhân Cơ'
+    W_24760 = 24760
+    'Xã Quảng Tín'
+    W_24778 = 24778
+    'Phường Lâm Viên - Đà Lạt'
     W_24781 = 24781
     'Phường Xuân Hương - Đà Lạt'
     W_24787 = 24787
     'Phường Cam Ly - Đà Lạt'
-    W_24778 = 24778
-    'Phường Lâm Viên - Đà Lạt'
     W_24805 = 24805
     'Phường Xuân Trường - Đà Lạt'
-    W_24846 = 24846
-    'Phường Lang Biang - Đà Lạt'
-    W_24823 = 24823
-    'Phường 1 Bảo Lộc'
     W_24820 = 24820
     'Phường 2 Bảo Lộc'
+    W_24823 = 24823
+    'Phường 1 Bảo Lộc'
+    W_24829 = 24829
+    'Phường B’Lao'
     W_24841 = 24841
     'Phường 3 Bảo Lộc'
-    W_24829 = 24829
-    "Phường B'Lao"
+    W_24846 = 24846
+    'Phường Lang Biang - Đà Lạt'
     W_24848 = 24848
     'Xã Lạc Dương'
+    W_24853 = 24853
+    'Xã Đam Rông 4'
+    W_24868 = 24868
+    'Xã Nam Ban Lâm Hà'
+    W_24871 = 24871
+    'Xã Đinh Văn Lâm Hà'
+    W_24875 = 24875
+    'Xã Đam Rông 3'
+    W_24877 = 24877
+    'Xã Đam Rông 2'
+    W_24883 = 24883
+    'Xã Nam Hà Lâm Hà'
+    W_24886 = 24886
+    'Xã Đam Rông 1'
+    W_24895 = 24895
+    'Xã Phú Sơn Lâm Hà'
+    W_24907 = 24907
+    'Xã Phúc Thọ Lâm Hà'
+    W_24916 = 24916
+    'Xã Tân Hà Lâm Hà'
     W_24931 = 24931
     'Xã Đơn Dương'
+    W_24934 = 24934
+    'Xã D’Ran'
     W_24943 = 24943
     'Xã Ka Đô'
     W_24955 = 24955
     'Xã Quảng Lập'
-    W_24934 = 24934
-    "Xã D'Ran"
-    W_24967 = 24967
-    'Xã Hiệp Thạnh'
     W_24958 = 24958
     'Xã Đức Trọng'
+    W_24967 = 24967
+    'Xã Hiệp Thạnh'
     W_24976 = 24976
     'Xã Tân Hội'
-    W_24991 = 24991
-    'Xã Tà Hine'
+    W_24985 = 24985
+    'Xã Ninh Gia'
     W_24988 = 24988
     'Xã Tà Năng'
-    W_24871 = 24871
-    'Xã Đinh Văn Lâm Hà'
-    W_24895 = 24895
-    'Xã Phú Sơn Lâm Hà'
-    W_24883 = 24883
-    'Xã Nam Hà Lâm Hà'
-    W_24868 = 24868
-    'Xã Nam Ban Lâm Hà'
-    W_24916 = 24916
-    'Xã Tân Hà Lâm Hà'
-    W_24907 = 24907
-    'Xã Phúc Thọ Lâm Hà'
-    W_24886 = 24886
-    'Xã Đam Rông 1'
-    W_24877 = 24877
-    'Xã Đam Rông 2'
-    W_24875 = 24875
-    'Xã Đam Rông 3'
-    W_24853 = 24853
-    'Xã Đam Rông 4'
+    W_24991 = 24991
+    'Xã Tà Hine'
     W_25000 = 25000
     'Xã Di Linh'
+    W_25007 = 25007
+    'Xã Đinh Trang Thượng'
+    W_25015 = 25015
+    'Xã Gia Hiệp'
+    W_25018 = 25018
+    'Xã Bảo Thuận'
     W_25036 = 25036
     'Xã Hòa Ninh'
     W_25042 = 25042
     'Xã Hòa Bắc'
-    W_25007 = 25007
-    'Xã Đinh Trang Thượng'
-    W_25018 = 25018
-    'Xã Bảo Thuận'
     W_25051 = 25051
     'Xã Sơn Điền'
-    W_25015 = 25015
-    'Xã Gia Hiệp'
     W_25054 = 25054
     'Xã Bảo Lâm 1'
+    W_25057 = 25057
+    'Xã Bảo Lâm 5'
+    W_25063 = 25063
+    'Xã Bảo Lâm 4'
     W_25084 = 25084
     'Xã Bảo Lâm 2'
     W_25093 = 25093
     'Xã Bảo Lâm 3'
-    W_25063 = 25063
-    'Xã Bảo Lâm 4'
-    W_25057 = 25057
-    'Xã Bảo Lâm 5'
     W_25099 = 25099
     'Xã Đạ Huoai'
     W_25105 = 25105
@@ -4853,492 +5001,450 @@ class WardCode(IntEnum):
     'Xã Đạ Huoai 3'
     W_25126 = 25126
     'Xã Đạ Tẻh'
-    W_25138 = 25138
-    'Xã Đạ Tẻh 2'
     W_25135 = 25135
     'Xã Đạ Tẻh 3'
+    W_25138 = 25138
+    'Xã Đạ Tẻh 2'
     W_25159 = 25159
     'Xã Cát Tiên'
-    W_25180 = 25180
-    'Xã Cát Tiên 2'
     W_25162 = 25162
     'Xã Cát Tiên 3'
-    W_22933 = 22933
-    'Phường Hàm Thắng'
-    W_22960 = 22960
-    'Phường Bình Thuận'
-    W_22918 = 22918
-    'Phường Mũi Né'
-    W_22924 = 22924
-    'Phường Phú Thuỷ'
-    W_22945 = 22945
-    'Phường Phan Thiết'
-    W_22954 = 22954
-    'Phường Tiến Thành'
-    W_23235 = 23235
-    'Phường La Gi'
-    W_23231 = 23231
-    'Phường Phước Hội'
-    W_22963 = 22963
-    'Xã Tuyên Quang'
-    W_23246 = 23246
-    'Xã Tân Hải'
-    W_22981 = 22981
-    'Xã Vĩnh Hảo'
-    W_22969 = 22969
-    'Xã Liên Hương'
-    W_22978 = 22978
-    'Xã Tuy Phong'
-    W_22972 = 22972
-    'Xã Phan Rí Cửa'
-    W_23005 = 23005
-    'Xã Bắc Bình'
-    W_23041 = 23041
-    'Xã Hồng Thái'
-    W_23020 = 23020
-    'Xã Hải Ninh'
-    W_23008 = 23008
-    'Xã Phan Sơn'
-    W_23023 = 23023
-    'Xã Sông Lũy'
-    W_23032 = 23032
-    'Xã Lương Sơn'
-    W_23053 = 23053
-    'Xã Hòa Thắng'
-    W_23074 = 23074
-    'Xã Đông Giang'
-    W_23065 = 23065
-    'Xã La Dạ'
-    W_23089 = 23089
-    'Xã Hàm Thuận Bắc'
-    W_23059 = 23059
-    'Xã Hàm Thuận'
-    W_23086 = 23086
-    'Xã Hồng Sơn'
-    W_23098 = 23098
-    'Xã Hàm Liêm'
-    W_23122 = 23122
-    'Xã Hàm Thạnh'
-    W_23128 = 23128
-    'Xã Hàm Kiệm'
-    W_23143 = 23143
-    'Xã Tân Thành'
-    W_23110 = 23110
-    'Xã Hàm Thuận Nam'
-    W_23134 = 23134
-    'Xã Tân Lập'
-    W_23230 = 23230
-    'Xã Tân Minh'
-    W_23236 = 23236
-    'Xã Hàm Tân'
-    W_23266 = 23266
-    'Xã Sơn Mỹ'
-    W_23152 = 23152
-    'Xã Bắc Ruộng'
-    W_23158 = 23158
-    'Xã Nghị Đức'
-    W_23173 = 23173
-    'Xã Đồng Kho'
-    W_23149 = 23149
-    'Xã Tánh Linh'
-    W_23188 = 23188
-    'Xã Suối Kiết'
-    W_23200 = 23200
-    'Xã Nam Thành'
-    W_23191 = 23191
-    'Xã Đức Linh'
-    W_23194 = 23194
-    'Xã Hoài Đức'
-    W_23227 = 23227
-    'Xã Trà Tân'
-    W_23272 = 23272
-    'Đặc khu Phú Quý'
-    W_24611 = 24611
-    'Phường Bắc Gia Nghĩa'
-    W_24615 = 24615
-    'Phường Nam Gia Nghĩa'
-    W_24617 = 24617
-    'Phường Đông Gia Nghĩa'
-    W_24646 = 24646
-    'Xã Đắk Wil'
-    W_24649 = 24649
-    'Xã Nam Dong'
-    W_24640 = 24640
-    'Xã Cư Jút'
-    W_24682 = 24682
-    'Xã Thuận An'
-    W_24664 = 24664
-    'Xã Đức Lập'
-    W_24670 = 24670
-    'Xã Đắk Mil'
-    W_24678 = 24678
-    'Xã Đắk Sắk'
-    W_24697 = 24697
-    'Xã Nam Đà'
-    W_24688 = 24688
-    'Xã Krông Nô'
-    W_24703 = 24703
-    'Xã Nâm Nung'
-    W_24712 = 24712
-    'Xã Quảng Phú'
-    W_24718 = 24718
-    'Xã Đắk song'
-    W_24717 = 24717
-    'Xã Đức An'
-    W_24722 = 24722
-    'Xã Thuận Hạnh'
-    W_24730 = 24730
-    'Xã Trường Xuân'
-    W_24637 = 24637
-    'Xã Tà Đùng'
-    W_24631 = 24631
-    'Xã Quảng Khê'
-    W_24748 = 24748
-    'Xã Quảng Tân'
-    W_24739 = 24739
-    'Xã Tuy Đức'
-    W_24733 = 24733
-    'Xã Kiến Đức'
-    W_24751 = 24751
-    'Xã Nhân Cơ'
-    W_24760 = 24760
-    'Xã Quảng Tín'
-    W_24985 = 24985
-    'Xã Ninh Gia'
-    W_24620 = 24620
-    'Xã Quảng Hòa'
-    W_24616 = 24616
-    'Xã Quảng Sơn'
-    W_24736 = 24736
-    'Xã Quảng Trực'
-    W_26068 = 26068
-    'Phường Biên Hòa'
-    W_26041 = 26041
-    'Phường Trấn Biên'
-    W_26017 = 26017
-    'Phường Tam Hiệp'
-    W_26020 = 26020
-    'Phường Long Bình'
-    W_25993 = 25993
-    'Phường Trảng Dài'
-    W_26005 = 26005
-    'Phường Hố Nai'
-    W_26380 = 26380
-    'Phường Long Hưng'
-    W_26491 = 26491
-    'Xã Đại Phước'
-    W_26485 = 26485
-    'Xã Nhơn Trạch'
-    W_26503 = 26503
-    'Xã Phước An'
-    W_26422 = 26422
-    'Xã Phước Thái'
-    W_26413 = 26413
-    'Xã Long Phước'
-    W_26389 = 26389
-    'Xã Bình An'
-    W_26368 = 26368
-    'Xã Long Thành'
-    W_26383 = 26383
-    'Xã An Phước'
-    W_26296 = 26296
-    'Xã An Viễn'
-    W_26278 = 26278
-    'Xã Bình Minh'
-    W_26248 = 26248
-    'Xã Trảng Bom'
-    W_26254 = 26254
-    'Xã Bàu Hàm'
-    W_26281 = 26281
-    'Xã Hưng Thịnh'
-    W_26326 = 26326
-    'Xã Dầu Giây'
-    W_26311 = 26311
-    'Xã Gia Kiệm'
-    W_26299 = 26299
-    'Xã Thống Nhất'
-    W_26089 = 26089
-    'Phường Bình Lộc'
-    W_26098 = 26098
-    'Phường Bảo Vinh'
-    W_26104 = 26104
-    'Phường Xuân Lập'
-    W_26080 = 26080
-    'Phường Long Khánh'
-    W_26113 = 26113
-    'Phường Hàng Gòn'
-    W_26329 = 26329
-    'Xã Xuân Quế'
-    W_26347 = 26347
-    'Xã Xuân Đường'
-    W_26341 = 26341
-    'Xã Cẩm Mỹ'
-    W_26362 = 26362
-    'Xã Sông Ray'
-    W_26359 = 26359
-    'Xã Xuân Đông'
-    W_26461 = 26461
-    'Xã Xuân Định'
-    W_26458 = 26458
-    'Xã Xuân Phú'
-    W_26425 = 26425
-    'Xã Xuân Lộc'
-    W_26446 = 26446
-    'Xã Xuân Hòa'
-    W_26434 = 26434
-    'Xã Xuân Thành'
-    W_26428 = 26428
-    'Xã Xuân Bắc'
-    W_26227 = 26227
-    'Xã La Ngà'
-    W_26206 = 26206
-    'Xã Định Quán'
-    W_26215 = 26215
-    'Xã Phú Vinh'
-    W_26221 = 26221
-    'Xã Phú Hòa'
-    W_26134 = 26134
-    'Xã Tà Lài'
-    W_26122 = 26122
-    'Xã Nam Cát Tiên'
-    W_26116 = 26116
-    'Xã Tân Phú'
-    W_26158 = 26158
-    'Xã Phú Lâm'
-    W_26170 = 26170
-    'Xã Trị An'
-    W_26179 = 26179
-    'Xã Tân An'
-    W_26188 = 26188
-    'Phường Tân Triều'
-    W_25441 = 25441
-    'Phường Minh Hưng'
-    W_25432 = 25432
-    'Phường Chơn Thành'
-    W_25453 = 25453
-    'Xã Nha Bích'
-    W_25351 = 25351
-    'Xã Tân Quan'
-    W_25345 = 25345
-    'Xã Tân Hưng'
-    W_25357 = 25357
-    'Xã Tân Khai'
-    W_25349 = 25349
-    'Xã Minh Đức'
-    W_25326 = 25326
-    'Phường Bình Long'
-    W_25336 = 25336
-    'Phường An Lộc'
-    W_25294 = 25294
-    'Xã Lộc Thành'
+    W_25180 = 25180
+    'Xã Cát Tiên 2'
+    W_25195 = 25195
+    'Phường Bình Phước'
+    W_25210 = 25210
+    'Phường Đồng Xoài'
+    W_25217 = 25217
+    'Phường Phước Long'
+    W_25220 = 25220
+    'Phường Phước Bình'
+    W_25222 = 25222
+    'Xã Bù Gia Mập'
+    W_25225 = 25225
+    'Xã Đăk Ơ'
+    W_25231 = 25231
+    'Xã Đa Kia'
+    W_25246 = 25246
+    'Xã Bình Tân'
+    W_25252 = 25252
+    'Xã Phú Riềng'
+    W_25255 = 25255
+    'Xã Long Hà'
+    W_25261 = 25261
+    'Xã Phú Trung'
+    W_25267 = 25267
+    'Xã Phú Nghĩa'
     W_25270 = 25270
     'Xã Lộc Ninh'
-    W_25303 = 25303
-    'Xã Lộc Hưng'
     W_25279 = 25279
     'Xã Lộc Tấn'
     W_25280 = 25280
     'Xã Lộc Thạnh'
     W_25292 = 25292
     'Xã Lộc Quang'
-    W_25318 = 25318
-    'Xã Tân Tiến'
+    W_25294 = 25294
+    'Xã Lộc Thành'
+    W_25303 = 25303
+    'Xã Lộc Hưng'
     W_25308 = 25308
     'Xã Thiện Hưng'
     W_25309 = 25309
     'Xã Hưng Phước'
-    W_25267 = 25267
-    'Xã Phú Nghĩa'
-    W_25231 = 25231
-    'Xã Đa Kia'
-    W_25220 = 25220
-    'Phường Phước Bình'
-    W_25217 = 25217
-    'Phường Phước Long'
-    W_25246 = 25246
-    'Xã Bình Tân'
-    W_25255 = 25255
-    'Xã Long Hà'
-    W_25264 = 25264
-    'Xã Phú Riềng'
-    W_25261 = 25261
-    'Xã Phú Trung'
-    W_25210 = 25210
-    'Phường Đồng Xoài'
-    W_25195 = 25195
-    'Phường Bình Phước'
+    W_25318 = 25318
+    'Xã Tân Tiến'
+    W_25326 = 25326
+    'Phường Bình Long'
+    W_25333 = 25333
+    'Phường An Lộc'
+    W_25345 = 25345
+    'Xã Tân Hưng'
+    W_25349 = 25349
+    'Xã Minh Đức'
+    W_25351 = 25351
+    'Xã Tân Quan'
+    W_25357 = 25357
+    'Xã Tân Khai'
+    W_25363 = 25363
+    'Xã Đồng Phú'
+    W_25378 = 25378
+    'Xã Tân Lợi'
     W_25387 = 25387
     'Xã Thuận Lợi'
     W_25390 = 25390
     'Xã Đồng Tâm'
-    W_25378 = 25378
-    'Xã Tân Lợi'
-    W_25363 = 25363
-    'Xã Đồng Phú'
-    W_25420 = 25420
-    'Xã Phước Sơn'
-    W_25417 = 25417
-    'Xã Nghĩa Trung'
     W_25396 = 25396
     'Xã Bù Đăng'
-    W_25402 = 25402
-    'Xã Thọ Sơn'
     W_25399 = 25399
     'Xã Đak Nhau'
+    W_25402 = 25402
+    'Xã Thọ Sơn'
     W_25405 = 25405
     'Xã Bom Bo'
+    W_25417 = 25417
+    'Xã Nghĩa Trung'
+    W_25420 = 25420
+    'Xã Phước Sơn'
+    W_25432 = 25432
+    'Phường Chơn Thành'
+    W_25441 = 25441
+    'Phường Minh Hưng'
+    W_25450 = 25450
+    'Xã Nha Bích'
+    W_25993 = 25993
+    'Phường Trảng Dài'
+    W_26005 = 26005
+    'Phường Hố Nai'
+    W_26017 = 26017
+    'Phường Tam Hiệp'
+    W_26020 = 26020
+    'Phường Long Bình'
+    W_26041 = 26041
+    'Phường Trấn Biên'
+    W_26068 = 26068
+    'Phường Biên Hòa'
+    W_26080 = 26080
+    'Phường Long Khánh'
+    W_26089 = 26089
+    'Phường Bình Lộc'
+    W_26098 = 26098
+    'Phường Bảo Vinh'
+    W_26104 = 26104
+    'Phường Xuân Lập'
+    W_26113 = 26113
+    'Phường Hàng Gòn'
+    W_26116 = 26116
+    'Xã Tân Phú'
+    W_26119 = 26119
+    'Xã Đak Lua'
+    W_26122 = 26122
+    'Xã Nam Cát Tiên'
+    W_26134 = 26134
+    'Xã Tà Lài'
+    W_26158 = 26158
+    'Xã Phú Lâm'
+    W_26170 = 26170
+    'Xã Trị An'
+    W_26173 = 26173
+    'Xã Phú Lý'
+    W_26179 = 26179
+    'Xã Tân An'
+    W_26188 = 26188
+    'Phường Tân Triều'
+    W_26206 = 26206
+    'Xã Định Quán'
+    W_26209 = 26209
+    'Xã Thanh Sơn'
+    W_26215 = 26215
+    'Xã Phú Vinh'
+    W_26221 = 26221
+    'Xã Phú Hòa'
+    W_26227 = 26227
+    'Xã La Ngà'
+    W_26248 = 26248
+    'Xã Trảng Bom'
+    W_26254 = 26254
+    'Xã Bàu Hàm'
+    W_26278 = 26278
+    'Xã Bình Minh'
+    W_26281 = 26281
+    'Xã Hưng Thịnh'
+    W_26296 = 26296
+    'Xã An Viễn'
+    W_26299 = 26299
+    'Xã Thống Nhất'
+    W_26311 = 26311
+    'Xã Gia Kiệm'
+    W_26326 = 26326
+    'Xã Dầu Giây'
+    W_26332 = 26332
+    'Xã Xuân Quế'
+    W_26341 = 26341
+    'Xã Cẩm Mỹ'
+    W_26347 = 26347
+    'Xã Xuân Đường'
+    W_26359 = 26359
+    'Xã Xuân Đông'
+    W_26362 = 26362
+    'Xã Sông Ray'
+    W_26368 = 26368
+    'Xã Long Thành'
     W_26374 = 26374
     'Phường Tam Phước'
     W_26377 = 26377
     'Phường Phước Tân'
-    W_26209 = 26209
-    'Xã Thanh Sơn'
-    W_26119 = 26119
-    'Xã Đak Lua'
-    W_26173 = 26173
-    'Xã Phú Lý'
-    W_25222 = 25222
-    'Xã Bù Gia Mập'
-    W_25225 = 25225
-    'Xã Đăk Ơ'
+    W_26380 = 26380
+    'Phường Long Hưng'
+    W_26383 = 26383
+    'Xã An Phước'
+    W_26389 = 26389
+    'Xã Bình An'
+    W_26413 = 26413
+    'Xã Long Phước'
+    W_26422 = 26422
+    'Xã Phước Thái'
+    W_26425 = 26425
+    'Xã Xuân Lộc'
+    W_26428 = 26428
+    'Xã Xuân Bắc'
+    W_26434 = 26434
+    'Xã Xuân Thành'
+    W_26446 = 26446
+    'Xã Xuân Hòa'
+    W_26458 = 26458
+    'Xã Xuân Phú'
+    W_26461 = 26461
+    'Xã Xuân Định'
+    W_26485 = 26485
+    'Xã Nhơn Trạch'
+    W_26491 = 26491
+    'Xã Đại Phước'
+    W_26503 = 26503
+    'Xã Phước An'
+    W_25747 = 25747
+    'Phường Thủ Dầu Một'
+    W_25750 = 25750
+    'Phường Phú Lợi'
+    W_25760 = 25760
+    'Phường Bình Dương'
+    W_25768 = 25768
+    'Phường Phú An'
+    W_25771 = 25771
+    'Phường Chánh Hiệp'
+    W_25777 = 25777
+    'Xã Dầu Tiếng'
+    W_25780 = 25780
+    'Xã Minh Thạnh'
+    W_25792 = 25792
+    'Xã Long Hòa'
+    W_25807 = 25807
+    'Xã Thanh An'
+    W_25813 = 25813
+    'Phường Bến Cát'
+    W_25819 = 25819
+    'Xã Trừ Văn Thố'
+    W_25822 = 25822
+    'Xã Bàu Bàng'
+    W_25837 = 25837
+    'Phường Chánh Phú Hòa'
+    W_25840 = 25840
+    'Phường Long Nguyên'
+    W_25843 = 25843
+    'Phường Tây Nam'
+    W_25846 = 25846
+    'Phường Thới Hòa'
+    W_25849 = 25849
+    'Phường Hòa Lợi'
+    W_25858 = 25858
+    'Xã Phú Giáo'
+    W_25864 = 25864
+    'Xã Phước Thành'
+    W_25867 = 25867
+    'Xã An Long'
+    W_25882 = 25882
+    'Xã Phước Hòa'
+    W_25888 = 25888
+    'Phường Tân Uyên'
+    W_25891 = 25891
+    'Phường Tân Khánh'
+    W_25906 = 25906
+    'Xã Bắc Tân Uyên'
+    W_25909 = 25909
+    'Xã Thường Tân'
+    W_25912 = 25912
+    'Phường Vĩnh Tân'
+    W_25915 = 25915
+    'Phường Bình Cơ'
+    W_25920 = 25920
+    'Phường Tân Hiệp'
+    W_25942 = 25942
+    'Phường Dĩ An'
+    W_25945 = 25945
+    'Phường Tân Đông Hiệp'
+    W_25951 = 25951
+    'Phường Đông Hòa'
+    W_25966 = 25966
+    'Phường Lái Thiêu'
+    W_25969 = 25969
+    'Phường Thuận Giao'
+    W_25975 = 25975
+    'Phường An Phú'
+    W_25978 = 25978
+    'Phường Thuận An'
+    W_25987 = 25987
+    'Phường Bình Hòa'
     W_26506 = 26506
     'Phường Vũng Tàu'
     W_26526 = 26526
     'Phường Tam Thắng'
     W_26536 = 26536
-    'Phường  Rạch Dừa'
+    'Phường Rạch Dừa'
     W_26542 = 26542
     'Phường Phước Thắng'
+    W_26545 = 26545
+    'Xã Long Sơn'
     W_26560 = 26560
     'Phường Bà Rịa'
     W_26566 = 26566
     'Phường Long Hương'
-    W_26704 = 26704
-    'Phường Phú Mỹ'
     W_26572 = 26572
     'Phường Tam Long'
-    W_26725 = 26725
-    'Phường Tân Thành'
-    W_26713 = 26713
-    'Phường Tân Phước'
-    W_26710 = 26710
-    'Phường Tân Hải'
-    W_26728 = 26728
-    'Xã Châu Pha'
     W_26575 = 26575
     'Xã Ngãi Giao'
-    W_26590 = 26590
-    'Xã Bình Giã'
-    W_26608 = 26608
-    'Xã Kim Long'
-    W_26596 = 26596
-    'Xã Châu Đức'
     W_26584 = 26584
     'Xã Xuân Sơn'
+    W_26590 = 26590
+    'Xã Bình Giã'
+    W_26596 = 26596
+    'Xã Châu Đức'
+    W_26608 = 26608
+    'Xã Kim Long'
     W_26617 = 26617
     'Xã Nghĩa Thành'
     W_26620 = 26620
     'Xã Hồ Tràm'
     W_26632 = 26632
     'Xã Xuyên Mộc'
-    W_26641 = 26641
-    'Xã Hòa Hội'
     W_26638 = 26638
     'Xã Bàu Lâm'
-    W_26686 = 26686
-    'Xã Phước Hải'
+    W_26641 = 26641
+    'Xã Hòa Hội'
+    W_26647 = 26647
+    'Xã Hòa Hiệp'
+    W_26656 = 26656
+    'Xã Bình Châu'
+    W_26659 = 26659
+    'Xã Long Điền'
     W_26662 = 26662
     'Xã Long Hải'
     W_26680 = 26680
     'Xã Đất Đỏ'
-    W_26659 = 26659
-    'Xã Long Điền'
+    W_26686 = 26686
+    'Xã Phước Hải'
+    W_26704 = 26704
+    'Phường Phú Mỹ'
+    W_26710 = 26710
+    'Phường Tân Hải'
+    W_26713 = 26713
+    'Phường Tân Phước'
+    W_26725 = 26725
+    'Phường Tân Thành'
+    W_26728 = 26728
+    'Xã Châu Pha'
     W_26732 = 26732
     'Đặc khu Côn Đảo'
-    W_25951 = 25951
-    'Phường Đông Hòa'
-    W_25942 = 25942
-    'Phường Dĩ An'
-    W_25945 = 25945
-    'Phường Tân Đông Hiệp'
-    W_25978 = 25978
-    'Phường Thuận An'
-    W_25969 = 25969
-    'Phường Thuận Giao'
-    W_25987 = 25987
-    'Phường Bình Hòa'
-    W_25966 = 25966
-    'Phường Lái Thiêu'
-    W_25975 = 25975
-    'Phường An Phú'
-    W_25760 = 25760
-    'Phường Bình Dương'
-    W_25771 = 25771
-    'Phường Chánh Hiệp'
-    W_25747 = 25747
-    'Phường Thủ Dầu Một'
-    W_25750 = 25750
-    'Phường Phú Lợi'
-    W_25912 = 25912
-    'Phường Vĩnh Tân'
-    W_25915 = 25915
-    'Phường Bình Cơ'
-    W_25888 = 25888
-    'Phường Tân Uyên'
-    W_25920 = 25920
-    'Phường Tân Hiệp'
-    W_25891 = 25891
-    'Phường Tân Khánh'
-    W_25849 = 25849
-    'Phường Hòa Lợi'
-    W_25768 = 25768
-    'Phường Phú An'
-    W_25843 = 25843
-    'Phường Tây Nam'
-    W_25840 = 25840
-    'Phường Long Nguyên'
-    W_25813 = 25813
-    'Phường Bến Cát'
-    W_25837 = 25837
-    'Phường Chánh Phú Hòa'
-    W_25906 = 25906
-    'Xã Bắc Tân Uyên'
-    W_25909 = 25909
-    'Xã Thường Tân'
-    W_25867 = 25867
-    'Xã An Long'
-    W_25864 = 25864
-    'Xã Phước Thành'
-    W_25882 = 25882
-    'Xã Phước Hòa'
-    W_25858 = 25858
-    'Xã Phú Giáo'
-    W_25819 = 25819
-    'Xã Trừ Văn Thố'
-    W_25822 = 25822
-    'Xã Bàu Bàng'
-    W_25780 = 25780
-    'Xã Minh Thạnh'
-    W_25792 = 25792
-    'Xã Long Hòa'
-    W_25777 = 25777
-    'Xã Dầu Tiếng'
-    W_25807 = 25807
-    'Xã Thanh An'
-    W_26740 = 26740
-    'Phường Sài Gòn'
     W_26737 = 26737
     'Phường Tân Định'
+    W_26740 = 26740
+    'Phường Sài Gòn'
     W_26743 = 26743
     'Phường Bến Thành'
     W_26758 = 26758
     'Phường Cầu Ông Lãnh'
-    W_27160 = 27160
-    'Phường Bàn Cờ'
+    W_26767 = 26767
+    'Phường An Phú Đông'
+    W_26773 = 26773
+    'Phường Thới An'
+    W_26782 = 26782
+    'Phường Tân Thới Hiệp'
+    W_26785 = 26785
+    'Phường Trung Mỹ Tây'
+    W_26791 = 26791
+    'Phường Đông Hưng Thuận'
+    W_26800 = 26800
+    'Phường Linh Xuân'
+    W_26803 = 26803
+    'Phường Tam Bình'
+    W_26809 = 26809
+    'Phường Hiệp Bình'
+    W_26824 = 26824
+    'Phường Thủ Đức'
+    W_26833 = 26833
+    'Phường Long Bình'
+    W_26842 = 26842
+    'Phường Tăng Nhơn Phú'
+    W_26848 = 26848
+    'Phường Phước Long'
+    W_26857 = 26857
+    'Phường Long Phước'
+    W_26860 = 26860
+    'Phường Long Trường'
+    W_26876 = 26876
+    'Phường An Nhơn'
+    W_26878 = 26878
+    'Phường An Hội Đông'
+    W_26882 = 26882
+    'Phường An Hội Tây'
+    W_26884 = 26884
+    'Phường Gò Vấp'
+    W_26890 = 26890
+    'Phường Hạnh Thông'
+    W_26898 = 26898
+    'Phường Thông Tây Hội'
+    W_26905 = 26905
+    'Phường Bình Lợi Trung'
+    W_26911 = 26911
+    'Phường Bình Quới'
+    W_26929 = 26929
+    'Phường Bình Thạnh'
+    W_26944 = 26944
+    'Phường Gia Định'
+    W_26956 = 26956
+    'Phường Thạnh Mỹ Tây'
+    W_26968 = 26968
+    'Phường Tân Sơn Nhất'
+    W_26977 = 26977
+    'Phường Tân Sơn Hòa'
+    W_26983 = 26983
+    'Phường Bảy Hiền'
+    W_26995 = 26995
+    'Phường Tân Hòa'
+    W_27004 = 27004
+    'Phường Tân Bình'
+    W_27007 = 27007
+    'Phường Tân Sơn'
+    W_27013 = 27013
+    'Phường Tây Thạnh'
+    W_27019 = 27019
+    'Phường Tân Sơn Nhì'
+    W_27022 = 27022
+    'Phường Phú Thọ Hòa'
+    W_27028 = 27028
+    'Phường Phú Thạnh'
+    W_27031 = 27031
+    'Phường Tân Phú'
+    W_27043 = 27043
+    'Phường Đức Nhuận'
+    W_27058 = 27058
+    'Phường Cầu Kiệu'
+    W_27073 = 27073
+    'Phường Phú Nhuận'
+    W_27094 = 27094
+    'Phường An Khánh'
+    W_27097 = 27097
+    'Phường Bình Trưng'
+    W_27112 = 27112
+    'Phường Cát Lái'
     W_27139 = 27139
     'Phường Xuân Hòa'
     W_27142 = 27142
     'Phường Nhiêu Lộc'
+    W_27154 = 27154
+    'Phường Bàn Cờ'
+    W_27163 = 27163
+    'Phường Hòa Hưng'
+    W_27169 = 27169
+    'Phường Diên Hồng'
+    W_27190 = 27190
+    'Phường Vườn Lài'
+    W_27211 = 27211
+    'Phường Hòa Bình'
+    W_27226 = 27226
+    'Phường Phú Thọ'
+    W_27232 = 27232
+    'Phường Bình Thới'
+    W_27238 = 27238
+    'Phường Minh Phụng'
     W_27259 = 27259
     'Phường Xóm Chiếu'
     W_27265 = 27265
@@ -5351,470 +5457,362 @@ class WardCode(IntEnum):
     'Phường An Đông'
     W_27343 = 27343
     'Phường Chợ Lớn'
+    W_27349 = 27349
+    'Phường Phú Lâm'
+    W_27364 = 27364
+    'Phường Bình Phú'
     W_27367 = 27367
     'Phường Bình Tây'
     W_27373 = 27373
     'Phường Bình Tiên'
-    W_27385 = 27385
-    'Phường Bình Phú'
-    W_27349 = 27349
-    'Phường Phú Lâm'
+    W_27418 = 27418
+    'Phường Chánh Hưng'
+    W_27424 = 27424
+    'Phường Bình Đông'
+    W_27427 = 27427
+    'Phường Phú Định'
+    W_27439 = 27439
+    'Phường Bình Hưng Hòa'
+    W_27442 = 27442
+    'Phường Bình Tân'
+    W_27448 = 27448
+    'Phường Bình Trị Đông'
+    W_27457 = 27457
+    'Phường Tân Tạo'
+    W_27460 = 27460
+    'Phường An Lạc'
+    W_27475 = 27475
+    'Phường Tân Hưng'
     W_27478 = 27478
     'Phường Tân Thuận'
     W_27484 = 27484
     'Phường Phú Thuận'
     W_27487 = 27487
     'Phường Tân Mỹ'
-    W_27475 = 27475
-    'Phường Tân Hưng'
-    W_27418 = 27418
-    'Phường Chánh Hưng'
-    W_27427 = 27427
-    'Phường Phú Định'
-    W_27424 = 27424
-    'Phường Bình Đông'
-    W_27169 = 27169
-    'Phường Diên Hồng'
-    W_27190 = 27190
-    'Phường Vườn Lài'
-    W_27163 = 27163
-    'Phường Hòa Hưng'
-    W_27238 = 27238
-    'Phường Minh Phụng'
-    W_27232 = 27232
-    'Phường Bình Thới'
-    W_27211 = 27211
-    'Phường Hòa Bình'
-    W_27226 = 27226
-    'Phường Phú Thọ'
-    W_26791 = 26791
-    'Phường Đông Hưng Thuận'
-    W_26785 = 26785
-    'Phường Trung Mỹ Tây'
-    W_26782 = 26782
-    'Phường Tân Thới Hiệp'
-    W_26773 = 26773
-    'Phường Thới An'
-    W_26767 = 26767
-    'Phường An Phú Đông'
-    W_27460 = 27460
-    'Phường An Lạc'
-    W_27457 = 27457
-    'Phường Tân Tạo'
-    W_27442 = 27442
-    'Phường Bình Tân'
-    W_27448 = 27448
-    'Phường Bình Trị Đông'
-    W_27439 = 27439
-    'Phường Bình Hưng Hòa'
-    W_26944 = 26944
-    'Phường Gia Định'
-    W_26929 = 26929
-    'Phường Bình Thạnh'
-    W_26905 = 26905
-    'Phường Bình Lợi Trung'
-    W_26956 = 26956
-    'Phường Thạnh Mỹ Tây'
-    W_26911 = 26911
-    'Phường Bình Quới'
-    W_26902 = 26902
-    'Phường Hạnh Thông'
-    W_26887 = 26887
-    'Phường  An Nhơn'
-    W_26884 = 26884
-    'Phường Gò Vấp'
-    W_26878 = 26878
-    'Phường An Hội Đông'
-    W_26899 = 26899
-    'Phường Thông Tây Hội'
-    W_26882 = 26882
-    'Phường An Hội Tây'
-    W_27043 = 27043
-    'Phường Đức Nhuận'
-    W_27058 = 27058
-    'Phường Cầu Kiệu'
-    W_27073 = 27073
-    'Phường Phú Nhuận'
-    W_26977 = 26977
-    'Phường Tân Sơn Hòa'
-    W_26968 = 26968
-    'Phường Tân Sơn Nhất'
-    W_26995 = 26995
-    'Phường Tân Hòa'
-    W_26983 = 26983
-    'Phường Bảy Hiền'
-    W_27004 = 27004
-    'Phường Tân Bình'
-    W_27007 = 27007
-    'Phường Tân Sơn'
-    W_27013 = 27013
-    'Phường Tây Thạnh'
-    W_27010 = 27010
-    'Phường Tân Sơn Nhì'
-    W_27022 = 27022
-    'Phường Phú Thọ Hòa'
-    W_27031 = 27031
-    'Phường Tân Phú'
-    W_27028 = 27028
-    'Phường Phú Thạnh'
-    W_26812 = 26812
-    'Phường Hiệp Bình'
-    W_26824 = 26824
-    'Phường Thủ Đức'
-    W_26797 = 26797
-    'Phường Tam Bình'
-    W_26794 = 26794
-    'Phường Linh Xuân'
-    W_26842 = 26842
-    'Phường Tăng Nhơn Phú'
-    W_26833 = 26833
-    'Phường Long Bình'
-    W_26857 = 26857
-    'Phường Long Phước'
-    W_26860 = 26860
-    'Phường Long Trường'
-    W_27112 = 27112
-    'Phường Cát Lái'
-    W_27097 = 27097
-    'Phường Bình Trưng'
-    W_26848 = 26848
-    'Phường Phước Long'
-    W_27118 = 27118
-    'Phường An Khánh'
+    W_27496 = 27496
+    'Xã Tân An Hội'
+    W_27508 = 27508
+    'Xã An Nhơn Tây'
+    W_27511 = 27511
+    'Xã Nhuận Đức'
+    W_27526 = 27526
+    'Xã Thái Mỹ'
+    W_27541 = 27541
+    'Xã Phú Hòa Đông'
+    W_27544 = 27544
+    'Xã Bình Mỹ'
+    W_27553 = 27553
+    'Xã Củ Chi'
+    W_27559 = 27559
+    'Xã Hóc Môn'
+    W_27568 = 27568
+    'Xã Đông Thạnh'
+    W_27577 = 27577
+    'Xã Xuân Thới Sơn'
+    W_27592 = 27592
+    'Xã Bà Điểm'
+    W_27595 = 27595
+    'Xã Tân Nhựt'
     W_27601 = 27601
     'Xã Vĩnh Lộc'
     W_27604 = 27604
     'Xã Tân Vĩnh Lộc'
     W_27610 = 27610
     'Xã Bình Lợi'
-    W_27595 = 27595
-    'Xã Tân Nhựt'
-    W_27637 = 27637
-    'Xã Bình Chánh'
-    W_27628 = 27628
-    'Xã Hưng Long'
     W_27619 = 27619
     'Xã Bình Hưng'
-    W_27667 = 27667
-    'Xã Bình Khánh'
-    W_27673 = 27673
-    'Xã An Thới Đông'
-    W_27664 = 27664
-    'Xã Cần Giờ'
-    W_27553 = 27553
-    'Xã Củ Chi'
-    W_27496 = 27496
-    'Xã Tân An Hội'
-    W_27526 = 27526
-    'Xã Thái Mỹ'
-    W_27508 = 27508
-    'Xã An Nhơn Tây'
-    W_27511 = 27511
-    'Xã Nhuận Đức'
-    W_27541 = 27541
-    'Xã Phú Hòa Đông'
-    W_27544 = 27544
-    'Xã Bình Mỹ'
-    W_27568 = 27568
-    'Xã Đông Thạnh'
-    W_27559 = 27559
-    'Xã Hóc Môn'
-    W_27577 = 27577
-    'Xã Xuân Thới Sơn'
-    W_27592 = 27592
-    'Xã Bà Điểm'
+    W_27628 = 27628
+    'Xã Hưng Long'
+    W_27637 = 27637
+    'Xã Bình Chánh'
     W_27655 = 27655
     'Xã Nhà Bè'
     W_27658 = 27658
     'Xã Hiệp Phước'
-    W_26545 = 26545
-    'Xã Long Sơn'
-    W_26647 = 26647
-    'Xã Hòa Hiệp'
-    W_26656 = 26656
-    'Xã Bình Châu'
-    W_25846 = 25846
-    'Phường Thới Hòa'
+    W_27664 = 27664
+    'Xã Cần Giờ'
+    W_27667 = 27667
+    'Xã Bình Khánh'
+    W_27673 = 27673
+    'Xã An Thới Đông'
     W_27676 = 27676
     'Xã Thạnh An'
-    W_27727 = 27727
-    'Xã Hưng Điền'
-    W_27736 = 27736
-    'Xã Vĩnh Thạnh'
-    W_27721 = 27721
-    'Xã Tân Hưng'
-    W_27748 = 27748
-    'Xã Vĩnh Châu'
-    W_27775 = 27775
-    'Xã Tuyên Bình'
-    W_27757 = 27757
-    'Xã Vĩnh Hưng'
-    W_27763 = 27763
-    'Xã Khánh Hưng'
-    W_27817 = 27817
-    'Xã Tuyên Thạnh'
-    W_27793 = 27793
-    'Xã Bình Hiệp'
-    W_27787 = 27787
-    'Phường Kiến Tường'
-    W_27811 = 27811
-    'Xã Bình Hoà'
-    W_27823 = 27823
-    'Xã Mộc Hoá'
-    W_27841 = 27841
-    'Xã Hậu Thạnh'
-    W_27838 = 27838
-    'Xã Nhơn Hòa Lập'
-    W_27856 = 27856
-    'Xã Nhơn Ninh'
-    W_27826 = 27826
-    'Xã Tân Thạnh'
-    W_27868 = 27868
-    'Xã Bình Thành'
-    W_27877 = 27877
-    'Xã Thạnh Phước'
-    W_27865 = 27865
-    'Xã Thạnh Hóa'
-    W_27889 = 27889
-    'Xã Tân Tây'
-    W_28036 = 28036
-    'Xã Thủ Thừa'
-    W_28066 = 28066
-    'Xã Mỹ An'
-    W_28051 = 28051
-    'Xã Mỹ Thạnh'
-    W_28072 = 28072
-    'Xã Tân Long'
-    W_27907 = 27907
-    'Xã Mỹ Quý'
-    W_27898 = 27898
-    'Xã Đông Thành'
-    W_27925 = 27925
-    'Xã Đức Huệ'
-    W_27943 = 27943
-    'Xã An Ninh'
-    W_27952 = 27952
-    'Xã Hiệp Hoà'
-    W_27931 = 27931
-    'Xã Hậu Nghĩa'
-    W_27979 = 27979
-    'Xã Hoà Khánh'
-    W_27964 = 27964
-    'Xã Đức Lập'
-    W_27976 = 27976
-    'Xã Mỹ Hạnh'
-    W_27937 = 27937
-    'Xã Đức Hòa'
-    W_27994 = 27994
-    'Xã Thạnh Lợi'
-    W_28015 = 28015
-    'Xã Bình Đức'
-    W_28003 = 28003
-    'Xã Lương Hoà'
-    W_27991 = 27991
-    'Xã Bến Lức'
-    W_28018 = 28018
-    'Xã Mỹ Yên'
-    W_28126 = 28126
-    'Xã Long Cang'
-    W_28114 = 28114
-    'Xã Rạch Kiến'
-    W_28132 = 28132
-    'Xã Mỹ Lệ'
-    W_28138 = 28138
-    'Xã Tân Lân'
-    W_28108 = 28108
-    'Xã Cần Đước'
-    W_28144 = 28144
-    'Xã Long Hựu'
-    W_28165 = 28165
-    'Xã Phước Lý'
-    W_28177 = 28177
-    'Xã Mỹ Lộc'
-    W_28159 = 28159
-    'Xã Cần Giuộc'
-    W_28201 = 28201
-    'Xã Phước Vĩnh Tây'
-    W_28207 = 28207
-    'Xã Tân Tập'
-    W_28093 = 28093
-    'Xã Vàm Cỏ'
-    W_28075 = 28075
-    'Xã Tân Trụ'
-    W_28087 = 28087
-    'Xã Nhựt Tảo'
-    W_28225 = 28225
-    'Xã Thuận Mỹ'
-    W_28243 = 28243
-    'Xã An Lục Long'
-    W_28210 = 28210
-    'Xã Tầm Vu'
-    W_28222 = 28222
-    'Xã Vĩnh Công'
-    W_27694 = 27694
-    'Phường Long An'
-    W_27712 = 27712
-    'Phường Tân An'
-    W_27715 = 27715
-    'Phường Khánh Hậu'
     W_25459 = 25459
     'Phường Tân Ninh'
     W_25480 = 25480
     'Phường Bình Minh'
+    W_25486 = 25486
+    'Xã Tân Biên'
+    W_25489 = 25489
+    'Xã Tân Lập'
+    W_25498 = 25498
+    'Xã Thạnh Bình'
+    W_25510 = 25510
+    'Xã Trà Vong'
+    W_25516 = 25516
+    'Xã Tân Châu'
+    W_25522 = 25522
+    'Xã Tân Đông'
+    W_25525 = 25525
+    'Xã Tân Hội'
+    W_25531 = 25531
+    'Xã Tân Hòa'
+    W_25534 = 25534
+    'Xã Tân Thành'
+    W_25549 = 25549
+    'Xã Tân Phú'
+    W_25552 = 25552
+    'Xã Dương Minh Châu'
     W_25567 = 25567
     'Phường Ninh Thạnh'
+    W_25573 = 25573
+    'Xã Cầu Khởi'
+    W_25579 = 25579
+    'Xã Lộc Ninh'
+    W_25585 = 25585
+    'Xã Châu Thành'
+    W_25588 = 25588
+    'Xã Hảo Đước'
+    W_25591 = 25591
+    'Xã Phước Vinh'
+    W_25606 = 25606
+    'Xã Hòa Hội'
+    W_25621 = 25621
+    'Xã Ninh Điền'
     W_25630 = 25630
     'Phường Long Hoa'
-    W_25645 = 25645
-    'Phường Hoà Thành'
     W_25633 = 25633
     'Phường Thanh Điền'
-    W_25708 = 25708
-    'Phường Trảng Bàng'
-    W_25732 = 25732
-    'Phường An Tịnh'
+    W_25645 = 25645
+    'Phường Hòa Thành'
     W_25654 = 25654
     'Phường Gò Dầu'
-    W_25672 = 25672
-    'Phường Gia Lộc'
-    W_25711 = 25711
-    'Xã Hưng Thuận'
-    W_25729 = 25729
-    'Xã Phước Chỉ'
     W_25657 = 25657
     'Xã Thạnh Đức'
     W_25663 = 25663
     'Xã Phước Thạnh'
     W_25666 = 25666
     'Xã Truông Mít'
-    W_25579 = 25579
-    'Xã Lộc Ninh'
-    W_25573 = 25573
-    'Xã Cầu Khởi'
-    W_25552 = 25552
-    'Xã Dương Minh Châu'
-    W_25522 = 25522
-    'Xã Tân Đông'
-    W_25516 = 25516
-    'Xã Tân Châu'
-    W_25549 = 25549
-    'Xã Tân Phú'
-    W_25525 = 25525
-    'Xã Tân Hội'
-    W_25534 = 25534
-    'Xã Tân Thành'
-    W_25531 = 25531
-    'Xã Tân Hòa'
-    W_25489 = 25489
-    'Xã Tân Lập'
-    W_25486 = 25486
-    'Xã Tân Biên'
-    W_25498 = 25498
-    'Xã Thạnh Bình'
-    W_25510 = 25510
-    'Xã Trà Vong'
-    W_25591 = 25591
-    'Xã Phước Vinh'
-    W_25606 = 25606
-    'Xã Hoà Hội'
-    W_25621 = 25621
-    'Xã Ninh Điền'
-    W_25585 = 25585
-    'Xã Châu Thành'
-    W_25588 = 25588
-    'Xã Hảo Đước'
+    W_25672 = 25672
+    'Phường Gia Lộc'
+    W_25681 = 25681
+    'Xã Bến Cầu'
     W_25684 = 25684
     'Xã Long Chữ'
     W_25702 = 25702
     'Xã Long Thuận'
-    W_25681 = 25681
-    'Xã Bến Cầu'
-    W_28261 = 28261
-    'Phường Mỹ Tho'
+    W_25708 = 25708
+    'Phường Trảng Bàng'
+    W_25711 = 25711
+    'Xã Hưng Thuận'
+    W_25729 = 25729
+    'Xã Phước Chỉ'
+    W_25732 = 25732
+    'Phường An Tịnh'
+    W_27694 = 27694
+    'Phường Long An'
+    W_27712 = 27712
+    'Phường Tân An'
+    W_27715 = 27715
+    'Phường Khánh Hậu'
+    W_27721 = 27721
+    'Xã Tân Hưng'
+    W_27727 = 27727
+    'Xã Hưng Điền'
+    W_27736 = 27736
+    'Xã Vĩnh Thạnh'
+    W_27748 = 27748
+    'Xã Vĩnh Châu'
+    W_27757 = 27757
+    'Xã Vĩnh Hưng'
+    W_27763 = 27763
+    'Xã Khánh Hưng'
+    W_27775 = 27775
+    'Xã Tuyên Bình'
+    W_27787 = 27787
+    'Phường Kiến Tường'
+    W_27793 = 27793
+    'Xã Bình Hiệp'
+    W_27811 = 27811
+    'Xã Bình Hòa'
+    W_27817 = 27817
+    'Xã Tuyên Thạnh'
+    W_27823 = 27823
+    'Xã Mộc Hóa'
+    W_27826 = 27826
+    'Xã Tân Thạnh'
+    W_27838 = 27838
+    'Xã Nhơn Hòa Lập'
+    W_27841 = 27841
+    'Xã Hậu Thạnh'
+    W_27856 = 27856
+    'Xã Nhơn Ninh'
+    W_27865 = 27865
+    'Xã Thạnh Hóa'
+    W_27868 = 27868
+    'Xã Bình Thành'
+    W_27877 = 27877
+    'Xã Thạnh Phước'
+    W_27889 = 27889
+    'Xã Tân Tây'
+    W_27898 = 27898
+    'Xã Đông Thành'
+    W_27907 = 27907
+    'Xã Mỹ Quý'
+    W_27925 = 27925
+    'Xã Đức Huệ'
+    W_27931 = 27931
+    'Xã Hậu Nghĩa'
+    W_27937 = 27937
+    'Xã Đức Hòa'
+    W_27943 = 27943
+    'Xã An Ninh'
+    W_27952 = 27952
+    'Xã Hiệp Hòa'
+    W_27964 = 27964
+    'Xã Đức Lập'
+    W_27976 = 27976
+    'Xã Mỹ Hạnh'
+    W_27979 = 27979
+    'Xã Hòa Khánh'
+    W_27991 = 27991
+    'Xã Bến Lức'
+    W_27994 = 27994
+    'Xã Thạnh Lợi'
+    W_28003 = 28003
+    'Xã Lương Hòa'
+    W_28015 = 28015
+    'Xã Bình Đức'
+    W_28018 = 28018
+    'Xã Mỹ Yên'
+    W_28036 = 28036
+    'Xã Thủ Thừa'
+    W_28051 = 28051
+    'Xã Mỹ Thạnh'
+    W_28066 = 28066
+    'Xã Mỹ An'
+    W_28072 = 28072
+    'Xã Tân Long'
+    W_28075 = 28075
+    'Xã Tân Trụ'
+    W_28087 = 28087
+    'Xã Nhựt Tảo'
+    W_28093 = 28093
+    'Xã Vàm Cỏ'
+    W_28108 = 28108
+    'Xã Cần Đước'
+    W_28114 = 28114
+    'Xã Rạch Kiến'
+    W_28126 = 28126
+    'Xã Long Cang'
+    W_28132 = 28132
+    'Xã Mỹ Lệ'
+    W_28138 = 28138
+    'Xã Tân Lân'
+    W_28144 = 28144
+    'Xã Long Hựu'
+    W_28159 = 28159
+    'Xã Cần Giuộc'
+    W_28165 = 28165
+    'Xã Phước Lý'
+    W_28177 = 28177
+    'Xã Mỹ Lộc'
+    W_28201 = 28201
+    'Xã Phước Vĩnh Tây'
+    W_28207 = 28207
+    'Xã Tân Tập'
+    W_28210 = 28210
+    'Xã Tầm Vu'
+    W_28222 = 28222
+    'Xã Vĩnh Công'
+    W_28225 = 28225
+    'Xã Thuận Mỹ'
+    W_28243 = 28243
+    'Xã An Lục Long'
     W_28249 = 28249
     'Phường Đạo Thạnh'
-    W_28273 = 28273
-    'Phường Mỹ Phong'
+    W_28261 = 28261
+    'Phường Mỹ Tho'
     W_28270 = 28270
     'Phường Thới Sơn'
+    W_28273 = 28273
+    'Phường Mỹ Phong'
     W_28285 = 28285
     'Phường Trung An'
-    W_28306 = 28306
-    'Phường Gò Công'
     W_28297 = 28297
     'Phường Long Thuận'
-    W_28729 = 28729
-    'Phường Sơn Qui'
+    W_28306 = 28306
+    'Phường Gò Công'
     W_28315 = 28315
     'Phường Bình Xuân'
+    W_28321 = 28321
+    'Xã Tân Phước 1'
+    W_28327 = 28327
+    'Xã Tân Phước 2'
+    W_28336 = 28336
+    'Xã Hưng Thạnh'
+    W_28345 = 28345
+    'Xã Tân Phước 3'
+    W_28360 = 28360
+    'Xã Cái Bè'
+    W_28366 = 28366
+    'Xã Hậu Mỹ'
+    W_28378 = 28378
+    'Xã Mỹ Thiện'
+    W_28393 = 28393
+    'Xã Hội Cư'
+    W_28405 = 28405
+    'Xã Mỹ Đức Tây'
+    W_28414 = 28414
+    'Xã Mỹ Lợi'
+    W_28426 = 28426
+    'Xã Thanh Hưng'
+    W_28429 = 28429
+    'Xã An Hữu'
     W_28435 = 28435
     'Phường Mỹ Phước Tây'
     W_28436 = 28436
     'Phường Thanh Hòa'
     W_28439 = 28439
     'Phường Cai Lậy'
-    W_28477 = 28477
-    'Phường Nhị Quý'
-    W_28468 = 28468
-    'Xã Tân Phú'
-    W_28426 = 28426
-    'Xã Thanh Hưng'
-    W_28429 = 28429
-    'Xã An Hữu'
-    W_28414 = 28414
-    'Xã Mỹ Lợi'
-    W_28405 = 28405
-    'Xã Mỹ Đức Tây'
-    W_28378 = 28378
-    'Xã Mỹ Thiện'
-    W_28366 = 28366
-    'Xã Hậu Mỹ'
-    W_28393 = 28393
-    'Xã Hội Cư'
-    W_28360 = 28360
-    'Xã Cái Bè'
-    W_28471 = 28471
-    'Xã Bình Phú'
-    W_28501 = 28501
-    'Xã Hiệp Đức'
-    W_28516 = 28516
-    'Xã Ngũ Hiệp'
-    W_28504 = 28504
-    'Xã Long Tiên'
-    W_28456 = 28456
-    'Xã Mỹ Thành'
     W_28444 = 28444
     'Xã Thạnh Phú'
-    W_28321 = 28321
-    'Xã Tân Phước 1'
-    W_28327 = 28327
-    'Xã Tân Phước 2'
-    W_28345 = 28345
-    'Xã Tân Phước 3'
-    W_28336 = 28336
-    'Xã Hưng Thạnh'
-    W_28525 = 28525
-    'Xã Tân Hương'
+    W_28456 = 28456
+    'Xã Mỹ Thành'
+    W_28468 = 28468
+    'Xã Tân Phú'
+    W_28471 = 28471
+    'Xã Bình Phú'
+    W_28477 = 28477
+    'Phường Nhị Quý'
+    W_28501 = 28501
+    'Xã Hiệp Đức'
+    W_28504 = 28504
+    'Xã Long Tiên'
+    W_28516 = 28516
+    'Xã Ngũ Hiệp'
     W_28519 = 28519
     'Xã Châu Thành'
+    W_28525 = 28525
+    'Xã Tân Hương'
     W_28537 = 28537
     'Xã Long Hưng'
     W_28543 = 28543
     'Xã Long Định'
+    W_28564 = 28564
+    'Xã Bình Trưng'
     W_28576 = 28576
     'Xã Vĩnh Kim'
     W_28582 = 28582
     'Xã Kim Sơn'
-    W_28564 = 28564
-    'Xã Bình Trưng'
+    W_28594 = 28594
+    'Xã Chợ Gạo'
     W_28603 = 28603
     'Xã Mỹ Tịnh An'
     W_28615 = 28615
     'Xã Lương Hòa Lạc'
     W_28627 = 28627
     'Xã Tân Thuận Bình'
-    W_28594 = 28594
-    'Xã Chợ Gạo'
     W_28633 = 28633
     'Xã An Thạnh Thủy'
     W_28648 = 28648
@@ -5825,772 +5823,824 @@ class WardCode(IntEnum):
     'Xã Đồng Sơn'
     W_28663 = 28663
     'Xã Phú Thành'
-    W_28687 = 28687
-    'Xã Long Bình'
     W_28678 = 28678
     'Xã Vĩnh Hựu'
-    W_28747 = 28747
-    'Xã Gò Công Đông'
-    W_28738 = 28738
-    'Xã Tân Điền'
-    W_28702 = 28702
-    'Xã Tân Hòa'
-    W_28723 = 28723
-    'Xã Tân Đông'
-    W_28720 = 28720
-    'Xã Gia Thuận'
+    W_28687 = 28687
+    'Xã Long Bình'
     W_28693 = 28693
     'Xã Tân Thới'
     W_28696 = 28696
     'Xã Tân Phú Đông'
-    W_29926 = 29926
-    'Xã Tân Hồng'
-    W_29938 = 29938
-    'Xã Tân Thành'
-    W_29929 = 29929
-    'Xã Tân Hộ Cơ'
-    W_29944 = 29944
-    'Xã An Phước'
-    W_29954 = 29954
-    'Phường An Bình'
-    W_29955 = 29955
-    'Phường Hồng Ngự'
-    W_29978 = 29978
-    'Phường Thường Lạc'
-    W_29971 = 29971
-    'Xã Thường Phước'
-    W_29983 = 29983
-    'Xã Long Khánh'
-    W_29992 = 29992
-    'Xã Long Phú Thuận'
-    W_30019 = 30019
-    'Xã An Hòa'
-    W_30010 = 30010
-    'Xã Tam Nông'
-    W_30034 = 30034
-    'Xã Phú Thọ'
-    W_30001 = 30001
-    'Xã Tràm Chim'
-    W_30025 = 30025
-    'Xã Phú Cường'
-    W_30028 = 30028
-    'Xã An Long'
-    W_30130 = 30130
-    'Xã Thanh Bình'
-    W_30157 = 30157
-    'Xã Tân Thạnh'
-    W_30163 = 30163
-    'Xã Bình Thành'
-    W_30154 = 30154
-    'Xã Tân Long'
-    W_30037 = 30037
-    'Xã Tháp Mười'
-    W_30073 = 30073
-    'Xã Thanh Mỹ'
-    W_30055 = 30055
-    'Xã Mỹ Quí'
-    W_30061 = 30061
-    'Xã Đốc Binh Kiều'
-    W_30046 = 30046
-    'Xã Trường Xuân'
-    W_30043 = 30043
-    'Xã Phương Thịnh'
-    W_30088 = 30088
-    'Xã Phong Mỹ'
-    W_30085 = 30085
-    'Xã Ba Sao'
-    W_30076 = 30076
-    'Xã Mỹ Thọ'
-    W_30118 = 30118
-    'Xã Bình Hàng Trung'
-    W_30112 = 30112
-    'Xã Mỹ Hiệp'
+    W_28702 = 28702
+    'Xã Tân Hòa'
+    W_28720 = 28720
+    'Xã Gia Thuận'
+    W_28723 = 28723
+    'Xã Tân Đông'
+    W_28729 = 28729
+    'Phường Sơn Qui'
+    W_28738 = 28738
+    'Xã Tân Điền'
+    W_28747 = 28747
+    'Xã Gò Công Đông'
     W_29869 = 29869
     'Phường Cao Lãnh'
     W_29884 = 29884
     'Phường Mỹ Ngãi'
     W_29888 = 29888
     'Phường Mỹ Trà'
+    W_29905 = 29905
+    'Phường Sa Đéc'
+    W_29926 = 29926
+    'Xã Tân Hồng'
+    W_29929 = 29929
+    'Xã Tân Hộ Cơ'
+    W_29938 = 29938
+    'Xã Tân Thành'
+    W_29944 = 29944
+    'Xã An Phước'
+    W_29954 = 29954
+    'Phường An Bình'
+    W_29955 = 29955
+    'Phường Hồng Ngự'
+    W_29971 = 29971
+    'Xã Thường Phước'
+    W_29978 = 29978
+    'Phường Thường Lạc'
+    W_29983 = 29983
+    'Xã Long Khánh'
+    W_29992 = 29992
+    'Xã Long Phú Thuận'
+    W_30001 = 30001
+    'Xã Tràm Chim'
+    W_30010 = 30010
+    'Xã Tam Nông'
+    W_30019 = 30019
+    'Xã An Hòa'
+    W_30025 = 30025
+    'Xã Phú Cường'
+    W_30028 = 30028
+    'Xã An Long'
+    W_30034 = 30034
+    'Xã Phú Thọ'
+    W_30037 = 30037
+    'Xã Tháp Mười'
+    W_30043 = 30043
+    'Xã Phương Thịnh'
+    W_30046 = 30046
+    'Xã Trường Xuân'
+    W_30055 = 30055
+    'Xã Mỹ Quí'
+    W_30061 = 30061
+    'Xã Đốc Binh Kiều'
+    W_30073 = 30073
+    'Xã Thanh Mỹ'
+    W_30076 = 30076
+    'Xã Mỹ Thọ'
+    W_30085 = 30085
+    'Xã Ba Sao'
+    W_30088 = 30088
+    'Xã Phong Mỹ'
+    W_30112 = 30112
+    'Xã Mỹ Hiệp'
+    W_30118 = 30118
+    'Xã Bình Hàng Trung'
+    W_30130 = 30130
+    'Xã Thanh Bình'
+    W_30154 = 30154
+    'Xã Tân Long'
+    W_30157 = 30157
+    'Xã Tân Thạnh'
+    W_30163 = 30163
+    'Xã Bình Thành'
+    W_30169 = 30169
+    'Xã Lấp Vò'
     W_30178 = 30178
     'Xã Mỹ An Hưng'
     W_30184 = 30184
     'Xã Tân Khánh Trung'
-    W_30169 = 30169
-    'Xã Lấp Vò'
-    W_30226 = 30226
-    'Xã Lai Vung'
     W_30208 = 30208
     'Xã Hòa Long'
-    W_30235 = 30235
-    'Xã Phong Hòa'
-    W_29905 = 29905
-    'Phường Sa Đéc'
     W_30214 = 30214
     'Xã Tân Dương'
+    W_30226 = 30226
+    'Xã Lai Vung'
+    W_30235 = 30235
+    'Xã Phong Hòa'
     W_30244 = 30244
     'Xã Phú Hựu'
     W_30253 = 30253
     'Xã Tân Nhuận Đông'
     W_30259 = 30259
     'Xã Tân Phú Trung'
-    W_29641 = 29641
-    'Xã Cái Nhum'
-    W_29653 = 29653
-    'Xã Tân Long Hội'
-    W_29623 = 29623
-    'Xã Nhơn Phú'
-    W_29638 = 29638
-    'Xã Bình Phước'
-    W_29584 = 29584
-    'Xã An Bình'
-    W_29602 = 29602
-    'Xã Long Hồ'
-    W_29611 = 29611
-    'Xã Phú Quới'
-    W_29590 = 29590
-    'Phường Thanh Đức'
-    W_29551 = 29551
-    'Phường Long Châu'
-    W_29557 = 29557
-    'Phường Phước Hậu'
-    W_29593 = 29593
-    'Phường Tân Hạnh'
-    W_29566 = 29566
-    'Phường Tân Ngãi'
-    W_29677 = 29677
-    'Xã Quới Thiện'
-    W_29659 = 29659
-    'Xã Trung Thành'
-    W_29698 = 29698
-    'Xã Trung Ngãi'
-    W_29668 = 29668
-    'Xã Quới An'
-    W_29683 = 29683
-    'Xã Trung Hiệp'
-    W_29701 = 29701
-    'Xã Hiếu Phụng'
-    W_29713 = 29713
-    'Xã Hiếu Thành'
-    W_29857 = 29857
-    'Xã Lục Sĩ Thành'
-    W_29821 = 29821
-    'Xã Trà Ôn'
-    W_29836 = 29836
-    'Xã Trà Côn'
-    W_29845 = 29845
-    'Xã Vĩnh Xuân'
-    W_29830 = 29830
-    'Xã Hòa Bình'
-    W_29734 = 29734
-    'Xã Hòa Hiệp'
-    W_29719 = 29719
-    'Xã Tam Bình'
-    W_29767 = 29767
-    'Xã Ngãi Tứ'
-    W_29752 = 29752
-    'Xã Song Phú'
-    W_29728 = 29728
-    'Xã Cái Ngang'
-    W_29800 = 29800
-    'Xã Tân Quới'
-    W_29785 = 29785
-    'Xã Tân Lược'
-    W_29788 = 29788
-    'Xã Mỹ Thuận'
-    W_29771 = 29771
-    'Phường Bình Minh'
-    W_29770 = 29770
-    'Phường Cái Vồn'
-    W_29812 = 29812
-    'Phường Đông Thành'
-    W_29263 = 29263
-    'Phường Long Đức'
+    W_28756 = 28756
+    'Phường Phú Khương'
+    W_28777 = 28777
+    'Phường An Hội'
+    W_28783 = 28783
+    'Phường Sơn Đông'
+    W_28789 = 28789
+    'Phường Bến Tre'
+    W_28807 = 28807
+    'Xã Giao Long'
+    W_28810 = 28810
+    'Xã Phú Túc'
+    W_28840 = 28840
+    'Xã Tân Phú'
+    W_28858 = 28858
+    'Phường Phú Tân'
+    W_28861 = 28861
+    'Xã Tiên Thủy'
+    W_28870 = 28870
+    'Xã Chợ Lách'
+    W_28879 = 28879
+    'Xã Phú Phụng'
+    W_28894 = 28894
+    'Xã Vĩnh Thành'
+    W_28901 = 28901
+    'Xã Hưng Khánh Trung'
+    W_28903 = 28903
+    'Xã Mỏ Cày'
+    W_28915 = 28915
+    'Xã Phước Mỹ Trung'
+    W_28921 = 28921
+    'Xã Tân Thành Bình'
+    W_28945 = 28945
+    'Xã Đồng Khởi'
+    W_28948 = 28948
+    'Xã Nhuận Phú Tân'
+    W_28957 = 28957
+    'Xã An Định'
+    W_28969 = 28969
+    'Xã Thành Thới'
+    W_28981 = 28981
+    'Xã Hương Mỹ'
+    W_28984 = 28984
+    'Xã Giồng Trôm'
+    W_28987 = 28987
+    'Xã Lương Hòa'
+    W_28993 = 28993
+    'Xã Lương Phú'
+    W_28996 = 28996
+    'Xã Châu Hòa'
+    W_29020 = 29020
+    'Xã Phước Long'
+    W_29029 = 29029
+    'Xã Tân Hào'
+    W_29044 = 29044
+    'Xã Hưng Nhượng'
+    W_29050 = 29050
+    'Xã Bình Đại'
+    W_29062 = 29062
+    'Xã Phú Thuận'
+    W_29077 = 29077
+    'Xã Lộc Thuận'
+    W_29083 = 29083
+    'Xã Châu Hưng'
+    W_29089 = 29089
+    'Xã Thạnh Trị'
+    W_29104 = 29104
+    'Xã Thạnh Phước'
+    W_29107 = 29107
+    'Xã Thới Thuận'
+    W_29110 = 29110
+    'Xã Ba Tri'
+    W_29122 = 29122
+    'Xã Mỹ Chánh Hòa'
+    W_29125 = 29125
+    'Xã Bảo Thạnh'
+    W_29137 = 29137
+    'Xã Tân Xuân'
+    W_29143 = 29143
+    'Xã An Ngãi Trung'
+    W_29158 = 29158
+    'Xã An Hiệp'
+    W_29167 = 29167
+    'Xã Tân Thủy'
+    W_29182 = 29182
+    'Xã Thạnh Phú'
+    W_29191 = 29191
+    'Xã Quới Điền'
+    W_29194 = 29194
+    'Xã Đại Điền'
+    W_29221 = 29221
+    'Xã Thạnh Hải'
+    W_29224 = 29224
+    'Xã An Qui'
+    W_29227 = 29227
+    'Xã Thạnh Phong'
     W_29242 = 29242
     'Phường Trà Vinh'
     W_29254 = 29254
     'Phường Nguyệt Hóa'
-    W_29398 = 29398
-    'Phường Hòa Thuận'
+    W_29263 = 29263
+    'Phường Long Đức'
+    W_29266 = 29266
+    'Xã Càng Long'
     W_29275 = 29275
     'Xã An Trường'
     W_29278 = 29278
     'Xã Tân An'
-    W_29266 = 29266
-    'Xã Càng Long'
-    W_29302 = 29302
-    'Xã Nhị Long'
     W_29287 = 29287
     'Xã Bình Phú'
-    W_29386 = 29386
-    'Xã Song Lộc'
+    W_29302 = 29302
+    'Xã Nhị Long'
+    W_29308 = 29308
+    'Xã Cầu Kè'
+    W_29317 = 29317
+    'Xã An Phú Tân'
+    W_29329 = 29329
+    'Xã Phong Thạnh'
+    W_29335 = 29335
+    'Xã Tam Ngãi'
+    W_29341 = 29341
+    'Xã Tiểu Cần'
+    W_29362 = 29362
+    'Xã Hùng Hòa'
+    W_29365 = 29365
+    'Xã Tập Ngãi'
+    W_29371 = 29371
+    'Xã Tân Hòa'
     W_29374 = 29374
     'Xã Châu Thành'
+    W_29386 = 29386
+    'Xã Song Lộc'
+    W_29398 = 29398
+    'Phường Hòa Thuận'
     W_29407 = 29407
     'Xã Hưng Mỹ'
     W_29410 = 29410
     'Xã Hòa Minh'
     W_29413 = 29413
     'Xã Long Hòa'
-    W_29308 = 29308
-    'Xã Cầu Kè'
-    W_29329 = 29329
-    'Xã Phong Thạnh'
-    W_29317 = 29317
-    'Xã An Phú Tân'
-    W_29335 = 29335
-    'Xã Tam Ngãi'
-    W_29371 = 29371
-    'Xã Tân Hòa'
-    W_29362 = 29362
-    'Xã Hùng Hòa'
-    W_29341 = 29341
-    'Xã Tiểu Cần'
-    W_29365 = 29365
-    'Xã Tập Ngãi'
+    W_29416 = 29416
+    'Xã Cầu Ngang'
     W_29419 = 29419
     'Xã Mỹ Long'
     W_29431 = 29431
     'Xã Vinh Kim'
-    W_29416 = 29416
-    'Xã Cầu Ngang'
     W_29446 = 29446
     'Xã Nhị Trường'
     W_29455 = 29455
     'Xã Hiệp Mỹ'
-    W_29476 = 29476
-    'Xã Lưu Nghiệp Anh'
-    W_29491 = 29491
-    'Xã Đại An'
-    W_29489 = 29489
-    'Xã Hàm Giang'
     W_29461 = 29461
     'Xã Trà Cú'
-    W_29506 = 29506
-    'Xã Long Hiệp'
     W_29467 = 29467
     'Xã Tập Sơn'
+    W_29476 = 29476
+    'Xã Lưu Nghiệp Anh'
+    W_29489 = 29489
+    'Xã Hàm Giang'
+    W_29491 = 29491
+    'Xã Đại An'
+    W_29497 = 29497
+    'Xã Đôn Châu'
+    W_29506 = 29506
+    'Xã Long Hiệp'
     W_29512 = 29512
     'Phường Duyên Hải'
+    W_29513 = 29513
+    'Xã Long Thành'
     W_29516 = 29516
     'Phường Trường Long Hòa'
     W_29518 = 29518
     'Xã Long Hữu'
-    W_29513 = 29513
-    'Xã Long Thành'
-    W_29536 = 29536
-    'Xã Đông Hải'
-    W_29533 = 29533
-    'Xã Long Vĩnh'
-    W_29497 = 29497
-    'Xã Đôn Châu'
     W_29530 = 29530
     'Xã Ngũ Lạc'
-    W_28777 = 28777
-    'Phường An Hội'
-    W_28756 = 28756
-    'Phường Phú Khương'
-    W_28789 = 28789
-    'Phường Bến Tre'
-    W_28783 = 28783
-    'Phường Sơn Đông'
-    W_28858 = 28858
-    'Phường Phú Tân'
-    W_28810 = 28810
-    'Xã Phú Túc'
-    W_28807 = 28807
-    'Xã Giao Long'
-    W_28861 = 28861
-    'Xã Tiên Thủy'
-    W_28840 = 28840
-    'Xã Tân Phú'
-    W_28879 = 28879
-    'Xã Phú Phụng'
-    W_28870 = 28870
-    'Xã Chợ Lách'
-    W_28894 = 28894
-    'Xã Vĩnh Thành'
-    W_28901 = 28901
-    'Xã Hưng Khánh Trung'
-    W_28915 = 28915
-    'Xã Phước Mỹ Trung'
-    W_28921 = 28921
-    'Xã Tân Thành Bình'
-    W_28948 = 28948
-    'Xã Nhuận Phú Tân'
-    W_28945 = 28945
-    'Xã Đồng Khởi'
-    W_28903 = 28903
-    'Xã Mỏ Cày'
-    W_28969 = 28969
-    'Xã Thành Thới'
-    W_28957 = 28957
-    'Xã An Định'
-    W_28981 = 28981
-    'Xã Hương Mỹ'
-    W_29194 = 29194
-    'Xã Đại Điền'
-    W_29191 = 29191
-    'Xã Quới Điền'
-    W_29182 = 29182
-    'Xã Thạnh Phú'
-    W_29224 = 29224
-    'Xã An Qui'
-    W_29221 = 29221
-    'Xã Thạnh Hải'
-    W_29227 = 29227
-    'Xã Thạnh Phong'
-    W_29167 = 29167
-    'Xã Tân Thủy'
-    W_29125 = 29125
-    'Xã Bảo Thạnh'
-    W_29110 = 29110
-    'Xã Ba Tri'
-    W_29137 = 29137
-    'Xã Tân Xuân'
-    W_29122 = 29122
-    'Xã Mỹ Chánh Hòa'
-    W_29143 = 29143
-    'Xã An Ngãi Trung'
-    W_29158 = 29158
-    'Xã An Hiệp'
-    W_29044 = 29044
-    'Xã Hưng Nhượng'
-    W_28984 = 28984
-    'Xã Giồng Trôm'
-    W_29029 = 29029
-    'Xã Tân Hào'
-    W_29020 = 29020
-    'Xã Phước Long'
-    W_28993 = 28993
-    'Xã Lương Phú'
-    W_28996 = 28996
-    'Xã Châu Hòa'
-    W_28987 = 28987
-    'Xã Lương Hòa'
-    W_29107 = 29107
-    'Xã Thới Thuận'
-    W_29104 = 29104
-    'Xã Thạnh Phước'
-    W_29050 = 29050
-    'Xã Bình Đại'
-    W_29089 = 29089
-    'Xã Thạnh Trị'
-    W_29077 = 29077
-    'Xã Lộc Thuận'
-    W_29083 = 29083
-    'Xã Châu Hưng'
-    W_29062 = 29062
-    'Xã Phú Thuận'
-    W_30313 = 30313
-    'Xã Mỹ Hòa Hưng'
-    W_30307 = 30307
-    'Phường Long Xuyên'
+    W_29533 = 29533
+    'Xã Long Vĩnh'
+    W_29536 = 29536
+    'Xã Đông Hải'
+    W_29551 = 29551
+    'Phường Long Châu'
+    W_29557 = 29557
+    'Phường Phước Hậu'
+    W_29566 = 29566
+    'Phường Tân Ngãi'
+    W_29584 = 29584
+    'Xã An Bình'
+    W_29590 = 29590
+    'Phường Thanh Đức'
+    W_29593 = 29593
+    'Phường Tân Hạnh'
+    W_29602 = 29602
+    'Xã Long Hồ'
+    W_29611 = 29611
+    'Xã Phú Quới'
+    W_29623 = 29623
+    'Xã Nhơn Phú'
+    W_29638 = 29638
+    'Xã Bình Phước'
+    W_29641 = 29641
+    'Xã Cái Nhum'
+    W_29653 = 29653
+    'Xã Tân Long Hội'
+    W_29659 = 29659
+    'Xã Trung Thành'
+    W_29668 = 29668
+    'Xã Quới An'
+    W_29677 = 29677
+    'Xã Quới Thiện'
+    W_29683 = 29683
+    'Xã Trung Hiệp'
+    W_29698 = 29698
+    'Xã Trung Ngãi'
+    W_29701 = 29701
+    'Xã Hiếu Phụng'
+    W_29713 = 29713
+    'Xã Hiếu Thành'
+    W_29719 = 29719
+    'Xã Tam Bình'
+    W_29728 = 29728
+    'Xã Cái Ngang'
+    W_29734 = 29734
+    'Xã Hòa Hiệp'
+    W_29740 = 29740
+    'Xã Song Phú'
+    W_29767 = 29767
+    'Xã Ngãi Tứ'
+    W_29770 = 29770
+    'Phường Cái Vồn'
+    W_29771 = 29771
+    'Phường Bình Minh'
+    W_29785 = 29785
+    'Xã Tân Lược'
+    W_29788 = 29788
+    'Xã Mỹ Thuận'
+    W_29800 = 29800
+    'Xã Tân Quới'
+    W_29812 = 29812
+    'Phường Đông Thành'
+    W_29821 = 29821
+    'Xã Trà Ôn'
+    W_29830 = 29830
+    'Xã Hòa Bình'
+    W_29836 = 29836
+    'Xã Trà Côn'
+    W_29845 = 29845
+    'Xã Vĩnh Xuân'
+    W_29857 = 29857
+    'Xã Lục Sĩ Thành'
     W_30292 = 30292
     'Phường Bình Đức'
     W_30301 = 30301
     'Phường Mỹ Thới'
+    W_30307 = 30307
+    'Phường Long Xuyên'
+    W_30313 = 30313
+    'Xã Mỹ Hòa Hưng'
     W_30316 = 30316
     'Phường Châu Đốc'
     W_30325 = 30325
     'Phường Vĩnh Tế'
     W_30337 = 30337
     'Xã An Phú'
-    W_30367 = 30367
-    'Xã Vĩnh Hậu'
-    W_30346 = 30346
-    'Xã Nhơn Hội'
     W_30341 = 30341
     'Xã Khánh Bình'
+    W_30346 = 30346
+    'Xã Nhơn Hội'
     W_30352 = 30352
     'Xã Phú Hữu'
-    W_30388 = 30388
-    'Xã Tân An'
-    W_30403 = 30403
-    'Xã Châu Phong'
-    W_30385 = 30385
-    'Xã Vĩnh Xương'
+    W_30367 = 30367
+    'Xã Vĩnh Hậu'
     W_30376 = 30376
     'Phường Tân Châu'
     W_30377 = 30377
     'Phường Long Phú'
+    W_30385 = 30385
+    'Xã Vĩnh Xương'
+    W_30388 = 30388
+    'Xã Tân An'
+    W_30403 = 30403
+    'Xã Châu Phong'
     W_30406 = 30406
     'Xã Phú Tân'
+    W_30409 = 30409
+    'Xã Chợ Vàm'
+    W_30421 = 30421
+    'Xã Phú Lâm'
+    W_30430 = 30430
+    'Xã Hòa Lạc'
     W_30436 = 30436
     'Xã Phú An'
     W_30445 = 30445
     'Xã Bình Thạnh Đông'
-    W_30409 = 30409
-    'Xã Chợ Vàm'
-    W_30430 = 30430
-    'Xã Hòa Lạc'
-    W_30421 = 30421
-    'Xã Phú Lâm'
     W_30463 = 30463
     'Xã Châu Phú'
     W_30469 = 30469
     'Xã Mỹ Đức'
     W_30478 = 30478
     'Xã Vĩnh Thạnh Trung'
-    W_30487 = 30487
-    'Xã Bình Mỹ'
     W_30481 = 30481
     'Xã Thạnh Mỹ Tây'
-    W_30526 = 30526
-    'Xã An Cư'
-    W_30538 = 30538
-    'Xã Núi Cấm'
-    W_30520 = 30520
-    'Phường Tịnh Biên'
+    W_30487 = 30487
+    'Xã Bình Mỹ'
     W_30502 = 30502
     'Phường Thới Sơn'
     W_30505 = 30505
     'Phường Chi Lăng'
-    W_30547 = 30547
-    'Xã Ba Chúc'
+    W_30520 = 30520
+    'Phường Tịnh Biên'
+    W_30526 = 30526
+    'Xã An Cư'
+    W_30538 = 30538
+    'Xã Núi Cấm'
     W_30544 = 30544
     'Xã Tri Tôn'
+    W_30547 = 30547
+    'Xã Ba Chúc'
+    W_30568 = 30568
+    'Xã Vĩnh Gia'
     W_30577 = 30577
     'Xã Ô Lâm'
     W_30580 = 30580
     'Xã Cô Tô'
-    W_30568 = 30568
-    'Xã Vĩnh Gia'
     W_30589 = 30589
     'Xã An Châu'
-    W_30607 = 30607
-    'Xã Bình Hòa'
     W_30595 = 30595
     'Xã Cần Đăng'
-    W_30619 = 30619
-    'Xã Vĩnh Hanh'
     W_30604 = 30604
     'Xã Vĩnh An'
+    W_30607 = 30607
+    'Xã Bình Hòa'
+    W_30619 = 30619
+    'Xã Vĩnh Hanh'
     W_30628 = 30628
     'Xã Chợ Mới'
-    W_30643 = 30643
-    'Xã Cù Lao Giêng'
-    W_30673 = 30673
-    'Xã Hội An'
     W_30631 = 30631
     'Xã Long Điền'
+    W_30643 = 30643
+    'Xã Cù Lao Giêng'
     W_30658 = 30658
     'Xã Nhơn Mỹ'
     W_30664 = 30664
     'Xã Long Kiến'
+    W_30673 = 30673
+    'Xã Hội An'
     W_30682 = 30682
     'Xã Thoại Sơn'
-    W_30688 = 30688
-    'Xã Óc Eo'
-    W_30709 = 30709
-    'Xã Định Mỹ'
     W_30685 = 30685
     'Xã Phú Hòa'
-    W_30697 = 30697
-    'Xã Vĩnh Trạch'
+    W_30688 = 30688
+    'Xã Óc Eo'
     W_30691 = 30691
     'Xã Tây Phú'
-    W_31064 = 31064
-    'Xã Vĩnh Bình'
-    W_31069 = 31069
-    'Xã Vĩnh Thuận'
-    W_31051 = 31051
-    'Xã Vĩnh Phong'
-    W_31012 = 31012
-    'Xã Vĩnh Hòa'
-    W_31027 = 31027
-    'Xã U Minh Thượng'
-    W_31024 = 31024
-    'Xã Đông Hòa'
-    W_31031 = 31031
-    'Xã Tân Thạnh'
-    W_31036 = 31036
-    'Xã Đông Hưng'
-    W_31018 = 31018
-    'Xã An Minh'
-    W_31042 = 31042
-    'Xã Vân Khánh'
-    W_30988 = 30988
-    'Xã Tây Yên'
-    W_31006 = 31006
-    'Xã Đông Thái'
-    W_30985 = 30985
-    'Xã An Biên'
-    W_30958 = 30958
-    'Xã Định Hòa'
-    W_30952 = 30952
-    'Xã Gò Quao'
-    W_30970 = 30970
-    'Xã Vĩnh Hòa Hưng'
-    W_30982 = 30982
-    'Xã Vĩnh Tuy'
-    W_30904 = 30904
-    'Xã Giồng Riềng'
-    W_30910 = 30910
-    'Xã Thạnh Hưng'
-    W_30943 = 30943
-    'Xã Long Thạnh'
-    W_30934 = 30934
-    'Xã Hòa Hưng'
-    W_30928 = 30928
-    'Xã Ngọc Chúc'
-    W_30949 = 30949
-    'Xã Hòa Thuận'
-    W_30856 = 30856
-    'Xã Tân Hội'
-    W_30850 = 30850
-    'Xã Tân Hiệp'
-    W_30874 = 30874
-    'Xã Thạnh Đông'
-    W_30886 = 30886
-    'Xã Thạnh Lộc'
-    W_30880 = 30880
-    'Xã Châu Thành'
-    W_30898 = 30898
-    'Xã Bình An'
-    W_30817 = 30817
-    'Xã Hòn Đất'
-    W_30835 = 30835
-    'Xã Sơn Kiên'
-    W_30838 = 30838
-    'Xã Mỹ Thuận'
-    W_30823 = 30823
-    'Xã Bình Sơn'
-    W_30826 = 30826
-    'Xã Bình Giang'
-    W_30796 = 30796
-    'Xã Giang Thành'
-    W_30793 = 30793
-    'Xã Vĩnh Điều'
-    W_30790 = 30790
-    'Xã Hòa Điền'
+    W_30697 = 30697
+    'Xã Vĩnh Trạch'
+    W_30709 = 30709
+    'Xã Định Mỹ'
+    W_30742 = 30742
+    'Phường Rạch Giá'
+    W_30760 = 30760
+    'Phường Vĩnh Thông'
+    W_30766 = 30766
+    'Phường Tô Châu'
+    W_30769 = 30769
+    'Phường Hà Tiên'
+    W_30781 = 30781
+    'Xã Tiên Hải'
     W_30787 = 30787
     'Xã Kiên Lương'
+    W_30790 = 30790
+    'Xã Hòa Điền'
+    W_30793 = 30793
+    'Xã Vĩnh Điều'
+    W_30796 = 30796
+    'Xã Giang Thành'
     W_30811 = 30811
     'Xã Sơn Hải'
     W_30814 = 30814
     'Xã Hòn Nghệ'
-    W_31108 = 31108
-    'Đặc khu Kiên Hải'
-    W_30760 = 30760
-    'Phường Vĩnh Thông'
-    W_30742 = 30742
-    'Phường Rạch Giá'
-    W_30769 = 30769
-    'Phường Hà Tiên'
-    W_30766 = 30766
-    'Phường Tô Châu'
-    W_30781 = 30781
-    'Xã Tiên Hải'
+    W_30817 = 30817
+    'Xã Hòn Đất'
+    W_30823 = 30823
+    'Xã Bình Sơn'
+    W_30826 = 30826
+    'Xã Bình Giang'
+    W_30835 = 30835
+    'Xã Sơn Kiên'
+    W_30838 = 30838
+    'Xã Mỹ Thuận'
+    W_30850 = 30850
+    'Xã Tân Hiệp'
+    W_30856 = 30856
+    'Xã Tân Hội'
+    W_30874 = 30874
+    'Xã Thạnh Đông'
+    W_30880 = 30880
+    'Xã Châu Thành'
+    W_30886 = 30886
+    'Xã Thạnh Lộc'
+    W_30898 = 30898
+    'Xã Bình An'
+    W_30904 = 30904
+    'Xã Giồng Riềng'
+    W_30910 = 30910
+    'Xã Thạnh Hưng'
+    W_30928 = 30928
+    'Xã Ngọc Chúc'
+    W_30934 = 30934
+    'Xã Hòa Hưng'
+    W_30943 = 30943
+    'Xã Long Thạnh'
+    W_30949 = 30949
+    'Xã Hòa Thuận'
+    W_30952 = 30952
+    'Xã Gò Quao'
+    W_30958 = 30958
+    'Xã Định Hòa'
+    W_30970 = 30970
+    'Xã Vĩnh Hòa Hưng'
+    W_30982 = 30982
+    'Xã Vĩnh Tuy'
+    W_30985 = 30985
+    'Xã An Biên'
+    W_30988 = 30988
+    'Xã Tây Yên'
+    W_31006 = 31006
+    'Xã Đông Thái'
+    W_31012 = 31012
+    'Xã Vĩnh Hòa'
+    W_31018 = 31018
+    'Xã An Minh'
+    W_31024 = 31024
+    'Xã Đông Hòa'
+    W_31027 = 31027
+    'Xã U Minh Thượng'
+    W_31031 = 31031
+    'Xã Tân Thạnh'
+    W_31036 = 31036
+    'Xã Đông Hưng'
+    W_31042 = 31042
+    'Xã Vân Khánh'
+    W_31051 = 31051
+    'Xã Vĩnh Phong'
+    W_31064 = 31064
+    'Xã Vĩnh Bình'
+    W_31069 = 31069
+    'Xã Vĩnh Thuận'
     W_31078 = 31078
     'Đặc khu Phú Quốc'
     W_31105 = 31105
     'Đặc khu Thổ Châu'
-    W_31135 = 31135
-    'Phường Ninh Kiều'
+    W_31108 = 31108
+    'Đặc khu Kiên Hải'
     W_31120 = 31120
     'Phường Cái Khế'
+    W_31135 = 31135
+    'Phường Ninh Kiều'
     W_31147 = 31147
     'Phường Tân An'
     W_31150 = 31150
     'Phường An Bình'
-    W_31174 = 31174
-    'Phường Thới An Đông'
-    W_31168 = 31168
-    'Phường Bình Thủy'
-    W_31183 = 31183
-    'Phường Long Tuyền'
-    W_31186 = 31186
-    'Phường Cái Răng'
-    W_31201 = 31201
-    'Phường Hưng Phú'
     W_31153 = 31153
     'Phường Ô Môn'
     W_31157 = 31157
     'Phường Thới Long'
     W_31162 = 31162
     'Phường Phước Thới'
-    W_31217 = 31217
-    'Phường Trung Nhứt'
-    W_31212 = 31212
-    'Phường Thốt Nốt'
+    W_31168 = 31168
+    'Phường Bình Thủy'
+    W_31174 = 31174
+    'Phường Thới An Đông'
+    W_31183 = 31183
+    'Phường Long Tuyền'
+    W_31186 = 31186
+    'Phường Cái Răng'
+    W_31201 = 31201
+    'Phường Hưng Phú'
     W_31207 = 31207
-    'Phường Thuận Hưng'
+    'Phường Thốt Nốt'
     W_31213 = 31213
     'Phường Tân Lộc'
-    W_31299 = 31299
-    'Xã Phong Điền'
-    W_31315 = 31315
-    'Xã Nhơn Ái'
-    W_31309 = 31309
-    'Xã Trường Long'
-    W_31258 = 31258
-    'Xã Thới Lai'
-    W_31282 = 31282
-    'Xã Đông Thuận'
-    W_31294 = 31294
-    'Xã Trường Xuân'
-    W_31288 = 31288
-    'Xã Trường Thành'
-    W_31261 = 31261
-    'Xã Cờ Đỏ'
-    W_31273 = 31273
-    'Xã Đông Hiệp'
-    W_31249 = 31249
-    'Xã Thạnh Phú'
-    W_31264 = 31264
-    'Xã Thới Hưng'
-    W_31255 = 31255
-    'Xã Trung Hưng'
+    W_31217 = 31217
+    'Phường Trung Nhứt'
+    W_31228 = 31228
+    'Phường Thuận Hưng'
+    W_31231 = 31231
+    'Xã Thạnh An'
     W_31232 = 31232
     'Xã Vĩnh Thạnh'
     W_31237 = 31237
     'Xã Vĩnh Trinh'
-    W_31231 = 31231
-    'Xã Thạnh An'
     W_31246 = 31246
     'Xã Thạnh Quới'
-    W_31338 = 31338
-    'Xã Hỏa Lựu'
+    W_31249 = 31249
+    'Xã Thạnh Phú'
+    W_31255 = 31255
+    'Xã Trung Hưng'
+    W_31258 = 31258
+    'Xã Thới Lai'
+    W_31261 = 31261
+    'Xã Cờ Đỏ'
+    W_31264 = 31264
+    'Xã Thới Hưng'
+    W_31273 = 31273
+    'Xã Đông Hiệp'
+    W_31282 = 31282
+    'Xã Đông Thuận'
+    W_31288 = 31288
+    'Xã Trường Thành'
+    W_31294 = 31294
+    'Xã Trường Xuân'
+    W_31299 = 31299
+    'Xã Phong Điền'
+    W_31309 = 31309
+    'Xã Trường Long'
+    W_31315 = 31315
+    'Xã Nhơn Ái'
     W_31321 = 31321
     'Phường Vị Thanh'
     W_31333 = 31333
     'Phường Vị Tân'
-    W_31441 = 31441
-    'Xã Vị Thủy'
-    W_31453 = 31453
-    'Xã Vĩnh Thuận Đông'
-    W_31465 = 31465
-    'Xã Vị Thanh 1'
-    W_31459 = 31459
-    'Xã Vĩnh Tường'
-    W_31489 = 31489
-    'Xã Vĩnh Viễn'
-    W_31495 = 31495
-    'Xã Xà Phiên'
-    W_31492 = 31492
-    'Xã Lương Tâm'
-    W_31473 = 31473
-    'Phường Long Bình'
-    W_31471 = 31471
-    'Phường Long Mỹ'
-    W_31480 = 31480
-    'Phường Long Phú 1'
-    W_31360 = 31360
-    'Xã Thạnh Xuân'
+    W_31338 = 31338
+    'Xã Hỏa Lựu'
+    W_31340 = 31340
+    'Phường Ngã Bảy'
     W_31342 = 31342
     'Xã Tân Hòa'
     W_31348 = 31348
     'Xã Trường Long Tây'
+    W_31360 = 31360
+    'Xã Thạnh Xuân'
     W_31366 = 31366
     'Xã Châu Thành'
     W_31369 = 31369
     'Xã Đông Phước'
     W_31378 = 31378
-    'Xã  Phú Hữu'
-    W_31411 = 31411
-    'Phường Đại Thành'
-    W_31340 = 31340
-    'Phường Ngã Bảy'
-    W_31399 = 31399
-    'Xã Tân Bình'
+    'Xã Phú Hữu'
     W_31393 = 31393
     'Xã Hòa An'
+    W_31396 = 31396
+    'Xã Hiệp Hưng'
+    W_31399 = 31399
+    'Xã Tân Bình'
+    W_31408 = 31408
+    'Xã Thạnh Hòa'
+    W_31411 = 31411
+    'Phường Đại Thành'
+    W_31420 = 31420
+    'Xã Phụng Hiệp'
     W_31426 = 31426
     'Xã Phương Bình'
     W_31432 = 31432
     'Xã Tân Phước Hưng'
-    W_31396 = 31396
-    'Xã Hiệp Hưng'
-    W_31420 = 31420
-    'Xã Phụng Hiệp'
-    W_31408 = 31408
-    'Xã Thạnh Hòa'
-    W_31510 = 31510
-    'Phường Phú Lợi'
+    W_31441 = 31441
+    'Xã Vị Thủy'
+    W_31453 = 31453
+    'Xã Vĩnh Thuận Đông'
+    W_31459 = 31459
+    'Xã Vĩnh Tường'
+    W_31465 = 31465
+    'Xã Vị Thanh 1'
+    W_31471 = 31471
+    'Phường Long Mỹ'
+    W_31473 = 31473
+    'Phường Long Bình'
+    W_31480 = 31480
+    'Phường Long Phú 1'
+    W_31489 = 31489
+    'Xã Vĩnh Viễn'
+    W_31492 = 31492
+    'Xã Lương Tâm'
+    W_31495 = 31495
+    'Xã Xà Phiên'
     W_31507 = 31507
     'Phường Sóc Trăng'
-    W_31684 = 31684
-    'Phường Mỹ Xuyên'
-    W_31717 = 31717
-    'Xã Hòa Tú'
-    W_31726 = 31726
-    'Xã Gia Hòa'
-    W_31708 = 31708
-    'Xã Nhu Gia'
-    W_31723 = 31723
-    'Xã Ngọc Tố'
-    W_31654 = 31654
-    'Xã Trường Khánh'
-    W_31645 = 31645
-    'Xã Đại Ngãi'
-    W_31666 = 31666
-    'Xã Tân Thạnh'
-    W_31639 = 31639
-    'Xã Long Phú'
-    W_31552 = 31552
-    'Xã Nhơn Mỹ'
-    W_31537 = 31537
-    'Xã Phong Nẫm'
-    W_31531 = 31531
-    'Xã An Lạc Thôn'
+    W_31510 = 31510
+    'Phường Phú Lợi'
     W_31528 = 31528
     'Xã Kế Sách'
+    W_31531 = 31531
+    'Xã An Lạc Thôn'
+    W_31537 = 31537
+    'Xã Phong Nẫm'
     W_31540 = 31540
     'Xã Thới An Hội'
+    W_31552 = 31552
+    'Xã Nhơn Mỹ'
     W_31561 = 31561
-    'Xã  Đại Hải'
-    W_31569 = 31569
-    'Xã Phú Tâm'
-    W_31594 = 31594
-    'Xã An Ninh'
-    W_31582 = 31582
-    'Xã Thuận Hòa'
-    W_31570 = 31570
-    'Xã Hồ Đắc Kiện'
+    'Xã Đại Hải'
     W_31567 = 31567
     'Xã Mỹ Tú'
+    W_31569 = 31569
+    'Xã Phú Tâm'
+    W_31570 = 31570
+    'Xã Hồ Đắc Kiện'
     W_31579 = 31579
     'Xã Long Hưng'
-    W_31603 = 31603
-    'Xã Mỹ Phước'
+    W_31582 = 31582
+    'Xã Thuận Hòa'
     W_31591 = 31591
     'Xã Mỹ Hương'
-    W_31795 = 31795
-    'Xã Vĩnh Hải'
-    W_31810 = 31810
-    'Xã Lai Hòa'
-    W_31804 = 31804
-    'Phường Vĩnh Phước'
-    W_31783 = 31783
-    'Phường Vĩnh Châu'
-    W_31789 = 31789
-    'Phường Khánh Hòa'
-    W_31741 = 31741
-    'Xã Tân Long'
-    W_31732 = 31732
-    'Phường Ngã Năm'
-    W_31753 = 31753
-    'Phường Mỹ Quới'
-    W_31756 = 31756
-    'Xã Phú Lộc'
-    W_31777 = 31777
-    'Xã Vĩnh Lợi'
-    W_31759 = 31759
-    'Xã Lâm Tân'
-    W_31699 = 31699
-    'Xã Thạnh Thới An'
-    W_31687 = 31687
-    'Xã Tài Văn'
-    W_31675 = 31675
-    'Xã Liêu Tú'
-    W_31679 = 31679
-    'Xã Lịch Hội Thượng'
-    W_31673 = 31673
-    'Xã Trần Đề'
+    W_31594 = 31594
+    'Xã An Ninh'
+    W_31603 = 31603
+    'Xã Mỹ Phước'
     W_31615 = 31615
     'Xã An Thạnh'
     W_31633 = 31633
     'Xã Cù Lao Dung'
+    W_31639 = 31639
+    'Xã Long Phú'
+    W_31645 = 31645
+    'Xã Đại Ngãi'
+    W_31654 = 31654
+    'Xã Trường Khánh'
+    W_31666 = 31666
+    'Xã Tân Thạnh'
+    W_31673 = 31673
+    'Xã Trần Đề'
+    W_31675 = 31675
+    'Xã Liêu Tú'
+    W_31679 = 31679
+    'Xã Lịch Hội Thượng'
+    W_31684 = 31684
+    'Phường Mỹ Xuyên'
+    W_31687 = 31687
+    'Xã Tài Văn'
+    W_31699 = 31699
+    'Xã Thạnh Thới An'
+    W_31708 = 31708
+    'Xã Nhu Gia'
+    W_31717 = 31717
+    'Xã Hòa Tú'
+    W_31723 = 31723
+    'Xã Ngọc Tố'
+    W_31726 = 31726
+    'Xã Gia Hòa'
+    W_31732 = 31732
+    'Phường Ngã Năm'
+    W_31741 = 31741
+    'Xã Tân Long'
+    W_31753 = 31753
+    'Phường Mỹ Quới'
+    W_31756 = 31756
+    'Xã Phú Lộc'
+    W_31759 = 31759
+    'Xã Lâm Tân'
+    W_31777 = 31777
+    'Xã Vĩnh Lợi'
+    W_31783 = 31783
+    'Phường Vĩnh Châu'
+    W_31789 = 31789
+    'Phường Khánh Hòa'
+    W_31795 = 31795
+    'Xã Vĩnh Hải'
+    W_31804 = 31804
+    'Phường Vĩnh Phước'
+    W_31810 = 31810
+    'Xã Lai Hòa'
+    W_31825 = 31825
+    'Phường Bạc Liêu'
+    W_31834 = 31834
+    'Phường Vĩnh Trạch'
+    W_31840 = 31840
+    'Phường Hiệp Thành'
+    W_31843 = 31843
+    'Xã Hồng Dân'
+    W_31849 = 31849
+    'Xã Ninh Quới'
+    W_31858 = 31858
+    'Xã Vĩnh Lộc'
+    W_31864 = 31864
+    'Xã Ninh Thạnh Lợi'
+    W_31867 = 31867
+    'Xã Phước Long'
+    W_31876 = 31876
+    'Xã Vĩnh Phước'
+    W_31882 = 31882
+    'Xã Vĩnh Thanh'
+    W_31885 = 31885
+    'Xã Phong Hiệp'
+    W_31891 = 31891
+    'Xã Hòa Bình'
+    W_31894 = 31894
+    'Xã Châu Thới'
+    W_31900 = 31900
+    'Xã Vĩnh Lợi'
+    W_31906 = 31906
+    'Xã Hưng Hội'
+    W_31918 = 31918
+    'Xã Vĩnh Mỹ'
+    W_31927 = 31927
+    'Xã Vĩnh Hậu'
+    W_31942 = 31942
+    'Phường Giá Rai'
+    W_31951 = 31951
+    'Phường Láng Tròn'
+    W_31957 = 31957
+    'Xã Phong Thạnh'
+    W_31972 = 31972
+    'Xã Gành Hào'
+    W_31975 = 31975
+    'Xã Đông Hải'
+    W_31985 = 31985
+    'Xã Long Điền'
+    W_31988 = 31988
+    'Xã An Trạch'
+    W_31993 = 31993
+    'Xã Định Thành'
     W_32002 = 32002
     'Phường An Xuyên'
     W_32014 = 32014
@@ -6599,123 +6649,73 @@ class WardCode(IntEnum):
     'Phường Tân Thành'
     W_32041 = 32041
     'Phường Hòa Thành'
-    W_32167 = 32167
-    'Xã Tân Thuận'
-    W_32188 = 32188
-    'Xã Tân Tiến'
-    W_32155 = 32155
-    'Xã Tạ An Khương'
-    W_32161 = 32161
-    'Xã Trần Phán'
-    W_32185 = 32185
-    'Xã Thanh Tùng'
-    W_32152 = 32152
-    'Xã Đầm Dơi'
-    W_32182 = 32182
-    'Xã Quách Phẩm'
-    W_32047 = 32047
-    'Xã U Minh'
     W_32044 = 32044
     'Xã Nguyễn Phích'
-    W_32062 = 32062
-    'Xã Khánh Lâm'
+    W_32047 = 32047
+    'Xã U Minh'
     W_32059 = 32059
     'Xã Khánh An'
-    W_32244 = 32244
-    'Xã Phan Ngọc Hiển'
-    W_32248 = 32248
-    'Xã Đất Mũi'
-    W_32236 = 32236
-    'Xã Tân Ân'
-    W_32110 = 32110
-    'Xã Khánh Bình'
-    W_32104 = 32104
-    'Xã Đá Bạc'
-    W_32119 = 32119
-    'Xã Khánh Hưng'
-    W_32098 = 32098
-    'Xã Sông Đốc'
-    W_32095 = 32095
-    'Xã Trần Văn Thời'
+    W_32062 = 32062
+    'Xã Khánh Lâm'
     W_32065 = 32065
     'Xã Thới Bình'
+    W_32069 = 32069
+    'Xã Biển Bạch'
     W_32071 = 32071
     'Xã Trí Phải'
     W_32083 = 32083
     'Xã Tân Lộc'
     W_32092 = 32092
     'Xã Hồ Thị Kỷ'
-    W_32069 = 32069
-    'Xã Biển Bạch'
-    W_32201 = 32201
-    'Xã Đất Mới'
-    W_32191 = 32191
-    'Xã Năm Căn'
-    W_32206 = 32206
-    'Xã Tam Giang'
-    W_32212 = 32212
-    'Xã Cái Đôi Vàm'
-    W_32227 = 32227
-    'Xã Nguyễn Việt Khái'
-    W_32218 = 32218
-    'Xã Phú Tân'
-    W_32214 = 32214
-    'Xã Phú Mỹ'
+    W_32095 = 32095
+    'Xã Trần Văn Thời'
+    W_32098 = 32098
+    'Xã Sông Đốc'
+    W_32104 = 32104
+    'Xã Đá Bạc'
+    W_32110 = 32110
+    'Xã Khánh Bình'
+    W_32119 = 32119
+    'Xã Khánh Hưng'
+    W_32128 = 32128
+    'Xã Cái Nước'
     W_32134 = 32134
     'Xã Lương Thế Trân'
     W_32137 = 32137
     'Xã Tân Hưng'
     W_32140 = 32140
     'Xã Hưng Mỹ'
-    W_32128 = 32128
-    'Xã Cái Nước'
-    W_31825 = 31825
-    'Phường Bạc Liêu'
-    W_31834 = 31834
-    'Phường Vĩnh Trạch'
-    W_31840 = 31840
-    'Phường Hiệp Thành'
-    W_31942 = 31942
-    'Phường Giá Rai'
-    W_31951 = 31951
-    'Phường Láng Tròn'
-    W_31957 = 31957
-    'Xã Phong Thạnh'
-    W_31843 = 31843
-    'Xã Hồng Dân'
-    W_31858 = 31858
-    'Xã Vĩnh Lộc'
-    W_31864 = 31864
-    'Xã Ninh Thạnh Lợi'
-    W_31849 = 31849
-    'Xã Ninh Quới'
-    W_31972 = 31972
-    'Xã Gành Hào'
-    W_31993 = 31993
-    'Xã Định Thành'
-    W_31988 = 31988
-    'Xã An Trạch'
-    W_31985 = 31985
-    'Xã Long Điền'
-    W_31975 = 31975
-    'Xã Đông Hải'
-    W_31891 = 31891
-    'Xã Hòa Bình'
-    W_31918 = 31918
-    'Xã Vĩnh Mỹ'
-    W_31927 = 31927
-    'Xã Vĩnh Hậu'
-    W_31867 = 31867
-    'Xã Phước Long'
-    W_31876 = 31876
-    'Xã Vĩnh Phước'
-    W_31885 = 31885
-    'Xã Phong Hiệp'
-    W_31882 = 31882
-    'Xã Vĩnh Thanh'
-    W_31900 = 31900
-    'Xã Vĩnh Lợi'
-    W_31906 = 31906
-    'Xã Hưng Hội'
-    W_31894 = 31894
-    'Xã Châu Thới'
+    W_32152 = 32152
+    'Xã Đầm Dơi'
+    W_32155 = 32155
+    'Xã Tạ An Khương'
+    W_32161 = 32161
+    'Xã Trần Phán'
+    W_32167 = 32167
+    'Xã Tân Thuận'
+    W_32182 = 32182
+    'Xã Quách Phẩm'
+    W_32185 = 32185
+    'Xã Thanh Tùng'
+    W_32188 = 32188
+    'Xã Tân Tiến'
+    W_32191 = 32191
+    'Xã Năm Căn'
+    W_32201 = 32201
+    'Xã Đất Mới'
+    W_32206 = 32206
+    'Xã Tam Giang'
+    W_32212 = 32212
+    'Xã Cái Đôi Vàm'
+    W_32214 = 32214
+    'Xã Phú Mỹ'
+    W_32218 = 32218
+    'Xã Phú Tân'
+    W_32227 = 32227
+    'Xã Nguyễn Việt Khái'
+    W_32236 = 32236
+    'Xã Tân Ân'
+    W_32244 = 32244
+    'Xã Phan Ngọc Hiển'
+    W_32248 = 32248
+    'Xã Đất Mũi'

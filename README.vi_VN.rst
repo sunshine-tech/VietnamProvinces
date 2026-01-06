@@ -89,31 +89,30 @@ Thư viện này tương thích với Python 3.10 trở lên.
 Phát triển
 -----------
 
-Trong lúc được phát triển, dự án này có một công cụ để chuyển đổi dữ liệu từ nguồn của Nhà nước.
+Trong lúc được phát triển, dự án này có một công cụ để cào và chuyển đổi dữ liệu từ website Cục Thống kê.
 
-Công cụ này không cào dữ liệu trực tiếp từ website của Chính phủ vì dữ liệu này hiếm khi thay đổi (không đáng để xây dựng một tính năng mà bạn sau mỗi chục năm mới cần phải dùng) và vì các website này cung cấp dữ liệu ở định dạng của Microsoft Office, không thân thiện lắm với máy.
+Công cụ này chỉ chạy được trên Linux (có thể không chạy trên Windows).
 
 Cập nhật dữ liệu
 ~~~~~~~~~~~~~~~~
 
-Trong tương lai, nếu chính quyền sắp xếp lại các đơn vị hành chính, ta cần thu thập lại dữ liệu từ website GSOVN. Các bước như sau:
-
-- Vào: https://danhmuchanhchinh.gso.gov.vn/ (đường link này có thể thay đổi khi `GSOVN <gso_vn_>`_ thay mới phần mềm của họ).
-- Tìm nút "Xuất Excel".
-- Tích chọn "Quận Huyện Phường Xã".
-- Bấm nút và tải về file Excel (xls).
-- Dùng LibreOffice để chuyển đổi file Excel sang dạng CSV. Ví dụ ta đặt tên file CSV là *Xa_2021-02-03.csv*.
-- Chạy công cụ này để tách, sắp xếp dữ liệu ở dạng JSON:
+Để cào dữ liệu trực tiếp từ website Cục Thống kê và tạo file JSON:
 
 .. code-block:: sh
 
-    python3 -m dev -w dev/seed-data/2025-07/Cap-xa.csv -p dev/seed-data/2025-07/Cap-tinh.csv -f nested-json
+    python3 -m dev scrape -f nested-json -o vietnam_provinces/data/nested-divisions.json
+
+Hoặc để sinh mã Python trực tiếp:
+
+.. code-block:: sh
+
+    python3 -m dev scrape -f python
 
 Bạn có thể dùng lệnh
 
 .. code-block:: sh
 
-    python3 -m dev --help
+    python3 -m dev scrape --help
 
 để xem các tùy chọn mà công cụ có.
 
@@ -125,13 +124,13 @@ Sinh mã Python
 
 .. code-block:: sh
 
-    python3 -m dev -w dev/seed-data/2025-07/Cap-xa.csv -p dev/seed-data/2025-07/Cap-tinh.csv -f python
+    python3 -m dev scrape -f python
 
 
 Nguồn dữ liệu
 ~~~~~~~~~~~~~
 
-- Tên và mã tỉnh thành, phường xã:  `Tổng cục Thống kê Việt Nam <gso_vn_>`_.
+- Tên và mã tỉnh thành, phường xã:  `Cục Thống kê - Bộ Tài chính <nso_vn_>`_.
 - Mã vùng điện thoại: `Sở Thông tin và Truyền thông Thái Bình <tb_ic_>`_.
 
 
@@ -145,7 +144,7 @@ Mang đến cho bạn bởi `Nguyễn Hồng Quân <quan_>`_, sau hàng đêm v�
 .. |image pypi| image:: https://badgen.net/pypi/v/vietnam-provinces
    :target: https://pypi.org/project/vietnam-provinces/
 .. _english: README.rst
-.. _gso_vn: https://danhmuchanhchinh.gso.gov.vn/
+.. _nso_vn: https://danhmuchanhchinh.nso.gov.vn/
 .. _draft_new_units: https://chinhphu.vn/du-thao-vbqppl/du-thao-quyet-dinh-cua-thu-tuong-chinh-phu-ban-hanh-bang-danh-muc-va-ma-so-cac-don-vi-hanh-chinh-7546
 .. _tb_ic: https://sotttt.thaibinh.gov.vn/tin-tuc/buu-chinh-vien-thong/tra-cuu-ma-vung-dien-thoai-co-dinh-mat-dat-ma-mang-dien-thoa2.html
 .. _dataclass: https://docs.python.org/3/library/dataclasses.html

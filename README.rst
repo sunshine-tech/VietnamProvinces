@@ -6,7 +6,7 @@ VietnamProvinces
 
 [`Tiếng Việt <vietnamese_>`_]
 
-Library to provide list of Vietnam administrative divisions (tỉnh thành, phường xã, after the rearrangement in July 2025) with the name and code as defined by `Draft of new administrative units <draft_new_units_>`_ (Tổng cục Thống kê).
+Library to provide list of Vietnam administrative divisions (tỉnh thành, phường xã, after the rearrangement in July 2025) with the name and code as defined by `National Statistics Office of Viet Nam <nso_vn_>`_.
 
 Example:
 
@@ -99,33 +99,30 @@ This library is compatible with Python 3.10+.
 Development
 -----------
 
-In development, this project has a tool to convert data from government sources.
-
-The tool doesn't directly crawl data from government websites because the data rarely change (it doesn't worth developing the feature which you only need to use each ten years), and because those websites provide data in unfriendly Microsoft Office formats.
+In development, this project has a tool to scrape and convert data from the National Statistics Office website.
 
 The tool is tested on Linux only (may not run on Windows).
 
 Update data
 ~~~~~~~~~~~
 
-In the future, when the authority reorganize administrative divisions, we need to collect this data again from GSOVN website. Do:
-
-- Go to: https://danhmuchanhchinh.gso.gov.vn/ (this URL may change when `GSOVN <gso_vn_>`_ replaces their software).
-- Find the button "Xuất Excel".
-- Tick the "Quận Huyện Phường Xã" checkbox.
-- Click the button to export and download list of units in Excel (XLS) file.
-- Use LibreOffice to convert Excel file to CSV file. For example, we name it *Xa_2025-01-04.csv*.
-- Run this tool to compute data to JSON format:
+To scrape data directly from the National Statistics Office website and generate JSON:
 
 .. code-block:: sh
 
-    python3 -m dev -w dev/seed-data/2025-07/Cap-xa.csv -p dev/seed-data/2025-07/Cap-tinh.csv -f nested-json
+    python3 -m dev scrape -f nested-json -o vietnam_provinces/data/nested-divisions.json
+
+Or to generate Python code directly:
+
+.. code-block:: sh
+
+    python3 -m dev scrape -f python
 
 You can run
 
 .. code-block:: sh
 
-    python3 -m dev --help
+    python3 -m dev scrape --help
 
 to see more options of that tool.
 
@@ -137,13 +134,13 @@ Generate Python code
 
 .. code-block:: sh
 
-    python3 -m dev -w dev/seed-data/2025-07/Cap-xa.csv -p dev/seed-data/2025-07/Cap-tinh.csv -f python
+    python3 -m dev scrape -f python
 
 
 Data source
 ~~~~~~~~~~~
 
-- Name and code of provinces, and wards:  `General Statistics Office of Viet Nam <gso_vn_>`_.
+- Name and code of provinces, and wards:  `National Statistics Office of Viet Nam <nso_vn_>`_.
 - Phone area code: `Thái Bình province's department of Information and Communication <tb_ic_>`_.
 
 
@@ -159,7 +156,7 @@ Given to you by `Nguyễn Hồng Quân <quan_>`_, after nights and weekends.
 .. |common changelog| image:: https://common-changelog.org/badge.svg
    :target: https://common-changelog.org
 .. _vietnamese: README.vi_VN.rst
-.. _gso_vn: https://danhmuchanhchinh.gso.gov.vn/
+.. _nso_vn: https://danhmuchanhchinh.nso.gov.vn/
 .. _draft_new_units: https://chinhphu.vn/du-thao-vbqppl/du-thao-quyet-dinh-cua-thu-tuong-chinh-phu-ban-hanh-bang-danh-muc-va-ma-so-cac-don-vi-hanh-chinh-7546
 .. _tb_ic: https://sotttt.thaibinh.gov.vn/tin-tuc/buu-chinh-vien-thong/tra-cuu-ma-vung-dien-thoai-co-dinh-mat-dat-ma-mang-dien-thoa2.html
 .. _dataclass: https://docs.python.org/3/library/dataclasses.html

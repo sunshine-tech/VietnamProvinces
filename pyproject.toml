@@ -98,6 +98,9 @@ lines-after-imports = 2
 [tool.ruff.format]
 quote-style = "single"
 
+[tool.ty.src]
+exclude = ['dev/_*.py']
+
 [tool.mypy]
 python_version = "3.13"
 plugins = ["pydantic.mypy"]

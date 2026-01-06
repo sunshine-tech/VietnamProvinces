@@ -4,6 +4,7 @@ import csv
 import re
 import subprocess
 import sys
+from collections.abc import Sequence
 from datetime import UTC, datetime
 from enum import Enum, StrEnum
 from pathlib import Path
@@ -18,9 +19,9 @@ from pydantic import OnErrorOmit, TypeAdapter
 
 from .amend import fix_ward
 from .divisions import (
-    ProvinceCSVRecord,
+    ProvinceSourceRecord,
     WardCSVInputRow,
-    WardCSVRecord,
+    WardSourceRecord,
     convert_to_nested,
     gen_python_code_enums,
     gen_python_province_lookup,
@@ -80,10 +81,10 @@ def format_code(content: str, outfile: Path) -> bool:
     return p.returncode == 0
 
 
-def validate_output(ctx: click.Context, _param: click.Parameter, value: str):
+def validate_output(ctx: click.Context, _param: click.Parameter, value: str | None) -> Path | None:
     if ctx.params.get('output_format') in (ExportingFormat.FLAT_JSON, ExportingFormat.NESTED_JSON) and not value:
         raise click.BadParameter('Require a path')
-    return value
+    return Path(value) if value else None
 
 
 @click.group()
@@ -91,12 +92,74 @@ def app():
     pass
 
 
+def generate_output(
+    provinces: Sequence[ProvinceSourceRecord],
+    wards: Sequence[WardSourceRecord],
+    output_format: ExportingFormat,
+    output: Path,
+):
+    """Common logic for generating output files."""
+    phone_codes = load_phone_area_table()
+    if output_format == ExportingFormat.FLAT_JSON:
+        with open(output, 'w') as f:
+            f.write(rapidjson.dumps(tuple(a.model_dump() for a in wards), indent=2, ensure_ascii=False))
+        echo(f'Wrote to {output}')
+    elif output_format == ExportingFormat.NESTED_JSON:
+        provinces_dict = convert_to_nested(provinces, wards, phone_codes)
+        provinces_dicts = tuple(p.model_dump() for p in provinces_dict.values())
+        with open(output, 'w') as f:
+            f.write(rapidjson.dumps(provinces_dicts, indent=2, ensure_ascii=False))
+        echo(f'Wrote to {output}')
+    elif output_format == ExportingFormat.PYTHON:
+        provinces_dict = convert_to_nested(provinces, wards, phone_codes)
+        logger.info('Built AST')
+        out_enums = gen_python_code_enums(provinces_dict.values())
+        pkg_folder = Path(__file__).parent.parent / 'vietnam_provinces'
+        file_path = pkg_folder / 'codes.py'
+        logger.info('Prettify code with Ruff')
+        format_code(out_enums, file_path)
+        rel_path = file_path.relative_to(Path.cwd())
+        echo(f'Wrote to {rel_path}')
+        file_path = pkg_folder / 'lookup.py'
+        out_lookup = gen_python_province_lookup(provinces_dict.values())
+        format_code(out_lookup, file_path)
+        rel_path = file_path.relative_to(Path.cwd())
+        echo(f'Wrote to {rel_path}')
+        pkg_init_file = pkg_folder / '__init__.py'
+        now = datetime.now(UTC)
+        init_content = pkg_init_file.read_text()
+        echo(f'Update data version {now:%Y-%m-%d}')
+        updated = re.sub(r'__data_version__ = .+', f"__data_version__ = '{now:%Y-%m-%d}'", init_content)
+        pkg_init_file.write_text(updated)
+
+
 @app.command()
+@click.option(
+    '-f',
+    '--output-format',
+    default=ExportingFormat.NESTED_JSON,
+    type=MyChoice(ExportingFormat, case_sensitive=False),
+)
+@click.option(
+    '-o',
+    '--output',
+    type=click.Path(exists=False, writable=True),
+    callback=validate_output,
+    help='Output file if exporting JSON, output folder if exporting Python code',
+)
 @click.option('-v', '--verbose', count=True, default=False, help='Show more log to debug (verbose mode).')
-def scrape(verbose: int):
+def scrape(output_format: ExportingFormat, output: Path, verbose: int):
     """Generate Python code or JSON data by scraping government website."""
     configure_logging(verbose)
-    scrape_danhmuchanhchinh()
+    scraped_provinces, scraped_wards = scrape_danhmuchanhchinh()
+    provinces = [ProvinceSourceRecord(code=p.code, name=p.name) for p in scraped_provinces]
+    wards = [
+        WardSourceRecord(
+            code=w.code, name=w.name, province_name=next(p.name for p in scraped_provinces if p.code == w.province)
+        )
+        for w in scraped_wards
+    ]
+    generate_output(provinces, wards, output_format, output)
 
 
 @app.command()
@@ -116,55 +179,24 @@ def scrape(verbose: int):
     help='Output file if exporting JSON, output folder if exporting Python code',
 )
 @click.option('-v', '--verbose', count=True, default=False, help='Show more log to debug (verbose mode).')
-def process_csv(ward_csv_file: str, province_csv_file: str, output_format: ExportingFormat, output: str, verbose: int):
+def process_csv(ward_csv_file: str, province_csv_file: str, output_format: ExportingFormat, output: Path, verbose: int):
     """Generate Python code or JSON data from pre-saved CSV files."""
     configure_logging(verbose)
     logger.debug('File {}', ward_csv_file)
-    csv_wards: list[WardCSVRecord] = []
+    csv_wards: list[WardSourceRecord] = []
     with open(ward_csv_file, newline='') as f:
         reader = csv.reader(f)
         # Skip header row
         _heading_row = next(reader)
         rows = (WardCSVInputRow._make(r[:3])._asdict() for r in reader)
-        csv_wards = TypeAdapter(list[OnErrorOmit[WardCSVRecord]]).validate_python(rows)
+        csv_wards = TypeAdapter(list[OnErrorOmit[WardSourceRecord]]).validate_python(rows)
     with open(province_csv_file, newline='') as f:
         reader = csv.reader(f)
-        csv_provinces = tuple(map(ProvinceCSVRecord.from_csv_row, reader))
+        csv_provinces = tuple(map(ProvinceSourceRecord.from_csv_row, reader))
     csv_wards = [fix_ward(w) for w in csv_wards]
     logger.debug('Wards data: {}', csv_wards)
     logger.debug('Provinces data: {}', csv_provinces)
-    phone_codes = load_phone_area_table()
-    if output_format == ExportingFormat.FLAT_JSON:
-        with open(output, 'w') as f:
-            f.write(rapidjson.dumps(tuple(a.model_dump() for a in csv_wards), indent=2, ensure_ascii=False))
-        echo(f'Wrote to {output}')
-    elif output_format == ExportingFormat.NESTED_JSON:
-        provinces = convert_to_nested(csv_provinces, csv_wards, phone_codes)
-        provinces_dicts = tuple(p.model_dump() for p in provinces.values())
-        with open(output, 'w') as f:
-            f.write(rapidjson.dumps(provinces_dicts, indent=2, ensure_ascii=False))
-        echo(f'Wrote to {output}')
-    elif output_format == ExportingFormat.PYTHON:
-        provinces = convert_to_nested(csv_provinces, csv_wards, phone_codes)
-        logger.info('Built AST')
-        out_enums = gen_python_code_enums(provinces.values())
-        pkg_folder = Path(__file__).parent.parent / 'vietnam_provinces'
-        file_path = pkg_folder / 'codes.py'
-        logger.info('Prettify code with Ruff')
-        format_code(out_enums, file_path)
-        rel_path = file_path.relative_to(Path.cwd())
-        echo(f'Wrote to {rel_path}')
-        file_path = pkg_folder / 'lookup.py'
-        out_lookup = gen_python_province_lookup(provinces.values())
-        format_code(out_lookup, file_path)
-        rel_path = file_path.relative_to(Path.cwd())
-        echo(f'Wrote to {rel_path}')
-        pkg_init_file = pkg_folder / '__init__.py'
-        now = datetime.now(UTC)
-        init_content = pkg_init_file.read_text()
-        echo(f'Update data version {now:%Y-%m-%d}')
-        updated = re.sub(r'__data_version__ = .+', f"__data_version__ = '{now:%Y-%m-%d}'", init_content)
-        pkg_init_file.write_text(updated)
+    generate_output(list(csv_provinces), csv_wards, output_format, output)
 
 
 if __name__ == '__main__':
