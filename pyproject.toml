@@ -36,16 +36,16 @@ dev = [
     "python-rapidjson >= 1.23",
     "click >= 8.2.1",
     "pydantic >= 2.12.5",
-    "logbook >= 1.8.1",
+    "logbook >= 1.9.2",
     "httpx >= 0.28.1",
-    "ptpython>=3.0.30",
+    "ptpython>=3.0.32",
     "unidecode>=1.4.0",
     "parsel>=1.10.0",
     "markupever>=0.3.2",
     "pyjson5>=2.0.0",
     "ty>=0.0.9",
 ]
-lint = ["pre-commit >= 4.2.0", "ruff >= 0.14.1"]
+lint = ["pre-commit >= 4.5.1", "ruff >= 0.14.10"]
 docs = [
     "enum-tools>=0.13.0",
     "furo>=2025.7.19",
