@@ -6,25 +6,25 @@ VietnamProvinces
 
 [`English <english_>`_]
 
-Thư viện cung cấp danh sách đơn vị hành chính Việt Nam (tỉnh thành, phường xã, không còn cấp quận huyện từ Tháng 7, 2025) với tên và mã số lấy theo `Dự thảo Quyết định của Thủ tướng Chính phủ ban hành Bảng danh mục và mã số các đơn vị hành chính Việt Nam <draft_new_units_>`_.
+Thư viện cung cấp danh sách đơn vị hành chính Việt Nam (tỉnh thành, phường xã, không còn cấp quận huyện từ Tháng 7, 2025) với tên và mã số lấy theo `Cục Thống kê - Bộ Tài chính <nso_vn_>`_.
 
 Ví dụ:
 
 .. code-block:: json
 
   {
-    "name": "Tuyên Quang",
+    "name": "Tỉnh Tuyên Quang",
     "code": 8,
     "codename": "tuyen_quang",
     "division_type": "tỉnh",
     "phone_code": 207,
     "wards": [
       {
-        "name": "Xã Thượng Lâm",
-        "code": 2269,
-        "codename": "xa_thuong_lam",
+        "name": "Xã Nấm Dẩn",
+        "code": 1141,
+        "codename": "xa_nam_dan",
         "division_type": "xã",
-        "short_codename": "thuong_lam"
+        "short_codename": "nam_dan"
       },
       {
         "name": "Xã Lâm Bình",
@@ -69,7 +69,7 @@ Bạn có thể import vào code Python để dùng ngay.
     >>> from vietnam_provinces import ProvinceCode, Province, WardCode, Ward
 
     >>> Province.from_code(ProvinceCode.P_15)
-    Province(name='Lào Cai', code=<ProvinceCode.P_15: 15>, division_type=<VietNamDivisionType.TINH: 'tỉnh'>, codename='lao_cai', phone_code=214)
+    Province(name='Tỉnh Lào Cai', code=<ProvinceCode.P_15: 15>, division_type=<VietNamDivisionType.TINH: 'tỉnh'>, codename='lao_cai', phone_code=214)
 
     >>> Ward.from_code(23425)
     Ward(name='Xã Tu Mơ Rông', code=<WardCode.W_23425: 23425>, division_type=<VietNamDivisionType.XA: 'xã'>, codename='xa_tu_mo_rong', province_code=<ProvinceCode.P_51: 51>)
@@ -83,7 +83,7 @@ Cài đặt
     pip3 install vietnam-provinces
 
 
-Thư viện này tương thích với Python 3.10 trở lên.
+Thư viện này tương thích với Python 3.12 trở lên.
 
 
 Phát triển
@@ -143,6 +143,7 @@ Mang đến cho bạn bởi `Nguyễn Hồng Quân <quan_>`_, sau hàng đêm v�
 .. |image love| image:: https://madewithlove.now.sh/vn?heart=true&colorA=%23ffcd00&colorB=%23da251d
 .. |image pypi| image:: https://badgen.net/pypi/v/vietnam-provinces
    :target: https://pypi.org/project/vietnam-provinces/
+
 .. _english: README.rst
 .. _nso_vn: https://danhmuchanhchinh.nso.gov.vn/
 .. _draft_new_units: https://chinhphu.vn/du-thao-vbqppl/du-thao-quyet-dinh-cua-thu-tuong-chinh-phu-ban-hanh-bang-danh-muc-va-ma-so-cac-don-vi-hanh-chinh-7546

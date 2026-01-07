@@ -68,7 +68,7 @@ There are two kinds of objects, first is the object presenting a single province
     >>> from vietnam_provinces import ProvinceCode, Province, WardCode, Ward
 
     >>> Province.from_code(ProvinceCode.P_15)
-    Province(name='Lào Cai', code=<ProvinceCode.P_15: 15>, division_type=<VietNamDivisionType.TINH: 'tỉnh'>, codename='lao_cai', phone_code=214)
+    Province(name='Tỉnh Lào Cai', code=<ProvinceCode.P_15: 15>, division_type=<VietNamDivisionType.TINH: 'tỉnh'>, codename='lao_cai', phone_code=214)
 
     >>> Ward.from_code(23425)
     Ward(name='Xã Tu Mơ Rông', code=<WardCode.W_23425: 23425>, division_type=<VietNamDivisionType.XA: 'xã'>, codename='xa_tu_mo_rong', province_code=<ProvinceCode.P_51: 51>)
@@ -155,6 +155,7 @@ Given to you by `Nguyễn Hồng Quân <quan_>`_, after nights and weekends.
    :target: https://pypi.org/project/vietnam-provinces/
 .. |common changelog| image:: https://common-changelog.org/badge.svg
    :target: https://common-changelog.org
+
 .. _vietnamese: README.vi_VN.rst
 .. _nso_vn: https://danhmuchanhchinh.nso.gov.vn/
 .. _draft_new_units: https://chinhphu.vn/du-thao-vbqppl/du-thao-quyet-dinh-cua-thu-tuong-chinh-phu-ban-hanh-bang-danh-muc-va-ma-so-cac-don-vi-hanh-chinh-7546
