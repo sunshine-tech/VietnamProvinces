@@ -74,6 +74,10 @@ Bạn có thể import vào code Python để dùng ngay.
     >>> Ward.from_code(23425)
     Ward(name='Xã Tu Mơ Rông', code=<WardCode.W_23425: 23425>, division_type=<VietNamDivisionType.XA: 'xã'>, codename='xa_tu_mo_rong', province_code=<ProvinceCode.P_51: 51>)
 
+    >>> # Tìm kiếm phường xã hiện tại bằng dữ liệu cũ (trước 2025)
+    >>> Ward.search_from_legacy(name='phu my')
+    (Ward(name='Phường Phú Mỹ', ...), Ward(name='Xã Phú Mỹ', ...), ...)
+
 
 Cài đặt
 -------

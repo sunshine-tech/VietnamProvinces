@@ -73,6 +73,10 @@ There are two kinds of objects, first is the object presenting a single province
     >>> Ward.from_code(23425)
     Ward(name='Xã Tu Mơ Rông', code=<WardCode.W_23425: 23425>, division_type=<VietNamDivisionType.XA: 'xã'>, codename='xa_tu_mo_rong', province_code=<ProvinceCode.P_51: 51>)
 
+    >>> # Search current wards by legacy data (pre-2025)
+    >>> Ward.search_from_legacy(name='phu my')
+    (Ward(name='Phường Phú Mỹ', ...), Ward(name='Xã Phú Mỹ', ...), ...)
+
 
 To know if the data is up-to-date, check the ``__data_version__`` attribute of the module:
 

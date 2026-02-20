@@ -201,25 +201,8 @@ def process_csv(ward_csv_file: str, province_csv_file: str, output_format: Expor
 
 
 @app.command('gen-conversion-table')
-@click.option(
-    '-i',
-    '--input-csv',
-    'input_csv',
-    required=True,
-    type=click.Path(exists=True, dir_okay=False),
-    default='dev/seed-data/2025-07/BangChuyendoiĐVHCmoi_cu_khong_merge.csv',
-    help='Input CSV file with ward conversion data',
-)
-@click.option(
-    '-o',
-    '--output',
-    'output',
-    type=click.Path(exists=False, writable=True),
-    default='vietnam_provinces/ward_conversion_2025.py',
-    help='Output Python file path',
-)
 @click.option('-v', '--verbose', count=True, default=False, help='Show more log to debug (verbose mode).')
-def gen_conversion_table(input_csv: str, output: Path, verbose: int):
+def gen_conversion_table(verbose: int):
     """Generate ward conversion table Python code from CSV source.
 
     This command creates a bidirectional lookup table for converting between
@@ -228,8 +211,9 @@ def gen_conversion_table(input_csv: str, output: Path, verbose: int):
     """
     configure_logging(verbose)
 
-    input_path = Path(input_csv)
-    output_path = Path(output)
+    project_root = Path(__file__).parent.parent
+    input_path = project_root / 'dev/seed-data/2025-07/BangChuyendoiĐVHCmoi_cu_khong_merge.csv'
+    output_path = project_root / 'vietnam_provinces' / '_ward_conversion_2025.py'
 
     # Ensure output directory exists
     output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -237,7 +221,8 @@ def gen_conversion_table(input_csv: str, output: Path, verbose: int):
     logger.info('Parsing conversion CSV: {}', input_path)
     metadata = generate_conversion_table(input_path, output_path)
 
-    echo(f'Generated conversion table: {output_path}')
+    rel_output_path = output_path.relative_to(Path.cwd(), walk_up=True)
+    echo(f'Generated conversion table: {rel_output_path}')
     echo(f'  Old wards: {metadata.stats.old_wards_count}')
     echo(f'  New wards: {metadata.stats.new_wards_count}')
     echo(f'  Partly merged: {metadata.stats.partly_merged_count}')
