@@ -18,6 +18,7 @@ from logbook.more import ColorizedStderrHandler
 from pydantic import OnErrorOmit, TypeAdapter
 
 from .amend import fix_ward
+from .conversion_table import generate_conversion_table
 from .divisions import (
     ProvinceSourceRecord,
     WardCSVInputRow,
@@ -197,6 +198,49 @@ def process_csv(ward_csv_file: str, province_csv_file: str, output_format: Expor
     logger.debug('Wards data: {}', csv_wards)
     logger.debug('Provinces data: {}', csv_provinces)
     generate_output(list(csv_provinces), csv_wards, output_format, output)
+
+
+@app.command('gen-conversion-table')
+@click.option(
+    '-i',
+    '--input-csv',
+    'input_csv',
+    required=True,
+    type=click.Path(exists=True, dir_okay=False),
+    default='dev/seed-data/2025-07/BangChuyendoiĐVHCmoi_cu_khong_merge.csv',
+    help='Input CSV file with ward conversion data',
+)
+@click.option(
+    '-o',
+    '--output',
+    'output',
+    type=click.Path(exists=False, writable=True),
+    default='vietnam_provinces/ward_conversion_2025.py',
+    help='Output Python file path',
+)
+@click.option('-v', '--verbose', count=True, default=False, help='Show more log to debug (verbose mode).')
+def gen_conversion_table(input_csv: str, output: Path, verbose: int):
+    """Generate ward conversion table Python code from CSV source.
+
+    This command creates a bidirectional lookup table for converting between
+    old wards (pre-2025) and new wards (post-2025). The table includes a flag
+    to indicate if an old ward was partly merged (split across multiple new wards).
+    """
+    configure_logging(verbose)
+
+    input_path = Path(input_csv)
+    output_path = Path(output)
+
+    # Ensure output directory exists
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+
+    logger.info('Parsing conversion CSV: {}', input_path)
+    metadata = generate_conversion_table(input_path, output_path)
+
+    echo(f'Generated conversion table: {output_path}')
+    echo(f'  Old wards: {metadata.stats.old_wards_count}')
+    echo(f'  New wards: {metadata.stats.new_wards_count}')
+    echo(f'  Partly merged: {metadata.stats.partly_merged_count}')
 
 
 if __name__ == '__main__':
