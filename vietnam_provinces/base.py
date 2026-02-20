@@ -4,12 +4,12 @@ import re
 import unicodedata
 from collections.abc import Iterator
 from dataclasses import dataclass
-from enum import Enum
+from enum import StrEnum
 
 from .codes import ProvinceCode, WardCode
 
 
-class VietNamDivisionType(str, Enum):
+class VietNamDivisionType(StrEnum):
     # Level 1
     TINH = 'tỉnh'
     THANH_PHO_TRUNG_UONG = 'thành phố trung ương'
@@ -143,10 +143,3 @@ def _normalize_search_name(name: str) -> str:
     name = ''.join(c for c in name if unicodedata.category(c) != 'Mn')
     name = name.replace('đ', 'd')
     return unicodedata.normalize('NFC', name)
-
-
-@dataclass(frozen=True)
-class LegacyWard:
-    """Pre-2025 wards."""
-
-    pass

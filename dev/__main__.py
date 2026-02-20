@@ -27,6 +27,18 @@ from .divisions import (
     gen_python_code_enums,
     gen_python_province_lookup,
 )
+from .legacy_divisions import (
+    convert_to_nested as convert_pre2025_to_nested,
+)
+from .legacy_divisions import (
+    gen_python_code_enums as gen_legacy_python_code_enums,
+)
+from .legacy_divisions import (
+    gen_python_lookup as gen_legacy_python_lookup,
+)
+from .legacy_divisions import (
+    parse_pre2025_csv,
+)
 from .phones import load_phone_area_table
 from .scraping import scrape_danhmuchanhchinh
 
@@ -79,6 +91,13 @@ def format_code(content: str, outfile: Path) -> bool:
     cmd = ('ruff', 'format', '-', '--stdin-filename', 'code.py')
     with outfile.open('w') as f:
         p = subprocess.run(cmd, input=content, text=True, stdout=f, check=False)
+    return p.returncode == 0
+
+
+# Lint and fix code using Ruff
+def lint_code(dirpath: Path) -> bool:
+    cmd = ('ruff', 'check', '--fix', str(dirpath))
+    p = subprocess.run(cmd, check=False)
     return p.returncode == 0
 
 
@@ -228,6 +247,69 @@ def gen_conversion_table(verbose: int) -> None:
     echo(f'  Old wards: {metadata.stats.old_wards_count}')
     echo(f'  New wards: {metadata.stats.new_wards_count}')
     echo(f'  Partly merged: {metadata.stats.partly_merged_count}')
+
+
+@app.command('gen-legacy')
+@click.option(
+    '-c',
+    '--csv-file',
+    required=True,
+    type=click.Path(exists=True),
+    help='Path to pre-2025 ward CSV file (with province, district, ward data)',
+)
+@click.option('-v', '--verbose', count=True, default=False, help='Show more log to debug (verbose mode).')
+def gen_legacy(csv_file: str, verbose: int) -> None:
+    """Generate Python code for pre-2025 administrative divisions from CSV.
+
+    This command reads a CSV file containing pre-2025 administrative data
+    (with 3 levels: Province -> District -> Ward) and generates:
+
+    \b
+    1. vietnam_provinces/legacy/codes.py - Enum definitions for codes
+    2. vietnam_provinces/legacy/lookup.py - Lookup mappings for Province, District, Ward objects
+
+    \b
+    The CSV file should have these columns:
+    - Province name, Province code, District name, District code, Ward name, Ward code
+    """
+    configure_logging(verbose)
+
+    csv_path = Path(csv_file)
+    pkg_folder = Path(__file__).parent.parent / 'vietnam_provinces' / 'legacy'
+    pkg_folder.mkdir(parents=True, exist_ok=True)
+
+    logger.info('Parsing pre-2025 CSV: {}', csv_path)
+    records = parse_pre2025_csv(csv_path)
+    logger.info('Parsed {} records', len(records))
+
+    phone_codes = load_phone_area_table()
+    logger.info('Converting to nested structure...')
+    provinces_dict = convert_pre2025_to_nested(records, phone_codes)
+    logger.info('Built nested structure: {} provinces', len(provinces_dict))
+
+    # Generate enum code
+    logger.info('Generating enum code...')
+    out_enums = gen_legacy_python_code_enums(provinces_dict.values())
+    file_path = pkg_folder / 'codes.py'
+    logger.info('Formatting code with Ruff...')
+    format_code(out_enums, file_path)
+    rel_path = file_path.relative_to(Path.cwd())
+    echo(f'Wrote to {rel_path}')
+
+    # Generate lookup code
+    logger.info('Generating lookup code...')
+    out_lookup = gen_legacy_python_lookup(provinces_dict.values())
+    file_path = pkg_folder / 'lookup.py'
+    logger.info('Formatting code with Ruff...')
+    format_code(out_lookup, file_path)
+    rel_path = file_path.relative_to(Path.cwd())
+    echo(f'Wrote to {rel_path}.')
+
+    # Lint the entire legacy folder
+    logger.info('Linting and fixing code with Ruff...')
+    lint_code(pkg_folder)
+
+    echo('🎉 Finished generating code for pre-2025 provinces, districts and wards.')
 
 
 if __name__ == '__main__':

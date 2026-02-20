@@ -10,6 +10,17 @@ REGEX_THI_XA = re.compile('^Thị Xã')
 REGEX_THI_TRAN = re.compile('^Thị Trấn')
 
 
+def normalize_vietnamese(text: str) -> str:
+    """
+    Converts decomposed ("tổ hợp") to composed ("dựng sẵn") Unicode.
+    Also removes newline characters and normalizes whitespace.
+    """
+    text = text.replace('\n', ' ').replace('\r', ' ')
+    # Remove multiple spaces
+    text = ' '.join(text.split())
+    return unicodedata.normalize('NFC', text)
+
+
 def clean_name(value: str) -> str:
     value = unicodedata.normalize('NFC', value)
     if not value:

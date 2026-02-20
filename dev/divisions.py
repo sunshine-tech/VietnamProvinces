@@ -1,6 +1,5 @@
 import ast
 import itertools
-import unicodedata
 from collections.abc import Iterable, Sequence
 from pathlib import Path
 from typing import Annotated, Any, NamedTuple, Self
@@ -20,7 +19,13 @@ from pydantic import (
 from vietnam_provinces.base import VietNamDivisionType
 
 from .phones import PhoneCodeCSVRecord
-from .types import Name, convert_to_codename, make_province_codename, make_ward_short_codename
+from .types import (
+    Name,
+    convert_to_codename,
+    make_province_codename,
+    make_ward_short_codename,
+    normalize_vietnamese,
+)
 
 
 logger = Logger(__name__)
@@ -37,17 +42,6 @@ def truncate_leading(line: str, prefixes: Sequence[str]) -> str:
             if not truncated or not truncated[0].isdigit():
                 return truncated
     return line
-
-
-def normalize_vietnamese(text: str) -> str:
-    """
-    Converts decomposed ("tổ hợp") to composed ("dựng sẵn") Unicode.
-    Also removes newline characters.
-    """
-    text = text.replace('\n', ' ').replace('\r', ' ')
-    # Remove multiple spaces
-    text = ' '.join(text.split())
-    return unicodedata.normalize('NFC', text)
 
 
 def abbreviate_codename(name: str) -> str:

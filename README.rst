@@ -97,7 +97,7 @@ Install
     uv add vietnam-provinces
 
 
-This library is compatible with Python 3.10+.
+This library is compatible with Python 3.12+.
 
 
 Development
@@ -139,6 +139,35 @@ Generate Python code
 .. code-block:: sh
 
     python3 -m dev scrape -f python
+
+
+Generate code for pre-2025 data
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To generate Python code for pre-2025 administrative divisions (3-level hierarchy: Province -> District -> Ward):
+
+.. code-block:: sh
+
+    python3 -m dev gen-legacy -c dev/seed-data/Pre-2025-07/Xa_2025-01-04.csv
+
+This generates two files:
+
+1. ``vietnam_provinces/legacy/codes.py`` - Enum definitions for ``ProvinceCode``, ``DistrictCode``, ``WardCode``
+2. ``vietnam_provinces/legacy/lookup.py`` - Lookup mappings for ``Province``, ``District``, ``Ward ``objects
+
+The pre-2025 data types can then be used as:
+
+.. code-block:: python
+
+    from vietnam_provinces.legacy import Province, District, Ward
+    from vietnam_provinces.legacy.codes import ProvinceCode
+
+    # Look up by code
+    province = Province.from_code(ProvinceCode.P_01)
+
+    # Iterate over all
+    for p in Province.iter_all():
+        print(p.name)
 
 
 Data source
