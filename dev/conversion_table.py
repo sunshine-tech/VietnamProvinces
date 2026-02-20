@@ -279,7 +279,7 @@ def format_code(content: str, outfile: Path) -> bool:
     """Beautify code using Ruff and save to file."""
     cmd = ('ruff', 'format', '-', '--stdin-filename', 'code.py')
     with outfile.open('w') as f:
-        p = subprocess.run(cmd, input=content, text=True, stdout=f)
+        p = subprocess.run(cmd, input=content, text=True, stdout=f, check=False)
     return p.returncode == 0
 
 
@@ -302,7 +302,7 @@ def generate_conversion_table(csv_path: Path, output_path: Path) -> ConversionMe
         if isinstance(n, ast.AnnAssign) and isinstance(n.target, ast.Name) and n.target.id == 'NEW_TO_OLD'
     )
 
-    old_to_new_keys: list[ast.expr] = []
+    old_to_new_keys: list[ast.expr | None] = []
     old_to_new_values: list[ast.expr] = []
     for old_code, entry in table.old_to_new.items():
         key, value = gen_old_to_new_entry(old_code, entry)
@@ -311,7 +311,7 @@ def generate_conversion_table(csv_path: Path, output_path: Path) -> ConversionMe
 
     old_to_new_node.value = ast.Dict(keys=old_to_new_keys, values=old_to_new_values)
 
-    new_to_old_keys: list[ast.expr] = []
+    new_to_old_keys: list[ast.expr | None] = []
     new_to_old_values: list[ast.expr] = []
     for new_code, entry in table.new_to_old.items():
         key, value = gen_new_to_old_entry(new_code, entry)

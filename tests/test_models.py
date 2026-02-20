@@ -31,7 +31,8 @@ class DProfile(BaseModel):
 
 def test_build_from_dict():
     p = Province.from_code(ProvinceCode.P_79)
-    address = {'province': asdict(p)}
+    # Create an Address instance instead of a dict
+    address = Address(province=p)
     profile = Profile(name='Nguyễn Hồng Quân', address=address)
     debug(profile)
     assert profile.address.province.code == ProvinceCode.P_79
@@ -42,7 +43,8 @@ def test_build_from_dict():
 
 def test_dump_as_dict():
     p = Province.from_code(ProvinceCode.P_79)
-    address = {'province': p}
+    # Create a DAddress instance instead of a dict
+    address = DAddress(province=p)
     profile = DProfile(name='Nguyễn Hồng Quân', address=address)
     debug(profile)
     assert profile.address.province.code == ProvinceCode.P_79

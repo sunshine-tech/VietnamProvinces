@@ -107,7 +107,7 @@ class Ward:
 
         if code > 0:
             entry = OLD_TO_NEW.get(code)
-            return tuple(cls.from_code(nw.code) for nw in entry.new_wards) if entry else ()
+            return tuple(cls.from_code(WardCode(nw.code)) for nw in entry.new_wards) if entry else ()
 
         if not name:
             return ()
@@ -125,7 +125,7 @@ class Ward:
                     continue
 
                 try:
-                    results.append(cls.from_code(nw.code))
+                    results.append(cls.from_code(WardCode(nw.code)))
                     seen_codes.add(nw.code)
                 except ValueError:
                     continue

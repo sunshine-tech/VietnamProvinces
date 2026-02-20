@@ -80,8 +80,7 @@ def get_wards(index: int, province_code: int) -> tuple[ScrapedWard, ...]:
     vjdata = TypeAdapter(WardListResponse).validate_python(jdata)
     # click.echo(vjdata.result)
     tree = markupever.parse(vjdata.result)
-    table = tree.select_one(WARDS_TABLE_ELM_ID.format(idx=index))
-    if not table:
+    if not (table := tree.select_one(WARDS_TABLE_ELM_ID.format(idx=index))):
         logger.warning('HTML table for wards of province {} is not found', province_code)
         Path(f'/tmp/province-{province_code}.html').write_text(vjdata.result)
         return ()

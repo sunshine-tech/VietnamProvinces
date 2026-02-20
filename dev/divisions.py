@@ -34,7 +34,7 @@ def truncate_leading(line: str, prefixes: Sequence[str]) -> str:
     for p in prefixes:
         if line.startswith(p):
             truncated = line[len(p) :]
-            if not truncated[0].isdigit():
+            if not truncated or not truncated[0].isdigit():
                 return truncated
     return line
 
@@ -107,10 +107,10 @@ class Pre2025WardCSVRecord(BaseModel):
 
     @field_validator('ward_code', mode='before')
     @classmethod
-    def set_ward_code(cls, value: Any):
+    def set_ward_code(cls, value: Any) -> int | None:
         if not value:
             return None
-        return value
+        return int(value)
 
     @classmethod
     def from_csv_row(cls, values: Sequence[str]) -> Self:

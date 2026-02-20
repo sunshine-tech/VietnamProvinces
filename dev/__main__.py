@@ -40,7 +40,7 @@ class ExportingFormat(StrEnum):
     PYTHON = 'python'
 
 
-class MyChoice[T](click.Choice[T]):
+class MyChoice[T](click.Choice):
     def normalize_choice(self, choice: T, ctx: click.Context | None) -> str:
         normed_value = choice.value if isinstance(choice, Enum) else str(choice)
 
@@ -53,7 +53,7 @@ class MyChoice[T](click.Choice[T]):
         return normed_value
 
 
-def echo(msg: str):
+def echo(msg: str) -> None:
     click.secho(msg, file=sys.stderr, fg='green')
 
 
@@ -67,7 +67,7 @@ class MyColorizedStderrHandler(ColorizedStderrHandler):
         return color
 
 
-def configure_logging(verbose: int):
+def configure_logging(verbose: int) -> None:
     levels = (logbook.WARNING, logbook.INFO, logbook.DEBUG)
     l = min(verbose, len(levels) - 1)  # noqa
     colored_handler = MyColorizedStderrHandler(level=levels[l])
@@ -78,7 +78,7 @@ def configure_logging(verbose: int):
 def format_code(content: str, outfile: Path) -> bool:
     cmd = ('ruff', 'format', '-', '--stdin-filename', 'code.py')
     with outfile.open('w') as f:
-        p = subprocess.run(cmd, input=content, text=True, stdout=f)
+        p = subprocess.run(cmd, input=content, text=True, stdout=f, check=False)
     return p.returncode == 0
 
 
@@ -89,7 +89,7 @@ def validate_output(ctx: click.Context, _param: click.Parameter, value: str | No
 
 
 @click.group()
-def app():
+def app() -> None:
     pass
 
 
@@ -98,7 +98,7 @@ def generate_output(
     wards: Sequence[WardSourceRecord],
     output_format: ExportingFormat,
     output: Path,
-):
+) -> None:
     """Common logic for generating output files."""
     phone_codes = load_phone_area_table()
     if output_format == ExportingFormat.FLAT_JSON:
@@ -149,7 +149,7 @@ def generate_output(
     help='Output file if exporting JSON, output folder if exporting Python code',
 )
 @click.option('-v', '--verbose', count=True, default=False, help='Show more log to debug (verbose mode).')
-def scrape(output_format: ExportingFormat, output: Path, verbose: int):
+def scrape(output_format: ExportingFormat, output: Path, verbose: int) -> None:
     """Generate Python code or JSON data by scraping government website."""
     configure_logging(verbose)
     scraped_provinces, scraped_wards = scrape_danhmuchanhchinh()
@@ -180,7 +180,9 @@ def scrape(output_format: ExportingFormat, output: Path, verbose: int):
     help='Output file if exporting JSON, output folder if exporting Python code',
 )
 @click.option('-v', '--verbose', count=True, default=False, help='Show more log to debug (verbose mode).')
-def process_csv(ward_csv_file: str, province_csv_file: str, output_format: ExportingFormat, output: Path, verbose: int):
+def process_csv(
+    ward_csv_file: str, province_csv_file: str, output_format: ExportingFormat, output: Path, verbose: int
+) -> None:
     """Generate Python code or JSON data from pre-saved CSV files."""
     configure_logging(verbose)
     logger.debug('File {}', ward_csv_file)
@@ -202,7 +204,7 @@ def process_csv(ward_csv_file: str, province_csv_file: str, output_format: Expor
 
 @app.command('gen-conversion-table')
 @click.option('-v', '--verbose', count=True, default=False, help='Show more log to debug (verbose mode).')
-def gen_conversion_table(verbose: int):
+def gen_conversion_table(verbose: int) -> None:
     """Generate ward conversion table Python code from CSV source.
 
     This command creates a bidirectional lookup table for converting between
