@@ -6,3 +6,4 @@ API Reference
 
    classes
    codes
+   legacy

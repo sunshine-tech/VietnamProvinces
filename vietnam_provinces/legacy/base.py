@@ -43,16 +43,30 @@ class Province:
     phone_code: int
 
     def __eq__(self, other: object) -> bool:
+        """Check equality based on province code.
+
+        :param other: Object to compare with
+        :returns: True if other is a :class:`vietnam_provinces.legacy.Province` with the same code, False otherwise
+        """
         if not isinstance(other, Province):
             return False
         return other.code == self.code
 
     def __str__(self) -> str:
+        """Return the province name.
+
+        :returns: The province name
+        """
         return self.name
 
     @staticmethod
     def from_code(code: ProvinceCode) -> Province:
-        """Look up a Province from code."""
+        """Look up a Province from code.
+
+        :param code: The province code
+        :returns: The corresponding :class:`vietnam_provinces.legacy.Province` object
+        :raises ValueError: If the province code is invalid
+        """
         from .lookup import PROVINCE_MAPPING
 
         try:
@@ -63,7 +77,10 @@ class Province:
 
     @staticmethod
     def iter_all() -> Iterator[Province]:
-        """Get iterator over all provinces."""
+        """Get iterator over all provinces.
+
+        :returns: Iterator over all :class:`vietnam_provinces.legacy.Province` objects
+        """
         from .lookup import PROVINCE_MAPPING
 
         values = PROVINCE_MAPPING.values()
@@ -81,16 +98,30 @@ class District:
     province_code: ProvinceCode
 
     def __eq__(self, other: object) -> bool:
+        """Check equality based on district code.
+
+        :param other: Object to compare with
+        :returns: True if other is a :class:`vietnam_provinces.legacy.District` with the same code, False otherwise
+        """
         if not isinstance(other, District):
             return False
         return other.code == self.code
 
     def __str__(self) -> str:
+        """Return the district name.
+
+        :returns: The district name
+        """
         return self.name
 
     @staticmethod
     def from_code(code: DistrictCode) -> District:
-        """Look up a District from code."""
+        """Look up a District from code.
+
+        :param code: The district code
+        :returns: The corresponding :class:`vietnam_provinces.legacy.District` object
+        :raises ValueError: If the district code is invalid
+        """
         from .lookup import DISTRICT_MAPPING
 
         try:
@@ -101,7 +132,10 @@ class District:
 
     @staticmethod
     def iter_all() -> Iterator[District]:
-        """Get iterator over all districts."""
+        """Get iterator over all districts.
+
+        :returns: Iterator over all :class:`vietnam_provinces.legacy.District` objects
+        """
         from .lookup import DISTRICT_MAPPING
 
         values = DISTRICT_MAPPING.values()
@@ -109,7 +143,11 @@ class District:
 
     @staticmethod
     def iter_by_province(code: ProvinceCode) -> Iterator[District]:
-        """Get iterator over districts belonging to a province."""
+        """Get iterator over districts belonging to a province.
+
+        :param code: The province code (:class:`vietnam_provinces.legacy.ProvinceCode`)
+        :returns: Iterator over :class:`vietnam_provinces.legacy.District` objects belonging to the specified province
+        """
         from .lookup import DISTRICT_MAPPING
 
         values = (d for d in DISTRICT_MAPPING.values() if d.province_code == code)
@@ -127,16 +165,30 @@ class Ward:
     district_code: DistrictCode
 
     def __eq__(self, other: object) -> bool:
+        """Check equality based on ward code.
+
+        :param other: Object to compare with
+        :returns: True if other is a :class:`vietnam_provinces.legacy.Ward` with the same code, False otherwise
+        """
         if not isinstance(other, Ward):
             return False
         return other.code == self.code
 
     def __str__(self) -> str:
+        """Return the ward name.
+
+        :returns: The ward name
+        """
         return self.name
 
     @staticmethod
     def from_code(code: WardCode) -> Ward:
-        """Look up a Ward from code."""
+        """Look up a Ward from code.
+
+        :param code: The ward code
+        :returns: The corresponding :class:`vietnam_provinces.legacy.Ward` object
+        :raises ValueError: If the ward code is invalid
+        """
         from .lookup import WARD_MAPPING
 
         try:
@@ -147,7 +199,10 @@ class Ward:
 
     @staticmethod
     def iter_all() -> Iterator[Ward]:
-        """Get iterator over all wards."""
+        """Get iterator over all wards.
+
+        :returns: Iterator over all :class:`vietnam_provinces.legacy.Ward` objects
+        """
         from .lookup import WARD_MAPPING
 
         values = WARD_MAPPING.values()
@@ -155,7 +210,11 @@ class Ward:
 
     @staticmethod
     def iter_by_district(code: DistrictCode) -> Iterator[Ward]:
-        """Get iterator over wards belonging to a district."""
+        """Get iterator over wards belonging to a district.
+
+        :param code: The district code (:class:`vietnam_provinces.legacy.DistrictCode`)
+        :returns: Iterator over :class:`vietnam_provinces.legacy.Ward` objects belonging to the specified district
+        """
         from .lookup import WARD_MAPPING
 
         values = (w for w in WARD_MAPPING.values() if w.district_code == code)
@@ -163,7 +222,11 @@ class Ward:
 
     @staticmethod
     def iter_by_province(code: ProvinceCode) -> Iterator[Ward]:
-        """Get iterator over wards belonging to a province."""
+        """Get iterator over wards belonging to a province.
+
+        :param code: The province code (:class:`vietnam_provinces.legacy.ProvinceCode`)
+        :returns: Iterator over :class:`vietnam_provinces.legacy.Ward` objects belonging to the specified province
+        """
         from .lookup import WARD_MAPPING
 
         values = (w for w in WARD_MAPPING.values() if w.province_code == code)
@@ -171,7 +234,10 @@ class Ward:
 
     @property
     def province_code(self) -> ProvinceCode:
-        """Get the province code for this ward (via district)."""
+        """Get the province code for this ward (via district).
+
+        :returns: The province code (:class:`vietnam_provinces.legacy.ProvinceCode`)
+        """
         from .lookup import DISTRICT_MAPPING
 
         district = DISTRICT_MAPPING[self.district_code]

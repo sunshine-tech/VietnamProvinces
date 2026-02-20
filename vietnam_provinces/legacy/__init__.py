@@ -1,4 +1,4 @@
-from .base import District, DistrictCode, Province, ProvinceCode, Ward, WardCode
+from .base import District, DistrictCode, Province, ProvinceCode, VietNamDivisionType, Ward, WardCode
 
 
-__all__ = ['Province', 'District', 'Ward', 'ProvinceCode', 'DistrictCode', 'WardCode']
+__all__ = ('Province', 'District', 'Ward', 'ProvinceCode', 'DistrictCode', 'WardCode', 'VietNamDivisionType')

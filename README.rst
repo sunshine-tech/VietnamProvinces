@@ -152,8 +152,8 @@ To generate Python code for pre-2025 administrative divisions (3-level hierarchy
 
 This generates two files:
 
-1. ``vietnam_provinces/legacy/codes.py`` - Enum definitions for ``ProvinceCode``, ``DistrictCode``, ``WardCode``
-2. ``vietnam_provinces/legacy/lookup.py`` - Lookup mappings for ``Province``, ``District``, ``Ward ``objects
+1. *vietnam_provinces/legacy/codes.py* - Enum definitions for ``ProvinceCode``, ``DistrictCode``, ``WardCode``.
+2. *vietnam_provinces/legacy/lookup.py* - Lookup mappings for ``Province``, ``District``, ``Ward`` objects.
 
 The pre-2025 data types can then be used as:
 
