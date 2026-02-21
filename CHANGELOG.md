@@ -1,5 +1,17 @@
 # Changelog
 
+## [2026.2.0] - 2026-02-21
+
+### Changed
+
+- Support pre-2025 data.
+
+## [2026.1.0] - 2026-01-07
+
+### Changed
+
+- Use official data from https://danhmuchanhchinh.nso.gov.vn/
+
 ## [2025.10.1] - 2025-10-18
 
 ### Fixed
@@ -19,6 +31,8 @@ and use `ProvinceCode`, `WardCode` as enum to define valid data.
 - Update data with the form of new towns.
 
 
+[2026.2.0]: https://github.com/sunshine-tech/VietnamProvinces/releases/tag/v2026.2.0
+[2026.1.0]: https://github.com/sunshine-tech/VietnamProvinces/releases/tag/v2026.01.0
 [2025.10.1]: https://github.com/sunshine-tech/VietnamProvinces/releases/tag/v2025.10.1
 [2025.8.1]: https://github.com/sunshine-tech/VietnamProvinces/releases/tag/v2025.8.1
 [0.6.0]: https://github.com/sunshine-tech/VietnamProvinces/releases/tag/v0.6.0

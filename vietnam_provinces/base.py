@@ -167,24 +167,33 @@ class Ward:
             return ()
 
         query = _normalize_search_name(name)
-        results: list[Ward] = []
+        results: list[tuple[Ward, str, int]] = []  # (ward, old_name, match_score)
         seen_codes: set[int] = set()
 
         for entry in OLD_TO_NEW.values():
-            if query not in _normalize_search_name(entry.old_ward.name):
+            old_name = entry.old_ward.name
+            normalized_old_name = _normalize_search_name(old_name)
+
+            if query not in normalized_old_name:
                 continue
+
+            # Calculate match score (lower is better)
+            match_score = _calculate_match_score(name, old_name, query, normalized_old_name)
 
             for nw in entry.new_wards:
                 if nw.code in seen_codes:
                     continue
 
                 try:
-                    results.append(cls.from_code(WardCode(nw.code)))
+                    ward = cls.from_code(WardCode(nw.code))
+                    results.append((ward, old_name, match_score))
                     seen_codes.add(nw.code)
                 except ValueError:
                     continue
 
-        return tuple(results)
+        # Sort by match score (lower is better)
+        results.sort(key=lambda x: x[2])
+        return tuple(ward for ward, _, _ in results)
 
 
 def _normalize_search_name(name: str) -> str:
@@ -201,3 +210,77 @@ def _normalize_search_name(name: str) -> str:
     name = ''.join(c for c in name if unicodedata.category(c) != 'Mn')
     name = name.replace('đ', 'd')
     return unicodedata.normalize('NFC', name)
+
+
+def _calculate_match_score(query: str, candidate: str, normalized_query: str, normalized_candidate: str) -> int:
+    """Calculate match score for sorting search results (lower score = better match).
+
+    Priority:
+    1. Exact match (case-sensitive, with diacritics)
+    2. Exact match (case-insensitive, with diacritics)
+    3. Exact match (normalized, no diacritics)
+    4. Partial match scores based on position and length
+
+    Within each priority level, prefer "Thị trấn" > "Phường" > "Xã"
+
+    :param query: Original query string
+    :param candidate: Original candidate string
+    :param normalized_query: Normalized query (lowercase, no diacritics)
+    :param normalized_candidate: Normalized candidate (lowercase, no diacritics)
+    :returns: Match score (lower is better)
+    """
+    from vietnam_provinces.legacy.base import VietNamDivisionType as LegacyDivisionType
+
+    # Remove common prefixes from candidates for comparison
+    candidate_clean = re.sub(r'^(xã|phường|thị trấn)\s+', '', candidate, flags=re.IGNORECASE)
+    candidate_lower = candidate.lower()
+    candidate_lower_clean = re.sub(r'^(xã|phường|thị trấn)\s+', '', candidate_lower)
+
+    # Determine prefix bonus (thị trấn is preferred)
+    prefix_bonus = 0
+    if candidate.lower().startswith(f'{LegacyDivisionType.THI_TRAN} '):
+        prefix_bonus = 0
+    elif candidate.lower().startswith(f'{LegacyDivisionType.PHUONG} '):
+        prefix_bonus = 0.3
+    elif candidate.lower().startswith(f'{LegacyDivisionType.XA} '):
+        prefix_bonus = 0.6
+
+    # Check if query includes prefix - if so, match full name with prefix
+    query_lower = query.lower()
+    if (
+        query_lower.startswith(f'{LegacyDivisionType.XA} ')
+        or query_lower.startswith(f'{LegacyDivisionType.PHUONG} ')
+        or query_lower.startswith(f'{LegacyDivisionType.THI_TRAN} ')
+    ):
+        # Query includes prefix, do full match including prefix
+        if query == candidate:
+            return 0
+        if query_lower == candidate_lower:
+            return 1
+        # Continue to normalized match below
+    else:
+        # Query doesn't include prefix, match without prefix
+        # Exact match with diacritics and case
+        if query == candidate_clean:
+            return 0 + prefix_bonus
+
+        # Exact match with diacritics, case-insensitive
+        if query.lower() == candidate_lower_clean:
+            return 1 + prefix_bonus
+
+    # Exact match normalized (no diacritics)
+    normalized_candidate_clean = re.sub(r'^(xa|phuong|thi tran)\s+', '', normalized_candidate)
+    if normalized_query == normalized_candidate_clean:
+        return 2 + prefix_bonus
+
+    # Partial match: earlier position is better
+    pos = normalized_candidate.find(normalized_query)
+    if pos == 0:
+        # Match at start (after prefix removal)
+        return 10 + prefix_bonus
+    elif pos > 0:
+        # Match in middle/end: score increases with position
+        return 100 + pos + prefix_bonus
+
+    # Should not reach here since we filter by containment before calling this
+    return 1000
