@@ -73,9 +73,17 @@ There are two kinds of objects, first is the object presenting a single province
     >>> Ward.from_code(23425)
     Ward(name='Xã Tu Mơ Rông', code=<WardCode.W_23425: 23425>, division_type=<VietNamDivisionType.XA: 'xã'>, codename='xa_tu_mo_rong', province_code=<ProvinceCode.P_51: 51>)
 
+    >>> # Search provinces by name
+    >>> Province.search('lao cai')
+    (Province(name='Tỉnh Lào Cai', ...),)
+
+    >>> # Search wards by name
+    >>> Ward.search('phu my')
+    (Ward(name='Phường Phú Mỹ', ...), Ward(name='Xã Phú Mỹ', ...), ...)
+
     >>> # Search current wards by legacy data (pre-2025)
     >>> Ward.search_from_legacy(name='phu my')
-    (Ward(name='Phường Phú Mỹ', ...), Ward(name='Xã Phú Mỹ', ...), ...)
+    (WardWithLegacy(source_code=21730, ward=Ward(name='Xã Phù Mỹ', ...)), ...)
 
     >>> # Get legacy wards that were merged to form a new ward
     >>> ward = Ward.from_code(4)  # Phường Ba Đình
@@ -84,11 +92,11 @@ There are two kinds of objects, first is the object presenting a single province
 
     >>> # Search current wards by legacy district (districts were dissolved in 2025)
     >>> Ward.search_from_legacy_district(code=748)  # Thành phố Bà Rịa (old)
-    (Ward(name='Phường Bà Rịa', ...), Ward(name='Phường Long Hương', ...), ...)
+    (WardWithLegacy(source_code=26710, ward=Ward(name='Phường Bà Rịa', ...)), ...)
 
     >>> # Search current provinces by legacy province code (pre-2025)
     >>> Province.search_from_legacy(code=77)  # Tỉnh Bà Rịa - Vũng Tàu
-    (Province(name='Thành phố Hồ Chí Minh', ...),)
+    (ProvinceWithLegacy(source_code=77, province=Province(name='Thành phố Hồ Chí Minh', ...)),)
 
     >>> # Get legacy provinces that were merged to form a new province
     >>> province = Province.from_code(79)  # Thành phố Hồ Chí Minh

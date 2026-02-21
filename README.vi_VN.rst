@@ -74,9 +74,17 @@ Bạn có thể import vào code Python để dùng ngay.
     >>> Ward.from_code(23425)
     Ward(name='Xã Tu Mơ Rông', code=<WardCode.W_23425: 23425>, division_type=<VietNamDivisionType.XA: 'xã'>, codename='xa_tu_mo_rong', province_code=<ProvinceCode.P_51: 51>)
 
+    >>> # Tìm kiếm tỉnh thành theo tên
+    >>> Province.search('lao cai')
+    (Province(name='Tỉnh Lào Cai', ...),)
+
+    >>> # Tìm kiếm phường xã theo tên
+    >>> Ward.search('phu my')
+    (Ward(name='Phường Phú Mỹ', ...), Ward(name='Xã Phú Mỹ', ...), ...)
+
     >>> # Tìm kiếm phường xã hiện tại bằng dữ liệu cũ (trước 2025)
     >>> Ward.search_from_legacy(name='phu my')
-    (Ward(name='Phường Phú Mỹ', ...), Ward(name='Xã Phú Mỹ', ...), ...)
+    (WardWithLegacy(source_code=21730, ward=Ward(name='Xã Phù Mỹ', ...)), ...)
 
     >>> # Lấy các phường xã cũ đã được sáp nhập để tạo thành phường xã mới
     >>> ward = Ward.from_code(4)  # Phường Ba Đình
@@ -85,11 +93,11 @@ Bạn có thể import vào code Python để dùng ngay.
 
     >>> # Tìm kiếm phường xã hiện tại bằng mã quận huyện cũ (quận huyện bị giải thể từ 2025)
     >>> Ward.search_from_legacy_district(code=748)  # Thành phố Bà Rịa (cũ)
-    (Ward(name='Phường Bà Rịa', ...), Ward(name='Phường Long Hương', ...), ...)
+    (WardWithLegacy(source_code=26710, ward=Ward(name='Phường Bà Rịa', ...)), ...)
 
     >>> # Tìm kiếm tỉnh thành hiện tại bằng mã tỉnh cũ (trước 2025)
     >>> Province.search_from_legacy(code=77)  # Tỉnh Bà Rịa - Vũng Tàu
-    (Province(name='Thành phố Hồ Chí Minh', ...),)
+    (ProvinceWithLegacy(source_code=77, province=Province(name='Thành phố Hồ Chí Minh', ...)),)
 
     >>> # Lấy các tỉnh cũ đã được sáp nhập để tạo thành tỉnh thành mới
     >>> province = Province.from_code(79)  # Thành phố Hồ Chí Minh
