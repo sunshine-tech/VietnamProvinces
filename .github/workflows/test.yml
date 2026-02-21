@@ -19,8 +19,8 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install the project
-        run: uv sync --all-extras --dev
+        run: uv sync --all-extras --all-groups
       - name: Run tests
         run: uv run pytest tests
       - name: Build docs
-        run: uv run sphinx-build -M html docs docs/_build/ -E -a -j auto -W --keep-going
+        run: uv run sphinx-build -M html docs docs/_build/

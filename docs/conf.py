@@ -3,13 +3,17 @@
 # For the full list of built-in configuration values, see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
+
+from vietnam_provinces import __version__
+
+
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'VietnamProvinces'
 copyright = '2025, Nguyễn Hồng Quân'
 author = 'Nguyễn Hồng Quân'
-release = '2025.8.1'
+release = __version__
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -23,6 +27,9 @@ extensions = [
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+
+# Preserve the order of members as specified in :members:
+autodoc_member_order = 'bysource'
 
 
 # -- Options for HTML output -------------------------------------------------

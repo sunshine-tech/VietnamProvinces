@@ -6,4 +6,4 @@ API Reference
 
    classes
    codes
-   legacy
+   legacy/index

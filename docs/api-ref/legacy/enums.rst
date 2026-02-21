@@ -1,7 +1,7 @@
-Legacy Data Classes
-===================
+Enums
+=====
 
 .. automodule:: vietnam_provinces.legacy
-   :members:
+   :members: ProvinceCode, DistrictCode, WardCode
    :undoc-members:
    :show-inheritance:
