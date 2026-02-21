@@ -12,7 +12,7 @@ from vietnam_provinces.codes import WardCode
         ('phường phú mỹ', 'Phường Phú Mỹ'),
     ],
 )
-def test_search_from_legacy_prioritizes_diacritics_match(query: str, expected_first: str) -> None:
+def test_search_from_legacy_by_name_prioritizes_diacritics_match(query: str, expected_first: str) -> None:
     """Test that search results prioritize exact diacritics matches."""
     results = Ward.search_from_legacy(query)
 
@@ -34,6 +34,23 @@ def test_search_from_legacy_prioritizes_diacritics_match(query: str, expected_fi
         assert results[0].code in expected_first_codes, (
             f"First result should have old name '{expected_first}', but got ward with code {results[0].code}"
         )
+
+
+@pytest.mark.parametrize(
+    ('legacy_code', 'expected_ward_name'),
+    [
+        (26707, 'Phường Tân Hải'),  # Phường Tân Hòa (legacy) -> Phường Tân Hải (new)
+    ],
+)
+def test_search_from_legacy_by_code(legacy_code: int, expected_ward_name: str) -> None:
+    """Test that search_from_legacy returns correct ward when searching by legacy code."""
+    results = Ward.search_from_legacy(code=legacy_code)
+
+    # Should return exactly one result for this case
+    assert len(results) == 1
+
+    # The result should have the expected name
+    assert results[0].name == expected_ward_name
 
 
 @pytest.mark.parametrize(

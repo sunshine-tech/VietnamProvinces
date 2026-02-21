@@ -163,9 +163,21 @@ class Ward:
     def search_from_legacy(cls, name: str = '', code: int = 0) -> tuple[Ward, ...]:
         """Given a legacy ward code or part of a legacy ward name, return all matching wards.
 
+        This method searches for current (post-2025) wards that were formed from
+        legacy (pre-2025) wards matching the given criteria.
+
         :param name: Part of a legacy ward name to search for
         :param code: The legacy ward code
         :returns: Tuple of matching :class:`vietnam_provinces.Ward` objects
+
+        Example:
+            >>> # Search by legacy ward name
+            >>> Ward.search_from_legacy(name='phu my')
+            (Ward(name='Phường Phú Mỹ', ...), Ward(name='Xã Phú Mỹ', ...), ...)
+
+            >>> # Search by legacy ward code
+            >>> Ward.search_from_legacy(code=22855)  # Xã Tân Hải
+            (Ward(name='Xã Tân Hải', ...),)
         """
         from ._ward_conversion_2025 import OLD_TO_NEW
 
@@ -212,7 +224,19 @@ class Ward:
     def get_legacy_sources(self) -> tuple[LegacyWard, ...]:
         """Get the legacy (pre-2025) ward sources that were merged to form this ward.
 
+        This method returns the legacy wards that were merged or reorganized to form
+        the current (post-2025) ward.
+
         :returns: Tuple of legacy :class:`vietnam_provinces.legacy.Ward` objects
+
+        Example:
+            >>> ward = Ward.from_code(4)  # Phường Ba Đình
+            >>> ward.get_legacy_sources()
+            (Ward(name='Phường Trúc Bạch', ...), Ward(name='Phường Quán Thánh', ...), ...)
+
+            >>> ward = Ward.from_code(22861)  # Xã Tân Hải
+            >>> ward.get_legacy_sources()
+            (Ward(name='Xã Tân Hải', ...),)
         """
         from ._ward_conversion_2025 import NEW_TO_OLD
         from .legacy import Ward as LegacyWard
