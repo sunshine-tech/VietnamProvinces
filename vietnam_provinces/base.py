@@ -10,6 +10,7 @@ import unicodedata
 from collections.abc import Iterator
 from dataclasses import dataclass
 from enum import StrEnum
+from logging import getLogger
 from typing import TYPE_CHECKING
 
 from .codes import ProvinceCode, WardCode
@@ -17,6 +18,10 @@ from .codes import ProvinceCode, WardCode
 
 if TYPE_CHECKING:
     from ._ward_conversion_2025 import OldWardRef
+    from .legacy.base import Ward as LegacyWard
+
+
+log = getLogger(__name__)
 
 
 class VietNamDivisionType(StrEnum):
@@ -165,10 +170,13 @@ class Ward:
         from ._ward_conversion_2025 import OLD_TO_NEW
 
         if code > 0:
-            entry = OLD_TO_NEW.get(code)
-            return tuple(cls.from_code(WardCode(nw.code)) for nw in entry.new_wards) if entry else ()
+            if (entry := OLD_TO_NEW.get(code)) is None:
+                log.debug('No conversion entry found for legacy ward code %s', code)
+                return ()
+            return tuple(cls.from_code(WardCode(nw.code)) for nw in entry.new_wards)
 
         if not name:
+            log.debug('Empty search query provided')
             return ()
 
         query = _normalize_search_name(name)
@@ -194,11 +202,36 @@ class Ward:
                     results.append((ward, old_name, match_score))
                     seen_codes.add(nw.code)
                 except ValueError:
+                    log.debug('New ward code %s not found in lookup', nw.code)
                     continue
 
         # Sort by match score (lower is better)
         results.sort(key=lambda x: x[2])
         return tuple(ward for ward, _, _ in results)
+
+    def get_legacy_sources(self) -> tuple[LegacyWard, ...]:
+        """Get the legacy (pre-2025) ward sources that were merged to form this ward.
+
+        :returns: Tuple of legacy :class:`vietnam_provinces.legacy.Ward` objects
+        """
+        from ._ward_conversion_2025 import NEW_TO_OLD
+        from .legacy import Ward as LegacyWard
+        from .legacy.codes import WardCode as LegacyWardCode
+
+        if (entry := NEW_TO_OLD.get(self.code.value)) is None:
+            log.debug('No legacy source found for ward code %s', self.code.value)
+            return ()
+
+        legacy_wards: list[LegacyWard] = []
+        for old_ref in entry.old_wards:
+            try:
+                ward = LegacyWard.from_code(LegacyWardCode(old_ref.code))
+                legacy_wards.append(ward)
+            except (ValueError, KeyError):
+                log.debug('Legacy ward code %s not found in lookup', old_ref.code)
+                continue
+
+        return tuple(legacy_wards)
 
 
 def _normalize_search_name(name: str) -> str:

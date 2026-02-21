@@ -1,17 +1,18 @@
 import pytest
 
 from vietnam_provinces import Ward
+from vietnam_provinces.codes import WardCode
 
 
 @pytest.mark.parametrize(
-    'query,expected_first',
+    ('query', 'expected_first'),
     [
         ('phú mỹ', 'Thị trấn Phú Mỹ'),
         ('Phú Mỹ', 'Thị trấn Phú Mỹ'),
         ('phường phú mỹ', 'Phường Phú Mỹ'),
     ],
 )
-def test_search_from_legacy_prioritizes_diacritics_match(query, expected_first):
+def test_search_from_legacy_prioritizes_diacritics_match(query: str, expected_first: str) -> None:
     """Test that search results prioritize exact diacritics matches."""
     results = Ward.search_from_legacy(query)
 
@@ -33,3 +34,70 @@ def test_search_from_legacy_prioritizes_diacritics_match(query, expected_first):
         assert results[0].code in expected_first_codes, (
             f"First result should have old name '{expected_first}', but got ward with code {results[0].code}"
         )
+
+
+@pytest.mark.parametrize(
+    ('ward_code', 'expected_old_ward_name'),
+    [
+        (4, 'Phường Trúc Bạch'),  # Phường Ba Đình - merged from multiple wards
+        (22861, 'Xã Tân Hải'),  # Merged from Xã Tân Hải
+    ],
+)
+def test_get_legacy_sources_returns_legacy_wards(ward_code: int, expected_old_ward_name: str) -> None:
+    """Test that get_legacy_sources returns legacy wards for a merged ward."""
+    ward = Ward.from_code(WardCode(ward_code))
+    legacy_sources = ward.get_legacy_sources()
+
+    # Should have legacy sources
+    assert len(legacy_sources) > 0
+
+    # Check that all returned items are legacy Ward objects
+    from vietnam_provinces.legacy import Ward as LegacyWard
+
+    for lw in legacy_sources:
+        assert isinstance(lw, LegacyWard)
+
+    # Check that expected old ward name is in the legacy sources
+    old_names = {lw.name for lw in legacy_sources}
+    assert expected_old_ward_name in old_names
+
+
+@pytest.mark.parametrize(
+    'ward_code',
+    [
+        4,  # Phường Ba Đình - merged from multiple wards
+        22861,  # Merged from Xã Tân Hải
+        23246,  # Another ward merged from Xã Tân Hải
+    ],
+)
+def test_get_legacy_sources_has_correct_codes(ward_code: int) -> None:
+    """Test that get_legacy_sources returns wards with correct codes."""
+    from vietnam_provinces._ward_conversion_2025 import NEW_TO_OLD
+
+    ward = Ward.from_code(WardCode(ward_code))
+    legacy_sources = ward.get_legacy_sources()
+
+    # Get expected old ward codes from conversion table
+    entry = NEW_TO_OLD.get(ward_code)
+    assert entry is not None
+    expected_codes = {ow.code for ow in entry.old_wards}
+
+    # Verify all legacy sources have the expected codes
+    actual_codes = {lw.code.value for lw in legacy_sources}
+    assert actual_codes == expected_codes
+
+
+@pytest.mark.parametrize(
+    'ward_code',
+    [
+        4,  # Phường Ba Đình
+        22861,  # Merged from Xã Tân Hải
+    ],
+)
+def test_get_legacy_sources_returns_tuple(ward_code: int) -> None:
+    """Test that get_legacy_sources returns a tuple."""
+    ward = Ward.from_code(WardCode(ward_code))
+    legacy_sources = ward.get_legacy_sources()
+
+    # Should return a tuple (not None, not list)
+    assert isinstance(legacy_sources, tuple)
