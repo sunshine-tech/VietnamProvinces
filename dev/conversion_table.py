@@ -15,6 +15,8 @@ from typing import Annotated
 
 from pydantic import AfterValidator, BaseModel, Field, StringConstraints
 
+from vietnam_provinces.legacy.base import VietNamDivisionType
+
 from .divisions import normalize_vietnamese
 
 
@@ -44,6 +46,7 @@ class OldWardRef(BaseModel):
     district_code: int
     province_code: int
     is_partly_merged: bool
+    division_type: VietNamDivisionType
 
 
 class NewWardRef(BaseModel):
@@ -98,6 +101,24 @@ def is_partly_merged_from_note(ghi_chu: str) -> bool:
     """Parse the 'Ghi chú' column to determine if merge is partial."""
     ghi_chu_lower = ghi_chu.lower().strip()
     return 'toàn bộ' not in ghi_chu_lower
+
+
+def extract_division_type_from_name(name: str) -> VietNamDivisionType:
+    """Extract division type from ward name.
+
+    Maps the prefix of the ward name to the legacy VietNamDivisionType.
+    """
+    name_lower = name.lower().strip()
+
+    if name_lower.startswith('thị trấn '):
+        return VietNamDivisionType.THI_TRAN
+    elif name_lower.startswith('phường '):
+        return VietNamDivisionType.PHUONG
+    elif name_lower.startswith('xã '):
+        return VietNamDivisionType.XA
+    else:
+        # Default to XA if no recognized prefix
+        return VietNamDivisionType.XA
 
 
 def extract_code_from_parentheses(text: str) -> int:
@@ -181,6 +202,7 @@ def build_conversion_table(records: list[ConversionCSVRecord]) -> ConversionTabl
             district_code=group[0].old_district_code,
             province_code=group[0].old_province_code,
             is_partly_merged=is_partly_merged,
+            division_type=extract_division_type_from_name(group[0].old_ward_name),
         )
 
         new_refs = [NewWardRef(code=r.new_ward_code, province_code=r.new_province_code) for r in group]
@@ -202,6 +224,7 @@ def build_conversion_table(records: list[ConversionCSVRecord]) -> ConversionTabl
                 district_code=r.old_district_code,
                 province_code=r.old_province_code,
                 is_partly_merged=r.is_partly_merged,
+                division_type=extract_division_type_from_name(r.old_ward_name),
             )
             for r in group
         ]
@@ -233,6 +256,7 @@ def gen_old_ward_ref(old_ref: OldWardRef) -> ast.Call:
             ast.Constant(value=old_ref.district_code),
             ast.Constant(value=old_ref.province_code),
             ast.Constant(value=old_ref.is_partly_merged),
+            ast.Attribute(value=ast.Name(id='VietNamDivisionType'), attr=old_ref.division_type.name),
         ],
         keywords=[],
     )

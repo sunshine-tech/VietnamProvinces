@@ -9,6 +9,8 @@ Auto-generated from BangChuyendoiĐVHCmoi_cu_khong_merge.csv
 
 from typing import NamedTuple
 
+from vietnam_provinces.legacy.base import VietNamDivisionType
+
 
 class OldWardRef(NamedTuple):
     """Reference to an old ward (pre-2025)."""
@@ -18,6 +20,7 @@ class OldWardRef(NamedTuple):
     district_code: int
     province_code: int
     is_partly_merged: bool
+    division_type: VietNamDivisionType
 
 
 class NewWardRef(NamedTuple):

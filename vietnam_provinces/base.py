@@ -10,8 +10,13 @@ import unicodedata
 from collections.abc import Iterator
 from dataclasses import dataclass
 from enum import StrEnum
+from typing import TYPE_CHECKING
 
 from .codes import ProvinceCode, WardCode
+
+
+if TYPE_CHECKING:
+    from ._ward_conversion_2025 import OldWardRef
 
 
 class VietNamDivisionType(StrEnum):
@@ -178,7 +183,7 @@ class Ward:
                 continue
 
             # Calculate match score (lower is better)
-            match_score = _calculate_match_score(name, old_name, query, normalized_old_name)
+            match_score = _calculate_match_score(name, query, entry.old_ward)
 
             for nw in entry.new_wards:
                 if nw.code in seen_codes:
@@ -212,7 +217,11 @@ def _normalize_search_name(name: str) -> str:
     return unicodedata.normalize('NFC', name)
 
 
-def _calculate_match_score(query: str, candidate: str, normalized_query: str, normalized_candidate: str) -> int:
+def _calculate_match_score(
+    query: str,
+    normalized_query: str,
+    old_ward: OldWardRef,
+) -> int:
     """Calculate match score for sorting search results (lower score = better match).
 
     Priority:
@@ -224,34 +233,32 @@ def _calculate_match_score(query: str, candidate: str, normalized_query: str, no
     Within each priority level, prefer "Thị trấn" > "Phường" > "Xã"
 
     :param query: Original query string
-    :param candidate: Original candidate string
     :param normalized_query: Normalized query (lowercase, no diacritics)
-    :param normalized_candidate: Normalized candidate (lowercase, no diacritics)
+    :param old_ward: The old ward reference with name and division_type
     :returns: Match score (lower is better)
     """
-    from vietnam_provinces.legacy.base import VietNamDivisionType as LegacyDivisionType
+    from vietnam_provinces.legacy import base as legacy
+
+    candidate = old_ward.name
+    normalized_candidate = _normalize_search_name(candidate)
 
     # Remove common prefixes from candidates for comparison
     candidate_clean = re.sub(r'^(xã|phường|thị trấn)\s+', '', candidate, flags=re.IGNORECASE)
     candidate_lower = candidate.lower()
     candidate_lower_clean = re.sub(r'^(xã|phường|thị trấn)\s+', '', candidate_lower)
 
-    # Determine prefix bonus (thị trấn is preferred)
+    # Determine prefix bonus (thị trấn is preferred) using the stored division_type
     prefix_bonus = 0
-    if candidate.lower().startswith(f'{LegacyDivisionType.THI_TRAN} '):
+    if old_ward.division_type == legacy.VietNamDivisionType.THI_TRAN:
         prefix_bonus = 0
-    elif candidate.lower().startswith(f'{LegacyDivisionType.PHUONG} '):
-        prefix_bonus = 0.3
-    elif candidate.lower().startswith(f'{LegacyDivisionType.XA} '):
-        prefix_bonus = 0.6
+    elif old_ward.division_type == legacy.VietNamDivisionType.PHUONG:
+        prefix_bonus = 3
+    elif old_ward.division_type == legacy.VietNamDivisionType.XA:
+        prefix_bonus = 6
 
     # Check if query includes prefix - if so, match full name with prefix
     query_lower = query.lower()
-    if (
-        query_lower.startswith(f'{LegacyDivisionType.XA} ')
-        or query_lower.startswith(f'{LegacyDivisionType.PHUONG} ')
-        or query_lower.startswith(f'{LegacyDivisionType.THI_TRAN} ')
-    ):
+    if query_lower.startswith('xã ') or query_lower.startswith('phường ') or query_lower.startswith('thị trấn '):
         # Query includes prefix, do full match including prefix
         if query == candidate:
             return 0
