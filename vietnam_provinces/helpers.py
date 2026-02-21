@@ -18,8 +18,10 @@ def normalize_search_name(name: str) -> str:
     This function normalizes Vietnamese text by:
     1. Converting to lowercase
     2. Removing common prefixes (xã, phường, thị trấn)
-    3. Removing diacritics
-    4. Replacing 'đ' with 'd'
+    3. Normalizing hyphens to spaces (to handle data entry like "Phan Rang-Tháp Chàm")
+    4. Normalizing curly apostrophes to straight ones
+    5. Removing diacritics
+    6. Replacing 'đ' with 'd'
 
     :param name: The name to normalize
     :returns: Normalized name string
@@ -27,12 +29,16 @@ def normalize_search_name(name: str) -> str:
     name = name.lower()
     # Remove common prefixes
     name = re.sub(r'^(xã|phường|thị trấn)\s+', '', name)
+    # Normalize hyphens to spaces (handle data entry issues like "Phan Rang-Tháp Chàm")
+    name = name.replace('-', ' ')
+    # Normalize curly apostrophes to straight ones, then remove
+    name = name.replace('’', "'")
     # Remove diacritics
     name = unicodedata.normalize('NFD', name)
     name = ''.join(c for c in name if unicodedata.category(c) != 'Mn')
     name = name.replace('đ', 'd')
     # Remove apostrophes
-    name = name.replace("'", '').replace('’', '')
+    name = name.replace("'", '')
     return unicodedata.normalize('NFC', name)
 
 
@@ -100,8 +106,10 @@ def normalize_province_search_name(name: str) -> str:
     This function normalizes Vietnamese province text by:
     1. Converting to lowercase
     2. Removing division type prefixes (tỉnh, thành phố)
-    3. Removing diacritics
-    4. Replacing 'đ' with 'd'
+    3. Normalizing hyphens to spaces
+    4. Normalizing curly apostrophes to straight ones
+    5. Removing diacritics
+    6. Replacing 'đ' with 'd'
 
     :param name: The province name to normalize
     :returns: Normalized name string (without division type prefix)
@@ -109,12 +117,16 @@ def normalize_province_search_name(name: str) -> str:
     name = name.lower()
     # Remove division type prefixes
     name = re.sub(r'^(tỉnh|thành phố)\s+', '', name)
+    # Normalize hyphens to spaces
+    name = name.replace('-', ' ')
+    # Normalize curly apostrophes to straight ones
+    name = name.replace('’', "'")
     # Remove diacritics
     name = unicodedata.normalize('NFD', name)
     name = ''.join(c for c in name if unicodedata.category(c) != 'Mn')
     name = name.replace('đ', 'd')
     # Remove apostrophes
-    name = name.replace("'", '').replace('’', '')
+    name = name.replace("'", '')
     return unicodedata.normalize('NFC', name)
 
 

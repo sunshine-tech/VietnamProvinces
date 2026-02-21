@@ -39,6 +39,11 @@ class WardListResponse:
     result: str
 
 
+def normalize_apostrophes(text: str) -> str:
+    """Normalize curly apostrophes (U+2019) to straight apostrophes (U+0027)."""
+    return text.replace('\u2019', '\u0027')
+
+
 def get_provinces() -> tuple[ScrapedProvince, ...]:
     logger.info('Scraping provinces from {}', SITE_URL)
     text = httpx.get(SITE_URL).text
@@ -49,7 +54,7 @@ def get_provinces() -> tuple[ScrapedProvince, ...]:
     code_cells = prov_table.select('tr td:nth-child(2)')
     codes = tuple(cast(Element, c).text().strip() for c in code_cells)
     name_cells = prov_table.select('tr td:nth-child(3)')
-    names = tuple(cast(Element, c).text().strip() for c in name_cells)
+    names = tuple(normalize_apostrophes(cast(Element, c).text().strip()) for c in name_cells)
     level_cells = prov_table.select('tr td:nth-child(5)')
     levels = tuple(cast(Element, c).text().strip() for c in level_cells)
     provinces = tuple(ScrapedProvince(int(c), n, v) for c, n, v in zip(codes, names, levels))
@@ -86,7 +91,9 @@ def get_wards(index: int, province_code: int) -> tuple[ScrapedWard, ...]:
     wards = []
     for row in rows:
         info = tuple(cast(Element, c).text().strip() for c in row.select('td'))
-        wards.append(ScrapedWard(int(info[0]), info[1], info[3], province_code))
+        # Normalize apostrophes in ward name
+        name = normalize_apostrophes(info[1])
+        wards.append(ScrapedWard(int(info[0]), name, info[3], province_code))
     logger.debug('Found {} wards for province {}', len(wards), province_code)
     return tuple(wards)
 

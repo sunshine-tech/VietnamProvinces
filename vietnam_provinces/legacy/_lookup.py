@@ -941,7 +941,7 @@ DISTRICT_MAPPING: dict[int, District] = {
         'Huyện Trường Sa', DistrictCode.D_576, VietNamDivisionType.HUYEN, 'huyen_truong_sa', ProvinceCode.P_56
     ),
     582: District(
-        'Thành phố Phan Rang-Tháp Chàm',
+        'Thành phố Phan Rang - Tháp Chàm',
         DistrictCode.D_582,
         VietNamDivisionType.THANH_PHO,
         'thanh_pho_phan_rang_thap_cham',

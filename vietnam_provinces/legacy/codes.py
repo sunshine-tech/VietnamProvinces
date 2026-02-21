@@ -970,7 +970,7 @@ class DistrictCode(IntEnum):
     D_576 = 576
     'Huyện Trường Sa'
     D_582 = 582
-    'Thành phố Phan Rang-Tháp Chàm'
+    'Thành phố Phan Rang - Tháp Chàm'
     D_584 = 584
     'Huyện Bác Ái'
     D_585 = 585

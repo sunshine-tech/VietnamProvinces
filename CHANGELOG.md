@@ -1,5 +1,12 @@
 # Changelog
 
+## [2026.2.2] - 2026-02-21
+
+### Fixed
+
+- Fix the apostrophes in the scraped data.
+- Fix the matching rule for searching.
+
 ## [2026.2.0] - 2026-02-21
 
 ### Changed
@@ -31,6 +38,7 @@ and use `ProvinceCode`, `WardCode` as enum to define valid data.
 - Update data with the form of new towns.
 
 
+[2026.2.2]: https://github.com/sunshine-tech/VietnamProvinces/releases/tag/v2026.2.2
 [2026.2.0]: https://github.com/sunshine-tech/VietnamProvinces/releases/tag/v2026.2.0
 [2026.1.0]: https://github.com/sunshine-tech/VietnamProvinces/releases/tag/v2026.01.0
 [2025.10.1]: https://github.com/sunshine-tech/VietnamProvinces/releases/tag/v2025.10.1

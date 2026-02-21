@@ -82,6 +82,22 @@ class Pre2025WardCSVInputRow(NamedTuple):
         return cls._make(values[:6])
 
 
+def normalize_apostrophes(text: str) -> str:
+    """Normalize curly apostrophes (U+2019) to straight apostrophes (U+0027)."""
+    return text.replace('\u2019', '\u0027')
+
+
+def normalize_hyphens(text: str) -> str:
+    """Normalize hyphens to have spaces around them.
+
+    Converts "Phan Rang-Tháp Chàm" to "Phan Rang - Tháp Chàm"
+    """
+    # Replace hyphen with space-hyphen-space, but avoid double spaces
+    text = text.replace(' - ', '-').replace('-', ' - ')
+    # Clean up any double spaces that might have been created
+    return ' '.join(text.split())
+
+
 class Pre2025WardCSVRecord(BaseModel):
     """Parsed record from pre-2025 ward CSV."""
 
@@ -114,6 +130,22 @@ class Pre2025WardCSVRecord(BaseModel):
         if not value:
             return None
         return int(value)
+
+    @field_validator('province_name', 'district_name', 'ward_name', mode='before')
+    @classmethod
+    def normalize_name_apostrophes(cls, value: Any) -> Any:
+        """Normalize apostrophes in names."""
+        if isinstance(value, str):
+            return normalize_apostrophes(value)
+        return value
+
+    @field_validator('province_name', 'district_name', 'ward_name', mode='before')
+    @classmethod
+    def normalize_name_hyphens(cls, value: Any) -> Any:
+        """Normalize hyphens in names to have spaces around them."""
+        if isinstance(value, str):
+            return normalize_hyphens(value)
+        return value
 
     @classmethod
     def from_csv_row(cls, values: Sequence[str]) -> Self:

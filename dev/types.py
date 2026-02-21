@@ -21,10 +21,17 @@ def normalize_vietnamese(text: str) -> str:
     return unicodedata.normalize('NFC', text)
 
 
+def normalize_apostrophes(text: str) -> str:
+    """Normalize curly apostrophes (U+2019) to straight apostrophes (U+0027)."""
+    return text.replace('\u2019', '\u0027')
+
+
 def clean_name(value: str) -> str:
     value = unicodedata.normalize('NFC', value)
     if not value:
         return ''
+    # Normalize apostrophes
+    value = normalize_apostrophes(value)
     # Reduce whitespaces
     value = ' '.join(value.split())
     value = REGEX_THI_XA.sub('Thị xã', value)

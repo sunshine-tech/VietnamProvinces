@@ -104,6 +104,8 @@ class Province:
         3. Exact match (normalized, no diacritics)
         4. Partial match (earlier position is better)
 
+        If the input contains multiple words, all words must match.
+
         :param name: Part of a province name to search for
         :returns: Tuple of matching :class:`vietnam_provinces.Province` objects
         """
@@ -113,13 +115,20 @@ class Province:
 
         from .helpers import calculate_simple_match_score, normalize_search_name
 
+        # Split input into words, normalize, and filter out division type prefixes
+        division_types = {'tinh', 'thanh', 'pho', 'xa', 'phuong', 'thi', 'tran'}
+        words = [normalize_search_name(word) for word in name.split()]
+        normalized_words = [word for word in words if word not in division_types]
         query = normalize_search_name(name)
         results: list[tuple[Province, int]] = []  # (province, match_score)
 
         for province in cls.iter_all():
             normalized_name = normalize_search_name(province.name)
+            # Split normalized name into words for whole-word matching
+            name_words = set(normalized_name.split())
 
-            if query not in normalized_name:
+            # All query words must be present as whole words in the name
+            if not all(word in name_words for word in normalized_words):
                 continue
 
             # Calculate match score (lower is better)
@@ -165,6 +174,10 @@ class Province:
         # Search by name - normalize and match (ignoring division type prefix)
         from .helpers import calculate_province_match_score, normalize_province_search_name
 
+        # Split input into words, normalize, and filter out division type prefixes
+        division_types = {'tinh', 'thanh', 'pho', 'xa', 'phuong', 'thi', 'tran'}
+        words = [normalize_province_search_name(word) for word in name.split()]
+        normalized_words = [word for word in words if word not in division_types]
         query = normalize_province_search_name(name)
         results: list[tuple[Province, str, int]] = []  # (province, old_name, match_score)
         seen_codes: set[int] = set()
@@ -179,8 +192,11 @@ class Province:
                 continue
 
             normalized_old_name = normalize_province_search_name(old_name)
+            # Split normalized name into words for whole-word matching
+            name_words = set(normalized_old_name.split())
 
-            if query not in normalized_old_name:
+            # All query words must be present as whole words in the name
+            if not all(word in name_words for word in normalized_words):
                 continue
 
             # Calculate match score with division type priority (thành phố > tỉnh)
@@ -318,6 +334,8 @@ class Ward:
         3. Exact match (normalized, no diacritics)
         4. Partial match (earlier position is better)
 
+        If the input contains multiple words, all words must match.
+
         :param name: Part of a ward name to search for
         :returns: Tuple of matching :class:`vietnam_provinces.Ward` objects
         """
@@ -327,13 +345,20 @@ class Ward:
 
         from .helpers import calculate_simple_match_score, normalize_search_name
 
+        # Split input into words, normalize, and filter out division type prefixes
+        division_types = {'tinh', 'thanh', 'pho', 'xa', 'phuong', 'thi', 'tran'}
+        words = [normalize_search_name(word) for word in name.split()]
+        normalized_words = [word for word in words if word not in division_types]
         query = normalize_search_name(name)
         results: list[tuple[Ward, int]] = []  # (ward, match_score)
 
         for ward in cls.iter_all():
             normalized_name = normalize_search_name(ward.name)
+            # Split normalized name into words for whole-word matching
+            name_words = set(normalized_name.split())
 
-            if query not in normalized_name:
+            # All query words must be present as whole words in the name
+            if not all(word in name_words for word in normalized_words):
                 continue
 
             # Calculate match score (lower is better)
@@ -383,6 +408,10 @@ class Ward:
         from ._bridges import calculate_match_score
         from .helpers import normalize_search_name
 
+        # Split input into words, normalize, and filter out division type prefixes
+        division_types = {'tinh', 'thanh', 'pho', 'xa', 'phuong', 'thi', 'tran'}
+        words = [normalize_search_name(word) for word in name.split()]
+        normalized_words = [word for word in words if word not in division_types]
         query = normalize_search_name(name)
         results: list[tuple[Ward, str, int]] = []  # (ward, old_name, match_score)
         seen_codes: set[int] = set()
@@ -397,8 +426,11 @@ class Ward:
                 continue
 
             normalized_old_name = normalize_search_name(old_name)
+            # Split normalized name into words for whole-word matching
+            name_words = set(normalized_old_name.split())
 
-            if query not in normalized_old_name:
+            # All query words must be present as whole words in the name
+            if not all(word in name_words for word in normalized_words):
                 continue
 
             # Calculate match score (lower is better)

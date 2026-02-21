@@ -4642,7 +4642,7 @@ class WardCode(IntEnum):
     W_24181 = 24181
     'Xã Ea Drăng'
     W_24184 = 24184
-    'Xã Ea H’Leo'
+    "Xã Ea H'Leo"
     W_24187 = 24187
     'Xã Ea Hiao'
     W_24193 = 24193
@@ -4672,9 +4672,9 @@ class WardCode(IntEnum):
     W_24277 = 24277
     'Xã Ea Tul'
     W_24280 = 24280
-    'Xã Cư M’gar'
+    "Xã Cư M'gar"
     W_24286 = 24286
-    'Xã Ea M’Droh'
+    "Xã Ea M'Droh"
     W_24301 = 24301
     'Xã Cuôr Đăng'
     W_24305 = 24305
@@ -4708,13 +4708,13 @@ class WardCode(IntEnum):
     W_24406 = 24406
     'Xã Cư Yang'
     W_24412 = 24412
-    'Xã M’Drắk'
+    "Xã M'Drắk"
     W_24415 = 24415
     'Xã Cư Prao'
     W_24433 = 24433
     'Xã Ea Riêng'
     W_24436 = 24436
-    'Xã Cư M’ta'
+    "Xã Cư M'ta"
     W_24444 = 24444
     'Xã Krông Á'
     W_24445 = 24445
@@ -4922,7 +4922,7 @@ class WardCode(IntEnum):
     W_24823 = 24823
     'Phường 1 Bảo Lộc'
     W_24829 = 24829
-    'Phường B’Lao'
+    "Phường B'Lao"
     W_24841 = 24841
     'Phường 3 Bảo Lộc'
     W_24846 = 24846
@@ -4952,7 +4952,7 @@ class WardCode(IntEnum):
     W_24931 = 24931
     'Xã Đơn Dương'
     W_24934 = 24934
-    'Xã D’Ran'
+    "Xã D'Ran"
     W_24943 = 24943
     'Xã Ka Đô'
     W_24955 = 24955
