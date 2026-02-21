@@ -77,6 +77,20 @@ There are two kinds of objects, first is the object presenting a single province
     >>> Ward.search_from_legacy(name='phu my')
     (Ward(name='Phường Phú Mỹ', ...), Ward(name='Xã Phú Mỹ', ...), ...)
 
+The pre-2025 data types can then be used as:
+
+.. code-block:: python
+
+    from vietnam_provinces.legacy import Province, District, Ward
+    from vietnam_provinces.legacy.codes import ProvinceCode
+
+    # Look up by code
+    province = Province.from_code(ProvinceCode.P_01)
+
+    # Iterate over all
+    for p in Province.iter_all():
+        print(p.name)
+
 
 To know if the data is up-to-date, check the ``__data_version__`` attribute of the module:
 
@@ -154,20 +168,6 @@ This generates two files:
 
 1. *vietnam_provinces/legacy/codes.py* - Enum definitions for ``ProvinceCode``, ``DistrictCode``, ``WardCode``.
 2. *vietnam_provinces/legacy/lookup.py* - Lookup mappings for ``Province``, ``District``, ``Ward`` objects.
-
-The pre-2025 data types can then be used as:
-
-.. code-block:: python
-
-    from vietnam_provinces.legacy import Province, District, Ward
-    from vietnam_provinces.legacy.codes import ProvinceCode
-
-    # Look up by code
-    province = Province.from_code(ProvinceCode.P_01)
-
-    # Iterate over all
-    for p in Province.iter_all():
-        print(p.name)
 
 
 Data source

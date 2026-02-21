@@ -78,6 +78,20 @@ Bạn có thể import vào code Python để dùng ngay.
     >>> Ward.search_from_legacy(name='phu my')
     (Ward(name='Phường Phú Mỹ', ...), Ward(name='Xã Phú Mỹ', ...), ...)
 
+Các kiểu dữ liệu trước 2025 có thể được sử dụng như sau:
+
+.. code-block:: python
+
+    from vietnam_provinces.legacy import Province, District, Ward
+    from vietnam_provinces.legacy.codes import ProvinceCode
+
+    # Tra cứu theo mã
+    province = Province.from_code(ProvinceCode.P_01)
+
+    # Duyệt qua tất cả
+    for p in Province.iter_all():
+        print(p.name)
+
 
 Để biết dữ liệu đã được cập nhật chưa, kiểm tra thuộc tính ``__data_version__`` của module:
 
@@ -138,6 +152,21 @@ Sinh mã Python
 .. code-block:: sh
 
     python3 -m dev scrape -f python
+
+
+Sinh mã cho dữ liệu trước 2025
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Để sinh mã Python cho đơn vị hành chính trước 2025 (phân cấp 3 cấp: Tỉnh -> Huyện -> Xã):
+
+.. code-block:: sh
+
+    python3 -m dev gen-legacy -c dev/seed-data/Pre-2025-07/Xa_2025-01-04.csv
+
+Lệnh này tạo ra hai file:
+
+1. *vietnam_provinces/legacy/codes.py* - Định nghĩa enum cho ``ProvinceCode``, ``DistrictCode``, ``WardCode``.
+2. *vietnam_provinces/legacy/lookup.py* - Bảng tra cứu cho các đối tượng ``Province``, ``District``, ``Ward``.
 
 
 Nguồn dữ liệu
