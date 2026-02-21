@@ -4,7 +4,7 @@ from .base import Province, VietNamDivisionType, Ward
 from .codes import ProvinceCode, WardCode
 
 
-__version__ = '2026.02.0'
+__version__ = '2026.2.1'
 # Data retrieval date, in UTC
 __data_version__ = '2026-02-21'
 NESTED_DIVISIONS_JSON_PATH = Path(__file__).parent / 'data' / 'nested-divisions.json'
