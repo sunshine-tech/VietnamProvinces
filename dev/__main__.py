@@ -219,35 +219,140 @@ def process_csv(
     generate_output(list(csv_provinces), csv_wards, output_format, output)
 
 
+def generate_province_conversion_table(ward_records: list) -> str:
+    """Generate province conversion table from ward conversion records."""
+    from collections import defaultdict
+
+    # Build province mappings from ward records
+    old_to_new_provinces: dict[int, set[int]] = defaultdict(set)
+    new_to_old_provinces: dict[int, set[int]] = defaultdict(set)
+
+    for r in ward_records:
+        old_to_new_provinces[r.old_province_code].add(r.new_province_code)
+        new_to_old_provinces[r.new_province_code].add(r.old_province_code)
+
+    # Generate Python code
+    lines = [
+        '"""',
+        'Province conversion table for 2025 administrative changes.',
+        '',
+        'This module provides bidirectional lookup for converting between',
+        'old provinces (pre-2025) and new provinces (post-2025).',
+        '',
+        'Auto-generated from ward conversion data.',
+        '"""',
+        '',
+        'from typing import NamedTuple',
+        '',
+        '',
+        'class OldProvinceRef(NamedTuple):',
+        '    """Reference to an old province (pre-2025)."""',
+        '',
+        '    code: int',
+        '',
+        '',
+        'class NewProvinceRef(NamedTuple):',
+        '    """Reference to a new province (post-2025)."""',
+        '',
+        '    code: int',
+        '',
+        '',
+        'class OldToNewEntry(NamedTuple):',
+        '    """Mapping from old province to new province(s)."""',
+        '',
+        '    old_province: OldProvinceRef',
+        '    new_provinces: tuple[NewProvinceRef, ...]',
+        '',
+        '',
+        'class NewToOldEntry(NamedTuple):',
+        '    """Mapping from new province to old province(s)."""',
+        '',
+        '    new_province: NewProvinceRef',
+        '    old_provinces: tuple[OldProvinceRef, ...]',
+        '',
+        '',
+        "EFFECTIVE_DATE = '2025-07-01'",
+        '',
+        '# Mapping from old province code to new province(s)',
+        'OLD_TO_NEW: dict[int, OldToNewEntry] = {',
+    ]
+
+    # Generate OLD_TO_NEW entries
+    for old_code in sorted(old_to_new_provinces.keys()):
+        new_codes = sorted(old_to_new_provinces[old_code])
+        if len(new_codes) == 1:
+            new_refs = f'(NewProvinceRef({new_codes[0]}),)'
+        else:
+            new_refs = '(' + ', '.join(f'NewProvinceRef({c})' for c in new_codes) + ')'  # noqa
+        lines.append(f'    {old_code}: OldToNewEntry(OldProvinceRef({old_code}), {new_refs}),')
+
+    lines.extend(
+        [
+            '}',
+            '',
+            '# Mapping from new province code to old province(s)',
+            'NEW_TO_OLD: dict[int, NewToOldEntry] = {',
+        ]
+    )
+
+    # Generate NEW_TO_OLD entries
+    for new_code in sorted(new_to_old_provinces.keys()):
+        old_codes = sorted(new_to_old_provinces[new_code])
+        if len(old_codes) == 1:
+            old_refs = f'(OldProvinceRef({old_codes[0]}),)'
+        else:
+            old_refs = '(' + ', '.join(f'OldProvinceRef({c})' for c in old_codes) + ')'  # noqa
+        lines.append(f'    {new_code}: NewToOldEntry(NewProvinceRef({new_code}), {old_refs}),')
+
+    lines.append('}')
+    lines.append('')
+
+    return '\n'.join(lines)
+
+
 @app.command('gen-conversion-table')
 @click.option('-v', '--verbose', count=True, default=False, help='Show more log to debug (verbose mode).')
 def gen_conversion_table(verbose: int) -> None:
-    """Generate ward conversion table Python code from CSV source.
+    """Generate ward and province conversion table Python code from CSV source.
 
-    This command creates a bidirectional lookup table for converting between
-    old wards (pre-2025) and new wards (post-2025). The table includes a flag
-    to indicate if an old ward was partly merged (split across multiple new wards).
+    This command creates bidirectional lookup tables for converting between
+    old wards/provinces (pre-2025) and new wards/provinces (post-2025).
+    The ward table includes a flag to indicate if an old ward was partly merged
+    (split across multiple new wards).
     """
     configure_logging(verbose)
 
     project_root = Path(__file__).parent.parent
     input_path = project_root / 'dev/seed-data/2025-07/BangChuyendoiĐVHCmoi_cu_khong_merge.csv'
-    output_path = project_root / 'vietnam_provinces' / '_ward_conversion_2025.py'
 
-    # Ensure output directory exists
-    output_path.parent.mkdir(parents=True, exist_ok=True)
+    # Generate ward conversion table
+    ward_output_path = project_root / 'vietnam_provinces' / '_ward_conversion_2025.py'
+    ward_output_path.parent.mkdir(parents=True, exist_ok=True)
 
     logger.info('Parsing conversion CSV: {}', input_path)
-    metadata = generate_conversion_table(input_path, output_path)
+    ward_metadata = generate_conversion_table(input_path, ward_output_path)
+
+    # Generate province conversion table
+    province_output_path = project_root / 'vietnam_provinces' / '_province_conversion_2025.py'
+
+    logger.info('Generating province conversion table...')
+    from .conversion_table import parse_conversion_csv
+
+    ward_records = parse_conversion_csv(input_path)
+    province_code = generate_province_conversion_table(ward_records)
+    province_output_path.write_text(province_code)
 
     logger.info('Formatting and linting code with Ruff...')
-    format_and_lint_code(output_path.parent)
+    format_and_lint_code(ward_output_path.parent)
 
-    rel_output_path = output_path.relative_to(Path.cwd(), walk_up=True)
-    echo(f'Generated conversion table: {rel_output_path}')
-    echo(f'  Old wards: {metadata.stats.old_wards_count}')
-    echo(f'  New wards: {metadata.stats.new_wards_count}')
-    echo(f'  Partly merged: {metadata.stats.partly_merged_count}')
+    rel_ward_path = ward_output_path.relative_to(Path.cwd(), walk_up=True)
+    rel_province_path = province_output_path.relative_to(Path.cwd(), walk_up=True)
+
+    echo(f'Generated ward conversion table: {rel_ward_path}')
+    echo(f'  Old wards: {ward_metadata.stats.old_wards_count}')
+    echo(f'  New wards: {ward_metadata.stats.new_wards_count}')
+    echo(f'  Partly merged: {ward_metadata.stats.partly_merged_count}')
+    echo(f'Generated province conversion table: {rel_province_path}')
 
 
 @app.command('gen-legacy')

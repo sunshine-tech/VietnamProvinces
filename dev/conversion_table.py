@@ -42,11 +42,9 @@ class OldWardRef(BaseModel):
     """Reference to an old ward (pre-2025)."""
 
     code: int
-    name: NormalizedStr
     district_code: int
     province_code: int
     is_partly_merged: bool
-    division_type: VietNamDivisionType
 
 
 class NewWardRef(BaseModel):
@@ -198,11 +196,9 @@ def build_conversion_table(records: list[ConversionCSVRecord]) -> ConversionTabl
 
         old_ref = OldWardRef(
             code=group[0].old_ward_code,
-            name=group[0].old_ward_name,
             district_code=group[0].old_district_code,
             province_code=group[0].old_province_code,
             is_partly_merged=is_partly_merged,
-            division_type=extract_division_type_from_name(group[0].old_ward_name),
         )
 
         new_refs = [NewWardRef(code=r.new_ward_code, province_code=r.new_province_code) for r in group]
@@ -220,11 +216,9 @@ def build_conversion_table(records: list[ConversionCSVRecord]) -> ConversionTabl
         old_refs = [
             OldWardRef(
                 code=r.old_ward_code,
-                name=r.old_ward_name,
                 district_code=r.old_district_code,
                 province_code=r.old_province_code,
                 is_partly_merged=r.is_partly_merged,
-                division_type=extract_division_type_from_name(r.old_ward_name),
             )
             for r in group
         ]
@@ -252,11 +246,9 @@ def gen_old_ward_ref(old_ref: OldWardRef) -> ast.Call:
         func=ast.Name(id='OldWardRef'),
         args=[
             ast.Constant(value=old_ref.code),
-            ast.Constant(value=old_ref.name),
             ast.Constant(value=old_ref.district_code),
             ast.Constant(value=old_ref.province_code),
             ast.Constant(value=old_ref.is_partly_merged),
-            ast.Attribute(value=ast.Name(id='VietNamDivisionType'), attr=old_ref.division_type.name),
         ],
         keywords=[],
     )

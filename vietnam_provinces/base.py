@@ -5,8 +5,6 @@
 
 from __future__ import annotations
 
-import re
-import unicodedata
 from collections.abc import Iterator
 from dataclasses import dataclass
 from enum import StrEnum
@@ -17,7 +15,7 @@ from .codes import ProvinceCode, WardCode
 
 
 if TYPE_CHECKING:
-    from ._ward_conversion_2025 import OldWardRef
+    from .legacy.base import Province as LegacyProvince
     from .legacy.base import Ward as LegacyWard
 
 
@@ -65,14 +63,16 @@ class Province:
         """
         return self.name
 
-    @staticmethod
-    def from_code(code: ProvinceCode) -> Province:
+    @classmethod
+    def from_code(cls, code: ProvinceCode) -> Province:
         """Look up a Province from code.
 
         :param code: The province code
         :returns: The corresponding :class:`vietnam_provinces.Province` object
         :raises ValueError: If the province code is invalid
         """
+        # Cannot use `Self` in return type because this method returns values from
+        # a pre-built mapping (PROVINCE_MAPPING), and the type checker cannot infer Self.
         from ._lookup import PROVINCE_MAPPING
 
         try:
@@ -81,16 +81,122 @@ class Province:
             msg = f'Province code {code} is invalid.'
             raise ValueError(msg) from e
 
-    @staticmethod
-    def iter_all() -> Iterator[Province]:
+    @classmethod
+    def iter_all(cls) -> Iterator[Province]:
         """Get iterator over all provinces.
 
         :returns: Iterator over all :class:`vietnam_provinces.Province` objects
         """
+        # Cannot use `Self` in return type because this method returns values from
+        # a pre-built mapping (PROVINCE_MAPPING), and the type checker cannot infer Self.
         from ._lookup import PROVINCE_MAPPING
 
         values = PROVINCE_MAPPING.values()
         return iter(values)
+
+    @classmethod
+    def search_from_legacy(cls, name: str = '', code: int = 0) -> tuple[Province, ...]:
+        """Given a legacy province code or part of a legacy province name, return all matching provinces.
+
+        This method searches for current (post-2025) provinces that were formed from
+        legacy (pre-2025) provinces matching the given criteria.
+
+        :param name: Part of a legacy province name to search for
+        :param code: The legacy province code
+        :returns: Tuple of matching :class:`vietnam_provinces.Province` objects
+
+        Example:
+            >>> # Search by legacy province code
+            >>> Province.search_from_legacy(code=77)  # Tỉnh Bà Rịa - Vũng Tàu (old)
+            (Province(name='Thành phố Hồ Chí Minh', ...),)
+        """
+        # Cannot use `Self` in return type because this method uses generator expressions
+        # with cls.from_code(), and the type checker cannot infer Self in this context.
+        from ._province_conversion_2025 import OLD_TO_NEW
+        from .legacy import Province as LegacyProvince
+        from .legacy.codes import ProvinceCode as LegacyProvinceCode
+
+        if code > 0:
+            if (entry := OLD_TO_NEW.get(code)) is None:
+                log.debug('No conversion entry found for legacy province code %s', code)
+                return ()
+            return tuple(cls.from_code(ProvinceCode(np.code)) for np in entry.new_provinces)
+
+        if not name:
+            log.debug('Empty search query provided')
+            return ()
+
+        # Search by name - normalize and match
+        from ._bridges import normalize_search_name
+
+        query = normalize_search_name(name)
+        results: list[tuple[Province, str, int]] = []  # (province, old_name, match_score)
+        seen_codes: set[int] = set()
+
+        for old_code, entry in OLD_TO_NEW.items():
+            try:
+                legacy_province = LegacyProvince.from_code(LegacyProvinceCode(old_code))
+                old_name = legacy_province.name
+            except (ValueError, KeyError):
+                log.debug('Legacy province code %s not found in lookup', old_code)
+                continue
+
+            normalized_old_name = normalize_search_name(old_name)
+
+            if query not in normalized_old_name:
+                continue
+
+            # Simple match score based on position
+            match_score = normalized_old_name.find(query)
+
+            for np in entry.new_provinces:
+                if np.code in seen_codes:
+                    continue
+
+                try:
+                    province = cls.from_code(ProvinceCode(np.code))
+                    results.append((province, old_name, match_score))
+                    seen_codes.add(np.code)
+                except ValueError:
+                    log.debug('New province code %s not found in lookup', np.code)
+                    continue
+
+        # Sort by match score (lower is better)
+        results.sort(key=lambda x: x[2])
+        return tuple(province for province, _, _ in results)
+
+    def get_legacy_sources(self) -> tuple[LegacyProvince, ...]:
+        """Get the legacy (pre-2025) province sources that were merged to form this province.
+
+        This method returns the legacy provinces that were merged or reorganized to form
+        the current (post-2025) province.
+
+        :returns: Tuple of legacy :class:`vietnam_provinces.legacy.Province` objects
+
+        Example:
+            >>> province = Province.from_code(79)  # Thành phố Hồ Chí Minh
+            >>> province.get_legacy_sources()
+            (Province(name='Tỉnh Bình Dương', ...), Province(name='Tỉnh Bà Rịa - Vũng Tàu', ...),
+             Province(name='Thành phố Hồ Chí Minh', ...))
+        """
+        from ._province_conversion_2025 import NEW_TO_OLD
+        from .legacy import Province as LegacyProvince
+        from .legacy.codes import ProvinceCode as LegacyProvinceCode
+
+        if (entry := NEW_TO_OLD.get(self.code.value)) is None:
+            log.debug('No legacy source found for province code %s', self.code.value)
+            return ()
+
+        legacy_provinces: list[LegacyProvince] = []
+        for old_ref in entry.old_provinces:
+            try:
+                province = LegacyProvince.from_code(LegacyProvinceCode(old_ref.code))
+                legacy_provinces.append(province)
+            except (ValueError, KeyError):
+                log.debug('Legacy province code %s not found in lookup', old_ref.code)
+                continue
+
+        return tuple(legacy_provinces)
 
 
 @dataclass(frozen=True)
@@ -120,14 +226,16 @@ class Ward:
         """
         return self.name
 
-    @staticmethod
-    def from_code(code: WardCode) -> Ward:
+    @classmethod
+    def from_code(cls, code: WardCode) -> Ward:
         """Look up a Ward from code.
 
         :param code: The ward code
         :returns: The corresponding :class:`vietnam_provinces.Ward` object
         :raises ValueError: If the ward code is invalid
         """
+        # Cannot use `Self` in return type because this method returns values from
+        # a pre-built mapping (WARD_MAPPING), and the type checker cannot infer Self.
         from ._lookup import WARD_MAPPING
 
         try:
@@ -136,24 +244,28 @@ class Ward:
             msg = f'Ward code {code} is invalid.'
             raise ValueError(msg) from e
 
-    @staticmethod
-    def iter_all() -> Iterator[Ward]:
+    @classmethod
+    def iter_all(cls) -> Iterator[Ward]:
         """Get iterator over all wards.
 
         :returns: Iterator over all :class:`vietnam_provinces.Ward` objects
         """
+        # Cannot use `Self` in return type because this method returns values from
+        # a pre-built mapping (WARD_MAPPING), and the type checker cannot infer Self.
         from ._lookup import WARD_MAPPING
 
         values = WARD_MAPPING.values()
         return iter(values)
 
-    @staticmethod
-    def iter_by_province(code: ProvinceCode) -> Iterator[Ward]:
+    @classmethod
+    def iter_by_province(cls, code: ProvinceCode) -> Iterator[Ward]:
         """Get iterator over wards belonging to a province.
 
         :param code: The province code
         :returns: Iterator over :class:`vietnam_provinces.Ward` objects belonging to the specified province
         """
+        # Cannot use `Self` in return type because this method returns values from
+        # a pre-built mapping (WARD_MAPPING), and the type checker cannot infer Self.
         from ._lookup import WARD_MAPPING
 
         values = iter(w for w in WARD_MAPPING.values() if w.province_code == code)
@@ -179,7 +291,11 @@ class Ward:
             >>> Ward.search_from_legacy(code=22855)  # Xã Tân Hải
             (Ward(name='Xã Tân Hải', ...),)
         """
+        # Cannot use `Self` in return type because this method uses generator expressions
+        # with cls.from_code(), and the type checker cannot infer Self in this context.
         from ._ward_conversion_2025 import OLD_TO_NEW
+        from .legacy import Ward as LegacyWard
+        from .legacy.codes import WardCode as LegacyWardCode
 
         if code > 0:
             if (entry := OLD_TO_NEW.get(code)) is None:
@@ -191,19 +307,28 @@ class Ward:
             log.debug('Empty search query provided')
             return ()
 
-        query = _normalize_search_name(name)
+        from ._bridges import calculate_match_score, normalize_search_name
+
+        query = normalize_search_name(name)
         results: list[tuple[Ward, str, int]] = []  # (ward, old_name, match_score)
         seen_codes: set[int] = set()
 
-        for entry in OLD_TO_NEW.values():
-            old_name = entry.old_ward.name
-            normalized_old_name = _normalize_search_name(old_name)
+        for old_code, entry in OLD_TO_NEW.items():
+            # Look up the old ward name from legacy dataclass
+            try:
+                legacy_ward = LegacyWard.from_code(LegacyWardCode(old_code))
+                old_name = legacy_ward.name
+            except (ValueError, KeyError):
+                log.debug('Legacy ward code %s not found in lookup', old_code)
+                continue
+
+            normalized_old_name = normalize_search_name(old_name)
 
             if query not in normalized_old_name:
                 continue
 
             # Calculate match score (lower is better)
-            match_score = _calculate_match_score(name, query, entry.old_ward)
+            match_score = calculate_match_score(name, query, old_name, legacy_ward.division_type)
 
             for nw in entry.new_wards:
                 if nw.code in seen_codes:
@@ -256,95 +381,3 @@ class Ward:
                 continue
 
         return tuple(legacy_wards)
-
-
-def _normalize_search_name(name: str) -> str:
-    """Normalize Vietnamese name for fuzzy searching.
-
-    :param name: The name to normalize
-    :returns: Normalized name string
-    """
-    name = name.lower()
-    # Remove common prefixes
-    name = re.sub(r'^(xã|phường|thị trấn)\s+', '', name)
-    # Remove diacritics
-    name = unicodedata.normalize('NFD', name)
-    name = ''.join(c for c in name if unicodedata.category(c) != 'Mn')
-    name = name.replace('đ', 'd')
-    return unicodedata.normalize('NFC', name)
-
-
-def _calculate_match_score(
-    query: str,
-    normalized_query: str,
-    old_ward: OldWardRef,
-) -> int:
-    """Calculate match score for sorting search results (lower score = better match).
-
-    Priority:
-    1. Exact match (case-sensitive, with diacritics)
-    2. Exact match (case-insensitive, with diacritics)
-    3. Exact match (normalized, no diacritics)
-    4. Partial match scores based on position and length
-
-    Within each priority level, prefer "Thị trấn" > "Phường" > "Xã"
-
-    :param query: Original query string
-    :param normalized_query: Normalized query (lowercase, no diacritics)
-    :param old_ward: The old ward reference with name and division_type
-    :returns: Match score (lower is better)
-    """
-    from vietnam_provinces.legacy import base as legacy
-
-    candidate = old_ward.name
-    normalized_candidate = _normalize_search_name(candidate)
-
-    # Remove common prefixes from candidates for comparison
-    candidate_clean = re.sub(r'^(xã|phường|thị trấn)\s+', '', candidate, flags=re.IGNORECASE)
-    candidate_lower = candidate.lower()
-    candidate_lower_clean = re.sub(r'^(xã|phường|thị trấn)\s+', '', candidate_lower)
-
-    # Determine prefix bonus (thị trấn is preferred) using the stored division_type
-    prefix_bonus = 0
-    if old_ward.division_type == legacy.VietNamDivisionType.THI_TRAN:
-        prefix_bonus = 0
-    elif old_ward.division_type == legacy.VietNamDivisionType.PHUONG:
-        prefix_bonus = 3
-    elif old_ward.division_type == legacy.VietNamDivisionType.XA:
-        prefix_bonus = 6
-
-    # Check if query includes prefix - if so, match full name with prefix
-    query_lower = query.lower()
-    if query_lower.startswith('xã ') or query_lower.startswith('phường ') or query_lower.startswith('thị trấn '):
-        # Query includes prefix, do full match including prefix
-        if query == candidate:
-            return 0
-        if query_lower == candidate_lower:
-            return 1
-        # Continue to normalized match below
-    else:
-        # Query doesn't include prefix, match without prefix
-        # Exact match with diacritics and case
-        if query == candidate_clean:
-            return 0 + prefix_bonus
-
-        # Exact match with diacritics, case-insensitive
-        if query.lower() == candidate_lower_clean:
-            return 1 + prefix_bonus
-
-    # Exact match normalized (no diacritics)
-    normalized_candidate_clean = re.sub(r'^(xa|phuong|thi tran)\s+', '', normalized_candidate)
-    if normalized_query == normalized_candidate_clean:
-        return 2 + prefix_bonus
-
-    # Partial match: earlier position is better
-    pos = normalized_candidate.find(normalized_query)
-    if pos == 0:
-        # Match at start (after prefix removal)
-        return 10 + prefix_bonus
-    elif pos > 0:
-        # Match in middle/end: score increases with position
-        return 100 + pos + prefix_bonus
-
-    # Should not reach here since we filter by containment before calling this
-    return 1000

@@ -83,6 +83,15 @@ Bạn có thể import vào code Python để dùng ngay.
     >>> ward.get_legacy_sources()
     (Ward(name='Phường Trúc Bạch', ...), Ward(name='Phường Quán Thánh', ...), ...)
 
+    >>> # Tìm kiếm tỉnh thành hiện tại bằng mã tỉnh cũ (trước 2025)
+    >>> Province.search_from_legacy(code=77)  # Tỉnh Bà Rịa - Vũng Tàu
+    (Province(name='Thành phố Hồ Chí Minh', ...),)
+
+    >>> # Lấy các tỉnh cũ đã được sáp nhập để tạo thành tỉnh thành mới
+    >>> province = Province.from_code(79)  # Thành phố Hồ Chí Minh
+    >>> province.get_legacy_sources()
+    (Province(name='Tỉnh Bình Dương', ...), Province(name='Tỉnh Bà Rịa - Vũng Tàu', ...), Province(name='Thành phố Hồ Chí Minh', ...))
+
 Các kiểu dữ liệu trước 2025 có thể được sử dụng như sau:
 
 .. code-block:: python

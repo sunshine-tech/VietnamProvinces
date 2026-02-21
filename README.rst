@@ -82,6 +82,15 @@ There are two kinds of objects, first is the object presenting a single province
     >>> ward.get_legacy_sources()
     (Ward(name='Phường Trúc Bạch', ...), Ward(name='Phường Quán Thánh', ...), ...)
 
+    >>> # Search current provinces by legacy province code (pre-2025)
+    >>> Province.search_from_legacy(code=77)  # Tỉnh Bà Rịa - Vũng Tàu
+    (Province(name='Thành phố Hồ Chí Minh', ...),)
+
+    >>> # Get legacy provinces that were merged to form a new province
+    >>> province = Province.from_code(79)  # Thành phố Hồ Chí Minh
+    >>> province.get_legacy_sources()
+    (Province(name='Tỉnh Bình Dương', ...), Province(name='Tỉnh Bà Rịa - Vũng Tàu', ...), Province(name='Thành phố Hồ Chí Minh', ...))
+
 The pre-2025 data types can then be used as:
 
 .. code-block:: python

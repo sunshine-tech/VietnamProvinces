@@ -1,7 +1,7 @@
 import pytest
 
-from vietnam_provinces import Ward
-from vietnam_provinces.codes import WardCode
+from vietnam_provinces import Province, Ward
+from vietnam_provinces.codes import ProvinceCode, WardCode
 
 
 @pytest.mark.parametrize(
@@ -19,15 +19,21 @@ def test_search_from_legacy_by_name_prioritizes_diacritics_match(query: str, exp
     # Should return results
     assert len(results) > 0
 
-    # Get the old ward names for verification
+    # Get the old ward names for verification from legacy dataclass
     from vietnam_provinces._ward_conversion_2025 import OLD_TO_NEW
+    from vietnam_provinces.legacy import Ward as LegacyWard
+    from vietnam_provinces.legacy.codes import WardCode as LegacyWardCode
 
     # Find wards with expected_first in their old names
     expected_first_codes = set()
 
-    for entry in OLD_TO_NEW.values():
-        if entry.old_ward.name == expected_first:
-            expected_first_codes.update(w.code for w in entry.new_wards)
+    for old_code, entry in OLD_TO_NEW.items():
+        try:
+            legacy_ward = LegacyWard.from_code(LegacyWardCode(old_code))
+            if legacy_ward.name == expected_first:
+                expected_first_codes.update(w.code for w in entry.new_wards)
+        except (ValueError, KeyError):
+            continue
 
     # The first result should be one with the expected_first old name
     if expected_first_codes:
@@ -115,6 +121,94 @@ def test_get_legacy_sources_returns_tuple(ward_code: int) -> None:
     """Test that get_legacy_sources returns a tuple."""
     ward = Ward.from_code(WardCode(ward_code))
     legacy_sources = ward.get_legacy_sources()
+
+    # Should return a tuple (not None, not list)
+    assert isinstance(legacy_sources, tuple)
+
+
+# Province tests
+
+
+@pytest.mark.parametrize(
+    ('legacy_code', 'expected_province_name'),
+    [
+        (77, 'Thành phố Hồ Chí Minh'),  # Tỉnh Bà Rịa - Vũng Tàu (legacy) -> Thành phố Hồ Chí Minh (new)
+    ],
+)
+def test_province_search_from_legacy_by_code(legacy_code: int, expected_province_name: str) -> None:
+    """Test that Province.search_from_legacy returns correct province when searching by legacy code."""
+    results = Province.search_from_legacy(code=legacy_code)
+
+    # Should return exactly one result for this case
+    assert len(results) == 1
+
+    # The result should have the expected name
+    assert results[0].name == expected_province_name
+
+
+@pytest.mark.parametrize(
+    ('province_code', 'expected_old_province_name'),
+    [
+        (
+            79,
+            'Tỉnh Bà Rịa - Vũng Tàu',
+        ),  # Thành phố Hồ Chí Minh - merged from multiple provinces including Bà Rịa - Vũng Tàu
+    ],
+)
+def test_province_get_legacy_sources_returns_legacy_provinces(
+    province_code: int, expected_old_province_name: str
+) -> None:
+    """Test that Province.get_legacy_sources returns legacy provinces for a merged province."""
+    province = Province.from_code(ProvinceCode(province_code))
+    legacy_sources = province.get_legacy_sources()
+
+    # Should have legacy sources
+    assert len(legacy_sources) > 0
+
+    # Check that all returned items are legacy Province objects
+    from vietnam_provinces.legacy import Province as LegacyProvince
+
+    for lp in legacy_sources:
+        assert isinstance(lp, LegacyProvince)
+
+    # Check that expected old province name is in the legacy sources
+    old_names = {lp.name for lp in legacy_sources}
+    assert expected_old_province_name in old_names
+
+
+@pytest.mark.parametrize(
+    'province_code',
+    [
+        79,  # Thành phố Hồ Chí Minh - merged from multiple provinces
+    ],
+)
+def test_province_get_legacy_sources_has_correct_codes(province_code: int) -> None:
+    """Test that Province.get_legacy_sources returns provinces with correct codes."""
+    from vietnam_provinces._province_conversion_2025 import NEW_TO_OLD
+
+    province = Province.from_code(ProvinceCode(province_code))
+    legacy_sources = province.get_legacy_sources()
+
+    # Get expected old province codes from conversion table
+    entry = NEW_TO_OLD.get(province_code)
+    assert entry is not None
+    expected_codes = {op.code for op in entry.old_provinces}
+
+    # Verify all legacy sources have the expected codes
+    actual_codes = {lp.code.value for lp in legacy_sources}
+    assert actual_codes == expected_codes
+
+
+@pytest.mark.parametrize(
+    'province_code',
+    [
+        79,  # Thành phố Hồ Chí Minh
+    ],
+)
+def test_province_get_legacy_sources_returns_tuple(province_code: int) -> None:
+    """Test that Province.get_legacy_sources returns a tuple."""
+    province = Province.from_code(ProvinceCode(province_code))
+    legacy_sources = province.get_legacy_sources()
 
     # Should return a tuple (not None, not list)
     assert isinstance(legacy_sources, tuple)
