@@ -37,8 +37,6 @@ class NewToOldEntry(NamedTuple):
 
 
 EFFECTIVE_DATE = '2025-07-01'
-
-# Mapping from old province code to new province(s)
 OLD_TO_NEW: dict[int, OldToNewEntry] = {
     1: OldToNewEntry(OldProvinceRef(1), (NewProvinceRef(1),)),
     2: OldToNewEntry(OldProvinceRef(2), (NewProvinceRef(8),)),
@@ -104,8 +102,6 @@ OLD_TO_NEW: dict[int, OldToNewEntry] = {
     95: OldToNewEntry(OldProvinceRef(95), (NewProvinceRef(96),)),
     96: OldToNewEntry(OldProvinceRef(96), (NewProvinceRef(96),)),
 }
-
-# Mapping from new province code to old province(s)
 NEW_TO_OLD: dict[int, NewToOldEntry] = {
     1: NewToOldEntry(NewProvinceRef(1), (OldProvinceRef(1),)),
     4: NewToOldEntry(NewProvinceRef(4), (OldProvinceRef(4),)),
@@ -142,3 +138,13 @@ NEW_TO_OLD: dict[int, NewToOldEntry] = {
     92: NewToOldEntry(NewProvinceRef(92), (OldProvinceRef(92), OldProvinceRef(93), OldProvinceRef(94))),
     96: NewToOldEntry(NewProvinceRef(96), (OldProvinceRef(95), OldProvinceRef(96))),
 }
+
+
+def find_new_provinces(old_province_code: int) -> OldToNewEntry | None:
+    """Find new province(s) that an old province was merged into."""
+    return OLD_TO_NEW.get(old_province_code)
+
+
+def find_old_provinces(new_province_code: int) -> NewToOldEntry | None:
+    """Find old province(s) that were merged to form a new province."""
+    return NEW_TO_OLD.get(new_province_code)

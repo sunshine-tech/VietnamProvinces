@@ -290,8 +290,8 @@ def gen_new_to_old_entry(new_code: str, entry: NewToOldEntry) -> tuple[ast.expr,
     return (key, value)
 
 
-def generate_conversion_table(csv_path: Path, output_path: Path) -> ConversionMetadata:
-    """Generate the conversion table as Python code."""
+def generate_ward_conversion_table(csv_path: Path, output_path: Path) -> ConversionMetadata:
+    """Generate the ward conversion table as Python code."""
     records = parse_conversion_csv(csv_path)
     table = build_conversion_table(records)
 
@@ -336,6 +336,194 @@ def generate_conversion_table(csv_path: Path, output_path: Path) -> ConversionMe
         partly_merged_count=sum(1 for e in table.old_to_new.values() if e.old_ward.is_partly_merged),
     )
     return ConversionMetadata(
+        description=table.metadata['description'],
+        effective_date=table.metadata['effective_date'],
+        source=table.metadata['source'],
+        stats=stats,
+    )
+
+
+# Province conversion table classes and functions
+class OldProvinceRef(BaseModel):
+    """Reference to an old province (pre-2025)."""
+
+    code: int
+
+
+class NewProvinceRef(BaseModel):
+    """Reference to a new province (post-2025)."""
+
+    code: int
+
+
+class ProvinceOldToNewEntry(BaseModel):
+    """Mapping from old province to new province(s)."""
+
+    old_province: OldProvinceRef
+    new_provinces: list[NewProvinceRef]
+
+
+class ProvinceNewToOldEntry(BaseModel):
+    """Mapping from new province to old province(s)."""
+
+    new_province: NewProvinceRef
+    old_provinces: list[OldProvinceRef]
+
+
+@dataclass
+class ProvinceConversionStats:
+    """Statistics for the province conversion table."""
+
+    old_provinces_count: int
+    new_provinces_count: int
+
+
+@dataclass
+class ProvinceConversionMetadata:
+    """Metadata for the province conversion table."""
+
+    description: str
+    effective_date: str
+    source: str
+    stats: ProvinceConversionStats
+
+
+class ProvinceConversionTable(BaseModel):
+    """Complete conversion table for 2025 province changes."""
+
+    metadata: dict = Field(default_factory=dict)
+    old_to_new: dict[str, ProvinceOldToNewEntry]
+    new_to_old: dict[str, ProvinceNewToOldEntry]
+
+
+def build_province_conversion_table(records: list[ConversionCSVRecord]) -> ProvinceConversionTable:
+    """Build the province conversion table from ward conversion records."""
+    from collections import defaultdict
+
+    # Build province mappings from ward records
+    old_to_new_provinces: dict[int, set[int]] = defaultdict(set)
+    new_to_old_provinces: dict[int, set[int]] = defaultdict(set)
+
+    for r in records:
+        old_to_new_provinces[r.old_province_code].add(r.new_province_code)
+        new_to_old_provinces[r.new_province_code].add(r.old_province_code)
+
+    # Build old_to_new entries
+    old_to_new: dict[str, ProvinceOldToNewEntry] = {}
+    for old_code in sorted(old_to_new_provinces.keys()):
+        new_codes = sorted(old_to_new_provinces[old_code])
+        old_ref = OldProvinceRef(code=old_code)
+        new_refs = [NewProvinceRef(code=c) for c in new_codes]
+        old_to_new[str(old_code)] = ProvinceOldToNewEntry(old_province=old_ref, new_provinces=new_refs)
+
+    # Build new_to_old entries
+    new_to_old: dict[str, ProvinceNewToOldEntry] = {}
+    for new_code in sorted(new_to_old_provinces.keys()):
+        old_codes = sorted(new_to_old_provinces[new_code])
+        new_ref = NewProvinceRef(code=new_code)
+        old_refs = [OldProvinceRef(code=c) for c in old_codes]
+        new_to_old[str(new_code)] = ProvinceNewToOldEntry(new_province=new_ref, old_provinces=old_refs)
+
+    metadata = {
+        'description': 'Province conversion table for administrative changes effective 01/07/2025',
+        'effective_date': '2025-07-01',
+        'source': 'BangChuyendoiĐVHCmoi_cu_khong_merge.csv',
+    }
+
+    return ProvinceConversionTable(metadata=metadata, old_to_new=old_to_new, new_to_old=new_to_old)
+
+
+def gen_old_province_ref(old_ref: OldProvinceRef) -> ast.Call:
+    """Generate AST for OldProvinceRef creation using positional args."""
+    return ast.Call(
+        func=ast.Name(id='OldProvinceRef'),
+        args=[ast.Constant(value=old_ref.code)],
+        keywords=[],
+    )
+
+
+def gen_new_province_ref(new_ref: NewProvinceRef) -> ast.Call:
+    """Generate AST for NewProvinceRef creation using positional args."""
+    return ast.Call(
+        func=ast.Name(id='NewProvinceRef'),
+        args=[ast.Constant(value=new_ref.code)],
+        keywords=[],
+    )
+
+
+def gen_province_old_to_new_entry(old_code: str, entry: ProvinceOldToNewEntry) -> tuple[ast.expr, ast.expr]:
+    """Generate AST key-value pair for OLD_TO_NEW dict entry."""
+    key = ast.Constant(value=int(old_code))
+
+    new_provinces_tuple = ast.Tuple(elts=[gen_new_province_ref(np) for np in entry.new_provinces], ctx=ast.Load())
+
+    value = ast.Call(
+        func=ast.Name(id='OldToNewEntry'),
+        args=[gen_old_province_ref(entry.old_province), new_provinces_tuple],
+        keywords=[],
+    )
+    return (key, value)
+
+
+def gen_province_new_to_old_entry(new_code: str, entry: ProvinceNewToOldEntry) -> tuple[ast.expr, ast.expr]:
+    """Generate AST key-value pair for NEW_TO_OLD dict entry."""
+    key = ast.Constant(value=int(new_code))
+
+    old_provinces_tuple = ast.Tuple(elts=[gen_old_province_ref(op) for op in entry.old_provinces], ctx=ast.Load())
+
+    value = ast.Call(
+        func=ast.Name(id='NewToOldEntry'),
+        args=[gen_new_province_ref(entry.new_province), old_provinces_tuple],
+        keywords=[],
+    )
+    return (key, value)
+
+
+def generate_province_conversion_table(csv_path: Path, output_path: Path) -> ProvinceConversionMetadata:
+    """Generate the province conversion table as Python code."""
+    records = parse_conversion_csv(csv_path)
+    table = build_province_conversion_table(records)
+
+    template_file = Path(__file__).parent / '_province_conversion_table_template.py'
+    module = ast.parse(template_file.read_text())
+
+    old_to_new_node = next(
+        n
+        for n in module.body
+        if isinstance(n, ast.AnnAssign) and isinstance(n.target, ast.Name) and n.target.id == 'OLD_TO_NEW'
+    )
+    new_to_old_node = next(
+        n
+        for n in module.body
+        if isinstance(n, ast.AnnAssign) and isinstance(n.target, ast.Name) and n.target.id == 'NEW_TO_OLD'
+    )
+
+    old_to_new_keys: list[ast.expr | None] = []
+    old_to_new_values: list[ast.expr] = []
+    for old_code, entry in table.old_to_new.items():
+        key, value = gen_province_old_to_new_entry(old_code, entry)
+        old_to_new_keys.append(key)
+        old_to_new_values.append(value)
+
+    old_to_new_node.value = ast.Dict(keys=old_to_new_keys, values=old_to_new_values)
+
+    new_to_old_keys: list[ast.expr | None] = []
+    new_to_old_values: list[ast.expr] = []
+    for new_code, entry in table.new_to_old.items():
+        key, value = gen_province_new_to_old_entry(new_code, entry)
+        new_to_old_keys.append(key)
+        new_to_old_values.append(value)
+
+    new_to_old_node.value = ast.Dict(keys=new_to_old_keys, values=new_to_old_values)
+
+    code = ast.unparse(ast.fix_missing_locations(module))
+    output_path.write_text(code)
+
+    stats = ProvinceConversionStats(
+        old_provinces_count=len(table.old_to_new),
+        new_provinces_count=len(table.new_to_old),
+    )
+    return ProvinceConversionMetadata(
         description=table.metadata['description'],
         effective_date=table.metadata['effective_date'],
         source=table.metadata['source'],
