@@ -78,6 +78,11 @@ Bạn có thể import vào code Python để dùng ngay.
     >>> Ward.search_from_legacy(name='phu my')
     (Ward(name='Phường Phú Mỹ', ...), Ward(name='Xã Phú Mỹ', ...), ...)
 
+    >>> # Lấy các phường xã cũ đã được sáp nhập để tạo thành phường xã mới
+    >>> ward = Ward.from_code(4)  # Phường Ba Đình
+    >>> ward.get_legacy_sources()
+    (Ward(name='Phường Trúc Bạch', ...), Ward(name='Phường Quán Thánh', ...), ...)
+
 Các kiểu dữ liệu trước 2025 có thể được sử dụng như sau:
 
 .. code-block:: python
