@@ -83,6 +83,10 @@ Bạn có thể import vào code Python để dùng ngay.
     >>> ward.get_legacy_sources()
     (Ward(name='Phường Trúc Bạch', ...), Ward(name='Phường Quán Thánh', ...), ...)
 
+    >>> # Tìm kiếm phường xã hiện tại bằng mã quận huyện cũ (quận huyện bị giải thể từ 2025)
+    >>> Ward.search_from_legacy_district(code=748)  # Thành phố Bà Rịa (cũ)
+    (Ward(name='Phường Bà Rịa', ...), Ward(name='Phường Long Hương', ...), ...)
+
     >>> # Tìm kiếm tỉnh thành hiện tại bằng mã tỉnh cũ (trước 2025)
     >>> Province.search_from_legacy(code=77)  # Tỉnh Bà Rịa - Vũng Tàu
     (Province(name='Thành phố Hồ Chí Minh', ...),)

@@ -82,6 +82,10 @@ There are two kinds of objects, first is the object presenting a single province
     >>> ward.get_legacy_sources()
     (Ward(name='Phường Trúc Bạch', ...), Ward(name='Phường Quán Thánh', ...), ...)
 
+    >>> # Search current wards by legacy district (districts were dissolved in 2025)
+    >>> Ward.search_from_legacy_district(code=748)  # Thành phố Bà Rịa (old)
+    (Ward(name='Phường Bà Rịa', ...), Ward(name='Phường Long Hương', ...), ...)
+
     >>> # Search current provinces by legacy province code (pre-2025)
     >>> Province.search_from_legacy(code=77)  # Tỉnh Bà Rịa - Vũng Tàu
     (Province(name='Thành phố Hồ Chí Minh', ...),)

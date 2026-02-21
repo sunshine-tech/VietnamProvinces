@@ -20,6 +20,8 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Install the project
         run: uv sync --all-extras --all-groups
+      - name: Run type check
+        run: uv run ty check
       - name: Run tests
         run: uv run pytest tests
       - name: Build docs

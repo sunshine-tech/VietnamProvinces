@@ -420,6 +420,70 @@ class Ward:
         results.sort(key=lambda x: x[2])
         return tuple(ward for ward, _, _ in results)
 
+    @classmethod
+    def search_from_legacy_district(cls, name: str = '', code: int = 0) -> tuple[Ward, ...]:
+        """Given a legacy district code or part of a legacy district name, return all new wards.
+
+        This method searches for current (post-2025) wards that were formed from
+        legacy (pre-2025) districts matching the given criteria.
+        Since districts were dissolved in the 2025 administrative rearrangement,
+        this helps find which new wards now cover the area of an old district.
+
+        :param name: Part of a legacy district name to search for
+        :param code: The legacy district code
+        :returns: Tuple of matching :class:`vietnam_provinces.Ward` objects
+
+        Example:
+            >>> # Search by legacy district code
+            >>> Ward.search_from_legacy_district(code=748)  # Thành phố Bà Rịa (old)
+            (Ward(name='Phường Bà Rịa', ...), Ward(name='Phường Long Hương', ...), ...)
+
+            >>> # Search by legacy district name
+            >>> Ward.search_from_legacy_district(name='Bà Rịa')
+            (Ward(name='Phường Bà Rịa', ...), Ward(name='Phường Long Hương', ...), ...)
+        """
+        from ._ward_conversion_2025 import OLD_TO_NEW
+        from .legacy import District as LegacyDistrict
+
+        if code > 0:
+            # Find all legacy wards in this district, then get their new wards
+            district_code = code
+        elif name:
+            # Search for districts by name
+            districts = LegacyDistrict.search(name)
+            if not districts:
+                log.debug('No legacy district found matching name %r', name)
+                return ()
+            # Use the first matching district
+            district_code = districts[0].code.value
+        else:
+            log.debug('Empty search query provided')
+            return ()
+
+        # Collect all new ward codes from wards in this district
+        new_ward_codes: set[int] = set()
+
+        for old_code, entry in OLD_TO_NEW.items():
+            if entry.old_ward.district_code == district_code:
+                for nw in entry.new_wards:
+                    new_ward_codes.add(nw.code)
+
+        if not new_ward_codes:
+            log.debug('No new wards found for legacy district code %s', district_code)
+            return ()
+
+        # Convert to Ward objects
+        wards: list[Ward] = []
+        for nw_code in sorted(new_ward_codes):
+            try:
+                ward = cls.from_code(WardCode(nw_code))
+                wards.append(ward)
+            except ValueError:
+                log.debug('New ward code %s not found in lookup', nw_code)
+                continue
+
+        return tuple(wards)
+
     def get_legacy_sources(self) -> tuple[LegacyWard, ...]:
         """Get the legacy (pre-2025) ward sources that were merged to form this ward.
 

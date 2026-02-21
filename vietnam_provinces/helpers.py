@@ -31,6 +31,8 @@ def normalize_search_name(name: str) -> str:
     name = unicodedata.normalize('NFD', name)
     name = ''.join(c for c in name if unicodedata.category(c) != 'Mn')
     name = name.replace('đ', 'd')
+    # Remove apostrophes
+    name = name.replace("'", '').replace('’', '')
     return unicodedata.normalize('NFC', name)
 
 
@@ -111,6 +113,8 @@ def normalize_province_search_name(name: str) -> str:
     name = unicodedata.normalize('NFD', name)
     name = ''.join(c for c in name if unicodedata.category(c) != 'Mn')
     name = name.replace('đ', 'd')
+    # Remove apostrophes
+    name = name.replace("'", '').replace('’', '')
     return unicodedata.normalize('NFC', name)
 
 
