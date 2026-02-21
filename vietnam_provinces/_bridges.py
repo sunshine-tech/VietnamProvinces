@@ -9,8 +9,13 @@ old and new administrative divisions.
 from __future__ import annotations
 
 import re
+from logging import getLogger
 
-from .helpers import normalize_search_name
+from .base import Province, ProvinceCode, ProvinceWithLegacy, Ward, WardCode, WardWithLegacy
+from .helpers import calculate_province_match_score, normalize_province_search_name, normalize_search_name
+
+
+log = getLogger(__name__)
 
 
 def calculate_match_score(
@@ -89,3 +94,200 @@ def calculate_match_score(
 
     # Should not reach here since we filter by containment before calling this
     return 1000
+
+
+def search_provinces_from_legacy(
+    name: str = '',
+    code: int = 0,
+) -> tuple[ProvinceWithLegacy, ...]:
+    """Search current provinces from legacy province criteria."""
+    from ._province_conversion_2025 import OLD_TO_NEW
+    from .legacy import Province as LegacyProvince
+    from .legacy.codes import ProvinceCode as LegacyProvinceCode
+
+    if code > 0:
+        if (entry := OLD_TO_NEW.get(code)) is None:
+            log.debug('No conversion entry found for legacy province code %s', code)
+            return ()
+        return tuple(
+            ProvinceWithLegacy(source_code=code, province=Province.from_code(ProvinceCode(np.code)))
+            for np in entry.new_provinces
+        )
+
+    if not name:
+        log.debug('Empty search query provided')
+        return ()
+
+    query = normalize_province_search_name(name)
+    normalized_words = query.split()
+    results: list[tuple[ProvinceWithLegacy, int]] = []
+    seen_codes: set[int] = set()
+
+    for old_code, entry in OLD_TO_NEW.items():
+        try:
+            legacy_province = LegacyProvince.from_code(LegacyProvinceCode(old_code))
+            old_name = legacy_province.name
+            division_type = legacy_province.division_type.value
+        except (ValueError, KeyError):
+            log.debug('Legacy province code %s not found in lookup', old_code)
+            continue
+
+        normalized_old_name = normalize_province_search_name(old_name)
+        name_words = set(normalized_old_name.split())
+        if not all(word in name_words for word in normalized_words):
+            log.debug(
+                'Legacy province %r (normalized: %r) does not match query %r (normalized words: %r) - missing words',
+                old_name,
+                normalized_old_name,
+                name,
+                normalized_words,
+            )
+            continue
+        log.debug(
+            'Legacy province %r (normalized: %r) matches query %r (normalized words: %r) - all words found',
+            old_name,
+            normalized_old_name,
+            name,
+            normalized_words,
+        )
+
+        match_score = calculate_province_match_score(name, query, old_name, division_type)
+
+        for np in entry.new_provinces:
+            if np.code in seen_codes:
+                continue
+
+            try:
+                province = Province.from_code(ProvinceCode(np.code))
+                results.append((ProvinceWithLegacy(source_code=old_code, province=province), match_score))
+                seen_codes.add(np.code)
+            except ValueError:
+                log.debug('New province code %s not found in lookup', np.code)
+                continue
+
+    results.sort(key=lambda x: x[1])
+    return tuple(result for result, _ in results)
+
+
+def search_wards_from_legacy(name: str = '', code: int = 0) -> tuple[WardWithLegacy, ...]:
+    """Search current wards from legacy ward criteria."""
+    from ._ward_conversion_2025 import OLD_TO_NEW
+    from .legacy import Ward as LegacyWard
+    from .legacy.codes import WardCode as LegacyWardCode
+
+    if code > 0:
+        if (entry := OLD_TO_NEW.get(code)) is None:
+            log.debug('No conversion entry found for legacy ward code %s', code)
+            return ()
+        return tuple(WardWithLegacy(source_code=code, ward=Ward.from_code(WardCode(nw.code))) for nw in entry.new_wards)
+
+    if not name:
+        log.debug('Empty search query provided')
+        return ()
+
+    # Split input into words, normalize, and filter out division type prefixes
+    # Only filter if they appear at the beginning (e.g., "Xã Tân Hòa" -> "Tân Hòa")
+    division_types = {'tinh', 'thanh', 'pho', 'xa', 'phuong', 'thi', 'tran'}
+    words = [normalize_search_name(word) for word in name.split()]
+    # Only skip division type words at the beginning
+    normalized_words = []
+    skipped_prefix = True
+    for word in words:
+        if skipped_prefix and word in division_types:
+            continue
+        skipped_prefix = False
+        normalized_words.append(word)
+    query = normalize_search_name(name)
+    results: list[tuple[WardWithLegacy, int]] = []
+    seen_codes: set[int] = set()
+
+    for old_code, entry in OLD_TO_NEW.items():
+        try:
+            legacy_ward = LegacyWard.from_code(LegacyWardCode(old_code))
+            old_name = legacy_ward.name
+        except (ValueError, KeyError):
+            log.debug('Legacy ward code %s not found in lookup', old_code)
+            continue
+
+        normalized_old_name = normalize_search_name(old_name)
+        name_words = set(normalized_old_name.split())
+
+        if not all(word in name_words for word in normalized_words):
+            log.debug(
+                'Legacy ward %r (normalized: %r) does not match query %r (normalized words: %r) - missing words',
+                old_name,
+                normalized_old_name,
+                name,
+                normalized_words,
+            )
+            continue
+        log.debug(
+            'Legacy ward %r (normalized: %r) matches query %r (normalized words: %r) - all words found',
+            old_name,
+            normalized_old_name,
+            name,
+            normalized_words,
+        )
+
+        match_score = calculate_match_score(name, query, old_name, legacy_ward.division_type)
+
+        for nw in entry.new_wards:
+            if nw.code in seen_codes:
+                continue
+
+            try:
+                ward = Ward.from_code(WardCode(nw.code))
+                results.append((WardWithLegacy(source_code=old_code, ward=ward), match_score))
+                seen_codes.add(nw.code)
+            except ValueError:
+                log.debug('New ward code %s not found in lookup', nw.code)
+                continue
+
+    results.sort(key=lambda x: x[1])
+    return tuple(result for result, _ in results)
+
+
+def search_wards_from_legacy_district(name: str = '', code: int = 0) -> tuple[WardWithLegacy, ...]:
+    """Search current wards from legacy district criteria."""
+    from ._ward_conversion_2025 import OLD_TO_NEW
+    from .legacy import base as legacy
+
+    if code > 0:
+        # Find all legacy wards in this district, then get their new wards
+        district_code = code
+    elif name:
+        # Search for districts by name
+        districts = legacy.District.search(name)
+        if not districts:
+            log.debug('No legacy district found matching name %r', name)
+            return ()
+        # Use the first matching district
+        district_code = districts[0].code.value
+    else:
+        log.debug('Empty search query provided')
+        return ()
+
+    # Collect new ward codes from wards in this district, along with one legacy source code
+    new_ward_to_old_code: dict[int, int] = {}
+
+    for old_code, entry in OLD_TO_NEW.items():
+        if entry.old_ward.district_code == district_code:
+            for nw in entry.new_wards:
+                if nw.code not in new_ward_to_old_code:
+                    new_ward_to_old_code[nw.code] = old_code
+
+    if not new_ward_to_old_code:
+        log.debug('No new wards found for legacy district code %s', district_code)
+        return ()
+
+    # Convert to WardWithLegacy objects
+    results: list[WardWithLegacy] = []
+    for nw_code in sorted(new_ward_to_old_code):
+        try:
+            ward = Ward.from_code(WardCode(nw_code))
+            results.append(WardWithLegacy(source_code=new_ward_to_old_code[nw_code], ward=ward))
+        except ValueError:
+            log.debug('New ward code %s not found in lookup', nw_code)
+            continue
+
+    return tuple(results)

@@ -105,7 +105,7 @@ def normalize_province_search_name(name: str) -> str:
 
     This function normalizes Vietnamese province text by:
     1. Converting to lowercase
-    2. Removing division type prefixes (tỉnh, thành phố)
+    2. Removing division type prefixes (tỉnh/thành phố or their normalized forms)
     3. Normalizing hyphens to spaces
     4. Normalizing curly apostrophes to straight ones
     5. Removing diacritics
@@ -115,8 +115,8 @@ def normalize_province_search_name(name: str) -> str:
     :returns: Normalized name string (without division type prefix)
     """
     name = name.lower()
-    # Remove division type prefixes
-    name = re.sub(r'^(tỉnh|thành phố)\s+', '', name)
+    # Remove division type prefixes (both with and without diacritics)
+    name = re.sub(r'^(tỉnh|tinh|thành phố|thanh pho)\s+', '', name)
     # Normalize hyphens to spaces
     name = name.replace('-', ' ')
     # Normalize curly apostrophes to straight ones

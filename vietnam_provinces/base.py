@@ -9,9 +9,10 @@ from collections.abc import Iterator
 from dataclasses import dataclass
 from enum import StrEnum
 from logging import getLogger
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, NamedTuple
 
 from .codes import ProvinceCode, WardCode
+from .helpers import calculate_simple_match_score, normalize_search_name
 
 
 if TYPE_CHECKING:
@@ -113,12 +114,18 @@ class Province:
             log.debug('Empty search query provided')
             return ()
 
-        from .helpers import calculate_simple_match_score, normalize_search_name
-
         # Split input into words, normalize, and filter out division type prefixes
+        # Only filter if they appear at the beginning (e.g., "Xã Tân Hòa" -> "Tân Hòa")
         division_types = {'tinh', 'thanh', 'pho', 'xa', 'phuong', 'thi', 'tran'}
         words = [normalize_search_name(word) for word in name.split()]
-        normalized_words = [word for word in words if word not in division_types]
+        # Only skip division type words at the beginning
+        normalized_words = []
+        skipped_prefix = True
+        for word in words:
+            if skipped_prefix and word in division_types:
+                continue
+            skipped_prefix = False
+            normalized_words.append(word)
         query = normalize_search_name(name)
         results: list[tuple[Province, int]] = []  # (province, match_score)
 
@@ -140,7 +147,7 @@ class Province:
         return tuple(province for province, _ in results)
 
     @classmethod
-    def search_from_legacy(cls, name: str = '', code: int = 0) -> tuple[Province, ...]:
+    def search_from_legacy(cls, name: str = '', code: int = 0) -> tuple[ProvinceWithLegacy, ...]:
         """Given a legacy province code or part of a legacy province name, return all matching provinces.
 
         This method searches for current (post-2025) provinces that were formed from
@@ -148,75 +155,17 @@ class Province:
 
         :param name: Part of a legacy province name to search for
         :param code: The legacy province code
-        :returns: Tuple of matching :class:`vietnam_provinces.Province` objects
+        :returns: Tuple of matching :class:`vietnam_provinces.ProvinceWithLegacy` objects,
+            each containing the matched legacy province code and resulting new province
 
         Example:
             >>> # Search by legacy province code
             >>> Province.search_from_legacy(code=77)  # Tỉnh Bà Rịa - Vũng Tàu (old)
-            (Province(name='Thành phố Hồ Chí Minh', ...),)
+            (ProvinceWithLegacy(source_code=77, province=Province(name='Thành phố Hồ Chí Minh', ...)),)
         """
-        # Cannot use `Self` in return type because this method uses generator expressions
-        # with cls.from_code(), and the type checker cannot infer Self in this context.
-        from ._province_conversion_2025 import OLD_TO_NEW
-        from .legacy import Province as LegacyProvince
-        from .legacy.codes import ProvinceCode as LegacyProvinceCode
+        from ._bridges import search_provinces_from_legacy
 
-        if code > 0:
-            if (entry := OLD_TO_NEW.get(code)) is None:
-                log.debug('No conversion entry found for legacy province code %s', code)
-                return ()
-            return tuple(cls.from_code(ProvinceCode(np.code)) for np in entry.new_provinces)
-
-        if not name:
-            log.debug('Empty search query provided')
-            return ()
-
-        # Search by name - normalize and match (ignoring division type prefix)
-        from .helpers import calculate_province_match_score, normalize_province_search_name
-
-        # Split input into words, normalize, and filter out division type prefixes
-        division_types = {'tinh', 'thanh', 'pho', 'xa', 'phuong', 'thi', 'tran'}
-        words = [normalize_province_search_name(word) for word in name.split()]
-        normalized_words = [word for word in words if word not in division_types]
-        query = normalize_province_search_name(name)
-        results: list[tuple[Province, str, int]] = []  # (province, old_name, match_score)
-        seen_codes: set[int] = set()
-
-        for old_code, entry in OLD_TO_NEW.items():
-            try:
-                legacy_province = LegacyProvince.from_code(LegacyProvinceCode(old_code))
-                old_name = legacy_province.name
-                division_type = legacy_province.division_type.value
-            except (ValueError, KeyError):
-                log.debug('Legacy province code %s not found in lookup', old_code)
-                continue
-
-            normalized_old_name = normalize_province_search_name(old_name)
-            # Split normalized name into words for whole-word matching
-            name_words = set(normalized_old_name.split())
-
-            # All query words must be present as whole words in the name
-            if not all(word in name_words for word in normalized_words):
-                continue
-
-            # Calculate match score with division type priority (thành phố > tỉnh)
-            match_score = calculate_province_match_score(name, query, old_name, division_type)
-
-            for np in entry.new_provinces:
-                if np.code in seen_codes:
-                    continue
-
-                try:
-                    province = cls.from_code(ProvinceCode(np.code))
-                    results.append((province, old_name, match_score))
-                    seen_codes.add(np.code)
-                except ValueError:
-                    log.debug('New province code %s not found in lookup', np.code)
-                    continue
-
-        # Sort by match score (lower is better)
-        results.sort(key=lambda x: x[2])
-        return tuple(province for province, _, _ in results)
+        return search_provinces_from_legacy(name=name, code=code)
 
     def get_legacy_sources(self) -> tuple[LegacyProvince, ...]:
         """Get the legacy (pre-2025) province sources that were merged to form this province.
@@ -250,6 +199,13 @@ class Province:
                 continue
 
         return tuple(legacy_provinces)
+
+
+class ProvinceWithLegacy(NamedTuple):
+    """Search criteria for searching provinces from legacy data."""
+
+    source_code: int
+    province: Province
 
 
 @dataclass(frozen=True)
@@ -343,8 +299,6 @@ class Ward:
             log.debug('Empty search query provided')
             return ()
 
-        from .helpers import calculate_simple_match_score, normalize_search_name
-
         # Split input into words, normalize, and filter out division type prefixes
         division_types = {'tinh', 'thanh', 'pho', 'xa', 'phuong', 'thi', 'tran'}
         words = [normalize_search_name(word) for word in name.split()]
@@ -369,8 +323,8 @@ class Ward:
         results.sort(key=lambda x: x[1])
         return tuple(ward for ward, _ in results)
 
-    @classmethod
-    def search_from_legacy(cls, name: str = '', code: int = 0) -> tuple[Ward, ...]:
+    @staticmethod
+    def search_from_legacy(name: str = '', code: int = 0) -> tuple[WardWithLegacy, ...]:
         """Given a legacy ward code or part of a legacy ward name, return all matching wards.
 
         This method searches for current (post-2025) wards that were formed from
@@ -378,82 +332,24 @@ class Ward:
 
         :param name: Part of a legacy ward name to search for
         :param code: The legacy ward code
-        :returns: Tuple of matching :class:`vietnam_provinces.Ward` objects
+        :returns: Tuple of matching :class:`vietnam_provinces.WardWithLegacy` objects,
+            each containing the matched legacy ward code and resulting new ward
 
         Example:
             >>> # Search by legacy ward name
             >>> Ward.search_from_legacy(name='phu my')
-            (Ward(name='Phường Phú Mỹ', ...), Ward(name='Xã Phú Mỹ', ...), ...)
+            (WardWithLegacy(source_code=26740, ward=Ward(name='Phường Phú Mỹ', ...)), ...)
 
             >>> # Search by legacy ward code
             >>> Ward.search_from_legacy(code=22855)  # Xã Tân Hải
-            (Ward(name='Xã Tân Hải', ...),)
+            (WardWithLegacy(source_code=22855, ward=Ward(name='Xã Tân Hải', ...)),)
         """
-        # Cannot use `Self` in return type because this method uses generator expressions
-        # with cls.from_code(), and the type checker cannot infer Self in this context.
-        from ._ward_conversion_2025 import OLD_TO_NEW
-        from .legacy import Ward as LegacyWard
-        from .legacy.codes import WardCode as LegacyWardCode
+        from ._bridges import search_wards_from_legacy
 
-        if code > 0:
-            if (entry := OLD_TO_NEW.get(code)) is None:
-                log.debug('No conversion entry found for legacy ward code %s', code)
-                return ()
-            return tuple(cls.from_code(WardCode(nw.code)) for nw in entry.new_wards)
+        return search_wards_from_legacy(name=name, code=code)
 
-        if not name:
-            log.debug('Empty search query provided')
-            return ()
-
-        from ._bridges import calculate_match_score
-        from .helpers import normalize_search_name
-
-        # Split input into words, normalize, and filter out division type prefixes
-        division_types = {'tinh', 'thanh', 'pho', 'xa', 'phuong', 'thi', 'tran'}
-        words = [normalize_search_name(word) for word in name.split()]
-        normalized_words = [word for word in words if word not in division_types]
-        query = normalize_search_name(name)
-        results: list[tuple[Ward, str, int]] = []  # (ward, old_name, match_score)
-        seen_codes: set[int] = set()
-
-        for old_code, entry in OLD_TO_NEW.items():
-            # Look up the old ward name from legacy dataclass
-            try:
-                legacy_ward = LegacyWard.from_code(LegacyWardCode(old_code))
-                old_name = legacy_ward.name
-            except (ValueError, KeyError):
-                log.debug('Legacy ward code %s not found in lookup', old_code)
-                continue
-
-            normalized_old_name = normalize_search_name(old_name)
-            # Split normalized name into words for whole-word matching
-            name_words = set(normalized_old_name.split())
-
-            # All query words must be present as whole words in the name
-            if not all(word in name_words for word in normalized_words):
-                continue
-
-            # Calculate match score (lower is better)
-            match_score = calculate_match_score(name, query, old_name, legacy_ward.division_type)
-
-            for nw in entry.new_wards:
-                if nw.code in seen_codes:
-                    continue
-
-                try:
-                    ward = cls.from_code(WardCode(nw.code))
-                    results.append((ward, old_name, match_score))
-                    seen_codes.add(nw.code)
-                except ValueError:
-                    log.debug('New ward code %s not found in lookup', nw.code)
-                    continue
-
-        # Sort by match score (lower is better)
-        results.sort(key=lambda x: x[2])
-        return tuple(ward for ward, _, _ in results)
-
-    @classmethod
-    def search_from_legacy_district(cls, name: str = '', code: int = 0) -> tuple[Ward, ...]:
+    @staticmethod
+    def search_from_legacy_district(name: str = '', code: int = 0) -> tuple[WardWithLegacy, ...]:
         """Given a legacy district code or part of a legacy district name, return all new wards.
 
         This method searches for current (post-2025) wards that were formed from
@@ -463,58 +359,21 @@ class Ward:
 
         :param name: Part of a legacy district name to search for
         :param code: The legacy district code
-        :returns: Tuple of matching :class:`vietnam_provinces.Ward` objects
+        :returns: Tuple of matching :class:`vietnam_provinces.WardWithLegacy` objects,
+            each containing one legacy ward code from the matched district and resulting new ward
 
         Example:
             >>> # Search by legacy district code
             >>> Ward.search_from_legacy_district(code=748)  # Thành phố Bà Rịa (old)
-            (Ward(name='Phường Bà Rịa', ...), Ward(name='Phường Long Hương', ...), ...)
+            (WardWithLegacy(source_code=26710, ward=Ward(name='Phường Bà Rịa', ...)), ...)
 
             >>> # Search by legacy district name
             >>> Ward.search_from_legacy_district(name='Bà Rịa')
-            (Ward(name='Phường Bà Rịa', ...), Ward(name='Phường Long Hương', ...), ...)
+            (WardWithLegacy(source_code=26710, ward=Ward(name='Phường Bà Rịa', ...)), ...)
         """
-        from ._ward_conversion_2025 import OLD_TO_NEW
-        from .legacy import District as LegacyDistrict
+        from ._bridges import search_wards_from_legacy_district
 
-        if code > 0:
-            # Find all legacy wards in this district, then get their new wards
-            district_code = code
-        elif name:
-            # Search for districts by name
-            districts = LegacyDistrict.search(name)
-            if not districts:
-                log.debug('No legacy district found matching name %r', name)
-                return ()
-            # Use the first matching district
-            district_code = districts[0].code.value
-        else:
-            log.debug('Empty search query provided')
-            return ()
-
-        # Collect all new ward codes from wards in this district
-        new_ward_codes: set[int] = set()
-
-        for old_code, entry in OLD_TO_NEW.items():
-            if entry.old_ward.district_code == district_code:
-                for nw in entry.new_wards:
-                    new_ward_codes.add(nw.code)
-
-        if not new_ward_codes:
-            log.debug('No new wards found for legacy district code %s', district_code)
-            return ()
-
-        # Convert to Ward objects
-        wards: list[Ward] = []
-        for nw_code in sorted(new_ward_codes):
-            try:
-                ward = cls.from_code(WardCode(nw_code))
-                wards.append(ward)
-            except ValueError:
-                log.debug('New ward code %s not found in lookup', nw_code)
-                continue
-
-        return tuple(wards)
+        return search_wards_from_legacy_district(name=name, code=code)
 
     def get_legacy_sources(self) -> tuple[LegacyWard, ...]:
         """Get the legacy (pre-2025) ward sources that were merged to form this ward.
@@ -551,3 +410,10 @@ class Ward:
                 continue
 
         return tuple(legacy_wards)
+
+
+class WardWithLegacy(NamedTuple):
+    """Search criteria for searching wards from legacy data."""
+
+    source_code: int
+    ward: Ward

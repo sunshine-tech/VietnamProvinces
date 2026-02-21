@@ -24,7 +24,7 @@ def test_search_from_legacy_by_name_prioritizes_diacritics_match(query: str, exp
     assert len(results) > 0
 
     # The first result should be one with the expected_first old name
-    old_names = [w.name for w in results[0].get_legacy_sources()]
+    old_names = [w.name for w in results[0].ward.get_legacy_sources()]
     assert expected_first in old_names, (
         f"First result should have old name '{expected_first}', but got ward with old names {old_names}"
     )
@@ -47,7 +47,8 @@ def test_search_from_legacy_by_code(legacy_code: int, expected_ward_name: str) -
     assert len(results) > 0
 
     # The first result should have the expected name
-    assert results[0].name == expected_ward_name
+    assert results[0].source_code == legacy_code
+    assert results[0].ward.name == expected_ward_name
 
 
 @pytest.mark.parametrize(
@@ -69,7 +70,7 @@ def test_search_from_legacy_by_name_specific_wards(legacy_name: str, expected_wa
     assert len(results) > 0
 
     # The first result should have the expected name
-    assert results[0].name == expected_ward_name
+    assert results[0].ward.name == expected_ward_name
 
 
 @pytest.mark.parametrize(
@@ -150,7 +151,8 @@ def test_province_search_from_legacy_by_code(legacy_code: int, expected_province
     assert len(results) == 1
 
     # The result should have the expected name
-    assert results[0].name == expected_province_name
+    assert results[0].source_code == legacy_code
+    assert results[0].province.name == expected_province_name
 
 
 @pytest.mark.parametrize(
@@ -170,7 +172,7 @@ def test_province_search_from_legacy_by_name(legacy_name: str, expected_province
     assert len(results) > 0
 
     # The first result should be the expected province
-    assert results[0].name == expected_province_name
+    assert results[0].province.name == expected_province_name
 
 
 @pytest.mark.parametrize(
@@ -256,7 +258,7 @@ def test_search_from_legacy_district_by_code(legacy_district_code: int, expected
     assert len(results) > 0
 
     # Check that expected ward names are in the results
-    result_names = {w.name for w in results}
+    result_names = {w.ward.name for w in results}
     for expected_name in expected_ward_names:
         assert expected_name in result_names
 
@@ -276,7 +278,7 @@ def test_search_from_legacy_district_by_name(legacy_district_name: str, expected
     assert len(results) > 0
 
     # Check that expected ward name is in the results
-    result_names = {w.name for w in results}
+    result_names = {w.ward.name for w in results}
     assert expected_ward_name in result_names
 
 
@@ -325,7 +327,7 @@ class TestPhanRangThapCham:
         assert len(results) == 6
 
         # Check expected ward names
-        result_names = {w.name for w in results}
+        result_names = {w.ward.name for w in results}
         expected_names = {
             'Phường Đô Vinh',
             'Phường Bảo An',
@@ -344,7 +346,7 @@ class TestPhanRangThapCham:
         assert len(results) == 6
 
         # Check expected ward names
-        result_names = {w.name for w in results}
+        result_names = {w.ward.name for w in results}
         expected_names = {
             'Phường Đô Vinh',
             'Phường Bảo An',
@@ -364,7 +366,7 @@ class TestPhanRangThapCham:
         assert len(results) == 6
 
         # Check that Phường Phan Rang is in results
-        result_names = {w.name for w in results}
+        result_names = {w.ward.name for w in results}
         assert 'Phường Phan Rang' in result_names
 
 

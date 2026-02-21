@@ -112,9 +112,17 @@ class Province:
         from ..helpers import calculate_simple_match_score, normalize_search_name
 
         # Split input into words, normalize, and filter out division type prefixes
+        # Only filter if they appear at the beginning (e.g., "Tỉnh Hà Giang" -> "Hà Giang")
         division_types = {'tinh', 'thanh', 'pho'}
         words = [normalize_search_name(word) for word in name.split()]
-        normalized_words = [word for word in words if word not in division_types]
+        # Only skip division type words at the beginning
+        normalized_words = []
+        skipped_prefix = True
+        for word in words:
+            if skipped_prefix and word in division_types:
+                continue
+            skipped_prefix = False
+            normalized_words.append(word)
         query = normalize_search_name(name)
         results: list[tuple[Province, int]] = []  # (province, match_score)
 
@@ -224,9 +232,17 @@ class District:
         from ..helpers import calculate_simple_match_score, normalize_search_name
 
         # Split input into words, normalize, and filter out division type prefixes
+        # Only filter if they appear at the beginning (e.g., "Xã Tân Hòa" -> "Tân Hòa")
         division_types = {'tinh', 'thanh', 'pho', 'quan', 'huyen', 'thi', 'xa', 'phuong', 'thi', 'tran'}
         words = [normalize_search_name(word) for word in name.split()]
-        normalized_words = [word for word in words if word not in division_types]
+        # Only skip division type words at the beginning
+        normalized_words = []
+        skipped_prefix = True
+        for word in words:
+            if skipped_prefix and word in division_types:
+                continue
+            skipped_prefix = False
+            normalized_words.append(word)
         query = normalize_search_name(name)
         results: list[tuple[District, int]] = []  # (district, match_score)
 
@@ -359,9 +375,17 @@ class Ward:
         from ..helpers import calculate_simple_match_score, normalize_search_name
 
         # Split input into words, normalize, and filter out division type prefixes
+        # Only filter if they appear at the beginning (e.g., "Xã Tân Hòa" -> "Tân Hòa")
         division_types = {'tinh', 'thanh', 'pho', 'quan', 'huyen', 'thi', 'xa', 'phuong', 'thi', 'tran'}
         words = [normalize_search_name(word) for word in name.split()]
-        normalized_words = [word for word in words if word not in division_types]
+        # Only skip division type words at the beginning
+        normalized_words = []
+        skipped_prefix = True
+        for word in words:
+            if skipped_prefix and word in division_types:
+                continue
+            skipped_prefix = False
+            normalized_words.append(word)
         query = normalize_search_name(name)
         results: list[tuple[Ward, int]] = []  # (ward, match_score)
 
