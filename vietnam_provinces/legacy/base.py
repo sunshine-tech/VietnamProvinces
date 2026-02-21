@@ -67,7 +67,7 @@ class Province:
         :returns: The corresponding :class:`vietnam_provinces.legacy.Province` object
         :raises ValueError: If the province code is invalid
         """
-        from .lookup import PROVINCE_MAPPING
+        from ._lookup import PROVINCE_MAPPING
 
         try:
             return PROVINCE_MAPPING[code]
@@ -81,7 +81,7 @@ class Province:
 
         :returns: Iterator over all :class:`vietnam_provinces.legacy.Province` objects
         """
-        from .lookup import PROVINCE_MAPPING
+        from ._lookup import PROVINCE_MAPPING
 
         values = PROVINCE_MAPPING.values()
         return iter(values)
@@ -122,7 +122,7 @@ class District:
         :returns: The corresponding :class:`vietnam_provinces.legacy.District` object
         :raises ValueError: If the district code is invalid
         """
-        from .lookup import DISTRICT_MAPPING
+        from ._lookup import DISTRICT_MAPPING
 
         try:
             return DISTRICT_MAPPING[code]
@@ -136,7 +136,7 @@ class District:
 
         :returns: Iterator over all :class:`vietnam_provinces.legacy.District` objects
         """
-        from .lookup import DISTRICT_MAPPING
+        from ._lookup import DISTRICT_MAPPING
 
         values = DISTRICT_MAPPING.values()
         return iter(values)
@@ -148,7 +148,7 @@ class District:
         :param code: The province code (:class:`vietnam_provinces.legacy.ProvinceCode`)
         :returns: Iterator over :class:`vietnam_provinces.legacy.District` objects belonging to the specified province
         """
-        from .lookup import DISTRICT_MAPPING
+        from ._lookup import DISTRICT_MAPPING
 
         values = (d for d in DISTRICT_MAPPING.values() if d.province_code == code)
         return values
@@ -189,7 +189,7 @@ class Ward:
         :returns: The corresponding :class:`vietnam_provinces.legacy.Ward` object
         :raises ValueError: If the ward code is invalid
         """
-        from .lookup import WARD_MAPPING
+        from ._lookup import WARD_MAPPING
 
         try:
             return WARD_MAPPING[code]
@@ -203,7 +203,7 @@ class Ward:
 
         :returns: Iterator over all :class:`vietnam_provinces.legacy.Ward` objects
         """
-        from .lookup import WARD_MAPPING
+        from ._lookup import WARD_MAPPING
 
         values = WARD_MAPPING.values()
         return iter(values)
@@ -215,7 +215,7 @@ class Ward:
         :param code: The district code (:class:`vietnam_provinces.legacy.DistrictCode`)
         :returns: Iterator over :class:`vietnam_provinces.legacy.Ward` objects belonging to the specified district
         """
-        from .lookup import WARD_MAPPING
+        from ._lookup import WARD_MAPPING
 
         values = (w for w in WARD_MAPPING.values() if w.district_code == code)
         return values
@@ -227,7 +227,7 @@ class Ward:
         :param code: The province code (:class:`vietnam_provinces.legacy.ProvinceCode`)
         :returns: Iterator over :class:`vietnam_provinces.legacy.Ward` objects belonging to the specified province
         """
-        from .lookup import WARD_MAPPING
+        from ._lookup import WARD_MAPPING
 
         values = (w for w in WARD_MAPPING.values() if w.province_code == code)
         return iter(values)
@@ -238,7 +238,7 @@ class Ward:
 
         :returns: The province code (:class:`vietnam_provinces.legacy.ProvinceCode`)
         """
-        from .lookup import DISTRICT_MAPPING
+        from ._lookup import DISTRICT_MAPPING
 
         district = DISTRICT_MAPPING[self.district_code]
         return district.province_code

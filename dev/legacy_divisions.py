@@ -416,6 +416,7 @@ def gen_ward_object_creation(ward: Ward, district: District, province: Province)
 def gen_python_lookup(provinces: Iterable[Province]) -> str:
     """Generate Python code for lookup mappings."""
     template_file = Path(__file__).parent / '_legacy_lookup_template.py'
+    header = '# This file is named with "_" prefix to prevent being imported by accident.\n\n'
     module = ast.parse(template_file.read_text())
 
     province_map_node = next(
@@ -458,7 +459,7 @@ def gen_python_lookup(provinces: Iterable[Province]) -> str:
                 w_values.append(gen_ward_object_creation(w, d, p))
     ward_map_node.value = ast.Dict(keys=w_keys, values=w_values)
 
-    return ast.unparse(ast.fix_missing_locations(module))
+    return header + ast.unparse(ast.fix_missing_locations(module))
 
 
 def parse_pre2025_csv(csv_path: Path) -> list[Pre2025WardCSVRecord]:

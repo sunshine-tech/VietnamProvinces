@@ -315,6 +315,7 @@ def gen_ward_object_creation(ward: Ward, province: Province) -> ast.Call:
 
 def gen_python_province_lookup(provinces: Iterable[Province]) -> str:
     template_file = Path(__file__).parent / '_lookup_template.py'
+    header = '# This file is named with "_" prefix to prevent being imported by accident.\n\n'
     module = ast.parse(template_file.read_text())
     ward_map_node = next(
         n for n in module.body if isinstance(n, ast.Assign) and ast.unparse(n.targets[0]) == 'WARD_MAPPING'
@@ -332,4 +333,4 @@ def gen_python_province_lookup(provinces: Iterable[Province]) -> str:
         for w in p.indexed_wards.values():
             w_values.append(gen_ward_object_creation(w, p))
     ward_map_node.value = ast.Dict(keys=w_keys, values=w_values)
-    return ast.unparse(ast.fix_missing_locations(module))
+    return header + ast.unparse(ast.fix_missing_locations(module))

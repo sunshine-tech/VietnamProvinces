@@ -8,7 +8,6 @@ with the conversion table embedded as module-level constants.
 import ast
 import csv
 import re
-import subprocess
 from collections import defaultdict
 from dataclasses import dataclass
 from pathlib import Path
@@ -275,14 +274,6 @@ def gen_new_to_old_entry(new_code: str, entry: NewToOldEntry) -> tuple[ast.expr,
     return (key, value)
 
 
-def format_code(content: str, outfile: Path) -> bool:
-    """Beautify code using Ruff and save to file."""
-    cmd = ('ruff', 'format', '-', '--stdin-filename', 'code.py')
-    with outfile.open('w') as f:
-        p = subprocess.run(cmd, input=content, text=True, stdout=f, check=False)
-    return p.returncode == 0
-
-
 def generate_conversion_table(csv_path: Path, output_path: Path) -> ConversionMetadata:
     """Generate the conversion table as Python code."""
     records = parse_conversion_csv(csv_path)
@@ -321,7 +312,7 @@ def generate_conversion_table(csv_path: Path, output_path: Path) -> ConversionMe
     new_to_old_node.value = ast.Dict(keys=new_to_old_keys, values=new_to_old_values)
 
     code = ast.unparse(ast.fix_missing_locations(module))
-    format_code(code, output_path)
+    output_path.write_text(code)
 
     stats = ConversionStats(
         old_wards_count=len(table.old_to_new),

@@ -1,3 +1,5 @@
+# This file is named with "_" prefix to prevent being imported by accident.
+
 """Lookup mappings for pre-2025 administrative divisions."""
 
 from .base import District, Province, VietNamDivisionType, Ward

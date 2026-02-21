@@ -75,10 +75,8 @@ def get_wards(index: int, province_code: int) -> tuple[ScrapedWard, ...]:
     interesting = sep + tail
     # Remove the surrounding ()
     json_string = interesting.removeprefix('(').removesuffix(')')
-    # Path('/tmp/json5-data.json5').write_text(json_string)
     jdata = pyjson5.decode(json_string)
     vjdata = TypeAdapter(WardListResponse).validate_python(jdata)
-    # click.echo(vjdata.result)
     tree = markupever.parse(vjdata.result)
     if not (table := tree.select_one(WARDS_TABLE_ELM_ID.format(idx=index))):
         logger.warning('HTML table for wards of province {} is not found', province_code)

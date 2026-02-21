@@ -1,3 +1,5 @@
+# This file is named with "_" prefix to prevent being imported by accident.
+
 from .base import Province, ProvinceCode, VietNamDivisionType, Ward, WardCode
 
 

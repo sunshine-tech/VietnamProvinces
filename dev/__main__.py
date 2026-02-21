@@ -86,18 +86,12 @@ def configure_logging(verbose: int) -> None:
     colored_handler.push_application()
 
 
-# Beautify code using Ruff and save to file
-def format_code(content: str, outfile: Path) -> bool:
-    cmd = ('ruff', 'format', '-', '--stdin-filename', 'code.py')
-    with outfile.open('w') as f:
-        p = subprocess.run(cmd, input=content, text=True, stdout=f, check=False)
-    return p.returncode == 0
-
-
-# Lint and fix code using Ruff
-def lint_code(dirpath: Path) -> bool:
-    cmd = ('ruff', 'check', '--fix', str(dirpath))
-    p = subprocess.run(cmd, check=False)
+# Format, lint and fix code using Ruff
+def format_and_lint_code(dirpath: Path) -> bool:
+    fmt_cmd = ('ruff', 'format', str(dirpath))
+    subprocess.run(fmt_cmd, check=False)
+    check_cmd = ('ruff', 'check', '--fix', str(dirpath))
+    p = subprocess.run(check_cmd, check=False)
     return p.returncode == 0
 
 
@@ -136,15 +130,19 @@ def generate_output(
         out_enums = gen_python_code_enums(provinces_dict.values())
         pkg_folder = Path(__file__).parent.parent / 'vietnam_provinces'
         file_path = pkg_folder / 'codes.py'
-        logger.info('Prettify code with Ruff')
-        format_code(out_enums, file_path)
+        logger.info('Save code')
+        file_path.write_text(out_enums)
         rel_path = file_path.relative_to(Path.cwd())
         echo(f'Wrote to {rel_path}')
-        file_path = pkg_folder / 'lookup.py'
+        file_path = pkg_folder / '_lookup.py'
         out_lookup = gen_python_province_lookup(provinces_dict.values())
-        format_code(out_lookup, file_path)
+        file_path.write_text(out_lookup)
         rel_path = file_path.relative_to(Path.cwd())
         echo(f'Wrote to {rel_path}')
+        # Format and lint the whole vietnam_provinces folder after code generation
+        logger.info('Formatting and linting code with Ruff for the whole vietnam_provinces folder...')
+        format_and_lint_code(pkg_folder)
+
         pkg_init_file = pkg_folder / '__init__.py'
         now = datetime.now(UTC)
         init_content = pkg_init_file.read_text()
@@ -242,6 +240,9 @@ def gen_conversion_table(verbose: int) -> None:
     logger.info('Parsing conversion CSV: {}', input_path)
     metadata = generate_conversion_table(input_path, output_path)
 
+    logger.info('Formatting and linting code with Ruff...')
+    format_and_lint_code(output_path.parent)
+
     rel_output_path = output_path.relative_to(Path.cwd(), walk_up=True)
     echo(f'Generated conversion table: {rel_output_path}')
     echo(f'  Old wards: {metadata.stats.old_wards_count}')
@@ -266,7 +267,7 @@ def gen_legacy(csv_file: str, verbose: int) -> None:
 
     \b
     1. vietnam_provinces/legacy/codes.py - Enum definitions for codes
-    2. vietnam_provinces/legacy/lookup.py - Lookup mappings for Province, District, Ward objects
+    2. vietnam_provinces/legacy/_lookup.py - Lookup mappings for Province, District, Ward objects
 
     \b
     The CSV file should have these columns:
@@ -291,23 +292,23 @@ def gen_legacy(csv_file: str, verbose: int) -> None:
     logger.info('Generating enum code...')
     out_enums = gen_legacy_python_code_enums(provinces_dict.values())
     file_path = pkg_folder / 'codes.py'
-    logger.info('Formatting code with Ruff...')
-    format_code(out_enums, file_path)
+    logger.info('Saving enum code...')
+    file_path.write_text(out_enums)
     rel_path = file_path.relative_to(Path.cwd())
     echo(f'Wrote to {rel_path}')
 
     # Generate lookup code
     logger.info('Generating lookup code...')
     out_lookup = gen_legacy_python_lookup(provinces_dict.values())
-    file_path = pkg_folder / 'lookup.py'
-    logger.info('Formatting code with Ruff...')
-    format_code(out_lookup, file_path)
+    file_path = pkg_folder / '_lookup.py'
+    logger.info('Saving lookup code...')
+    file_path.write_text(out_lookup)
     rel_path = file_path.relative_to(Path.cwd())
     echo(f'Wrote to {rel_path}.')
 
     # Lint the entire legacy folder
-    logger.info('Linting and fixing code with Ruff...')
-    lint_code(pkg_folder)
+    logger.info('Formatting and linting code with Ruff...')
+    format_and_lint_code(pkg_folder)
 
     echo('🎉 Finished generating code for pre-2025 provinces, districts and wards.')
 

@@ -1,3 +1,8 @@
+# Define main data types for the library.
+#
+# In the code of this file, sometimes we import other modules inside a function, instead of at the
+# top of the file, to avoid loading large datasets when not needed.
+
 from __future__ import annotations
 
 import re
@@ -58,7 +63,7 @@ class Province:
         :returns: The corresponding :class:`vietnam_provinces.Province` object
         :raises ValueError: If the province code is invalid
         """
-        from .lookup import PROVINCE_MAPPING
+        from ._lookup import PROVINCE_MAPPING
 
         try:
             return PROVINCE_MAPPING[code]
@@ -72,7 +77,7 @@ class Province:
 
         :returns: Iterator over all :class:`vietnam_provinces.Province` objects
         """
-        from .lookup import PROVINCE_MAPPING
+        from ._lookup import PROVINCE_MAPPING
 
         values = PROVINCE_MAPPING.values()
         return iter(values)
@@ -113,7 +118,7 @@ class Ward:
         :returns: The corresponding :class:`vietnam_provinces.Ward` object
         :raises ValueError: If the ward code is invalid
         """
-        from .lookup import WARD_MAPPING
+        from ._lookup import WARD_MAPPING
 
         try:
             return WARD_MAPPING[code]
@@ -127,7 +132,7 @@ class Ward:
 
         :returns: Iterator over all :class:`vietnam_provinces.Ward` objects
         """
-        from .lookup import WARD_MAPPING
+        from ._lookup import WARD_MAPPING
 
         values = WARD_MAPPING.values()
         return iter(values)
@@ -139,16 +144,16 @@ class Ward:
         :param code: The province code
         :returns: Iterator over :class:`vietnam_provinces.Ward` objects belonging to the specified province
         """
-        from .lookup import WARD_MAPPING
+        from ._lookup import WARD_MAPPING
 
         values = iter(w for w in WARD_MAPPING.values() if w.province_code == code)
         return values
 
     @classmethod
     def search_from_legacy(cls, name: str = '', code: int = 0) -> tuple[Ward, ...]:
-        """Given a legacy ward code, or part of legacy ward name, return all matching wards.
+        """Given a legacy ward code or part of a legacy ward name, return all matching wards.
 
-        :param name: Part of the legacy ward name to search for
+        :param name: Part of a legacy ward name to search for
         :param code: The legacy ward code
         :returns: Tuple of matching :class:`vietnam_provinces.Ward` objects
         """
