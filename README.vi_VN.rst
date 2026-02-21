@@ -79,6 +79,15 @@ Bạn có thể import vào code Python để dùng ngay.
     (Ward(name='Phường Phú Mỹ', ...), Ward(name='Xã Phú Mỹ', ...), ...)
 
 
+Để biết dữ liệu đã được cập nhật chưa, kiểm tra thuộc tính ``__data_version__`` của module:
+
+.. code-block:: python
+
+    >>> import vietnam_provinces
+    >>> vietnam_provinces.__data_version__
+    '2026-02-21'
+
+
 Cài đặt
 -------
 

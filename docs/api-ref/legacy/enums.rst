@@ -5,3 +5,4 @@ Enums
    :members: ProvinceCode, DistrictCode, WardCode
    :undoc-members:
    :show-inheritance:
+   :no-index:

@@ -84,7 +84,7 @@ To know if the data is up-to-date, check the ``__data_version__`` attribute of t
 
     >>> import vietnam_provinces
     >>> vietnam_provinces.__data_version__
-    '2025-08-02'
+    '2026-02-21'
 
 
 Install
