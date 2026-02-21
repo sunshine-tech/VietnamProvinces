@@ -6,6 +6,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from enum import StrEnum
+from logging import getLogger
 from typing import TYPE_CHECKING
 
 from .codes import DistrictCode, ProvinceCode, WardCode
@@ -13,6 +14,9 @@ from .codes import DistrictCode, ProvinceCode, WardCode
 
 if TYPE_CHECKING:
     from collections.abc import Iterator
+
+
+log = getLogger(__name__)
 
 
 class VietNamDivisionType(StrEnum):
@@ -86,6 +90,42 @@ class Province:
         values = PROVINCE_MAPPING.values()
         return iter(values)
 
+    @classmethod
+    def search(cls, name: str = '') -> tuple[Province, ...]:
+        """Search for provinces by name.
+
+        This method searches for provinces matching the given name with priority:
+        1. Exact match (case-sensitive, with diacritics)
+        2. Exact match (case-insensitive, with diacritics)
+        3. Exact match (normalized, no diacritics)
+        4. Partial match (earlier position is better)
+
+        :param name: Part of a province name to search for
+        :returns: Tuple of matching :class:`vietnam_provinces.legacy.Province` objects
+        """
+        if not name:
+            log.debug('Empty search query provided')
+            return ()
+
+        from ..helpers import calculate_simple_match_score, normalize_search_name
+
+        query = normalize_search_name(name)
+        results: list[tuple[Province, int]] = []  # (province, match_score)
+
+        for province in cls.iter_all():
+            normalized_name = normalize_search_name(province.name)
+
+            if query not in normalized_name:
+                continue
+
+            # Calculate match score (lower is better)
+            match_score = calculate_simple_match_score(name, query, province.name)
+            results.append((province, match_score))
+
+        # Sort by match score (lower is better)
+        results.sort(key=lambda x: x[1])
+        return tuple(province for province, _ in results)
+
 
 @dataclass(frozen=True)
 class District:
@@ -152,6 +192,42 @@ class District:
 
         values = (d for d in DISTRICT_MAPPING.values() if d.province_code == code)
         return values
+
+    @classmethod
+    def search(cls, name: str = '') -> tuple[District, ...]:
+        """Search for districts by name.
+
+        This method searches for districts matching the given name with priority:
+        1. Exact match (case-sensitive, with diacritics)
+        2. Exact match (case-insensitive, with diacritics)
+        3. Exact match (normalized, no diacritics)
+        4. Partial match (earlier position is better)
+
+        :param name: Part of a district name to search for
+        :returns: Tuple of matching :class:`vietnam_provinces.legacy.District` objects
+        """
+        if not name:
+            log.debug('Empty search query provided')
+            return ()
+
+        from ..helpers import calculate_simple_match_score, normalize_search_name
+
+        query = normalize_search_name(name)
+        results: list[tuple[District, int]] = []  # (district, match_score)
+
+        for district in cls.iter_all():
+            normalized_name = normalize_search_name(district.name)
+
+            if query not in normalized_name:
+                continue
+
+            # Calculate match score (lower is better)
+            match_score = calculate_simple_match_score(name, query, district.name)
+            results.append((district, match_score))
+
+        # Sort by match score (lower is better)
+        results.sort(key=lambda x: x[1])
+        return tuple(district for district, _ in results)
 
 
 @dataclass(frozen=True)
@@ -242,3 +318,39 @@ class Ward:
 
         district = DISTRICT_MAPPING[self.district_code]
         return district.province_code
+
+    @classmethod
+    def search(cls, name: str = '') -> tuple[Ward, ...]:
+        """Search for wards by name.
+
+        This method searches for wards matching the given name with priority:
+        1. Exact match (case-sensitive, with diacritics)
+        2. Exact match (case-insensitive, with diacritics)
+        3. Exact match (normalized, no diacritics)
+        4. Partial match (earlier position is better)
+
+        :param name: Part of a ward name to search for
+        :returns: Tuple of matching :class:`vietnam_provinces.legacy.Ward` objects
+        """
+        if not name:
+            log.debug('Empty search query provided')
+            return ()
+
+        from ..helpers import calculate_simple_match_score, normalize_search_name
+
+        query = normalize_search_name(name)
+        results: list[tuple[Ward, int]] = []  # (ward, match_score)
+
+        for ward in cls.iter_all():
+            normalized_name = normalize_search_name(ward.name)
+
+            if query not in normalized_name:
+                continue
+
+            # Calculate match score (lower is better)
+            match_score = calculate_simple_match_score(name, query, ward.name)
+            results.append((ward, match_score))
+
+        # Sort by match score (lower is better)
+        results.sort(key=lambda x: x[1])
+        return tuple(ward for ward, _ in results)

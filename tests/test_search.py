@@ -46,16 +46,20 @@ def test_search_from_legacy_by_name_prioritizes_diacritics_match(query: str, exp
     ('legacy_code', 'expected_ward_name'),
     [
         (26707, 'Phường Tân Hải'),  # Phường Tân Hòa (legacy) -> Phường Tân Hải (new)
+        (
+            22768,
+            'Phường Đông Hải',
+        ),  # Phường Đông Hải (legacy, Phan Rang-Tháp Chàm) -> partly merged into new Phường Đông Hải
     ],
 )
 def test_search_from_legacy_by_code(legacy_code: int, expected_ward_name: str) -> None:
     """Test that search_from_legacy returns correct ward when searching by legacy code."""
     results = Ward.search_from_legacy(code=legacy_code)
 
-    # Should return exactly one result for this case
-    assert len(results) == 1
+    # Should return results (may be multiple if partly merged)
+    assert len(results) > 0
 
-    # The result should have the expected name
+    # The first result should have the expected name
     assert results[0].name == expected_ward_name
 
 
@@ -133,6 +137,8 @@ def test_get_legacy_sources_returns_tuple(ward_code: int) -> None:
     ('legacy_code', 'expected_province_name'),
     [
         (77, 'Thành phố Hồ Chí Minh'),  # Tỉnh Bà Rịa - Vũng Tàu (legacy) -> Thành phố Hồ Chí Minh (new)
+        (2, 'Tỉnh Tuyên Quang'),  # Tỉnh Hà Giang (legacy) -> merged into Tỉnh Tuyên Quang (new)
+        (54, 'Tỉnh Đắk Lắk'),  # Tỉnh Phú Yên (legacy) -> merged into Tỉnh Đắk Lắk (new)
     ],
 )
 def test_province_search_from_legacy_by_code(legacy_code: int, expected_province_name: str) -> None:
@@ -147,12 +153,34 @@ def test_province_search_from_legacy_by_code(legacy_code: int, expected_province
 
 
 @pytest.mark.parametrize(
+    ('legacy_name', 'expected_province_name'),
+    [
+        ('ha giang', 'Tỉnh Tuyên Quang'),  # Tỉnh Hà Giang (legacy) -> merged into Tỉnh Tuyên Quang
+        ('Hà Giang', 'Tỉnh Tuyên Quang'),  # Search with diacritics
+        ('phu yen', 'Tỉnh Đắk Lắk'),  # Tỉnh Phú Yên (legacy) -> merged into Tỉnh Đắk Lắk
+        ('Phú Yên', 'Tỉnh Đắk Lắk'),  # Search with diacritics
+    ],
+)
+def test_province_search_from_legacy_by_name(legacy_name: str, expected_province_name: str) -> None:
+    """Test that Province.search_from_legacy returns correct province when searching by legacy name."""
+    results = Province.search_from_legacy(name=legacy_name)
+
+    # Should return results
+    assert len(results) > 0
+
+    # The first result should be the expected province
+    assert results[0].name == expected_province_name
+
+
+@pytest.mark.parametrize(
     ('province_code', 'expected_old_province_name'),
     [
         (
             79,
             'Tỉnh Bà Rịa - Vũng Tàu',
         ),  # Thành phố Hồ Chí Minh - merged from multiple provinces including Bà Rịa - Vũng Tàu
+        (8, 'Tỉnh Hà Giang'),  # Tỉnh Tuyên Quang - merged from Tỉnh Hà Giang and Tỉnh Tuyên Quang
+        (66, 'Tỉnh Phú Yên'),  # Tỉnh Đắk Lắk - merged from Tỉnh Phú Yên and Tỉnh Đắk Lắk
     ],
 )
 def test_province_get_legacy_sources_returns_legacy_provinces(
@@ -180,6 +208,8 @@ def test_province_get_legacy_sources_returns_legacy_provinces(
     'province_code',
     [
         79,  # Thành phố Hồ Chí Minh - merged from multiple provinces
+        8,  # Tỉnh Tuyên Quang - merged from Tỉnh Hà Giang and Tỉnh Tuyên Quang
+        66,  # Tỉnh Đắk Lắk - merged from Tỉnh Phú Yên and Tỉnh Đắk Lắk
     ],
 )
 def test_province_get_legacy_sources_has_correct_codes(province_code: int) -> None:
@@ -203,6 +233,8 @@ def test_province_get_legacy_sources_has_correct_codes(province_code: int) -> No
     'province_code',
     [
         79,  # Thành phố Hồ Chí Minh
+        8,  # Tỉnh Tuyên Quang
+        66,  # Tỉnh Đắk Lắk
     ],
 )
 def test_province_get_legacy_sources_returns_tuple(province_code: int) -> None:

@@ -9,23 +9,8 @@ old and new administrative divisions.
 from __future__ import annotations
 
 import re
-import unicodedata
 
-
-def normalize_search_name(name: str) -> str:
-    """Normalize Vietnamese name for fuzzy searching.
-
-    :param name: The name to normalize
-    :returns: Normalized name string
-    """
-    name = name.lower()
-    # Remove common prefixes
-    name = re.sub(r'^(xã|phường|thị trấn)\s+', '', name)
-    # Remove diacritics
-    name = unicodedata.normalize('NFD', name)
-    name = ''.join(c for c in name if unicodedata.category(c) != 'Mn')
-    name = name.replace('đ', 'd')
-    return unicodedata.normalize('NFC', name)
+from .helpers import normalize_search_name
 
 
 def calculate_match_score(

@@ -95,6 +95,42 @@ class Province:
         return iter(values)
 
     @classmethod
+    def search(cls, name: str = '') -> tuple[Province, ...]:
+        """Search for provinces by name.
+
+        This method searches for provinces matching the given name with priority:
+        1. Exact match (case-sensitive, with diacritics)
+        2. Exact match (case-insensitive, with diacritics)
+        3. Exact match (normalized, no diacritics)
+        4. Partial match (earlier position is better)
+
+        :param name: Part of a province name to search for
+        :returns: Tuple of matching :class:`vietnam_provinces.Province` objects
+        """
+        if not name:
+            log.debug('Empty search query provided')
+            return ()
+
+        from .helpers import calculate_simple_match_score, normalize_search_name
+
+        query = normalize_search_name(name)
+        results: list[tuple[Province, int]] = []  # (province, match_score)
+
+        for province in cls.iter_all():
+            normalized_name = normalize_search_name(province.name)
+
+            if query not in normalized_name:
+                continue
+
+            # Calculate match score (lower is better)
+            match_score = calculate_simple_match_score(name, query, province.name)
+            results.append((province, match_score))
+
+        # Sort by match score (lower is better)
+        results.sort(key=lambda x: x[1])
+        return tuple(province for province, _ in results)
+
+    @classmethod
     def search_from_legacy(cls, name: str = '', code: int = 0) -> tuple[Province, ...]:
         """Given a legacy province code or part of a legacy province name, return all matching provinces.
 
@@ -126,10 +162,10 @@ class Province:
             log.debug('Empty search query provided')
             return ()
 
-        # Search by name - normalize and match
-        from ._bridges import normalize_search_name
+        # Search by name - normalize and match (ignoring division type prefix)
+        from .helpers import calculate_province_match_score, normalize_province_search_name
 
-        query = normalize_search_name(name)
+        query = normalize_province_search_name(name)
         results: list[tuple[Province, str, int]] = []  # (province, old_name, match_score)
         seen_codes: set[int] = set()
 
@@ -137,17 +173,18 @@ class Province:
             try:
                 legacy_province = LegacyProvince.from_code(LegacyProvinceCode(old_code))
                 old_name = legacy_province.name
+                division_type = legacy_province.division_type.value
             except (ValueError, KeyError):
                 log.debug('Legacy province code %s not found in lookup', old_code)
                 continue
 
-            normalized_old_name = normalize_search_name(old_name)
+            normalized_old_name = normalize_province_search_name(old_name)
 
             if query not in normalized_old_name:
                 continue
 
-            # Simple match score based on position
-            match_score = normalized_old_name.find(query)
+            # Calculate match score with division type priority (thành phố > tỉnh)
+            match_score = calculate_province_match_score(name, query, old_name, division_type)
 
             for np in entry.new_provinces:
                 if np.code in seen_codes:
@@ -272,6 +309,42 @@ class Ward:
         return values
 
     @classmethod
+    def search(cls, name: str = '') -> tuple[Ward, ...]:
+        """Search for wards by name.
+
+        This method searches for wards matching the given name with priority:
+        1. Exact match (case-sensitive, with diacritics)
+        2. Exact match (case-insensitive, with diacritics)
+        3. Exact match (normalized, no diacritics)
+        4. Partial match (earlier position is better)
+
+        :param name: Part of a ward name to search for
+        :returns: Tuple of matching :class:`vietnam_provinces.Ward` objects
+        """
+        if not name:
+            log.debug('Empty search query provided')
+            return ()
+
+        from .helpers import calculate_simple_match_score, normalize_search_name
+
+        query = normalize_search_name(name)
+        results: list[tuple[Ward, int]] = []  # (ward, match_score)
+
+        for ward in cls.iter_all():
+            normalized_name = normalize_search_name(ward.name)
+
+            if query not in normalized_name:
+                continue
+
+            # Calculate match score (lower is better)
+            match_score = calculate_simple_match_score(name, query, ward.name)
+            results.append((ward, match_score))
+
+        # Sort by match score (lower is better)
+        results.sort(key=lambda x: x[1])
+        return tuple(ward for ward, _ in results)
+
+    @classmethod
     def search_from_legacy(cls, name: str = '', code: int = 0) -> tuple[Ward, ...]:
         """Given a legacy ward code or part of a legacy ward name, return all matching wards.
 
@@ -307,7 +380,8 @@ class Ward:
             log.debug('Empty search query provided')
             return ()
 
-        from ._bridges import calculate_match_score, normalize_search_name
+        from ._bridges import calculate_match_score
+        from .helpers import normalize_search_name
 
         query = normalize_search_name(name)
         results: list[tuple[Ward, str, int]] = []  # (ward, old_name, match_score)
