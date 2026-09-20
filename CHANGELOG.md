@@ -1,5 +1,11 @@
 # Changelog
 
+## [2026.9.0] - 2026-09-20
+
+### Changed
+
+- Upgrade Quảng Ninh and Bắc Ninh.
+
 ## [2026.3.0] - 2026-03-28
 
 ### Added
@@ -55,6 +61,7 @@ and use `ProvinceCode`, `WardCode` as enum to define valid data.
 - Update data with the form of new towns.
 
 
+[2026.9.0]: https://github.com/sunshine-tech/VietnamProvinces/releases/tag/v2026.9.0
 [2026.3.0]: https://github.com/sunshine-tech/VietnamProvinces/releases/tag/v2026.3.0
 [2026.2.3]: https://github.com/sunshine-tech/VietnamProvinces/releases/tag/v2026.2.3
 [2026.2.2]: https://github.com/sunshine-tech/VietnamProvinces/releases/tag/v2026.2.2
