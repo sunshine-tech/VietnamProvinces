@@ -411,7 +411,7 @@ def gen_python_code_enums(provinces: Iterable[Province]) -> str:
 
 def gen_province_object_creation(province: Province) -> ast.Call:
     """Generate AST for Province object creation."""
-    def_args = [
+    def_args: list[ast.expr] = [
         ast.Constant(value=province.name),
         ast.Attribute(value=ast.Name(id='ProvinceCode'), attr=f'P_{province.code:02}'),
         ast.Attribute(value=ast.Name(id='VietNamDivisionType'), attr=province.division_type.name),
@@ -423,7 +423,7 @@ def gen_province_object_creation(province: Province) -> ast.Call:
 
 def gen_district_object_creation(district: District, province: Province) -> ast.Call:
     """Generate AST for District object creation."""
-    def_args = [
+    def_args: list[ast.expr] = [
         ast.Constant(value=district.name),
         ast.Attribute(value=ast.Name(id='DistrictCode'), attr=f'D_{district.code:03}'),
         ast.Attribute(value=ast.Name(id='VietNamDivisionType'), attr=district.division_type.name),
@@ -435,7 +435,7 @@ def gen_district_object_creation(district: District, province: Province) -> ast.
 
 def gen_ward_object_creation(ward: Ward, district: District, province: Province) -> ast.Call:
     """Generate AST for Ward object creation."""
-    def_args = [
+    def_args: list[ast.expr] = [
         ast.Constant(value=ward.name),
         ast.Attribute(value=ast.Name(id='WardCode'), attr=f'W_{ward.code:05}'),
         ast.Attribute(value=ast.Name(id='VietNamDivisionType'), attr=ward.division_type.name),

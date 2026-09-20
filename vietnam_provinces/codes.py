@@ -1,9 +1,6 @@
 from enum import IntEnum
 
-from .compat import document_enum
 
-
-@document_enum
 class ProvinceCode(IntEnum):
     P_01 = 1
     'Thành phố Hà Nội'
@@ -75,7 +72,6 @@ class ProvinceCode(IntEnum):
     'Tỉnh Cà Mau'
 
 
-@document_enum
 class WardCode(IntEnum):
     W_00004 = 4
     'Phường Ba Đình'
