@@ -1,6 +1,9 @@
 from enum import IntEnum
 
+from .compat import document_enum
 
+
+@document_enum
 class ProvinceCode(IntEnum):
     P_01 = 1
     'Thành phố Hà Nội'
@@ -21,9 +24,9 @@ class ProvinceCode(IntEnum):
     P_20 = 20
     'Tỉnh Lạng Sơn'
     P_22 = 22
-    'Tỉnh Quảng Ninh'
+    'Thành phố Quảng Ninh'
     P_24 = 24
-    'Tỉnh Bắc Ninh'
+    'Thành phố Bắc Ninh'
     P_25 = 25
     'Tỉnh Phú Thọ'
     P_31 = 31
@@ -55,7 +58,7 @@ class ProvinceCode(IntEnum):
     P_68 = 68
     'Tỉnh Lâm Đồng'
     P_75 = 75
-    'Tỉnh Đồng Nai'
+    'Thành phố Đồng Nai'
     P_79 = 79
     'Thành phố Hồ Chí Minh'
     P_80 = 80
@@ -72,6 +75,7 @@ class ProvinceCode(IntEnum):
     'Tỉnh Cà Mau'
 
 
+@document_enum
 class WardCode(IntEnum):
     W_00004 = 4
     'Phường Ba Đình'

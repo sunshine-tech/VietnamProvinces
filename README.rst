@@ -61,7 +61,7 @@ Note that this variable only returns the path of the file, not the content. It i
 2. Python data type
 
 This data is useful for some applications which need to access the data more often.
-There are two kinds of objects, first is the object presenting a single province or ward, second is province code or ward code in form of `enum`, which you can import in Python code:
+There are two kinds of objects, first is the object representing a single province or ward, second is province code or ward code in form of `enum`, which you can import in Python code:
 
 .. code-block:: python
 
@@ -177,14 +177,6 @@ to see more options of that tool.
 Note that this tool is only available in the source folder (cloned from Git). It is not included in the distributable Python package.
 
 
-Generate Python code
-~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: sh
-
-    python3 -m dev scrape -f python
-
-
 Generate code for pre-2025 data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -221,8 +213,5 @@ Given to you by `Nguyễn Hồng Quân <quan_>`_, after nights and weekends.
 
 .. _vietnamese: README.vi_VN.rst
 .. _nso_vn: https://danhmuchanhchinh.nso.gov.vn/
-.. _draft_new_units: https://chinhphu.vn/du-thao-vbqppl/du-thao-quyet-dinh-cua-thu-tuong-chinh-phu-ban-hanh-bang-danh-muc-va-ma-so-cac-don-vi-hanh-chinh-7546
 .. _tb_ic: https://sotttt.thaibinh.gov.vn/tin-tuc/buu-chinh-vien-thong/tra-cuu-ma-vung-dien-thoai-co-dinh-mat-dat-ma-mang-dien-thoa2.html
-.. _dataclass: https://docs.python.org/3/library/dataclasses.html
-.. _pydantic: https://pypi.org/project/pydantic/
 .. _quan: https://quan.hoabinh.vn

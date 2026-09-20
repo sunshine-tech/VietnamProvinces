@@ -34,21 +34,21 @@ dev = [
   "devtools >= 0.12.2",
   "httpx >= 0.28.1",
   "logbook >= 1.9.2",
-  "logbook-stubs>=0.3.0",
-  "markupever>=0.3.2",
+  "logbook-stubs>=0.4.0",
+  "markupever>=0.3.5",
   "ptpython>=3.0.32",
   "pydantic >= 2.12.5",
-  "pyjson5>=2.0.0",
+  "pyjson5>=2.0.1",
   "pytest >= 9.0.2",
   "python-rapidjson >= 1.23",
   "unidecode>=1.4.0",
 ]
 docs = [
   "furo>=2025.12.19",
-  "myst-parser>=5.0.0",
+  "myst-parser>=5.1.0",
   "sphinx-autobuild>=2025.8.25",
-  "sphinx-book-theme>=1.1.4",
-  "sphinx-toolbox>=4.1.2",
+  "sphinx-book-theme>=1.4.0",
+  "sphinx-toolbox>=4.3.1",
 ]
 lint = ["pre-commit >= 4.5.1", "ruff >= 0.15.8"]
 

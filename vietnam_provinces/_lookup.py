@@ -13,8 +13,10 @@ PROVINCE_MAPPING = {
     15: Province('Tỉnh Lào Cai', ProvinceCode.P_15, VietNamDivisionType.TINH, 'lao_cai', 214),
     19: Province('Tỉnh Thái Nguyên', ProvinceCode.P_19, VietNamDivisionType.TINH, 'thai_nguyen', 208),
     20: Province('Tỉnh Lạng Sơn', ProvinceCode.P_20, VietNamDivisionType.TINH, 'lang_son', 205),
-    22: Province('Tỉnh Quảng Ninh', ProvinceCode.P_22, VietNamDivisionType.TINH, 'quang_ninh', 203),
-    24: Province('Tỉnh Bắc Ninh', ProvinceCode.P_24, VietNamDivisionType.TINH, 'bac_ninh', 222),
+    22: Province(
+        'Thành phố Quảng Ninh', ProvinceCode.P_22, VietNamDivisionType.THANH_PHO_TRUNG_UONG, 'quang_ninh', 203
+    ),
+    24: Province('Thành phố Bắc Ninh', ProvinceCode.P_24, VietNamDivisionType.THANH_PHO_TRUNG_UONG, 'bac_ninh', 222),
     25: Province('Tỉnh Phú Thọ', ProvinceCode.P_25, VietNamDivisionType.TINH, 'phu_tho', 210),
     31: Province('Thành phố Hải Phòng', ProvinceCode.P_31, VietNamDivisionType.THANH_PHO_TRUNG_UONG, 'hai_phong', 225),
     33: Province('Tỉnh Hưng Yên', ProvinceCode.P_33, VietNamDivisionType.TINH, 'hung_yen', 221),
@@ -30,7 +32,7 @@ PROVINCE_MAPPING = {
     56: Province('Tỉnh Khánh Hòa', ProvinceCode.P_56, VietNamDivisionType.TINH, 'khanh_hoa', 258),
     66: Province('Tỉnh Đắk Lắk', ProvinceCode.P_66, VietNamDivisionType.TINH, 'dak_lak', 262),
     68: Province('Tỉnh Lâm Đồng', ProvinceCode.P_68, VietNamDivisionType.TINH, 'lam_dong', 263),
-    75: Province('Tỉnh Đồng Nai', ProvinceCode.P_75, VietNamDivisionType.TINH, 'dong_nai', 251),
+    75: Province('Thành phố Đồng Nai', ProvinceCode.P_75, VietNamDivisionType.THANH_PHO_TRUNG_UONG, 'dong_nai', 251),
     79: Province(
         'Thành phố Hồ Chí Minh', ProvinceCode.P_79, VietNamDivisionType.THANH_PHO_TRUNG_UONG, 'ho_chi_minh', 28
     ),
