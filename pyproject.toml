@@ -30,16 +30,16 @@ Repository = "https://github.com/sunshine-tech/VietnamProvinces.git"
 
 [dependency-groups]
 dev = [
-  "click >= 8.3.1",
-  "devtools >= 0.12.2",
+  "click >= 8.5.0",
+  "devtools >= 0.13.0",
   "httpx >= 0.28.1",
-  "logbook >= 1.9.2",
-  "logbook-stubs>=0.4.0",
-  "markupever>=0.3.5",
+  "logbook >= 1.10.1",
+  "logbook-stubs>=0.5.0",
+  "markupever>=0.4.0",
   "ptpython>=3.0.32",
-  "pydantic >= 2.12.5",
+  "pydantic >= 2.14.1",
   "pyjson5>=2.0.1",
-  "pytest >= 9.0.2",
+  "pytest >= 9.1.1",
   "python-rapidjson >= 1.23",
   "unidecode>=1.4.0",
 ]
@@ -50,14 +50,14 @@ docs = [
   "sphinx-book-theme>=1.4.0",
   "sphinx-toolbox>=4.3.1",
 ]
-lint = ["pre-commit >= 4.5.1", "ruff >= 0.15.8"]
+lint = ["pre-commit >= 4.7.0", "ruff >= 0.17.0"]
 
 [build-system]
 requires = ["flit_core >= 3.4"]
 build-backend = "flit_core.buildapi"
 
 [tool.mypy]
-python_version = "3.13"
+python_version = "3.14"
 plugins = ["pydantic.mypy"]
 # These options are recommended by Pydantic.
 follow_imports = "silent"
